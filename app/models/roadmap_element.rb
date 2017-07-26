@@ -1,0 +1,2 @@
+class RoadmapElement < ApplicationRecord
+end
