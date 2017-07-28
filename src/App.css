@@ -1,0 +1,94 @@
+.ui.segment:last-child, .ui.segment {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.ui.left.button {
+  font-family: Cabin;
+  font-size: 18px;
+  letter-spacing: 2.3px;
+  text-align: center;
+  border-radius: 18px;
+  color: #ffffff;
+  background-color: #24c63a;
+  margin-top: 0.60rem;
+}
+
+i.icon.write:before {
+  background-color: #24c63a;
+}
+.massive.ui.fluid.button {
+  border-radius: 18px;
+}
+
+h2.ui.header {
+  margin-top: 0.60rem;
+  margin-bottom: 0.60rem;
+  font-family: 'Cabin';
+  font-size: 28px;
+  letter-spacing: 3.5px;
+  color: #333333;
+}
+div.sub.header {
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 2px;
+  color: #333333;
+}
+
+.ui.segments .segment .descritpion {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-family: 'Cabin';
+  font-size: 14px;
+  letter-spacing: 1.8px;
+  color: #333333;
+}
+
+.ui.form input[type=text].title {
+  font-family: 'Cabin', sans-serif;
+  font-size: 28px;
+  letter-spacing: 3.5px;
+  color: #333333;
+} 
+
+.ui.form input[type=text].descritpion, .ui.form input[type=text].caption, .ui.form input[type=text].url {
+  font-family: 'Cabin', sans-serif;
+  font-size: 14px;
+  letter-spacing: 1.8px;
+  color: #333333;
+}
+
+..ui.form input[type=text].card_type {
+  font-weight: 400;
+  line-height: 1.2em;
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 2px;
+  color: #333333;
+}
+
+.ui.basic.top.right.attached.label {
+  border: none;
+}
+
+i.big.icon, i.big.icons {
+  color: #b1b1b1;
+  margin-right: 1.5em;
+}
+
+i.big.checkmark.icon {
+  margin-right: 1em;
+}
+
+i.big.checkmark.green.icon, i.big.checkmark.icon:hover {
+  color: #24c63a;
+}
+
+.ui.label>a {
+  opacity: 1;
+}
+
+.ui.top.attached.label+[class*="right floated"]+*, .ui.top.attached.label:first-child+:not(.attached){
+  margin-top: 0!important;
+}
