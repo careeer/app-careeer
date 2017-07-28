@@ -10,7 +10,7 @@ class App extends Component {
         <div className='column'>
           <RoadmapElementsDashboard />
         </div>
-      </div>    
+      </div>
     );
   }
 }

@@ -1,9 +1,14 @@
 import 'semantic-ui-css/semantic.min.css';
-import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+import React from 'react';
+import { render } from 'react-dom';
+
+import { Router, browserHistory } from 'react-router';
+
+import routes from './routes';
+
+render(
+  <Router routes={routes} history={browserHistory} />,
+  document.getElementById('root')
+);
