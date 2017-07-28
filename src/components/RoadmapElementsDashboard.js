@@ -1,8 +1,10 @@
 import React from "react";
+import { observer } from 'mobx-react';
 
 import EditableRoadmapElementsList from './EditableRoadmapElementsList'
 import ToggleableRoadmapElementForm from './ToggleableRoadmapElementForm'
 
+@observer(['roadmapElements'])
 export default class RoadmapElementsDashboard extends React.Component {
   state = {
     roadmapElements: [
@@ -25,39 +27,39 @@ export default class RoadmapElementsDashboard extends React.Component {
         isStatusComplete: false,
       }
     ],
-    
+
     isCreateFormClose: true,
     isToggleableFormVisible: true,
   };
-  
+
   handleCreateFormToggle = () => {
     this.setState({
       isCreateFormClose: !this.state.isCreateFormClose
     });
   };
-  
+
   handleCreateFormSubmit = (roadmapElement) => {
     this.createRoadmapElement(roadmapElement);
   }
-  
+
   handleEditFormOpen = () => {
     this.setState({
       isToggleableFormVisible: !this.state.isToggleableFormVisible
-    }); 
+    });
   }
-  
+
   handleEditFormSubmit = (attrs) => {
     this.updateRoadmapElement(attrs);
 	};
-  
+
   handleToggleRoadmapElementStatus = (elementId) => {
     this.toggleRoadmapElementStatus(elementId);
   };
-  
+
 	handleDeleteForm = (roadmapElementId) => {
     this.deleteRoadmapElement(roadmapElementId);
 	};
-	
+
   createRoadmapElement = (roadmapElement) => {
     const element = {
       id: roadmapElement.title,
@@ -89,7 +91,7 @@ export default class RoadmapElementsDashboard extends React.Component {
       }),
     });
   };
-  
+
   toggleRoadmapElementStatus = (elementId) => {
     this.setState({
       roadmapElements: this.state.roadmapElements.map((roadmapElement) => {
@@ -113,17 +115,17 @@ export default class RoadmapElementsDashboard extends React.Component {
   render() {
     return (
       <div className='column'>
-        <EditableRoadmapElementsList 
+        <EditableRoadmapElementsList
           roadmapElements={this.state.roadmapElements}
           isCreateFormClose={this.state.isCreateFormClose}
-          onFormOpen={this.handleEditFormOpen} 
+          onFormOpen={this.handleEditFormOpen}
           onFormSubmit={this.handleEditFormSubmit}
 				  onDeleteClick={this.handleDeleteForm}
           toggleElementStatus={this.handleToggleRoadmapElementStatus}
           handleCreateFormToggle={this.handleCreateFormToggle}
         />
         { this.state.isToggleableFormVisible &&
-          <ToggleableRoadmapElementForm 
+          <ToggleableRoadmapElementForm
             onFormSubmit={this.handleCreateFormSubmit}
             handleCreateFormToggle={this.handleCreateFormToggle}
           />
