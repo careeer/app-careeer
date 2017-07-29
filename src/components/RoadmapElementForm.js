@@ -8,30 +8,30 @@ export default class RoadmapElementForm extends React.Component {
     callToActionCaption: this.props.callToActionCaption || '',
     callToActionURL: this.props.callToActionURL || '',
   };
-	
+
   handleCardTypeChange = (e) => {
 		this.setState({ cardType: e.target.value });
 	};
-  
+
 	handleTitleChange = (e) => {
 		this.setState({ title: e.target.value });
 	};
-	
+
 	handleDescriptionChange = (e) => {
 		this.setState({ description: e.target.value });
 	};
-  
+
   handleCallToActionCaptionChange = (e) => {
 		this.setState({ callToActionCaption: e.target.value });
 	};
-  
+
   handleCallToActionURLChange = (e) => {
 		this.setState({ callToActionURL: e.target.value });
 	};
-  
+
 	handleSave = () => {
 		this.props.onFormSubmit({
-			id: this.props.id,
+			id: this.props.id + this.state.title,
 			title: this.state.title,
 			cardType: this.state.cardType,
       description: this.state.description,
@@ -39,11 +39,11 @@ export default class RoadmapElementForm extends React.Component {
       callToActionURL: this.state.callToActionURL,
 		});
 	};
-  
+
   handleTrashClick = () => {
 		this.props.onDeleteClick(this.props.id);
 	};
-  
+
   render() {
     const isSaveDisabled = (
       (this.state.title || this.state.cardType || this.state.description) && ((this.state.callToActionCaption && this.state.callToActionURL) ||
@@ -53,7 +53,7 @@ export default class RoadmapElementForm extends React.Component {
       <div className='content'>
         <div className='ui padded clearing attached segment'>
           { this.props.id &&
-            <a 
+            <a
               className='ui right corner basic label'
               onClick={this.handleTrashClick}
             >
@@ -63,77 +63,77 @@ export default class RoadmapElementForm extends React.Component {
           <div className='ui form'>
             <div className='field'>
               <div className='ui large transparent input'>
-                <input 
+                <input
                   className='card_type'
-                  type='text' 
+                  type='text'
                   value={this.state.cardType}
                   placeholder='write a card type'
-                  onChange={this.handleCardTypeChange}  
+                  onChange={this.handleCardTypeChange}
                 />
               </div>
             </div>
             <div className='field'>
               <div className='ui huge transparent input'>
-                <input 
+                <input
                   className='title'
-                  type='text' 
+                  type='text'
                   value={this.state.title}
                   placeholder='write a title'
-                  onChange={this.handleTitleChange} 
+                  onChange={this.handleTitleChange}
                 />
-              </div>  
+              </div>
             </div>
             <div className='field'>
               <div className='ui large transparent input'>
-                <input 
+                <input
                   className='description'
-                  type='text' 
+                  type='text'
                   value={this.state.description}
                   placeholder='write a description (160 character limit)'
                   maxLength='160'
-                  onChange={this.handleDescriptionChange} 
+                  onChange={this.handleDescriptionChange}
                 />
               </div>
-            </div>           
+            </div>
             <div className='two fields'>
               <div className='field'>
                 <div className='ui big transparent input'>
-                  <input 
+                  <input
                     className='caption'
-                    type='text' 
+                    type='text'
                     value={this.state.callToActionCaption}
                     placeholder='Call to Action Caption'
-                    onChange={this.handleCallToActionCaptionChange} 
+                    onChange={this.handleCallToActionCaptionChange}
                   />
                 </div>
                 {this.state.callToActionCaption &&
                   <div className='ui left bottom green disabled button'>
                     {this.state.callToActionCaption}
-                  </div> 
+                  </div>
                 }
               </div>
               <div className='field'>
                 <div className='ui labeled transparent input'>
-                  <input 
+                  <input
                     className='url'
-                    type='url' 
+                    type='url'
                     value={this.state.callToActionURL}
                     placeholder='enter hyperlink (ex: http://careeer.me)'
-                    onChange={this.handleCallToActionURLChange} 
+                    onChange={this.handleCallToActionURLChange}
                   />
                 </div>
               </div>
-            </div>  
+            </div>
           </div>
         </div>
         <div className='ui two bottom attached buttons'>
-          <button 
+          <button
             className={isSaveDisabled}
             onClick={this.handleSave}
           >
             Save
           </button>
-          <button 
+          <button
             className='ui button'
             onClick={this.props.onFormClose}
           >

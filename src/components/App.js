@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import RoadmapElementsDashboard from './RoadmapElementsDashboard'
+import React, {Component} from 'react';
+import RoadmapElementsDashboard from './RoadmapElementsDashboard';
 
 import './App.css';
 

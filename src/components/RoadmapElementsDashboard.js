@@ -6,28 +6,11 @@ import ToggleableRoadmapElementForm from './ToggleableRoadmapElementForm'
 
 @observer(['roadmapElements'])
 export default class RoadmapElementsDashboard extends React.Component {
-  state = {
-    roadmapElements: [
-      {
-        id: 'skdcx',
-        cardType: 'professional branding',
-        title: 'Update resume template',
-        description: 'Learn to create effective and usable interfaces for a range of products and devices.',
-        callToActionCaption: 'Learn more',
-        callToActionURL: 'www.google.com',
-        isStatusComplete: false,
-      },
-      {
-        id: 'skdr',
-        cardType: 'soft skills',
-        title: 'Interview mockup',
-        description: 'Meet for a half hour mock interview to perfect your skills dawg!',
-        callToActionCaption: 'Don\'t click here',
-        callToActionURL: 'www.bing.com',
-        isStatusComplete: false,
-      }
-    ],
+  componentWillMount() {
+    this.props.roadmapElements.fetchAll();
+  }
 
+  state = {
     isCreateFormClose: true,
     isToggleableFormVisible: true,
   };
@@ -63,60 +46,33 @@ export default class RoadmapElementsDashboard extends React.Component {
   createRoadmapElement = (roadmapElement) => {
     const element = {
       id: roadmapElement.title,
-      cardType: roadmapElement.cardType || 'Card Type',
-      title: roadmapElement.title || 'Title',
+      cardType: roadmapElement.cardType,
+      title: roadmapElement.title,
       description: roadmapElement.description,
       callToActionCaption: roadmapElement.callToActionCaption,
       callToActionURL: roadmapElement.callToActionURL,
     };
-    this.setState({
-      roadmapElements: this.state.roadmapElements.concat(element),
-    });
+
+    this.props.roadmapElements.create(element);
   };
 
   updateRoadmapElement = (attrs) => {
-    this.setState({
-      roadmapElements: this.state.roadmapElements.map((roadmapElement) => {
-        if (roadmapElement.id === attrs.id) {
-          return Object.assign({}, roadmapElement, {
-            cardType: attrs.cardType,
-            title: attrs.title,
-            description: attrs.description,
-            callToActionCaption: attrs.callToActionCaption,
-            callToActionURL: attrs.callToActionURL,
-          });
-        } else {
-          return roadmapElement;
-        }
-      }),
-    });
+    this.props.roadmapElements.update(attrs);
   };
 
   toggleRoadmapElementStatus = (elementId) => {
-    this.setState({
-      roadmapElements: this.state.roadmapElements.map((roadmapElement) => {
-        if (roadmapElement.id === elementId) {
-          return Object.assign({}, roadmapElement, {
-            isStatusComplete: !roadmapElement.isStatusComplete
-          });
-        } else {
-          return roadmapElement;
-        }
-      }),
-    });
+    this.props.roadmapElements.toggleStatus(elementId);
   };
 
   deleteRoadmapElement = (roadmapElementId) => {
-    this.setState({
-      roadmapElements: this.state.roadmapElements.filter(element => element.id !== roadmapElementId),
-    });
+    this.props.roadmapElements.delete(roadmapElementId);
   };
 
   render() {
     return (
       <div className='column'>
         <EditableRoadmapElementsList
-          roadmapElements={this.state.roadmapElements}
+          roadmapElements={this.props.roadmapElements.all.slice()}
           isCreateFormClose={this.state.isCreateFormClose}
           onFormOpen={this.handleEditFormOpen}
           onFormSubmit={this.handleEditFormSubmit}

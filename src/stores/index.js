@@ -1,4 +1,4 @@
-import roadmapElements from './RoadmapElements';
+import roadmapElements from './collections/RoadmapElements';
 
   const stores = {
     roadmapElements,
