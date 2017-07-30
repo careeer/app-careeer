@@ -1,5 +1,5 @@
 class V1::RoadmapElementsController < ApplicationController
-  
+
   def index
     @roadmap_elements = RoadmapElement.all
 
@@ -13,6 +13,16 @@ class V1::RoadmapElementsController < ApplicationController
     render json: @roadmap_element, status: :created
   end
 
+  def update
+    @roadmap_element = RoadmapElement.where(id: params[:id]).first
+
+    if @roadmap_element.update(roadmap_element_params)
+      head(:ok)
+    else
+      head(:unprocessable_entity)
+    end
+  end
+
   def destroy
     @roadmap_element = RoadmapElement.where(id: params[:id]).first
     if @roadmap_element.destroy
@@ -24,7 +34,7 @@ class V1::RoadmapElementsController < ApplicationController
 
 
   private
-  
+
     def roadmap_element_params
       params.require(:roadmap_element).permit(:card_type, :title, :description, :call_to_action, :call_to_action_url)
     end
