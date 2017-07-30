@@ -14,8 +14,7 @@ class RoadmapElements {
     if (status === 200) {
       const json = await response.json();
       this.all = await json;
-      this.isLoading = false
-      console.log(json);
+      this.isLoading = false;
     }
   }
 
@@ -28,20 +27,16 @@ class RoadmapElements {
     }
   }
 
-  @action update(element) {
-    this.all = this.all.slice().map((roadmapElement) => {
-      if (roadmapElement.id === element.id) {
-        return Object.assign({}, roadmapElement, {
-          cardType: element.cardType,
-          title: element.title,
-          description: element.description,
-          callToActionCaption: element.callToActionCaption,
-          callToActionURL: element.callToActionURL,
-        });
-      } else {
-        return roadmapElement;
-      }
-    });
+  @action async update(element) {
+    console.log(element);
+    this.isLoading = true;
+    const response = await Api.put(`${this.path}/${element.id}`, element);
+    const status = await response.status;
+
+    if (status === 200) {
+      this.isLoading = false;
+      this.fetchAll();
+    }
   }
 
   @action async delete(elementId) {

@@ -56,7 +56,15 @@ export default class RoadmapElementsDashboard extends React.Component {
   };
 
   updateRoadmapElement = (attrs) => {
-    this.props.roadmapElements.update(attrs);
+    const element = {
+      id: attrs.id,
+      card_type: attrs.cardType,
+      title: attrs.title,
+      description: attrs.description,
+      call_to_action: attrs.callToActionCaption,
+      call_to_action_url: attrs.callToActionURL,
+    };
+    this.props.roadmapElements.update(element);
   };
 
   toggleRoadmapElementStatus = (elementId) => {

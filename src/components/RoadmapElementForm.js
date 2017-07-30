@@ -31,7 +31,7 @@ export default class RoadmapElementForm extends React.Component {
 
 	handleSave = () => {
 		this.props.onFormSubmit({
-			id: this.props.id + this.state.title,
+			id: this.props.id,
 			title: this.state.title,
 			cardType: this.state.cardType,
       description: this.state.description,
