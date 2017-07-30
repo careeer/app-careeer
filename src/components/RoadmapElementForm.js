@@ -36,7 +36,7 @@ export default class RoadmapElementForm extends React.Component {
 			cardType: this.state.cardType,
       description: this.state.description,
 			callToActionCaption: this.state.callToActionCaption,
-      callToActionURL: this.state.callToActionURL,
+      callToActionURL: this.state.callToActionURL.replace(/^https?\:\/\//i, ""),
 		});
 	};
 
@@ -46,7 +46,7 @@ export default class RoadmapElementForm extends React.Component {
 
   render() {
     const isSaveDisabled = (
-      (this.state.title || this.state.cardType || this.state.description) && ((this.state.callToActionCaption && this.state.callToActionURL) ||
+      (this.state.title.trim().length !== 0 || this.state.cardType.trim().length !== 0  || this.state.description.trim().length !== 0 ) && ((this.state.callToActionCaption.trim().length !== 0  && this.state.callToActionURL.trim().length !== 0 ) ||
       (!this.state.callToActionCaption && !this.state.callToActionURL))
     ) ? 'ui button' : 'ui disabled button';
     return (

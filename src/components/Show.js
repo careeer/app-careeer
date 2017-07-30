@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import RoadmapElementsDashboard from './RoadmapElementsDashboard';
 
-import './App.css';
+import './Show.css';
 
-class App extends Component {
+class Show extends Component {
   render() {
     return (
       <div className='ui grid container'>
@@ -15,4 +15,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Show;

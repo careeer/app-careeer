@@ -1,51 +1,37 @@
 import { observable, action } from 'mobx';
+import Api from 'helpers/api';
 
 class RoadmapElements {
-  @observable all = [{
-    id: 'roadmapElement.title',
-    cardType: 'roadmapElement.cardType',
-    title: 'roadmapElement.title',
-    description: 'roadmapElement.description',
-    callToActionCaption: 'roadmapElement.callToActionCaption',
-    callToActionURL: 'roadmapElement.callToActionURL',
-  }];
+  path = '/roadmap_elements';
+  @observable all = [];
   @observable isLoading = false;
 
   @action async fetchAll() {
     this.isLoading = true;
-    const response = await fetch('http://localhost:3000/v1/roadmap_elements');
+    const response = await Api.get(this.path);
     const status = await response.status;
 
     if (status === 200) {
-      this.all = await response.json();
+      const json = await response.json();
+      this.all = await json;
+      this.isLoading = false
+      console.log(json);
     }
   }
 
   @action async create(data) {
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-
-    const options = {
-      method: 'POST',
-      headers,
-      body: JSON.stringify(data),
-    };
-
-    const request = new Request('http://localhost:3000/v1/roadmap_elements', options);
-    const response = await fetch(request);
+    const response = await Api.post(this.path, data);
     const status = await response.status;
 
     if (status === 201) {
       this.fetchAll();
     }
-    // const existing = this.all;
-    // this.all = existing.concat(data);
   }
 
   @action update(element) {
     this.all = this.all.slice().map((roadmapElement) => {
       if (roadmapElement.id === element.id) {
-         return Object.assign({}, roadmapElement, {
+        return Object.assign({}, roadmapElement, {
           cardType: element.cardType,
           title: element.title,
           description: element.description,
@@ -53,16 +39,20 @@ class RoadmapElements {
           callToActionURL: element.callToActionURL,
         });
       } else {
-       return roadmapElement;
+        return roadmapElement;
       }
     });
   }
 
-  @action delete(elementId) {
-    const existing = this.all;
-    this.all = existing.filter(
-      element => element.id !== elementId
-    );
+  @action async delete(elementId) {
+    this.isLoading = true;
+    const response = await Api.delete(`${this.path}/${elementId}`);
+    const status = await response.status;
+
+    if (status === 200) {
+      this.isLoading = false;
+      this.fetchAll();
+    }
   }
 
   @action toggleStatus(elementId) {

@@ -8,11 +8,11 @@ export default class EditableRoadmapElementList extends React.Component {
       <EditableRoadmapElement
         key={roadmapElement.id}
         id={roadmapElement.id}
-        cardType={roadmapElement.cardType}
+        cardType={roadmapElement.card_type}
         title={roadmapElement.title}
         description={roadmapElement.description}
-        callToActionCaption={roadmapElement.callToActionCaption}
-        callToActionURL={roadmapElement.callToActionURL}
+        callToActionCaption={roadmapElement.call_to_action}
+        callToActionURL={roadmapElement.call_to_action_url}
         isStatusComplete={roadmapElement.isStatusComplete}
         onFormOpen={this.props.onFormOpen}
         onFormSubmit={this.props.onFormSubmit}
@@ -22,7 +22,7 @@ export default class EditableRoadmapElementList extends React.Component {
         toggleElementStatus={this.props.toggleElementStatus}
       />
     ));
-    
+
     return (
       <div id='roadmapElements'>
         {roadmapElements}

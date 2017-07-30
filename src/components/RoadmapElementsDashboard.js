@@ -45,12 +45,11 @@ export default class RoadmapElementsDashboard extends React.Component {
 
   createRoadmapElement = (roadmapElement) => {
     const element = {
-      id: roadmapElement.title,
-      cardType: roadmapElement.cardType,
+      card_type: roadmapElement.cardType,
       title: roadmapElement.title,
       description: roadmapElement.description,
-      callToActionCaption: roadmapElement.callToActionCaption,
-      callToActionURL: roadmapElement.callToActionURL,
+      call_to_action: roadmapElement.callToActionCaption,
+      call_to_action_url: roadmapElement.callToActionURL,
     };
 
     this.props.roadmapElements.create(element);

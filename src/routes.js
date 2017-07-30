@@ -10,7 +10,7 @@ const routes =
   <Route>
     <Redirect from='/' to='/roadmap' />
     <Route path='roadmap' component={c.Layout}>
-      <IndexRoute component={c.App} />
+      <IndexRoute component={c.Show} />
     </Route>
   </Route>;
 
