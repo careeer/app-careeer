@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from 'semantic-ui-react'
 
 export default class RoadmapElementForm extends React.Component {
   state = {
@@ -50,7 +51,11 @@ export default class RoadmapElementForm extends React.Component {
     const isSaveDisabled = (
       (this.state.title.trim().length !== 0 || this.state.cardType.trim().length !== 0  || this.state.description.trim().length !== 0 ) && ((this.state.callToActionCaption.trim().length !== 0  && this.state.callToActionURL.trim().length !== 0 ) ||
       (!this.state.callToActionCaption && !this.state.callToActionURL))
-    ) ? 'ui button' : 'ui disabled button';
+    ) ? false : true;
+    const saveTabIndex = (
+      (this.state.title.trim().length !== 0 || this.state.cardType.trim().length !== 0  || this.state.description.trim().length !== 0 ) && ((this.state.callToActionCaption.trim().length !== 0  && this.state.callToActionURL.trim().length !== 0 ) ||
+      (!this.state.callToActionCaption && !this.state.callToActionURL))
+    ) ? "" : -1;
     return (
       <div className='content'>
         <div className='ui padded clearing attached segment'>
@@ -129,12 +134,13 @@ export default class RoadmapElementForm extends React.Component {
           </div>
         </div>
         <div className='ui two bottom attached buttons'>
-          <button
-            className={isSaveDisabled}
+          <Button
+            disabled={isSaveDisabled}
+            tabIndex={saveTabIndex}
             onClick={this.handleSave}
           >
             Save
-          </button>
+          </Button>
           <button
             className='ui button'
             onClick={this.props.onFormClose}
