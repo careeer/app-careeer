@@ -32,7 +32,7 @@ module Careeer
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins 'http://localhost:8080/', 'https://afternoon-ravine-88728.herokuapp.com/roadmap'
+        origins '*'
         resource(
             '*',
             headers: :any,
