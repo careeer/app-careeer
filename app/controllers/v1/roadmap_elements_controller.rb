@@ -36,7 +36,7 @@ class V1::RoadmapElementsController < ApplicationController
   private
 
     def roadmap_element_params
-      params.require(:roadmap_element).permit(:card_type, :title, :description, :call_to_action, :call_to_action_url)
+      params.require(:roadmap_element).permit(:card_type, :title, :description, :call_to_action, :call_to_action_url, :status, :name)
     end
 
 end
