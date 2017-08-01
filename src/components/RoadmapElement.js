@@ -2,22 +2,30 @@ import React from "react";
 
 export default class RoadmapElement extends React.Component {
   handleToggleStatusClick = () => {
-    this.props.toggleElementStatus(this.props.id);
+    this.props.toggleElementStatus({
+      id: this.props.id,
+			title: this.props.title,
+			cardType: this.props.cardType,
+      description: this.props.description,
+			callToActionCaption: this.props.callToActionCaption,
+      callToActionURL: this.props.callToActionURL,
+      status: this.props.isStatusComplete,
+    });
 	};
-  
+
   render() {
-    const isCheckmarkGreen = 
+    const isCheckmarkGreen =
       this.props.isStatusComplete ? 'green' : ''
     return(
       <div className='ui segment'>
         {this.props.isCreateFormClose &&
           <div className="ui basic top right attached label">
-            <a 
+            <a
               onClick={this.props.onEditClick}
             >
               <i className="big write icon"></i>
             </a>
-            <a 
+            <a
               onClick={this.handleToggleStatusClick}
             >
               <i className={'big checkmark ' + isCheckmarkGreen + ' icon'}></i>
@@ -26,20 +34,20 @@ export default class RoadmapElement extends React.Component {
         }
         <div className="content">
           <div className="sub header">{this.props.cardType}</div>
-          <h2 className="ui large header">  
+          <h2 className="ui large header">
             {this.props.title}
           </h2>
           <div className='description'>
             {this.props.description}
           </div>
           {this.props.callToActionCaption &&
-            <a href={'https://' + this.props.callToActionURL} 
+            <a href={'https://' + this.props.callToActionURL}
                target='_blank'>
               <div className='ui left bottom green button'>
                 {this.props.callToActionCaption}
               </div>
             </a>
-          }  
+          }
         </div>
       </div>
     );

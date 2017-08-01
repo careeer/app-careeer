@@ -1,5 +1,6 @@
 import React from "react";
 import { observer } from 'mobx-react';
+import { Grid, Input } from 'semantic-ui-react'
 
 import EditableRoadmapElementsList from './EditableRoadmapElementsList'
 import ToggleableRoadmapElementForm from './ToggleableRoadmapElementForm'
@@ -13,6 +14,8 @@ export default class RoadmapElementsDashboard extends React.Component {
   state = {
     isCreateFormClose: true,
     isToggleableFormVisible: true,
+    roadmapName: '',
+    isNameDisabled: false,
   };
 
   handleCreateFormToggle = () => {
@@ -35,8 +38,8 @@ export default class RoadmapElementsDashboard extends React.Component {
     this.updateRoadmapElement(attrs);
 	};
 
-  handleToggleRoadmapElementStatus = (elementId) => {
-    this.toggleRoadmapElementStatus(elementId);
+  handleToggleRoadmapElementStatus = (element) => {
+    this.toggleRoadmapElementStatus(element);
   };
 
 	handleDeleteForm = (roadmapElementId) => {
@@ -50,6 +53,8 @@ export default class RoadmapElementsDashboard extends React.Component {
       description: roadmapElement.description,
       call_to_action: roadmapElement.callToActionCaption,
       call_to_action_url: roadmapElement.callToActionURL,
+      status: roadmapElement.status,
+      name: this.state.roadmapName,
     };
 
     this.props.roadmapElements.create(element);
@@ -63,21 +68,42 @@ export default class RoadmapElementsDashboard extends React.Component {
       description: attrs.description,
       call_to_action: attrs.callToActionCaption,
       call_to_action_url: attrs.callToActionURL,
+      status: attrs.status,
+      name: this.state.roadmapName,
     };
     this.props.roadmapElements.update(element);
   };
 
-  toggleRoadmapElementStatus = (elementId) => {
-    this.props.roadmapElements.toggleStatus(elementId);
+  toggleRoadmapElementStatus = (attrs) => {
+    const element = {
+      id: attrs.id,
+      card_type: attrs.cardType,
+      title: attrs.title,
+      description: attrs.description,
+      call_to_action: attrs.callToActionCaption,
+      call_to_action_url: attrs.callToActionURL,
+      status: !attrs.status,
+      name: this.state.roadmapName,
+    };
+    this.props.roadmapElements.update(element);
   };
 
   deleteRoadmapElement = (roadmapElementId) => {
     this.props.roadmapElements.delete(roadmapElementId);
   };
 
+  handleKeyPress = (event) => {
+    if(event.key == 'Enter'){
+      this.setState({
+        isNameDisabled: true
+      });
+    }
+  }
+
   render() {
     return (
-      <div className='column'>
+      <Grid.Column>
+        <Input transparent={true} fluid={true} disabled={this.state.isNameDisabled} placeholder='enter client’s first and last name' onKeyPress={this.handleKeyPress} onBlur={this.handleKeyPress} />
         <EditableRoadmapElementsList
           roadmapElements={this.props.roadmapElements.all.slice()}
           isCreateFormClose={this.state.isCreateFormClose}
@@ -93,7 +119,7 @@ export default class RoadmapElementsDashboard extends React.Component {
             handleCreateFormToggle={this.handleCreateFormToggle}
           />
         }
-      </div>
+      </Grid.Column>
     );
   }
 }

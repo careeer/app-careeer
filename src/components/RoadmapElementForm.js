@@ -7,6 +7,7 @@ export default class RoadmapElementForm extends React.Component {
     description: this.props.description || '',
     callToActionCaption: this.props.callToActionCaption || '',
     callToActionURL: this.props.callToActionURL || '',
+    status: this.props.isStatusComplete || '',
   };
 
   handleCardTypeChange = (e) => {
@@ -37,6 +38,7 @@ export default class RoadmapElementForm extends React.Component {
       description: this.state.description,
 			callToActionCaption: this.state.callToActionCaption,
       callToActionURL: this.state.callToActionURL.replace(/^https?\:\/\//i, ""),
+      status: this.state.status,
 		});
 	};
 

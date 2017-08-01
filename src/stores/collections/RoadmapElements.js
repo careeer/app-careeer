@@ -28,7 +28,6 @@ class RoadmapElements {
   }
 
   @action async update(element) {
-    console.log(element);
     this.isLoading = true;
     const response = await Api.put(`${this.path}/${element.id}`, element);
     const status = await response.status;
@@ -50,16 +49,15 @@ class RoadmapElements {
     }
   }
 
-  @action toggleStatus(elementId) {
-    this.all = this.all.slice().map((roadmapElement) => {
-      if (roadmapElement.id === elementId) {
-        return Object.assign({}, roadmapElement, {
-          isStatusComplete: !roadmapElement.isStatusComplete
-        });
-      } else {
-        return roadmapElement;
-      }
-    });
+  @action async toggleStatus(elementId) {
+    this.isLoading = true;
+    const response = await Api.put(`${this.path}/${element.id}`, element);
+    const status = await response.status;
+
+    if (status === 200) {
+      this.isLoading = false;
+      this.fetchAll();
+    }
   }
 }
 

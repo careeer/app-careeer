@@ -1,3 +1,10 @@
+div.ui.fluid.transparent.input {
+  font-family: Raleway;
+  font-size: 28px;
+  letter-spacing: 3.5px;
+  color: #919191;
+}
+
 .ui.segment:last-child, .ui.segment {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -50,7 +57,7 @@ div.sub.header {
   font-size: 28px;
   letter-spacing: 3.5px;
   color: #333333;
-} 
+}
 
 .ui.form input[type=text].descritpion, .ui.form input[type=text].caption, .ui.form input[type=text].url {
   font-family: 'Cabin', sans-serif;

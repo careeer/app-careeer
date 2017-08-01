@@ -13,7 +13,7 @@ export default class EditableRoadmapElementList extends React.Component {
         description={roadmapElement.description}
         callToActionCaption={roadmapElement.call_to_action}
         callToActionURL={roadmapElement.call_to_action_url}
-        isStatusComplete={roadmapElement.isStatusComplete}
+        isStatusComplete={roadmapElement.status}
         onFormOpen={this.props.onFormOpen}
         onFormSubmit={this.props.onFormSubmit}
         onDeleteClick={this.props.onDeleteClick}
