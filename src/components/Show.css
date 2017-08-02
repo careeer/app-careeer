@@ -4,7 +4,9 @@ div.ui.fluid.transparent.input {
   letter-spacing: 3.5px;
   color: #919191;
 }
-
+.ui.segment:first-child {
+    margin-top: 2rem;
+}
 .ui.segment:last-child, .ui.segment {
   margin-top: 2rem;
   margin-bottom: 2rem;
