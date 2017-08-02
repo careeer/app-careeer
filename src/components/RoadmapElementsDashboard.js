@@ -16,6 +16,8 @@ export default class RoadmapElementsDashboard extends React.Component {
     isToggleableFormVisible: true,
     roadmapName: '',
     isNameDisabled: false,
+    savedName: false,
+    clientName: ''
   };
 
   handleCreateFormToggle = () => {
@@ -92,34 +94,57 @@ export default class RoadmapElementsDashboard extends React.Component {
     this.props.roadmapElements.delete(roadmapElementId);
   };
 
+  handleRef = c => {
+    this.inputRef = c
+  }
+
   handleKeyPress = (event) => {
-    if(event.key == 'Enter'){
+    if(event.key == 'Enter' && this.state.clientName){
       this.setState({
-        isNameDisabled: true
+        isNameDisabled: true,
+        savedName: true,
       });
     }
   }
 
+  handleChange = (e, { name, value }) => this.setState({ [name]: value })
+
   render() {
-    return (
-      <Grid.Column>
-        <Input transparent={true} fluid={true} disabled={this.state.isNameDisabled} placeholder='enter client’s first and last name' onKeyPress={this.handleKeyPress} onBlur={this.handleKeyPress} />
-        <EditableRoadmapElementsList
-          roadmapElements={this.props.roadmapElements.all.slice()}
-          isCreateFormClose={this.state.isCreateFormClose}
-          onFormOpen={this.handleEditFormOpen}
-          onFormSubmit={this.handleEditFormSubmit}
-				  onDeleteClick={this.handleDeleteForm}
-          toggleElementStatus={this.handleToggleRoadmapElementStatus}
-          handleCreateFormToggle={this.handleCreateFormToggle}
-        />
-        { this.state.isToggleableFormVisible &&
-          <ToggleableRoadmapElementForm
-            onFormSubmit={this.handleCreateFormSubmit}
+    const { clientName } = this.state
+    if (this.state.savedName) {
+      return (
+        <Grid.Column>
+          <Input transparent={true} fluid={true} disabled={this.state.isNameDisabled} placeholder="enter client's first and last name" onKeyPress={this.handleKeyPress} name='clientName' value={clientName} onChange={this.handleChange} />
+
+          <EditableRoadmapElementsList
+            roadmapElements={this.props.roadmapElements.all.slice()}
+            isCreateFormClose={this.state.isCreateFormClose}
+            onFormOpen={this.handleEditFormOpen}
+            onFormSubmit={this.handleEditFormSubmit}
+            onDeleteClick={this.handleDeleteForm}
+            toggleElementStatus={this.handleToggleRoadmapElementStatus}
             handleCreateFormToggle={this.handleCreateFormToggle}
           />
-        }
-      </Grid.Column>
-    );
+            <ToggleableRoadmapElementForm
+              onFormSubmit={this.handleCreateFormSubmit}
+              handleCreateFormToggle={this.handleCreateFormToggle}
+            />
+        </Grid.Column>
+      );
+    } else {
+      return (
+        <Grid.Column>
+          <Input
+            transparent={true}
+            fluid={true}
+            disabled={this.state.isNameDisabled}
+            placeholder="enter client's first and last name" onKeyPress={this.handleKeyPress}
+            name='clientName'
+            value={clientName}
+            onChange={this.handleChange}
+          />
+        </Grid.Column>
+      );
+    }
   }
 }
