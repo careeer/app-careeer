@@ -110,12 +110,11 @@ export default class RoadmapElementsDashboard extends React.Component {
       this.setState({
         isNameInputDisabled: true,
       });
-      console.log(this.props.match.params.clientId);
+
     }
   }
 
   render() {
-    console.log(this.props.roadmapElements.hasClientName);
     if (this.props.roadmapElements.hasClientName) {
       return (
         <Grid.Column>

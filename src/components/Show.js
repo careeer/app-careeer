@@ -17,7 +17,7 @@ class Show extends Component {
           <Route path='/roadmap' component={RoadmapElementsDashboard}/>
           <Route path='/clients' component={ClientList}/>
           <Route path='/:clientId' component={RoadmapElementsDashboard}/>
-        </Switch>;
+        </Switch>
       </Grid>
     );
   }
