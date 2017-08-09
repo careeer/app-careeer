@@ -8,6 +8,6 @@ const routes =
   <Switch>
     <Route exact path='/' component={c.Show}/>
     <Route path='/roadmap' component={c.Show}/>
-  </Switch>;
-  
+  </Switch>
+
 export default routes;
