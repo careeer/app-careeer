@@ -4,16 +4,17 @@ import './index.css';
 import React from 'react';
 import { render } from 'react-dom';
 
-import { Router, browserHistory } from 'react-router';
-
 import { Provider } from 'mobx-react';
+import { BrowserRouter } from 'react-router-dom'
 
-import routes from './routes';
 import stores from './stores';
+import Show from './components/Show';
 
 render(
   <Provider roadmapElements={stores.roadmapElements}>
-    <Router routes={routes} history={browserHistory} />
+    <BrowserRouter>
+      <Show />
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 );

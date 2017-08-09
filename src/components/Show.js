@@ -1,18 +1,25 @@
 import React, {Component} from 'react';
-import RoadmapElementsDashboard from './RoadmapElementsDashboard';
+import { Grid } from 'semantic-ui-react'
+
+import { Switch, Route } from 'react-router-dom'
+
+import RoadmapElementsDashboard from './Roadmaps/RoadmapElementsDashboard';
+import ClientList from './Clients/ClientList';
 
 import './Show.css';
 
 class Show extends Component {
   render() {
     return (
-      <div className='ui grid container'>
-        <div className='column'>
-          <RoadmapElementsDashboard />
-        </div>
-      </div>
+      <Grid>
+        <Switch>
+          <Route exact path='/' component={RoadmapElementsDashboard}/>
+          <Route path='/roadmap' component={RoadmapElementsDashboard}/>
+          <Route path='/clients' component={ClientList}/>
+          <Route path='/:clientId' component={RoadmapElementsDashboard}/>
+        </Switch>;
+      </Grid>
     );
   }
 }
-
 export default Show;

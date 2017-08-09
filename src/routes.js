@@ -1,17 +1,13 @@
 import React from 'react';
 
-import { Route,
-         Redirect,
-         IndexRoute } from 'react-router';
+import { Switch, Route } from 'react-router-dom'
 
 import c from './components';
 
 const routes =
-  <Route>
-    <Redirect from='/' to='/roadmap' />
-    <Route path='roadmap' component={c.Layout}>
-      <IndexRoute component={c.Show} />
-    </Route>
-  </Route>;
-
+  <Switch>
+    <Route exact path='/' component={c.Show}/>
+    <Route path='/roadmap' component={c.Show}/>
+  </Switch>;
+  
 export default routes;
