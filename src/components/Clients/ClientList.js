@@ -10,44 +10,30 @@ export default class ClientList extends Component {
 
   state = { showClientList: true };
 
-  handleNewClient = () => {
-    this.setState({
-      showClientList: !this.state.showClientList
-    });
+  handleNewClientClick = () => {
+    this.props.history.push('/roadmap');
   };
 
-  handleKeyPress = (event) => {
-    if(event.key == 'Enter'){
-      this.setState({
-        isNameDisabled: true,
-      });
-    }
-  };
+  handleOnClientNameClick = (event, data) => {
+    this.props.history.push(`/${data.value}`);
+  }
 
   render() {
-    const clients = this.props.roadmapElements.clients.map((client)=>(client.id, client.name
+    const clients = this.props.roadmapElements.clients.map((client)=>(
+      <List.Item key={client.id} onClick={this.handleOnClientNameClick} value={client.slug}>
+        {client.name}
+      </List.Item>
     ));
-    console.log(this.props.roadmapElements.clients);
-    if (this.state.showClientList) {
-      return (
-        <Grid.Column floated='left' width={4}>
-          <List items={clients} size='massive' selection={true} relaxed={true}/>
-          <Button size='large' fluid={true} onClick={this.handleNewClient} >
-            <Icon size='large' inverted={true} name='plus' />
-          </Button>
-        </Grid.Column>
-      );
-    } else{
-      return (
-        <Grid.Column floated='left' width={8}>
-          <Input
-            transparent={true}
-            fluid={true}
-            placeholder="enter client's first and last name" onKeyPress={this.handleKeyPress}
-            name='clientName'
-          />
-        </Grid.Column>
-      );
-    }
+
+    return (
+      <Grid.Column floated='left' width={4}>
+        <List selection={true} relaxed={true} size='massive'>
+          {clients}
+        </List>
+        <Button size='large' fluid={true} onClick={this.handleNewClientClick} >
+          <Icon size='large' inverted={true} name='plus' />
+        </Button>
+      </Grid.Column>
+    );
   }
 }

@@ -9,11 +9,14 @@ import { BrowserRouter } from 'react-router-dom'
 
 import stores from './stores';
 import Show from './components/Show';
+import ScrollToTop from './components/ScrollToTop'
 
 render(
   <Provider roadmapElements={stores.roadmapElements}>
     <BrowserRouter>
-      <Show />
+      <ScrollToTop>
+        <Show/>
+      </ScrollToTop>
     </BrowserRouter>
   </Provider>,
   document.getElementById('root')

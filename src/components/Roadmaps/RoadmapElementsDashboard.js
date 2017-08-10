@@ -15,7 +15,6 @@ export default class RoadmapElementsDashboard extends React.Component {
       this.setState({
         isNameInputDisabled: true,
       });
-      console.log(this.props.roadmapElements.currentClient);
       this.props.roadmapElements.fetchAll();
     }
   }
@@ -110,7 +109,6 @@ export default class RoadmapElementsDashboard extends React.Component {
       this.setState({
         isNameInputDisabled: true,
       });
-
     }
   }
 
@@ -126,7 +124,6 @@ export default class RoadmapElementsDashboard extends React.Component {
             name='clientName'
             value={this.props.roadmapElements.currentClient}
           />
-
           <EditableRoadmapElementsList
             roadmapElements={this.props.roadmapElements.all.slice()}
             isCreateFormClose={this.state.isCreateFormClose}
