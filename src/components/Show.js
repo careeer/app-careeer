@@ -14,7 +14,7 @@ class Show extends Component {
     return (
       <Grid>
         <Switch>
-          <Route exact path='/' component={NewClient}/>
+          <Route exact path='/' component={ClientList}/>
           <Route path='/roadmap' component={NewClient}/>
           <Route path='/clients' component={ClientList}/>
           <Route path='/:clientId' component={ClientRoadmapDashboard}/>
