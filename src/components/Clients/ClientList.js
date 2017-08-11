@@ -11,7 +11,6 @@ export default class ClientList extends Component {
   state = { showClientList: true };
 
   handleNewClientClick = () => {
-    this.props.roadmapElements.setUpClientObject({name: '', slug: '' });
     this.props.history.push('/roadmap');
   };
 

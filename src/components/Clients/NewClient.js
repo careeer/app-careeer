@@ -20,9 +20,7 @@ export default class NewClient extends React.Component {
 
   render() {
     if (this.props.roadmapElements.hasClientName) {
-      console.log('has client name??')
       this.props.history.push(`/${this.props.roadmapElements.currentClientSlug}`);
-
     }
     return (
       <Grid.Column>
