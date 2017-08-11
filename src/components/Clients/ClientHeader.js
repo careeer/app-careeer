@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class ClientRoadmapDashboard extends React.Component {
+export default class ClientHeader extends React.Component {
 
   render() {
     <Grid.Column>
