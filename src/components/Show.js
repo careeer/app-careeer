@@ -3,7 +3,7 @@ import { Grid } from 'semantic-ui-react'
 
 import { Switch, Route } from 'react-router-dom'
 
-import RoadmapElementsDashboard from './Roadmaps/RoadmapElementsDashboard';
+import ClientRoadmapDashboard from './Roadmaps/ClientRoadmapDashboard';
 import ClientList from './Clients/ClientList';
 
 import './Show.css';
@@ -13,10 +13,10 @@ class Show extends Component {
     return (
       <Grid>
         <Switch>
-          <Route exact path='/' component={RoadmapElementsDashboard}/>
-          <Route path='/roadmap' component={RoadmapElementsDashboard}/>
+          <Route exact path='/' component={ClientRoadmapDashboard}/>
+          <Route path='/roadmap' component={ClientRoadmapDashboard}/>
           <Route path='/clients' component={ClientList}/>
-          <Route path='/:clientId' component={RoadmapElementsDashboard}/>
+          <Route path='/:clientId' component={ClientRoadmapDashboard}/>
         </Switch>
       </Grid>
     );

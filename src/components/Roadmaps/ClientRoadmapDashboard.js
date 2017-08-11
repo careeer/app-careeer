@@ -7,7 +7,7 @@ import EditableRoadmapElementsList from './EditableRoadmapElementsList'
 import ToggleableRoadmapElementForm from './ToggleableRoadmapElementForm'
 
 @observer(['roadmapElements'])
-export default class RoadmapElementsDashboard extends React.Component {
+export default class ClientRoadmapDashboard extends React.Component {
   componentWillMount() {
     if (this.props.match.params.clientId) {
       this.props.roadmapElements.getClients();
@@ -104,7 +104,7 @@ export default class RoadmapElementsDashboard extends React.Component {
   }
 
   handleKeyPress = (event) => {
-    if (event.key == 'Enter') {
+    if (event.key == 'Enter' && this.props.roadmapElements.currentClient) {
       this.props.roadmapElements.createClient();
       this.setState({
         isNameInputDisabled: true,
@@ -123,6 +123,7 @@ export default class RoadmapElementsDashboard extends React.Component {
             placeholder="enter client's first and last name"
             name='clientName'
             value={this.props.roadmapElements.currentClient}
+            onChange={this.props.roadmapElements.handleClientInputChange}
           />
           <EditableRoadmapElementsList
             roadmapElements={this.props.roadmapElements.all.slice()}

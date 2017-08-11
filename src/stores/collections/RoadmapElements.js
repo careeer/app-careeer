@@ -23,20 +23,6 @@ class RoadmapElements {
     }
   }
 
-  @action handleClientInputChange = (e, { name, value }) => {
-    this.setClientName(value);
-  }
-  @action setClientName = (newName) => {
-    this.currentClient = newName;
-  }
-
-  @action setClientSlug = (slug) => {
-    this.currentClientSlug = slug;
-    if (!this.clients) {
-      this.getClients();
-    }
-  }
-
   @action async create(data) {
     const response = await Api.post(`${this.path}/${this.currentClientSlug}/${this.roadmap_path}`, data);
     const status = await response.status;
@@ -79,6 +65,26 @@ class RoadmapElements {
     }
   }
 
+  @action handleClientInputChange = (e, { name, value }) => {
+    this.setClientName(value);
+  }
+
+  @action setClientName = (newName) => {
+    this.currentClient = newName;
+  }
+
+  @action setClientSlug = (slug) => {
+    this.currentClientSlug = slug;
+    if (!this.clients) {
+      this.getClients();
+    }
+  }
+
+  @action setUpClientObject = (client) => {
+    this.currentClient = client.name;
+    this.currentClientSlug = client.slug;
+  }
+
   @action async getClients() {
     this.isLoading = true;
     const response = await Api.get(this.path);
@@ -90,7 +96,8 @@ class RoadmapElements {
       if (this.currentClient) {
         this.setClientSlug(this.clients.filter(client => client.name === this.currentClient)[0].slug);
         this.hasClientName = true;
-      } else if (this.currentClientSlug) {
+      }
+      if (this.currentClientSlug) {
         this.setClientName(this.clients.filter(client => client.slug === this.currentClientSlug)[0].name);
         this.hasClientName = true;
       }

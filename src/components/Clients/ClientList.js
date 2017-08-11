@@ -15,12 +15,13 @@ export default class ClientList extends Component {
   };
 
   handleOnClientNameClick = (event, data) => {
+    this.props.roadmapElements.setUpClientObject({name: data.name, slug: data.value });
     this.props.history.push(`/${data.value}`);
   }
 
   render() {
     const clients = this.props.roadmapElements.clients.map((client)=>(
-      <List.Item key={client.id} onClick={this.handleOnClientNameClick} value={client.slug}>
+      <List.Item key={client.id} onClick={this.handleOnClientNameClick} value={client.slug} name={client.name}>
         {client.name}
       </List.Item>
     ));
