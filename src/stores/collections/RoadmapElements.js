@@ -10,6 +10,14 @@ class RoadmapElements {
   @observable currentClient = '';
   @observable currentClientSlug ='';
   @observable clients = [];
+  @observable isNameInputDisabled = false;
+
+  @action resetClientParams() {
+    this.hasClientName = false;
+    this.currentClient ='';
+    this.currentClientSlug ='';
+    this.isNameInputDisabled = false;
+  }
 
   @action async fetchAll() {
     this.isLoading = true;
@@ -81,8 +89,8 @@ class RoadmapElements {
   }
 
   @action setUpClientObject = (client) => {
-    this.currentClient = client.name;
-    this.currentClientSlug = client.slug;
+    this.currentClient = client.name || '';
+    this.currentClientSlug = client.slug || '';
   }
 
   @action async getClients() {
@@ -111,6 +119,11 @@ class RoadmapElements {
       this.getClients();
     }
   }
+
+  @action toggleDissableClientNameInput() {
+    this.isNameInputDisabled = !this.isNameInputDisabled;
+  }
+
 }
 
 export default new RoadmapElements();

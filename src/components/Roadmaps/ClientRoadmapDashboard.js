@@ -11,9 +11,7 @@ export default class ClientRoadmapDashboard extends React.Component {
     if (this.props.match.params.clientId) {
       this.props.roadmapElements.getClients();
       this.props.roadmapElements.setClientSlug(this.props.match.params.clientId);
-      this.setState({
-        isNameInputDisabled: true,
-      });
+      this.props.roadmapElements.toggleDissableClientNameInput();
       this.props.roadmapElements.fetchAll();
     }
   }
@@ -21,7 +19,6 @@ export default class ClientRoadmapDashboard extends React.Component {
   state = {
     isCreateFormClose: true,
     isToggleableFormVisible: true,
-    isNameInputDisabled: false
   };
 
   handleCreateFormToggle = () => {
@@ -104,7 +101,7 @@ export default class ClientRoadmapDashboard extends React.Component {
         <Input
           transparent={true}
           fluid={true}
-          disabled={this.state.isNameInputDisabled}
+          disabled={this.props.roadmapElements.isNameInputDisabled}
           placeholder="enter client's first and last name"
           name='clientName'
           value={this.props.roadmapElements.currentClient}

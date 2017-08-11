@@ -4,17 +4,13 @@ import { Grid, Input } from 'semantic-ui-react'
 
 @observer(['roadmapElements'])
 export default class NewClient extends React.Component {
-  state = {
-    isNameInputDisabled: false
-  };
+  componentWillMount() {
+    this.props.roadmapElements.resetClientParams();
+  }
 
   handleKeyPress = (event) => {
     if (event.key == 'Enter' && this.props.roadmapElements.currentClient) {
       this.props.roadmapElements.createClient();
-      this.setState({
-        isNameInputDisabled: true,
-      });
-
     }
   }
 
@@ -27,7 +23,6 @@ export default class NewClient extends React.Component {
         <Input
           transparent={true}
           fluid={true}
-          disabled={this.state.isNameInputDisabled}
           placeholder="enter client's first and last name" onKeyPress={this.handleKeyPress}
           name='clientName'
           value={this.props.roadmapElements.currentClient || ''}
