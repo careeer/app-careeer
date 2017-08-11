@@ -20,7 +20,9 @@ export default class NewClient extends React.Component {
 
   render() {
     if (this.props.roadmapElements.hasClientName) {
+      console.log('has client name??')
       this.props.history.push(`/${this.props.roadmapElements.currentClientSlug}`);
+
     }
     return (
       <Grid.Column>
@@ -30,7 +32,7 @@ export default class NewClient extends React.Component {
           disabled={this.state.isNameInputDisabled}
           placeholder="enter client's first and last name" onKeyPress={this.handleKeyPress}
           name='clientName'
-          value={this.props.roadmapElements.currentClient}
+          value={this.props.roadmapElements.currentClient || ''}
           onChange={this.props.roadmapElements.handleClientInputChange}
         />
       </Grid.Column>
