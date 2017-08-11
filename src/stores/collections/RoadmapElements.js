@@ -108,7 +108,6 @@ class RoadmapElements {
     const response = await Api.post(this.path, {name: this.currentClient});
     const status = await response.status;
     if (status === 201) {
-      this.hasClientName = true;
       this.getClients();
     }
   }

@@ -5,6 +5,7 @@ import { Switch, Route } from 'react-router-dom'
 
 import ClientRoadmapDashboard from './Roadmaps/ClientRoadmapDashboard';
 import ClientList from './Clients/ClientList';
+import NewClient from './Clients/NewClient';
 
 import './Show.css';
 
@@ -13,8 +14,8 @@ class Show extends Component {
     return (
       <Grid>
         <Switch>
-          <Route exact path='/' component={ClientRoadmapDashboard}/>
-          <Route path='/roadmap' component={ClientRoadmapDashboard}/>
+          <Route exact path='/' component={NewClient}/>
+          <Route path='/roadmap' component={NewClient}/>
           <Route path='/clients' component={ClientList}/>
           <Route path='/:clientId' component={ClientRoadmapDashboard}/>
         </Switch>
