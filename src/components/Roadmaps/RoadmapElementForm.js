@@ -3,6 +3,7 @@ import { Button } from 'semantic-ui-react'
 
 export default class RoadmapElementForm extends React.Component {
   state = {
+    dueDate: this.props.dueDate || '',
 		cardType: this.props.cardType || '',
     title: this.props.title || '',
     description: this.props.description || '',
@@ -10,6 +11,9 @@ export default class RoadmapElementForm extends React.Component {
     callToActionURL: this.props.callToActionURL || '',
     status: this.props.isStatusComplete || '',
   };
+  handleDueDateChange = (e) => {
+		this.setState({ dueDate: e.target.value });
+	};
 
   handleCardTypeChange = (e) => {
 		this.setState({ cardType: e.target.value });
@@ -35,6 +39,7 @@ export default class RoadmapElementForm extends React.Component {
 		this.props.onFormSubmit({
 			id: this.props.id,
 			title: this.state.title,
+      dueDate: this.state.dueDate,
 			cardType: this.state.cardType,
       description: this.state.description,
 			callToActionCaption: this.state.callToActionCaption,
@@ -56,6 +61,7 @@ export default class RoadmapElementForm extends React.Component {
       (this.state.title.trim().length !== 0 || this.state.cardType.trim().length !== 0  || this.state.description.trim().length !== 0 ) && ((this.state.callToActionCaption.trim().length !== 0  && this.state.callToActionURL.trim().length !== 0 ) ||
       (!this.state.callToActionCaption && !this.state.callToActionURL))
     ) ? "" : -1;
+
     return (
       <div className='content'>
         <div className='ui padded clearing attached segment'>
@@ -71,10 +77,21 @@ export default class RoadmapElementForm extends React.Component {
             <div className='field'>
               <div className='ui large transparent input'>
                 <input
+                  className='dueDate'
+                  type='text'
+                  value={this.state.dueDate}
+                  placeholder='due date'
+                  onChange={this.handleDueDateChange}
+                />
+              </div>
+            </div>
+            <div className='field'>
+              <div className='ui large transparent input'>
+                <input
                   className='card_type'
                   type='text'
                   value={this.state.cardType}
-                  placeholder='write a card type'
+                  placeholder='category'
                   onChange={this.handleCardTypeChange}
                 />
               </div>
@@ -85,7 +102,7 @@ export default class RoadmapElementForm extends React.Component {
                   className='title'
                   type='text'
                   value={this.state.title}
-                  placeholder='write a title'
+                  placeholder='action item'
                   onChange={this.handleTitleChange}
                 />
               </div>
@@ -96,7 +113,7 @@ export default class RoadmapElementForm extends React.Component {
                   className='description'
                   type='text'
                   value={this.state.description}
-                  placeholder='write a description (160 character limit)'
+                  placeholder='description (160 character limit)'
                   maxLength='160'
                   onChange={this.handleDescriptionChange}
                 />
@@ -109,7 +126,7 @@ export default class RoadmapElementForm extends React.Component {
                     className='caption'
                     type='text'
                     value={this.state.callToActionCaption}
-                    placeholder='Call to Action Caption'
+                    placeholder='call to action'
                     onChange={this.handleCallToActionCaptionChange}
                   />
                 </div>
@@ -125,7 +142,7 @@ export default class RoadmapElementForm extends React.Component {
                     className='url'
                     type='url'
                     value={this.state.callToActionURL}
-                    placeholder='enter hyperlink (ex: http://careeer.me)'
+                    placeholder='hyperlink (ex: http://careeer.me)'
                     onChange={this.handleCallToActionURLChange}
                   />
                 </div>

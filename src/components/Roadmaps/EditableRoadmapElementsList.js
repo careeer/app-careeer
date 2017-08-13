@@ -8,6 +8,7 @@ export default class EditableRoadmapElementList extends React.Component {
       <EditableRoadmapElement
         key={roadmapElement.id}
         id={roadmapElement.id}
+        dueDate={roadmapElement.due_date}
         cardType={roadmapElement.card_type}
         title={roadmapElement.title}
         description={roadmapElement.description}

@@ -1,18 +1,22 @@
 import React from "react";
+import { observer } from 'mobx-react';
+import { Grid, Input } from 'semantic-ui-react'
 
 export default class ClientHeader extends React.Component {
 
   render() {
-    <Grid.Column>
-      <Input
-        transparent={true}
-        fluid={true}
-        disabled={this.state.isNameInputDisabled}
-        placeholder="enter client's first and last name" onKeyPress={this.handleKeyPress}
-        name='clientName'
-        value={this.props.roadmapElements.currentClient}
-        onChange={this.props.roadmapElements.handleClientInputChange}
-      />
-    </Grid.Column>
+    return (
+      <Grid.Column>
+        <Input
+          transparent={true}
+          fluid={true}
+          disabled={this.props.disabled}
+          placeholder={this.props.placeholder}
+          name={this.props.name}
+          value={this.props.value}
+          onChange={this.props.onChange}
+        />
+      </Grid.Column>
+  );
   }
 }
