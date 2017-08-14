@@ -26,7 +26,11 @@ class RoadmapElements {
 
     if (status === 200) {
       const json = await response.json();
-      this.all = await json;
+      const tempArray = await json;
+      this.all = tempArray.map((obj, index) => {
+        obj.index = index;
+        return obj;
+      });
       this.isLoading = false;
     }
   }
@@ -71,6 +75,14 @@ class RoadmapElements {
       this.isLoading = false;
       this.fetchAll();
     }
+  }
+
+  @action moveRoadmapElement(dragIndex, hoverIndex) {
+    const newcards = this.all;
+    const dragCard = newcards[dragIndex];
+
+    newcards.splice(dragIndex, 1); // removing what you are dragging.
+    newcards.splice(hoverIndex, 0, dragCard); // inserting it into hoverIndex.
   }
 
   @action handleClientInputChange = (e, { name, value }) => {

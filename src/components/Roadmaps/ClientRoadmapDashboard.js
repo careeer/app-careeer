@@ -2,9 +2,13 @@ import React from "react";
 import { observer } from 'mobx-react';
 import { Grid, Input } from 'semantic-ui-react'
 
+import { DragDropContext } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
+
 import EditableRoadmapElementsList from './EditableRoadmapElementsList'
 import ToggleableRoadmapElementForm from './ToggleableRoadmapElementForm'
 
+@DragDropContext(HTML5Backend)
 @observer(['roadmapElements'])
 export default class ClientRoadmapDashboard extends React.Component {
   componentWillMount() {
@@ -95,6 +99,10 @@ export default class ClientRoadmapDashboard extends React.Component {
     this.props.roadmapElements.delete(roadmapElementId);
   };
 
+  handleElementMove = (dragIndex, hoverIndex) => {
+    this.props.roadmapElements.moveRoadmapElement(dragIndex, hoverIndex);
+  }
+
   render() {
     return (
       <Grid.Column>
@@ -115,6 +123,7 @@ export default class ClientRoadmapDashboard extends React.Component {
           onDeleteClick={this.handleDeleteForm}
           toggleElementStatus={this.handleToggleRoadmapElementStatus}
           handleCreateFormToggle={this.handleCreateFormToggle}
+          handleElementMove={this.handleElementMove}
         />
         <ToggleableRoadmapElementForm
           onFormSubmit={this.handleCreateFormSubmit}

@@ -7,17 +7,17 @@ export default class EditableRoadmapElement extends React.Component {
   state = {
     editFormOpen: false,
   };
-  
+
   handleEditClick = () => {
     this.toggleFormAccessibility();
 		this.openForm();
 	};
-  
+
   handleFormClose = () => {
     this.toggleFormAccessibility();
     this.closeForm();
   };
-  
+
   handleSubmit = (element) => {
     this.toggleFormAccessibility();
 		this.props.onFormSubmit(element);
@@ -28,20 +28,20 @@ export default class EditableRoadmapElement extends React.Component {
     this.toggleFormAccessibility();
     this.props.onDeleteClick(elementId);
   };
-  
+
   toggleFormAccessibility = () => {
     this.props.onFormOpen();
     this.props.handleCreateFormToggle();
   };
-  
+
   closeForm = () => {
     this.setState({ editFormOpen: false });
   };
-  
+
   openForm = () => {
     this.setState({ editFormOpen: true });
   };
-  
+
   render() {
     if (this.state.editFormOpen) {
       return (
@@ -56,11 +56,12 @@ export default class EditableRoadmapElement extends React.Component {
 					onFormClose={this.handleFormClose}
 					onDeleteClick={this.handleFormDelete}
 				/>
-      );  
+      );
     } else {
       return (
         <RoadmapElement
-          id={this.props.id}        
+          id={this.props.id}
+          index={this.props.index}
 					cardType={this.props.cardType}
 					title={this.props.title}
 					description={this.props.description}
@@ -70,8 +71,9 @@ export default class EditableRoadmapElement extends React.Component {
 					isCreateFormClose={this.props.isCreateFormClose}
           onEditClick={this.handleEditClick}
           toggleElementStatus={this.props.toggleElementStatus}
+          handleElementMove={this.props.handleElementMove}
         />
-      );  
+      );
     }
   }
 }

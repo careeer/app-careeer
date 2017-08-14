@@ -7,6 +7,7 @@ export default class EditableRoadmapElementList extends React.Component {
     const roadmapElements = this.props.roadmapElements.map((roadmapElement) => (
       <EditableRoadmapElement
         key={roadmapElement.id}
+        index={roadmapElement.index}
         id={roadmapElement.id}
         cardType={roadmapElement.card_type}
         title={roadmapElement.title}
@@ -20,6 +21,7 @@ export default class EditableRoadmapElementList extends React.Component {
         isCreateFormClose={this.props.isCreateFormClose}
         handleCreateFormToggle={this.props.handleCreateFormToggle}
         toggleElementStatus={this.props.toggleElementStatus}
+        handleElementMove={this.props.handleElementMove}
       />
     ));
 
