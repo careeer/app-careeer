@@ -7,6 +7,7 @@ import HTML5Backend from 'react-dnd-html5-backend';
 
 import EditableRoadmapElementsList from './EditableRoadmapElementsList'
 import ToggleableRoadmapElementForm from './ToggleableRoadmapElementForm'
+import ClientHeader from '../Clients/ClientHeader'
 
 @DragDropContext(HTML5Backend)
 @observer(['roadmapElements'])
@@ -55,6 +56,7 @@ export default class ClientRoadmapDashboard extends React.Component {
 
   createRoadmapElement = (roadmapElement) => {
     const element = {
+      due_date: attrs.dueDate,
       card_type: roadmapElement.cardType,
       title: roadmapElement.title,
       description: roadmapElement.description,
@@ -70,6 +72,7 @@ export default class ClientRoadmapDashboard extends React.Component {
   updateRoadmapElement = (attrs) => {
     const element = {
       id: attrs.id,
+      due_date: attrs.dueDate,
       card_type: attrs.cardType,
       title: attrs.title,
       description: attrs.description,
@@ -84,6 +87,7 @@ export default class ClientRoadmapDashboard extends React.Component {
   toggleRoadmapElementStatus = (attrs) => {
     const element = {
       id: attrs.id,
+      due_date: attrs.dueDate,
       card_type: attrs.cardType,
       title: attrs.title,
       description: attrs.description,
@@ -106,9 +110,7 @@ export default class ClientRoadmapDashboard extends React.Component {
   render() {
     return (
       <Grid.Column>
-        <Input
-          transparent={true}
-          fluid={true}
+        <ClientHeader
           disabled={this.props.roadmapElements.isNameInputDisabled}
           placeholder="enter client's first and last name"
           name='clientName'

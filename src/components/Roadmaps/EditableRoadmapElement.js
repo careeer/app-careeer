@@ -47,6 +47,7 @@ export default class EditableRoadmapElement extends React.Component {
       return (
         <RoadmapElementForm
           id={this.props.id}
+          dueDate={this.props.dueDate}
 					cardType={this.props.cardType}
 					title={this.props.title}
 					description={this.props.description}
@@ -60,8 +61,9 @@ export default class EditableRoadmapElement extends React.Component {
     } else {
       return (
         <RoadmapElement
-          id={this.props.id}
           index={this.props.index}
+          id={this.props.id}
+          dueDate={this.props.dueDate}     
 					cardType={this.props.cardType}
 					title={this.props.title}
 					description={this.props.description}

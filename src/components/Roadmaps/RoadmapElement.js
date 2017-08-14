@@ -73,6 +73,7 @@ export default class RoadmapElement extends React.Component {
     this.props.toggleElementStatus({
       id: this.props.id,
 			title: this.props.title,
+      dueDate: this.props.dueDate,
 			cardType: this.props.cardType,
       description: this.props.description,
 			callToActionCaption: this.props.callToActionCaption,
@@ -105,6 +106,7 @@ export default class RoadmapElement extends React.Component {
           </div>
         }
         <div className="content">
+          <div className="sub header">{this.props.dueDate}</div>
           <div className="sub header">{this.props.cardType}</div>
           <h2 className="ui large header">
             {this.props.title}
