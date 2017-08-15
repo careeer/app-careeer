@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170814235047) do
+ActiveRecord::Schema.define(version: 20170815002059) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20170814235047) do
     t.datetime "updated_at", null: false
     t.boolean "status"
     t.bigint "client_id"
-    t.integer "index"
+    t.integer "dnd_index"
     t.string "due_date"
     t.index ["client_id"], name: "index_roadmap_elements_on_client_id"
   end
