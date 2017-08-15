@@ -107,14 +107,6 @@ export default class RoadmapElement extends React.Component {
             >
               <i className={'big checkmark ' + isCheckmarkGreen + ' icon'}></i>
             </a>
-          // </div>
-          //   <Label basic={true} size='massive' attached='bottom right'>
-          //
-          //         <Icon basic={true} color='grey' name='content' />
-          //       </div>
-          //     )}
-          //   </Label>
-          // </div>
         }
         <div className="content">
           <div className="sub header">{this.props.dueDate}</div>
