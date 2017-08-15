@@ -95,7 +95,7 @@ export default class RoadmapElement extends React.Component {
     return connectDragSource(connectDropTarget(
       <div className='ui segment'>
         {this.props.isCreateFormClose &&
-          <div>
+
           <div className="ui basic top right attached label">
             <a
               onClick={this.props.onEditClick}
@@ -107,6 +107,7 @@ export default class RoadmapElement extends React.Component {
             >
               <i className={'big checkmark ' + isCheckmarkGreen + ' icon'}></i>
             </a>
+          </div>
         }
         <div className="content">
           <div className="sub header">{this.props.dueDate}</div>
