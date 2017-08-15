@@ -2,10 +2,14 @@ import React from "react";
 import { observer } from 'mobx-react';
 import { Grid, Input } from 'semantic-ui-react'
 
+import { DragDropContext } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
+
 import EditableRoadmapElementsList from './EditableRoadmapElementsList'
 import ToggleableRoadmapElementForm from './ToggleableRoadmapElementForm'
 import ClientHeader from '../Clients/ClientHeader'
 
+@DragDropContext(HTML5Backend)
 @observer(['roadmapElements'])
 export default class ClientRoadmapDashboard extends React.Component {
   componentWillMount() {
@@ -52,7 +56,8 @@ export default class ClientRoadmapDashboard extends React.Component {
 
   createRoadmapElement = (roadmapElement) => {
     const element = {
-      due_date: attrs.dueDate,
+      dnd_index: this.props.roadmapElements.all.length,
+      due_date: roadmapElement.dueDate,
       card_type: roadmapElement.cardType,
       title: roadmapElement.title,
       description: roadmapElement.description,
@@ -61,13 +66,13 @@ export default class ClientRoadmapDashboard extends React.Component {
       status: roadmapElement.status,
       name: this.props.roadmapElements.currentClient,
     };
-
     this.props.roadmapElements.create(element);
   };
 
   updateRoadmapElement = (attrs) => {
     const element = {
       id: attrs.id,
+      dnd_index: attrs.index,
       due_date: attrs.dueDate,
       card_type: attrs.cardType,
       title: attrs.title,
@@ -77,12 +82,14 @@ export default class ClientRoadmapDashboard extends React.Component {
       status: attrs.status,
       name: this.props.roadmapElements.currentClient,
     };
+
     this.props.roadmapElements.update(element);
   };
 
   toggleRoadmapElementStatus = (attrs) => {
     const element = {
       id: attrs.id,
+      dnd_index: attrs.index,
       due_date: attrs.dueDate,
       card_type: attrs.cardType,
       title: attrs.title,
@@ -99,6 +106,14 @@ export default class ClientRoadmapDashboard extends React.Component {
     this.props.roadmapElements.delete(roadmapElementId);
   };
 
+  handleElementMove = (dragIndex, hoverIndex) => {
+    this.props.roadmapElements.moveRoadmapElement(dragIndex, hoverIndex);
+  }
+
+  handleClientInputChange = () => {
+    this.props.roadmapElements.handleClientInputChange();
+  }
+
   render() {
     return (
       <Grid.Column>
@@ -107,7 +122,7 @@ export default class ClientRoadmapDashboard extends React.Component {
           placeholder="enter client's first and last name"
           name='clientName'
           value={this.props.roadmapElements.currentClient}
-          onChange={this.props.roadmapElements.handleClientInputChange}
+          onChange={this.handleClientInputChange}
         />
         <EditableRoadmapElementsList
           roadmapElements={this.props.roadmapElements.all.slice()}
@@ -117,11 +132,14 @@ export default class ClientRoadmapDashboard extends React.Component {
           onDeleteClick={this.handleDeleteForm}
           toggleElementStatus={this.handleToggleRoadmapElementStatus}
           handleCreateFormToggle={this.handleCreateFormToggle}
+          handleElementMove={this.handleElementMove}
         />
-        <ToggleableRoadmapElementForm
-          onFormSubmit={this.handleCreateFormSubmit}
-          handleCreateFormToggle={this.handleCreateFormToggle}
-        />
+        { this.state.isToggleableFormVisible &&
+          <ToggleableRoadmapElementForm
+            onFormSubmit={this.handleCreateFormSubmit}
+            handleCreateFormToggle={this.handleCreateFormToggle}
+          />
+        }
       </Grid.Column>
     );
   }
