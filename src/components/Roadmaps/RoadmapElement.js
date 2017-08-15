@@ -72,6 +72,7 @@ export default class RoadmapElement extends React.Component {
   handleToggleStatusClick = () => {
     this.props.toggleElementStatus({
       id: this.props.id,
+      index: this.props.index,
 			title: this.props.title,
       dueDate: this.props.dueDate,
 			cardType: this.props.cardType,

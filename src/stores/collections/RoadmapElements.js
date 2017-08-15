@@ -26,21 +26,47 @@ class RoadmapElements {
 
     if (status === 200) {
       const json = await response.json();
-      const tempArray = await json;
-      this.all = tempArray.map((obj, index) => {
-        obj.index = index;
-        return obj;
-      });
+      this.all = await json;
+      const fetchAgain = await this.checkIndex();
       this.isLoading = false;
+      if (fetchAgain) {
+        this.fetchAll();
+      }
     }
   }
 
+  @action checkIndex() {
+    let fetchAgain = false;
+    const tempArray = this.all.map((obj, index) => {
+      if (obj.dnd_index !== index) {
+        console.log("Updating index" + index);
+        console.log(obj.dnd_index);
+        console.log(index);
+        obj.dnd_index = index;
+        console.log(obj.dnd_index);
+        fetchAgain = this.updateNoFetch(obj);
+      }
+      return obj;
+    });
+    return fetchAgain;
+  }
   @action async create(data) {
     const response = await Api.post(`${this.path}/${this.currentClientSlug}/${this.roadmap_path}`, data);
     const status = await response.status;
 
     if (status === 201) {
       this.fetchAll();
+    }
+  }
+
+  @action async updateNoFetch(element) {
+    this.isLoading = true;
+    const response = await Api.put(`${this.path}/${this.currentClientSlug}/${this.roadmap_path}/${element.id}`, element);
+    const status = await response.status;
+
+    if (status === 200) {
+      this.isLoading = false;
+      return true;
     }
   }
 
@@ -83,6 +109,8 @@ class RoadmapElements {
 
     newcards.splice(dragIndex, 1); // removing what you are dragging.
     newcards.splice(hoverIndex, 0, dragCard); // inserting it into hoverIndex.
+
+    this.checkIndex();
   }
 
   @action handleClientInputChange = (e, { name, value }) => {
