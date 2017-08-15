@@ -1,15 +1,16 @@
 import React from "react";
 import { observer } from 'mobx-react';
-import { Grid, Input } from 'semantic-ui-react'
+import { Grid, Input } from 'semantic-ui-react';
 
 import { DragDropContext } from 'react-dnd';
-import HTML5Backend from 'react-dnd-html5-backend';
+import MultiBackend from 'react-dnd-multi-backend'
+import HTML5toTouch from 'react-dnd-multi-backend/lib/HTML5toTouch'
 
-import EditableRoadmapElementsList from './EditableRoadmapElementsList'
-import ToggleableRoadmapElementForm from './ToggleableRoadmapElementForm'
-import ClientHeader from '../Clients/ClientHeader'
+import EditableRoadmapElementsList from './EditableRoadmapElementsList';
+import ToggleableRoadmapElementForm from './ToggleableRoadmapElementForm';
+import ClientHeader from '../Clients/ClientHeader';
 
-@DragDropContext(HTML5Backend)
+@DragDropContext(MultiBackend(HTML5toTouch))
 @observer(['roadmapElements'])
 export default class ClientRoadmapDashboard extends React.Component {
   componentWillMount() {

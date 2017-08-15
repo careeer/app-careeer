@@ -8,7 +8,7 @@ div.ui.fluid.transparent.input {
   margin-bottom: 2rem;
 }
 .ui.segment:first-child {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 .ui.segment:last-child, .ui.segment {
   margin-top: 2rem;
@@ -103,4 +103,8 @@ i.big.checkmark.green.icon, i.big.checkmark.icon:hover {
 
 .ui.top.attached.label+[class*="right floated"]+*, .ui.top.attached.label:first-child+:not(.attached){
   margin-top: 0!important;
+}
+
+div.ui.massive.basic.bottom.right.attached.label {
+  border: none;
 }

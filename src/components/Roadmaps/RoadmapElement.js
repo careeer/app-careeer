@@ -1,5 +1,6 @@
 import React from "react";
 
+import { Label, Icon } from 'semantic-ui-react'
 import { findDOMNode } from 'react-dom';
 import { DragSource, DropTarget } from 'react-dnd';
 import ItemTypes from '../Constants/ItemTypes';
@@ -65,6 +66,7 @@ const roadmapElementTarget = {
 }))
 @DragSource(ItemTypes.ROADMAP_ELEMENT, roadmapElementSource, (connect, monitor) => ({
   connectDragSource: connect.dragSource(),
+  connectDragPreview: connect.dragPreview(),
   isDragging: monitor.isDragging(),
 }))
 export default class RoadmapElement extends React.Component {
@@ -87,12 +89,13 @@ export default class RoadmapElement extends React.Component {
     const isCheckmarkGreen =
       this.props.isStatusComplete ? 'green' : ''
 
-    const { text, isDragging, connectDragSource, connectDropTarget } = this.props;
+    const { text, isDragging, connectDragSource, connectDragPreview, connectDropTarget } = this.props;
     const opacity = isDragging ? 0 : 1;
 
-    return connectDragSource(connectDropTarget(
+    return connectDragPreview(connectDropTarget(
       <div className='ui segment'>
         {this.props.isCreateFormClose &&
+          <div>
           <div className="ui basic top right attached label">
             <a
               onClick={this.props.onEditClick}
@@ -104,6 +107,14 @@ export default class RoadmapElement extends React.Component {
             >
               <i className={'big checkmark ' + isCheckmarkGreen + ' icon'}></i>
             </a>
+          </div>
+            <Label basic={true} size='massive' attached='bottom right'>
+              {connectDragSource(
+                <div>
+                  <Icon basic={true} color='grey' name='content' />
+                </div>
+              )}
+            </Label>
           </div>
         }
         <div className="content">
