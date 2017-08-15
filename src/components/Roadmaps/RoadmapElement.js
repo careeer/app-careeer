@@ -92,7 +92,7 @@ export default class RoadmapElement extends React.Component {
     const { text, isDragging, connectDragSource, connectDragPreview, connectDropTarget } = this.props;
     const opacity = isDragging ? 0 : 1;
 
-    return connectDragPreview(connectDropTarget(
+    return connectDragSource(connectDropTarget(
       <div className='ui segment'>
         {this.props.isCreateFormClose &&
           <div>
@@ -107,15 +107,14 @@ export default class RoadmapElement extends React.Component {
             >
               <i className={'big checkmark ' + isCheckmarkGreen + ' icon'}></i>
             </a>
-          </div>
-            <Label basic={true} size='massive' attached='bottom right'>
-              {connectDragSource(
-                <div>
-                  <Icon basic={true} color='grey' name='content' />
-                </div>
-              )}
-            </Label>
-          </div>
+          // </div>
+          //   <Label basic={true} size='massive' attached='bottom right'>
+          //
+          //         <Icon basic={true} color='grey' name='content' />
+          //       </div>
+          //     )}
+          //   </Label>
+          // </div>
         }
         <div className="content">
           <div className="sub header">{this.props.dueDate}</div>
