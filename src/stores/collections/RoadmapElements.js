@@ -39,11 +39,7 @@ class RoadmapElements {
     let fetchAgain = false;
     const tempArray = this.all.map((obj, index) => {
       if (obj.dnd_index !== index) {
-        console.log("Updating index" + index);
-        console.log(obj.dnd_index);
-        console.log(index);
         obj.dnd_index = index;
-        console.log(obj.dnd_index);
         fetchAgain = this.updateNoFetch(obj);
       }
       return obj;
