@@ -2,7 +2,7 @@ class V1::RoadmapElementsController < ApplicationController
 before_action :set_client
 
   def index
-    @roadmap_elements = @client.roadmap_elements
+    @roadmap_elements = @client.roadmap_elements.order('index')
     render json: @roadmap_elements, status: :ok
   end
 
@@ -40,7 +40,7 @@ before_action :set_client
     end
 
     def roadmap_element_params
-      params.require(:roadmap_element).permit(:card_type, :title, :description, :call_to_action, :call_to_action_url, :status)
+      params.require(:roadmap_element).permit(:card_type, :title, :description, :call_to_action, :call_to_action_url, :status, :due_date, :index)
     end
 
 end
