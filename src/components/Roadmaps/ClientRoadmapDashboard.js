@@ -11,12 +11,10 @@ import EditableRoadmapElementsList from './EditableRoadmapElementsList';
 import ToggleableRoadmapElementForm from './ToggleableRoadmapElementForm';
 import ClientHeader from '../Clients/ClientHeader';
 
-// TouchBackend({ enableMouseEvents: true })
-
 const ScrollZone = withScrolling('div');
 
-const linearHorizontalStrength = createHorizontalStrength(150);
-const linearVerticalStrength = createVerticalStrength(150);
+const linearHorizontalStrength = createHorizontalStrength(250);
+const linearVerticalStrength = createVerticalStrength(250);
 
 // this easing function is from https://gist.github.com/gre/1650294 and
 // expects/returns a number between [0, 1], however strength functions
