@@ -25,14 +25,22 @@ export default class ClientList extends Component {
     ));
 
     return (
-      <Grid.Column floated='left' width={8}>
-        <List selection={true} relaxed={true} size='massive'>
-          {clients}
-        </List>
-        <Button size='large' fluid={true} onClick={this.handleNewClientClick} >
-          <Icon size='large' inverted={true} name='plus' />
-        </Button>
-      </Grid.Column>
+      <div>
+        <Grid.Row>
+          <Grid.Column floated='left'>
+            <List selection={true} relaxed={true} size='massive'>
+              {clients}
+            </List>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column floated='left' width={8}>
+            <Button size='large' fluid={true} onClick={this.handleNewClientClick} >
+              <Icon size='large' inverted={true} name='plus' />
+            </Button>
+          </Grid.Column>
+        </Grid.Row>
+      </div>
     );
   }
 }
