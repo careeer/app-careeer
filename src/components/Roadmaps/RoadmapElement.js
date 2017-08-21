@@ -5,12 +5,6 @@ import { findDOMNode } from 'react-dom';
 import { DragSource, DropTarget } from 'react-dnd';
 import ItemTypes from '../Constants/ItemTypes';
 
-window.oncontextmenu = function(event) {
-   event.preventDefault();
-   event.stopPropagation();
-   return false;
-};
-
 const roadmapElementSource = {
   beginDrag(props) {
     return {
