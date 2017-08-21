@@ -56,45 +56,37 @@ class RoadmapElements {
   }
 
   @action async updateNoFetch(element) {
-    this.isLoading = true;
     const response = await Api.put(`${this.path}/${this.currentClientSlug}/${this.roadmap_path}/${element.id}`, element);
     const status = await response.status;
 
     if (status === 200) {
-      this.isLoading = false;
       return true;
     }
   }
 
   @action async update(element) {
-    this.isLoading = true;
     const response = await Api.put(`${this.path}/${this.currentClientSlug}/${this.roadmap_path}/${element.id}`, element);
     const status = await response.status;
 
     if (status === 200) {
-      this.isLoading = false;
       this.fetchAll();
     }
   }
 
   @action async delete(elementId) {
-    this.isLoading = true;
     const response = await Api.delete(`${this.path}/${this.currentClientSlug}/${this.roadmap_path}/${elementId}`);
     const status = await response.status;
 
     if (status === 200) {
-      this.isLoading = false;
       this.fetchAll();
     }
   }
 
   @action async toggleStatus(elementId) {
-    this.isLoading = true;
     const response = await Api.put(`${this.path}/${this.currentClientSlug}/${this.roadmap_path}/${element.id}`, element);
     const status = await response.status;
 
     if (status === 200) {
-      this.isLoading = false;
       this.fetchAll();
     }
   }

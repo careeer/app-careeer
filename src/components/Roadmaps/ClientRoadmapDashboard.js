@@ -1,6 +1,6 @@
 import React from "react";
 import { observer } from 'mobx-react';
-import { Grid, Input } from 'semantic-ui-react';
+import { Grid, Input, Dimmer, Loader } from 'semantic-ui-react';
 
 import { DragDropContext } from 'react-dnd';
 import MultiBackend from 'react-dnd-multi-backend'
@@ -142,6 +142,11 @@ export default class ClientRoadmapDashboard extends React.Component {
     return (
 
       <Grid.Column>
+          { this.props.roadmapElements.isLoading &&
+          <Dimmer active inverted>
+            <Loader size='medium'>Preparing Roadmap...</Loader>
+          </Dimmer>
+          }
         <ScrollZone verticalStrength={vStrength}
       horizontalStrength={hStrength} >
           <ClientHeader
