@@ -4,7 +4,7 @@ import { Grid, Input } from 'semantic-ui-react';
 
 import { DragDropContext } from 'react-dnd';
 import MultiBackend from 'react-dnd-multi-backend'
-import HTML5toTouch from 'react-dnd-multi-backend/lib/HTML5toTouch'
+import HTML5toTouch from 'helpers/HTML5toTouch'
 import withScrolling, { createHorizontalStrength, createVerticalStrength } from 'react-dnd-scrollzone';
 
 import EditableRoadmapElementsList from './EditableRoadmapElementsList';
@@ -144,15 +144,16 @@ export default class ClientRoadmapDashboard extends React.Component {
     return (
 
       <Grid.Column>
-        <ClientHeader
-          disabled={this.props.roadmapElements.isNameInputDisabled}
-          placeholder="enter client's first and last name"
-          name='clientName'
-          value={this.props.roadmapElements.currentClient}
-          onChange={this.handleClientInputChange}
-        />
         <ScrollZone verticalStrength={vStrength}
-        horizontalStrength={hStrength} >
+      horizontalStrength={hStrength} >
+          <ClientHeader
+            disabled={this.props.roadmapElements.isNameInputDisabled}
+            placeholder="enter client's first and last name"
+            name='clientName'
+            value={this.props.roadmapElements.currentClient}
+            onChange={this.handleClientInputChange}
+          />
+
           <EditableRoadmapElementsList
             roadmapElements={this.props.roadmapElements.all.slice()}
             isCreateFormClose={this.state.isCreateFormClose}
