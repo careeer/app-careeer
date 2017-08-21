@@ -5,10 +5,35 @@ import { Grid, Input } from 'semantic-ui-react';
 import { DragDropContext } from 'react-dnd';
 import MultiBackend from 'react-dnd-multi-backend'
 import HTML5toTouch from 'react-dnd-multi-backend/lib/HTML5toTouch'
+import withScrolling, { createHorizontalStrength, createVerticalStrength } from 'react-dnd-scrollzone';
 
 import EditableRoadmapElementsList from './EditableRoadmapElementsList';
 import ToggleableRoadmapElementForm from './ToggleableRoadmapElementForm';
 import ClientHeader from '../Clients/ClientHeader';
+
+// TouchBackend({ enableMouseEvents: true })
+
+const ScrollZone = withScrolling('div');
+
+const linearHorizontalStrength = createHorizontalStrength(150);
+const linearVerticalStrength = createVerticalStrength(150);
+
+// this easing function is from https://gist.github.com/gre/1650294 and
+// expects/returns a number between [0, 1], however strength functions
+// expects/returns a value between [-1, 1]
+function ease(val) {
+  const t = val / 2 + 1;  // [-1, 1] -> [0, 1]
+  const easedT = t<.5 ? 2*t*t : -1+(4-2*t)*t;
+  return easedT * 2 - 1; // [0, 1] -> [-1, 1]
+}
+
+function hStrength(box, point) {
+  return ease(linearHorizontalStrength(box, point));
+}
+
+function vStrength(box, point) {
+  return ease(linearVerticalStrength(box, point));
+}
 
 @DragDropContext(MultiBackend(HTML5toTouch))
 @observer(['roadmapElements'])
@@ -117,6 +142,7 @@ export default class ClientRoadmapDashboard extends React.Component {
 
   render() {
     return (
+
       <Grid.Column>
         <ClientHeader
           disabled={this.props.roadmapElements.isNameInputDisabled}
@@ -125,16 +151,19 @@ export default class ClientRoadmapDashboard extends React.Component {
           value={this.props.roadmapElements.currentClient}
           onChange={this.handleClientInputChange}
         />
-        <EditableRoadmapElementsList
-          roadmapElements={this.props.roadmapElements.all.slice()}
-          isCreateFormClose={this.state.isCreateFormClose}
-          onFormOpen={this.handleEditFormOpen}
-          onFormSubmit={this.handleEditFormSubmit}
-          onDeleteClick={this.handleDeleteForm}
-          toggleElementStatus={this.handleToggleRoadmapElementStatus}
-          handleCreateFormToggle={this.handleCreateFormToggle}
-          handleElementMove={this.handleElementMove}
-        />
+        <ScrollZone verticalStrength={vStrength}
+        horizontalStrength={hStrength} >
+          <EditableRoadmapElementsList
+            roadmapElements={this.props.roadmapElements.all.slice()}
+            isCreateFormClose={this.state.isCreateFormClose}
+            onFormOpen={this.handleEditFormOpen}
+            onFormSubmit={this.handleEditFormSubmit}
+            onDeleteClick={this.handleDeleteForm}
+            toggleElementStatus={this.handleToggleRoadmapElementStatus}
+            handleCreateFormToggle={this.handleCreateFormToggle}
+            handleElementMove={this.handleElementMove}
+          />
+        </ScrollZone>
         { this.state.isToggleableFormVisible &&
           <ToggleableRoadmapElementForm
             onFormSubmit={this.handleCreateFormSubmit}
@@ -142,6 +171,7 @@ export default class ClientRoadmapDashboard extends React.Component {
           />
         }
       </Grid.Column>
+
     );
   }
 }
