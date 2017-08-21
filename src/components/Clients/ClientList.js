@@ -25,7 +25,7 @@ export default class ClientList extends Component {
     ));
 
     return (
-      <Grid.Column floated='left' width={4}>
+      <Grid.Column floated='left' width={8}>
         <List selection={true} relaxed={true} size='massive'>
           {clients}
         </List>
