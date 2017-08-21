@@ -61,6 +61,8 @@ const roadmapElementTarget = {
   },
 };
 
+
+
 @DropTarget(ItemTypes.ROADMAP_ELEMENT, roadmapElementTarget, connect => ({
   connectDropTarget: connect.dropTarget(),
 }))
@@ -71,6 +73,9 @@ const roadmapElementTarget = {
 }))
 export default class RoadmapElement extends React.Component {
 
+  handleContextMenu = (e) => {
+    e.preventDefault();
+  };
 
   handleToggleStatusClick = () => {
     this.props.toggleElementStatus({
@@ -94,7 +99,7 @@ export default class RoadmapElement extends React.Component {
     const opacity = isDragging ? 0 : 1;
 
     return connectDragSource(connectDropTarget(
-      <div className='ui segment'>
+      <div className='ui segment' onContextMenu={this.handleContextMenu}>
         {this.props.isCreateFormClose &&
 
           <div className="ui basic top right attached label">
