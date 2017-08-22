@@ -73,11 +73,6 @@ const roadmapElementTarget = {
 }))
 export default class RoadmapElement extends React.Component {
 
-  handleContextMenu = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-  };
-
   handleToggleStatusClick = () => {
     this.props.toggleElementStatus({
       id: this.props.id,
@@ -100,7 +95,7 @@ export default class RoadmapElement extends React.Component {
     const opacity = isDragging ? 0 : 1;
 
     return connectDragSource(connectDropTarget(
-      <div className='ui segment' onTouchStart={this.handleContextMenu}>
+      <div className='ui segment'>
         {this.props.isCreateFormClose &&
 
           <div className="ui basic top right attached label">
