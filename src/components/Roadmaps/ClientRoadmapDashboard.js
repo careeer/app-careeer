@@ -10,7 +10,6 @@ import withScrolling, { createHorizontalStrength, createVerticalStrength } from 
 import EditableRoadmapElementsList from './EditableRoadmapElementsList';
 import ToggleableRoadmapElementForm from './ToggleableRoadmapElementForm';
 import ClientHeader from '../Clients/ClientHeader';
-import DragPreview from './DragPreview';
 
 const ScrollZone = withScrolling('div');
 
@@ -168,7 +167,6 @@ export default class ClientRoadmapDashboard extends React.Component {
             handleCreateFormToggle={this.handleCreateFormToggle}
             handleElementMove={this.handleElementMove}
           />
-          <DragPreview />
         </ScrollZone>
         { this.state.isToggleableFormVisible &&
           <ToggleableRoadmapElementForm
