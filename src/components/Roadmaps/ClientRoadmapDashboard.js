@@ -1,5 +1,5 @@
 import React from "react";
-import { observer } from 'mobx-react';
+import { inject, observer } from 'mobx-react';
 import { Grid, Input, Dimmer, Loader } from 'semantic-ui-react';
 
 import { DragDropContext } from 'react-dnd';
@@ -34,7 +34,7 @@ function vStrength(box, point) {
 }
 
 @DragDropContext(MultiBackend(HTML5toTouch))
-@observer(['roadmapElements'])
+@inject('roadmapElements') @observer
 export default class ClientRoadmapDashboard extends React.Component {
   componentWillMount() {
     if (this.props.match.params.clientId) {
