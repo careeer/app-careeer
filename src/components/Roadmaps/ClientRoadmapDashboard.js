@@ -38,6 +38,7 @@ function vStrength(box, point) {
 export default class ClientRoadmapDashboard extends React.Component {
   componentWillMount() {
     if (this.props.match.params.clientId) {
+      this.props.roadmapElements.resetClientParams();
       this.props.roadmapElements.getClients();
       this.props.roadmapElements.setClientSlug(this.props.match.params.clientId);
       this.props.roadmapElements.toggleDissableClientNameInput();
