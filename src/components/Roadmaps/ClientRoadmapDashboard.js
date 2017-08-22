@@ -3,6 +3,7 @@ import { observer } from 'mobx-react';
 import { Grid, Input, Dimmer, Loader } from 'semantic-ui-react';
 
 import { DragDropContext } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
 import MultiBackend from 'react-dnd-multi-backend'
 import HTML5toTouch from 'helpers/HTML5toTouch'
 import withScrolling, { createHorizontalStrength, createVerticalStrength } from 'react-dnd-scrollzone';
@@ -33,7 +34,7 @@ function vStrength(box, point) {
   return ease(linearVerticalStrength(box, point));
 }
 
-@DragDropContext(MultiBackend(HTML5toTouch))
+@DragDropContext(HTML5Backend)
 @observer(['roadmapElements'])
 export default class ClientRoadmapDashboard extends React.Component {
   componentWillMount() {
