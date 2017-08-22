@@ -97,17 +97,12 @@ export default class RoadmapElement extends React.Component {
     return connectDragSource(connectDropTarget(
       <div className='ui segment'>
         {this.props.isCreateFormClose &&
-
           <div className="ui basic top right attached label">
-            <a
-              onClick={this.props.onEditClick}
-            >
-              <i className="big write icon"></i>
+            <a onClick={this.props.onEditClick} >
+              <i className="big write icon"/>
             </a>
-            <a
-              onClick={this.handleToggleStatusClick}
-            >
-              <i className={'big checkmark ' + isCheckmarkGreen + ' icon'}></i>
+            <a onClick={this.handleToggleStatusClick} >
+              <i className={'big checkmark ' + isCheckmarkGreen + ' icon'}/>
             </a>
           </div>
         }
