@@ -1,14 +1,6 @@
-<<<<<<< HEAD:lib/helpers/api/index.js
-const endpoint = 'https://blooming-retreat-24874.herokuapp.com';
-// const endpoint = 'https://app-careeer-api.herokuapp.com/';
-||||||| merged common ancestors
-// const endpoint = 'https://blooming-retreat-24874.herokuapp.com';
-const endpoint = 'https://app-careeer-api.herokuapp.com/';
-=======
 const endpoint = process.env.REACT_APP_API;
 // 'https://blooming-retreat-24874.herokuapp.com';
 // const endpoint = 'https://app-careeer-api.herokuapp.com/';
->>>>>>> image-feature:src/stores/helpers/api/index.js
 
 // const endpoint = 'http://localhost:3000';
 

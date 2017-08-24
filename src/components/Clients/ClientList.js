@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { inject, observer } from 'mobx-react';
 import { List, Button, Icon, Input, Grid } from 'semantic-ui-react'
 
-@inject('roadmapElements') @observer
+@inject('roadmapElements')@observer
 export default class ClientList extends Component {
   componentWillMount() {
     this.props.roadmapElements.getClients();

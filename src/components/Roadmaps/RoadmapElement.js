@@ -1,6 +1,5 @@
-import React from "react";
+import React from 'react';
 
-import { Label, Icon } from 'semantic-ui-react'
 import { findDOMNode } from 'react-dom';
 import { DragSource, DropTarget } from 'react-dnd';
 import ItemTypes from '../Constants/ItemTypes';
@@ -72,20 +71,19 @@ const roadmapElementTarget = {
   isDragging: monitor.isDragging(),
 }))
 export default class RoadmapElement extends React.Component {
-
   handleToggleStatusClick = () => {
     this.props.toggleElementStatus({
       id: this.props.id,
       index: this.props.index,
-			title: this.props.title,
+      title: this.props.title,
       dueDate: this.props.dueDate,
-			cardType: this.props.cardType,
+      cardType: this.props.cardType,
       description: this.props.description,
-			callToActionCaption: this.props.callToActionCaption,
+      callToActionCaption: this.props.callToActionCaption,
       callToActionURL: this.props.callToActionURL,
       status: this.props.isStatusComplete,
     });
-	};
+  };
 
   render() {
     const isCheckmarkGreen =
@@ -116,7 +114,7 @@ export default class RoadmapElement extends React.Component {
             {this.props.description}
           </div>
           {this.props.callToActionCaption &&
-            <a href={'https://' + this.props.callToActionURL}
+            <a href={`https://${this.props.callToActionURL}`}
                target='_blank'>
               <div className='ui left bottom green button'>
                 {this.props.callToActionCaption}

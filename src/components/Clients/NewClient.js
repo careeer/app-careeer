@@ -2,7 +2,7 @@ import React from "react";
 import { inject, observer } from 'mobx-react';
 import { Grid, Input } from 'semantic-ui-react'
 
-@inject('roadmapElements') @observer
+@inject('roadmapElements')@observer
 export default class NewClient extends React.Component {
   componentWillMount() {
     this.props.roadmapElements.resetClientParams();
