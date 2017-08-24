@@ -4,6 +4,7 @@ import { Grid } from 'semantic-ui-react';
 import ImageAvatar from './ImageAvatar';
 import ClientName from './ClientName';
 import ImageUpload from './ImageUpload';
+import CareeerVisionInput from './CareeerVisionInput';
 
 const overlayStyle = {
   position: 'absolute',
@@ -20,11 +21,14 @@ class ClientHeader extends Component {
   render() {
     return (
       <Grid.Row>
-        <div style={overlayStyle}>
-          <ImageAvatar avatar={this.props.roadmapElements.currentClientAvatar} />
-          <ClientName name={this.props.value} />
+        <div>
+          <div style={overlayStyle}>
+            <ImageAvatar avatar={this.props.roadmapElements.currentClientAvatar} />
+            <ClientName name={this.props.value} />
+          </div>
+          <ImageUpload />
         </div>
-        <ImageUpload />
+        <CareeerVisionInput />
       </Grid.Row>
     );
   }

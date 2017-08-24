@@ -105,15 +105,15 @@ class RoadmapElements {
     this.checkIndex();
   }
 
-  @action handleClientInputChange = (e, { name, value }) => {
+  @action handleClientInputChange = (e, { value }) => {
     this.setClientName(value);
   }
 
-  @action handleClientVisionChange = (e, { name, value }) => {
+  @action handleClientVisionChange = (e, { value }) => {
     this.setClientVision(value);
   }
 
-  setClientVision = (newVision) => {
+  @action setClientVision = (newVision) => {
     this.currentClientVision = newVision;
   }
 
@@ -171,7 +171,6 @@ class RoadmapElements {
       const json = await response.json();
       this.currentClientAvatar = json.avatar;
       this.currentClientVision = json.vision;
-      // this.currentClientAvatar = await json.avatar;
     }
   }
 
@@ -184,9 +183,7 @@ class RoadmapElements {
     }
   }
 
-  @action async updateClientVision(clientVision) {
-    this.currentClientVision = clientVision;
-
+  @action async updateClientVision() {
     const response = await Api.put(`${this.path}/${this.currentClientSlug}`, this.createClientObject());
     const status = await response.status;
 

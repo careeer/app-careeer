@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 import { inject, observer } from 'mobx-react';
-import { Grid, Input } from 'semantic-ui-react'
+import { Grid, Input } from 'semantic-ui-react';
 
 @inject('roadmapElements')@observer
 export default class NewClient extends React.Component {
@@ -9,7 +9,7 @@ export default class NewClient extends React.Component {
   }
 
   handleKeyPress = (event) => {
-    if (event.key == 'Enter' && this.props.roadmapElements.currentClient) {
+    if (event.key === 'Enter' && this.props.roadmapElements.currentClient) {
       this.props.roadmapElements.createClient();
     }
   }
@@ -21,10 +21,11 @@ export default class NewClient extends React.Component {
     return (
       <Grid.Column>
         <Input
-          transparent={true}
-          fluid={true}
-          placeholder="enter client's first and last name" onKeyPress={this.handleKeyPress}
-          name='clientName'
+          transparent
+          fluid
+          placeholder="enter client's first and last name"
+          onKeyPress={this.handleKeyPress}
+          name="clientName"
           value={this.props.roadmapElements.currentClient || ''}
           onChange={this.props.roadmapElements.handleClientInputChange}
         />
