@@ -1,11 +1,21 @@
+<<<<<<< HEAD
 import React from "react";
 import { inject, observer } from 'mobx-react';
 import { Grid, Input, Dimmer, Loader } from 'semantic-ui-react';
+||||||| merged common ancestors
+import React from "react";
+import { observer } from 'mobx-react';
+import { Grid, Input, Dimmer, Loader } from 'semantic-ui-react';
+=======
+import React from 'react';
+import { inject, observer } from 'mobx-react';
+import { Grid, Dimmer, Loader } from 'semantic-ui-react';
+>>>>>>> image-feature
 
 import { DragDropContext } from 'react-dnd';
-import MultiBackend from 'react-dnd-multi-backend'
-import HTML5toTouch from 'helpers/HTML5toTouch'
+import MultiBackend from 'react-dnd-multi-backend';
 import withScrolling, { createHorizontalStrength, createVerticalStrength } from 'react-dnd-scrollzone';
+import HTML5toTouch from '../../stores/helpers/HTML5toTouch';
 
 import EditableRoadmapElementsList from './EditableRoadmapElementsList';
 import ToggleableRoadmapElementForm from './ToggleableRoadmapElementForm';
@@ -34,8 +44,19 @@ function vStrength(box, point) {
 }
 
 @DragDropContext(MultiBackend(HTML5toTouch))
+<<<<<<< HEAD
 @inject('roadmapElements') @observer
+||||||| merged common ancestors
+@observer(['roadmapElements'])
+=======
+@inject('roadmapElements')@observer
+>>>>>>> image-feature
 export default class ClientRoadmapDashboard extends React.Component {
+  state = {
+    isCreateFormClose: true,
+    isToggleableFormVisible: true,
+  };
+
   componentWillMount() {
     if (this.props.match.params.clientId) {
       this.props.roadmapElements.resetClientParams();
@@ -45,11 +66,6 @@ export default class ClientRoadmapDashboard extends React.Component {
       this.props.roadmapElements.fetchAll();
     }
   }
-
-  state = {
-    isCreateFormClose: true,
-    isToggleableFormVisible: true,
-  };
 
   handleCreateFormToggle = () => {
     this.setState({
