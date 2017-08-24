@@ -1,5 +1,6 @@
-// const endpoint = 'https://blooming-retreat-24874.herokuapp.com';
-const endpoint = 'https://app-careeer-api.herokuapp.com/';
+const endpoint = process.env.REACT_APP_API;
+// 'https://blooming-retreat-24874.herokuapp.com';
+// const endpoint = 'https://app-careeer-api.herokuapp.com/';
 
 // const endpoint = 'http://localhost:3000';
 

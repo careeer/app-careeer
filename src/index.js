@@ -12,7 +12,10 @@ import Show from './components/Show';
 import ScrollToTop from './components/ScrollToTop'
 
 render(
-  <Provider roadmapElements={stores.roadmapElements}>
+  <Provider
+    roadmapElements={stores.roadmapElements}
+    headerStore={stores.headerStore}
+  >
     <BrowserRouter>
       <ScrollToTop>
         <Show/>

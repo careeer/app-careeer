@@ -1,7 +1,9 @@
 import roadmapElements from './collections/RoadmapElements';
+import headerStore from './collections/HeaderStore';
 
-  const stores = {
-    roadmapElements,
-  };
+const stores = {
+  roadmapElements,
+  headerStore,
+};
 
-  export default stores;
+export default stores;

@@ -19,7 +19,7 @@
 .eslintrc.json
 .stylelintrc
 .stylelintrc.json
-
+.env
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
