@@ -1,5 +1,4 @@
 import React from 'react';
-import { inject, observer } from 'mobx-react';
 import { Input } from 'semantic-ui-react';
 
 const visionStyle = {
@@ -10,18 +9,9 @@ const visionStyle = {
   color: '#919191',
 };
 
-@inject('roadmapElements')@observer
-export default class NewClient extends React.Component {
-  state = {
-    key: '',
-  };
-
-  handleKeyPress = (event) => {
-    console.log(event.key);
-    this.setState({ key: event.key });
-    if (event.key === 'Enter' && this.props.roadmapElements.currentClientVision) {
-      this.props.roadmapElements.updateClientVision();
-    }
+export default class CareeerVisionInput extends React.Component {
+  handlePress = (event) => {
+    this.props.handleKeyPress(event);
   }
 
   render() {
@@ -30,14 +20,15 @@ export default class NewClient extends React.Component {
         style={visionStyle}
         maxLength="160"
         transparent
-        focus
         fluid
+        onKeyDown={this.handlePress}
         placeholder="what career goal are you focused on achieving? ex: interaction designer at airbnb"
-        onKeyPress={this.handleKeyPress}
-        value={this.props.roadmapElements.currentClientVision || ''}
-        onChange={this.props.roadmapElements.handleClientVisionChange}
+        value={this.props.vision || ''}
+        onChange={this.props.changeVision}
       >
-        <input style={visionStyle} />
+        <input
+          style={visionStyle}
+        />
       </Input>
     );
   }

@@ -49,7 +49,8 @@ class ImageUpload extends Component {
         throw err;
       }
       const uploaded = resp.body;
-      this.props.saveAvatarUrl(uploaded.secure_url);
+      const transformedUrl = uploaded.secure_url.replace(`v${uploaded.version}`, 'c_fill,g_face,h_100,w_100');
+      this.props.saveAvatarUrl(transformedUrl);
     });
   }
 
