@@ -184,22 +184,12 @@ class RoadmapElements {
   }
 
   @action async updateClientVision() {
-    const response = await Api.put(`${this.path}/${this.currentClientSlug}`, this.createClientObject());
-    const status = await response.status;
-
-    if (status !== 200) {
-      // empty
-    }
+    this.updateClient();
   }
 
   @action async updateClientAvatar(clientAvatar) {
     this.currentClientAvatar = clientAvatar;
-    const response = await Api.put(`${this.path}/${this.currentClientSlug}`, this.createClientObject());
-    const status = await response.status;
-
-    if (status === 200) {
-      // empty
-    }
+    this.updateClient();
   }
 
   createClientObject() {

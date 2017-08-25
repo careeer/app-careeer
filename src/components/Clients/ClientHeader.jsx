@@ -12,6 +12,14 @@ const overlayStyle = {
 
 @inject('roadmapElements')@observer
 class ClientHeader extends Component {
+  handleAvatarSave = (avatarUrl) => {
+    this.saveAvatar(avatarUrl);
+  };
+
+  saveAvatar = (avatarUrl) => {
+    this.props.roadmapElements.updateClientAvatar(avatarUrl);
+  };
+
   render() {
     return (
       <Grid.Row>
@@ -20,7 +28,7 @@ class ClientHeader extends Component {
             <ImageAvatar avatar={this.props.roadmapElements.currentClientAvatar} />
             <ClientName name={this.props.value} />
           </div>
-          <ImageUpload saveAvatarUrl={this.props.roadmapElements.updateClientAvatar} />
+          <ImageUpload saveAvatarUrl={this.handleAvatarSave} />
         </div>
         <CareeerVisionInput />
       </Grid.Row>
