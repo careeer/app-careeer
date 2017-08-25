@@ -34,7 +34,7 @@ export default class NewClient extends React.Component {
         fluid
         placeholder="what career goal are you focused on achieving? ex: interaction designer at airbnb"
         onKeyPress={this.handleKeyPress}
-        value={`${this.props.roadmapElements.currentClientVision} Key: ${this.state.key}` || ''}
+        value={this.props.roadmapElements.currentClientVision || ''}
         onChange={this.props.roadmapElements.handleClientVisionChange}
       >
         <input style={visionStyle} />
