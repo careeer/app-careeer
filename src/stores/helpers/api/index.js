@@ -1,8 +1,4 @@
 const endpoint = process.env.REACT_APP_API;
-// 'https://blooming-retreat-24874.herokuapp.com';
-// const endpoint = 'https://app-careeer-api.herokuapp.com/';
-
-// const endpoint = 'http://localhost:3000';
 
 const headers = () => {
   const h = new Headers();
