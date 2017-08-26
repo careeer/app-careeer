@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { Input } from 'semantic-ui-react';
 
 const visionStyle = {
-  marginTop: '5px',
   height: '30px',
   fontFamily: 'Cabin',
   fontSize: '18px',
