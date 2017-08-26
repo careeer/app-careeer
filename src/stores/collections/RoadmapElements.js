@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { observable, action } from 'mobx';
 import Api from '../helpers/api';
 
@@ -14,6 +13,8 @@ class RoadmapElements {
   @observable currentClientVision = '';
   @observable clients = [];
   @observable isNameInputDisabled = false;
+  @observable isCreateFormClose = true;
+  @observable isToggleableFormVisible = true;
 
   @action resetClientParams() {
     this.hasClientName = false;
@@ -22,6 +23,8 @@ class RoadmapElements {
     this.currentClientAvatar = '';
     this.currentClientVision = '';
     this.isNameInputDisabled = false;
+    this.isCreateFormClose = true;
+    this.isToggleableFormVisible = true;
   }
 
   @action async fetchAll() {
@@ -42,7 +45,7 @@ class RoadmapElements {
 
   @action checkIndex() {
     let fetchAgain = false;
-    const tempArray = this.all.map((obj, index) => {
+    this.all.map((obj, index) => {
       if (obj.dnd_index !== index) {
         obj.dnd_index = index;
         fetchAgain = this.updateNoFetch(obj);
@@ -205,6 +208,14 @@ class RoadmapElements {
 
   @action toggleDissableClientNameInput() {
     this.isNameInputDisabled = !this.isNameInputDisabled;
+  }
+
+  @action toggleCreateForm() {
+    this.isCreateFormClose = !this.isCreateFormClose;
+  }
+
+  @action togglePlusButton() {
+    this.isToggleableFormVisible = !this.isToggleableFormVisible;
   }
 }
 

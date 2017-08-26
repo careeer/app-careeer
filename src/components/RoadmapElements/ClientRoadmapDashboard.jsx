@@ -37,11 +37,6 @@ function vStrength(box, point) {
 @DragDropContext(MultiBackend(HTML5toTouch))
 @inject('roadmapElements')@observer
 export default class ClientRoadmapDashboard extends React.Component {
-  state = {
-    isCreateFormClose: true,
-    isToggleableFormVisible: true,
-  };
-
   componentWillMount() {
     if (this.props.match.params.clientId) {
       this.props.roadmapElements.resetClientParams();
@@ -51,21 +46,12 @@ export default class ClientRoadmapDashboard extends React.Component {
       this.props.roadmapElements.fetchAll();
     }
   }
-
-  handleCreateFormToggle = () => {
-    this.setState({
-      isCreateFormClose: !this.state.isCreateFormClose
-    });
-  };
+  componentWillUnmount() {
+    this.props.roadmapElements.resetClientParams();
+  }
 
   handleCreateFormSubmit = (roadmapElement) => {
     this.createRoadmapElement(roadmapElement);
-  }
-
-  handleEditFormOpen = () => {
-    this.setState({
-      isToggleableFormVisible: !this.state.isToggleableFormVisible
-    });
   }
 
   handleEditFormSubmit = (attrs) => {
@@ -135,9 +121,12 @@ export default class ClientRoadmapDashboard extends React.Component {
   handleElementMove = (dragIndex, hoverIndex) => {
     this.props.roadmapElements.moveRoadmapElement(dragIndex, hoverIndex);
   }
+  handleCreateFormToggle = () => {
+    this.props.roadmapElements.toggleCreateForm();
+  }
 
-  handleClientInputChange = () => {
-    this.props.roadmapElements.handleClientInputChange();
+  handleEditFormOpen = () => {
+    this.props.roadmapElements.togglePlusButton();
   }
 
   render() {
@@ -145,8 +134,14 @@ export default class ClientRoadmapDashboard extends React.Component {
 
       <Grid.Column>
         { this.props.roadmapElements.isLoading &&
-          <Dimmer active inverted>
-            <Loader size="medium">Preparing Roadmap...</Loader>
+          <Dimmer
+            active
+            page
+            inverted
+          >
+            <Loader size="medium">
+              Preparing Roadmap...
+            </Loader>
           </Dimmer>
         }
         <ScrollZone
@@ -158,12 +153,11 @@ export default class ClientRoadmapDashboard extends React.Component {
             placeholder="enter client's first and last name"
             name="clientName"
             value={this.props.roadmapElements.currentClient}
-            onChange={this.handleClientInputChange}
           />
 
           <EditableRoadmapElementsList
             roadmapElements={this.props.roadmapElements.all.slice()}
-            isCreateFormClose={this.state.isCreateFormClose}
+            isCreateFormClose={this.props.roadmapElements.isCreateFormClose}
             onFormOpen={this.handleEditFormOpen}
             onFormSubmit={this.handleEditFormSubmit}
             onDeleteClick={this.handleDeleteForm}
@@ -172,7 +166,7 @@ export default class ClientRoadmapDashboard extends React.Component {
             handleElementMove={this.handleElementMove}
           />
         </ScrollZone>
-        { this.state.isToggleableFormVisible &&
+        { this.props.roadmapElements.isToggleableFormVisible &&
           <ToggleableRoadmapElementForm
             onFormSubmit={this.handleCreateFormSubmit}
             handleCreateFormToggle={this.handleCreateFormToggle}
