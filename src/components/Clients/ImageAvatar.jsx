@@ -9,6 +9,7 @@ const avatarStyle = {
   borderRadius: '50%',
   textAlign: 'center',
   lineHeight: '32px',
+  lineWidth: '32px'
 };
 
 @inject('headerStore') @observer

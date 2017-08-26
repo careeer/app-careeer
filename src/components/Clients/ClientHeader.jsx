@@ -8,6 +8,9 @@ import ImageUpload from './ImageUpload';
 
 const overlayStyle = {
   position: 'absolute',
+  marginRight: '15px',
+  width: '60px',
+  height: '60px',
 };
 
 @inject('roadmapElements', 'headerStore')@observer
