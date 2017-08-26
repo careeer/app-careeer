@@ -1,3 +1,10 @@
+.ui.grid {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    margin-left: 0rem;
+    margin-right: 0rem;
+}
+
 div.ui.fluid.transparent.input {
   border-color: transparent!important;
   background-color: transparent!important;
