@@ -5,7 +5,7 @@ import { Grid } from 'semantic-ui-react';
 import ImageAvatar from './ImageAvatar';
 import ClientName from './ClientName';
 import ImageUpload from './ImageUpload';
-
+import './RoadmapHeader.css';
 
 const overlayStyle = {
   position: 'absolute',
