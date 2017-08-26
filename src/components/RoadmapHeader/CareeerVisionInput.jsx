@@ -5,7 +5,7 @@ import { Input } from 'semantic-ui-react';
 
 const visionStyle = {
   marginTop: '5px',
-  height: '22px',
+  height: '30px',
   fontFamily: 'Cabin',
   fontSize: '18px',
   letterSpacing: '2.3px',
