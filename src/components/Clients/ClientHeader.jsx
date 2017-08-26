@@ -31,7 +31,7 @@ class ClientHeader extends Component {
 
   render() {
     return (
-      <Grid columns={2}>
+      <Grid doubling columns={2}>
         <Grid.Column width={1}>
           <div style={overlayStyle}>
             <ImageAvatar
