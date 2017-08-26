@@ -3,10 +3,10 @@ import { Grid } from 'semantic-ui-react';
 
 import { Switch, Route } from 'react-router-dom';
 
-import ClientRoadmapDashboard from './Roadmaps/ClientRoadmapDashboard';
+import ClientRoadmapDashboard from './RoadmapElements/ClientRoadmapDashboard';
 import ClientList from './Clients/ClientList';
 import NewClientInput from './Clients/NewClientInput';
-import RedirectToCareeer from './RedirectToCareeer';
+import RedirectToCareeer from './Helper/RedirectToCareeer';
 
 import './Show.css';
 

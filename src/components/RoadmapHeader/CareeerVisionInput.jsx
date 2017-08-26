@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Input } from 'semantic-ui-react';
 
 const visionStyle = {
@@ -11,6 +12,12 @@ const visionStyle = {
 };
 
 export default class CareeerVisionInput extends React.Component {
+  static propTypes = {
+    handleKeyPress: PropTypes.func.isRequired,
+    changeVision: PropTypes.func.isRequired,
+    vision: PropTypes.string,
+  }
+
   handlePress = (event) => {
     this.props.handleKeyPress(event);
   }

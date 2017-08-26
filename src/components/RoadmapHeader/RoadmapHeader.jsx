@@ -14,7 +14,7 @@ const overlayStyle = {
 };
 
 @inject('roadmapElements', 'headerStore')@observer
-class ClientHeader extends Component {
+class RoadmapHeader extends Component {
   handleAvatarSave = (avatarUrl) => {
     this.saveAvatar(avatarUrl);
   };
@@ -53,4 +53,4 @@ class ClientHeader extends Component {
   }
 }
 
-export default ClientHeader;
+export default RoadmapHeader;
