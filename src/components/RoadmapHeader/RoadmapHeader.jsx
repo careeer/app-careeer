@@ -40,7 +40,11 @@ class RoadmapHeader extends Component {
           </div>
           <ImageUpload saveAvatarUrl={this.handleAvatarSave} />
         </Grid.Column>
-        <Grid.Column width={15} verticalAlign='middle' style={{ paddingTop: '8px', paddingLeft: '0', }}>
+        <Grid.Column
+          width={15}
+          verticalAlign="middle"
+          style={{ paddingTop: '8px', paddingLeft: '0' }}
+        >
           <ClientName
             vision={this.props.roadmapElements.currentClientVision}
             changeVision={this.props.roadmapElements.handleClientVisionChange}
