@@ -2,6 +2,7 @@ import React from 'react';
 import { Input } from 'semantic-ui-react';
 
 const visionStyle = {
+  marginTop: '5px',
   height: '22px',
   fontFamily: 'Cabin',
   fontSize: '18px',

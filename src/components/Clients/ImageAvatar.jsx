@@ -4,8 +4,8 @@ import { Image } from 'semantic-ui-react';
 
 const avatarStyle = {
   marginRight: '15px',
-  width: '32px',
-  height: '32px',
+  width: '60px',
+  height: '60px',
   borderRadius: '50%',
   textAlign: 'center',
   lineHeight: '32px',

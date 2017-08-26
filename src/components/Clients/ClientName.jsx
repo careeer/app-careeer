@@ -1,4 +1,5 @@
 import React from 'react';
+import CareeerVisionInput from './CareeerVisionInput';
 
 const nameStyle = {
   verticalAlign: 'middle',
@@ -11,9 +12,14 @@ const nameStyle = {
 };
 
 const ClientName = props => (
-  <span style={nameStyle}>
+  <div style={nameStyle}>
     {props.name}
-  </span>
+    <CareeerVisionInput
+      vision={props.vision}
+      changeVision={props.changeVision}
+      handleKeyPress={props.handleKeyPress}
+    />
+  </div>
 );
 
 export default ClientName;
