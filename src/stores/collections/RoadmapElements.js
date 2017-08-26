@@ -43,22 +43,23 @@ class RoadmapElements {
     }
   }
 
-  @action checkIndex() {
-    let fetchAgain = false;
-    this.all.map((obj, index) => {
-      if (obj.dnd_index !== index) {
-        obj.dnd_index = index;
-        fetchAgain = this.updateNoFetch(obj);
-      }
-      return obj;
-    });
-    return fetchAgain;
-  }
   @action async create(data) {
-    const response = await Api.post(`${this.path}/${this.currentClientSlug}/${this.roadmapPath}`, data);
+    const element = this.createRoadmapElementObject(data);
+    element.dnd_index = this.all.length;
+    const response = await Api.post(`${this.path}/${this.currentClientSlug}/${this.roadmapPath}`, element);
     const status = await response.status;
 
     if (status === 201) {
+      this.fetchAll();
+    }
+  }
+
+  @action async update(data) {
+    const element = this.createRoadmapElementObject(data);
+    element.id = data.id;
+    const response = await Api.put(`${this.path}/${this.currentClientSlug}/${this.roadmapPath}/${element.id}`, element);
+    const status = await response.status;
+    if (status === 200) {
       this.fetchAll();
     }
   }
@@ -73,25 +74,8 @@ class RoadmapElements {
     return false;
   }
 
-  @action async update(element) {
-    const response = await Api.put(`${this.path}/${this.currentClientSlug}/${this.roadmapPath}/${element.id}`, element);
-    const status = await response.status;
-    if (status === 200) {
-      this.fetchAll();
-    }
-  }
-
   @action async delete(elementId) {
     const response = await Api.delete(`${this.path}/${this.currentClientSlug}/${this.roadmapPath}/${elementId}`);
-    const status = await response.status;
-
-    if (status === 200) {
-      this.fetchAll();
-    }
-  }
-
-  @action async toggleStatus(element) {
-    const response = await Api.put(`${this.path}/${this.currentClientSlug}/${this.roadmapPath}/${element.id}`, element);
     const status = await response.status;
 
     if (status === 200) {
@@ -107,6 +91,31 @@ class RoadmapElements {
     newcards.splice(hoverIndex, 0, dragCard); // inserting it into hoverIndex.
 
     this.checkIndex();
+  }
+
+  @action checkIndex() {
+    let fetchAgain = false;
+    this.all.map((obj, index) => {
+      if (obj.dnd_index !== index) {
+        obj.dnd_index = index;
+        fetchAgain = this.updateNoFetch(obj);
+      }
+      return obj;
+    });
+    return fetchAgain;
+  }
+
+  createRoadmapElementObject(attrs) {
+    return {
+      due_date: attrs.dueDate,
+      card_type: attrs.cardType,
+      title: attrs.title,
+      description: attrs.description,
+      call_to_action: attrs.callToActionCaption,
+      call_to_action_url: attrs.callToActionURL,
+      status: attrs.status,
+      name: this.currentClient,
+    };
   }
 
   @action handleClientInputChange = (e, { value }) => {

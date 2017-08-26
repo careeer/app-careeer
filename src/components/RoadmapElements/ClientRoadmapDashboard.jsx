@@ -38,10 +38,11 @@ function vStrength(box, point) {
 @inject('roadmapElements')@observer
 export default class ClientRoadmapDashboard extends React.Component {
   componentWillMount() {
-    if (this.props.match.params.clientId) {
+    const client = this.props.match.params.clientId;
+    if (client) {
       this.props.roadmapElements.resetClientParams();
       this.props.roadmapElements.getClients();
-      this.props.roadmapElements.setClientSlug(this.props.match.params.clientId);
+      this.props.roadmapElements.setClientSlug(client);
       this.props.roadmapElements.toggleDissableClientNameInput();
       this.props.roadmapElements.fetchAll();
     }
@@ -67,51 +68,16 @@ export default class ClientRoadmapDashboard extends React.Component {
   };
 
   createRoadmapElement = (roadmapElement) => {
-    const element = {
-      dnd_index: this.props.roadmapElements.all.length,
-      due_date: roadmapElement.dueDate,
-      card_type: roadmapElement.cardType,
-      title: roadmapElement.title,
-      description: roadmapElement.description,
-      call_to_action: roadmapElement.callToActionCaption,
-      call_to_action_url: roadmapElement.callToActionURL,
-      status: roadmapElement.status,
-      name: this.props.roadmapElements.currentClient,
-    };
-    this.props.roadmapElements.create(element);
+    this.props.roadmapElements.create(roadmapElement);
   };
 
-  updateRoadmapElement = (attrs) => {
-    const element = {
-      id: attrs.id,
-      dnd_index: attrs.index,
-      due_date: attrs.dueDate,
-      card_type: attrs.cardType,
-      title: attrs.title,
-      description: attrs.description,
-      call_to_action: attrs.callToActionCaption,
-      call_to_action_url: attrs.callToActionURL,
-      status: attrs.status,
-      name: this.props.roadmapElements.currentClient,
-    };
-
-    this.props.roadmapElements.update(element);
+  updateRoadmapElement = (roadmapElement) => {
+    this.props.roadmapElements.update(roadmapElement);
   };
 
-  toggleRoadmapElementStatus = (attrs) => {
-    const element = {
-      id: attrs.id,
-      dnd_index: attrs.index,
-      due_date: attrs.dueDate,
-      card_type: attrs.cardType,
-      title: attrs.title,
-      description: attrs.description,
-      call_to_action: attrs.callToActionCaption,
-      call_to_action_url: attrs.callToActionURL,
-      status: !attrs.status,
-      name: this.props.roadmapElements.currentClient,
-    };
-    this.props.roadmapElements.update(element);
+  toggleRoadmapElementStatus = (roadmapElement) => {
+    roadmapElement.status = !roadmapElement.status;
+    this.props.roadmapElements.update(roadmapElement);
   };
 
   deleteRoadmapElement = (roadmapElementId) => {
@@ -121,6 +87,7 @@ export default class ClientRoadmapDashboard extends React.Component {
   handleElementMove = (dragIndex, hoverIndex) => {
     this.props.roadmapElements.moveRoadmapElement(dragIndex, hoverIndex);
   }
+
   handleCreateFormToggle = () => {
     this.props.roadmapElements.toggleCreateForm();
   }
@@ -131,7 +98,6 @@ export default class ClientRoadmapDashboard extends React.Component {
 
   render() {
     return (
-
       <Grid.Column>
         { this.props.roadmapElements.isLoading &&
           <Dimmer
@@ -173,7 +139,6 @@ export default class ClientRoadmapDashboard extends React.Component {
           />
         }
       </Grid.Column>
-
     );
   }
 }
