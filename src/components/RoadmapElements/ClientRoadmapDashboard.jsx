@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import { inject, observer } from 'mobx-react';
 import { Grid, Dimmer, Loader } from 'semantic-ui-react';

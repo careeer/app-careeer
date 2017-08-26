@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import { inject, observer } from 'mobx-react';
 import { Grid, Input } from 'semantic-ui-react';
