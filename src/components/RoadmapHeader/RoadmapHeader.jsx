@@ -33,7 +33,7 @@ class RoadmapHeader extends Component {
   render() {
     return (
       <Grid doubling columns={2}>
-        <Grid.Column width={1}>
+        <Grid.Column style={{ width: '80px' }}>
           <div style={overlayStyle}>
             <ImageAvatar
               avatar={this.props.roadmapElements.currentClientAvatar}
@@ -42,7 +42,6 @@ class RoadmapHeader extends Component {
           <ImageUpload saveAvatarUrl={this.handleAvatarSave} />
         </Grid.Column>
         <Grid.Column
-          width={15}
           verticalAlign="middle"
           style={{ paddingTop: '8px', paddingLeft: '0' }}
         >
