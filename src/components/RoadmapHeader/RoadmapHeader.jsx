@@ -5,7 +5,6 @@ import { Grid } from 'semantic-ui-react';
 import ImageAvatar from './ImageAvatar';
 import ClientName from './ClientName';
 import ImageUpload from './ImageUpload';
-import './RoadmapHeader.css';
 
 const overlayStyle = {
   position: 'absolute',
@@ -14,8 +13,22 @@ const overlayStyle = {
   height: '60px',
 };
 
+const columnStyle = {
+  width: '70px',
+  paddingLeft: '2px',
+};
+
+const nameVisionColumnStyle = {
+  paddingTop: '14px',
+  paddingLeft: '0',
+  width: '90%',
+}
 @inject('roadmapElements', 'headerStore')@observer
 class RoadmapHeader extends Component {
+  state = {
+    openInputForm: false,
+  }
+
   handleAvatarSave = (avatarUrl) => {
     this.saveAvatar(avatarUrl);
   };
@@ -25,15 +38,24 @@ class RoadmapHeader extends Component {
   };
 
   handleKeyPress = (event) => {
-    if (event.key === 'Enter' && this.props.roadmapElements.currentClientVision) {
+    if (event.key === 'Enter') {
       this.props.roadmapElements.updateClientVision();
+      this.setState({
+        openInputForm: false,
+      });
     }
+  }
+
+  handleLabelClick = (event) => {
+    this.setState({
+      openInputForm: true,
+    });
   }
 
   render() {
     return (
       <Grid doubling columns={2}>
-        <Grid.Column style={{ width: '80px' }}>
+        <Grid.Column style={columnStyle}>
           <div style={overlayStyle}>
             <ImageAvatar
               avatar={this.props.roadmapElements.currentClientAvatar}
@@ -43,13 +65,15 @@ class RoadmapHeader extends Component {
         </Grid.Column>
         <Grid.Column
           verticalAlign="middle"
-          style={{ paddingTop: '8px', paddingLeft: '0' }}
+          style={nameVisionColumnStyle}
         >
           <ClientName
             vision={this.props.roadmapElements.currentClientVision}
             changeVision={this.props.roadmapElements.handleClientVisionChange}
             handleKeyPress={this.handleKeyPress}
             name={this.props.value}
+            handleLabelClick={this.handleLabelClick}
+            openInputForm={this.state.openInputForm}
           />
         </Grid.Column>
       </Grid>

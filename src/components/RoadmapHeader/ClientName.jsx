@@ -4,12 +4,11 @@ import CareeerVisionInput from './CareeerVisionInput';
 
 const nameStyle = {
   verticalAlign: 'middle',
-  width: '352px',
-  height: '33px',
   fontFamily: 'Raleway',
   fontSize: '28px',
   letterSpacing: '3.5px',
   color: '#333',
+  paddingTop: '8px',
 };
 
 const ClientName = props => (
@@ -19,6 +18,8 @@ const ClientName = props => (
       vision={props.vision}
       changeVision={props.changeVision}
       handleKeyPress={props.handleKeyPress}
+      handleLabelClick={props.handleLabelClick}
+      openInputForm={props.openInputForm}
     />
   </div>
 );

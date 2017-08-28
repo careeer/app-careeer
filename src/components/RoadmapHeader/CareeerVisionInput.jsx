@@ -1,14 +1,17 @@
 /* eslint-disable */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Input } from 'semantic-ui-react';
+import { Input, Label } from 'semantic-ui-react';
 
 const visionStyle = {
-  height: '30px',
   fontFamily: 'Cabin',
   fontSize: '18px',
   letterSpacing: '2.3px',
   color: '#919191',
+  backgroundColor: 'transparent',
+  paddingLeft: '0',
+  marginBottom: '0',
+  paddingTop: '8px',
 };
 
 export default class CareeerVisionInput extends React.Component {
@@ -22,22 +25,55 @@ export default class CareeerVisionInput extends React.Component {
     this.props.handleKeyPress(event);
   }
 
+  handleClick = (event) => {
+    this.props.handleLabelClick(event);
+  }
+  
+  moveCaretAtEnd(e) {
+    var temp_value = e.target.value
+    e.target.value = ''
+    e.target.value = temp_value
+  }
+
   render() {
-    return (
-      <Input
-        style={visionStyle}
-        maxLength="160"
-        transparent
-        fluid
-        onKeyDown={this.handlePress}
-        placeholder="what career goal are you focused on achieving? ex: interaction designer at airbnb"
-        value={this.props.vision || ''}
-        onChange={this.props.changeVision}
-      >
-        <input
+    if (this.props.openInputForm) {
+      return (
+        <Input
           style={visionStyle}
+          transparent
+          tabIndex={-1}
+          focus
+          fluid
+          onKeyDown={this.handlePress}
+          value={this.props.vision || ''}
+          onChange={this.props.changeVision}
+        >
+          <input
+            autoFocus
+            onFocus={this.moveCaretAtEnd}
+            style={visionStyle}
+          />
+        </Input>
+      );
+    }
+    let visionLabelStyle = Object.assign({}, visionStyle);
+    if (!this.props.vision) {
+      visionLabelStyle.color = '#cecbcb';
+      visionLabelStyle.paddingTop = '8px';
+      visionLabelStyle.paddingBottom = '5px';
+    } else {
+      visionLabelStyle.color = '#919191';
+      visionLabelStyle.paddingTop = '10px';
+      visionLabelStyle.paddingBottom = '5px';
+    }
+    return (
+      <div>
+        <Label
+          style={visionLabelStyle}
+          content={this.props.vision || "what career goal are you focused on achieving? ex: interaction designer at airbnb"}
+          onClick={this.handleClick}
         />
-      </Input>
+      </div>
     );
   }
 }
