@@ -7,11 +7,11 @@ import Dropzone from 'react-dropzone';
 
 const dropStyle = {
   marginRight: '15px',
-  width: '59px',
-  height: '59px',
+  width: '58px',
+  height: '58px',
   borderWidth: '1px',
   borderColor: '#919191',
-  borderStyle: 'dashed',
+  borderStyle: 'none',
   borderRadius: '50%',
   textAlign: 'center',
   lineHeight: '32px',
