@@ -97,6 +97,9 @@ export default class RoadmapElementForm extends React.Component {
     if (this.props.color || this.state.color) {
       segmentColor = COLOR[this.state.color];
     }
+
+    const primaryButton = (this.props.index === 0) ? '' : 'basic';
+
     return (
       <div className="content">
         <Segment
@@ -191,7 +194,9 @@ export default class RoadmapElementForm extends React.Component {
               />
             </Form.Group>
             {this.state.callToActionCaption &&
-              <div className="ui left bottom green disabled button">
+              <div
+                className={`ui left bottom green ${primaryButton} disabled button`}
+              >
                 {this.state.callToActionCaption}
               </div>
             }
