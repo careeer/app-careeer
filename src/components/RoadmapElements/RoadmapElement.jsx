@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React from 'react';
-
+import { Segment } from 'semantic-ui-react';
 import { findDOMNode } from 'react-dom';
 import { DragSource, DropTarget } from 'react-dnd';
 import ItemTypes from '../Constants/ItemTypes';
@@ -72,6 +72,7 @@ export default class RoadmapElement extends React.Component {
     this.props.toggleElementStatus({
       id: this.props.id,
       index: this.props.index,
+      color: this.props.color,
       title: this.props.title,
       dueDate: this.props.dueDate,
       cardType: this.props.cardType,
@@ -89,38 +90,55 @@ export default class RoadmapElement extends React.Component {
     const { connectDragSource } = this.props;
     const { connectDropTarget } = this.props;
 
+    const COLOR = {
+      '#6435c9': 'violet',
+      '#e03997': 'pink',
+      '#00b5ad': 'teal',
+      '#fbbd08': 'yellow',
+      transparent: null,
+    };
+    let segmentColor = null;
+    if (this.props.color) {
+      segmentColor = COLOR[this.props.color];
+    }
+
     return connectDragSource(connectDropTarget(
-      <div className="ui segment">
-        {this.props.isCreateFormClose &&
-          <div className="ui basic top right attached label">
-            <a onClick={this.props.onEditClick}>
-              <i className="big write icon" />
-            </a>
-            <a onClick={this.handleToggleStatusClick}>
-              <i className={`big checkmark ${isCheckmarkGreen} icon`} />
-            </a>
-          </div>
-        }
-        <div className="content">
-          <div className="sub header">{this.props.dueDate}</div>
-          <div className="sub header">{this.props.cardType}</div>
-          <h2 className="ui large header">
-            {this.props.title}
-          </h2>
-          <div className="description">
-            {this.props.description}
-          </div>
-          {this.props.callToActionCaption &&
-            <a
-              href={`https://${this.props.callToActionURL}`}
-              target="_blank"
-            >
-              <div className="ui left bottom green button">
-                {this.props.callToActionCaption}
-              </div>
-            </a>
+      <div>
+        <Segment color={segmentColor}>
+          {this.props.isCreateFormClose &&
+            <div className="ui basic top right attached label">
+              <a onClick={this.props.onEditClick}>
+                <i className="big write icon" />
+              </a>
+              <a onClick={this.handleToggleStatusClick}>
+                <i className={`big checkmark ${isCheckmarkGreen} icon`} />
+              </a>
+            </div>
           }
-        </div>
+          <div className="ui basic bottom right attached label">
+            <div className="sub header">{this.props.dueDate}</div>
+          </div>
+          <div className="content">
+
+            <div className="sub header">{this.props.cardType}</div>
+            <h2 className="ui large header">
+              {this.props.title}
+            </h2>
+            <div className="description">
+              {this.props.description}
+            </div>
+            {this.props.callToActionCaption &&
+              <a
+                href={`https://${this.props.callToActionURL}`}
+                target="_blank"
+              >
+                <div className="ui left bottom green button">
+                  {this.props.callToActionCaption}
+                </div>
+              </a>
+            }
+          </div>
+        </Segment>
       </div>,
     ));
   }

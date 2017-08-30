@@ -1,6 +1,6 @@
-/* eslint-disable */
 import React from 'react';
-import { Button } from 'semantic-ui-react';
+import { Button, Form, Input, Segment, Sidebar } from 'semantic-ui-react';
+import { CirclePicker } from 'react-color';
 
 export default class RoadmapElementForm extends React.Component {
   state = {
@@ -11,7 +11,13 @@ export default class RoadmapElementForm extends React.Component {
     callToActionCaption: this.props.callToActionCaption || '',
     callToActionURL: this.props.callToActionURL || '',
     status: this.props.isStatusComplete || '',
+    color: this.props.color || '',
   };
+
+  handleColorChange = (e) => {
+    this.setState({ color: e.hex });
+  };
+
   handleDueDateChange = (e) => {
     this.setState({ dueDate: e.target.value });
   };
@@ -47,6 +53,7 @@ export default class RoadmapElementForm extends React.Component {
       callToActionCaption: this.state.callToActionCaption,
       callToActionURL: this.state.callToActionURL.replace(/^https?\:\/\//i, '').replace(/^https?\:\/\//i, ''),
       status: this.state.status,
+      color: this.state.color,
     });
   };
 
@@ -65,9 +72,26 @@ export default class RoadmapElementForm extends React.Component {
       (!this.state.callToActionCaption && !this.state.callToActionURL))
     ) ? '' : -1;
 
+    const COLOR = {
+      '#6435c9': 'violet',
+      '#e03997': 'pink',
+      '#00b5ad': 'teal',
+      '#fbbd08': 'yellow',
+      transparent: null,
+    };
+    let segmentColor = null;
+    if (this.props.color) {
+      segmentColor = COLOR[this.state.color];
+    }
     return (
       <div className="content">
-        <div className="ui padded clearing attached segment">
+
+        <Segment
+          padded
+          clearing
+          attached
+          color={segmentColor}
+        >
           { this.props.id &&
             <a
               className="ui right corner basic label"
@@ -78,83 +102,87 @@ export default class RoadmapElementForm extends React.Component {
               <i className="trash icon" />
             </a>
           }
-          <div className="ui form">
-            <div className="field">
-              <div className="ui large transparent input">
-                <input
-                  className="dueDate"
+          <Form>
+            <Form.Group unstackable widths="equal">
+              <Form.Field
+                control={Input}
+                transparent
+                className="card_type"
+                type="text"
+                value={this.state.cardType}
+                placeholder="category"
+                onChange={this.handleCardTypeChange}
+              />
+              <Form.Field
+                control={CirclePicker}
+                color={this.state.color}
+                onChange={this.handleColorChange}
+                colors={['transparent', '#6435c9', '#e03997', '#00b5ad', '#fbbd08']}
+              />
+            </Form.Group>
+            <Form.Field
+              control={Input}
+              size="huge"
+              transparent
+              className="title"
+              type="text"
+              value={this.state.title}
+              placeholder="action item"
+              onChange={this.handleTitleChange}
+            />
+            <Form.Field
+              control={Input}
+              transparent
+              size="large"
+              className="description"
+              type="text"
+              value={this.state.description}
+              placeholder="description (160 character limit)"
+              maxLength="160"
+              onChange={this.handleDescriptionChange}
+            />
+            <Form.Group>
+              <Form.Field>
+                <Input
+                  width={4}
+                  transparent
+                  size="big"
+                  className="caption"
                   type="text"
-                  value={this.state.dueDate}
-                  placeholder="due date"
-                  onChange={this.handleDueDateChange}
+                  value={this.state.callToActionCaption}
+                  placeholder="call to action"
+                  onChange={this.handleCallToActionCaptionChange}
                 />
+              </Form.Field>
+              <Form.Field
+                control={Input}
+                width={9}
+                transparent
+                className="url"
+                type="url"
+                value={this.state.callToActionURL}
+                placeholder="hyperlink (ex: http://careeer.me)"
+                onChange={this.handleCallToActionURLChange}
+              />
+              <Form.Field
+                control={Input}
+                transparent
+                width={3}
+                size="large"
+                className="dueDate"
+                type="text"
+                value={this.state.dueDate}
+                placeholder="due date"
+                onChange={this.handleDueDateChange}
+              />
+            </Form.Group>
+            {this.state.callToActionCaption &&
+              <div className="ui left bottom green disabled button">
+                {this.state.callToActionCaption}
               </div>
-            </div>
-            <div className="field">
-              <div className="ui large transparent input">
-                <input
-                  className="card_type"
-                  type="text"
-                  value={this.state.cardType}
-                  placeholder="category"
-                  onChange={this.handleCardTypeChange}
-                />
-              </div>
-            </div>
-            <div className="field">
-              <div className="ui huge transparent input">
-                <input
-                  className="title"
-                  type="text"
-                  value={this.state.title}
-                  placeholder="action item"
-                  onChange={this.handleTitleChange}
-                />
-              </div>
-            </div>
-            <div className="field">
-              <div className="ui large transparent input">
-                <input
-                  className="description"
-                  type="text"
-                  value={this.state.description}
-                  placeholder="description (160 character limit)"
-                  maxLength="160"
-                  onChange={this.handleDescriptionChange}
-                />
-              </div>
-            </div>
-            <div className="two fields">
-              <div className="field">
-                <div className="ui big transparent input">
-                  <input
-                    className="caption"
-                    type="text"
-                    value={this.state.callToActionCaption}
-                    placeholder="call to action"
-                    onChange={this.handleCallToActionCaptionChange}
-                  />
-                </div>
-                {this.state.callToActionCaption &&
-                  <div className="ui left bottom green disabled button">
-                    {this.state.callToActionCaption}
-                  </div>
-                }
-              </div>
-              <div className="field">
-                <div className="ui labeled transparent input">
-                  <input
-                    className="url"
-                    type="url"
-                    value={this.state.callToActionURL}
-                    placeholder="hyperlink (ex: http://careeer.me)"
-                    onChange={this.handleCallToActionURLChange}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+            }
+          </Form>
+        </Segment>
         <div className="ui two bottom attached buttons">
           <Button
             disabled={isSaveDisabled}
@@ -163,12 +191,12 @@ export default class RoadmapElementForm extends React.Component {
           >
             Save
           </Button>
-          <button
+          <Button
             className="ui button"
             onClick={this.props.onFormClose}
           >
             Cancel
-          </button>
+          </Button>
         </div>
       </div>
     );

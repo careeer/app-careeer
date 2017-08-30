@@ -9,6 +9,7 @@ const EditableRoadmapElementList = (props) => {
       (<EditableRoadmapElement
         key={roadmapElement.id}
         index={roadmapElement.dnd_index}
+        color={roadmapElement.color}
         id={roadmapElement.id}
         dueDate={roadmapElement.due_date}
         cardType={roadmapElement.card_type}

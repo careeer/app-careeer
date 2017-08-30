@@ -108,6 +108,7 @@ class RoadmapElements {
   createRoadmapElementObject(attrs) {
     return {
       due_date: attrs.dueDate,
+      color: attrs.color,
       card_type: attrs.cardType,
       title: attrs.title,
       description: attrs.description,

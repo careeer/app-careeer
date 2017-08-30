@@ -28,7 +28,7 @@ export default class CareeerVisionInput extends React.Component {
   handleClick = (event) => {
     this.props.handleLabelClick(event);
   }
-  
+
   moveCaretAtEnd(e) {
     var temp_value = e.target.value
     e.target.value = ''

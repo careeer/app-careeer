@@ -1,10 +1,10 @@
 /* eslint-disable */
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { inject, observer } from 'mobx-react';
 import { List, Button, Icon, Grid } from 'semantic-ui-react';
 
 @inject('roadmapElements')@observer
-export default class ClientList extends Component {
+export default class ClientList extends PureComponent {
   componentWillMount() {
     this.props.roadmapElements.getClients();
   }

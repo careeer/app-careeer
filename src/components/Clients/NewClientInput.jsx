@@ -1,10 +1,10 @@
 /* eslint-disable */
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { inject, observer } from 'mobx-react';
 import { Grid, Input } from 'semantic-ui-react';
 
 @inject('roadmapElements')@observer
-export default class NewClient extends React.Component {
+export default class NewClient extends PureComponent {
   componentWillMount() {
     this.props.roadmapElements.resetClientParams();
   }
