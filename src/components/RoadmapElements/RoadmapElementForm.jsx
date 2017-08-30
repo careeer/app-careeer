@@ -80,7 +80,7 @@ export default class RoadmapElementForm extends React.Component {
       transparent: null,
     };
     let segmentColor = null;
-    if (this.props.color) {
+    if (this.props.color || this.state.color) {
       segmentColor = COLOR[this.state.color];
     }
     return (
