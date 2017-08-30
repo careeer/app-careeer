@@ -98,7 +98,7 @@ export default class ClientRoadmapDashboard extends React.Component {
 
   render() {
     return (
-      <Grid.Column>
+      <Grid.Column style={{ paddingRight: '30px' }}>
         { this.props.roadmapElements.isLoading &&
           <Dimmer
             active
@@ -126,6 +126,7 @@ export default class ClientRoadmapDashboard extends React.Component {
             isCreateFormClose={this.props.roadmapElements.isCreateFormClose}
             onFormOpen={this.handleEditFormOpen}
             onFormSubmit={this.handleEditFormSubmit}
+            onFormCopy={this.handleCreateFormSubmit}
             onDeleteClick={this.handleDeleteForm}
             toggleElementStatus={this.handleToggleRoadmapElementStatus}
             handleCreateFormToggle={this.handleCreateFormToggle}

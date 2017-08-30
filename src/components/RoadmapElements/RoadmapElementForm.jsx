@@ -1,6 +1,11 @@
 import React from 'react';
-import { Button, Form, Input, Segment, Sidebar } from 'semantic-ui-react';
+import { Button, Form, Input, Segment, Rail, Icon } from 'semantic-ui-react';
 import { CirclePicker } from 'react-color';
+
+const segmentStyle = {
+  marginTop: '0',
+  marginBottom: '0',
+};
 
 export default class RoadmapElementForm extends React.Component {
   state = {
@@ -43,7 +48,19 @@ export default class RoadmapElementForm extends React.Component {
   };
 
   handleSave = () => {
-    this.props.onFormSubmit({
+    this.props.onFormSubmit(this.createRoadmapObject());
+  };
+
+  handleCopy = () => {
+    this.props.onFormCopy(this.createRoadmapObject());
+  };
+
+  handleTrashClick = () => {
+    this.props.onDeleteClick(this.props.id);
+  };
+
+  createRoadmapObject = () => {
+    const element = {
       id: this.props.id,
       index: this.props.index,
       title: this.state.title,
@@ -51,14 +68,11 @@ export default class RoadmapElementForm extends React.Component {
       cardType: this.state.cardType,
       description: this.state.description,
       callToActionCaption: this.state.callToActionCaption,
-      callToActionURL: this.state.callToActionURL.replace(/^https?\:\/\//i, '').replace(/^https?\:\/\//i, ''),
+      callToActionURL: this.state.callToActionURL.replace(/^https?\/\//i, '').replace(/^https?\/\//i, ''),
       status: this.state.status,
       color: this.state.color,
-    });
-  };
-
-  handleTrashClick = () => {
-    this.props.onDeleteClick(this.props.id);
+    }
+    return element;
   };
 
   render() {
@@ -85,11 +99,11 @@ export default class RoadmapElementForm extends React.Component {
     }
     return (
       <div className="content">
-
         <Segment
           padded
           clearing
           attached
+          style={segmentStyle}
           color={segmentColor}
         >
           { this.props.id &&
@@ -182,6 +196,14 @@ export default class RoadmapElementForm extends React.Component {
               </div>
             }
           </Form>
+          <Rail attached position="right">
+            <Button
+              style={{ height: '100%', paddingRight: '0', paddingLeft: '11px' }}
+              onClick={this.handleCopy}
+            >
+              <Icon name="copy" />
+            </Button>
+          </Rail>
         </Segment>
         <div className="ui two bottom attached buttons">
           <Button

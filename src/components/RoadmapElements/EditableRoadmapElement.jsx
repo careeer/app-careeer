@@ -19,6 +19,10 @@ export default class EditableRoadmapElement extends React.Component {
     this.closeForm();
   };
 
+  handleCopy = (element) => {
+    this.props.onFormCopy(element);
+  }
+
   handleSubmit = (element) => {
     this.toggleFormAccessibility();
     this.props.onFormSubmit(element);
@@ -57,6 +61,7 @@ export default class EditableRoadmapElement extends React.Component {
           callToActionCaption={this.props.callToActionCaption}
           callToActionURL={this.props.callToActionURL}
           onFormSubmit={this.handleSubmit}
+          onFormCopy={this.handleCopy}
           onFormClose={this.handleFormClose}
           onDeleteClick={this.handleFormDelete}
         />

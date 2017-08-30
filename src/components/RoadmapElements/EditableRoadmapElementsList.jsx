@@ -20,6 +20,7 @@ const EditableRoadmapElementList = (props) => {
         isStatusComplete={roadmapElement.status}
         onFormOpen={props.onFormOpen}
         onFormSubmit={props.onFormSubmit}
+        onFormCopy={props.onFormCopy}
         onDeleteClick={props.onDeleteClick}
         isCreateFormClose={props.isCreateFormClose}
         handleCreateFormToggle={props.handleCreateFormToggle}

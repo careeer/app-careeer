@@ -24,12 +24,17 @@ export default class ToggleableRoadmapElementForm extends React.Component {
     this.props.handleCreateFormToggle();
   };
 
+  handleFormCopy = (element) => {
+    this.props.onFormSubmit(element);
+  }
+
   render() {
     if (this.state.isOpen) {
       return (
         <RoadmapElementForm
           onFormSubmit={this.handleFormSubmit}
           onFormClose={this.handleFormClose}
+          onFormCopy={this.handleFormCopy}
         />
       );
     }

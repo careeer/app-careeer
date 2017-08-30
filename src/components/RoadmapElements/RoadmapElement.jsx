@@ -86,7 +86,7 @@ export default class RoadmapElement extends React.Component {
   render() {
     const isCheckmarkGreen =
       this.props.isStatusComplete ? 'green' : ''
-
+    const primaryButton = (this.props.index === 0) ? '' : 'basic'
     const { connectDragSource } = this.props;
     const { connectDropTarget } = this.props;
 
@@ -132,7 +132,7 @@ export default class RoadmapElement extends React.Component {
                 href={`https://${this.props.callToActionURL}`}
                 target="_blank"
               >
-                <div className="ui left bottom green button">
+                <div className={`ui left bottom green ${primaryButton} button`}>
                   {this.props.callToActionCaption}
                 </div>
               </a>
