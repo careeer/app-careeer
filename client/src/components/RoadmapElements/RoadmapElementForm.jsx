@@ -53,10 +53,9 @@ export default class RoadmapElementForm extends React.Component {
   };
 
   handleCopy = () => {
-    const newIndex = this.props.index + 1;
     this.props.onFormCopy({
       id: this.props.id,
-      index: newIndex,
+      index: this.props.index,
       title: this.state.title,
       dueDate: this.state.dueDate,
       cardType: this.state.cardType,
