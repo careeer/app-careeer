@@ -56,17 +56,15 @@ class RoadmapElements {
   }
   @action async copy(data) {
     const element = this.createRoadmapElementObject(data);
-    element.dnd_index = this.all.length;
+    element.dnd_index = data.index;
     const response = await Api.post(`${this.path}/${this.currentClientSlug}/${this.roadmapPath}`, element);
-    const newcards = this.all;
-    newcards.push(element);
-    this.all = newcards;
     const status = await response.status;
     if (status === 201) {
-      console.log(element);
+      const newcards = this.all;
+      newcards.slice(element.dnd_index, 0, element);
+      this.all = newcards;
       console.log(this.all);
-      this.moveRoadmapElement(element.dnd_index, data.index);
-      console.log(this.all);
+      this.fetchAll();
     }
   }
 
