@@ -1,7 +1,8 @@
 {
   "name": "app-careeer.me",
   "engines": {
-    "node": "6.11.2"
+    "node": "6.11.2",
+    "yarn": "^0.28.4"
   },
   "scripts": {
     "build": "cd client && yarn install && yarn build && cd ..",
