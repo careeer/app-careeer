@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import { Button, Form, Input, Segment, Rail, Icon } from 'semantic-ui-react';
 import { CirclePicker } from 'react-color';
