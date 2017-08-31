@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button, Form, Input, Segment, Rail, Icon } from 'semantic-ui-react';
 import { CirclePicker } from 'react-color';
+import { dueDateStyle, cardTypeStyle, titleStyle, descriptionStyle, hyperlinkStyle, captionStyle } from '../Constants/RoadmapElementFormStyles.js'
 
 const segmentStyle = {
   marginTop: '0',
@@ -123,10 +124,10 @@ export default class RoadmapElementForm extends React.Component {
         >
           { this.props.id &&
             <a
-              className="ui right corner basic label"
-              onClick={this.handleTrashClick}
               role="button"
               tabIndex="-1"
+              className="ui right corner basic label"
+              onClick={this.handleTrashClick}
             >
               <i className="trash icon" />
             </a>
@@ -134,12 +135,13 @@ export default class RoadmapElementForm extends React.Component {
           <Form>
             <Form.Group unstackable widths="equal">
               <Form.Field
-                control={Input}
                 transparent
-                className="card_type"
                 type="text"
-                value={this.state.cardType}
+                className="card_type"
                 placeholder="category"
+                control={Input}
+                style={cardTypeStyle}
+                value={this.state.cardType}
                 onChange={this.handleCardTypeChange}
               />
               <Form.Field
@@ -150,24 +152,26 @@ export default class RoadmapElementForm extends React.Component {
               />
             </Form.Group>
             <Form.Field
-              control={Input}
-              size="huge"
               transparent
-              className="title"
               type="text"
-              value={this.state.title}
+              size="huge"
+              className="title"
               placeholder="action item"
+              control={Input}
+              style={titleStyle}
+              value={this.state.title}
               onChange={this.handleTitleChange}
             />
             <Form.Field
-              control={Input}
               transparent
-              size="large"
-              className="description"
               type="text"
-              value={this.state.description}
-              placeholder="description (160 character limit)"
+              size="large"
               maxLength="160"
+              className="description"
+              placeholder="description (160 character limit)"
+              control={Input}
+              style={descriptionStyle}
+              value={this.state.description}
               onChange={this.handleDescriptionChange}
             />
             <Form.Group>
@@ -178,6 +182,7 @@ export default class RoadmapElementForm extends React.Component {
                   size="big"
                   className="caption"
                   type="text"
+                  style={captionStyle}
                   value={this.state.callToActionCaption}
                   placeholder="call to action"
                   onChange={this.handleCallToActionCaptionChange}
@@ -189,19 +194,21 @@ export default class RoadmapElementForm extends React.Component {
                 transparent
                 className="url"
                 type="url"
+                style={hyperlinkStyle}
                 value={this.state.callToActionURL}
                 placeholder="hyperlink (ex: http://careeer.me)"
                 onChange={this.handleCallToActionURLChange}
               />
               <Form.Field
-                control={Input}
                 transparent
                 width={3}
+                type="text"
                 size="large"
                 className="dueDate"
-                type="text"
-                value={this.state.dueDate}
                 placeholder="due date"
+                control={Input}
+                style={dueDateStyle}
+                value={this.state.dueDate}
                 onChange={this.handleDueDateChange}
               />
             </Form.Group>
