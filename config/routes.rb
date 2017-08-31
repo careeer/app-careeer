@@ -8,4 +8,7 @@ Rails.application.routes.draw do
     resource :sessions, only: [:create, :destroy]
   end
   get '/:id' => 'v1/clients#roadmap', defaults: { format: :json }
+  get '*path', to: "application#fallback_index_html", constraints: ->(request) do
+  !request.xhr? && request.format.html?
+end
 end
