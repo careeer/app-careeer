@@ -18,6 +18,11 @@ const dueDateStyle = {
   border: 'none',
   marginBottom: '20px',
   marginRight: '20px',
+  fontFamily: 'Raleway',
+  fontSize: '12px',
+  letterSpacing: '1.5px',
+  textAlign: 'right',
+  color: '#333333',
 };
 
 const roadmapElementTarget = {

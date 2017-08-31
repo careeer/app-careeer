@@ -63,7 +63,6 @@ class RoadmapElements {
       const newcards = this.all;
       newcards.slice(element.dnd_index, 0, element);
       this.all = newcards;
-      console.log(this.all);
       this.fetchAll();
     }
   }
