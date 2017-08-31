@@ -19,8 +19,8 @@ export default class EditableRoadmapElement extends React.Component {
     this.closeForm();
   };
 
-  handleCopy = (element, index) => {
-    this.props.onFormCopy(element, index);
+  handleCopy = (element) => {
+    this.props.onFormCopy(element);
   }
 
   handleSubmit = (element) => {
