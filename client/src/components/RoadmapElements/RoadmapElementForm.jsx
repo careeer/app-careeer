@@ -204,6 +204,7 @@ export default class RoadmapElementForm extends React.Component {
           </Form>
           <Rail attached position="right">
             <Button
+              disabled={isSaveDisabled}
               style={{ height: '100%', paddingRight: '0', paddingLeft: '11px' }}
               onClick={this.handleCopy}
             >
