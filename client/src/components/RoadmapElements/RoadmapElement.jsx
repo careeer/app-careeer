@@ -14,6 +14,12 @@ const roadmapElementSource = {
   },
 };
 
+const dueDateStyle = {
+  border: 'none',
+  marginBottom: '20px',
+  marginRight: '20px',
+};
+
 const roadmapElementTarget = {
   hover(props, monitor, component) {
     const dragIndex = monitor.getItem().index;
@@ -115,7 +121,9 @@ export default class RoadmapElement extends React.Component {
               </a>
             </div>
           }
-          <div className="ui basic bottom right attached label">
+          <div
+            style={dueDateStyle}
+            className="ui basic bottom right attached label">
             <div className="sub header">{this.props.dueDate}</div>
           </div>
           <div className="content">
