@@ -40,7 +40,7 @@ before_action :set_client
     end
 
     def roadmap_element_params
-      params.require(:roadmap_element).permit(:card_type, :title, :description, :call_to_action, :call_to_action_url, :status, :due_date, :dnd_index)
+      params.require(:roadmap_element).permit(:card_type, :title, :description, :call_to_action, :call_to_action_url, :status, :due_date, :dnd_index, :color)
     end
 
 end
