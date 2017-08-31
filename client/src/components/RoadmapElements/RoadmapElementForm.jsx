@@ -53,7 +53,7 @@ export default class RoadmapElementForm extends React.Component {
   };
 
   handleCopy = () => {
-    this.props.onFormCopy(this.createRoadmapObject());
+    this.props.onFormCopy(this.createRoadmapObject(), (this.props.index + 1));
   };
 
   handleTrashClick = () => {

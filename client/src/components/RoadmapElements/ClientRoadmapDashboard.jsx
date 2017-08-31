@@ -54,6 +54,9 @@ export default class ClientRoadmapDashboard extends React.Component {
   handleCreateFormSubmit = (roadmapElement) => {
     this.createRoadmapElement(roadmapElement);
   }
+  handleCopyForm = (roadmapElement, index) => {
+    this.copyRoadmapElement(roadmapElement, index);
+  }
 
   handleEditFormSubmit = (attrs) => {
     this.updateRoadmapElement(attrs);
@@ -69,6 +72,10 @@ export default class ClientRoadmapDashboard extends React.Component {
 
   createRoadmapElement = (roadmapElement) => {
     this.props.roadmapElements.create(roadmapElement);
+  };
+
+  copyRoadmapElement = (roadmapElement, index) => {
+    this.props.roadmapElements.copy(roadmapElement, index);
   };
 
   updateRoadmapElement = (roadmapElement) => {
@@ -126,7 +133,7 @@ export default class ClientRoadmapDashboard extends React.Component {
             isCreateFormClose={this.props.roadmapElements.isCreateFormClose}
             onFormOpen={this.handleEditFormOpen}
             onFormSubmit={this.handleEditFormSubmit}
-            onFormCopy={this.handleCreateFormSubmit}
+            onFormCopy={this.handleCopyForm}
             onDeleteClick={this.handleDeleteForm}
             toggleElementStatus={this.handleToggleRoadmapElementStatus}
             handleCreateFormToggle={this.handleCreateFormToggle}
