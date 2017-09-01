@@ -2,12 +2,8 @@
 import React from 'react';
 import { Button, Form, Input, Segment, Rail, Icon } from 'semantic-ui-react';
 import { CirclePicker } from 'react-color';
-import { dueDateStyle, cardTypeStyle, titleStyle, descriptionStyle, hyperlinkStyle, captionStyle } from '../Constants/RoadmapElementFormStyles.js'
-
-const segmentStyle = {
-  marginTop: '0',
-  marginBottom: '0',
-};
+import { dueDateStyle, cardTypeStyle, titleStyle, descriptionStyle, hyperlinkStyle, captionStyle } from '../Constants/RoadmapElementFormStyles';
+import { segmentStyle, unstackableStyle, COLOR } from '../Constants/CommonElementStyles';
 
 export default class RoadmapElementForm extends React.Component {
   state = {
@@ -54,18 +50,7 @@ export default class RoadmapElementForm extends React.Component {
   };
 
   handleCopy = () => {
-    this.props.onFormCopy({
-      id: this.props.id,
-      index: this.props.index,
-      title: this.state.title,
-      dueDate: this.state.dueDate,
-      cardType: this.state.cardType,
-      description: this.state.description,
-      callToActionCaption: this.state.callToActionCaption,
-      callToActionURL: this.state.callToActionURL.replace(/^https?\/\//i, '').replace(/^https?\/\//i, ''),
-      status: this.state.status,
-      color: this.state.color,
-    });
+    this.props.onFormCopy(this.createRoadmapObject());
   };
 
   handleTrashClick = () => {
@@ -99,13 +84,6 @@ export default class RoadmapElementForm extends React.Component {
       (!this.state.callToActionCaption && !this.state.callToActionURL))
     ) ? '' : -1;
 
-    const COLOR = {
-      '#6435c9': 'violet',
-      '#e03997': 'pink',
-      '#00b5ad': 'teal',
-      '#fbbd08': 'yellow',
-      transparent: null,
-    };
     let segmentColor = null;
     if (this.props.color || this.state.color) {
       segmentColor = COLOR[this.state.color];
@@ -133,8 +111,9 @@ export default class RoadmapElementForm extends React.Component {
             </a>
           }
           <Form>
-            <Form.Group unstackable widths="equal">
+            <Form.Group style={unstackableStyle}>
               <Form.Field
+                width={10}
                 transparent
                 type="text"
                 className="card_type"
@@ -145,6 +124,7 @@ export default class RoadmapElementForm extends React.Component {
                 onChange={this.handleCardTypeChange}
               />
               <Form.Field
+                width={6}
                 control={CirclePicker}
                 color={this.state.color}
                 onChange={this.handleColorChange}
@@ -154,7 +134,6 @@ export default class RoadmapElementForm extends React.Component {
             <Form.Field
               transparent
               type="text"
-              size="huge"
               className="title"
               placeholder="action item"
               control={Input}
@@ -165,7 +144,6 @@ export default class RoadmapElementForm extends React.Component {
             <Form.Field
               transparent
               type="text"
-              size="large"
               maxLength="160"
               className="description"
               placeholder="description (160 character limit)"
@@ -179,7 +157,6 @@ export default class RoadmapElementForm extends React.Component {
                 <Input
                   width={4}
                   transparent
-                  size="big"
                   className="caption"
                   type="text"
                   style={captionStyle}
@@ -190,7 +167,7 @@ export default class RoadmapElementForm extends React.Component {
               </Form.Field>
               <Form.Field
                 control={Input}
-                width={9}
+                width={10}
                 transparent
                 className="url"
                 type="url"
@@ -203,7 +180,6 @@ export default class RoadmapElementForm extends React.Component {
                 transparent
                 width={3}
                 type="text"
-                size="large"
                 className="dueDate"
                 placeholder="due date"
                 control={Input}

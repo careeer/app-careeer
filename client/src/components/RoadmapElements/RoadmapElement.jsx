@@ -1,9 +1,11 @@
 /* eslint-disable */
 import React from 'react';
-import { Segment } from 'semantic-ui-react';
+import { Segment, Grid, Label, Icon } from 'semantic-ui-react';
 import { findDOMNode } from 'react-dom';
 import { DragSource, DropTarget } from 'react-dnd';
 import ItemTypes from '../Constants/ItemTypes';
+import { dueDateStyle, cardTypeStyle, titleStyle, descriptionStyle, iconStyle, gridRowStyle, buttonStyle } from '../Constants/RoadmapElementStyles';
+import { segmentStyle, COLOR } from '../Constants/CommonElementStyles';
 
 const roadmapElementSource = {
   beginDrag(props) {
@@ -85,18 +87,11 @@ export default class RoadmapElement extends React.Component {
 
   render() {
     const isCheckmarkGreen =
-      this.props.isStatusComplete ? 'green' : ''
+      this.props.isStatusComplete ? 'green' : null
     const primaryButton = (this.props.index === 0) ? '' : 'basic'
     const { connectDragSource } = this.props;
     const { connectDropTarget } = this.props;
 
-    const COLOR = {
-      '#6435c9': 'violet',
-      '#e03997': 'pink',
-      '#00b5ad': 'teal',
-      '#fbbd08': 'yellow',
-      transparent: null,
-    };
     let segmentColor = null;
     if (this.props.color) {
       segmentColor = COLOR[this.props.color];
@@ -104,42 +99,83 @@ export default class RoadmapElement extends React.Component {
 
     return connectDragSource(connectDropTarget(
       <div>
-        <Segment color={segmentColor}>
-          {this.props.isCreateFormClose &&
-            <div className="ui basic top right attached label">
-              <a onClick={this.props.onEditClick}>
-                <i className="big write icon" />
-              </a>
-              <a onClick={this.handleToggleStatusClick}>
-                <i className={`big checkmark ${isCheckmarkGreen} icon`} />
-              </a>
-            </div>
-          }
-          <div
-            style={dueDateStyle}
-            className="ui basic bottom right attached label">
-            <div className="sub header">{this.props.dueDate}</div>
-          </div>
-          <div className="content">
-
-            <div className="sub header">{this.props.cardType}</div>
-            <h2 className="ui large header">
-              {this.props.title}
-            </h2>
-            <div className="description">
-              {this.props.description}
-            </div>
-            {this.props.callToActionCaption &&
-              <a
-                href={`https://${this.props.callToActionURL}`}
-                target="_blank"
-              >
-                <div className={`ui left bottom green ${primaryButton} button`}>
-                  {this.props.callToActionCaption}
-                </div>
-              </a>
-            }
-          </div>
+        <Segment
+          style={segmentStyle}
+          color={segmentColor}
+        >
+          <Grid>
+            <Grid.Row style={gridRowStyle}>
+              <Grid.Column
+                floated='left'
+                as={Label}
+                style={cardTypeStyle}
+                content={this.props.cardType}
+              />
+              {this.props.isCreateFormClose &&
+                <Grid.Column
+                  floated="right"
+                  as={Label}
+                  style={iconStyle}
+                >
+                  <Icon
+                    link
+                    name="write"
+                    size="big"
+                    onClick={this.props.onEditClick}
+                  />
+                  <Icon
+                    link
+                    name="checkmark"
+                    size="big"
+                    color={isCheckmarkGreen}
+                    onClick={this.handleToggleStatusClick}
+                  />
+                </Grid.Column>
+              }
+            </Grid.Row>
+            <Grid.Row style={gridRowStyle}>
+              <Grid.Column
+                floated='left'
+                as={Label}
+                style={titleStyle}
+                content={this.props.title}
+              />
+            </Grid.Row>
+            <Grid.Row style={gridRowStyle}>
+              <Grid.Column
+                floated='left'
+                as={Label}
+                style={descriptionStyle}
+                content={this.props.description}
+              />
+            </Grid.Row>
+            <Grid.Row style={gridRowStyle}>
+              {this.props.callToActionCaption &&
+                <Grid.Column
+                  floated='left'
+                  style={gridRowStyle}
+                >
+                  <a
+                    href={`https://${this.props.callToActionURL}`}
+                    target="_blank"
+                  >
+                    <div
+                      className={`ui left bottom green ${primaryButton} button`}
+                      style={buttonStyle}
+                    >
+                      {this.props.callToActionCaption}
+                    </div>
+                  </a>
+                </Grid.Column>
+              }
+              <Grid.Column
+                floated="right"
+                as={Label}
+                style={dueDateStyle}
+                content={this.props.dueDate}
+              />
+            </Grid.Row>
+          </Grid>
         </Segment>
       </div>,
     ));

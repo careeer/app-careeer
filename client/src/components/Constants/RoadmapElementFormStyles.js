@@ -1,7 +1,4 @@
-const dueDateStyle = {
-  border: 'none',
-  marginBottom: '20px',
-  marginRight: '20px',
+export const dueDateStyle = {
   fontFamily: 'Raleway',
   fontSize: '12px',
   letterSpacing: '1.5px',
@@ -9,7 +6,7 @@ const dueDateStyle = {
   color: '#919191',
 };
 
-const cardTypeStyle = {
+export const cardTypeStyle = {
   height: '14px',
   fontFamily: 'Raleway',
   fontSize: '12px',
@@ -17,7 +14,7 @@ const cardTypeStyle = {
   color: '#919191',
 };
 
-const titleStyle = {
+export const titleStyle = {
   height: '34px',
   fontFamily: 'Cabin',
   fontSize: '28px',
@@ -25,7 +22,7 @@ const titleStyle = {
   color: '#919191',
 };
 
-const descriptionStyle = {
+export const descriptionStyle = {
   height: '19px',
   fontFamily: 'Cabin',
   fontSize: '16px',
@@ -33,7 +30,7 @@ const descriptionStyle = {
   color: '#919191',
 };
 
-const hyperlinkStyle = {
+export const hyperlinkStyle = {
   height: '18px',
   fontFamily: 'Cabin',
   fontSize: '14px',
@@ -41,7 +38,7 @@ const hyperlinkStyle = {
   color: '#919191',
 };
 
-const captionStyle = {
+export const captionStyle = {
   height: '22px',
   fontFamily: 'Cabin',
   fontSize: '18px',
@@ -49,5 +46,3 @@ const captionStyle = {
   textAlign: 'center',
   color: '#919191',
 };
-
-export { dueDateStyle, cardTypeStyle, titleStyle, descriptionStyle, hyperlinkStyle, captionStyle };
