@@ -4,7 +4,7 @@ import { Segment, Grid, Label, Icon } from 'semantic-ui-react';
 import { findDOMNode } from 'react-dom';
 import { DragSource, DropTarget } from 'react-dnd';
 import ItemTypes from '../Constants/ItemTypes';
-import { dueDateStyle, cardTypeStyle, titleStyle, descriptionStyle, iconStyle, gridRowStyle, buttonStyle } from '../Constants/RoadmapElementStyles';
+import { dueDateStyle, cardTypeStyle, titleStyle, descriptionStyle, iconStyle, gridRowStyle, buttonStyle, buttonColumnStyle } from '../Constants/RoadmapElementStyles';
 import { segmentStyle, COLOR } from '../Constants/CommonElementStyles';
 
 const roadmapElementSource = {
@@ -153,7 +153,7 @@ export default class RoadmapElement extends React.Component {
               {this.props.callToActionCaption &&
                 <Grid.Column
                   floated='left'
-                  style={gridRowStyle}
+                  style={buttonColumnStyle}
                 >
                   <a
                     href={`https://${this.props.callToActionURL}`}

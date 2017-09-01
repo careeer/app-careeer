@@ -21,6 +21,7 @@ const cardTypeStyle = {
   fontSize: '12px',
   letterSpacing: '1.5px',
   color: '#333333',
+  width: 'auto',
 };
 
 const titleStyle = {
@@ -31,6 +32,7 @@ const titleStyle = {
   fontSize: '28px',
   letterSpacing: '3.5px',
   color: '#333333',
+  width: 'auto',
 };
 
 const descriptionStyle = {
@@ -41,6 +43,7 @@ const descriptionStyle = {
   fontSize: '16px',
   letterSpacing: '2px',
   color: '#919191',
+  width: 'auto',
 };
 
 const iconStyle = {
@@ -56,9 +59,18 @@ const gridRowStyle = {
   paddingBottom: '5px',
 };
 
+const buttonColumnStyle = {
+  paddingLeft: '0',
+  paddingRight: '0',
+  paddingTop: '5px',
+  paddingBottom: '5px',
+  width: 'auto',
+};
+
 const buttonStyle = {
   margin: '0',
+  width: 'auto',
 };
 
 export { dueDateStyle, cardTypeStyle, titleStyle,
-  descriptionStyle, iconStyle, gridRowStyle, buttonStyle };
+  descriptionStyle, iconStyle, gridRowStyle, buttonStyle, buttonColumnStyle };
