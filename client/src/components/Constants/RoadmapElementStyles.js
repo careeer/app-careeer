@@ -16,7 +16,6 @@ const dueDateStyle = {
 const cardTypeStyle = {
   backgroundColor: 'transparent',
   padding: '0',
-  height: '14px',
   fontFamily: 'Raleway',
   fontSize: '12px',
   letterSpacing: '1.5px',
@@ -27,7 +26,6 @@ const cardTypeStyle = {
 const titleStyle = {
   backgroundColor: 'transparent',
   padding: '0',
-  height: '34px',
   fontFamily: 'Cabin',
   fontSize: '28px',
   letterSpacing: '3.5px',
@@ -38,7 +36,6 @@ const titleStyle = {
 const descriptionStyle = {
   backgroundColor: 'transparent',
   padding: '0',
-  height: '19px',
   fontFamily: 'Cabin',
   fontSize: '16px',
   letterSpacing: '2px',
@@ -57,6 +54,7 @@ const gridRowStyle = {
   paddingRight: '0',
   paddingTop: '5px',
   paddingBottom: '5px',
+  width: 'auto',
 };
 
 const buttonColumnStyle = {
