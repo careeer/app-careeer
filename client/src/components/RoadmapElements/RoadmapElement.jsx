@@ -159,7 +159,7 @@ export default class RoadmapElement extends React.Component {
                   style={buttonColumnStyle}
                 >
                     <Button
-                      basic={primaryButton}
+                      basic={false}
                       color="green"
                       floated="left"
                       onClick={this.handleButtonClick}
