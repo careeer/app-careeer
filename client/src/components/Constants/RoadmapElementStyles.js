@@ -11,7 +11,7 @@ const dueDateStyle = {
   textAlign: 'right',
   color: '#333333',
   width: 'auto',
-  lineHeight: 'normal',
+  lineHeight: '25px',
 };
 
 const cardTypeStyle = {
@@ -22,7 +22,7 @@ const cardTypeStyle = {
   letterSpacing: '1.5px',
   color: '#333333',
   width: 'auto',
-  lineHeight: 'normal',
+  lineHeight: '25px',
 };
 
 const titleStyle = {
@@ -33,7 +33,7 @@ const titleStyle = {
   letterSpacing: '3.5px',
   color: '#333333',
   width: 'auto',
-  lineHeight: 'normal',
+  lineHeight: '30px',
 };
 
 const descriptionStyle = {
@@ -44,7 +44,7 @@ const descriptionStyle = {
   letterSpacing: '2px',
   color: '#919191',
   width: 'auto',
-  lineHeight: 'normal',
+  lineHeight: '25px',
 };
 
 const iconStyle = {
