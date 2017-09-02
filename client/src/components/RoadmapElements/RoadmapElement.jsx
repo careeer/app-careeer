@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React from 'react';
-import { Segment, Grid, Label, Icon } from 'semantic-ui-react';
+import { Segment, Grid, Label, Icon, Button } from 'semantic-ui-react';
 import { findDOMNode } from 'react-dom';
 import { DragSource, DropTarget } from 'react-dnd';
 import ItemTypes from '../Constants/ItemTypes';
@@ -84,11 +84,14 @@ export default class RoadmapElement extends React.Component {
       status: this.props.isStatusComplete,
     });
   };
+  handleButtonClick = () => {
+    window.open(`https://${this.props.callToActionURL}`, '_blank', 'height=600','width=400');
+  };
 
   render() {
     const isCheckmarkGreen =
       this.props.isStatusComplete ? 'green' : null
-    const primaryButton = (this.props.index === 0) ? '' : 'basic'
+    const primaryButton = (this.props.index === 0) ? false : true
     const { connectDragSource } = this.props;
     const { connectDropTarget } = this.props;
 
@@ -106,7 +109,7 @@ export default class RoadmapElement extends React.Component {
           <Grid>
             <Grid.Row style={gridRowStyle}>
               <Grid.Column
-                floated='left'
+                floated="left"
                 as={Label}
                 style={cardTypeStyle}
                 content={this.props.cardType}
@@ -155,17 +158,14 @@ export default class RoadmapElement extends React.Component {
                   floated='left'
                   style={buttonColumnStyle}
                 >
-                  <a
-                    href={`https://${this.props.callToActionURL}`}
-                    target="_blank"
-                  >
-                    <div
-                      className={`ui left bottom green ${primaryButton} button`}
-                      style={buttonStyle}
+                    <Button
+                      basic={primaryButton}
+                      color="green"
+                      floated="left"
+                      onClick={this.handleButtonClick}
                     >
                       {this.props.callToActionCaption}
-                    </div>
-                  </a>
+                    </Button>
                 </Grid.Column>
               }
               <Grid.Column
