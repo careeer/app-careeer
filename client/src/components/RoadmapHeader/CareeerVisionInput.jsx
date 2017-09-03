@@ -1,7 +1,8 @@
 /* eslint-disable */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Input, Label } from 'semantic-ui-react';
+import { Label } from 'semantic-ui-react';
+import VisionInput from './VisionInput';
 
 const visionStyle = {
   fontFamily: 'Cabin',
@@ -21,39 +22,18 @@ export default class CareeerVisionInput extends React.Component {
     vision: PropTypes.string,
   }
 
-  handlePress = (event) => {
-    this.props.handleKeyPress(event);
-  }
-
   handleClick = (event) => {
     this.props.handleLabelClick(event);
-  }
-
-  moveCaretAtEnd(e) {
-    var temp_value = e.target.value
-    e.target.value = ''
-    e.target.value = temp_value
   }
 
   render() {
     if (this.props.openInputForm) {
       return (
-        <Input
-          style={visionStyle}
-          transparent
-          tabIndex={-1}
-          focus
-          fluid
-          onKeyDown={this.handlePress}
-          value={this.props.vision || ''}
-          onChange={this.props.changeVision}
-        >
-          <input
-            autoFocus
-            onFocus={this.moveCaretAtEnd}
-            style={visionStyle}
-          />
-        </Input>
+        <VisionInput
+          vision={this.props.vision || ''}
+          changeVision={this.props.changeVision}
+          handleKeyPress={this.props.handleKeyPress}
+        />
       );
     }
     let visionLabelStyle = Object.assign({}, visionStyle);

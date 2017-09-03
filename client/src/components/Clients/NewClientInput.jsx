@@ -1,34 +1,33 @@
 /* eslint-disable */
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import { Grid, Input } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
+import ClientInput from './ClientInput';
 
 @inject('roadmapElements')@observer
-export default class NewClient extends PureComponent {
+export default class NewClientInput extends Component {
   componentWillMount() {
     this.props.roadmapElements.resetClientParams();
   }
 
-  handleKeyPress = (event) => {
-    if (event.key === 'Enter' && this.props.roadmapElements.currentClient) {
-      this.props.roadmapElements.createClient();
+  handleKeyPress = () => {
+    this.props.roadmapElements.createClient();
+  }
+
+  checkIfNameIsFilled = () => {
+    if (this.props.roadmapElements.hasClientName) {
+      this.props.history.push(`/${this.props.roadmapElements.currentClientSlug}`);
     }
   }
 
   render() {
-    if (this.props.roadmapElements.hasClientName) {
-      this.props.history.push(`/${this.props.roadmapElements.currentClientSlug}`);
-    }
+    this.checkIfNameIsFilled();
     return (
       <Grid.Column>
-        <Input
-          transparent
-          fluid
-          placeholder="enter client's first and last name"
-          onKeyPress={this.handleKeyPress}
-          name="clientName"
-          value={this.props.roadmapElements.currentClient || ''}
-          onChange={this.props.roadmapElements.handleClientInputChange}
+        <ClientInput
+          currentClient={this.props.roadmapElements.currentClient || ''}
+          handleClientInputChange={this.props.roadmapElements.handleClientInputChange}
+          createClient={this.handleKeyPress}
         />
       </Grid.Column>
     );

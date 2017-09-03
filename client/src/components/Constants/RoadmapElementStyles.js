@@ -6,7 +6,7 @@ const dueDateStyle = {
   marginBottom: '20px',
   marginRight: '20px',
   fontFamily: 'Raleway',
-  fontSize: '12px',
+  fontSize: '16px',
   letterSpacing: '1.5px',
   textAlign: 'right',
   color: '#333333',

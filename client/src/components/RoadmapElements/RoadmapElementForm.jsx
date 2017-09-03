@@ -46,11 +46,15 @@ export default class RoadmapElementForm extends React.Component {
   };
 
   handleSave = () => {
-    this.props.onFormSubmit(this.createRoadmapObject());
+    const element = this.createRoadmapObject();
+    element.index = this.props.index;
+    this.props.onFormSubmit(element);
   };
 
   handleCopy = () => {
-    this.props.onFormCopy(this.createRoadmapObject());
+    const element = this.createRoadmapObject();
+    element.index = this.props.index + 1;
+    this.props.onFormCopy(element);
   };
 
   handleTrashClick = () => {
@@ -60,7 +64,6 @@ export default class RoadmapElementForm extends React.Component {
   createRoadmapObject = () => {
     const element = {
       id: this.props.id,
-      index: this.props.index,
       title: this.state.title,
       dueDate: this.state.dueDate,
       cardType: this.state.cardType,
