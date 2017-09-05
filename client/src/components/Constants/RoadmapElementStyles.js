@@ -2,8 +2,8 @@ const dueDateStyle = {
   backgroundColor: 'transparent',
   padding: '0',
   border: 'none',
-  marginTop: '20px',
-  marginBottom: '20px',
+  marginTop: 'auto',
+  marginBottom: 'auto',
   marginRight: '20px',
   fontFamily: 'Raleway',
   fontSize: '14px',
@@ -56,8 +56,8 @@ const iconStyle = {
 const gridRowStyle = {
   paddingLeft: '0',
   paddingRight: '0',
-  paddingTop: '5px',
-  paddingBottom: '5px',
+  paddingTop: '2px',
+  paddingBottom: '2px',
   width: 'auto',
 };
 
