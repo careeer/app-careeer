@@ -116,9 +116,11 @@ export default class RoadmapElementForm extends React.Component {
           <Form>
             <Form.Group style={unstackableStyle}>
               <Form.Field
+                autoFocus
                 width={10}
                 transparent
                 type="text"
+                tabIndex={2}
                 className="card_type"
                 placeholder="category"
                 control={Input}

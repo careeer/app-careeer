@@ -40,16 +40,20 @@ class RoadmapHeader extends Component {
   handleKeyPress = (event) => {
     if (event.key === 'Enter') {
       this.props.roadmapElements.updateClientVision();
-      this.setState({
-        openInputForm: false,
-      });
+      this.toggleVisionInput();
     }
   }
 
   handleLabelClick = (event) => {
+    this.toggleVisionInput();
+  }
+
+  toggleVisionInput = () => {
     this.setState({
-      openInputForm: true,
+      openInputForm: !this.state.openInputForm,
     });
+    this.props.roadmapElements.toggleCreateForm();
+    this.props.roadmapElements.togglePlusButton();
   }
 
   render() {

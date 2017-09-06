@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button, Icon } from 'semantic-ui-react';
 import RoadmapElementForm from './RoadmapElementForm';
+import PlusButton from './PlusButton';
 
 export default class ToggleableRoadmapElementForm extends React.Component {
   state = {
@@ -26,7 +27,7 @@ export default class ToggleableRoadmapElementForm extends React.Component {
 
   handleFormCopy = (element) => {
     this.props.onFormSubmit(element);
-  }
+  };
 
   render() {
     if (this.state.isOpen) {
@@ -39,17 +40,11 @@ export default class ToggleableRoadmapElementForm extends React.Component {
       );
     }
     return (
-      <Button
-        fluid
-        size="massive"
-        onClick={this.handleFormOpen}
-      >
-        <Icon
-          inverted
-          size="large"
-          name="plus"
-        />
-      </Button>
+      <PlusButton
+        iconSize="large"
+        buttonSize="massive"
+        handleFormOpen={this.handleFormOpen}
+      />
     );
   }
 }

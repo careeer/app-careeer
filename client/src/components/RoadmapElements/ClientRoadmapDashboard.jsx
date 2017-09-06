@@ -139,13 +139,14 @@ export default class ClientRoadmapDashboard extends React.Component {
             handleCreateFormToggle={this.handleCreateFormToggle}
             handleElementMove={this.handleElementMove}
           />
+
+          { this.props.roadmapElements.isToggleableFormVisible &&
+            <ToggleableRoadmapElementForm
+              onFormSubmit={this.handleCreateFormSubmit}
+              handleCreateFormToggle={this.handleCreateFormToggle}
+              />
+          }
         </ScrollZone>
-        { this.props.roadmapElements.isToggleableFormVisible &&
-          <ToggleableRoadmapElementForm
-            onFormSubmit={this.handleCreateFormSubmit}
-            handleCreateFormToggle={this.handleCreateFormToggle}
-          />
-        }
       </Grid.Column>
     );
   }
