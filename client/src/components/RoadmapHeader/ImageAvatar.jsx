@@ -15,7 +15,7 @@ const avatarStyle = {
 const buttonStyle = {
   width: '60px',
   height: '60px',
-  paddingLeft: '15px',
+  paddingLeft: '13px',
   paddingRight: '0',
   paddingBottom: '0',
   paddingTop: '5px',
@@ -38,9 +38,8 @@ class ImageAvatar extends Component {
           onClick={() => { this.props.headerStore.dropzoneRef.open(); }}
         >
           <Icon
-            inverted
             size="large"
-            name="plus"
+            name="photo"
           />
         </Button>
       );
