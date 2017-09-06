@@ -38,6 +38,7 @@ class ImageAvatar extends Component {
           onClick={() => { this.props.headerStore.dropzoneRef.open(); }}
         >
           <Icon
+            inverted
             size="large"
             name="photo"
           />
