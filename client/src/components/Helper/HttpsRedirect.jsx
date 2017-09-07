@@ -11,7 +11,9 @@ class HttpsRedirect extends React.Component {
   }
 
   render() {
+    const endpoint = process.env.REACT_APP_API;
     if (
+      !endpoint.includes('staging') &&
       typeof window !== 'undefined' &&
       window.location &&
       window.location.protocol === 'http:' &&
