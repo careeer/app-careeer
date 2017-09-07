@@ -11,7 +11,8 @@ class HttpsRedirect extends React.Component {
   }
 
   render() {
-    const disableHTTPS = process.env.REACT_APP_DISABLE_HTTPS || '';
+    const disableHTTPS = process.env.REACT_APP_DISABLE_HTTPS === 'true';
+    console.log(disableHTTPS);
     if (
       typeof window !== 'undefined' &&
       window.location &&
