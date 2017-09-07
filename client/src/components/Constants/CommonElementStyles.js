@@ -10,6 +10,14 @@ export const unstackableStyle = {
   marginBottom: '0px',
 };
 
+export const mainGridStyle = {
+  margin: '2rem',
+};
+
+export const mainColumnStyle = {
+  paddingRight: '30px',
+};
+
 export const COLOR = {
   '#6435c9': 'violet',
   '#e03997': 'pink',

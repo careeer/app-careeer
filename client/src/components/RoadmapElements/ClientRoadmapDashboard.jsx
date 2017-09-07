@@ -12,6 +12,7 @@ import EditableRoadmapElementsList from './EditableRoadmapElementsList';
 import ToggleableRoadmapElementForm from './ToggleableRoadmapElementForm';
 import RoadmapHeader from '../RoadmapHeader/RoadmapHeader';
 import CongratulateBanner from '../Banners/CongratulateBanner';
+import { mainGridStyle, mainColumnStyle } from '../Constants/CommonElementStyles';
 
 const ScrollZone = withScrolling('div');
 
@@ -106,8 +107,13 @@ export default class ClientRoadmapDashboard extends React.Component {
 
   render() {
     return (
-      <Grid>
-      <Grid.Column style={{ paddingRight: '30px' }}>
+      <div>
+      <CongratulateBanner
+        clientName={this.props.roadmapElements.currentClient}
+        visible={true}
+      />
+      <Grid style={mainGridStyle}>
+      <Grid.Column style={mainColumnStyle}>
         { this.props.roadmapElements.isLoading &&
           <Dimmer
             active
@@ -119,9 +125,6 @@ export default class ClientRoadmapDashboard extends React.Component {
             </Loader>
           </Dimmer>
         }
-        <CongratulateBanner
-          clientName={this.props.roadmapElements.currentClient}
-        />
         <ScrollZone
           verticalStrength={vStrength}
           horizontalStrength={hStrength}
@@ -154,6 +157,7 @@ export default class ClientRoadmapDashboard extends React.Component {
         </ScrollZone>
       </Grid.Column>
       </Grid>
+      </div>
     );
   }
 }

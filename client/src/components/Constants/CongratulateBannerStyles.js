@@ -1,5 +1,6 @@
 export const bannerStyle = {
   backgroundColor: '#03ac13',
+  padding: '0',
 };
 
 export const mainMessageStyle = {
