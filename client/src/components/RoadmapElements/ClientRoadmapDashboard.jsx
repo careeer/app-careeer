@@ -11,6 +11,7 @@ import HTML5toTouch from '../../stores/helpers/HTML5toTouch';
 import EditableRoadmapElementsList from './EditableRoadmapElementsList';
 import ToggleableRoadmapElementForm from './ToggleableRoadmapElementForm';
 import RoadmapHeader from '../RoadmapHeader/RoadmapHeader';
+import CongratulateBanner from '../Banners/CongratulateBanner';
 
 const ScrollZone = withScrolling('div');
 
@@ -105,6 +106,7 @@ export default class ClientRoadmapDashboard extends React.Component {
 
   render() {
     return (
+      <Grid>
       <Grid.Column style={{ paddingRight: '30px' }}>
         { this.props.roadmapElements.isLoading &&
           <Dimmer
@@ -117,6 +119,9 @@ export default class ClientRoadmapDashboard extends React.Component {
             </Loader>
           </Dimmer>
         }
+        <CongratulateBanner
+          clientName={this.props.roadmapElements.currentClient}
+        />
         <ScrollZone
           verticalStrength={vStrength}
           horizontalStrength={hStrength}
@@ -148,6 +153,7 @@ export default class ClientRoadmapDashboard extends React.Component {
           }
         </ScrollZone>
       </Grid.Column>
+      </Grid>
     );
   }
 }
