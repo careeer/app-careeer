@@ -11,14 +11,11 @@ class HttpsRedirect extends React.Component {
   }
 
   render() {
-    const disableHTTPS = process.env.REACT_APP_DISABLE_HTTPS === 'true';
-    console.log(disableHTTPS);
     if (
       typeof window !== 'undefined' &&
       window.location &&
       window.location.protocol === 'http:' &&
-      !this.isLocalHost(window.location.hostname) &&
-      !(disableHTTPS)
+      !this.isLocalHost(window.location.hostname)
     ) {
       window.location.href = window.location.href.replace(/^http(?!s)/, 'https');
     }
