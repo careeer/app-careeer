@@ -11,8 +11,6 @@ export default class PlusButton extends React.Component {
   }
 
   onKeyPress = (event) => {
-    event.preventDefault();
-    event.stopPropagation();
     if (event.key === 'N') {
       this.props.handleFormOpen();
     }
