@@ -85,8 +85,7 @@ export default class ClientRoadmapDashboard extends React.Component {
   };
 
   toggleRoadmapElementStatus = (roadmapElement) => {
-    roadmapElement.status = !roadmapElement.status;
-    this.props.roadmapElements.update(roadmapElement);
+    this.props.roadmapElements.toggleStatus(roadmapElement.id);
   };
 
   deleteRoadmapElement = (roadmapElementId) => {
@@ -105,58 +104,68 @@ export default class ClientRoadmapDashboard extends React.Component {
     this.props.roadmapElements.togglePlusButton();
   }
 
+  handleBannerClose = () => {
+    this.props.roadmapElements.hideBanner();
+  }
+
+  handleUndoComplete = () => {
+    this.props.roadmapElements.undoComplete();
+  }
+
   render() {
     return (
       <div>
-      <CongratulateBanner
-        clientName={this.props.roadmapElements.currentClient}
-        visible={true}
-      />
-      <Grid style={mainGridStyle}>
-      <Grid.Column style={mainColumnStyle}>
-        { this.props.roadmapElements.isLoading &&
-          <Dimmer
-            active
-            page
-            inverted
-          >
-            <Loader size="medium">
-              Preparing Roadmap...
-            </Loader>
-          </Dimmer>
-        }
-        <ScrollZone
-          verticalStrength={vStrength}
-          horizontalStrength={hStrength}
-        >
-          <RoadmapHeader
-            disabled={this.props.roadmapElements.isNameInputDisabled}
-            placeholder="enter client's first and last name"
-            name="clientName"
-            value={this.props.roadmapElements.currentClient}
-          />
-
-          <EditableRoadmapElementsList
-            roadmapElements={this.props.roadmapElements.all.slice()}
-            isCreateFormClose={this.props.roadmapElements.isCreateFormClose}
-            onFormOpen={this.handleEditFormOpen}
-            onFormSubmit={this.handleEditFormSubmit}
-            onFormCopy={this.handleCopyForm}
-            onDeleteClick={this.handleDeleteForm}
-            toggleElementStatus={this.handleToggleRoadmapElementStatus}
-            handleCreateFormToggle={this.handleCreateFormToggle}
-            handleElementMove={this.handleElementMove}
-          />
-
-          { this.props.roadmapElements.isToggleableFormVisible &&
-            <ToggleableRoadmapElementForm
-              onFormSubmit={this.handleCreateFormSubmit}
-              handleCreateFormToggle={this.handleCreateFormToggle}
+        <CongratulateBanner
+          clientName={this.props.roadmapElements.currentClient}
+          visible={this.props.roadmapElements.isBannerVisible}
+          hideCongratsBanner={this.handleBannerClose}
+          handleUndo={this.handleUndoComplete}
+        />
+        <Grid style={mainGridStyle}>
+          <Grid.Column style={mainColumnStyle}>
+            { this.props.roadmapElements.isLoading &&
+              <Dimmer
+                active
+                page
+                inverted
+              >
+                <Loader size="medium">
+                  Preparing Roadmap...
+                </Loader>
+              </Dimmer>
+            }
+            <ScrollZone
+              verticalStrength={vStrength}
+              horizontalStrength={hStrength}
+            >
+              <RoadmapHeader
+                disabled={this.props.roadmapElements.isNameInputDisabled}
+                placeholder="enter client's first and last name"
+                name="clientName"
+                value={this.props.roadmapElements.currentClient}
               />
-          }
-        </ScrollZone>
-      </Grid.Column>
-      </Grid>
+
+              <EditableRoadmapElementsList
+                roadmapElements={this.props.roadmapElements.all.slice()}
+                isCreateFormClose={this.props.roadmapElements.isCreateFormClose}
+                onFormOpen={this.handleEditFormOpen}
+                onFormSubmit={this.handleEditFormSubmit}
+                onFormCopy={this.handleCopyForm}
+                onDeleteClick={this.handleDeleteForm}
+                toggleElementStatus={this.handleToggleRoadmapElementStatus}
+                handleCreateFormToggle={this.handleCreateFormToggle}
+                handleElementMove={this.handleElementMove}
+              />
+
+              { this.props.roadmapElements.isToggleableFormVisible &&
+                <ToggleableRoadmapElementForm
+                  onFormSubmit={this.handleCreateFormSubmit}
+                  handleCreateFormToggle={this.handleCreateFormToggle}
+                  />
+              }
+            </ScrollZone>
+          </Grid.Column>
+        </Grid>
       </div>
     );
   }

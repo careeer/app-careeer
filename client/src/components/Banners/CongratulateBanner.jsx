@@ -3,12 +3,17 @@ import { Message, Grid, Container, Transition } from 'semantic-ui-react';
 import { bannerStyle, mainMessageStyle, secondaryMessageStyle, undoStyle } from '../Constants/CongratulateBannerStyles';
 
 class CongratulateBanner extends PureComponent {
+  handleOnShow = () => {
+    setTimeout(this.props.hideCongratsBanner, 3500);
+  }
+
   render() {
     return (
       <Transition
         animation="slide down"
-        duration={{ hide: 1200, show: 200 }}
+        duration={{ hide: 2000, show: 300 }}
         visible={this.props.visible}
+        onComplete={this.handleOnShow}
       >
         <Message
           attached
@@ -31,7 +36,12 @@ class CongratulateBanner extends PureComponent {
             </Grid.Column>
             <Grid.Column width={1} textAlign="left">
               <Container style={undoStyle}>
-                <a href="#">
+                <a
+                  onClick={this.props.handleUndo}
+                  style={{ cursor: 'pointer' }}
+                  role="button"
+                  tabIndex={0}
+                >
                   undo
                 </a>
               </Container>
