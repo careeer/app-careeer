@@ -26,6 +26,7 @@ class RoadmapElements {
     this.isNameInputDisabled = false;
     this.isCreateFormClose = true;
     this.isToggleableFormVisible = true;
+    this.isBannerVisible = false;
   }
 
   @action async fetchAll() {
@@ -73,7 +74,41 @@ class RoadmapElements {
     const response = await Api.put(`${this.path}/${this.currentClientSlug}/${this.roadmapPath}/${element.id}`, element);
     const status = await response.status;
     if (status === 200) {
-      this.fetchAll();
+      const updatedElements = this.all.map((currentElement) => {
+        if (currentElement.id === element.id) {
+          return Object.assign(currentElement, element);
+        } else {
+          return currentElement;
+        }
+      });
+      this.all = updatedElements;
+    }
+  }
+
+  @action async toggleStatus(elementId) {
+    const element = this.all.find(function (element) {
+      return element.id === elementId;
+    });
+    element.status = !element.status;
+
+    if (element.status) {
+      this.showBanner();
+      this.completedElement = element.id;
+    } else {
+      this.hideBanner();
+    }
+
+    const response = await Api.put(`${this.path}/${this.currentClientSlug}/${this.roadmapPath}/${element.id}`, element);
+    const status = await response.status;
+    if (status === 200) {
+      const updatedElements = this.all.map((currentElement) => {
+        if (currentElement.id === element.id) {
+          return Object.assign(currentElement, element);
+        } else {
+          return currentElement;
+        }
+      });
+      this.all = updatedElements;
     }
   }
 
@@ -240,6 +275,25 @@ class RoadmapElements {
   @action togglePlusButton() {
     this.isToggleableFormVisible = !this.isToggleableFormVisible;
   }
+
+  // Congratulate Banner
+  @observable isBannerVisible = false;
+  @observable completedElement = '';
+
+  @action showBanner() {
+    this.isBannerVisible = true;
+  }
+
+  @action hideBanner() {
+    this.isBannerVisible = false;
+  }
+
+  @action undoComplete() {
+    this.toggleStatus(this.completedElement);
+  }
+
+  // Completed Elements Accordion
+  @observable completedElements = [];
 }
 
 export default new RoadmapElements();

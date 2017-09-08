@@ -2,6 +2,7 @@
 import React, { PureComponent } from 'react';
 import { inject, observer } from 'mobx-react';
 import { List, Button, Icon, Grid } from 'semantic-ui-react';
+import { mainGridStyle } from '../Constants/CommonElementStyles';
 
 @inject('roadmapElements')@observer
 export default class ClientList extends PureComponent {
@@ -32,37 +33,39 @@ export default class ClientList extends PureComponent {
       ));
 
     return (
-      <div>
-        <Grid.Row>
-          <Grid.Column floated="left">
-            <List
-              selection
-              relaxed
-              size="massive"
+      <Grid style={mainGridStyle}>
+        <div>
+          <Grid.Row>
+            <Grid.Column floated="left">
+              <List
+                selection
+                relaxed
+                size="massive"
+              >
+                {clients}
+              </List>
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Column
+              floated="left"
+              width={8}
             >
-              {clients}
-            </List>
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row>
-          <Grid.Column
-            floated="left"
-            width={8}
-          >
-            <Button
-              size="large"
-              fluid
-              onClick={this.handleNewClientClick}
-            >
-              <Icon
+              <Button
                 size="large"
-                inverted
-                name="plus"
-              />
-            </Button>
-          </Grid.Column>
-        </Grid.Row>
-      </div>
+                fluid
+                onClick={this.handleNewClientClick}
+              >
+                <Icon
+                  size="large"
+                  inverted
+                  name="plus"
+                />
+              </Button>
+            </Grid.Column>
+          </Grid.Row>
+        </div>
+      </Grid>
     );
   }
 }
