@@ -12,6 +12,7 @@ import EditableRoadmapElementsList from './EditableRoadmapElementsList';
 import ToggleableRoadmapElementForm from './ToggleableRoadmapElementForm';
 import RoadmapHeader from '../RoadmapHeader/RoadmapHeader';
 import CongratulateBanner from '../Banners/CongratulateBanner';
+import CompletedElementsBanner from '../Banners/CompletedElementsBanner';
 import { mainGridStyle, mainColumnStyle } from '../Constants/CommonElementStyles';
 
 const ScrollZone = withScrolling('div');
@@ -156,12 +157,15 @@ export default class ClientRoadmapDashboard extends React.Component {
                 handleCreateFormToggle={this.handleCreateFormToggle}
                 handleElementMove={this.handleElementMove}
               />
-
+              <CompletedElementsBanner
+                message="hide 1 completed action"
+                icon="angle down"
+              />
               { this.props.roadmapElements.isToggleableFormVisible &&
                 <ToggleableRoadmapElementForm
                   onFormSubmit={this.handleCreateFormSubmit}
                   handleCreateFormToggle={this.handleCreateFormToggle}
-                  />
+                />
               }
             </ScrollZone>
           </Grid.Column>
