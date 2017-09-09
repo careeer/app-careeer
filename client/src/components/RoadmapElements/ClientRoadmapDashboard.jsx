@@ -1,11 +1,12 @@
 /* eslint-disable */
 import React from 'react';
 import { inject, observer } from 'mobx-react';
-import { Grid, Dimmer, Loader } from 'semantic-ui-react';
+import { Grid, Dimmer, Loader, Sidebar } from 'semantic-ui-react';
 
 import { DragDropContext } from 'react-dnd';
 import MultiBackend from 'react-dnd-multi-backend';
 import withScrolling, { createHorizontalStrength, createVerticalStrength } from 'react-dnd-scrollzone';
+
 import HTML5toTouch from '../../stores/helpers/HTML5toTouch';
 
 import EditableRoadmapElementsList from './EditableRoadmapElementsList';
@@ -114,13 +115,17 @@ export default class ClientRoadmapDashboard extends React.Component {
 
   render() {
     return (
-      <div>
-        <CongratulateBanner
-          clientName={this.props.roadmapElements.currentClient}
-          visible={this.props.roadmapElements.isBannerVisible}
-          hideCongratsBanner={this.handleBannerClose}
-          handleUndo={this.handleUndoComplete}
-        />
+        <Sidebar.Pushable>
+
+
+          <CongratulateBanner
+            clientName={this.props.roadmapElements.currentClient}
+            visible={this.props.roadmapElements.isBannerVisible}
+            hideCongratsBanner={this.handleBannerClose}
+            handleUndo={this.handleUndoComplete}
+          />
+          
+        <Sidebar.Pusher>
         <Grid style={mainGridStyle}>
           <Grid.Column style={mainColumnStyle}>
             { this.props.roadmapElements.isLoading &&
@@ -144,7 +149,6 @@ export default class ClientRoadmapDashboard extends React.Component {
                 name="clientName"
                 value={this.props.roadmapElements.currentClient}
               />
-
               <EditableRoadmapElementsList
                 roadmapElements={this.props.roadmapElements.all.slice()}
                 isCreateFormClose={this.props.roadmapElements.isCreateFormClose}
@@ -155,6 +159,7 @@ export default class ClientRoadmapDashboard extends React.Component {
                 toggleElementStatus={this.handleToggleRoadmapElementStatus}
                 handleCreateFormToggle={this.handleCreateFormToggle}
                 handleElementMove={this.handleElementMove}
+
               />
 
               { this.props.roadmapElements.isToggleableFormVisible &&
@@ -166,7 +171,9 @@ export default class ClientRoadmapDashboard extends React.Component {
             </ScrollZone>
           </Grid.Column>
         </Grid>
-      </div>
+        </Sidebar.Pusher>
+        </Sidebar.Pushable>
+
     );
   }
 }

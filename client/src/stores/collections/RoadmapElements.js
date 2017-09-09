@@ -280,11 +280,13 @@ class RoadmapElements {
   @observable isBannerVisible = false;
   @observable completedElement = '';
 
-  @action showBanner() {
+  @action showBanner = () => {
     this.isBannerVisible = true;
+    console.log('setting interval');
+    setTimeout(this.hideBanner, 3500);
   }
 
-  @action hideBanner() {
+  @action hideBanner = () => {
     this.isBannerVisible = false;
   }
 

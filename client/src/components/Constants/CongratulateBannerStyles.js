@@ -1,6 +1,7 @@
 export const bannerStyle = {
   backgroundColor: '#03ac13',
   padding: '0',
+  position: 'absolute',
 };
 
 export const mainMessageStyle = {
@@ -26,10 +27,14 @@ export const undoStyle = {
   letterSpacing: '1.3px',
   textAlign: 'right',
   color: 'rgb(51, 51, 51)',
-  cursor: 'pointer'
+  cursor: 'pointer',
 };
 
 export const columnStyle = {
   paddingBottom: '5px',
   paddingtop: '5px',
+};
+
+export const gridStyle = {
+  position: 'absolute',
 };
