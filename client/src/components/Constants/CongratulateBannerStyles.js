@@ -1,6 +1,10 @@
 export const bannerStyle = {
   backgroundColor: '#03ac13',
   padding: '0',
+  position: 'fixed',
+  width: '100%',
+  zIndex: '102',
+  top: '0px',
 };
 
 export const mainMessageStyle = {

@@ -1,11 +1,12 @@
 /* eslint-disable */
 import React from 'react';
 import { inject, observer } from 'mobx-react';
-import { Grid, Dimmer, Loader } from 'semantic-ui-react';
+import { Grid, Dimmer, Loader, Sidebar } from 'semantic-ui-react';
 
 import { DragDropContext } from 'react-dnd';
 import MultiBackend from 'react-dnd-multi-backend';
 import withScrolling, { createHorizontalStrength, createVerticalStrength } from 'react-dnd-scrollzone';
+
 import HTML5toTouch from '../../stores/helpers/HTML5toTouch';
 
 import EditableRoadmapElementsList from './EditableRoadmapElementsList';
