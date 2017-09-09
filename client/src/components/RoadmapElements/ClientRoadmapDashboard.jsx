@@ -115,17 +115,13 @@ export default class ClientRoadmapDashboard extends React.Component {
 
   render() {
     return (
-        <Sidebar.Pushable>
-
-
-          <CongratulateBanner
-            clientName={this.props.roadmapElements.currentClient}
-            visible={this.props.roadmapElements.isBannerVisible}
-            hideCongratsBanner={this.handleBannerClose}
-            handleUndo={this.handleUndoComplete}
-          />
-          
-        <Sidebar.Pusher>
+      <div>
+        <CongratulateBanner
+          clientName={this.props.roadmapElements.currentClient}
+          visible={this.props.roadmapElements.isBannerVisible}
+          hideCongratsBanner={this.handleBannerClose}
+          handleUndo={this.handleUndoComplete}
+        />
         <Grid style={mainGridStyle}>
           <Grid.Column style={mainColumnStyle}>
             { this.props.roadmapElements.isLoading &&
@@ -149,6 +145,7 @@ export default class ClientRoadmapDashboard extends React.Component {
                 name="clientName"
                 value={this.props.roadmapElements.currentClient}
               />
+
               <EditableRoadmapElementsList
                 roadmapElements={this.props.roadmapElements.all.slice()}
                 isCreateFormClose={this.props.roadmapElements.isCreateFormClose}
@@ -159,7 +156,6 @@ export default class ClientRoadmapDashboard extends React.Component {
                 toggleElementStatus={this.handleToggleRoadmapElementStatus}
                 handleCreateFormToggle={this.handleCreateFormToggle}
                 handleElementMove={this.handleElementMove}
-
               />
 
               { this.props.roadmapElements.isToggleableFormVisible &&
@@ -171,9 +167,7 @@ export default class ClientRoadmapDashboard extends React.Component {
             </ScrollZone>
           </Grid.Column>
         </Grid>
-        </Sidebar.Pusher>
-        </Sidebar.Pushable>
-
+      </div>
     );
   }
 }
