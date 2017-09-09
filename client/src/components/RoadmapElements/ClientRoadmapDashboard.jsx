@@ -159,9 +159,23 @@ export default class ClientRoadmapDashboard extends React.Component {
                 handleElementMove={this.handleElementMove}
               />
               <CompletedElementsBanner
-                message="hide 1 completed action"
-                icon="angle down"
+                message={this.props.roadmapElements.completedAccordionMessage}
+                icon={this.props.roadmapElements.completedAccordionIcon}
+                toggleCompletedElements={this.props.roadmapElements.toggleCompletedElements}
               />
+              { this.props.roadmapElements.isCompletedAccordionOpen &&
+              <EditableRoadmapElementsList
+                roadmapElements={this.props.roadmapElements.all.slice()}
+                isCreateFormClose={this.props.roadmapElements.isCreateFormClose}
+                onFormOpen={this.handleEditFormOpen}
+                onFormSubmit={this.handleEditFormSubmit}
+                onFormCopy={this.handleCopyForm}
+                onDeleteClick={this.handleDeleteForm}
+                toggleElementStatus={this.handleToggleRoadmapElementStatus}
+                handleCreateFormToggle={this.handleCreateFormToggle}
+                handleElementMove={this.handleElementMove}
+              />
+              }
               { this.props.roadmapElements.isToggleableFormVisible &&
                 <ToggleableRoadmapElementForm
                   onFormSubmit={this.handleCreateFormSubmit}

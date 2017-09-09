@@ -294,6 +294,24 @@ class RoadmapElements {
 
   // Completed Elements Accordion
   @observable completedElements = [];
+
+  @observable completedAccordionMessage = "";
+
+  @observable completedAccordionIcon = "angle down";
+
+  @observable isCompletedAccordionOpen = false;
+
+  @action toggleCompletedElements = () => {
+    this.isCompletedAccordionOpen = !this.isCompletedAccordionOpen;
+    const accordionMessage = `${this.all.length} completed action`
+    if (this.isCompletedAccordionOpen) {
+      this.completedAccordionMessage = `Hide ${accordionMessage}`;
+      this.completedAccordionIcon = "angle up";
+    } else {
+      this.completedAccordionMessage = `Show ${accordionMessage}`;
+      this.completedAccordionIcon = "angle down";
+    }
+  }
 }
 
 export default new RoadmapElements();
