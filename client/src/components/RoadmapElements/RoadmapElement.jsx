@@ -100,7 +100,88 @@ export default class RoadmapElement extends React.Component {
       segmentColor = COLOR[this.props.color];
     }
 
-    return connectDragSource(connectDropTarget(
+    if (this.props.enableDragAndDrop) {
+      return connectDragSource(connectDropTarget(
+        <div>
+          <Segment
+            style={segmentStyle}
+            color={segmentColor}
+          >
+            <Grid>
+              <Grid.Row style={gridRowStyle}>
+                <Grid.Column
+                  floated="left"
+                  as={Label}
+                  style={cardTypeStyle}
+                  content={this.props.cardType}
+                />
+                {this.props.isCreateFormClose &&
+                  <Grid.Column
+                    floated="right"
+                    as={Label}
+                    style={iconStyle}
+                  >
+                    <Icon
+                      link
+                      name="write"
+                      size="big"
+                      onClick={this.props.onEditClick}
+                    />
+                    <Icon
+                      link
+                      name="checkmark"
+                      size="big"
+                      color={isCheckmarkGreen}
+                      onClick={this.handleToggleStatusClick}
+                    />
+                  </Grid.Column>
+                }
+              </Grid.Row>
+              <Grid.Row style={gridRowStyle}>
+                <Grid.Column
+                  floated='left'
+                  as={Label}
+                  style={titleStyle}
+                  content={this.props.title}
+                />
+              </Grid.Row>
+              <Grid.Row style={gridRowStyle}>
+                <Grid.Column
+                  floated='left'
+                  as={Label}
+                  style={descriptionStyle}
+                  content={this.props.description}
+                />
+              </Grid.Row>
+              <Grid.Row style={gridRowStyle}>
+                {this.props.callToActionCaption &&
+                  <Grid.Column
+                    floated='left'
+                    style={buttonColumnStyle}
+                  >
+                      <Button
+                        basic={primaryButton}
+                        color="green"
+                        floated="left"
+                        onClick={this.handleButtonClick}
+                      >
+                        {this.props.callToActionCaption}
+                      </Button>
+                  </Grid.Column>
+                }
+                <Grid.Column
+                  floated="right"
+                  as={Label}
+                  style={dueDateStyle}
+                  content={this.props.dueDate}
+                />
+              </Grid.Row>
+            </Grid>
+          </Segment>
+        </div>,
+      ));
+    }
+    return (
       <div>
         <Segment
           style={segmentStyle}
@@ -177,7 +258,7 @@ export default class RoadmapElement extends React.Component {
             </Grid.Row>
           </Grid>
         </Segment>
-      </div>,
-    ));
+      </div>
+    );
   }
 }

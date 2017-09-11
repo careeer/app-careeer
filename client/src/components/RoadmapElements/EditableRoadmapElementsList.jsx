@@ -28,6 +28,7 @@ const EditableRoadmapElementList = (props) => {
         handleCreateFormToggle={props.handleCreateFormToggle}
         toggleElementStatus={props.toggleElementStatus}
         handleElementMove={props.handleElementMove}
+        enableDragAndDrop={props.enableDragAndDrop}
       />)
   );
   return (

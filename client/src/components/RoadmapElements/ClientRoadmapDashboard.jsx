@@ -158,6 +158,7 @@ export default class ClientRoadmapDashboard extends React.Component {
                 toggleElementStatus={this.handleToggleRoadmapElementStatus}
                 handleCreateFormToggle={this.handleCreateFormToggle}
                 handleElementMove={this.handleElementMove}
+                enableDragAndDrop={true}
               />
 
               { (this.props.roadmapElements.completedElements.length > 0) &&
@@ -165,7 +166,7 @@ export default class ClientRoadmapDashboard extends React.Component {
                   completedAccordionMessage={this.props.roadmapElements.completedAccordionMessage}
                   completedAccordionIcon={this.props.roadmapElements.completedAccordionIcon}
                   toggleCompletedElements={this.props.roadmapElements.toggleCompletedElements}
-
+                  enableDragAndDrop={false}
                   isCompletedAccordionOpen={this.props.roadmapElements.isCompletedAccordionOpen}
                   completedElements={this.props.roadmapElements.completedElements.slice()}
                   isCreateFormClose={this.props.roadmapElements.isCreateFormClose}

@@ -178,7 +178,7 @@ class RoadmapElements {
   }
 
   @action moveRoadmapElement(dragIndex, hoverIndex) {
-    const newcards = this.pendingElements;
+    const newcards = this.incompleteElements;
     const dragCard = newcards[dragIndex];
 
     newcards.splice(dragIndex, 1); // removing what you are dragging.
