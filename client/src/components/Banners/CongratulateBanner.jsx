@@ -22,11 +22,14 @@ class CongratulateBanner extends PureComponent {
         >
           <Grid container>
             <Grid.Column
-              width={3}
+              largeScreen={3}
               only="large screen"
             />
             <Grid.Column
-              width={9}
+              computer={3}
+              largeScreen={9}
+              tablet={10}
+              mobile={8}
               textAlign="center"
             >
               <span style={mainMessageStyle}>
@@ -34,7 +37,10 @@ class CongratulateBanner extends PureComponent {
               </span>
             </Grid.Column>
             <Grid.Column
-              width={3}
+              computer={3}
+              largeScreen={3}
+              tablet={5}
+              mobile={7}
               textAlign="right"
             >
               <Container style={secondaryMessageStyle} >
