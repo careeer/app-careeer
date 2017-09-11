@@ -76,6 +76,10 @@ export default class RoadmapElementForm extends React.Component {
     return element;
   };
 
+  componentDidUpdate = () => {
+    document.getElementsByClassName("content")[0].scrollIntoView();
+  };
+
   render() {
     const isSaveDisabled = (
       (this.state.title.trim().length !== 0 || this.state.cardType.trim().length !== 0 || this.state.description.trim().length !== 0) &&
@@ -116,11 +120,11 @@ export default class RoadmapElementForm extends React.Component {
           <Form>
             <Form.Group style={unstackableStyle}>
               <Form.Field
-                autoFocus
+
                 width={10}
                 transparent
                 type="text"
-                tabIndex={2}
+
                 className="card_type"
                 placeholder="category"
                 control={Input}
@@ -129,6 +133,7 @@ export default class RoadmapElementForm extends React.Component {
                 onChange={this.handleCardTypeChange}
               />
               <Form.Field
+
                 width={6}
                 control={CirclePicker}
                 color={this.state.color}

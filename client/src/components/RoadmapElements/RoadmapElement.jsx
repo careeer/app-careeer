@@ -91,7 +91,7 @@ export default class RoadmapElement extends React.Component {
   render() {
     const isCheckmarkGreen =
       this.props.isStatusComplete ? 'green' : null
-    const primaryButton = (this.props.index === 0) ? false : true
+    const primaryButton = (this.props.index === 0 && !this.props.isStatusComplete) ? false : true
     const { connectDragSource } = this.props;
     const { connectDropTarget } = this.props;
 
@@ -159,7 +159,7 @@ export default class RoadmapElement extends React.Component {
                   style={buttonColumnStyle}
                 >
                     <Button
-                      basic={false}
+                      basic={primaryButton}
                       color="green"
                       floated="left"
                       onClick={this.handleButtonClick}

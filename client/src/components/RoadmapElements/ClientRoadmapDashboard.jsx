@@ -11,8 +11,10 @@ import HTML5toTouch from '../../stores/helpers/HTML5toTouch';
 
 import EditableRoadmapElementsList from './EditableRoadmapElementsList';
 import ToggleableRoadmapElementForm from './ToggleableRoadmapElementForm';
+import CompletedRoadmapElementsList from './CompletedRoadmapElementsList';
 import RoadmapHeader from '../RoadmapHeader/RoadmapHeader';
 import CongratulateBanner from '../Banners/CongratulateBanner';
+
 import { mainGridStyle, mainColumnStyle } from '../Constants/CommonElementStyles';
 
 const ScrollZone = withScrolling('div');
@@ -147,7 +149,7 @@ export default class ClientRoadmapDashboard extends React.Component {
               />
 
               <EditableRoadmapElementsList
-                roadmapElements={this.props.roadmapElements.all.slice()}
+                roadmapElements={this.props.roadmapElements.incompleteElements.slice()}
                 isCreateFormClose={this.props.roadmapElements.isCreateFormClose}
                 onFormOpen={this.handleEditFormOpen}
                 onFormSubmit={this.handleEditFormSubmit}
@@ -158,11 +160,30 @@ export default class ClientRoadmapDashboard extends React.Component {
                 handleElementMove={this.handleElementMove}
               />
 
+              { (this.props.roadmapElements.completedElements.length > 0) &&
+                <CompletedRoadmapElementsList
+                  completedAccordionMessage={this.props.roadmapElements.completedAccordionMessage}
+                  completedAccordionIcon={this.props.roadmapElements.completedAccordionIcon}
+                  toggleCompletedElements={this.props.roadmapElements.toggleCompletedElements}
+
+                  isCompletedAccordionOpen={this.props.roadmapElements.isCompletedAccordionOpen}
+                  completedElements={this.props.roadmapElements.completedElements.slice()}
+                  isCreateFormClose={this.props.roadmapElements.isCreateFormClose}
+                  onFormOpen={this.handleEditFormOpen}
+                  onFormSubmit={this.handleEditFormSubmit}
+                  onFormCopy={this.handleCopyForm}
+                  onDeleteClick={this.handleDeleteForm}
+                  toggleElementStatus={this.handleToggleRoadmapElementStatus}
+                  handleCreateFormToggle={this.handleCreateFormToggle}
+                  handleElementMove={this.handleElementMove}
+                />
+              }
+
               { this.props.roadmapElements.isToggleableFormVisible &&
                 <ToggleableRoadmapElementForm
                   onFormSubmit={this.handleCreateFormSubmit}
                   handleCreateFormToggle={this.handleCreateFormToggle}
-                  />
+                />
               }
             </ScrollZone>
           </Grid.Column>

@@ -29,5 +29,6 @@ export const undoStyle = {
   fontSize: '10px',
   letterSpacing: '1.3px',
   textAlign: 'right',
-  color: '#393939',
+  cursor: 'pointer',
+  color: '#000000',
 };

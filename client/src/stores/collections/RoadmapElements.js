@@ -5,7 +5,8 @@ import Api from '../helpers/api';
 class RoadmapElements {
   path = '/v1/clients';
   roadmapPath = 'roadmap_elements';
-  @observable all = [];
+  @observable pendingElements = [];
+  @observable incompleteElements = [];
   @observable isLoading = false;
   @observable hasClientName = false;
   @observable currentClient = '';
@@ -27,6 +28,7 @@ class RoadmapElements {
     this.isCreateFormClose = true;
     this.isToggleableFormVisible = true;
     this.isBannerVisible = false;
+    this.isCompletedAccordionOpen = false;
   }
 
   @action async fetchAll() {
@@ -36,7 +38,9 @@ class RoadmapElements {
 
     if (status === 200) {
       const json = await response.json();
-      this.all = await json;
+      this.pendingElements = await json;
+      this.sortElements();
+      this.buildCompletedAccordionMessage();
       const fetchAgain = await this.checkIndex();
       this.isLoading = false;
       if (fetchAgain) {
@@ -45,9 +49,38 @@ class RoadmapElements {
     }
   }
 
+  sortElements = () => {
+    this.completedElements = this.pendingElements.filter(function(element){
+      return element.status === true;
+    });
+
+    this.incompleteElements = this.pendingElements.filter(function(element){
+      return element.status !== true;
+    });
+  }
+
+  checkIndex = () => {
+    let fetchAgain = false;
+    this.incompleteElements.map((obj, index) => {
+      if (obj.dnd_index !== index) {
+        obj.dnd_index = index;
+        fetchAgain = this.updateNoFetch(obj);
+      }
+      return obj;
+    });
+    this.completedElements.map((obj, index) => {
+      if (obj.dnd_index !== index) {
+        obj.dnd_index = index;
+        fetchAgain = this.updateNoFetch(obj);
+      }
+      return obj;
+    });
+    return fetchAgain;
+  }
+
   @action async create(data) {
     const element = this.createRoadmapElementObject(data);
-    element.dnd_index = this.all.length;
+    element.dnd_index = this.pendingElements.length;
     const response = await Api.post(`${this.path}/${this.currentClientSlug}/${this.roadmapPath}`, element);
     const status = await response.status;
 
@@ -55,15 +88,16 @@ class RoadmapElements {
       this.fetchAll();
     }
   }
+
   @action async copy(data) {
     const element = this.createRoadmapElementObject(data);
     element.dnd_index = data.index;
     const response = await Api.post(`${this.path}/${this.currentClientSlug}/${this.roadmapPath}`, element);
     const status = await response.status;
     if (status === 201) {
-      const newcards = this.all;
+      const newcards = this.pendingElements;
       newcards.slice(element.dnd_index, 0, element);
-      this.all = newcards;
+      this.pendingElements = newcards;
       this.fetchAll();
     }
   }
@@ -74,41 +108,53 @@ class RoadmapElements {
     const response = await Api.put(`${this.path}/${this.currentClientSlug}/${this.roadmapPath}/${element.id}`, element);
     const status = await response.status;
     if (status === 200) {
-      const updatedElements = this.all.map((currentElement) => {
+      const updatedElements = this.pendingElements.map((currentElement) => {
         if (currentElement.id === element.id) {
           return Object.assign(currentElement, element);
         } else {
           return currentElement;
         }
       });
-      this.all = updatedElements;
+      this.pendingElements = updatedElements;
+      this.sortElements();
     }
   }
 
   @action async toggleStatus(elementId) {
-    const element = this.all.find(function (element) {
+    const element = this.pendingElements.find(function (element) {
       return element.id === elementId;
     });
-    element.status = !element.status;
 
-    if (element.status) {
-      this.showBanner();
-      this.completedElement = element.id;
-    } else {
-      this.hideBanner();
-    }
+    element.status = !element.status;
 
     const response = await Api.put(`${this.path}/${this.currentClientSlug}/${this.roadmapPath}/${element.id}`, element);
     const status = await response.status;
     if (status === 200) {
-      const updatedElements = this.all.map((currentElement) => {
+      const updatedElements = this.pendingElements.map((currentElement) => {
         if (currentElement.id === element.id) {
           return Object.assign(currentElement, element);
         } else {
           return currentElement;
         }
       });
-      this.all = updatedElements;
+      this.pendingElements = updatedElements;
+
+      if (element.status) {
+        this.showBanner();
+        this.incompleteElements = this.incompleteElements.filter(function(roadmapEl){
+          return roadmapEl.id !== element.id;
+        });
+        this.completedElements.push(element);
+        this.completedElement = element.id;
+      } else {
+        this.hideBanner();
+        this.completedElements = this.completedElements.filter(function(roadmapEl){
+          return roadmapEl.id !== element.id;
+        });
+        this.incompleteElements.unshift(element);
+      }
+      this.checkIndex();
+      this.buildCompletedAccordionMessage();
     }
   }
 
@@ -132,25 +178,13 @@ class RoadmapElements {
   }
 
   @action moveRoadmapElement(dragIndex, hoverIndex) {
-    const newcards = this.all;
+    const newcards = this.pendingElements;
     const dragCard = newcards[dragIndex];
 
     newcards.splice(dragIndex, 1); // removing what you are dragging.
     newcards.splice(hoverIndex, 0, dragCard); // inserting it into hoverIndex.
 
     this.checkIndex();
-  }
-
-  @action checkIndex() {
-    let fetchAgain = false;
-    this.all.map((obj, index) => {
-      if (obj.dnd_index !== index) {
-        obj.dnd_index = index;
-        fetchAgain = this.updateNoFetch(obj);
-      }
-      return obj;
-    });
-    return fetchAgain;
   }
 
   createRoadmapElementObject(attrs) {
@@ -294,6 +328,28 @@ class RoadmapElements {
 
   // Completed Elements Accordion
   @observable completedElements = [];
+
+  @observable completedAccordionMessage = "";
+
+  @observable completedAccordionIcon = "angle down";
+
+  @observable isCompletedAccordionOpen = false;
+
+  @action toggleCompletedElements = () => {
+    this.isCompletedAccordionOpen = !this.isCompletedAccordionOpen;
+    this.buildCompletedAccordionMessage();
+  }
+
+  buildCompletedAccordionMessage = () => {
+    const accordionMessage = `${this.completedElements.length} completed action`
+    if (this.isCompletedAccordionOpen) {
+      this.completedAccordionMessage = `Hide ${accordionMessage}`;
+      this.completedAccordionIcon = "angle up";
+    } else {
+      this.completedAccordionMessage = `Show ${accordionMessage}`;
+      this.completedAccordionIcon = "angle down";
+    }
+  }
 }
 
 export default new RoadmapElements();
