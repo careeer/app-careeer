@@ -11,7 +11,7 @@ export default class PlusButton extends React.Component {
   }
 
   onKeyPress = (event) => {
-    if (event.key === 'N') {
+    if (event.key === 'N' && $crisp.is("chat:opened") !== true) {
       this.props.handleFormOpen();
     }
   }

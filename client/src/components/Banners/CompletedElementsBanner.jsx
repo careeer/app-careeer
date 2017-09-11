@@ -7,8 +7,7 @@ export default class CompletedElementsBanner extends React.Component {
   handleClick = () => {
     this.props.toggleCompletedElements();
   }
-//angle up
-//angle down
+
   render() {
     return (
       <Button
