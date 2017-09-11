@@ -61,14 +61,14 @@ class RoadmapElements {
 
   checkIndex = () => {
     let fetchAgain = false;
-    this.incompleteElements.map((obj, index) => {
+    this.incompleteElements = this.incompleteElements.map((obj, index) => {
       if (obj.dnd_index !== index) {
         obj.dnd_index = index;
         fetchAgain = this.updateNoFetch(obj);
       }
       return obj;
     });
-    this.completedElements.map((obj, index) => {
+    this.completedElements = this.completedElements.map((obj, index) => {
       if (obj.dnd_index !== index) {
         obj.dnd_index = index;
         fetchAgain = this.updateNoFetch(obj);
