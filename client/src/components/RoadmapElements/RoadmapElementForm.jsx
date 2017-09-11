@@ -142,6 +142,7 @@ export default class RoadmapElementForm extends React.Component {
               />
             </Form.Group>
             <Form.Field
+              autoFocus
               transparent
               type="text"
               className="title"
