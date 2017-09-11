@@ -11,9 +11,10 @@ import HTML5toTouch from '../../stores/helpers/HTML5toTouch';
 
 import EditableRoadmapElementsList from './EditableRoadmapElementsList';
 import ToggleableRoadmapElementForm from './ToggleableRoadmapElementForm';
+import CompletedRoadmapElementsList from './CompletedRoadmapElementsList';
 import RoadmapHeader from '../RoadmapHeader/RoadmapHeader';
 import CongratulateBanner from '../Banners/CongratulateBanner';
-import CompletedElementsBanner from '../Banners/CompletedElementsBanner';
+
 import { mainGridStyle, mainColumnStyle } from '../Constants/CommonElementStyles';
 
 const ScrollZone = withScrolling('div');
@@ -158,24 +159,26 @@ export default class ClientRoadmapDashboard extends React.Component {
                 handleCreateFormToggle={this.handleCreateFormToggle}
                 handleElementMove={this.handleElementMove}
               />
-              <CompletedElementsBanner
-                message={this.props.roadmapElements.completedAccordionMessage}
-                icon={this.props.roadmapElements.completedAccordionIcon}
-                toggleCompletedElements={this.props.roadmapElements.toggleCompletedElements}
-              />
-              { this.props.roadmapElements.isCompletedAccordionOpen &&
-              <EditableRoadmapElementsList
-                roadmapElements={this.props.roadmapElements.completedElements.slice()}
-                isCreateFormClose={this.props.roadmapElements.isCreateFormClose}
-                onFormOpen={this.handleEditFormOpen}
-                onFormSubmit={this.handleEditFormSubmit}
-                onFormCopy={this.handleCopyForm}
-                onDeleteClick={this.handleDeleteForm}
-                toggleElementStatus={this.handleToggleRoadmapElementStatus}
-                handleCreateFormToggle={this.handleCreateFormToggle}
-                handleElementMove={this.handleElementMove}
-              />
+
+              { (this.props.roadmapElements.completedElements.length > 0) &&
+                <CompletedRoadmapElementsList
+                  completedAccordionMessage={this.props.roadmapElements.completedAccordionMessage}
+                  completedAccordionIcon={this.props.roadmapElements.completedAccordionIcon}
+                  toggleCompletedElements={this.props.roadmapElements.toggleCompletedElements}
+
+                  isCompletedAccordionOpen={this.props.roadmapElements.isCompletedAccordionOpen}
+                  completedElements={this.props.roadmapElements.completedElements.slice()}
+                  isCreateFormClose={this.props.roadmapElements.isCreateFormClose}
+                  onFormOpen={this.handleEditFormOpen}
+                  onFormSubmit={this.handleEditFormSubmit}
+                  onFormCopy={this.handleCopyForm}
+                  onDeleteClick={this.handleDeleteForm}
+                  toggleElementStatus={this.handleToggleRoadmapElementStatus}
+                  handleCreateFormToggle={this.handleCreateFormToggle}
+                  handleElementMove={this.handleElementMove}
+                />
               }
+
               { this.props.roadmapElements.isToggleableFormVisible &&
                 <ToggleableRoadmapElementForm
                   onFormSubmit={this.handleCreateFormSubmit}

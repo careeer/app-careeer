@@ -59,8 +59,15 @@ class RoadmapElements {
     });
   }
 
-  checkIndex() {
+  checkIndex = () => {
     let fetchAgain = false;
+    this.incompleteElements.map((obj, index) => {
+      if (obj.dnd_index !== index) {
+        obj.dnd_index = index;
+        fetchAgain = this.updateNoFetch(obj);
+      }
+      return obj;
+    });
     this.completedElements.map((obj, index) => {
       if (obj.dnd_index !== index) {
         obj.dnd_index = index;
@@ -117,6 +124,7 @@ class RoadmapElements {
     const element = this.pendingElements.find(function (element) {
       return element.id === elementId;
     });
+
     element.status = !element.status;
 
     const response = await Api.put(`${this.path}/${this.currentClientSlug}/${this.roadmapPath}/${element.id}`, element);
@@ -130,13 +138,22 @@ class RoadmapElements {
         }
       });
       this.pendingElements = updatedElements;
+
       if (element.status) {
         this.showBanner();
+        this.incompleteElements = this.incompleteElements.filter(function(roadmapEl){
+          return roadmapEl.id !== element.id;
+        });
+        this.completedElements.push(element);
         this.completedElement = element.id;
       } else {
         this.hideBanner();
+        this.completedElements = this.completedElements.filter(function(roadmapEl){
+          return roadmapEl.id !== element.id;
+        });
+        this.incompleteElements.unshift(element);
       }
-      this.sortElements();
+      this.checkIndex();
       this.buildCompletedAccordionMessage();
     }
   }
