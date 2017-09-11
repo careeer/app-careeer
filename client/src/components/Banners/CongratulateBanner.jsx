@@ -21,7 +21,10 @@ class CongratulateBanner extends PureComponent {
           style={bannerStyle}
         >
           <Grid container>
-            <Grid.Column width={3} only="large screen" />
+            <Grid.Column
+              width={3}
+              only="large screen"
+            />
             <Grid.Column
               width={9}
               textAlign="center"
@@ -30,18 +33,24 @@ class CongratulateBanner extends PureComponent {
                 Nice work, {this.props.clientName.split(' ', 1)}!
               </span>
             </Grid.Column>
-            <Grid.Column width={3} textAlign="right">
+            <Grid.Column
+              width={3}
+              textAlign="right"
+            >
               <Container style={secondaryMessageStyle} >
                 moved to bottom of roadmap
               </Container>
             </Grid.Column>
-            <Grid.Column width={1} textAlign="left">
+            <Grid.Column
+              width={1}
+              textAlign="left"
+            >
               <Container style={undoStyle}>
                 <a
-                  onClick={this.props.handleUndo}
-                  style={{ cursor: 'pointer' }}
-                  role="button"
                   tabIndex={0}
+                  role="button"
+                  style={undoStyle}
+                  onClick={this.props.handleUndo}
                 >
                   undo
                 </a>
