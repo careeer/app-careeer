@@ -344,7 +344,11 @@ class RoadmapElements {
   }
 
   buildCompletedAccordionMessage = () => {
-    const accordionMessage = `${this.completedElements.length} completed action`
+    let accordionMessage = `${this.completedElements.length} completed action`;
+    if (this.completedElements.length > 1) {
+      accordionMessage = `${this.completedElements.length} completed actions`;
+    }
+    
     if (this.isCompletedAccordionOpen) {
       this.completedAccordionMessage = `Hide ${accordionMessage}`;
       this.completedAccordionIcon = "angle up";
