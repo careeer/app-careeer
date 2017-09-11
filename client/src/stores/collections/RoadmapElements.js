@@ -18,7 +18,7 @@ class RoadmapElements {
   @observable isCreateFormClose = true;
   @observable isToggleableFormVisible = true;
 
-  @action resetClientParams() {
+  @action resetClientParams = () => {
     this.hasClientName = false;
     this.currentClient = '';
     this.currentClientSlug = '';
@@ -145,6 +145,9 @@ class RoadmapElements {
           return roadmapEl.id !== element.id;
         });
         this.completedElements.push(element);
+        if (this.completedElements.length === 1) {
+          this.isCompletedAccordionOpen = false;
+        }
         this.completedElement = element.id;
       } else {
         this.hideBanner();
