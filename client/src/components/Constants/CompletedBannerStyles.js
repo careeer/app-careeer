@@ -17,8 +17,13 @@ export const rowStyle = {
   padding: '0',
 };
 
+export const floatedColumnStyle = {
+  marginLeft: '0',
+};
+
 export const iconStyle = {
   lineHeight: 'none',
   fontSize: '3.0rem',
   fontWeight: 'lighter',
+  width: 'auto',
 };

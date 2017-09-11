@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React from 'react';
 import { Button, Icon, Grid } from 'semantic-ui-react';
-import { bannerStyle, mainMessageStyle, rowStyle, iconStyle } from '../Constants/CompletedBannerStyles';
+import { bannerStyle, mainMessageStyle, rowStyle, floatedColumnStyle, iconStyle } from '../Constants/CompletedBannerStyles';
 
 export default class CompletedElementsBanner extends React.Component {
   handleClick = () => {
@@ -21,6 +21,7 @@ export default class CompletedElementsBanner extends React.Component {
         <Grid.Row style={rowStyle}>
           <Grid.Column
             width={15}
+            mobile={14}
             textAlign="center"
             verticalAlign="middle"
           >
@@ -28,7 +29,10 @@ export default class CompletedElementsBanner extends React.Component {
               {this.props.message}
             </span>
           </Grid.Column>
-          <Grid.Column floated="right">
+          <Grid.Column
+            floated="right"
+            style={floatedColumnStyle}
+          >
             <Icon
               size="huge"
               style={iconStyle}
