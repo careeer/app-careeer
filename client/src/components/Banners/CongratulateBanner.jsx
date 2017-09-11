@@ -5,7 +5,7 @@ import { bannerStyle, mainMessageStyle, secondaryMessageStyle, undoStyle } from 
 
 class CongratulateBanner extends PureComponent {
   handleOnShow = () => {
-    setTimeout(this.props.hideCongratsBanner, 3500);
+    // setTimeout(this.props.hideCongratsBanner, 3500);
   }
 
   render() {
@@ -22,14 +22,15 @@ class CongratulateBanner extends PureComponent {
         >
           <Grid container>
             <Grid.Column
+              computer={3}
               largeScreen={3}
-              only="large screen"
+              only={"large screen", "computer"}
             />
             <Grid.Column
-              computer={3}
+              computer={8}
               largeScreen={9}
               tablet={10}
-              mobile={8}
+              mobile={13}
               textAlign="center"
             >
               <span style={mainMessageStyle}>
@@ -37,10 +38,10 @@ class CongratulateBanner extends PureComponent {
               </span>
             </Grid.Column>
             <Grid.Column
-              computer={3}
+              computer={4}
               largeScreen={3}
               tablet={5}
-              mobile={7}
+              only={'large screen', 'tablet', 'computer'}
               textAlign="right"
             >
               <Container style={secondaryMessageStyle} >
