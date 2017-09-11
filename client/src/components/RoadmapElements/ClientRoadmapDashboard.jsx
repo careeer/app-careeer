@@ -148,7 +148,7 @@ export default class ClientRoadmapDashboard extends React.Component {
               />
 
               <EditableRoadmapElementsList
-                roadmapElements={this.props.roadmapElements.all.slice()}
+                roadmapElements={this.props.roadmapElements.incompleteElements.slice()}
                 isCreateFormClose={this.props.roadmapElements.isCreateFormClose}
                 onFormOpen={this.handleEditFormOpen}
                 onFormSubmit={this.handleEditFormSubmit}
@@ -165,7 +165,7 @@ export default class ClientRoadmapDashboard extends React.Component {
               />
               { this.props.roadmapElements.isCompletedAccordionOpen &&
               <EditableRoadmapElementsList
-                roadmapElements={this.props.roadmapElements.all.slice()}
+                roadmapElements={this.props.roadmapElements.completedElements.slice()}
                 isCreateFormClose={this.props.roadmapElements.isCreateFormClose}
                 onFormOpen={this.handleEditFormOpen}
                 onFormSubmit={this.handleEditFormSubmit}
