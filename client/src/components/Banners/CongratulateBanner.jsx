@@ -5,7 +5,7 @@ import { bannerStyle, mainMessageStyle, secondaryMessageStyle, undoStyle } from 
 
 class CongratulateBanner extends PureComponent {
   handleOnShow = () => {
-    // setTimeout(this.props.hideCongratsBanner, 3500);
+    setTimeout(this.props.hideCongratsBanner, 3500);
   }
 
   render() {
@@ -34,7 +34,7 @@ class CongratulateBanner extends PureComponent {
               textAlign="center"
             >
               <span style={mainMessageStyle}>
-                Nice work, {this.props.clientName.split(' ', 1)}!
+                nice work, {this.props.clientName.split(' ', 1)}!
               </span>
             </Grid.Column>
             <Grid.Column
