@@ -105,6 +105,8 @@ class RoadmapElements {
   @action async update(data) {
     const element = this.createRoadmapElementObject(data);
     element.id = data.id;
+    element.dnd_index = data.index;
+
     const response = await Api.put(`${this.path}/${this.currentClientSlug}/${this.roadmapPath}/${element.id}`, element);
     const status = await response.status;
     if (status === 200) {
@@ -116,7 +118,6 @@ class RoadmapElements {
         }
       });
       this.pendingElements = updatedElements;
-      this.sortElements();
     }
   }
 
@@ -348,7 +349,7 @@ class RoadmapElements {
     if (this.completedElements.length > 1) {
       accordionMessage = `${this.completedElements.length} completed actions`;
     }
-    
+
     if (this.isCompletedAccordionOpen) {
       this.completedAccordionMessage = `Hide ${accordionMessage}`;
       this.completedAccordionIcon = "angle up";

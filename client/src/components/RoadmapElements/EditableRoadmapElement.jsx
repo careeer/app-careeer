@@ -60,6 +60,7 @@ export default class EditableRoadmapElement extends React.Component {
           description={this.props.description}
           callToActionCaption={this.props.callToActionCaption}
           callToActionURL={this.props.callToActionURL}
+          isStatusComplete={this.props.isStatusComplete}
           onFormSubmit={this.handleSubmit}
           onFormCopy={this.handleCopy}
           onFormClose={this.handleFormClose}
