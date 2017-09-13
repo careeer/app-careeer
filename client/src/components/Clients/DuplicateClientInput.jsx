@@ -16,20 +16,22 @@ export default class DuplicateClientInput extends Component {
 
   checkIfNameIsFilled = () => {
     if (this.props.roadmapElements.hasClientName) {
-      this.props.history.push(`/${this.props.roadmapElements.currentClientSlug}`);
+      this.props.history.push(`/duplicate/${this.props.roadmapElements.currentClientSlug}`);
     }
   }
 
   render() {
     this.checkIfNameIsFilled();
     return (
-      <Grid.Column>
-        <ClientInput
-          currentClient={this.props.roadmapElements.currentClient || ''}
-          handleClientInputChange={this.props.roadmapElements.handleClientInputChange}
-          createClient={this.handleKeyPress}
-        />
-      </Grid.Column>
+      <Grid style={mainGridStyle}>
+        <Grid.Column>
+          <ClientInput
+            currentClient={this.props.roadmapElements.currentClient || ''}
+            handleClientInputChange={this.props.roadmapElements.handleClientInputChange}
+            createClient={this.handleKeyPress}
+          />
+        </Grid.Column>
+      </Grid>
     );
   }
 }

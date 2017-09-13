@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { Grid } from 'semantic-ui-react';
+import { mainGridStyle } from '../Constants/CommonElementStyles';
 import ClientInput from './ClientInput';
 
 @inject('roadmapElements')@observer
@@ -23,13 +24,15 @@ export default class NewClientInput extends Component {
   render() {
     this.checkIfNameIsFilled();
     return (
-      <Grid.Column>
-        <ClientInput
-          currentClient={this.props.roadmapElements.currentClient || ''}
-          handleClientInputChange={this.props.roadmapElements.handleClientInputChange}
-          createClient={this.handleKeyPress}
-        />
-      </Grid.Column>
+      <Grid style={mainGridStyle}>
+        <Grid.Column>
+          <ClientInput
+            currentClient={this.props.roadmapElements.currentClient || ''}
+            handleClientInputChange={this.props.roadmapElements.handleClientInputChange}
+            createClient={this.handleKeyPress}
+          />
+        </Grid.Column>
+      </Grid>
     );
   }
 }

@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import 'semantic-ui-css/semantic.min.css';
 import './index.css';
 import stores from './stores';
-import Show from './components/Show';
+import App from './components/App';
 import ScrollToTop from './components/Helper/ScrollToTop';
 import HttpsRedirect from './components/Helper/HttpsRedirect';
 
@@ -17,7 +17,7 @@ render(
     <HttpsRedirect>
       <BrowserRouter>
         <ScrollToTop>
-          <Show />
+          <App />
         </ScrollToTop>
       </BrowserRouter>
     </HttpsRedirect>

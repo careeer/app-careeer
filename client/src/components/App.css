@@ -37,10 +37,6 @@ i.icon.write::before {
   background-color: #24c63a;
 }
 
-.massive.ui.fluid.button {
-  border-radius: 18px;
-}
-
 .ui.segments .segment .descritpion {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
