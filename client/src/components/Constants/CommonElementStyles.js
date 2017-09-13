@@ -25,3 +25,7 @@ export const COLOR = {
   '#fbbd08': 'yellow',
   transparent: null,
 };
+
+export const buttonStyle = {
+  borderRadius: '18px',
+};

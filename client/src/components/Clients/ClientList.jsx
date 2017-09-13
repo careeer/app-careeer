@@ -2,7 +2,8 @@
 import React, { PureComponent } from 'react';
 import { inject, observer } from 'mobx-react';
 import { List, Button, Icon, Grid } from 'semantic-ui-react';
-import { mainGridStyle } from '../Constants/CommonElementStyles';
+import { mainGridStyle, buttonStyle } from '../Constants/CommonElementStyles';
+import ClientElement from './ClientElement';
 
 @inject('roadmapElements')@observer
 export default class ClientList extends PureComponent {
@@ -22,14 +23,14 @@ export default class ClientList extends PureComponent {
   render() {
     const clients = this.props.roadmapElements.clients.map(
       client => (
-        <List.Item
+        <ClientElement
           key={client.id}
-          onClick={this.handleOnClientNameClick}
-          value={client.slug}
-          name={client.name}
-        >
-          {client.name}
-        </List.Item>
+          onClientNameClick={this.handleOnClientNameClick}
+          onArchiveClick={this.handleOnClientNameClick}
+          onDuplicateClick={this.handleOnClientNameClick}
+          clientSlug={client.slug}
+          clientName={client.name}
+        />
       ));
 
     return (
@@ -37,28 +38,23 @@ export default class ClientList extends PureComponent {
         <div>
           <Grid.Row>
             <Grid.Column floated="left">
-              <List
-                selection
-                relaxed
-                size="massive"
-              >
-                {clients}
-              </List>
+              {clients}
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
             <Grid.Column
               floated="left"
-              width={8}
+
             >
               <Button
-                size="large"
                 fluid
+                size="massive"
+                style={buttonStyle}
                 onClick={this.handleNewClientClick}
               >
                 <Icon
-                  size="large"
                   inverted
+                  size="large"
                   name="plus"
                 />
               </Button>
