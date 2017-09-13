@@ -8,6 +8,10 @@ class Client < ApplicationRecord
     "#{name.downcase.gsub(/\s/,'')}"
   end
 
+  amoeba do
+    enable
+  end
+  
   private
   def should_generate_new_friendly_id?
     slug.nil? || name_changed?

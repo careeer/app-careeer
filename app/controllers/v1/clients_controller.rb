@@ -36,6 +36,16 @@ class V1::ClientsController < ApplicationController
     end
   end
 
+  def duplicate
+    @new_client = @client.amoeba_dup
+    @new_client.name = params[:new_name]
+    if  @new_client.save!
+      head(:ok)
+    else
+      render json: @new_client.errors, status: :unprocessable_entity
+    end
+  end
+
   # DELETE /clients/1
   # DELETE /clients/1.json
   def destroy
@@ -54,7 +64,7 @@ class V1::ClientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_params
-      params.require(:client).permit(:name, :email, :avatar, :vision, :slug, :client_status)
+      params.require(:client).permit(:name, :email, :avatar, :vision, :slug, :client_status, :new_name)
     end
 
 end
