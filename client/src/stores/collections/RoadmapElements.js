@@ -294,7 +294,7 @@ class RoadmapElements {
     const response = await Api.put(`${this.path}/${this.currentClientSlug}`, this.createClientObject());
     const status = await response.status;
 
-    if (status !== 200) {
+    if (status === 200) {
       // empty
     }
   }
@@ -304,8 +304,8 @@ class RoadmapElements {
     clientObject.client_status = "archived";
     const response = await Api.put(`${this.path}/${clientObject.slug}`, clientObject);
     const status = await response.status;
-
-    if (status !== 200) {
+    console.log(status);
+    if (status === 200) {
       this.getClients();
     }
   }

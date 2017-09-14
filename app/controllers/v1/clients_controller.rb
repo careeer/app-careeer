@@ -4,7 +4,7 @@ class V1::ClientsController < ApplicationController
   # GET /clients
   # GET /clients.json
   def index
-    @clients = Client.all
+    @clients = Client.all.order('created_at')
     render json: @clients, status: :ok
   end
 

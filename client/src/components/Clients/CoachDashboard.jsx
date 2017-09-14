@@ -9,10 +9,6 @@ import ClientElement from './ClientElement';
 
 @inject('roadmapElements')@observer
 export default class CoachDashboard extends Component {
-  state = {
-    archived: false,
-  }
-
   componentWillMount() {
     this.props.roadmapElements.getClients();
   };
@@ -28,9 +24,6 @@ export default class CoachDashboard extends Component {
 
   handleArchiveClick = (slug) => {
     this.props.roadmapElements.archiveClient(slug);
-    this.setState({
-      archived: true,
-    });
   };
 
   handleDuplicateClick = (copiedFrom) => {
