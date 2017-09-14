@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import { List, Button, Icon, Grid } from 'semantic-ui-react';
+import { List, Button, Icon, Grid, Dimmer, Loader } from 'semantic-ui-react';
 import ClientList from './ClientList';
 import { mainGridStyle } from '../Constants/CommonElementStyles';
 import PlusButton from '../RoadmapElements/PlusButton';
@@ -41,6 +41,17 @@ export default class CoachDashboard extends Component {
     return (
       <Grid style={mainGridStyle}>
         <div>
+        { this.props.roadmapElements.isClientLoading &&
+          <Dimmer
+            active
+            page
+            inverted
+          >
+            <Loader size="medium">
+              loading client list
+            </Loader>
+          </Dimmer>
+        }
           <Grid.Row>
             <Grid.Column floated="left">
               <ClientList

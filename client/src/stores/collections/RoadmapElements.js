@@ -9,6 +9,7 @@ class RoadmapElements {
   @observable pendingElements = [];
   @observable incompleteElements = [];
   @observable isLoading = false;
+  @observable isClientLoading = false;
   @observable hasClientName = false;
   @observable currentClient = '';
   @observable currentClientSlug ='';
@@ -237,14 +238,14 @@ class RoadmapElements {
   }
 
   @action async getClients() {
-    this.isLoading = true;
+    this.isClientLoading = true;
     const response = await Api.get(this.path);
     const status = await response.status;
     if (status === 200) {
       const json = await response.json();
       const clientArray = await json;
       this.clients = clientArray.filter(client => client.client_status !== 'archived');
-      this.isLoading = false;
+      this.isClientLoading = false;
       if (this.currentClient) {
         this.setClientSlug(this.clients.filter(client =>
           client.name === this.currentClient)[0].slug);
