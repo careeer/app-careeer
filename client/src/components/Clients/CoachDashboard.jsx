@@ -4,6 +4,7 @@ import { inject, observer } from 'mobx-react';
 import { List, Button, Icon, Grid, Dimmer, Loader } from 'semantic-ui-react';
 import ClientList from './ClientList';
 import DuplicateClientInput from './DuplicateClientInput';
+import NewClientInput from './NewClientInput';
 import { mainGridStyle } from '../Constants/CommonElementStyles';
 import PlusButton from '../RoadmapElements/PlusButton';
 import ClientElement from './ClientElement';
@@ -46,8 +47,19 @@ export default class CoachDashboard extends Component {
     if (this.state.showDuplicateForm){
       return (
         <DuplicateClientInput
+          copyClient={this.props.roadmapElements.copyClient}
+          currentClient={this.props.roadmapElements.currentClient}
+          currentClientSlug={this.props.roadmapElements.currentClientSlug}
+          handleClientInputChange={this.props.roadmapElements.handleClientInputChange}
+          resetClientParams={this.props.roadmapElements.resetClientParams}
+          hasClientName={this.props.roadmapElements.hasClientName}
           copiedFrom={this.state.copiedFrom}
+          history={this.props.history}
         />
+      );
+    } else if (this.state.showNewForm){
+      return (
+        <NewClientInput />
       );
     }
     return (
