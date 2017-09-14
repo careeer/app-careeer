@@ -63,7 +63,7 @@ export default class CoachDashboard extends Component {
           currentClient={this.props.roadmapElements.currentClient}
           currentClientSlug={this.props.roadmapElements.currentClientSlug}
           handleClientInputChange={this.handleInputChange}
-          resetClientParams={resetClient}
+          resetClientParams={this.resetClient}
           hasClientName={this.props.roadmapElements.hasClientName}
           copiedFrom={this.state.copiedFrom}
           history={this.props.history}
