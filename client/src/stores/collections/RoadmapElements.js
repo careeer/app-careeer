@@ -327,7 +327,7 @@ class RoadmapElements {
     return client;
   }
 
-  @action getClientObjectFromId(clientId){
+  getClientObjectFromId = (clientId) => {
     const clientObject = this.clients.filter(client =>
       client.slug === clientId)[0];
     return clientObject;

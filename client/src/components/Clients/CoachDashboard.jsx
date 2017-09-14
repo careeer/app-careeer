@@ -43,15 +43,27 @@ export default class CoachDashboard extends Component {
     });
   };
 
+  handleCopyClient = () => {
+    this.props.roadmapElements.copyClient();
+  }
+
+  handleInputChange = () => {
+    this.props.roadmapElements.handleClientInputChange();
+  }
+
+  resetClient = () => {
+    this.props.roadmapElements.resetClientParams();
+  }
+
   render() {
     if (this.state.showDuplicateForm){
       return (
         <DuplicateClientInput
-          copyClient={this.props.roadmapElements.copyClient}
+          copyClient={this.handleCopyClient}
           currentClient={this.props.roadmapElements.currentClient}
           currentClientSlug={this.props.roadmapElements.currentClientSlug}
-          handleClientInputChange={this.props.roadmapElements.handleClientInputChange}
-          resetClientParams={this.props.roadmapElements.resetClientParams}
+          handleClientInputChange={this.handleInputChange}
+          resetClientParams={resetClient}
           hasClientName={this.props.roadmapElements.hasClientName}
           copiedFrom={this.state.copiedFrom}
           history={this.props.history}
