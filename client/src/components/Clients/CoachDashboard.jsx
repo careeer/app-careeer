@@ -43,8 +43,8 @@ export default class CoachDashboard extends Component {
     });
   };
 
-  handleCopyClient = () => {
-    this.props.roadmapElements.copyClient();
+  handleCopyClient = (oldClient, newClient) => {
+    this.props.roadmapElements.copyClient(oldClient, newClient);
   }
 
   handleInputChange = (e, data) => {
