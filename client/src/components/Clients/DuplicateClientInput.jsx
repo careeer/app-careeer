@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { Grid } from 'semantic-ui-react';
+import { mainGridStyle } from '../Constants/CommonElementStyles';
 import ClientInput from './ClientInput';
 
 @inject('roadmapElements')@observer
@@ -11,12 +12,12 @@ export default class DuplicateClientInput extends Component {
   }
 
   handleKeyPress = () => {
-    this.props.roadmapElements.createClient();
+    this.props.roadmapElements.copyClient(this.props.match.params.clientId, this.props.roadmapElements.currentClient);
   }
 
   checkIfNameIsFilled = () => {
     if (this.props.roadmapElements.hasClientName) {
-      this.props.history.push(`/duplicate/${this.props.roadmapElements.currentClientSlug}`);
+      this.props.history.push(`/${this.props.roadmapElements.currentClientSlug}`);
     }
   }
 

@@ -11,7 +11,6 @@ class ClientInput extends Component {
   }
 
   handleClickOutside = (event) => {
-    console.log('click outside..');
     event.key = 'Enter';
     this.handleKeyPress(event);
   }

@@ -1,19 +1,19 @@
 /* eslint-disable */
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { Label, Icon, Grid, Segment } from 'semantic-ui-react';
 import { segmentStyle, rowStyle, columnStyle, clientNameStyle, iconStyle } from '../Constants/ClientElementStyles';
 
-export default class ClientList extends PureComponent {
+export default class ClientList extends Component {
   handleOnClientNameClick = (event, data) => {
     this.props.onClientNameClick(event, data);
   }
 
   handleArchiveClick = () => {
-    this.props.onArchiveClick();
+    this.props.onArchiveClick(this.props.clientSlug);
   }
 
   handleDuplicateClick = () => {
-    this.props.onDuplicateClick();
+    this.props.onDuplicateClick(this.props.clientSlug);
   }
 
   render() {

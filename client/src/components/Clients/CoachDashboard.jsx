@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { List, Button, Icon, Grid } from 'semantic-ui-react';
 import ClientList from './ClientList';
@@ -8,10 +8,14 @@ import PlusButton from '../RoadmapElements/PlusButton';
 import ClientElement from './ClientElement';
 
 @inject('roadmapElements')@observer
-export default class CoachDashboard extends PureComponent {
+export default class CoachDashboard extends Component {
+  state = {
+    archived: false,
+  }
+
   componentWillMount() {
     this.props.roadmapElements.getClients();
-  }
+  };
 
   handleNewClientClick = () => {
     this.props.history.push('/roadmap');
@@ -20,14 +24,17 @@ export default class CoachDashboard extends PureComponent {
   handleExistingClientClick = (event, data) => {
     this.props.roadmapElements.setUpClientObject({ name: data.name, slug: data.value });
     this.props.history.push(`/${data.value}`);
-  }
-
-  handleArchiveClick = () => {
-    this.props.history.push('/roadmap');
   };
 
-  handleDuplicateClick = () => {
-    this.props.history.push('/roadmap');
+  handleArchiveClick = (slug) => {
+    this.props.roadmapElements.archiveClient(slug);
+    this.setState({
+      archived: true,
+    });
+  };
+
+  handleDuplicateClick = (copiedFrom) => {
+    this.props.history.push(`/duplicate/${copiedFrom}`);
   };
 
   render() {

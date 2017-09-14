@@ -4,6 +4,7 @@ import Api from '../helpers/api';
 
 class RoadmapElements {
   path = '/v1/clients';
+  updatePath = '/update';
   roadmapPath = 'roadmap_elements';
   @observable pendingElements = [];
   @observable incompleteElements = [];
@@ -205,6 +206,7 @@ class RoadmapElements {
     };
   }
 
+// Clients
   @action handleClientInputChange = (e, { value }) => {
     this.setClientName(value);
   }
@@ -240,7 +242,8 @@ class RoadmapElements {
     const status = await response.status;
     if (status === 200) {
       const json = await response.json();
-      this.clients = await json;
+      const clientArray = await json;
+      this.clients = clientArray.filter(client => client.client_status !== 'archived');
       this.isLoading = false;
       if (this.currentClient) {
         this.setClientSlug(this.clients.filter(client =>
@@ -259,6 +262,18 @@ class RoadmapElements {
     const response = await Api.post(this.path, { name: this.currentClient });
     const status = await response.status;
     if (status === 201) {
+      this.getClients();
+    }
+  }
+
+  @action async copyClient(copiedFrom, newName) {
+    const clientObject = this.getClientObjectFromId(copiedFrom);
+    clientObject.new_name = newName;
+
+    const response = await Api.post(`${this.updatePath}/${copiedFrom}`, clientObject);
+    const status = await response.status;
+    console.log(response);
+    if (status === 200) {
       this.getClients();
     }
   }
@@ -283,6 +298,17 @@ class RoadmapElements {
     }
   }
 
+  @action async archiveClient(clientId) {
+    const clientObject = this.getClientObjectFromId(clientId);
+    clientObject.client_status = "archived";
+    const response = await Api.put(`${this.path}/${clientObject.slug}`, clientObject);
+    const status = await response.status;
+
+    if (status !== 200) {
+      this.getClients();
+    }
+  }
+
   @action async updateClientVision() {
     this.updateClient();
   }
@@ -292,7 +318,7 @@ class RoadmapElements {
     this.updateClient();
   }
 
-  createClientObject() {
+  createClientObject = () => {
     const client = {
       name: this.currentClient,
       avatar: this.currentClientAvatar,
@@ -300,6 +326,12 @@ class RoadmapElements {
       slug: this.currentClientSlug,
     };
     return client;
+  }
+
+  getClientObjectFromId = (clientId) => {
+    const clientObject = this.clients.filter(client =>
+      client.slug === clientId)[0];
+    return clientObject;
   }
 
   @action toggleDissableClientNameInput() {

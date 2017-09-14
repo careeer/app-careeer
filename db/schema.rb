@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170815002059) do
+ActiveRecord::Schema.define(version: 20170914054920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,9 @@ ActiveRecord::Schema.define(version: 20170815002059) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slug"
+    t.string "avatar"
+    t.string "vision"
+    t.string "client_status"
     t.index ["slug"], name: "index_clients_on_slug", unique: true
   end
 
@@ -48,6 +51,7 @@ ActiveRecord::Schema.define(version: 20170815002059) do
     t.bigint "client_id"
     t.integer "dnd_index"
     t.string "due_date"
+    t.string "color"
     t.index ["client_id"], name: "index_roadmap_elements_on_client_id"
   end
 
