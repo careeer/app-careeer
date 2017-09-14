@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import { Label, Icon, Grid, Segment, Modal, Button } from 'semantic-ui-react';
-import { segmentStyle, rowStyle, columnStyle, clientNameStyle, iconStyle, modalStyle, modalHeaderStyle } from '../Constants/ClientElementStyles';
+import { segmentStyle, rowStyle, columnStyle, clientNameStyle, iconStyle, modalStyle, modalHeaderStyle, modalAcceptStyle } from '../Constants/ClientElementStyles';
 
 export default class ClientList extends Component {
   state = { open: false }
@@ -87,6 +87,7 @@ export default class ClientList extends Component {
               icon='checkmark'
               labelPosition='right'
               content='Yes'
+              style={modalAcceptStyle}
               onClick={this.archiveClient}
             />
           </Modal.Actions>

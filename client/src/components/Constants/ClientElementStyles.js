@@ -45,3 +45,7 @@ export const modalStyle = {
 export const modalHeaderStyle = {
   borderBottom: 'none',
 };
+
+export const modalAcceptStyle = {
+  backgroundColor: '#24C63A',
+};
