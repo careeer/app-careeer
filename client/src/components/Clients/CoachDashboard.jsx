@@ -47,8 +47,8 @@ export default class CoachDashboard extends Component {
     this.props.roadmapElements.copyClient();
   }
 
-  handleInputChange = () => {
-    this.props.roadmapElements.handleClientInputChange();
+  handleInputChange = (e, data) => {
+    this.props.roadmapElements.handleClientInputChange(e, data);
   }
 
   resetClient = () => {
