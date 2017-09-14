@@ -6,8 +6,11 @@ class Client < ApplicationRecord
 
   amoeba do
     enable
+    nullify :avatar
+    nullify :vision
+    nullify :email
   end
-  
+
   def name_url
     "#{name.downcase.gsub(/\s/,'')}"
   end
