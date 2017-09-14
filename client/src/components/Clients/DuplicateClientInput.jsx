@@ -12,7 +12,7 @@ export default class DuplicateClientInput extends Component {
   }
 
   handleKeyPress = () => {
-    this.props.roadmapElements.copyClient(this.props.match.params.clientId, this.props.roadmapElements.currentClient);
+    this.props.roadmapElements.copyClient(this.props.copiedFrom, this.props.roadmapElements.currentClient);
   }
 
   checkIfNameIsFilled = () => {

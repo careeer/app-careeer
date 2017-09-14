@@ -273,7 +273,6 @@ class RoadmapElements {
 
     const response = await Api.post(`${this.updatePath}/${copiedFrom}`, clientObject);
     const status = await response.status;
-    console.log(response);
     if (status === 200) {
       this.getClients();
     }
@@ -304,7 +303,6 @@ class RoadmapElements {
     clientObject.client_status = "archived";
     const response = await Api.put(`${this.path}/${clientObject.slug}`, clientObject);
     const status = await response.status;
-    console.log(status);
     if (status === 200) {
       this.getClients();
     }

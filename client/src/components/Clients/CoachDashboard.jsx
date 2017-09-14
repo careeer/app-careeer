@@ -3,14 +3,23 @@ import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { List, Button, Icon, Grid, Dimmer, Loader } from 'semantic-ui-react';
 import ClientList from './ClientList';
+import DuplicateClientInput from './DuplicateClientInput';
 import { mainGridStyle } from '../Constants/CommonElementStyles';
 import PlusButton from '../RoadmapElements/PlusButton';
 import ClientElement from './ClientElement';
 
 @inject('roadmapElements')@observer
 export default class CoachDashboard extends Component {
+  state = {
+    copiedFrom: '',
+    showDuplicateForm: false,
+  }
   componentWillMount() {
     this.props.roadmapElements.getClients();
+    this.setState({
+      copiedFrom: '',
+      showDuplicateForm: false,
+    });
   };
 
   handleNewClientClick = () => {
@@ -27,10 +36,20 @@ export default class CoachDashboard extends Component {
   };
 
   handleDuplicateClick = (copiedFrom) => {
-    this.props.history.push(`/duplicate/${copiedFrom}`);
+    this.setState({
+      copiedFrom: copiedFrom,
+      showDuplicateForm: true,
+    });
   };
 
   render() {
+    if (this.state.showDuplicateForm){
+      return (
+        <DuplicateClientInput
+          copiedFrom={this.state.copiedFrom}
+        />
+      );
+    }
     return (
       <Grid style={mainGridStyle}>
         <div>
