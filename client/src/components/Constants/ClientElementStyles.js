@@ -35,4 +35,13 @@ export const clientNameStyle = {
 export const iconStyle = {
   paddingLeft: '1.1rem',
   paddingRight: '1.1rem',
+  // visibility: 'hidden',
+};
+
+export const modalStyle = {
+  fontFamily: 'Raleway',
+};
+
+export const modalHeaderStyle = {
+  borderBottom: 'none',
 };
