@@ -396,10 +396,12 @@ class RoadmapElements {
   }
 
   @action calculateCompletedPerDayStat = () => {
-    const clientObject = this.clients.filter(client => client.slug === this.currentClientSlug)[0];
-    const createdDate = new Date(clientObject.created_at.split("T")[0]);
-    const dateNow = new Date();
-    this.completedPerDaySimpleStat = this.daysBetween(dateNow, createdDate);
+    if (this.completedElements.length > 0) {
+      const clientObject = this.clients.filter(client => client.slug === this.currentClientSlug)[0];
+      const createdDate = new Date(clientObject.created_at.split("T")[0]);
+      const dateNow = new Date();
+      this.completedPerDaySimpleStat =  this.completedElements.length/this.daysBetween(dateNow, createdDate);
+    }
   }
 
   daysBetween(date1, date2) {
