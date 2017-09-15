@@ -7,6 +7,13 @@ import ClientInput from './ClientInput';
 export default class DuplicateClientInput extends Component {
   componentWillMount() {
     this.props.resetClientParams();
+    window.addEventListener("popstate", function() {
+      location.replace("/clients");
+      // // history.replaceState(null, document.title, '/clients');
+	    //    setTimeout(function(){
+	    //
+	    //      },0);
+       }, false);
   }
 
   handleKeyPress = () => {
