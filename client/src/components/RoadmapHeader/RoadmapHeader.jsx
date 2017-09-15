@@ -1,30 +1,14 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import { Grid } from 'semantic-ui-react';
+import { Grid, Statistic } from 'semantic-ui-react';
 import ImageAvatar from './ImageAvatar';
 import ClientName from './ClientName';
 import ImageUpload from './ImageUpload';
+import { overlayStyle, columnStyle, nameVisionColumnStyle, statisticColumnStyle, statisticFirstStyle, statisticStyle, statisticValueStyle, statisticLabelStyle } from '../Constants/RoadmapHeaderStyles';
 
-const overlayStyle = {
-  position: 'absolute',
-  marginRight: '15px',
-  width: '60px',
-  height: '60px',
-};
-
-const columnStyle = {
-  width: '70px',
-  paddingLeft: '2px',
-};
-
-const nameVisionColumnStyle = {
-  paddingTop: '14px',
-  paddingLeft: '0',
-  width: '90%',
-}
 @inject('roadmapElements', 'headerStore')@observer
-class RoadmapHeader extends Component {
+class RoadmapHeader extends Component {  
   state = {
     openInputForm: false,
   }
@@ -80,6 +64,28 @@ class RoadmapHeader extends Component {
             openInputForm={this.state.openInputForm}
           />
         </Grid.Column>
+        { (this.props.roadmapElements.completedElements.length > 0) &&
+        <Grid.Column style={statisticColumnStyle}>
+          <Statistic.Group>
+            <Statistic style={statisticFirstStyle} >
+              <Statistic.Value style={statisticValueStyle}>
+                {this.props.roadmapElements.completedElements.length}
+              </Statistic.Value>
+              <Statistic.Label style={statisticLabelStyle}>
+                completed actions
+              </Statistic.Label>
+            </Statistic>
+            <Statistic style={statisticStyle}>
+              <Statistic.Value style={statisticValueStyle}>
+                {this.props.roadmapElements.completedPerDaySimpleStat}
+              </Statistic.Value>
+              <Statistic.Label style={statisticLabelStyle}>
+                completed actions / day
+              </Statistic.Label>
+          </Statistic>
+          </Statistic.Group>
+        </Grid.Column>
+      }
       </Grid>
     );
   }

@@ -250,11 +250,13 @@ class RoadmapElements {
         this.setClientSlug(this.clients.filter(client =>
           client.name === this.currentClient)[0].slug);
         this.hasClientName = true;
+        this.calculateCompletedPerDayStat();
       }
       if (this.currentClientSlug) {
         this.setClientName(this.clients.filter(client =>
           client.slug === this.currentClientSlug)[0].name);
         this.hasClientName = true;
+        this.calculateCompletedPerDayStat();
       }
     }
   }
@@ -370,9 +372,12 @@ class RoadmapElements {
 
   @observable isCompletedAccordionOpen = false;
 
+  @observable completedPerDaySimpleStat = "";
+
   @action toggleCompletedElements = () => {
     this.isCompletedAccordionOpen = !this.isCompletedAccordionOpen;
     this.buildCompletedAccordionMessage();
+    this.calculateCompletedPerDayStat();
   }
 
   buildCompletedAccordionMessage = () => {
@@ -388,6 +393,29 @@ class RoadmapElements {
       this.completedAccordionMessage = `Show ${accordionMessage}`;
       this.completedAccordionIcon = "angle down";
     }
+  }
+
+  @action calculateCompletedPerDayStat = () => {
+    const clientObject = this.clients.filter(client => client.slug === this.currentClientSlug)[0];
+    const createdDate = new Date(clientObject.created_at.split("T")[0]);
+    const dateNow = new Date();
+    this.completedPerDaySimpleStat = this.daysBetween(dateNow, createdDate);
+  }
+
+  daysBetween(date1, date2) {
+    // The number of milliseconds in one day
+    const ONE_DAY = 1000 * 60 * 60 * 24;
+
+    // Convert both dates to milliseconds
+    const date1_ms = date1.getTime();
+    const date2_ms = date2.getTime();
+
+    // Calculate the difference in milliseconds
+    const difference_ms = Math.abs(date1_ms - date2_ms);
+
+    // Convert back to days and return
+    return Math.round(difference_ms/ONE_DAY)
+
   }
 }
 
