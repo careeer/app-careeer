@@ -24,7 +24,7 @@ class ClientInput extends Component {
           onKeyPress={this.handleKeyPress}
           name="clientName"
           value={this.props.currentClient}
-          onChange={this.props.handleInputChange}
+          onChange={this.props.handleClientInputChange}
         />
     );
   }
