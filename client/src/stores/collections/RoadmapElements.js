@@ -400,7 +400,7 @@ class RoadmapElements {
       const clientObject = this.clients.filter(client => client.slug === this.currentClientSlug)[0];
       const createdDate = new Date(clientObject.created_at.split("T")[0]);
       const dateNow = new Date();
-      this.completedPerDaySimpleStat =  this.completedElements.length/this.daysBetween(dateNow, createdDate);
+      this.completedPerDaySimpleStat =  (this.completedElements.length/this.daysBetween(dateNow, createdDate)).substring(0,4);;
     }
   }
 
