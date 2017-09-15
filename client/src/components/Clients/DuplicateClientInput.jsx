@@ -8,7 +8,11 @@ export default class DuplicateClientInput extends Component {
   componentWillMount() {
     this.props.resetClientParams();
     window.addEventListener("popstate", function() {
-      this.props.history.push(`/clients`);
+      history.replaceState(null, document.title, location.pathname);
+      console.log('replacing');
+	    setTimeout(function(){
+	       location.replace("/clients");
+	     },0);
        }, false
     );
   }
@@ -18,7 +22,7 @@ export default class DuplicateClientInput extends Component {
       }, false
     );
   }
-  
+
   handleKeyPress = () => {
     this.props.copyClient(this.props.copiedFrom, this.props.currentClient);
   }
