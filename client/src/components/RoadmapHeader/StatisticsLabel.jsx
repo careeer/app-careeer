@@ -4,6 +4,9 @@ import { Transition, Statistic } from 'semantic-ui-react';
 import { statisticColumnStyle, statisticFirstStyle, statisticStyle, statisticValueStyle, statisticLabelStyle, statisticMainValueStyle, statisticMainLabelStyle } from '../Constants/RoadmapHeaderStyles';
 
 class RoadmapHeader extends Component {
+  state = {
+
+  }
   changeColor = () => {
     statisticMainValueStyle.color = '#03ac13';
     statisticMainLabelStyle.color = '#03ac13';
@@ -23,6 +26,14 @@ class RoadmapHeader extends Component {
     }
     return (
       <Statistic.Group>
+      <Statistic style={statisticStyle}>
+        <Statistic.Value style={statisticValueStyle}>
+          {this.props.currentActions}
+        </Statistic.Value>
+        <Statistic.Label style={statisticLabelStyle}>
+          current actions
+        </Statistic.Label>
+      </Statistic>
       {(this.props.numberCompleted > 0) &&
         <Statistic style={statisticFirstStyle} >
           <Statistic.Value style={statisticMainValueStyle}>
@@ -33,14 +44,7 @@ class RoadmapHeader extends Component {
           </Statistic.Label>
         </Statistic>
       }
-        <Statistic style={statisticStyle}>
-          <Statistic.Value style={statisticValueStyle}>
-            {this.props.currentActions}
-          </Statistic.Value>
-          <Statistic.Label style={statisticLabelStyle}>
-            current actions
-          </Statistic.Label>
-        </Statistic>
+
       </Statistic.Group>
     );
   }
