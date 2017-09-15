@@ -9,6 +9,7 @@ import ClientInput from './ClientInput';
 export default class NewClientInput extends Component {
   componentWillMount() {
     this.props.roadmapElements.resetClientParams();
+    history.replaceState(null, document.title, "/clients");
   }
 
   handleKeyPress = () => {

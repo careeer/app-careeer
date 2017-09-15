@@ -37,43 +37,10 @@ export default class CoachDashboard extends Component {
   };
 
   handleDuplicateClick = (copiedFrom) => {
-    this.setState({
-      copiedFrom: copiedFrom,
-      showDuplicateForm: true,
-    });
+    this.props.history.push(`/duplicate/${copiedFrom}`);
   };
 
-  handleCopyClient = (oldClient, newClient) => {
-    this.props.roadmapElements.copyClient(oldClient, newClient);
-  }
-
-  handleInputChange = (e, data) => {
-    this.props.roadmapElements.handleClientInputChange(e, data);
-  }
-
-  resetClient = () => {
-    this.props.roadmapElements.resetClientParams();
-  }
-
   render() {
-    if (this.state.showDuplicateForm){
-      return (
-        <DuplicateClientInput
-          copyClient={this.handleCopyClient}
-          currentClient={this.props.roadmapElements.currentClient}
-          currentClientSlug={this.props.roadmapElements.currentClientSlug}
-          handleClientInputChange={this.handleInputChange}
-          resetClientParams={this.resetClient}
-          hasClientName={this.props.roadmapElements.hasClientName}
-          copiedFrom={this.state.copiedFrom}
-          history={this.props.history}
-        />
-      );
-    } else if (this.state.showNewForm){
-      return (
-        <NewClientInput />
-      );
-    }
     return (
       <Grid style={mainGridStyle}>
         <div>

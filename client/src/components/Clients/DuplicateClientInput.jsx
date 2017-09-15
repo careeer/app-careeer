@@ -1,36 +1,24 @@
 /* eslint-disable */
 import React, { Component } from 'react';
+import { inject, observer } from 'mobx-react';
 import { Grid } from 'semantic-ui-react';
 import { mainGridStyle } from '../Constants/CommonElementStyles';
 import ClientInput from './ClientInput';
 
+@inject('roadmapElements')@observer
 export default class DuplicateClientInput extends Component {
   componentWillMount() {
-    this.props.resetClientParams();
-    window.onpopstate = function() {
-      console.log("onPopState");
-      this.changeBackToClient();
-    }
-    // window.addEventListener("popstate", function() {
-    //   history.replaceState(null, document.title, location.pathname);
-    //   console.log('replacing');
-	  //   setTimeout(function(){
-	  //      location.replace("/clients");
-	  //    },0);
-    //    }, false
-    // );
-  }
-  changeBackToClient = () => {
-    this.props.history.push(`/clients`);
+    this.props.roadmapElements.resetClientParams();
+    history.replaceState(null, document.title, "/clients");
   }
 
   handleKeyPress = () => {
-    this.props.copyClient(this.props.copiedFrom, this.props.currentClient);
+    this.props.roadmapElements.copyClient(this.props.roadmapElements.copiedFrom, this.props.roadmapElements.currentClient);
   }
 
   checkIfNameIsFilled = () => {
-    if (this.props.hasClientName) {
-      this.props.history.push(`/${this.props.currentClientSlug}`);
+    if (this.props.roadmapElements.hasClientName) {
+      this.props.history.push(`/${this.props.roadmapElements.currentClientSlug}`);
     }
   }
 
@@ -40,8 +28,8 @@ export default class DuplicateClientInput extends Component {
       <Grid style={mainGridStyle}>
         <Grid.Column>
           <ClientInput
-            currentClient={this.props.currentClient || ''}
-            handleClientInputChange={this.props.handleClientInputChange}
+            currentClient={this.props.roadmapElements.currentClient || ''}
+            handleClientInputChange={this.props.roadmapElements.handleClientInputChange}
             createClient={this.handleKeyPress}
           />
         </Grid.Column>
