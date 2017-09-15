@@ -65,15 +65,16 @@ class RoadmapHeader extends Component {
             openInputForm={this.state.openInputForm}
           />
         </Grid.Column>
-        { (this.props.roadmapElements.completedElements.length > 0) &&
+
         <Grid.Column style={statisticColumnStyle}>
           <StatisticsLabel
             numberCompleted={this.props.roadmapElements.completedElements.length}
+            currentActions={this.props.roadmapElements.incompleteElements.length}
             simpleStat={this.props.roadmapElements.completedPerDaySimpleStat}
             bannerVisible={this.props.roadmapElements.isBannerVisible}
           />
         </Grid.Column>
-      }
+      
       </Grid>
     );
   }

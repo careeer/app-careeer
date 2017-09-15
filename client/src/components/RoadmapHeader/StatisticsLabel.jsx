@@ -23,6 +23,7 @@ class RoadmapHeader extends Component {
     }
     return (
       <Statistic.Group>
+      {(this.props.numberCompleted > 0) &&
         <Statistic style={statisticFirstStyle} >
           <Statistic.Value style={statisticMainValueStyle}>
             {this.props.numberCompleted}
@@ -31,12 +32,13 @@ class RoadmapHeader extends Component {
             completed actions
           </Statistic.Label>
         </Statistic>
+      }
         <Statistic style={statisticStyle}>
           <Statistic.Value style={statisticValueStyle}>
-            {this.props.simpleStat}
+            {this.props.currentActions}
           </Statistic.Value>
           <Statistic.Label style={statisticLabelStyle}>
-            completed actions / day
+            current actions
           </Statistic.Label>
         </Statistic>
       </Statistic.Group>
