@@ -32,9 +32,22 @@ export const statisticStyle = {
   marginRight: '0',
 };
 
+export const statisticMainValueStyle = {
+  fontFamily: 'Roboto',
+  letterSpacing: '1.3px',
+  color: '#949494',
+};
+
 export const statisticValueStyle = {
   fontFamily: 'Roboto',
   letterSpacing: '1.3px',
+  color: '#949494',
+};
+
+export const statisticMainLabelStyle = {
+  fontSize: '10px',
+  fontFamily: 'Roboto',
+  letterSpacing: '0.3px',
   color: '#949494',
 };
 

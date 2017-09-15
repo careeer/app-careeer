@@ -1,14 +1,15 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import { Grid, Statistic } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
 import ImageAvatar from './ImageAvatar';
 import ClientName from './ClientName';
 import ImageUpload from './ImageUpload';
-import { overlayStyle, columnStyle, nameVisionColumnStyle, statisticColumnStyle, statisticFirstStyle, statisticStyle, statisticValueStyle, statisticLabelStyle } from '../Constants/RoadmapHeaderStyles';
+import StatisticsLabel from './StatisticsLabel';
+import { overlayStyle, columnStyle, nameVisionColumnStyle, statisticColumnStyle } from '../Constants/RoadmapHeaderStyles';
 
 @inject('roadmapElements', 'headerStore')@observer
-class RoadmapHeader extends Component {  
+class RoadmapHeader extends Component {
   state = {
     openInputForm: false,
   }
@@ -66,24 +67,11 @@ class RoadmapHeader extends Component {
         </Grid.Column>
         { (this.props.roadmapElements.completedElements.length > 0) &&
         <Grid.Column style={statisticColumnStyle}>
-          <Statistic.Group>
-            <Statistic style={statisticFirstStyle} >
-              <Statistic.Value style={statisticValueStyle}>
-                {this.props.roadmapElements.completedElements.length}
-              </Statistic.Value>
-              <Statistic.Label style={statisticLabelStyle}>
-                completed actions
-              </Statistic.Label>
-            </Statistic>
-            <Statistic style={statisticStyle}>
-              <Statistic.Value style={statisticValueStyle}>
-                {this.props.roadmapElements.completedPerDaySimpleStat}
-              </Statistic.Value>
-              <Statistic.Label style={statisticLabelStyle}>
-                completed actions / day
-              </Statistic.Label>
-          </Statistic>
-          </Statistic.Group>
+          <StatisticsLabel
+            numberCompleted={this.props.roadmapElements.completedElements.length}
+            simpleStat={this.props.roadmapElements.completedPerDaySimpleStat}
+            bannerVisible={this.props.roadmapElements.isBannerVisible}
+          />
         </Grid.Column>
       }
       </Grid>
