@@ -401,7 +401,7 @@ class RoadmapElements {
       const createdDate = new Date(clientObject.created_at.split("T")[0]);
       const dateNow = new Date();
       const stat =  (this.completedElements.length/this.daysBetween(dateNow, createdDate));
-      this.completedPerDaySimpleStat = Math.round( stat * 10 ) / 10;
+      this.completedPerDaySimpleStat = Math.round( stat * 100 ) / 100;
     }
   }
 
