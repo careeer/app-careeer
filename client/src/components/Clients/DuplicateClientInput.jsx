@@ -7,20 +7,21 @@ import ClientInput from './ClientInput';
 export default class DuplicateClientInput extends Component {
   componentWillMount() {
     this.props.resetClientParams();
-    window.addEventListener("popstate", function() {
-      history.replaceState(null, document.title, location.pathname);
-      console.log('replacing');
-	    setTimeout(function(){
-	       location.replace("/clients");
-	     },0);
-       }, false
-    );
+    window.onpopstate = function() {
+      console.log("onPopState");
+      this.changeBackToClient();
+    }
+    // window.addEventListener("popstate", function() {
+    //   history.replaceState(null, document.title, location.pathname);
+    //   console.log('replacing');
+	  //   setTimeout(function(){
+	  //      location.replace("/clients");
+	  //    },0);
+    //    }, false
+    // );
   }
-  componentWillUnmount() {
-    window.removeEventListener("popstate", function() {
-        this.props.history.push(`/clients`);
-      }, false
-    );
+  changeBackToClient = () => {
+    this.props.history.push(`/clients`);
   }
 
   handleKeyPress = () => {
