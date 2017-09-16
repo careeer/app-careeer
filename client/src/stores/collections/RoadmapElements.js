@@ -31,6 +31,7 @@ class RoadmapElements {
     this.isToggleableFormVisible = true;
     this.isBannerVisible = false;
     this.isCompletedAccordionOpen = false;
+    this.nonEmptyStateRoadmaps = 0;
   }
 
   @action async fetchAll() {
@@ -64,14 +65,20 @@ class RoadmapElements {
   checkIndex = () => {
     let fetchAgain = false;
     this.incompleteElements = this.incompleteElements.map((obj, index) => {
+      if (obj.status === false){
+        console.log(obj.status);
+        this.nonEmptyStateRoadmaps += 1;
+      }
       if (obj.dnd_index !== index) {
         obj.dnd_index = index;
         fetchAgain = this.updateNoFetch(obj);
       }
       return obj;
     });
+
     this.completedElements = this.completedElements.map((obj, index) => {
       if (obj.dnd_index !== index) {
+        this.nonEmptyStateRoadmaps += 1;
         obj.dnd_index = index;
         fetchAgain = this.updateNoFetch(obj);
       }
@@ -373,6 +380,8 @@ class RoadmapElements {
   @observable isCompletedAccordionOpen = false;
 
   @observable completedPerDaySimpleStat = "";
+
+  @observable nonEmptyStateRoadmaps = 0;
 
   @action toggleCompletedElements = () => {
     this.isCompletedAccordionOpen = !this.isCompletedAccordionOpen;

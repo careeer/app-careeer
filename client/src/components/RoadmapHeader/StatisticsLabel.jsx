@@ -10,12 +10,18 @@ class RoadmapHeader extends Component {
   changeColor = () => {
     statisticMainValueStyle.color = '#03ac13';
     statisticMainLabelStyle.color = '#03ac13';
-
+    statisticMainValueStyle.opacity = '1';
+    statisticMainLabelStyle.opacity = '1';
   }
 
   resetColor = () => {
     statisticMainValueStyle.color = '#949494';
     statisticMainLabelStyle.color = '#949494';
+    if (this.props.numberOfNonEmpty > 0) {
+      statisticMainValueStyle.opacity = '1';
+      statisticMainLabelStyle.opacity = '1';
+    }
+
   }
 
   render () {
@@ -28,23 +34,20 @@ class RoadmapHeader extends Component {
       <Statistic.Group>
       <Statistic style={statisticFirstStyle}>
         <Statistic.Value style={statisticMainValueStyle}>
-          {this.props.currentActions}
+          {this.props.numberCompleted}
         </Statistic.Value>
         <Statistic.Label style={statisticMainLabelStyle}>
-          current actions
+          completed actions
         </Statistic.Label>
       </Statistic>
-      {(this.props.numberCompleted > 0) &&
         <Statistic style={statisticStyle} >
           <Statistic.Value style={statisticValueStyle}>
-            {this.props.numberCompleted}
+            {this.props.currentActions}
           </Statistic.Value>
           <Statistic.Label style={statisticLabelStyle}>
-            completed actions
+            current actions
           </Statistic.Label>
         </Statistic>
-      }
-
       </Statistic.Group>
     );
   }
