@@ -49,7 +49,7 @@ export default class ClientList extends Component {
     if (!this.state.isMouseInside && !Touch.isTouchDevice()) {
       finalIconStyles= Object.assign({}, iconStyle, {
         opacity: 0,
-      });      
+      });
     } else {
       finalIconStyles= Object.assign({}, iconStyle, {
         opacity: 1,

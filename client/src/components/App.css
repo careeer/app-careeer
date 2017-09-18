@@ -50,19 +50,8 @@ i.icon.write::before {
   border: none;
 }
 
-i.big.icon,
-i.big.icons {
-  color: #b1b1b1;
-  margin-right: 1.5em;
-}
-
 i.big.checkmark.icon {
   margin-right: 1em;
-}
-
-i.big.checkmark.green.icon,
-i.big.checkmark.icon:hover {
-  color: #24c63a;
 }
 
 .ui.label > a {
