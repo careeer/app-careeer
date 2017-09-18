@@ -124,6 +124,7 @@ export default class RoadmapElement extends React.Component {
             color={segmentColor}
             onMouseEnter={this.mouseEnter}
             onMouseLeave={this.mouseExit}
+            loading={this.props.loadingElement}
           >
             <Grid>
               <Grid.Row style={gridRowStyle}>
@@ -208,6 +209,7 @@ export default class RoadmapElement extends React.Component {
           color={segmentColor}
           onMouseEnter={this.mouseEnter}
           onMouseLeave={this.mouseExit}
+          loading={this.props.loadingElement}
         >
           <Grid>
             <Grid.Row style={gridRowStyle}>

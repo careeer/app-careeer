@@ -85,6 +85,7 @@ export default class EditableRoadmapElement extends React.Component {
         toggleElementStatus={this.props.toggleElementStatus}
         handleElementMove={this.props.handleElementMove}
         enableDragAndDrop={this.props.enableDragAndDrop}
+        loadingElement={this.props.loadingElement}
       />
     );
   }

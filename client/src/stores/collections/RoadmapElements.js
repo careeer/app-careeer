@@ -19,6 +19,7 @@ class RoadmapElements {
   @observable isNameInputDisabled = false;
   @observable isCreateFormClose = true;
   @observable isToggleableFormVisible = true;
+  @observable isElementLoading = false;
 
   @action resetClientParams = () => {
     this.hasClientName = false;
@@ -111,6 +112,7 @@ class RoadmapElements {
   }
 
   @action async update(data) {
+    this.isElementLoading = true;
     const element = this.createRoadmapElementObject(data);
     element.id = data.id;
     element.dnd_index = data.index;
@@ -126,6 +128,7 @@ class RoadmapElements {
         }
       });
       this.pendingElements = updatedElements;
+      this.isElementLoading = false;
     }
   }
 

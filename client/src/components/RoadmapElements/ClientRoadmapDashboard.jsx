@@ -159,6 +159,7 @@ export default class ClientRoadmapDashboard extends React.Component {
                 handleCreateFormToggle={this.handleCreateFormToggle}
                 handleElementMove={this.handleElementMove}
                 enableDragAndDrop={true}
+                loadingElement={this.props.roadmapElements.isElementLoading}
               />
 
               { (this.props.roadmapElements.completedElements.length > 0) &&
@@ -177,6 +178,7 @@ export default class ClientRoadmapDashboard extends React.Component {
                   toggleElementStatus={this.handleToggleRoadmapElementStatus}
                   handleCreateFormToggle={this.handleCreateFormToggle}
                   handleElementMove={this.handleElementMove}
+                  loadingElement={this.props.roadmapElements.isElementLoading}
                 />
               }
 
