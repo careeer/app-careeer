@@ -25,8 +25,6 @@ export default class CompletedRoadmapElementsList extends React.Component {
           handleCreateFormToggle={this.props.handleCreateFormToggle}
           handleElementMove={this.props.handleElementMove}
           enableDragAndDrop={this.props.enableDragAndDrop}
-          loadingElement={this.props.loadingElement}
-          loadingid={this.props.loadingid}
         />
         }
       </div>

@@ -142,10 +142,7 @@ export default class RoadmapElement extends React.Component {
         color: '#b1b1b1',
       }
     }
-    let isComponentLoading = false;
-    if (this.props.loadingid === this.props.id && this.props.loadingElement) {
-      isComponentLoading = true;
-    }
+    
     const isCheckmarkGreen =
       this.props.isStatusComplete ? 'green' : null
     const primaryButton = (this.props.index === 0 && !this.props.isStatusComplete) ? false : true
@@ -165,7 +162,6 @@ export default class RoadmapElement extends React.Component {
             color={segmentColor}
             onMouseEnter={this.mouseEnter}
             onMouseLeave={this.mouseExit}
-            loading={isComponentLoading}
           >
             <Grid>
               <Grid.Row style={gridRowStyle}>
@@ -252,7 +248,6 @@ export default class RoadmapElement extends React.Component {
           color={segmentColor}
           onMouseEnter={this.mouseEnter}
           onMouseLeave={this.mouseExit}
-          loading={isComponentLoading}
         >
           <Grid>
             <Grid.Row style={gridRowStyle}>
