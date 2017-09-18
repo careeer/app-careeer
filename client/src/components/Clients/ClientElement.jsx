@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Label, Icon, Grid, Segment, Modal, Button } from 'semantic-ui-react';
 import { segmentStyle, rowStyle, columnStyle, clientNameStyle, iconStyle, modalStyle, modalHeaderStyle, modalAcceptStyle } from '../Constants/ClientElementStyles';
+import Touch from '../Helper/CheckTouch';
 
 export default class ClientList extends Component {
   state = {
@@ -45,14 +46,15 @@ export default class ClientList extends Component {
 
   render() {
     let finalIconStyles = {};
-    if (this.state.isMouseInside) {
+    if (!this.state.isMouseInside && !Touch.isTouchDevice()) {
+      finalIconStyles= Object.assign({}, iconStyle, {
+        opacity: 0,
+      });      
+    } else {
       finalIconStyles= Object.assign({}, iconStyle, {
         opacity: 1,
       });
-    } else {
-      finalIconStyles= Object.assign({}, iconStyle, {
-        opacity: 0,
-      });
+
     }
     return (
       <Segment
