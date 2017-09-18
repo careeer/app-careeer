@@ -19,7 +19,6 @@ class RoadmapElements {
   @observable isNameInputDisabled = false;
   @observable isCreateFormClose = true;
   @observable isToggleableFormVisible = true;
-  @observable isElementLoading = false;
 
   @action resetClientParams = () => {
     this.hasClientName = false;
@@ -32,7 +31,6 @@ class RoadmapElements {
     this.isToggleableFormVisible = true;
     this.isBannerVisible = false;
     this.isCompletedAccordionOpen = false;
-    this.nonEmptyStateRoadmaps = 0;
   }
 
   @action async fetchAll() {
@@ -66,9 +64,6 @@ class RoadmapElements {
   checkIndex = () => {
     let fetchAgain = false;
     this.incompleteElements = this.incompleteElements.map((obj, index) => {
-      if (obj.status === false){
-        this.nonEmptyStateRoadmaps += 1;
-      }
       if (obj.dnd_index !== index) {
         obj.dnd_index = index;
         fetchAgain = this.updateNoFetch(obj);
@@ -78,7 +73,6 @@ class RoadmapElements {
 
     this.completedElements = this.completedElements.map((obj, index) => {
       if (obj.dnd_index !== index) {
-        this.nonEmptyStateRoadmaps += 1;
         obj.dnd_index = index;
         fetchAgain = this.updateNoFetch(obj);
       }
@@ -378,10 +372,6 @@ class RoadmapElements {
   @observable completedAccordionIcon = "angle down";
 
   @observable isCompletedAccordionOpen = false;
-
-  @observable completedPerDaySimpleStat = "";
-
-  @observable nonEmptyStateRoadmaps = 0;
 
   @action toggleCompletedElements = () => {
     this.isCompletedAccordionOpen = !this.isCompletedAccordionOpen;

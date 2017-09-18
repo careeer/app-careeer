@@ -69,7 +69,7 @@ export default class RoadmapElementForm extends React.Component {
       cardType: this.state.cardType,
       description: this.state.description,
       callToActionCaption: this.state.callToActionCaption,
-      callToActionURL: this.state.callToActionURL.replace(/^https?\/\//i, '').replace(/^https?\/\//i, ''),
+      callToActionURL: this.state.callToActionURL.replace(/^https?\:\/\//i, '').replace(/^https?\:\/\//i, ''),
       status: this.state.status,
       color: this.state.color,
     }

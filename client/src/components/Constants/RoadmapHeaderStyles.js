@@ -24,6 +24,7 @@ export const statisticFirstStyle = {
   marginBottom: '0',
   marginLeft: '0',
   marginRight: '3.5em',
+  paddingLeft: '14px',
 };
 
 export const statisticStyle = {
@@ -36,7 +37,6 @@ export const statisticMainValueStyle = {
   fontFamily: 'Roboto',
   letterSpacing: '1.3px',
   color: '#949494',
-  opacity: '0',
 };
 
 export const statisticValueStyle = {
@@ -50,7 +50,6 @@ export const statisticMainLabelStyle = {
   fontFamily: 'Roboto',
   letterSpacing: '0.3px',
   color: '#949494',
-  opacity: '0',
 };
 
 export const statisticLabelStyle = {
