@@ -2,7 +2,7 @@
 import React from 'react';
 
 import RoadmapElementForm from './RoadmapElementForm';
-import RoadmapElement from './RoadmapElement';
+import DraggableRoadmapElement from './DraggableRoadmapElement';
 
 export default class EditableRoadmapElement extends React.Component {
   state = {
@@ -69,7 +69,7 @@ export default class EditableRoadmapElement extends React.Component {
       );
     }
     return (
-      <RoadmapElement
+      <DraggableRoadmapElement
         id={this.props.id}
         index={this.props.index}
         color={this.props.color}
