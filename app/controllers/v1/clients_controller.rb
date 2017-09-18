@@ -39,6 +39,7 @@ class V1::ClientsController < ApplicationController
   def duplicate
     @new_client = @client.amoeba_dup
     @new_client.update(name: params[:new_name])
+    @new_client.roadmap_elements.update_all(status: nil)
     if  @new_client.save!
       head(:ok)
     else
