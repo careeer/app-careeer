@@ -70,6 +70,10 @@ const roadmapElementTarget = {
   connectDragSource: connect.dragSource(),
 }))
 export default class RoadmapElement extends React.Component {
+  state = {
+    isMouseInside: false,
+  }
+
   handleToggleStatusClick = () => {
     this.props.toggleElementStatus({
       id: this.props.id,
@@ -86,6 +90,18 @@ export default class RoadmapElement extends React.Component {
   };
   handleButtonClick = () => {
     window.open(`https://${this.props.callToActionURL}`, '_blank', 'height=600','width=400');
+  };
+
+  mouseEnter = () => {
+    this.setState({
+      isMouseInside: true,
+    });
+  };
+
+  mouseExit = () => {
+    this.setState({
+      isMouseInside: false,
+    });
   };
 
   render() {
@@ -106,6 +122,8 @@ export default class RoadmapElement extends React.Component {
           <Segment
             style={segmentStyle}
             color={segmentColor}
+            onMouseEnter={this.mouseEnter}
+            onMouseLeave={this.mouseExit}
           >
             <Grid>
               <Grid.Row style={gridRowStyle}>
@@ -121,12 +139,14 @@ export default class RoadmapElement extends React.Component {
                     as={Label}
                     style={iconStyle}
                   >
+                  { this.state.isMouseInside &&
                     <Icon
                       link
                       name="write"
                       size="big"
                       onClick={this.props.onEditClick}
                     />
+                  }
                     <Icon
                       link
                       name="checkmark"

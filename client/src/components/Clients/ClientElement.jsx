@@ -4,7 +4,10 @@ import { Label, Icon, Grid, Segment, Modal, Button } from 'semantic-ui-react';
 import { segmentStyle, rowStyle, columnStyle, clientNameStyle, iconStyle, modalStyle, modalHeaderStyle, modalAcceptStyle } from '../Constants/ClientElementStyles';
 
 export default class ClientList extends Component {
-  state = { open: false }
+  state = {
+    isMouseInside: false,
+    open: false,
+  }
 
   show = () => this.setState({ open: true })
   close = () => this.setState({ open: false })
@@ -28,10 +31,34 @@ export default class ClientList extends Component {
     this.props.onDuplicateClick(this.props.clientSlug);
   }
 
+  mouseEnter = () => {
+    this.setState({
+      isMouseInside: true,
+    });
+  };
+
+  mouseExit = () => {
+    this.setState({
+      isMouseInside: false,
+    });
+  };
+
   render() {
+    let finalIconStyles = {};
+    if (this.state.isMouseInside) {
+      finalIconStyles= Object.assign({}, iconStyle, {
+        opacity: 1,
+      });
+    } else {
+      finalIconStyles= Object.assign({}, iconStyle, {
+        opacity: 0,
+      });
+    }
     return (
       <Segment
         style={segmentStyle}
+        onMouseEnter={this.mouseEnter}
+        onMouseLeave={this.mouseExit}
       >
         <Grid>
           <Grid.Row style={rowStyle}>
@@ -52,14 +79,14 @@ export default class ClientList extends Component {
                 link
                 size="large"
                 name="trash outline"
-                style={iconStyle}
+                style={finalIconStyles}
                 onClick={this.handleArchiveClick}
               />
               <Icon
                 link
                 size="large"
                 name="copy"
-                style={iconStyle}
+                style={finalIconStyles}
                 onClick={this.handleDuplicateClick}
               />
             </Grid.Column>

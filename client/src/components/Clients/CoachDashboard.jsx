@@ -11,16 +11,8 @@ import ClientElement from './ClientElement';
 
 @inject('roadmapElements')@observer
 export default class CoachDashboard extends Component {
-  state = {
-    copiedFrom: '',
-    showDuplicateForm: false,
-  }
   componentWillMount() {
     this.props.roadmapElements.getClients();
-    this.setState({
-      copiedFrom: '',
-      showDuplicateForm: false,
-    });
   };
 
   handleNewClientClick = () => {

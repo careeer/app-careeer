@@ -66,7 +66,6 @@ class RoadmapElements {
     let fetchAgain = false;
     this.incompleteElements = this.incompleteElements.map((obj, index) => {
       if (obj.status === false){
-        console.log(obj.status);
         this.nonEmptyStateRoadmaps += 1;
       }
       if (obj.dnd_index !== index) {
@@ -257,13 +256,11 @@ class RoadmapElements {
         this.setClientSlug(this.clients.filter(client =>
           client.name === this.currentClient)[0].slug);
         this.hasClientName = true;
-        this.calculateCompletedPerDayStat();
       }
       if (this.currentClientSlug) {
         this.setClientName(this.clients.filter(client =>
           client.slug === this.currentClientSlug)[0].name);
         this.hasClientName = true;
-        this.calculateCompletedPerDayStat();
       }
     }
   }
@@ -386,7 +383,6 @@ class RoadmapElements {
   @action toggleCompletedElements = () => {
     this.isCompletedAccordionOpen = !this.isCompletedAccordionOpen;
     this.buildCompletedAccordionMessage();
-    this.calculateCompletedPerDayStat();
   }
 
   buildCompletedAccordionMessage = () => {
@@ -402,32 +398,6 @@ class RoadmapElements {
       this.completedAccordionMessage = `Show ${accordionMessage}`;
       this.completedAccordionIcon = "angle down";
     }
-  }
-
-  @action calculateCompletedPerDayStat = () => {
-    if (this.completedElements.length > 0) {
-      const clientObject = this.clients.filter(client => client.slug === this.currentClientSlug)[0];
-      const createdDate = new Date(clientObject.created_at.split("T")[0]);
-      const dateNow = new Date();
-      const stat =  (this.completedElements.length/this.daysBetween(dateNow, createdDate));
-      this.completedPerDaySimpleStat = Math.round( stat * 100 ) / 100;
-    }
-  }
-
-  daysBetween(date1, date2) {
-    // The number of milliseconds in one day
-    const ONE_DAY = 1000 * 60 * 60 * 24;
-
-    // Convert both dates to milliseconds
-    const date1_ms = date1.getTime();
-    const date2_ms = date2.getTime();
-
-    // Calculate the difference in milliseconds
-    const difference_ms = Math.abs(date1_ms - date2_ms);
-
-    // Convert back to days and return
-    return Math.round(difference_ms/ONE_DAY)
-
   }
 }
 

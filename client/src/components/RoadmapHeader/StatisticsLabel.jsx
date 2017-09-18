@@ -4,9 +4,6 @@ import { Transition, Statistic } from 'semantic-ui-react';
 import { statisticColumnStyle, statisticFirstStyle, statisticStyle, statisticValueStyle, statisticLabelStyle, statisticMainValueStyle, statisticMainLabelStyle } from '../Constants/RoadmapHeaderStyles';
 
 class RoadmapHeader extends Component {
-  state = {
-
-  }
   changeColor = () => {
     statisticMainValueStyle.color = '#03ac13';
     statisticMainLabelStyle.color = '#03ac13';
@@ -25,18 +22,44 @@ class RoadmapHeader extends Component {
   }
 
   render () {
+    let updatedStatisticsMainValueStyle;
+    let updatedStatisticsMainLabelStyle;
     if (this.props.bannerVisible){
-      this.changeColor();
+      updatedStatisticsMainValueStyle= Object.assign({}, statisticMainValueStyle, {
+        opacity: 1,
+        color: '#03ac13',
+      });
+      updatedStatisticsMainLabelStyle= Object.assign({}, statisticMainLabelStyle, {
+        opacity: 1,
+        color: '#03ac13',
+      });
     } else {
-      this.resetColor();
+      updatedStatisticsMainValueStyle= Object.assign({}, statisticMainValueStyle, {
+        color: '#949494',
+      });
+      updatedStatisticsMainLabelStyle= Object.assign({}, statisticMainLabelStyle, {
+        color: '#949494',
+      });
+
+      if (this.props.numberOfNonEmpty > 0) {
+        updatedStatisticsMainValueStyle= Object.assign({}, statisticMainValueStyle, {
+          opacity: 1,
+          color: '#949494',
+        });
+        updatedStatisticsMainLabelStyle= Object.assign({}, statisticMainLabelStyle, {
+          opacity: 1,
+          color: '#949494',
+        });
+
+      }
     }
     return (
       <Statistic.Group>
       <Statistic style={statisticFirstStyle}>
-        <Statistic.Value style={statisticMainValueStyle}>
+        <Statistic.Value style={updatedStatisticsMainValueStyle}>
           {this.props.numberCompleted}
         </Statistic.Value>
-        <Statistic.Label style={statisticMainLabelStyle}>
+        <Statistic.Label style={updatedStatisticsMainLabelStyle}>
           completed actions
         </Statistic.Label>
       </Statistic>
