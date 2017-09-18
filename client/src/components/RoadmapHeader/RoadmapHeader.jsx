@@ -43,7 +43,10 @@ class RoadmapHeader extends Component {
 
   render() {
     return (
-      <Grid doubling columns={2}>
+      <Grid
+        stackable
+        doubling
+      >
         <Grid.Column style={columnStyle}>
           <div style={overlayStyle}>
             <ImageAvatar
@@ -66,7 +69,10 @@ class RoadmapHeader extends Component {
           />
         </Grid.Column>
 
-        <Grid.Column style={statisticColumnStyle}>
+        <Grid.Column
+          floated="right"
+          style={statisticColumnStyle}
+        >
           <StatisticsLabel
             numberCompleted={this.props.roadmapElements.completedElements.length}
             currentActions={this.props.roadmapElements.incompleteElements.length}

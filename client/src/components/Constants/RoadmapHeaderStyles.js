@@ -13,7 +13,7 @@ export const columnStyle = {
 export const nameVisionColumnStyle = {
   paddingTop: '14px',
   paddingLeft: '0',
-  width: '73%',
+  width: 'auto',
 };
 
 export const statisticColumnStyle = {
@@ -31,18 +31,21 @@ export const statisticStyle = {
   marginBottom: '0',
   marginLeft: '0',
   marginRight: '0',
+  paddingLeft: '14px',
 };
 
 export const statisticMainValueStyle = {
   fontFamily: 'Roboto',
   letterSpacing: '1.3px',
   color: '#949494',
+  paddingLeft: '14px',
 };
 
 export const statisticValueStyle = {
   fontFamily: 'Roboto',
   letterSpacing: '1.3px',
   color: '#949494',
+  paddingRight: '14px',
 };
 
 export const statisticMainLabelStyle = {
@@ -50,6 +53,7 @@ export const statisticMainLabelStyle = {
   fontFamily: 'Roboto',
   letterSpacing: '0.3px',
   color: '#949494',
+  paddingLeft: '14px',
 };
 
 export const statisticLabelStyle = {
@@ -57,4 +61,5 @@ export const statisticLabelStyle = {
   fontFamily: 'Roboto',
   letterSpacing: '0.3px',
   color: '#949494',
+  paddingRight: '14px',
 };
