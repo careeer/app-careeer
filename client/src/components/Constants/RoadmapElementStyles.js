@@ -1,4 +1,4 @@
-const dueDateStyle = {
+export const dueDateStyle = {
   backgroundColor: 'transparent',
   padding: '0',
   border: 'none',
@@ -14,7 +14,7 @@ const dueDateStyle = {
   lineHeight: '25px',
 };
 
-const cardTypeStyle = {
+export const cardTypeStyle = {
   backgroundColor: 'transparent',
   padding: '0',
   fontFamily: 'Raleway',
@@ -25,7 +25,7 @@ const cardTypeStyle = {
   lineHeight: '25px',
 };
 
-const titleStyle = {
+export const titleStyle = {
   backgroundColor: 'transparent',
   padding: '0',
   fontFamily: 'Cabin',
@@ -36,7 +36,7 @@ const titleStyle = {
   lineHeight: '30px',
 };
 
-const descriptionStyle = {
+export const descriptionStyle = {
   backgroundColor: 'transparent',
   padding: '0',
   fontFamily: 'Cabin',
@@ -47,13 +47,13 @@ const descriptionStyle = {
   lineHeight: '25px',
 };
 
-const iconStyle = {
+export const iconStyle = {
   backgroundColor: 'transparent',
   padding: '0',
   width: 'auto',
 };
 
-const gridRowStyle = {
+export const gridRowStyle = {
   paddingLeft: '0',
   paddingRight: '0',
   paddingTop: '2px',
@@ -61,7 +61,7 @@ const gridRowStyle = {
   width: 'auto',
 };
 
-const buttonColumnStyle = {
+export const buttonColumnStyle = {
   paddingLeft: '0',
   paddingRight: '0',
   paddingTop: '5px',
@@ -69,10 +69,7 @@ const buttonColumnStyle = {
   width: 'auto',
 };
 
-const buttonStyle = {
+export const buttonStyle = {
   margin: '0',
   width: 'auto',
 };
-
-export { dueDateStyle, cardTypeStyle, titleStyle,
-  descriptionStyle, iconStyle, gridRowStyle, buttonStyle, buttonColumnStyle };

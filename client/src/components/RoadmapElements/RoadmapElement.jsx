@@ -6,6 +6,7 @@ import { DragSource, DropTarget } from 'react-dnd';
 import ItemTypes from '../Constants/ItemTypes';
 import { dueDateStyle, cardTypeStyle, titleStyle, descriptionStyle, iconStyle, gridRowStyle, buttonStyle, buttonColumnStyle } from '../Constants/RoadmapElementStyles';
 import { segmentStyle, COLOR } from '../Constants/CommonElementStyles';
+import Touch from '../Helper/CheckTouch';
 
 const roadmapElementSource = {
   beginDrag(props) {
@@ -70,6 +71,11 @@ const roadmapElementTarget = {
   connectDragSource: connect.dragSource(),
 }))
 export default class RoadmapElement extends React.Component {
+  state = {
+    isMouseInside: false,
+    isMouseInsideCheckmark: false,
+  }
+
   handleToggleStatusClick = () => {
     this.props.toggleElementStatus({
       id: this.props.id,
@@ -88,7 +94,55 @@ export default class RoadmapElement extends React.Component {
     window.open(`https://${this.props.callToActionURL}`, '_blank', 'height=600','width=400');
   };
 
+  mouseEnter = () => {
+    this.setState({
+      isMouseInside: true,
+    });
+  };
+
+  mouseExit = () => {
+    this.setState({
+      isMouseInside: false,
+    });
+  };
+
+  mouseEnterCheckmark = () => {
+    this.setState({
+      isMouseInsideCheckmark: true,
+    });
+  };
+
+  mouseExitCheckmark = () => {
+    this.setState({
+      isMouseInsideCheckmark: false,
+    });
+  };
+
   render() {
+    let writeIconStyle = {};
+    if (!this.state.isMouseInside && !Touch.isTouchDevice()) {
+      writeIconStyle = {
+        color: '#b1b1b1',
+        opacity: 0,
+      }
+    } else {
+      writeIconStyle = {
+        color: '#b1b1b1',
+        opacity: 1,
+      }
+    }
+
+    let checkmarkIconStyle = {};
+    if (this.state.isMouseInsideCheckmark && !Touch.isTouchDevice()) {
+      checkmarkIconStyle = {
+        color: '#24c63a',
+      }
+    } else {
+      checkmarkIconStyle = {
+        color: '#b1b1b1',
+      }
+    }
+    
     const isCheckmarkGreen =
       this.props.isStatusComplete ? 'green' : null
     const primaryButton = (this.props.index === 0 && !this.props.isStatusComplete) ? false : true
@@ -106,6 +160,8 @@ export default class RoadmapElement extends React.Component {
           <Segment
             style={segmentStyle}
             color={segmentColor}
+            onMouseEnter={this.mouseEnter}
+            onMouseLeave={this.mouseExit}
           >
             <Grid>
               <Grid.Row style={gridRowStyle}>
@@ -125,6 +181,7 @@ export default class RoadmapElement extends React.Component {
                       link
                       name="write"
                       size="big"
+                      style={writeIconStyle}
                       onClick={this.props.onEditClick}
                     />
                     <Icon
@@ -132,6 +189,9 @@ export default class RoadmapElement extends React.Component {
                       name="checkmark"
                       size="big"
                       color={isCheckmarkGreen}
+                      style={checkmarkIconStyle}
+                      onMouseEnter={this.mouseEnterCheckmark}
+                      onMouseLeave={this.mouseExitCheckmark}
                       onClick={this.handleToggleStatusClick}
                     />
                   </Grid.Column>
@@ -186,6 +246,8 @@ export default class RoadmapElement extends React.Component {
         <Segment
           style={segmentStyle}
           color={segmentColor}
+          onMouseEnter={this.mouseEnter}
+          onMouseLeave={this.mouseExit}
         >
           <Grid>
             <Grid.Row style={gridRowStyle}>
@@ -205,13 +267,17 @@ export default class RoadmapElement extends React.Component {
                     link
                     name="write"
                     size="big"
+                    style={writeIconStyle}
                     onClick={this.props.onEditClick}
                   />
                   <Icon
                     link
                     name="checkmark"
                     size="big"
+                    style={checkmarkIconStyle}
                     color={isCheckmarkGreen}
+                    onMouseEnter={this.mouseEnterCheckmark}
+                    onMouseLeave={this.mouseExitCheckmark}
                     onClick={this.handleToggleStatusClick}
                   />
                 </Grid.Column>

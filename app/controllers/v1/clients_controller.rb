@@ -1,10 +1,10 @@
 class V1::ClientsController < ApplicationController
-  before_action :set_client, only: [:show, :update, :destroy, :roadmap, :build_roadmap_element]
+  before_action :set_client, only: [:show, :update, :duplicate, :destroy, :roadmap, :build_roadmap_element]
 
   # GET /clients
   # GET /clients.json
   def index
-    @clients = Client.all
+    @clients = Client.all.order('created_at')
     render json: @clients, status: :ok
   end
 
@@ -36,6 +36,17 @@ class V1::ClientsController < ApplicationController
     end
   end
 
+  def duplicate
+    @new_client = @client.amoeba_dup
+    @new_client.update(name: params[:new_name])
+    @new_client.roadmap_elements.update_all(status: nil)
+    if  @new_client.save!
+      head(:ok)
+    else
+      render json: @new_client.errors, status: :unprocessable_entity
+    end
+  end
+
   # DELETE /clients/1
   # DELETE /clients/1.json
   def destroy
@@ -54,7 +65,7 @@ class V1::ClientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_params
-      params.require(:client).permit(:name, :email, :avatar, :vision, :slug)
+      params.require(:client).permit(:name, :email, :avatar, :vision, :slug, :client_status, :new_name, :created_at, :updated_at)
     end
 
 end

@@ -38,6 +38,8 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    amoeba (3.1.0)
+      activerecord (>= 3.2.6)
     arel (8.0.0)
     bcrypt (3.1.11)
     builder (3.2.3)
@@ -147,6 +149,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  amoeba (~> 3.0)
   byebug
   devise
   foreman (~> 0.82.0)
@@ -166,4 +169,4 @@ RUBY VERSION
    ruby 2.4.1p111
 
 BUNDLED WITH
-   1.15.3
+   1.15.4

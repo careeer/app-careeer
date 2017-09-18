@@ -42,6 +42,10 @@ function vStrength(box, point) {
 @DragDropContext(MultiBackend(HTML5toTouch))
 @inject('roadmapElements')@observer
 export default class ClientRoadmapDashboard extends React.Component {
+  state = {
+    loadingId: '',
+  }
+
   componentWillMount() {
     const client = this.props.match.params.clientId;
     if (client) {
@@ -64,7 +68,11 @@ export default class ClientRoadmapDashboard extends React.Component {
   }
 
   handleEditFormSubmit = (attrs) => {
+    this.setState = {
+      loadingId: attrs.id,
+    };
     this.updateRoadmapElement(attrs);
+
   };
 
   handleToggleRoadmapElementStatus = (element) => {

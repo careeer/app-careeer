@@ -4,6 +4,13 @@ class Client < ApplicationRecord
   has_many :roadmap_elements, dependent: :destroy
   accepts_nested_attributes_for :roadmap_elements
 
+  amoeba do
+    enable
+    nullify :avatar
+    nullify :vision
+    nullify :email
+  end
+
   def name_url
     "#{name.downcase.gsub(/\s/,'')}"
   end

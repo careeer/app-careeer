@@ -5,24 +5,9 @@ import { Grid } from 'semantic-ui-react';
 import ImageAvatar from './ImageAvatar';
 import ClientName from './ClientName';
 import ImageUpload from './ImageUpload';
+import StatisticsLabel from './StatisticsLabel';
+import { overlayStyle, columnStyle, nameVisionColumnStyle, statisticColumnStyle } from '../Constants/RoadmapHeaderStyles';
 
-const overlayStyle = {
-  position: 'absolute',
-  marginRight: '15px',
-  width: '60px',
-  height: '60px',
-};
-
-const columnStyle = {
-  width: '70px',
-  paddingLeft: '2px',
-};
-
-const nameVisionColumnStyle = {
-  paddingTop: '14px',
-  paddingLeft: '0',
-  width: '90%',
-}
 @inject('roadmapElements', 'headerStore')@observer
 class RoadmapHeader extends Component {
   state = {
@@ -58,7 +43,10 @@ class RoadmapHeader extends Component {
 
   render() {
     return (
-      <Grid doubling columns={2}>
+      <Grid
+        stackable
+        doubling
+      >
         <Grid.Column style={columnStyle}>
           <div style={overlayStyle}>
             <ImageAvatar
@@ -80,6 +68,19 @@ class RoadmapHeader extends Component {
             openInputForm={this.state.openInputForm}
           />
         </Grid.Column>
+
+        <Grid.Column
+          floated="right"
+          style={statisticColumnStyle}
+        >
+          <StatisticsLabel
+            numberCompleted={this.props.roadmapElements.completedElements.length}
+            currentActions={this.props.roadmapElements.incompleteElements.length}
+            numberOfNonEmpty={this.props.roadmapElements.nonEmptyStateRoadmaps}
+            bannerVisible={this.props.roadmapElements.isBannerVisible}
+          />
+        </Grid.Column>
+
       </Grid>
     );
   }

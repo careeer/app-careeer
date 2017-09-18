@@ -4,10 +4,12 @@ import Api from '../helpers/api';
 
 class RoadmapElements {
   path = '/v1/clients';
+  updatePath = '/update';
   roadmapPath = 'roadmap_elements';
   @observable pendingElements = [];
   @observable incompleteElements = [];
   @observable isLoading = false;
+  @observable isClientLoading = false;
   @observable hasClientName = false;
   @observable currentClient = '';
   @observable currentClientSlug ='';
@@ -68,6 +70,7 @@ class RoadmapElements {
       }
       return obj;
     });
+
     this.completedElements = this.completedElements.map((obj, index) => {
       if (obj.dnd_index !== index) {
         obj.dnd_index = index;
@@ -103,6 +106,7 @@ class RoadmapElements {
   }
 
   @action async update(data) {
+    this.isElementLoading = true;
     const element = this.createRoadmapElementObject(data);
     element.id = data.id;
     element.dnd_index = data.index;
@@ -118,6 +122,7 @@ class RoadmapElements {
         }
       });
       this.pendingElements = updatedElements;
+      this.isElementLoading = false;
     }
   }
 
@@ -205,6 +210,7 @@ class RoadmapElements {
     };
   }
 
+// Clients
   @action handleClientInputChange = (e, { value }) => {
     this.setClientName(value);
   }
@@ -235,13 +241,14 @@ class RoadmapElements {
   }
 
   @action async getClients() {
-    this.isLoading = true;
+    this.isClientLoading = true;
     const response = await Api.get(this.path);
     const status = await response.status;
     if (status === 200) {
       const json = await response.json();
-      this.clients = await json;
-      this.isLoading = false;
+      const clientArray = await json;
+      this.clients = clientArray.filter(client => client.client_status !== 'archived');
+      this.isClientLoading = false;
       if (this.currentClient) {
         this.setClientSlug(this.clients.filter(client =>
           client.name === this.currentClient)[0].slug);
@@ -263,6 +270,17 @@ class RoadmapElements {
     }
   }
 
+  @action async copyClient(copiedFrom, newName) {
+    const clientObject = this.getClientObjectFromId(copiedFrom);
+    clientObject.new_name = newName;
+
+    const response = await Api.post(`${this.updatePath}/${copiedFrom}`, clientObject);
+    const status = await response.status;
+    if (status === 200) {
+      this.getClients();
+    }
+  }
+
   @action async getClient() {
     const response = await Api.get(`${this.path}/${this.currentClientSlug}`);
     const status = await response.status;
@@ -278,8 +296,18 @@ class RoadmapElements {
     const response = await Api.put(`${this.path}/${this.currentClientSlug}`, this.createClientObject());
     const status = await response.status;
 
-    if (status !== 200) {
+    if (status === 200) {
       // empty
+    }
+  }
+
+  @action async archiveClient(clientId) {
+    const clientObject = this.getClientObjectFromId(clientId);
+    clientObject.client_status = "archived";
+    const response = await Api.put(`${this.path}/${clientObject.slug}`, clientObject);
+    const status = await response.status;
+    if (status === 200) {
+      this.getClients();
     }
   }
 
@@ -292,7 +320,7 @@ class RoadmapElements {
     this.updateClient();
   }
 
-  createClientObject() {
+  createClientObject = () => {
     const client = {
       name: this.currentClient,
       avatar: this.currentClientAvatar,
@@ -300,6 +328,12 @@ class RoadmapElements {
       slug: this.currentClientSlug,
     };
     return client;
+  }
+
+  getClientObjectFromId = (clientId) => {
+    const clientObject = this.clients.filter(client =>
+      client.slug === clientId)[0];
+    return clientObject;
   }
 
   @action toggleDissableClientNameInput() {

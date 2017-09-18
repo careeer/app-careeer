@@ -6,14 +6,14 @@ import { mainGridStyle } from '../Constants/CommonElementStyles';
 import ClientInput from './ClientInput';
 
 @inject('roadmapElements')@observer
-export default class NewClientInput extends Component {
+export default class DuplicateClientInput extends Component {
   componentWillMount() {
     this.props.roadmapElements.resetClientParams();
     history.replaceState(null, document.title, "/clients");
   }
 
   handleKeyPress = () => {
-    this.props.roadmapElements.createClient();
+    this.props.roadmapElements.copyClient(this.props.match.params.clientId, this.props.roadmapElements.currentClient);
   }
 
   checkIfNameIsFilled = () => {
