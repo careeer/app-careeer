@@ -106,11 +106,9 @@ class RoadmapElements {
   }
 
   @action async update(data) {
-    this.isElementLoading = true;
     const element = this.createRoadmapElementObject(data);
     element.id = data.id;
     element.dnd_index = data.index;
-
     const response = await Api.put(`${this.path}/${this.currentClientSlug}/${this.roadmapPath}/${element.id}`, element);
     const status = await response.status;
     if (status === 200) {
@@ -122,7 +120,7 @@ class RoadmapElements {
         }
       });
       this.pendingElements = updatedElements;
-      this.isElementLoading = false;
+      this.checkIndex();
     }
   }
 

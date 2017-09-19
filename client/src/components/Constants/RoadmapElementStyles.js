@@ -101,6 +101,10 @@ export const gridRowStyle = {
   width: 'auto',
 };
 
+export const categoryRowStyle = {
+  verticalAlign: 'bottom',
+};
+
 export const buttonColumnStyle = {
   paddingLeft: '0',
   paddingRight: '0',

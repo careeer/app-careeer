@@ -2,7 +2,7 @@
 import React from 'react';
 import { Segment, Grid, Label, Icon, Button } from 'semantic-ui-react';
 
-import { dueDateStyle, cardTypeStyle, titleStyle, descriptionStyle, iconStyle, gridRowStyle, buttonColumnStyle, rightColumnStyle, buttonStyle, mainGridRowStyle, rightIconsColumnStyle } from '../Constants/RoadmapElementStyles';
+import { dueDateStyle, cardTypeStyle, titleStyle, descriptionStyle, iconStyle, gridRowStyle, buttonColumnStyle, rightColumnStyle, buttonStyle, mainGridRowStyle, rightIconsColumnStyle, categoryRowStyle } from '../Constants/RoadmapElementStyles';
 import { segmentStyle, COLOR } from '../Constants/CommonElementStyles';
 import Touch from '../Helper/CheckTouch';
 
@@ -97,11 +97,12 @@ export default class RoadmapElement extends React.Component {
         onMouseEnter={this.mouseEnter}
         onMouseLeave={this.mouseExit}
       >
-        <Grid>
-          <Grid.Row columns={2} style={mainGridRowStyle}>
+        <Grid stackable>
+          <Grid.Row stretched columns={2} style={mainGridRowStyle}>
             <Grid.Column
               style={titleStyle}
-              width={13}
+              floated="left"
+
             >
             <Grid.Row>
               <Grid.Column
@@ -136,7 +137,6 @@ export default class RoadmapElement extends React.Component {
           </Grid.Column>
           <Grid.Column
             style={rightColumnStyle}
-            width={2}
             floated="right"
           >
             <Grid.Row style={rightIconsColumnStyle}>
@@ -165,12 +165,7 @@ export default class RoadmapElement extends React.Component {
               </Grid.Column>
             }
             </Grid.Row>
-            <Grid.Row>
-            <Grid.Column
-              style={rightColumnStyle}
-            />
-            </Grid.Row>
-            <Grid.Row>
+            <Grid.Row style={categoryRowStyle}>
               <Grid.Column
                 style={rightColumnStyle}
               >

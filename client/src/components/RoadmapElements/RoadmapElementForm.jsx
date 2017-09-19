@@ -2,8 +2,8 @@
 import React from 'react';
 import { Button, Form, Input, Segment, Rail, Icon } from 'semantic-ui-react';
 import { CirclePicker } from 'react-color';
-import { dueDateStyle, cardTypeStyle, titleStyle, descriptionStyle, hyperlinkStyle, captionStyle } from '../Constants/RoadmapElementFormStyles';
-import { segmentStyle, unstackableStyle, COLOR } from '../Constants/CommonElementStyles';
+import { dueDateStyle, cardTypeStyle, titleStyle, descriptionStyle, hyperlinkStyle, captionStyle, firstFieldStyle, lastFieldStyle, secondFieldStyle } from '../Constants/RoadmapElementFormStyles';
+import { segmentStyle, COLOR } from '../Constants/CommonElementStyles';
 
 export default class RoadmapElementForm extends React.Component {
   state = {
@@ -80,6 +80,12 @@ export default class RoadmapElementForm extends React.Component {
     document.getElementsByClassName("content")[0].scrollIntoView();
   };
 
+  moveCaretAtEnd(e) {
+    var temp_value = e.target.value
+    e.target.value = ''
+    e.target.value = temp_value
+  }
+
   render() {
     const isSaveDisabled = (
       (this.state.title.trim().length !== 0 || this.state.cardType.trim().length !== 0 || this.state.description.trim().length !== 0) &&
@@ -92,11 +98,21 @@ export default class RoadmapElementForm extends React.Component {
     ) ? '' : -1;
 
     let segmentColor = null;
+    let cardTypeColorStyle;
     if (this.props.color || this.state.color) {
       segmentColor = COLOR[this.state.color];
+      if (this.state.color !== 'transparent'){
+        cardTypeColorStyle = Object.assign({}, cardTypeStyle, {
+          color: this.state.color,
+        });
+      } else {
+        cardTypeColorStyle = Object.assign({}, cardTypeStyle, {
+          color: '#919191',
+        });
+      }
     }
 
-    const primaryButton = (this.props.index === 0) ? '' : 'basic';
+    const isPrimaryButton = (this.props.index === 0 && !this.props.isStatusComplete);
 
     return (
       <div className="content">
@@ -118,22 +134,20 @@ export default class RoadmapElementForm extends React.Component {
             </a>
           }
           <Form>
-            <Form.Group style={unstackableStyle}>
+            <Form.Group style={firstFieldStyle}>
+              <Form.Field width={14}>
+                <input
+                  autoFocus
+                  onFocus={this.moveCaretAtEnd}
+                  type="text"
+                  className="title"
+                  placeholder="action item"
+                  style={titleStyle}
+                  value={this.state.title}
+                  onChange={this.handleTitleChange}
+                />
+              </Form.Field>
               <Form.Field
-
-                width={10}
-                transparent
-                type="text"
-
-                className="card_type"
-                placeholder="category"
-                control={Input}
-                style={cardTypeStyle}
-                value={this.state.cardType}
-                onChange={this.handleCardTypeChange}
-              />
-              <Form.Field
-
                 width={6}
                 control={CirclePicker}
                 color={this.state.color}
@@ -141,33 +155,32 @@ export default class RoadmapElementForm extends React.Component {
                 colors={['transparent', '#6435c9', '#e03997', '#00b5ad', '#fbbd08']}
               />
             </Form.Group>
-            <Form.Field
-              autoFocus
-              transparent
-              type="text"
-              className="title"
-              placeholder="action item"
-              control={Input}
-              style={titleStyle}
-              value={this.state.title}
-              onChange={this.handleTitleChange}
-            />
-            <Form.Field
-              transparent
-              type="text"
-              maxLength="160"
-              className="description"
-              placeholder="description (160 character limit)"
-              control={Input}
-              style={descriptionStyle}
-              value={this.state.description}
-              onChange={this.handleDescriptionChange}
-            />
-            <Form.Group>
-              <Form.Field>
-                <Input
-                  width={4}
-                  transparent
+            <Form.Group style={secondFieldStyle}>
+              <Form.Field width={14}>
+                <input
+                  type="text"
+                  maxLength="160"
+                  className="description"
+                  placeholder="description (160 character limit)"
+                  style={descriptionStyle}
+                  value={this.state.description}
+                  onChange={this.handleDescriptionChange}
+                />
+              </Form.Field>
+              <Form.Field width={3}>
+                <input
+                  type="text"
+                  className="card_type"
+                  placeholder="category"
+                  style={cardTypeColorStyle}
+                  value={this.state.cardType}
+                  onChange={this.handleCardTypeChange}
+                />
+              </Form.Field>
+            </Form.Group>
+            <Form.Group style={lastFieldStyle}>
+              <Form.Field width={4}>
+                <input
                   className="caption"
                   type="text"
                   style={captionStyle}
@@ -176,35 +189,35 @@ export default class RoadmapElementForm extends React.Component {
                   onChange={this.handleCallToActionCaptionChange}
                 />
               </Form.Field>
-              <Form.Field
-                control={Input}
-                width={10}
-                transparent
-                className="url"
-                type="url"
-                style={hyperlinkStyle}
-                value={this.state.callToActionURL}
-                placeholder="hyperlink (ex: http://careeer.me)"
-                onChange={this.handleCallToActionURLChange}
-              />
-              <Form.Field
-                transparent
-                width={3}
-                type="text"
-                className="dueDate"
-                placeholder="due date"
-                control={Input}
-                style={dueDateStyle}
-                value={this.state.dueDate}
-                onChange={this.handleDueDateChange}
-              />
+              <Form.Field width={11}>
+                <input
+                  className="url"
+                  type="url"
+                  style={hyperlinkStyle}
+                  value={this.state.callToActionURL}
+                  placeholder="hyperlink (ex: http://careeer.me)"
+                  onChange={this.handleCallToActionURLChange}
+                />
+              </Form.Field>
+              <Form.Field width={3}>
+                <input
+                  type="text"
+                  className="dueDate"
+                  placeholder="due date"
+                  style={dueDateStyle}
+                  value={this.state.dueDate}
+                  onChange={this.handleDueDateChange}
+                />
+              </Form.Field>
             </Form.Group>
-            {this.state.callToActionCaption &&
-              <div
-                className={`ui left bottom green ${primaryButton} disabled button`}
-              >
-                {this.state.callToActionCaption}
-              </div>
+            { this.state.callToActionCaption &&
+              <Button
+                disabled
+                floated="left"
+                color="green"
+                basic={!isPrimaryButton}
+                content={this.state.callToActionCaption}
+              />
             }
           </Form>
           <Rail attached position="right">
@@ -222,15 +235,13 @@ export default class RoadmapElementForm extends React.Component {
             disabled={isSaveDisabled}
             tabIndex={saveTabIndex}
             onClick={this.handleSave}
-          >
-            Save
-          </Button>
+            content="Save"
+          />
           <Button
             className="ui button"
             onClick={this.props.onFormClose}
-          >
-            Cancel
-          </Button>
+            content="Cancel"
+          />
         </div>
       </div>
     );
