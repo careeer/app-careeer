@@ -2,7 +2,7 @@
 import React from 'react';
 import { Segment, Grid, Label, Icon, Button } from 'semantic-ui-react';
 
-import { dueDateStyle, cardTypeStyle, titleStyle, descriptionStyle, iconStyle, gridRowStyle, buttonColumnStyle } from '../Constants/RoadmapElementStyles';
+import { dueDateStyle, cardTypeStyle, titleStyle, descriptionStyle, iconStyle, gridRowStyle, buttonColumnStyle, rightColumnStyle, buttonStyle, mainGridRowStyle, rightIconsColumnStyle } from '../Constants/RoadmapElementStyles';
 import { segmentStyle, COLOR } from '../Constants/CommonElementStyles';
 import Touch from '../Helper/CheckTouch';
 
@@ -98,16 +98,50 @@ export default class RoadmapElement extends React.Component {
         onMouseLeave={this.mouseExit}
       >
         <Grid>
-          <Grid.Row style={gridRowStyle}>
+          <Grid.Row columns={2} style={mainGridRowStyle}>
             <Grid.Column
-              floated="left"
-              as={Label}
-              style={cardTypeStyle}
-              content={this.props.cardType}
-            />
+              style={titleStyle}
+              width={13}
+            >
+            <Grid.Row>
+              <Grid.Column
+                as={Label}
+                style={titleStyle}
+                content={this.props.title}
+              />
+            </Grid.Row>
+            <Grid.Row>
+              <Grid.Column
+                as={Label}
+                style={descriptionStyle}
+                content={this.props.description}
+              />
+            </Grid.Row>
+            <Grid.Row>
+              { this.props.callToActionCaption &&
+                <Grid.Column
+                style={buttonColumnStyle}
+                >
+                  <Button
+                    basic={!isPrimaryButton}
+                    color="green"
+                    style={buttonStyle}
+                    onClick={this.handleButtonClick}
+                  >
+                    {this.props.callToActionCaption}
+                  </Button>
+                </Grid.Column>
+              }
+            </Grid.Row>
+          </Grid.Column>
+          <Grid.Column
+            style={rightColumnStyle}
+            width={2}
+            floated="right"
+          >
+            <Grid.Row style={rightIconsColumnStyle}>
             {this.props.isCreateFormClose &&
               <Grid.Column
-                floated="right"
                 as={Label}
                 style={iconStyle}
               >
@@ -130,46 +164,32 @@ export default class RoadmapElement extends React.Component {
                 />
               </Grid.Column>
             }
-          </Grid.Row>
-          <Grid.Row style={gridRowStyle}>
+            </Grid.Row>
+            <Grid.Row>
             <Grid.Column
-              floated="left"
-              as={Label}
-              style={titleStyle}
-              content={this.props.title}
+              style={rightColumnStyle}
             />
-          </Grid.Row>
-          <Grid.Row style={gridRowStyle}>
-            <Grid.Column
-              floated="left"
-              as={Label}
-              style={descriptionStyle}
-              content={this.props.description}
-            />
-          </Grid.Row>
-          <Grid.Row style={gridRowStyle}>
-            { this.props.callToActionCaption &&
+            </Grid.Row>
+            <Grid.Row>
               <Grid.Column
-                floated="left"
-                style={buttonColumnStyle}
+                style={rightColumnStyle}
               >
-                <Button
-                  basic={!isPrimaryButton}
-                  color="green"
-                  floated="left"
-                  onClick={this.handleButtonClick}
-                >
-                  {this.props.callToActionCaption}
-                </Button>
+                <Label
+                  basic
+                  color={segmentColor}
+                  style={cardTypeStyle}
+                  content={this.props.cardType}
+                />
               </Grid.Column>
-            }
-            <Grid.Column
-              floated="right"
-              as={Label}
-              style={dueDateStyle}
-              content={this.props.dueDate}
-            />
-          </Grid.Row>
+            <Grid.Column style={rightColumnStyle}>
+              <Label
+                style={dueDateStyle}
+                content={this.props.dueDate}
+              />
+            </Grid.Column>
+            </Grid.Row>
+          </Grid.Column>
+        </Grid.Row>
         </Grid>
       </Segment>
     );

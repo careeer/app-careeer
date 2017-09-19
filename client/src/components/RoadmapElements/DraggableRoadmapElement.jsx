@@ -88,10 +88,9 @@ export default class DraggableRoadmapElement extends React.Component {
             callToActionURL={this.props.callToActionURL}
             isStatusComplete={this.props.isStatusComplete}
             isCreateFormClose={this.props.isCreateFormClose}
-            onEditClick={this.handleEditClick}
+            onEditClick={this.props.onEditClick}
             toggleElementStatus={this.props.toggleElementStatus}
             handleElementMove={this.props.handleElementMove}
-            enableDragAndDrop={this.props.enableDragAndDrop}
           />
         </div>
       ));
@@ -110,10 +109,9 @@ export default class DraggableRoadmapElement extends React.Component {
           callToActionURL={this.props.callToActionURL}
           isStatusComplete={this.props.isStatusComplete}
           isCreateFormClose={this.props.isCreateFormClose}
-          onEditClick={this.handleEditClick}
+          onEditClick={this.props.onEditClick}
           toggleElementStatus={this.props.toggleElementStatus}
           handleElementMove={this.props.handleElementMove}
-          enableDragAndDrop={this.props.enableDragAndDrop}
         />
       </div>
     );
