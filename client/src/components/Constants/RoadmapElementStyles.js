@@ -2,10 +2,20 @@ export const rightColumnStyle = {
   width: 'auto',
   padding: '0',
   border: 'none',
-  paddingLeft: '0',
-  paddingRight: '0',
   marginTop: '0',
   marginRight: '0',
+  textAlign: 'right',
+};
+
+export const firstColumnStyle = {
+  width: '75%',
+  padding: '0',
+  textAlign: 'left',
+};
+
+export const secondColumnStyle = {
+  width: '25%',
+  padding: '0',
   textAlign: 'right',
 };
 
