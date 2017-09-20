@@ -250,6 +250,7 @@ class RoadmapElements {
       if (this.currentClient) {
         this.setClientSlug(this.clients.filter(client =>
           client.name === this.currentClient)[0].slug);
+        console.log("set client slug!");
         this.hasClientName = true;
       }
       if (this.currentClientSlug) {
@@ -263,8 +264,37 @@ class RoadmapElements {
   @action async createClient() {
     const response = await Api.post(this.path, { name: this.currentClient });
     const status = await response.status;
+
     if (status === 201) {
       this.getClients();
+    }
+  }
+
+  @action async createClientWithDefaults(arrayOfDefaults) {
+    const response = await Api.post(this.path, { name: this.currentClient });
+    const status = await response.status;
+
+    if (status === 201) {
+      this.getClientsWithDefaults(arrayOfDefaults);
+    }
+  }
+
+  @action async getClientsWithDefaults(arrayOfDefaults) {
+    const response = await Api.get(this.path);
+    const status = await response.status;
+    if (status === 200) {
+      const json = await response.json();
+      const clientArray = await json;
+      this.clients = clientArray.filter(client => client.client_status !== 'archived');
+      if (this.currentClient) {
+        this.setClientSlug(this.clients.filter(client =>
+          client.name === this.currentClient)[0].slug);
+        console.log("set client slug with defaults!");
+        this.hasClientName = true;
+        arrayOfDefaults.map(defaultElement => {
+          this.create(defaultElement);
+        });
+      }
     }
   }
 
