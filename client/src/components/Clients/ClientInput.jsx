@@ -20,7 +20,7 @@ class ClientInput extends Component {
         <Input
           transparent
           fluid
-          placeholder="enter client's first and last name"
+          placeholder={this.props.placeholder}
           onKeyPress={this.handleKeyPress}
           name="clientName"
           value={this.props.currentClient}

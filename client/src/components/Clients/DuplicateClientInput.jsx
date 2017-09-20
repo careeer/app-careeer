@@ -31,6 +31,7 @@ export default class DuplicateClientInput extends Component {
             currentClient={this.props.roadmapElements.currentClient || ''}
             handleClientInputChange={this.props.roadmapElements.handleClientInputChange}
             createClient={this.handleKeyPress}
+            placeholder="enter client's first and last name"
           />
         </Grid.Column>
       </Grid>

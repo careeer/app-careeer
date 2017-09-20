@@ -13,7 +13,7 @@ import './App.css';
 const App = () => (
   <Switch>
     <Route exact path="/" component={RedirectToCareeer} />
-    <Route exact path="/createmyroadmap" component={FreeTrialClientInput} />
+    <Route exact path="/freetrial" component={FreeTrialClientInput} />
     <Route path="/roadmap" component={NewClientInput} />
     <Route path="/duplicate/:clientId" component={DuplicateClientInput} />
     <Route path="/clients" component={CoachDashboard} />

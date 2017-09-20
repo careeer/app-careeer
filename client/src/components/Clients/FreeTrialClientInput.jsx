@@ -11,7 +11,7 @@ import defaultElements from '../Constants/DefaultRoadmapElements';
 export default class FreeTrialClientInput extends Component {
   componentWillMount() {
     this.props.roadmapElements.resetClientParams();
-    history.replaceState(null, document.title, "/createmyroadmap");
+    history.replaceState(null, document.title, "/freetrial");
   }
 
   handleKeyPress = () => {
@@ -38,6 +38,7 @@ export default class FreeTrialClientInput extends Component {
             currentClient={this.props.roadmapElements.currentClient || ''}
             handleClientInputChange={this.props.roadmapElements.handleClientInputChange}
             createClient={this.handleKeyPress}
+            placeholder="enter your first and last name"
           />
         </Grid.Column>
       </Grid>
