@@ -83,7 +83,11 @@ class RoadmapElements {
 
   @action async create(data, shouldFetch = true) {
     const element = this.createRoadmapElementObject(data);
-    element.dnd_index = this.pendingElements.length;
+    if (data.index){
+      element.dnd_index = data.index;
+    } else {
+      element.dnd_index = this.pendingElements.length;
+    }
     const response = await Api.post(`${this.path}/${this.currentClientSlug}/${this.roadmapPath}`, element);
     const status = await response.status;
 
@@ -291,7 +295,7 @@ class RoadmapElements {
         this.hasClientName = true;
         arrayOfDefaults.map(defaultElement => {
           this.create(defaultElement, false);
-          setTimeout(function(){ "" }, 100);
+          // setTimeout(function(){ "" }, 100);
         });
         this.fetchAll();
       }
