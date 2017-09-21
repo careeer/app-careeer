@@ -56,7 +56,6 @@ class RoadmapHeader extends Component {
           <ImageUpload saveAvatarUrl={this.handleAvatarSave} />
         </Grid.Column>
         <Grid.Column
-          verticalAlign="middle"
           style={nameVisionColumnStyle}
         >
           <ClientName

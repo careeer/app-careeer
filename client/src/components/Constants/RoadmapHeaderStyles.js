@@ -13,7 +13,7 @@ export const columnStyle = {
 export const nameVisionColumnStyle = {
   paddingTop: '14px',
   paddingLeft: '0',
-  width: 'auto',
+  width: '63%',
 };
 
 export const statisticColumnStyle = {

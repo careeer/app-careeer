@@ -295,7 +295,7 @@ class RoadmapElements {
         this.hasClientName = true;
         arrayOfDefaults.map(defaultElement => {
           this.create(defaultElement, false);
-          // setTimeout(function(){ "" }, 100);
+          setTimeout(function(){ "" }, 100);
         });
         this.fetchAll();
       }

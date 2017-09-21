@@ -29,11 +29,13 @@ export default class CareeerVisionInput extends React.Component {
   render() {
     if (this.props.openInputForm) {
       return (
+        <div>
         <VisionInput
           vision={this.props.vision || ''}
           changeVision={this.props.changeVision}
           handleKeyPress={this.props.handleKeyPress}
         />
+        </div>
       );
     }
     let visionLabelStyle = Object.assign({}, visionStyle);

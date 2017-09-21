@@ -12,6 +12,7 @@ const visionStyle = {
   paddingLeft: '0',
   marginBottom: '0',
   paddingTop: '8px',
+  width: '100%',
 };
 
 class VisionInput extends React.Component {
@@ -37,7 +38,7 @@ class VisionInput extends React.Component {
         transparent
         tabIndex={-1}
         focus
-        fluid
+
         onKeyDown={this.handlePress}
         value={this.props.vision || ''}
         onChange={this.props.changeVision}
