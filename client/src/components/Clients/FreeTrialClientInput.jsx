@@ -19,7 +19,6 @@ export default class FreeTrialClientInput extends Component {
     const firstRoadmapElements = defaultElements.map(element => Object.assign({}, element, {
       dueDate: today,
     }));
-    console.log(firstRoadmapElements);
     this.props.roadmapElements.createClientWithDefaults(firstRoadmapElements);
   }
 

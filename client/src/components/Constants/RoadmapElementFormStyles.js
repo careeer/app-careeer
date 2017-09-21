@@ -19,7 +19,6 @@ export const cardTypeStyle = {
   letterSpacing: '1.5px',
   textAlign: 'right',
   border: 'none',
-  color: '#919191',
   padding: '0',
 };
 

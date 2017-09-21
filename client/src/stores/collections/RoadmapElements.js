@@ -81,13 +81,13 @@ class RoadmapElements {
     return fetchAgain;
   }
 
-  @action async create(data) {
+  @action async create(data, shouldFetch = true) {
     const element = this.createRoadmapElementObject(data);
     element.dnd_index = this.pendingElements.length;
     const response = await Api.post(`${this.path}/${this.currentClientSlug}/${this.roadmapPath}`, element);
     const status = await response.status;
 
-    if (status === 201) {
+    if (status === 201 && shouldFetch) {
       this.fetchAll();
     }
   }
@@ -250,7 +250,6 @@ class RoadmapElements {
       if (this.currentClient) {
         this.setClientSlug(this.clients.filter(client =>
           client.name === this.currentClient)[0].slug);
-        console.log("set client slug!");
         this.hasClientName = true;
       }
       if (this.currentClientSlug) {
@@ -289,11 +288,12 @@ class RoadmapElements {
       if (this.currentClient) {
         this.setClientSlug(this.clients.filter(client =>
           client.name === this.currentClient)[0].slug);
-        console.log("set client slug with defaults!");
         this.hasClientName = true;
         arrayOfDefaults.map(defaultElement => {
-          this.create(defaultElement);
+          this.create(defaultElement, false);
+          setTimeout(function(){ "" }, 100);
         });
+        this.fetchAll();
       }
     }
   }

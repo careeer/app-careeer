@@ -4,8 +4,15 @@ import { Input } from 'semantic-ui-react';
 import onClickOutside from 'react-onclickoutside';
 
 class ClientInput extends Component {
+  state = {
+    submittedClient: false,
+  }
+
   handleKeyPress = (event) => {
-    if (event.key === 'Enter' && this.props.currentClient) {
+    if (event.key === 'Enter' && this.props.currentClient && !this.state.submittedClient) {
+      this.setState({
+        submittedClient: true,
+      });
       this.props.createClient();
     }
   }

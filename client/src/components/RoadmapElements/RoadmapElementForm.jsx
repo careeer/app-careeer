@@ -98,7 +98,9 @@ export default class RoadmapElementForm extends React.Component {
     ) ? '' : -1;
 
     let segmentColor = null;
-    let cardTypeColorStyle;
+    let cardTypeColorStyle = Object.assign({}, cardTypeStyle, {
+      color: '#919191',
+    });
     if (this.props.color || this.state.color) {
       segmentColor = COLOR[this.state.color];
       if (this.state.color !== 'transparent'){
