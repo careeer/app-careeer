@@ -23,7 +23,7 @@ export const statisticColumnStyle = {
 export const statisticFirstStyle = {
   marginBottom: '0',
   marginLeft: '0',
-  marginRight: '3.5em',
+  marginRight: '1em',
   paddingLeft: '14px',
 };
 
