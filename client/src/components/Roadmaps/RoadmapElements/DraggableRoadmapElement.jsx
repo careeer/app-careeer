@@ -2,7 +2,7 @@
 import React from 'react';
 import { findDOMNode } from 'react-dom';
 import { DragSource, DropTarget } from 'react-dnd';
-import ItemTypes from '../Constants/ItemTypes';
+import ItemTypes from '../../Constants/ItemTypes';
 import RoadmapElement from './RoadmapElement';
 
 const roadmapElementSource = {

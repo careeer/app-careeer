@@ -5,8 +5,8 @@ import { List, Button, Icon, Grid, Dimmer, Loader } from 'semantic-ui-react';
 import ClientList from './ClientList';
 import DuplicateClientInput from './DuplicateClientInput';
 import NewClientInput from './NewClientInput';
-import { mainGridStyle } from '../Constants/CommonElementStyles';
-import PlusButton from '../RoadmapElements/PlusButton';
+import { mainGridStyle } from '../../Constants/CommonElementStyles';
+import PlusButton from '../../Roadmaps/RoadmapElements/PlusButton';
 import ClientElement from './ClientElement';
 
 @inject('roadmapElements')@observer

@@ -2,9 +2,9 @@
 import React from 'react';
 import { Segment, Grid, Label, Icon, Button } from 'semantic-ui-react';
 
-import { dueDateStyle, cardTypeStyle, titleStyle, descriptionStyle, iconStyle, gridRowStyle, buttonColumnStyle, rightColumnStyle, buttonStyle, mainGridRowStyle, rightIconsColumnStyle, categoryRowStyle, firstColumnStyle, secondColumnStyle } from '../Constants/RoadmapElementStyles';
-import { segmentStyle, COLOR } from '../Constants/CommonElementStyles';
-import Touch from '../Helper/CheckTouch';
+import { dueDateStyle, cardTypeStyle, titleStyle, descriptionStyle, iconStyle, gridRowStyle, buttonColumnStyle, rightColumnStyle, buttonStyle, mainGridRowStyle, rightIconsColumnStyle, categoryRowStyle, firstColumnStyle, secondColumnStyle } from '../../Constants/RoadmapElementStyles';
+import { segmentStyle, COLOR } from '../../Constants/CommonElementStyles';
+import Touch from '../../Helper/CheckTouch';
 
 export default class RoadmapElement extends React.Component {
   state = {

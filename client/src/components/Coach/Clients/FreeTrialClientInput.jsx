@@ -2,10 +2,10 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { Grid } from 'semantic-ui-react';
-import { mainGridStyle } from '../Constants/CommonElementStyles';
+import { mainGridStyle } from '../../Constants/CommonElementStyles';
 import ClientInput from './ClientInput';
-import DateHelper from '../Helper/DateHelper';
-import defaultElements from '../Constants/DefaultRoadmapElements';
+import DateHelper from '../../Helper/DateHelper';
+import defaultElements from '../../Constants/DefaultRoadmapElements';
 
 @inject('roadmapElements')@observer
 export default class FreeTrialClientInput extends Component {

@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import { Transition, Statistic } from 'semantic-ui-react';
-import { statisticColumnStyle, statisticFirstStyle, statisticStyle, statisticValueStyle, statisticLabelStyle, statisticMainValueStyle, statisticMainLabelStyle } from '../Constants/RoadmapHeaderStyles';
+import { statisticColumnStyle, statisticFirstStyle, statisticStyle, statisticValueStyle, statisticLabelStyle, statisticMainValueStyle, statisticMainLabelStyle } from '../../Constants/RoadmapHeaderStyles';
 
 class RoadmapHeader extends Component {
 
@@ -24,7 +24,7 @@ class RoadmapHeader extends Component {
         color: '#949494',
       });
     }
-    
+
     return (
       <Statistic.Group>
       <Statistic style={statisticFirstStyle}>

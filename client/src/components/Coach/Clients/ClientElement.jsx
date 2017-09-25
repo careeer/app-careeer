@@ -1,8 +1,8 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import { Label, Icon, Grid, Segment, Modal, Button } from 'semantic-ui-react';
-import { segmentStyle, rowStyle, columnStyle, clientNameStyle, iconStyle, modalStyle, modalHeaderStyle, modalAcceptStyle } from '../Constants/ClientElementStyles';
-import Touch from '../Helper/CheckTouch';
+import { segmentStyle, rowStyle, columnStyle, clientNameStyle, iconStyle, modalStyle, modalHeaderStyle, modalAcceptStyle } from '../../Constants/ClientElementStyles';
+import Touch from '../../Helper/CheckTouch';
 
 export default class ClientList extends Component {
   state = {

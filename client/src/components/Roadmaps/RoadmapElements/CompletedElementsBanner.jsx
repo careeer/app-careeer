@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React from 'react';
 import { Button, Icon, Grid } from 'semantic-ui-react';
-import { bannerStyle, mainMessageStyle, rowStyle, floatedColumnStyle, iconStyle } from '../Constants/CompletedBannerStyles';
+import { bannerStyle, mainMessageStyle, rowStyle, floatedColumnStyle, iconStyle } from '../../Constants/CompletedBannerStyles';
 
 export default class CompletedElementsBanner extends React.Component {
   handleClick = () => {

@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React from 'react';
 import EditableRoadmapElementsList from './EditableRoadmapElementsList';
-import CompletedElementsBanner from '../Banners/CompletedElementsBanner';
+import CompletedElementsBanner from './CompletedElementsBanner';
 
 export default class CompletedRoadmapElementsList extends React.Component {
 

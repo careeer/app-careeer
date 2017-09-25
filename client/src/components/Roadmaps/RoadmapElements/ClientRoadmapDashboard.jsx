@@ -7,15 +7,15 @@ import { DragDropContext } from 'react-dnd';
 import MultiBackend from 'react-dnd-multi-backend';
 import withScrolling, { createHorizontalStrength, createVerticalStrength } from 'react-dnd-scrollzone';
 
-import HTML5toTouch from '../../stores/helpers/HTML5toTouch';
+import HTML5toTouch from '../../../stores/helpers/HTML5toTouch';
 
 import EditableRoadmapElementsList from './EditableRoadmapElementsList';
 import ToggleableRoadmapElementForm from './ToggleableRoadmapElementForm';
 import CompletedRoadmapElementsList from './CompletedRoadmapElementsList';
 import RoadmapHeader from '../RoadmapHeader/RoadmapHeader';
-import CongratulateBanner from '../Banners/CongratulateBanner';
+import CongratulateBanner from '../../Banners/CongratulateBanner';
 
-import { mainGridStyle, mainColumnStyle } from '../Constants/CommonElementStyles';
+import { mainGridStyle, mainColumnStyle } from '../../Constants/CommonElementStyles';
 
 const ScrollZone = withScrolling('div');
 

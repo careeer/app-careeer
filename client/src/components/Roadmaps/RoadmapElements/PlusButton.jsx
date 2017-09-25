@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React from 'react';
 import { Button, Icon } from 'semantic-ui-react';
-import { buttonStyle } from '../Constants/CommonElementStyles';
+import { buttonStyle } from '../../Constants/CommonElementStyles';
 
 export default class PlusButton extends React.Component {
   componentWillMount() {

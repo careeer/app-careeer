@@ -2,8 +2,8 @@
 import React from 'react';
 import { Button, Form, Input, Segment, Rail, Icon } from 'semantic-ui-react';
 import { CirclePicker } from 'react-color';
-import { dueDateStyle, cardTypeStyle, titleStyle, descriptionStyle, hyperlinkStyle, captionStyle, firstFieldStyle, lastFieldStyle, secondFieldStyle } from '../Constants/RoadmapElementFormStyles';
-import { segmentStyle, COLOR } from '../Constants/CommonElementStyles';
+import { dueDateStyle, cardTypeStyle, titleStyle, descriptionStyle, hyperlinkStyle, captionStyle, firstFieldStyle, lastFieldStyle, secondFieldStyle } from '../../Constants/RoadmapElementFormStyles';
+import { segmentStyle, COLOR } from '../../Constants/CommonElementStyles';
 
 export default class RoadmapElementForm extends React.Component {
   state = {

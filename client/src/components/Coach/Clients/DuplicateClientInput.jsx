@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { Grid } from 'semantic-ui-react';
-import { mainGridStyle } from '../Constants/CommonElementStyles';
+import { mainGridStyle } from '../../Constants/CommonElementStyles';
 import ClientInput from './ClientInput';
 
 @inject('roadmapElements')@observer

@@ -6,7 +6,7 @@ import ImageAvatar from './ImageAvatar';
 import ClientName from './ClientName';
 import ImageUpload from './ImageUpload';
 import StatisticsLabel from './StatisticsLabel';
-import { overlayStyle, columnStyle, nameVisionColumnStyle, statisticColumnStyle } from '../Constants/RoadmapHeaderStyles';
+import { overlayStyle, columnStyle, nameVisionColumnStyle, statisticColumnStyle } from '../../Constants/RoadmapHeaderStyles';
 
 @inject('roadmapElements', 'headerStore')@observer
 class RoadmapHeader extends Component {
