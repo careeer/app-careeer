@@ -6,8 +6,8 @@ import 'semantic-ui-css/semantic.min.css';
 import './index.css';
 import stores from './stores';
 import App from './components/App';
-import ScrollToTop from './components/Helper/ScrollToTop';
-import HttpsRedirect from './components/Helper/HttpsRedirect';
+import ScrollToTop from './components/Lib/ScrollToTop';
+import HttpsRedirect from './components/Lib/HttpsRedirect';
 
 render(
   <Provider

@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { Label, Icon, Grid, Segment, Modal, Button } from 'semantic-ui-react';
 import { segmentStyle, rowStyle, columnStyle, clientNameStyle, iconStyle, modalStyle, modalHeaderStyle, modalAcceptStyle } from '../../Constants/ClientElementStyles';
-import Touch from '../../Helper/CheckTouch';
+import Touch from '../../Lib/CheckTouch';
 
 export default class ClientList extends Component {
   state = {

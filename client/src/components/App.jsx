@@ -6,7 +6,7 @@ import CoachDashboard from './Coach/Clients/CoachDashboard';
 import NewClientInput from './Coach/Clients/NewClientInput';
 import FreeTrialClientInput from './Coach/Clients/FreeTrialClientInput';
 import DuplicateClientInput from './Coach/Clients/DuplicateClientInput';
-import RedirectToCareeer from './Helper/RedirectToCareeer';
+import RedirectToCareeer from './Lib/RedirectToCareeer';
 
 import './App.css';
 

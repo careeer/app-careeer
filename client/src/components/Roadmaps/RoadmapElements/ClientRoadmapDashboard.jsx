@@ -7,7 +7,7 @@ import { DragDropContext } from 'react-dnd';
 import MultiBackend from 'react-dnd-multi-backend';
 import withScrolling, { createHorizontalStrength, createVerticalStrength } from 'react-dnd-scrollzone';
 
-import HTML5toTouch from '../../../stores/helpers/HTML5toTouch';
+import HTML5toTouch from '../../Lib/HTML5toTouch';
 
 import EditableRoadmapElementsList from './EditableRoadmapElementsList';
 import ToggleableRoadmapElementForm from './ToggleableRoadmapElementForm';

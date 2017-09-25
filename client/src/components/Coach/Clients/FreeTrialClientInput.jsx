@@ -4,7 +4,7 @@ import { inject, observer } from 'mobx-react';
 import { Grid } from 'semantic-ui-react';
 import { mainGridStyle } from '../../Constants/CommonElementStyles';
 import ClientInput from './ClientInput';
-import DateHelper from '../../Helper/DateHelper';
+import DateHelper from '../../Lib/DateHelper';
 import defaultElements from '../../Constants/DefaultRoadmapElements';
 
 @inject('roadmapElements')@observer
