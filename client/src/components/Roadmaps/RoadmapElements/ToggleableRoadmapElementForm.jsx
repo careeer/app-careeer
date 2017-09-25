@@ -30,21 +30,24 @@ export default class ToggleableRoadmapElementForm extends React.Component {
   };
 
   render() {
-    if (this.state.isOpen) {
+    if (this.props.isToggleableFormVisible) {
+      if (this.state.isOpen) {
+        return (
+          <RoadmapElementForm
+            onFormSubmit={this.handleFormSubmit}
+            onFormClose={this.handleFormClose}
+            onFormCopy={this.handleFormCopy}
+          />
+        );
+      }
       return (
-        <RoadmapElementForm
-          onFormSubmit={this.handleFormSubmit}
-          onFormClose={this.handleFormClose}
-          onFormCopy={this.handleFormCopy}
+        <PlusButton
+          iconSize="large"
+          buttonSize="massive"
+          handleFormOpen={this.handleFormOpen}
         />
       );
     }
-    return (
-      <PlusButton
-        iconSize="large"
-        buttonSize="massive"
-        handleFormOpen={this.handleFormOpen}
-      />
-    );
+    return null;
   }
 }

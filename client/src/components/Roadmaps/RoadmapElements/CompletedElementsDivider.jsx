@@ -3,7 +3,7 @@ import React from 'react';
 import { Button, Icon, Grid } from 'semantic-ui-react';
 import { bannerStyle, mainMessageStyle, rowStyle, floatedColumnStyle, iconStyle } from '../../Constants/CompletedBannerStyles';
 
-export default class CompletedElementsBanner extends React.Component {
+export default class CompletedElementsDivider extends React.Component {
   handleClick = () => {
     this.props.toggleCompletedElements();
   }

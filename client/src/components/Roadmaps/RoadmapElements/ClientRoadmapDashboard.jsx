@@ -139,10 +139,10 @@ export default class ClientRoadmapDashboard extends React.Component {
           loadingMessage="Fetching your Roadmap..."
         />
         <CongratulateBanner
-          clientName={currentClient}
           visible={isBannerVisible}
-          hideCongratsBanner={this.handleBannerClose}
+          clientName={currentClient}
           handleUndo={this.handleUndoComplete}
+          hideCongratsBanner={this.handleBannerClose}
         />
         <AccountFlag
           accountMessage="Create account &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+2"
@@ -156,45 +156,39 @@ export default class ClientRoadmapDashboard extends React.Component {
               <RoadmapHeader
                 clientName={currentClient}
               />
-
               <EditableRoadmapElementsList
                 roadmapElements={incompleteElements.slice()}
-                isCreateFormClose={isCreateFormClose}
-                onFormOpen={this.handleEditFormOpen}
-                onFormSubmit={this.handleEditFormSubmit}
-                onFormCopy={this.handleCopyForm}
-                onDeleteClick={this.handleDeleteForm}
-                toggleElementStatus={this.handleToggleRoadmapElementStatus}
-                handleCreateFormToggle={this.handleCreateFormToggle}
-                handleElementMove={this.handleElementMove}
                 enableDragAndDrop={true}
+                isCreateFormClose={isCreateFormClose}
+                onFormCopy={this.handleCopyForm}
+                onFormOpen={this.handleEditFormOpen}
+                onDeleteClick={this.handleDeleteForm}
+                onFormSubmit={this.handleEditFormSubmit}
+                handleElementMove={this.handleElementMove}
+                handleCreateFormToggle={this.handleCreateFormToggle}
+                toggleElementStatus={this.handleToggleRoadmapElementStatus}
               />
-
-              { (completedElements.length > 0) &&
-                <CompletedRoadmapElementsList
-                  completedAccordionMessage={completedAccordionMessage}
-                  completedAccordionIcon={completedAccordionIcon}
-                  toggleCompletedElements={toggleCompletedElements}
-                  enableDragAndDrop={false}
-                  isCompletedAccordionOpen={isCompletedAccordionOpen}
-                  completedElements={completedElements.slice()}
-                  isCreateFormClose={isCreateFormClose}
-                  onFormOpen={this.handleEditFormOpen}
-                  onFormSubmit={this.handleEditFormSubmit}
-                  onFormCopy={this.handleCopyForm}
-                  onDeleteClick={this.handleDeleteForm}
-                  toggleElementStatus={this.handleToggleRoadmapElementStatus}
-                  handleCreateFormToggle={this.handleCreateFormToggle}
-                  handleElementMove={this.handleElementMove}
-                />
-              }
-
-              { isToggleableFormVisible &&
-                <ToggleableRoadmapElementForm
-                  onFormSubmit={this.handleCreateFormSubmit}
-                  handleCreateFormToggle={this.handleCreateFormToggle}
-                />
-              }
+              <CompletedRoadmapElementsList
+                completedElements={completedElements.slice()}
+                enableDragAndDrop={false}
+                isCreateFormClose={isCreateFormClose}
+                completedAccordionIcon={completedAccordionIcon}
+                toggleCompletedElements={toggleCompletedElements}
+                isCompletedAccordionOpen={isCompletedAccordionOpen}
+                completedAccordionMessage={completedAccordionMessage}
+                onFormCopy={this.handleCopyForm}
+                onFormOpen={this.handleEditFormOpen}
+                onDeleteClick={this.handleDeleteForm}
+                onFormSubmit={this.handleEditFormSubmit}
+                handleElementMove={this.handleElementMove}
+                handleCreateFormToggle={this.handleCreateFormToggle}
+                toggleElementStatus={this.handleToggleRoadmapElementStatus}
+              />
+              <ToggleableRoadmapElementForm
+                onFormSubmit={this.handleCreateFormSubmit}
+                handleCreateFormToggle={this.handleCreateFormToggle}
+                isToggleableFormVisible={isToggleableFormVisible}
+              />
             </ScrollZone>
           </Grid.Column>
         </Grid>
