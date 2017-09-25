@@ -1,0 +1,30 @@
+div.account {
+  margin-top: 2em;
+  margin-left: 1em;
+}
+
+div.account a {
+  position: relative;
+  padding: 3px 20px 4px 70px;
+  margin: 30px 10px 10px -70px;
+  width: 145px;
+  height: 18px;
+  font-family: Cabin;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-align: center;
+  color: #fff;
+  background-color: #24c63a;
+}
+
+div.account a::before {
+  content: ' ';
+  position: absolute;
+  width: 15px;
+  height: 22px;
+  right: -45px;
+  top: 0;
+  border-width: 10px 25px;
+  border-style: solid;
+  border-color: #24c63a transparent #24c63a #24c63a;
+}

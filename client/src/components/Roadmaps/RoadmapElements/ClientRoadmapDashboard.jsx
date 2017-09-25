@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React from 'react';
 import { inject, observer } from 'mobx-react';
-import { Grid, Dimmer, Loader, Sidebar } from 'semantic-ui-react';
+import { Grid, Dimmer, Loader, Sidebar, Label } from 'semantic-ui-react';
 
 import { DragDropContext } from 'react-dnd';
 import MultiBackend from 'react-dnd-multi-backend';
@@ -14,8 +14,10 @@ import ToggleableRoadmapElementForm from './ToggleableRoadmapElementForm';
 import CompletedRoadmapElementsList from './CompletedRoadmapElementsList';
 import RoadmapHeader from '../RoadmapHeader/RoadmapHeader';
 import CongratulateBanner from '../../Banners/CongratulateBanner';
+import AccountFlag from './AccountFlag';
 
 import { mainGridStyle, mainColumnStyle } from '../../Constants/CommonElementStyles';
+
 
 const ScrollZone = withScrolling('div');
 
@@ -132,11 +134,13 @@ export default class ClientRoadmapDashboard extends React.Component {
           hideCongratsBanner={this.handleBannerClose}
           handleUndo={this.handleUndoComplete}
         />
+        <AccountFlag
+          accountMessage="Create account &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+2"
+        />
         <Grid style={mainGridStyle}>
           <Grid.Column style={mainColumnStyle}>
-            { this.props.roadmapElements.isLoading &&
               <Dimmer
-                active
+                active={true&&this.props.roadmapElements.isLoading}
                 page
                 inverted
               >
@@ -144,7 +148,6 @@ export default class ClientRoadmapDashboard extends React.Component {
                   Preparing Roadmap...
                 </Loader>
               </Dimmer>
-            }
             <ScrollZone
               verticalStrength={vStrength}
               horizontalStrength={hStrength}
