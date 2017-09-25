@@ -62,7 +62,7 @@ class RoadmapHeader extends Component {
             vision={this.props.roadmapElements.currentClientVision}
             changeVision={this.props.roadmapElements.handleClientVisionChange}
             handleKeyPress={this.handleKeyPress}
-            name={this.props.value}
+            name={this.props.clientName}
             handleLabelClick={this.handleLabelClick}
             openInputForm={this.state.openInputForm}
           />

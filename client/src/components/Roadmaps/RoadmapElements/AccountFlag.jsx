@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../Styles/AccountFlag.css';
 
 function AccountFlag(props) {
@@ -12,7 +13,7 @@ function AccountFlag(props) {
 }
 
 AccountFlag.propTypes = {
-  accountMessage: React.PropTypes.string.isRequired,
+  accountMessage: PropTypes.string.isRequired,
 };
 
 export default AccountFlag;

@@ -15,6 +15,7 @@ import CompletedRoadmapElementsList from './CompletedRoadmapElementsList';
 import RoadmapHeader from '../RoadmapHeader/RoadmapHeader';
 import CongratulateBanner from '../../Banners/CongratulateBanner';
 import AccountFlag from './AccountFlag';
+import FullScreenLoader from './FullScreenLoader';
 
 import { mainGridStyle, mainColumnStyle } from '../../Constants/CommonElementStyles';
 
@@ -42,12 +43,8 @@ function vStrength(box, point) {
 }
 
 @DragDropContext(MultiBackend(HTML5toTouch))
-@inject('roadmapElements')@observer
+@inject('roadmapElements') @observer
 export default class ClientRoadmapDashboard extends React.Component {
-  state = {
-    loadingId: '',
-  }
-
   componentWillMount() {
     const client = this.props.match.params.clientId;
     if (client) {
@@ -70,11 +67,7 @@ export default class ClientRoadmapDashboard extends React.Component {
   }
 
   handleEditFormSubmit = (attrs) => {
-    this.setState = {
-      loadingId: attrs.id,
-    };
     this.updateRoadmapElement(attrs);
-
   };
 
   handleToggleRoadmapElementStatus = (element) => {
@@ -126,11 +119,28 @@ export default class ClientRoadmapDashboard extends React.Component {
   }
 
   render() {
+    const { isLoading,
+            isBannerVisible,
+            isCreateFormClose,
+            isToggleableFormVisible,
+            isCompletedAccordionOpen,
+            currentClient,
+            completedElements,
+            incompleteElements,
+            completedAccordionIcon,
+            toggleCompletedElements,
+            completedAccordionMessage
+          } = this.props.roadmapElements;
+
     return (
       <div>
+        <FullScreenLoader
+          isLoading={isLoading}
+          loadingMessage="Fetching your Roadmap..."
+        />
         <CongratulateBanner
-          clientName={this.props.roadmapElements.currentClient}
-          visible={this.props.roadmapElements.isBannerVisible}
+          clientName={currentClient}
+          visible={isBannerVisible}
           hideCongratsBanner={this.handleBannerClose}
           handleUndo={this.handleUndoComplete}
         />
@@ -139,29 +149,17 @@ export default class ClientRoadmapDashboard extends React.Component {
         />
         <Grid style={mainGridStyle}>
           <Grid.Column style={mainColumnStyle}>
-              <Dimmer
-                active={true&&this.props.roadmapElements.isLoading}
-                page
-                inverted
-              >
-                <Loader size="medium">
-                  Preparing Roadmap...
-                </Loader>
-              </Dimmer>
             <ScrollZone
               verticalStrength={vStrength}
               horizontalStrength={hStrength}
             >
               <RoadmapHeader
-                disabled={this.props.roadmapElements.isNameInputDisabled}
-                placeholder="enter client's first and last name"
-                name="clientName"
-                value={this.props.roadmapElements.currentClient}
+                clientName={currentClient}
               />
 
               <EditableRoadmapElementsList
-                roadmapElements={this.props.roadmapElements.incompleteElements.slice()}
-                isCreateFormClose={this.props.roadmapElements.isCreateFormClose}
+                roadmapElements={incompleteElements.slice()}
+                isCreateFormClose={isCreateFormClose}
                 onFormOpen={this.handleEditFormOpen}
                 onFormSubmit={this.handleEditFormSubmit}
                 onFormCopy={this.handleCopyForm}
@@ -172,15 +170,15 @@ export default class ClientRoadmapDashboard extends React.Component {
                 enableDragAndDrop={true}
               />
 
-              { (this.props.roadmapElements.completedElements.length > 0) &&
+              { (completedElements.length > 0) &&
                 <CompletedRoadmapElementsList
-                  completedAccordionMessage={this.props.roadmapElements.completedAccordionMessage}
-                  completedAccordionIcon={this.props.roadmapElements.completedAccordionIcon}
-                  toggleCompletedElements={this.props.roadmapElements.toggleCompletedElements}
+                  completedAccordionMessage={completedAccordionMessage}
+                  completedAccordionIcon={completedAccordionIcon}
+                  toggleCompletedElements={toggleCompletedElements}
                   enableDragAndDrop={false}
-                  isCompletedAccordionOpen={this.props.roadmapElements.isCompletedAccordionOpen}
-                  completedElements={this.props.roadmapElements.completedElements.slice()}
-                  isCreateFormClose={this.props.roadmapElements.isCreateFormClose}
+                  isCompletedAccordionOpen={isCompletedAccordionOpen}
+                  completedElements={completedElements.slice()}
+                  isCreateFormClose={isCreateFormClose}
                   onFormOpen={this.handleEditFormOpen}
                   onFormSubmit={this.handleEditFormSubmit}
                   onFormCopy={this.handleCopyForm}
@@ -191,7 +189,7 @@ export default class ClientRoadmapDashboard extends React.Component {
                 />
               }
 
-              { this.props.roadmapElements.isToggleableFormVisible &&
+              { isToggleableFormVisible &&
                 <ToggleableRoadmapElementForm
                   onFormSubmit={this.handleCreateFormSubmit}
                   handleCreateFormToggle={this.handleCreateFormToggle}
