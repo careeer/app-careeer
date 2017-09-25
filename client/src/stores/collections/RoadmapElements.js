@@ -252,13 +252,15 @@ class RoadmapElements {
       this.clients = clientArray.filter(client => client.client_status !== 'archived');
       this.isClientLoading = false;
       if (this.currentClient) {
-        this.setClientSlug(this.clients.filter(client =>
-          client.name === this.currentClient)[0].slug);
+        const clientObject = this.clients.filter(client =>
+          client.name === this.currentClient)[0];
+        this.setClientSlug(clientObject.slug);
         this.hasClientName = true;
       }
       if (this.currentClientSlug) {
-        this.setClientName(this.clients.filter(client =>
-          client.slug === this.currentClientSlug)[0].name);
+        const clientObject = this.clients.filter(client =>
+          client.slug === this.currentClientSlug)[0];
+        this.setClientName(clientObject.name);
         this.hasClientName = true;
       }
     }
