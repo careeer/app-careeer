@@ -1,0 +1,74 @@
+{
+  "name": "app-careeer",
+  "scripts": {
+  },
+  "env": {
+    "CLOUDINARY_URL": {
+      "required": true
+    },
+    "HEROKU_POSTGRESQL_CYAN_URL": {
+      "required": true
+    },
+    "LANG": {
+      "required": true
+    },
+    "NODE_ENV": {
+      "required": true
+    },
+    "NODE_MODULES_CACHE": {
+      "required": true
+    },
+    "NPM_CONFIG_PRODUCTION": {
+      "required": true
+    },
+    "RACK_ENV": {
+      "required": true
+    },
+    "RAILS_ENV": {
+      "required": true
+    },
+    "RAILS_LOG_TO_STDOUT": {
+      "required": true
+    },
+    "RAILS_MAX_THREADS": {
+      "required": true
+    },
+    "RAILS_SERVE_STATIC_FILES": {
+      "required": true
+    },
+    "REACT_APP_API": {
+      "required": true
+    },
+    "REACT_APP_CLOUDINARY_KEY": {
+      "required": true
+    },
+    "REACT_APP_CLOUDINARY_PRESET": {
+      "required": true
+    },
+    "REACT_APP_CLOUDINARY_SECRET": {
+      "required": true
+    },
+    "REACT_APP_CLOUDINARY_URL": {
+      "required": true
+    },
+    "SECRET_KEY_BASE": {
+      "required": true
+    },
+    "WEB_CONCURRENCY": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}
