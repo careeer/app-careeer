@@ -18,27 +18,27 @@ export default class CompletedElementsBanner extends React.Component {
         onClick={this.handleClick}
       >
         <Grid>
-        <Grid.Row style={rowStyle}>
-          <Grid.Column
-            width={15}
-            mobile={14}
-            textAlign="center"
-            verticalAlign="middle"
-          >
-            <span style={mainMessageStyle}>
-              {this.props.message}
-            </span>
-          </Grid.Column>
-          <Grid.Column
-            floated="right"
-            style={floatedColumnStyle}
-          >
-            <Icon
-              size="huge"
-              style={iconStyle}
-              name={this.props.icon}
-            />
-          </Grid.Column>
+          <Grid.Row style={rowStyle}>
+            <Grid.Column
+              width={15}
+              mobile={14}
+              textAlign="center"
+              verticalAlign="middle"
+            >
+              <span style={mainMessageStyle}>
+                {this.props.message}
+              </span>
+            </Grid.Column>
+            <Grid.Column
+              floated="right"
+              style={floatedColumnStyle}
+            >
+              <Icon
+                size="huge"
+                style={iconStyle}
+                name={this.props.icon}
+              />
+            </Grid.Column>
           </Grid.Row>
         </Grid>
       </Button>
