@@ -151,7 +151,7 @@ PLATFORMS
 DEPENDENCIES
   amoeba (~> 3.0)
   byebug
-  devise
+  devise (= 4.3.0)
   foreman (~> 0.82.0)
   friendly_id (~> 5.1.0)
   hirb (~> 0.7.3)
