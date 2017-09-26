@@ -18,10 +18,17 @@ export default class FreeTrialWelcome extends Component {
       <div>
         <Grid>
           <Grid.Row>
-            <Grid.Column floated="left">
+            <Grid.Column
+              floated="left"
+              width={8}
+            >
               <CareeerLogo />
             </Grid.Column>
-            <Grid.Column floated="right">
+            <Grid.Column
+              floated="right"
+              width={8}
+              textAlign="right"
+            >
               <DismissButton
                 onButtonClick={this.handleClick}
               />

@@ -145,7 +145,7 @@ export default class ClientRoadmapDashboard extends React.Component {
           hideCongratsBanner={this.handleBannerClose}
         />
         <AccountFlag
-          accountMessage="14 days free trial"
+          accountMessage="14 trial days remaining"
         />
         <Grid style={roadmapGridStyle}>
           <Grid.Column style={mainColumnStyle}>
