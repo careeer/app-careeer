@@ -5,6 +5,7 @@ div.ui.center.aligned.middle.grid {
   height: 100%;
 }
 
+/*
 h2.ui.header.careeer {
   width: 98px;
   height: 106.9px;
@@ -14,6 +15,11 @@ h2.ui.header.careeer {
   text-align: center;
   color: #24c63a;
 }
+*/
+
+div.ui.text.container.welcomeContainer {
+  width: auto;
+}
 
 h2.ui.header.welcomeHeader {
   font-size: 20px;
@@ -21,10 +27,6 @@ h2.ui.header.welcomeHeader {
   letter-spacing: 1.7px;
   text-align: center;
   color: #333;
-}
-
-div.ui.text.container.welcomeContainer {
-  width: auto;
 }
 
 p.welcomeContent {
@@ -44,10 +46,12 @@ p.welcomeDoneButton {
 }
 
 i.checkmark.big.icon.welcomeCheckmark {
+  margin-top: 1em;
   cursor: pointer;
   margin-right: 0;
 }
 
+/*
 h2.ui.header.dismissButton {
   font-family: 'Lobster';
   font-size: 56px;
@@ -55,6 +59,7 @@ h2.ui.header.dismissButton {
   height: 60px;
   color: #000;
 }
+*/
 
 span {
   cursor: pointer;

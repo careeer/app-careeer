@@ -19,14 +19,14 @@ export default class FreeTrialWelcome extends Component {
         textAlign="center"
         verticalAlign="middle"
       >
-          <Grid.Column
-            computer={4}
-            largeScreen={4}
-            tablet={6}
-            widescreen={8}
-            mobile={14}
-          >
-            <WelcomeToRoadmap />
+        <Grid.Column
+          computer={4}
+          largeScreen={4}
+          tablet={6}
+          widescreen={8}
+          mobile={14}
+        >
+          <WelcomeToRoadmap />
           <DoneButton
             onCheckmarkClick={this.handleClick}
           />

@@ -40,8 +40,8 @@ export default class DoneButton extends Component {
         color: '#b1b1b1',
       };
     }
+    
     return (
-
       <Container
         as="a"
         className="welcomeContainer"
