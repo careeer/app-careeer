@@ -278,7 +278,7 @@ class RoadmapElements {
   }
 
   @action async createClientWithDefaults(arrayOfDefaults) {
-    const response = await Api.post(this.path, { name: this.currentClient });
+    const response = await Api.post(this.path, { name: this.currentClient, account_type: "free trial" });
     const status = await response.status;
 
     if (status === 201) {
@@ -433,6 +433,9 @@ class RoadmapElements {
 
   @action calculateAccountStatus = (clientObject) => {
     console.log(clientObject);
+    if (clientObject.account_type === "free trial") {
+
+    }
   }
 }
 
