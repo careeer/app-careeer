@@ -255,12 +255,14 @@ class RoadmapElements {
         const clientObject = this.clients.filter(client =>
           client.name === this.currentClient)[0];
         this.setClientSlug(clientObject.slug);
+        this.calculateAccountStatus(clientObject);
         this.hasClientName = true;
       }
       if (this.currentClientSlug) {
         const clientObject = this.clients.filter(client =>
           client.slug === this.currentClientSlug)[0];
         this.setClientName(clientObject.name);
+        this.calculateAccountStatus(clientObject);
         this.hasClientName = true;
       }
     }
@@ -425,6 +427,12 @@ class RoadmapElements {
       this.completedAccordionMessage = `Show ${accordionMessage}`;
       this.completedAccordionIcon = "angle down";
     }
+  }
+
+  // Account status
+
+  @action calculateAccountStatus = (clientObject) => {
+    
   }
 }
 

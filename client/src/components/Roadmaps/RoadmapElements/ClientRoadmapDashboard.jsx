@@ -17,7 +17,7 @@ import CongratulateBanner from '../../Banners/CongratulateBanner';
 import AccountFlag from './AccountFlag';
 import FullScreenLoader from './FullScreenLoader';
 
-import { mainGridStyle, mainColumnStyle } from '../../Constants/CommonElementStyles';
+import { roadmapGridStyle, mainColumnStyle } from '../../Constants/CommonElementStyles';
 
 
 const ScrollZone = withScrolling('div');
@@ -145,9 +145,9 @@ export default class ClientRoadmapDashboard extends React.Component {
           hideCongratsBanner={this.handleBannerClose}
         />
         <AccountFlag
-          accountMessage="Create account &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+2"
+          accountMessage="14 days free trial"
         />
-        <Grid style={mainGridStyle}>
+        <Grid style={roadmapGridStyle}>
           <Grid.Column style={mainColumnStyle}>
             <ScrollZone
               verticalStrength={vStrength}

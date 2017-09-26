@@ -1,0 +1,49 @@
+h2.ui.header.careeer {
+  width: 98px;
+  height: 106.9px;
+  font-family: 'Lobster', cursive;
+  font-size: 85.8px;
+  letter-spacing: 5.4px;
+  text-align: center;
+  color: #24c63a;
+}
+
+h2.ui.header.welcomeHeader {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 1.7px;
+  text-align: center;
+  color: #333;
+}
+
+div.ui.text.container.welcomeContainer {
+  width: auto;
+}
+
+p.welcomeContent {
+  font-family: Cabin;
+  font-size: 16px;
+  letter-spacing: 1.3px;
+  text-align: center;
+  color: #919191;
+}
+
+p.welcomeDoneButton {
+  font-family: Cabin;
+  font-size: 20px;
+  letter-spacing: 1.7px;
+  text-align: center;
+  color: #24c63a;
+}
+
+i.checkmark.big.link.icon.welcomeCheckmark {
+  margin-right: 0;
+}
+
+h2.ui.header.dismissButton {
+  font-family: 'Lobster';
+  font-size: 56px;
+  width: 59px;
+  height: 60px;
+  color: #000;
+}

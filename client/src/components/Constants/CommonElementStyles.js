@@ -14,6 +14,10 @@ export const mainGridStyle = {
   margin: '2rem',
 };
 
+export const roadmapGridStyle = {
+  margin: '0 2rem 2rem 2rem',
+};
+
 export const mainColumnStyle = {
   paddingRight: '30px',
 };
