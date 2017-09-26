@@ -25,11 +25,12 @@ class ClientInput extends Component {
   render() {
     return (
         <Input
-          transparent
           fluid
+          autoFocus
+          transparent
+          name="clientName"
           placeholder={this.props.placeholder}
           onKeyPress={this.handleKeyPress}
-          name="clientName"
           value={this.props.currentClient}
           onChange={this.props.handleClientInputChange}
         />
