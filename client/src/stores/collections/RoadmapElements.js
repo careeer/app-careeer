@@ -432,7 +432,7 @@ class RoadmapElements {
   // Account status
 
   @action calculateAccountStatus = (clientObject) => {
-    
+    console.log(clientObject);
   }
 }
 
