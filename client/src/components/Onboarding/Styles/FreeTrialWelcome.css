@@ -1,8 +1,15 @@
+body > div#root,
+body > div#root > div,
+body > div#root > div > div,
+div.ui.center.aligned.middle.grid {
+  height: 100%;
+}
+
 h2.ui.header.careeer {
   width: 98px;
   height: 106.9px;
   font-family: 'Lobster', cursive;
-  font-size: 85.8px;
+  font-size: 45.8px;
   letter-spacing: 5.4px;
   text-align: center;
   color: #24c63a;
@@ -36,7 +43,8 @@ p.welcomeDoneButton {
   color: #24c63a;
 }
 
-i.checkmark.big.link.icon.welcomeCheckmark {
+i.checkmark.big.icon.welcomeCheckmark {
+  cursor: pointer;
   margin-right: 0;
 }
 
@@ -46,4 +54,8 @@ h2.ui.header.dismissButton {
   width: 59px;
   height: 60px;
   color: #000;
+}
+
+span {
+  cursor: pointer;
 }

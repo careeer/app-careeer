@@ -15,46 +15,23 @@ export default class FreeTrialWelcome extends Component {
 
   render() {
     return (
-      <div>
-        <Grid>
-          <Grid.Row>
-            <Grid.Column
-              floated="left"
-              width={8}
-            >
-              <CareeerLogo />
-            </Grid.Column>
-            <Grid.Column
-              floated="right"
-              width={8}
-              textAlign="right"
-            >
-              <DismissButton
-                onButtonClick={this.handleClick}
-              />
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-        <Grid centered>
-          <Grid.Row>
-            <Grid.Column
-              verticalAlign="middle"
-              computer={4}
-              largeScreen={5}
-              tablet={8}
-              widescreen={10}
-              mobile={16}
-            >
-              <WelcomeToRoadmap />
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row>
-            <DoneButton
-              onCheckmarkClick={this.handleClick}
-            />
-          </Grid.Row>
-        </Grid>
-      </div>
+      <Grid
+        textAlign="center"
+        verticalAlign="middle"
+      >
+          <Grid.Column
+            computer={4}
+            largeScreen={4}
+            tablet={6}
+            widescreen={8}
+            mobile={14}
+          >
+            <WelcomeToRoadmap />
+          <DoneButton
+            onCheckmarkClick={this.handleClick}
+          />
+        </Grid.Column>
+      </Grid>
     );
   }
 }

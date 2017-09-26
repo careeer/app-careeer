@@ -6,7 +6,16 @@ import Touch from '../Lib/CheckTouch';
 export default class DoneButton extends Component {
   state = {
     isMouseInsideCheckmark: false,
+    isDoneClicked: false,
   }
+
+  handleDoneClick = () => {
+    this.setState({
+      isDoneClicked: true,
+    });
+    this.props.onCheckmarkClick();
+  }
+
   mouseEnterCheckmark = () => {
     this.setState({
       isMouseInsideCheckmark: true,
@@ -21,7 +30,8 @@ export default class DoneButton extends Component {
 
   render() {
     let checkmarkIconStyle = {};
-    if (this.state.isMouseInsideCheckmark && !Touch.isTouchDevice()) {
+    if ((this.state.isMouseInsideCheckmark && !Touch.isTouchDevice()) ||
+          this.state.isDoneClicked) {
       checkmarkIconStyle = {
         color: '#24c63a',
       };
@@ -33,21 +43,25 @@ export default class DoneButton extends Component {
     return (
 
       <Container
-        text
+        as="a"
         className="welcomeContainer"
+        onClick={this.handleDoneClick}
       >
         <Icon
-          link
-          name="checkmark"
           size="big"
+          name="checkmark"
           className="welcomeCheckmark"
           style={checkmarkIconStyle}
-          onMouseEnter={this.mouseEnterCheckmark}
           onMouseLeave={this.mouseExitCheckmark}
-          onClick={this.props.onCheckmarkClick}
+          onMouseEnter={this.mouseEnterCheckmark}
         />
         <p className="welcomeDoneButton">
-          done
+          <span
+            onMouseLeave={this.mouseExitCheckmark}
+            onMouseEnter={this.mouseEnterCheckmark}
+          >
+            done
+          </span>
         </p>
       </Container>
     );

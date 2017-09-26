@@ -433,9 +433,35 @@ class RoadmapElements {
 
   @action calculateAccountStatus = (clientObject) => {
     console.log(clientObject);
+    const railsCreatedDate = clientObject.created_at.split("T", 1)[0];
+    const railsDateArray = railsCreatedDate.split("-");
+    const railsYear = railsDateArray[0];
+    const railsMonth = railsDateArray[1];
+    const railsDay = railsDateArray[2];
+    const createdDate = new Date(railsYear, railsMonth, railsDay);
+    // console.log(railsDay);
+    console.log(this.days_between(createdDate, new Date()));
+    // const today = new Date(clientObject.creat)
     if (clientObject.account_type === "free trial") {
 
     }
+  }
+
+  days_between(date1, date2) {
+
+    // The number of milliseconds in one day
+    const ONE_DAY = 1000 * 60 * 60 * 24;
+
+    // Convert both dates to milliseconds
+    const date1_ms = date1.getTime();
+    const date2_ms = date2.getTime();
+
+    // Calculate the difference in milliseconds
+    const difference_ms = Math.abs(date1_ms - date2_ms);
+
+    // Convert back to days and return
+    return Math.round(difference_ms/ONE_DAY);
+
   }
 }
 
