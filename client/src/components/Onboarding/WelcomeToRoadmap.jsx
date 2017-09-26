@@ -17,7 +17,7 @@ const WelcomeToRoadmap = () => (
       Collaborate with your coach to develop a plan that gets you from where you are now to where you want to be.
     </p>
     <p className="welcomeContent">
-      Let’s start with a little setup to become familiar with your roadmap, and an introduction to your coach.
+      Let’s start with a little setup to become familiar with your roadmap, and introduce you to a coach.
     </p>
   </Container>
 );
