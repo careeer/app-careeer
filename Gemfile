@@ -50,3 +50,5 @@ gem 'hirb', '~> 0.7.3'
 gem 'friendly_id', '~> 5.1.0'
 
 gem 'amoeba', '~> 3.0'
+
+gem 'paper_trail', '7.1.3'

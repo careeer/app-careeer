@@ -93,6 +93,16 @@ class RoadmapElements {
     const status = await response.status;
 
     if (status === 201 && shouldFetch) {
+      dataLayer.push({
+        'event': 'RoadmapElement_New',
+        'client_name': this.currentClient,
+        'title': element.title,
+        'card_type': element.card_type,
+        'description': element.description,
+        'call_to_action': element.call_to_action,
+        'call_to_action_url': element.call_to_action_url,
+        'due_date': element.due_date,
+      });
       this.fetchAll();
     }
   }
@@ -103,6 +113,16 @@ class RoadmapElements {
     const response = await Api.post(`${this.path}/${this.currentClientSlug}/${this.roadmapPath}`, element);
     const status = await response.status;
     if (status === 201) {
+      dataLayer.push({
+        'event': 'RoadmapElement_Copy',
+        'client_name': this.currentClient,
+        'title': element.title,
+        'card_type': element.card_type,
+        'description': element.description,
+        'call_to_action': element.call_to_action,
+        'call_to_action_url': element.call_to_action_url,
+        'due_date': element.due_date,
+      });
       const newcards = this.pendingElements;
       newcards.slice(element.dnd_index, 0, element);
       this.pendingElements = newcards;
@@ -139,6 +159,17 @@ class RoadmapElements {
     const response = await Api.put(`${this.path}/${this.currentClientSlug}/${this.roadmapPath}/${element.id}`, element);
     const status = await response.status;
     if (status === 200) {
+      dataLayer.push({
+        'event': 'RoadmapElement_StatusUpdate',
+        'client_name': this.currentClient,
+        'status': element.status,
+        'title': element.title,
+        'card_type': element.card_type,
+        'description': element.description,
+        'call_to_action': element.call_to_action,
+        'call_to_action_url': element.call_to_action_url,
+        'due_date': element.due_date,
+      });
       const updatedElements = this.pendingElements.map((currentElement) => {
         if (currentElement.id === element.id) {
           return Object.assign(currentElement, element);
