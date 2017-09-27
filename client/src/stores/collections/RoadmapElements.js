@@ -430,21 +430,25 @@ class RoadmapElements {
   }
 
   // Account status
+  @observable freeTrialMessage = "";
 
   @action calculateAccountStatus = (clientObject) => {
-    console.log(clientObject);
+    if (clientObject.account_type === "free trial") {
+      const trialDaysLeft = this.getTrialsDaysLeft(clientObject);
+      if (trialDaysLeft < 0) {
+
+      }
+    }
+  }
+
+  getTrialsDaysLeft(clientObject) {
+    const today = new Date();
     const railsCreatedDate = clientObject.created_at.split("T", 1)[0];
     const railsDateArray = railsCreatedDate.split("-");
-    const railsYear = railsDateArray[0];
-    const railsMonth = railsDateArray[1];
-    const railsDay = railsDateArray[2];
-    const createdDate = new Date(railsYear, railsMonth, railsDay);
-    // console.log(railsDay);
-    console.log(this.days_between(createdDate, new Date()));
-    // const today = new Date(clientObject.creat)
-    if (clientObject.account_type === "free trial") {
-
-    }
+    const createdDate = new Date(railsDateArray[0],
+                                 railsDateArray[1] - 1,
+                                 railsDateArray[2]);
+    return (14 - this.days_between(createdDate, today));
   }
 
   days_between(date1, date2) {
@@ -459,8 +463,9 @@ class RoadmapElements {
     // Calculate the difference in milliseconds
     const difference_ms = Math.abs(date1_ms - date2_ms);
 
+
     // Convert back to days and return
-    return Math.round(difference_ms/ONE_DAY);
+    return Math.floor(difference_ms/ONE_DAY);
 
   }
 }
