@@ -2,8 +2,6 @@
 import React, { Component } from 'react';
 import { Grid } from 'semantic-ui-react';
 import WelcomeToRoadmap from './WelcomeToRoadmap';
-import CareeerLogo from './CareeerLogo';
-import DismissButton from './DismissButton';
 import DoneButton from './DoneButton';
 
 import './Styles/FreeTrialWelcome.css';

@@ -26,6 +26,7 @@ class RoadmapElements {
     this.currentClientSlug = '';
     this.currentClientAvatar = '';
     this.currentClientVision = '';
+    this.freeTrialMessage = '';
     this.isNameInputDisabled = false;
     this.isCreateFormClose = true;
     this.isToggleableFormVisible = true;
@@ -435,8 +436,12 @@ class RoadmapElements {
   @action calculateAccountStatus = (clientObject) => {
     if (clientObject.account_type === "free trial") {
       const trialDaysLeft = this.getTrialsDaysLeft(clientObject);
-      if (trialDaysLeft < 0) {
-
+      if (trialDaysLeft >= 0) {
+        if (trialDaysLeft < 2) {
+          this.freeTrialMessage = `${trialDaysLeft} trial day remaining`;
+        } else {
+          this.freeTrialMessage = `${trialDaysLeft} trial days remaining`;
+        }
       }
     }
   }

@@ -125,6 +125,7 @@ export default class ClientRoadmapDashboard extends React.Component {
             isToggleableFormVisible,
             isCompletedAccordionOpen,
             currentClient,
+            freeTrialMessage,
             completedElements,
             incompleteElements,
             completedAccordionIcon,
@@ -145,7 +146,7 @@ export default class ClientRoadmapDashboard extends React.Component {
           hideCongratsBanner={this.handleBannerClose}
         />
         <AccountFlag
-          accountMessage="14 trial days remaining"
+          accountMessage={freeTrialMessage}
         />
         <Grid style={roadmapGridStyle}>
           <Grid.Column style={mainColumnStyle}>

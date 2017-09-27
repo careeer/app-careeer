@@ -3,13 +3,16 @@ import PropTypes from 'prop-types';
 import '../Styles/AccountFlag.css';
 
 function AccountFlag(props) {
-  return (
-    <div className="account">
-      <a>
-        {props.accountMessage}
-      </a>
-    </div>
-  );
+  if (props.accountMessage !== '') {
+    return (
+      <div className="account">
+        <a>
+          {props.accountMessage}
+        </a>
+      </div>
+    );
+  }
+  return null;
 }
 
 AccountFlag.propTypes = {
