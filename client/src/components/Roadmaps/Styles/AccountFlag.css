@@ -24,7 +24,7 @@ div.account a::before {
   height: 22px;
   right: -45px;
   top: 0;
-  border-width: 10px 25px;
+  border-width: 11px 23px;
   border-style: solid;
   border-color: #24c63a transparent #24c63a #24c63a;
 }
