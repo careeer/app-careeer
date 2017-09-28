@@ -15,7 +15,7 @@ export const mainGridStyle = {
 };
 
 export const roadmapGridStyle = {
-  margin: '0 2rem 2rem 2rem',
+  margin: '0 1rem 0.5rem 1rem',
 };
 
 export const mainColumnStyle = {
