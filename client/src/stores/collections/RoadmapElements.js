@@ -319,7 +319,6 @@ class RoadmapElements {
   }
 
   @action async getClientsWithDefaults(arrayOfDefaults) {
-    console.log(arrayOfDefaults);
     const response = await Api.get(this.path);
     const status = await response.status;
     if (status === 200) {
