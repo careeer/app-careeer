@@ -319,6 +319,7 @@ class RoadmapElements {
   }
 
   @action async getClientsWithDefaults(arrayOfDefaults) {
+    console.log(arrayOfDefaults);
     const response = await Api.get(this.path);
     const status = await response.status;
     if (status === 200) {
@@ -329,10 +330,11 @@ class RoadmapElements {
         this.setClientSlug(this.clients.filter(client =>
           client.name === this.currentClient)[0].slug);
         this.hasClientName = true;
-        arrayOfDefaults.map(defaultElement => {
-          this.create(defaultElement, false);
-          setTimeout(function(){ "" }, 100);
-        });
+
+        this.isLoading = true;
+        for (const i in arrayOfDefaults){
+          await this.create(arrayOfDefaults[i], false);
+        }
         this.fetchAll();
       }
     }
