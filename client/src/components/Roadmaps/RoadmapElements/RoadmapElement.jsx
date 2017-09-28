@@ -12,6 +12,36 @@ export default class RoadmapElement extends React.Component {
     isMouseInsideCheckmark: false,
   }
 
+  // <Grid.Row stretched reversed="mobile" style={mainGridRowStyle}>
+  // <Grid.Column
+  //   as={Label}
+  //   style={titleStyle}
+  //   content={this.props.title}
+  //   floated="left"
+  // />
+  //   {this.props.isCreateFormClose &&
+  //     <span style={rightIconsColumnStyle}>
+  //       <Icon
+  //         link
+  //         name="write"
+  //         size="big"
+  //         style={writeIconStyle}
+  //         onClick={this.props.onEditClick}
+  //       />
+  //       <Icon
+  //         link
+  //         name="checkmark"
+  //         size="big"
+  //         style={checkmarkIconStyle}
+  //         color={isCheckmarkGreen}
+  //         onMouseEnter={this.mouseEnterCheckmark}
+  //         onMouseLeave={this.mouseExitCheckmark}
+  //         onClick={this.handleToggleStatusClick}
+  //       />
+  //     </span>
+  //   }
+  // </Grid.Row>
+
   handleToggleStatusClick = () => {
     this.props.toggleElementStatus({
       id: this.props.id,
@@ -61,11 +91,13 @@ export default class RoadmapElement extends React.Component {
       writeIconStyle = {
         color: '#b1b1b1',
         opacity: 0,
+        marginRight: '15px',
       };
     } else {
       writeIconStyle = {
         color: '#b1b1b1',
         opacity: 1,
+        marginRight: '15px',
       };
     }
 
@@ -73,10 +105,12 @@ export default class RoadmapElement extends React.Component {
     if (this.state.isMouseInsideCheckmark && !Touch.isTouchDevice()) {
       checkmarkIconStyle = {
         color: '#24c63a',
+        marginRight: '5px',
       };
     } else {
       checkmarkIconStyle = {
         color: '#b1b1b1',
+        marginRight: '5px',
       };
     }
 
@@ -97,7 +131,7 @@ export default class RoadmapElement extends React.Component {
         onMouseEnter={this.mouseEnter}
         onMouseLeave={this.mouseExit}
       >
-        <Grid stackable>
+        <Grid>
           <Grid.Row stretched style={mainGridRowStyle}>
             <Grid.Column
               style={firstColumnStyle}
@@ -109,29 +143,6 @@ export default class RoadmapElement extends React.Component {
                   style={titleStyle}
                   content={this.props.title}
                 />
-              </Grid.Row>
-              <Grid.Row>
-                <Grid.Column
-                  as={Label}
-                  style={descriptionStyle}
-                  content={this.props.description}
-                />
-              </Grid.Row>
-              <Grid.Row>
-                { this.props.callToActionCaption &&
-                  <Grid.Column
-                  style={buttonColumnStyle}
-                  >
-                    <Button
-                      basic={!isPrimaryButton}
-                      color="green"
-                      style={buttonStyle}
-                      onClick={this.handleButtonClick}
-                    >
-                      {this.props.callToActionCaption}
-                    </Button>
-                  </Grid.Column>
-                }
               </Grid.Row>
             </Grid.Column>
             <Grid.Column
@@ -164,6 +175,43 @@ export default class RoadmapElement extends React.Component {
                 </Grid.Column>
               }
               </Grid.Row>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+        <Grid stackable>
+          <Grid.Row stretched style={mainGridRowStyle}>
+            <Grid.Column
+              style={firstColumnStyle}
+              floated="left"
+            >
+              <Grid.Row>
+                <Grid.Column
+                  as={Label}
+                  style={descriptionStyle}
+                  content={this.props.description}
+                />
+              </Grid.Row>
+              <Grid.Row>
+                { this.props.callToActionCaption &&
+                  <Grid.Column
+                  style={buttonColumnStyle}
+                  >
+                    <Button
+                      basic={!isPrimaryButton}
+                      color="green"
+                      style={buttonStyle}
+                      onClick={this.handleButtonClick}
+                    >
+                      {this.props.callToActionCaption}
+                    </Button>
+                  </Grid.Column>
+                }
+              </Grid.Row>
+            </Grid.Column>
+            <Grid.Column
+              style={secondColumnStyle}
+              floated="right"
+            >
               <Grid.Row style={categoryRowStyle}>
                 <Grid.Column
                   style={rightColumnStyle}
