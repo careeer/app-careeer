@@ -132,7 +132,11 @@ export default class RoadmapElement extends React.Component {
         onMouseLeave={this.mouseExit}
       >
         <Grid>
-          <Grid.Row stretched style={mainGridRowStyle}>
+          <Grid.Row
+            stretched
+            verticalAlign="middle"
+            style={mainGridRowStyle}
+          >
             <Grid.Column
               style={firstColumnStyle}
               floated="left"
@@ -178,7 +182,7 @@ export default class RoadmapElement extends React.Component {
             </Grid.Column>
           </Grid.Row>
         </Grid>
-        <Grid stackable>
+        <Grid stackable style={{ marginTop: '0' }} >
           <Grid.Row stretched style={mainGridRowStyle}>
             <Grid.Column
               style={firstColumnStyle}
