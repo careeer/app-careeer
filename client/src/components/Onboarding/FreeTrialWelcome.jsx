@@ -37,7 +37,7 @@ export default class FreeTrialWelcome extends Component {
             />
             <a
               className="learnMoreLink"
-              href="https://careeer.me"
+              href="https://www.careeer.me"
             >
               learn more
             </a>
