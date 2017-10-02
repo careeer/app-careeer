@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Grid } from 'semantic-ui-react';
 import WelcomeToRoadmap from './WelcomeToRoadmap';
+import SuccessVideo from './SuccessVideo';
 import DoneButton from './DoneButton';
 
 import './Styles/FreeTrialWelcome.css';
@@ -25,6 +26,7 @@ export default class FreeTrialWelcome extends Component {
           mobile={14}
         >
           <WelcomeToRoadmap />
+          <SuccessVideo />
           <DoneButton
             onCheckmarkClick={this.handleClick}
           />
