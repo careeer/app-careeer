@@ -93,8 +93,7 @@ class RoadmapElements {
     const status = await response.status;
 
     if (status === 201 && shouldFetch) {
-      dataLayer.push({
-        'event': 'RoadmapElement_New',
+      gtag('event', 'RoadmapElement_New', {
         'client_name': this.currentClient,
         'title': element.title,
         'card_type': element.card_type,
@@ -113,8 +112,7 @@ class RoadmapElements {
     const response = await Api.post(`${this.path}/${this.currentClientSlug}/${this.roadmapPath}`, element);
     const status = await response.status;
     if (status === 201) {
-      dataLayer.push({
-        'event': 'RoadmapElement_Copy',
+      gtag('event', 'RoadmapElement_Copy', {
         'client_name': this.currentClient,
         'title': element.title,
         'card_type': element.card_type,
@@ -159,8 +157,7 @@ class RoadmapElements {
     const response = await Api.put(`${this.path}/${this.currentClientSlug}/${this.roadmapPath}/${element.id}`, element);
     const status = await response.status;
     if (status === 200) {
-      dataLayer.push({
-        'event': 'RoadmapElement_StatusUpdate',
+      gtag('event': 'RoadmapElement_StatusUpdate', {
         'client_name': this.currentClient,
         'status': element.status,
         'title': element.title,
