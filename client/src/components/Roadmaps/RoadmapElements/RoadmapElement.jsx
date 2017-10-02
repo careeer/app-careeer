@@ -12,36 +12,6 @@ export default class RoadmapElement extends React.Component {
     isMouseInsideCheckmark: false,
   }
 
-  // <Grid.Row stretched reversed="mobile" style={mainGridRowStyle}>
-  // <Grid.Column
-  //   as={Label}
-  //   style={titleStyle}
-  //   content={this.props.title}
-  //   floated="left"
-  // />
-  //   {this.props.isCreateFormClose &&
-  //     <span style={rightIconsColumnStyle}>
-  //       <Icon
-  //         link
-  //         name="write"
-  //         size="big"
-  //         style={writeIconStyle}
-  //         onClick={this.props.onEditClick}
-  //       />
-  //       <Icon
-  //         link
-  //         name="checkmark"
-  //         size="big"
-  //         style={checkmarkIconStyle}
-  //         color={isCheckmarkGreen}
-  //         onMouseEnter={this.mouseEnterCheckmark}
-  //         onMouseLeave={this.mouseExitCheckmark}
-  //         onClick={this.handleToggleStatusClick}
-  //       />
-  //     </span>
-  //   }
-  // </Grid.Row>
-
   handleToggleStatusClick = () => {
     this.props.toggleElementStatus({
       id: this.props.id,
