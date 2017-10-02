@@ -15,6 +15,7 @@ h2.ui.header.careeer {
 
 div.ui.left.aligned.grid div.column.careeerLogo {
   padding-bottom: 0;
+  padding-left: 2em;
 }
 
 div.ui.text.container.welcomeContainer {
