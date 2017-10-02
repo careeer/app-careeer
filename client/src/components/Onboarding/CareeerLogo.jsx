@@ -3,7 +3,7 @@ import { Grid, Header } from 'semantic-ui-react';
 
 const CareeerLogo = () => (
   <Grid textAlign="left">
-    <Grid.Column>
+    <Grid.Column className="careeerLogo">
       <Header
         as="h2"
         content="C!"
