@@ -26,7 +26,7 @@ export default class FreeTrialWelcome extends Component {
             largeScreen={5}
             tablet={8}
             widescreen={8}
-            mobile={14}
+            mobile={16}
           >
             <WelcomeToRoadmap />
             <Button
