@@ -13,10 +13,14 @@ const SuccessVideo = () => (
       widescreen={10}
       mobile={15}
     >
-      <Embed
-        id="L5_YWHy5t94"
-        source="youtube"
-      />
+      <div className="video-container">
+        <iframe
+          title="Success Story"
+          src="https://www.youtube.com/embed/L5_YWHy5t94?rel=0"
+          frameBorder="0"
+          allowFullScreen
+        />
+      </div>
     </Grid.Column>
   </Grid>
 );
