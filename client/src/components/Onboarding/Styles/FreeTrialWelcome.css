@@ -11,6 +11,7 @@ h2.ui.header.careeer {
   letter-spacing: 5.4px;
   text-align: center;
   color: #24c63a;
+  -webkit-font-smoothing: antialiased;
 }
 
 div.ui.left.aligned.grid div.column.careeerLogo {
@@ -30,6 +31,7 @@ h2.ui.header.welcomeHeader {
   text-align: center;
   color: #333;
   margin-bottom: 1.5em;
+  -webkit-font-smoothing: antialiased;
 }
 
 p.welcomeContent {
@@ -39,6 +41,7 @@ p.welcomeContent {
   text-align: center;
   color: #919191;
   margin-bottom: 1em;
+  -webkit-font-smoothing: antialiased;
 }
 
 button.ui.green.button.buildYourRoadmap {
@@ -46,10 +49,11 @@ button.ui.green.button.buildYourRoadmap {
   font-size: 18px;
   letter-spacing: 2.3px;
   text-align: center;
-  border-radius: 18px;
+  border-radius: 22px;
   color: #fff;
   margin: 1.5em 0 1em;
   width: auto;
+  -webkit-font-smoothing: antialiased;
 }
 
 a.learnMoreLink {
@@ -60,6 +64,7 @@ a.learnMoreLink {
   letter-spacing: 1.2px;
   text-align: center;
   color: #24c63a;
+  -webkit-font-smoothing: antialiased;
 }
 
 div.video-container {
