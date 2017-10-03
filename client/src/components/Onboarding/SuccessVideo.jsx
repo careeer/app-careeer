@@ -16,7 +16,7 @@ const SuccessVideo = () => (
       <div className="video-container">
         <iframe
           title="Success Story"
-          src="https://www.youtube.com/embed/L5_YWHy5t94?rel=0"
+          src="https://www.youtube.com/embed/JoLk-LWtYMI?rel=0"
           frameBorder="0"
           allowFullScreen
         />
