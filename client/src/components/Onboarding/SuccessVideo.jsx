@@ -13,7 +13,7 @@ const SuccessVideo = () => (
       widescreen={10}
       mobile={15}
     >
-      <div className="video-container">
+      <div className="videoContainer">
         <iframe
           title="Success Story"
           src="https://www.youtube.com/embed/JoLk-LWtYMI?rel=0&showinfo=0"
