@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Label, Icon } from 'semantic-ui-react';
 
-const OnBoardingHeader = props => (
+const PageHeader = props => (
   <Grid>
     <Grid.Column
       width={8}
@@ -22,19 +22,20 @@ const OnBoardingHeader = props => (
     >
       <Label
         as="a"
-        className="buildYourRoadmapLink"
+        className="headerLink"
         onClick={props.handleClick}
       >
-        Build your roadmap &nbsp;
+        {props.headerLinkLabel}&nbsp;
         <Icon name="chevron right" />
       </Label>
     </Grid.Column>
   </Grid>
 );
 
-OnBoardingHeader.propTypes = {
-  counterLabel: PropTypes.string.isRequired,
+PageHeader.propTypes = {
   handleClick: PropTypes.func.isRequired,
+  counterLabel: PropTypes.string.isRequired,
+  headerLinkLabel: PropTypes.string.isRequired,
 };
 
-export default OnBoardingHeader;
+export default PageHeader;

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid } from 'semantic-ui-react';
-import CheckmarkIcon from './CheckmarkIcon';
+import CheckmarkIcon from '../Icons/CheckmarkIcon';
 
 const ThankYouMessage = props => (
   <Grid textAlign="center">

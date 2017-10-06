@@ -10,7 +10,7 @@ import './Styles/FreeTrialWelcome.css';
 
 export default class FreeTrialWelcome extends Component {
   handleClick = () => {
-    this.props.history.push('/OnBoarding');
+    this.props.history.push('/OnBoarding/Name');
   };
 
   render() {

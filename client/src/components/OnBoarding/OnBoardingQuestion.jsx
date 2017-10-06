@@ -1,9 +1,9 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import { Grid, Menu } from 'semantic-ui-react';
-import TeamIcon from './TeamIcon';
+import TeamIcon from './Icons/TeamIcon';
 
-export default class OnBoardQuestion extends Component {
+export default class OnBoardingQuestion extends Component {
   state = { activeItem: '' }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })

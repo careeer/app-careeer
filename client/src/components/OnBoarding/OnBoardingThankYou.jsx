@@ -1,11 +1,22 @@
+/* eslint-disable */
 import React, { Component } from 'react';
-import ThankYouMessage from './ThankYouMessage';
+import { inject, observer } from 'mobx-react';
+import ThankYouMessage from './Components/ThankYouMessage';
 
 import './Styles/SimpleOnBoarding.css';
 
+@inject('roadmapElements') @observer
 export default class OnBoardingThankYou extends Component {
   componentWillMount() {
     $crisp.push(['do', 'chat:hide']);
+  }
+
+  componentDidMount() {
+    setTimeout(this.redirectToClient, 3000);
+  }
+
+  redirectToClient = () => {
+    this.props.history.push(`/${this.props.roadmapElements.currentClientSlug}`);
   }
 
   componentWillUnmount() {
@@ -14,8 +25,8 @@ export default class OnBoardingThankYou extends Component {
 
   render() {
     return (
-      <div className="simpleOnBoarding">
-        <ThankYouMessage clientName="Fred" />
+      <div className="onBoarding">
+        <ThankYouMessage clientName={this.props.match.params.clientName} />
       </div>
     );
   }

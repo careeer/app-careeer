@@ -14,8 +14,10 @@ class NameInput extends Component {
   }
 
   render() {
+    const errorClass = this.props.nameError ? "nameError" : "userNameInput";
+
     return (
-      <div className="userNameInput">
+      <div className={errorClass}>
         Enter first and last name
         <Input
           autoFocus

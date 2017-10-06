@@ -1,4 +1,4 @@
-body > div#root > div > div > div.simpleOnBoarding {
+body > div#root > div > div > div.onBoarding {
   height: 100%;
   background-color: #24c63a;
   -webkit-font-smoothing: antialiased;
@@ -15,7 +15,7 @@ p.pageCounter {
   color: #fff;
 }
 
-a.ui.label.buildYourRoadmapLink {
+a.ui.label.headerLink {
   background-color: transparent;
   font-family: Raleway;
   font-size: 11px;
@@ -47,11 +47,23 @@ div.userNameInput {
   color: #fff;
 }
 
-div.userNameInput > div.ui.input {
+div.nameError {
+  font-family: Raleway;
+  font-size: 14px;
+  margin-top: 13em;
+  font-weight: bold;
+  letter-spacing: 1.8px;
+  text-align: center;
+  color: #c23d3d;
+}
+
+div.userNameInput > div.ui.input,
+div.nameError > div.ui.input {
   display: block;
 }
 
-div.userNameInput > div.ui.input > input {
+div.userNameInput > div.ui.input > input,
+div.nameError > div.ui.input > input {
   border: none;
   font-family: Cabin;
   font-size: 36px;

@@ -1,5 +1,5 @@
 import React from 'react';
-import WavePicture from './Images/waveIcon.svg';
+import WavePicture from '../../Lib/Images/waveIcon.svg';
 
 const WaveIcon = () => (
   <img

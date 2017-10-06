@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import IntroOnBoardingMessage from './IntroOnBoardingMessage';
+import IntroMessage from './Components/IntroMessage';
 
 import './Styles/SimpleOnBoarding.css';
 
@@ -16,7 +16,7 @@ export default class OnBoardingIntro extends Component {
   render() {
     return (
       <div className="simpleOnBoarding">
-        <IntroOnBoardingMessage />
+        <IntroMessage />
       </div>
     );
   }

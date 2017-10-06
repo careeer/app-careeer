@@ -1,8 +1,8 @@
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
-import WaveIcon from './WaveIcon';
+import WaveIcon from '../Icons/WaveIcon';
 
-const IntroOnBoardingMessage = () => (
+const IntroMessage = () => (
   <Grid textAlign="center">
     <Grid.Column className="introMessageGrid">
       <h2 className="introHeader">
@@ -19,4 +19,4 @@ const IntroOnBoardingMessage = () => (
   </Grid>
 );
 
-export default IntroOnBoardingMessage;
+export default IntroMessage;
