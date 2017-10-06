@@ -6,7 +6,7 @@ import CoachDashboard from './Coach/Clients/CoachDashboard';
 import NewClientInput from './Coach/Clients/NewClientInput';
 import FreeTrialWelcome from './LandingPage/FreeTrialWelcome';
 import FreeTrialClientInput from './Coach/Clients/FreeTrialClientInput';
-import SimpleOnBoarding from './OnBoarding/SimpleOnBoarding';
+
 import OnBoardingIntro from './OnBoarding/OnBoardingIntro';
 import OnBoardingName from './OnBoarding/OnBoardingName';
 import OnBoardingThankYou from './OnBoarding/OnBoardingThankYou';
