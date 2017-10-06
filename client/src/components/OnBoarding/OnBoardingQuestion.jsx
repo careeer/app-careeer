@@ -8,10 +8,9 @@ export default class OnBoardingQuestion extends Component {
   state = { activeItem: '' }
 
   componentWillMount() {
-    this.props.roadmapElements.resetClientParams();
     $crisp.push(['do', 'chat:hide']);
   }
-  
+
   handleItemClick = (e, { name }) => {
     this.setState({ activeItem: name });
     this.props.history.push('/OnBoarding/Question_2');
