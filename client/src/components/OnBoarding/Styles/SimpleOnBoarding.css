@@ -1,0 +1,178 @@
+body > div#root > div > div > div.simpleOnBoarding {
+  height: 100%;
+  background-color: #24c63a;
+  -webkit-font-smoothing: antialiased;
+}
+
+a.ui.label.buildYourRoadmapLink {
+  background-color: transparent;
+  font-family: Raleway;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-align: right;
+  color: #fff;
+}
+
+img.teamIcon {
+  margin-top: 10em;
+}
+
+div.userNameLabel {
+  font-family: Cabin;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-align: center;
+  margin-top: 1.5em;
+  color: #fff;
+}
+
+div.userNameInput {
+  font-family: Raleway;
+  font-size: 14px;
+  letter-spacing: 1.8px;
+  text-align: center;
+  margin-top: 13em;
+  color: #fff;
+}
+
+div.userNameInput > div.ui.input {
+  display: block;
+}
+
+div.userNameInput > div.ui.input > input {
+  border: none;
+  font-family: Cabin;
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: 4.5px;
+  text-align: center;
+  margin-top: 0.5em;
+  color: #fff;
+}
+
+div.column.introMessageGrid {
+  padding: 0 !important;
+}
+
+h2.introHeader {
+  font-family: Cabin;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 3.8px;
+  text-align: center;
+  color: #fff;
+  padding-top: 12rem;
+  margin-bottom: 0;
+}
+
+p.introMessage {
+  width: 375px;
+  margin: 2rem auto 0;
+  font-family: Cabin;
+  font-size: 20px;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  text-align: center;
+  color: #fff;
+}
+
+img.introWave {
+  margin-top: 5rem;
+}
+
+a.introGetStarted {
+  cursor: pointer;
+  display: block;
+  font-family: Lobster;
+  font-size: 40px;
+  letter-spacing: 5px;
+  text-align: center;
+  color: #fff;
+  margin-top: 3.8rem;
+}
+
+div.column.thankYouMessageGrid,
+div.row.questionGrid {
+  padding: 0 !important;
+}
+
+h2.thankYouHeader {
+  font-family: Cabin;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-align: center;
+  color: #fff;
+  padding-top: 12rem;
+  margin-bottom: 0;
+}
+
+p.thankYouMessage {
+  width: 400px;
+  margin: 2rem auto 0;
+  font-family: Cabin;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 2.8px;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 0;
+}
+
+img.checkmarkIcon {
+  margin-top: 10rem;
+}
+
+p.thankYouLoading {
+  font-family: Raleway;
+  font-size: 14px;
+  letter-spacing: 1.8px;
+  text-align: center;
+  color: #fff;
+  margin-top: 3.8rem;
+}
+
+div.ui.center.aligned.grid.questionGrid {
+  height: 100%;
+}
+
+.ui.vertical.menu {
+  width: 100%;
+  background-color: #24c63a;
+}
+
+div.ui.secondary.vertical.menu > a.item,
+div.ui.secondary.vertical.menu > a.item:hover {
+  margin: 0 !important;
+  border-radius: 0 !important;
+  font-family: Cabin;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 3.8px;
+  text-align: center;
+  border-top: solid 1px #fff;
+  border-bottom: solid 1px #fff;
+  color: #fff;
+}
+
+div.ui.secondary.vertical.menu > a.active.item,
+div.ui.secondary.vertical.menu > a.active.item:hover {
+  margin: 0 !important;
+  border-radius: 0 !important;
+  background-color: #fff;
+  font-family: Cabin;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 3.8px;
+  text-align: center;
+  color: #24c63a;
+  border-top: solid 1px #fff;
+  border-bottom: solid 1px #fff;
+}
+
+div.bottom.aligned.column,
+div.ui.secondary.vertical.menu {
+  margin: 0 !important;
+  padding: 0 !important;
+}

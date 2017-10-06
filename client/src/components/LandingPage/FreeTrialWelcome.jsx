@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { Grid, Button } from 'semantic-ui-react';
 import CareeerLogo from './CareeerLogo';
-import WelcomeToRoadmap from './WelcomeToRoadmap';
+import WelcomeToRoadmapMessage from './WelcomeToRoadmapMessage';
 import SuccessVideo from './SuccessVideo';
 import DoneButton from './DoneButton';
 
@@ -10,7 +10,7 @@ import './Styles/FreeTrialWelcome.css';
 
 export default class FreeTrialWelcome extends Component {
   handleClick = () => {
-    this.props.history.push('/freetrialclient');
+    this.props.history.push('/OnBoarding');
   };
 
   render() {
@@ -28,7 +28,7 @@ export default class FreeTrialWelcome extends Component {
             widescreen={8}
             mobile={16}
           >
-            <WelcomeToRoadmap />
+            <WelcomeToRoadmapMessage />
             <Button
               color="green"
               className="buildYourRoadmap"
