@@ -19,7 +19,7 @@ export default class OnBoardQuestion extends Component {
           <Grid.Column>
             <TeamIcon />
             <div className="userNameLabel">
-              What’s your name?
+              {this.props.questionLabel}
             </div>
           </Grid.Column>
         </Grid.Row>

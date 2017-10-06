@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { Grid, Button } from 'semantic-ui-react';
-import BuildYourRoadmapLink from './BuildYourRoadmapLink';
+import OnBoardingHeader from './OnBoardingHeader';
 
 import OnBoardQuestion from './OnBoardQuestion';
 import ThankYouMessage from './ThankYouMessage';
@@ -58,10 +58,7 @@ export default class SimpleOnBoarding extends Component {
 
     return (
       <div className="simpleOnBoarding">
-
         <ThankYouMessage clientName="Fred"/>
-
-
       </div>
     );
   }

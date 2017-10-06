@@ -4,6 +4,17 @@ body > div#root > div > div > div.simpleOnBoarding {
   -webkit-font-smoothing: antialiased;
 }
 
+div.onBoardingHeader {
+  padding-bottom: 0 !important;
+}
+
+p.pageCounter {
+  font-family: Raleway;
+  font-size: 14px;
+  letter-spacing: 1.8px;
+  color: #fff;
+}
+
 a.ui.label.buildYourRoadmapLink {
   background-color: transparent;
   font-family: Raleway;

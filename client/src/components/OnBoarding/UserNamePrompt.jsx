@@ -5,7 +5,7 @@ import NameInput from './NameInput';
 const UserNamePrompt = props => (
   <div>
     <div className="userNameLabel">
-      {props.questionLabel}
+      What’s your name?
     </div>
     <NameInput
       placeholder=""
@@ -18,7 +18,6 @@ const UserNamePrompt = props => (
 
 UserNamePrompt.propTypes = {
   createClient: PropTypes.func.isRequired,
-  questionLabel: PropTypes.string.isRequired,
   currentClient: PropTypes.string.isRequired,
   handleClientInputChange: PropTypes.func.isRequired,
 };
