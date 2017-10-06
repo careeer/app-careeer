@@ -13,8 +13,10 @@ export default class OnBoardingQuestion extends Component {
 
   handleItemClick = (e, { name }) => {
     this.setState({ activeItem: name });
+    $crisp.push(["set", 'session:data', [[["Question1", "Where are you in your career path?"], ["Answer1", name]]]]);
     this.props.history.push('/OnBoarding/Question_2');
   }
+
   handleClick = () => {
     this.props.history.push('/OnBoarding/Question_2');
   }

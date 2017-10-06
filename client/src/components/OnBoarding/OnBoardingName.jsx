@@ -44,6 +44,7 @@ export default class OnBoardingName extends Component {
           dueDate: today,
         }));
         this.props.roadmapElements.createClientWithDefaults(firstRoadmapElements);
+        $crisp.push(["set", 'session:data', [[["ClientName", clientName]]]]);
         const firstName = clientName.split(" ", 1);
         this.props.history.push(`/OnBoarding/ThankYou/${firstName}`);
       } else {
