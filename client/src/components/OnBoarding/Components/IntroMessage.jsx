@@ -1,8 +1,9 @@
+/* eslint-disable */
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
 import WaveIcon from '../Icons/WaveIcon';
 
-const IntroMessage = () => (
+const IntroMessage = props => (
   <Grid textAlign="center">
     <Grid.Column className="introMessageGrid">
       <h2 className="introHeader">
@@ -12,7 +13,7 @@ const IntroMessage = () => (
         In order to improve your experience we’d like to get to know you better
       </p>
       <WaveIcon />
-      <a className="introGetStarted">
+      <a className="introGetStarted" onClick={props.onStartClick} role="button">
         Get Started
       </a>
     </Grid.Column>

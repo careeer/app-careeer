@@ -9,23 +9,25 @@ export default class OnBoardingQuestion extends Component {
 
   handleItemClick = (e, { name }) => {
     this.setState({ activeItem: name });
-    this.props.history.push('/OnBoarding/Question_2');
+    this.props.history.push('/OnBoarding/Name');
   }
+
   handleClick = () => {
-    this.props.history.push('/OnBoarding/Question_2');
+    this.props.history.push('/OnBoarding/Name');
   }
 
   render() {
     const { activeItem } = this.state;
     const Items = [
-      { key: 'Exploring', name: 'Exploring', onClick: this.handleItemClick, active: activeItem === 'Exploring' },
-      { key: 'Interviewing', name: 'Interviewing', onClick: this.handleItemClick, active: activeItem === 'Interviewing' },
+      { key: 'Engineer', name: 'Engineer', onClick: this.handleItemClick, active: activeItem === 'Engineer' },
+      { key: 'Designer', name: 'Designer', onClick: this.handleItemClick, active: activeItem === 'Designer' },
+      { key: 'Product manager', name: 'Product manager', onClick: this.handleItemClick, active: activeItem === 'Product manager' },
       { key: 'Gaining new skills', name: 'Gaining new skills', onClick: this.handleItemClick, active: activeItem === 'Gaining new skills' },
     ]
     return (
       <div className="onBoarding">
       <PageHeader
-        counterLabel="2/4"
+        counterLabel="4/4"
         handleClick={this.handleClick}
         headerLinkLabel="Skip question"
       />
@@ -34,7 +36,7 @@ export default class OnBoardingQuestion extends Component {
           <Grid.Column>
             <TeamIcon />
             <div className="userNameLabel">
-              Where are you in your career path?
+              Which best describes you?
             </div>
           </Grid.Column>
         </Grid.Row>
