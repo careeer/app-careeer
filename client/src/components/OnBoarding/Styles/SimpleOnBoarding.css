@@ -4,6 +4,10 @@ body > div#root > div > div > div.onBoarding {
   -webkit-font-smoothing: antialiased;
 }
 
+div.ui.grid.pageHeader {
+  height: 3%;
+}
+
 div.onBoardingHeader {
   padding-bottom: 0 !important;
 }
@@ -34,8 +38,8 @@ div.userNameLabel {
   font-weight: 500;
   letter-spacing: 3px;
   text-align: center;
-  margin-top: 1.5em;
-  margin-bottom: 1rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
   color: #fff;
 }
 
@@ -158,7 +162,8 @@ p.thankYouLoading {
 }
 
 div.ui.center.aligned.grid.questionGrid {
-  height: 100%;
+  height: 97%;
+  margin: 0 !important;
 }
 
 .ui.vertical.menu {
@@ -195,7 +200,7 @@ div.ui.secondary.vertical.menu > a.active.item:hover {
   border-bottom: solid 1px #fff;
 }
 
-div.bottom.aligned.column,
+div.column,
 div.ui.secondary.vertical.menu {
   margin: 0 !important;
   padding: 0 !important;

@@ -27,26 +27,26 @@ export default class OnBoardingQuestion extends Component {
     ]
     return (
       <div className="onBoarding">
-      <PageHeader
-        counterLabel="3/4"
-        handleClick={this.handleClick}
-        headerLinkLabel="Skip question"
-      />
-      <Grid textAlign="center" className="questionGrid">
-        <Grid.Row className="questionGrid">
-          <Grid.Column>
-            <TeamIcon />
-            <div className="userNameLabel">
-              Which personality type do you identify with most?
-            </div>
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row className="questionGrid">
-          <Grid.Column verticalAlign="bottom">
-            <Menu secondary vertical items={Items} />
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
+        <PageHeader
+          counterLabel="3/4"
+          handleClick={this.handleClick}
+          headerLinkLabel="Skip question"
+        />
+        <Grid textAlign="center" className="questionGrid">
+          <Grid.Row className="questionGrid">
+            <Grid.Column>
+              <TeamIcon />
+              <div className="userNameLabel">
+                Which personality type do you identify with most?
+              </div>
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row className="questionGrid">
+            <Grid.Column verticalAlign="bottom">
+              <Menu secondary vertical items={Items} />
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
       </div>
     );
   }

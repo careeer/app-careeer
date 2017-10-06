@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Grid, Label, Icon } from 'semantic-ui-react';
 
 const PageHeader = props => (
-  <Grid>
+  <Grid className="pageHeader">
     <Grid.Column
       width={8}
       floated="left"
