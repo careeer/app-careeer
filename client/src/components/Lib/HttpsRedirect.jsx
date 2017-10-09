@@ -1,8 +1,8 @@
 /* eslint-disable */
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class HttpsRedirect extends React.Component {
+export default class HttpsRedirect extends Component {
 
   isLocalHost(hostname) {
     return !!(hostname === 'localhost' ||
@@ -33,5 +33,3 @@ class HttpsRedirect extends React.Component {
 HttpsRedirect.propTypes = {
   children: PropTypes.node,
 };
-
-export default HttpsRedirect;

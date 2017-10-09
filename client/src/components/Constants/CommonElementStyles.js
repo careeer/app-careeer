@@ -1,11 +1,3 @@
-export const segmentStyle = {
-  padding: '14px',
-  WebkitBoxShadow: 'none',
-  boxShadow: 'none',
-  borderRadius: '0',
-  border: 'none',
-};
-
 export const unstackableStyle = {
   marginBottom: '0px',
 };

@@ -4,7 +4,6 @@ import { Grid, Button } from 'semantic-ui-react';
 import CareeerLogo from './CareeerLogo';
 import WelcomeToRoadmapMessage from './WelcomeToRoadmapMessage';
 import SuccessVideo from './SuccessVideo';
-import DoneButton from './DoneButton';
 
 import './Styles/FreeTrialWelcome.css';
 

@@ -6,7 +6,7 @@ import ClientList from './ClientList';
 import DuplicateClientInput from './DuplicateClientInput';
 import NewClientInput from './NewClientInput';
 import { mainGridStyle } from '../../Constants/CommonElementStyles';
-import PlusButton from '../../Roadmaps/RoadmapElements/PlusButton';
+import PlusButton from '../../ClientDashboard/RoadmapElements/PlusButton';
 import ClientElement from './ClientElement';
 
 @inject('roadmapElements')@observer

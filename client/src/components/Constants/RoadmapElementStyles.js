@@ -121,14 +121,3 @@ export const buttonColumnStyle = {
   paddingBottom: '5px',
   width: 'auto',
 };
-
-export const buttonStyle = {
-  fontFamily: 'Cabin',
-  fontSize: '18px',
-  letterSpacing: '2.3px',
-  textAlign: 'center',
-  borderRadius: '18px',
-  color: '#fff',
-  margin: '0',
-  width: 'auto',
-};

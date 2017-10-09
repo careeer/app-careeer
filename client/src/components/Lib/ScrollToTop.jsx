@@ -1,5 +1,6 @@
 /* eslint-disable */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
 class ScrollToTop extends Component {
@@ -10,8 +11,17 @@ class ScrollToTop extends Component {
   }
 
   render() {
-    return <div>{this.props.children}</div>
+    return (
+      <div>
+        {this.props.children}
+      </div>
+    );
   }
 }
+
+ScrollToTop.propTypes = {
+  children: PropTypes.node.isRequired,
+  location: PropTypes.object.isRequired,
+};
 
 export default withRouter(ScrollToTop);

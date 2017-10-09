@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import { Grid, Menu } from 'semantic-ui-react';
-import TeamIcon from '../Lib/Icons/TeamIcon';
+import TeamIcon from '../Icons/TeamIcon';
 import PageHeader from './Components/PageHeader';
 
 export default class OnBoardingQuestion extends Component {

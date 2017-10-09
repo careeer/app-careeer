@@ -13,7 +13,7 @@ import EditableRoadmapElementsList from './EditableRoadmapElementsList';
 import ToggleableRoadmapElementForm from './ToggleableRoadmapElementForm';
 import CompletedRoadmapElementsList from './CompletedRoadmapElementsList';
 import RoadmapHeader from '../RoadmapHeader/RoadmapHeader';
-import CongratulateBanner from '../../Banners/CongratulateBanner';
+import CongratulateBanner from '../Banners/CongratulateBanner';
 import AccountFlag from './AccountFlag';
 import FullScreenLoader from './FullScreenLoader';
 

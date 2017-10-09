@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React, { PureComponent } from 'react';
 import { Message, Grid, Container, Transition } from 'semantic-ui-react';
-import { bannerStyle, mainMessageStyle, secondaryMessageStyle, undoStyle } from '../Constants/CongratulateBannerStyles';
+import { bannerStyle, mainMessageStyle, secondaryMessageStyle, undoStyle } from '../../Constants/CongratulateBannerStyles';
 
 class CongratulateBanner extends PureComponent {
   handleOnShow = () => {
