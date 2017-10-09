@@ -18,7 +18,7 @@ import AccountFlag from './AccountFlag';
 import FullScreenLoader from './FullScreenLoader';
 
 import { roadmapGridStyle, mainColumnStyle } from '../../Constants/CommonElementStyles';
-
+import '../Styles/ClientDashboard.css';
 
 const ScrollZone = withScrolling('div');
 

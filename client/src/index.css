@@ -1,7 +1,29 @@
 body {
-  background-color: #fafafa;
   margin: 0;
-  letter-spacing: 0.0725em;
-  font-family: 'Cabin', sans-serif;
   color: #919191;
+  letter-spacing: 0.0725em;
+  background-color: #fafafa;
+  font-family: 'Cabin', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body > div#root,
+body > div#root > div,
+body > div#root > div > div {
+  height: 100%;
+}
+
+.ui.grid,
+.ui.stackable.grid {
+  margin: 0;
+}
+
+.ui.segment:first-child {
+  margin-top: 1.5rem;
+}
+
+.ui.segment:last-child,
+.ui.segment {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }

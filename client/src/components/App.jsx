@@ -16,8 +16,6 @@ import OnBoardingThankYou from './OnBoarding/OnBoardingThankYou';
 import DuplicateClientInput from './Coach/Clients/DuplicateClientInput';
 import RedirectToCareeer from './Lib/RedirectToCareeer';
 
-import './App.css';
-
 const App = () => (
   <Switch>
     <Route exact path="/" component={RedirectToCareeer} />

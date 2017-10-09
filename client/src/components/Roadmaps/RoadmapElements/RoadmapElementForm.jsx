@@ -122,8 +122,8 @@ export default class RoadmapElementForm extends React.Component {
           padded
           clearing
           attached
-          style={segmentStyle}
           color={segmentColor}
+          className="roadmapSegment"
         >
           { this.props.id &&
             <a
@@ -215,8 +215,9 @@ export default class RoadmapElementForm extends React.Component {
             { this.state.callToActionCaption &&
               <Button
                 disabled
-                floated="left"
                 color="green"
+                floated="left"
+                className="roadmapButton"
                 basic={!isPrimaryButton}
                 content={this.state.callToActionCaption}
               />
@@ -225,8 +226,8 @@ export default class RoadmapElementForm extends React.Component {
           <Rail attached position="right">
             <Button
               disabled={isSaveDisabled}
-              style={{ height: '100%', paddingRight: '0', paddingLeft: '11px' }}
               onClick={this.handleCopy}
+              className="copyRoadmapElementButton"
             >
               <Icon name="copy" />
             </Button>

@@ -96,8 +96,8 @@ export default class RoadmapElement extends React.Component {
 
     return (
       <Segment
-        style={segmentStyle}
         color={segmentColor}
+        className="roadmapSegment"
         onMouseEnter={this.mouseEnter}
         onMouseLeave={this.mouseExit}
       >
@@ -120,8 +120,8 @@ export default class RoadmapElement extends React.Component {
               </Grid.Row>
             </Grid.Column>
             <Grid.Column
-              style={secondColumnStyle}
               floated="right"
+              style={secondColumnStyle}
             >
               <Grid.Row style={rightIconsColumnStyle}>
               {this.props.isCreateFormClose &&
@@ -152,8 +152,13 @@ export default class RoadmapElement extends React.Component {
             </Grid.Column>
           </Grid.Row>
         </Grid>
-        <Grid stackable style={{ marginTop: '0' }} >
-          <Grid.Row stretched style={mainGridRowStyle}>
+        <Grid
+          stackable
+        >
+          <Grid.Row
+            stretched
+            style={mainGridRowStyle}
+          >
             <Grid.Column
               style={firstColumnStyle}
               floated="left"
@@ -171,9 +176,9 @@ export default class RoadmapElement extends React.Component {
                   style={buttonColumnStyle}
                   >
                     <Button
-                      basic={!isPrimaryButton}
                       color="green"
-                      style={buttonStyle}
+                      basic={!isPrimaryButton}
+                      className="roadmapButton"
                       onClick={this.handleButtonClick}
                     >
                       {this.props.callToActionCaption}
