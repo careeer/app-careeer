@@ -1,7 +1,6 @@
 /* eslint-disable */
 import React from 'react';
 import { Button, Icon, Grid } from 'semantic-ui-react';
-import { bannerStyle, mainMessageStyle, rowStyle, floatedColumnStyle, iconStyle } from '../../Constants/CompletedBannerStyles';
 
 export default class CompletedElementsDivider extends React.Component {
   handleClick = () => {
@@ -14,29 +13,29 @@ export default class CompletedElementsDivider extends React.Component {
         fluid
         compact
         size="tiny"
-        style={bannerStyle}
+        className="completedSection"
         onClick={this.handleClick}
       >
         <Grid>
-          <Grid.Row style={rowStyle}>
+          <Grid.Row className="completedGridRow">
             <Grid.Column
               width={15}
               mobile={14}
               textAlign="center"
               verticalAlign="middle"
             >
-              <span style={mainMessageStyle}>
+              <span className="completedMessage">
                 {this.props.message}
               </span>
             </Grid.Column>
             <Grid.Column
               floated="right"
-              style={floatedColumnStyle}
+              className="completedGridColumn"
             >
               <Icon
                 size="huge"
-                style={iconStyle}
                 name={this.props.icon}
+                className="completedToggleIcon"
               />
             </Grid.Column>
           </Grid.Row>

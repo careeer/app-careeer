@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import EditableRoadmapElementsList from './EditableRoadmapElementsList';
 import CompletedElementsDivider from './CompletedElementsDivider';
 
-function CompletedRoadmapElementsList(props) {
+export default function CompletedRoadmapElementsList(props) {
   if (props.completedElements.length > 0) {
     return (
       <div>
         <CompletedElementsDivider
-          message={props.completedAccordionMessage}
           icon={props.completedAccordionIcon}
+          message={props.completedAccordionMessage}
           toggleCompletedElements={props.toggleCompletedElements}
         />
         {props.isCompletedAccordionOpen &&
@@ -59,5 +59,3 @@ CompletedRoadmapElementsList.propTypes = {
     status: PropTypes.bool,
   })).isRequired,
 };
-
-export default CompletedRoadmapElementsList;

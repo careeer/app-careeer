@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { Grid } from 'semantic-ui-react';
-import { mainGridStyle } from '../../Constants/CommonElementStyles';
 import ClientInput from './ClientInput';
 import DateHelper from '../../Lib/DateHelper';
 import defaultElements from '../../Constants/DefaultRoadmapElements';
@@ -31,7 +30,7 @@ export default class FreeTrialClientInput extends Component {
   render() {
     this.checkIfNameIsFilled();
     return (
-      <Grid style={mainGridStyle}>
+      <Grid className="defaultGrid">
         <Grid.Column>
           <ClientInput
             currentClient={this.props.roadmapElements.currentClient || ''}

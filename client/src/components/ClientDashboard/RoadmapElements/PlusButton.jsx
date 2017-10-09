@@ -1,7 +1,6 @@
 /* eslint-disable */
 import React from 'react';
 import { Button, Icon } from 'semantic-ui-react';
-import { buttonStyle } from '../../Constants/CommonElementStyles';
 
 export default class PlusButton extends React.Component {
   componentWillMount() {
@@ -23,14 +22,14 @@ export default class PlusButton extends React.Component {
     return (
       <Button
         fluid
+        className="addNewButton"
         size={this.props.buttonSize}
-        style={buttonStyle}
         onClick={this.props.handleFormOpen}
       >
         <Icon
           inverted
-          size={this.props.iconSize}
           name="plus"
+          size={this.props.iconSize}
         />
       </Button>
     );

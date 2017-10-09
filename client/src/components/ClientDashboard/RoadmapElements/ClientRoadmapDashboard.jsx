@@ -7,31 +7,25 @@ import { DragDropContext } from 'react-dnd';
 import MultiBackend from 'react-dnd-multi-backend';
 import withScrolling, { createHorizontalStrength, createVerticalStrength } from 'react-dnd-scrollzone';
 
+import AccountFlag from './AccountFlag';
 import HTML5toTouch from '../../Lib/HTML5toTouch';
-
-import EditableRoadmapElementsList from './EditableRoadmapElementsList';
-import ToggleableRoadmapElementForm from './ToggleableRoadmapElementForm';
-import CompletedRoadmapElementsList from './CompletedRoadmapElementsList';
+import FullScreenLoader from './FullScreenLoader';
 import RoadmapHeader from '../RoadmapHeader/RoadmapHeader';
 import CongratulateBanner from '../Banners/CongratulateBanner';
-import AccountFlag from './AccountFlag';
-import FullScreenLoader from './FullScreenLoader';
+import EditableRoadmapElementsList from './EditableRoadmapElementsList';
+import CompletedRoadmapElementsList from './CompletedRoadmapElementsList';
+import ToggleableRoadmapElementForm from './ToggleableRoadmapElementForm';
 
-import { roadmapGridStyle, mainColumnStyle } from '../../Constants/CommonElementStyles';
-import '../Styles/ClientDashboard.css';
+import '../Styles/RoadmapElements.css';
 
 const ScrollZone = withScrolling('div');
-
 const linearHorizontalStrength = createHorizontalStrength(250);
 const linearVerticalStrength = createVerticalStrength(250);
 
-// this easing function is from https://gist.github.com/gre/1650294 and
-// expects/returns a number between [0, 1], however strength functions
-// expects/returns a value between [-1, 1]
 function ease(val) {
-  const t = (val / 2) + 1; // [-1, 1] -> [0, 1]
+  const t = (val / 2) + 1;
   const easedT = t < 0.5 ? 2 * t * t : -1 + ((4 - (2 * t)) * t);
-  return (easedT * 2) - 1; // [0, 1] -> [-1, 1]
+  return (easedT * 2) - 1;
 }
 
 function hStrength(box, point) {
@@ -61,7 +55,6 @@ export default class ClientRoadmapDashboard extends React.Component {
       this.props.roadmapElements.resetClientParams();
       this.props.roadmapElements.getClients();
       this.props.roadmapElements.setClientSlug(client);
-      // this.props.roadmapElements.toggleDissableClientNameInput();
       this.props.roadmapElements.fetchAll();
       history.replaceState(null, document.title, `/${client}`);
     }
@@ -148,8 +141,8 @@ export default class ClientRoadmapDashboard extends React.Component {
     return (
       <div>
         <FullScreenLoader
-          firstTime={this.state.firstTime}
           isLoading={isLoading}
+          firstTime={this.state.firstTime}
           clientName={this.state.clientName || ""}
           loadingMessage="Fetching your Roadmap..."
         />
@@ -162,8 +155,8 @@ export default class ClientRoadmapDashboard extends React.Component {
         <AccountFlag
           accountMessage={freeTrialMessage}
         />
-        <Grid className="clientDashGrid" style={roadmapGridStyle}>
-          <Grid.Column className="clientDashColumn" style={mainColumnStyle}>
+        <Grid className="roadmapMainGrid">
+          <Grid.Column className="roadmapMainColumn">
             <ScrollZone
               verticalStrength={vStrength}
               horizontalStrength={hStrength}

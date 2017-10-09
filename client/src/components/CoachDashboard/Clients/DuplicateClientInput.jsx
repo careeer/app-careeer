@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { Grid } from 'semantic-ui-react';
-import { mainGridStyle } from '../../Constants/CommonElementStyles';
 import ClientInput from './ClientInput';
 
 @inject('roadmapElements')@observer
@@ -25,7 +24,7 @@ export default class DuplicateClientInput extends Component {
   render() {
     this.checkIfNameIsFilled();
     return (
-      <Grid style={mainGridStyle}>
+      <Grid className="defaultGrid">
         <Grid.Column>
           <ClientInput
             currentClient={this.props.roadmapElements.currentClient || ''}

@@ -1,0 +1,232 @@
+/*
+  Account Type Flag Styles
+*/
+div.accountType {
+  margin-top: 1em;
+  margin-left: 1em;
+}
+
+div.accountType a {
+  position: relative;
+  padding: 3px 20px 4px 70px;
+  margin: 30px 10px 10px -70px;
+  width: 145px;
+  height: 18px;
+  font-family: Cabin;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-align: center;
+  color: #fff;
+  background-color: #24c63a;
+}
+
+div.accountType a::before {
+  top: 0;
+  content: ' ';
+  width: 15px;
+  height: 22px;
+  right: -45px;
+  position: absolute;
+  border-style: solid;
+  border-width: 11px 23px;
+  border-color: #24c63a transparent #24c63a #24c63a;
+}
+
+/*
+  Common Roadmap Elements Styles
+*/
+div.ui.grid.roadmapMainGrid {
+  margin: 0 1rem 0.5rem;
+}
+
+div.column.roadmapMainColumn {
+  padding-right: 30px !important;
+}
+
+div.ui.segment.roadmapSegment {
+  border: none;
+  padding: 14px;
+  box-shadow: none;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+}
+
+button.ui.button.roadmapButton {
+  color: #fff;
+  font-size: 18px;
+  font-family: Cabin;
+  text-align: center;
+  margin-top: 0.6rem;
+  border-radius: 18px;
+  letter-spacing: 2.3px;
+  background-color: #24c63a;
+}
+
+/*
+  Roadmap Element Styles
+*/
+export const rightColumnStyle {
+  width: auto;
+  padding: 0;
+  border: none;
+  margin-top: 0;
+  margin-right: 0;
+  text-align: right;
+}
+
+export const firstColumnStyle {
+  width: 75%;
+  padding: 0;
+  text-align: left;
+}
+
+export const secondColumnStyle {
+  width: 25%;
+  padding: 0;
+  text-align: right;
+}
+
+export const rightIconsColumnStyle {
+  width: auto;
+  padding: 0;
+  border: none;
+  margin-bottom: 2em;
+  margin-right: 0;
+  text-align: right;
+}
+
+export const rightDateTypeColumnStyle {
+  width: auto;
+  padding: 0;
+  border: none;
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 0;
+  margin-right: 0;
+  text-align: right;
+}
+
+export const dueDateStyle {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  margin-top: 0;
+  margin-right: 0;
+  font-family: Raleway;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  text-align: right;
+  color: #333;
+  width: auto;
+  line-height: 25px;
+}
+
+export const cardTypeStyle {
+  width: auto;
+  padding: 0;
+  font-family: Raleway;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  border: none;
+  padding-left: 0;
+  padding-right: 0;
+  margin-right: 0;
+  margin-top: auto;
+  text-align: right;
+  line-height: 25px;
+}
+
+export const titleStyle {
+  background-color: transparent;
+  padding: 0;
+  font-family: Cabin;
+  font-size: 26px;
+  letter-spacing: 3.5px;
+  color: #333;
+  width: auto;
+  line-height: 30px;
+}
+
+export const descriptionStyle {
+  background-color: transparent;
+  padding: 0;
+  font-family: Cabin;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #919191;
+  width: auto;
+  line-height: 25px;
+};
+
+export const iconStyle {
+  padding: 0;
+  width: auto;
+  background-color: transparent;
+};
+
+export const mainGridRowStyle {
+  padding-top: 0;
+  padding-bottom: 0;
+};
+
+export const gridRowStyle {
+  width: auto;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+export const categoryRowStyle {
+  vertical-align: bottom;
+}
+
+div.column.buttonColumnStyle {
+  width: auto;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+/*
+  Roadmap Element Form Styles
+*/
+button.ui.button.copyRoadmapElementButton {
+  height: 100%;
+  padding-right: 0;
+  padding-left: 11px;
+}
+
+/*
+  Completed Element Section Styles
+*/
+button.ui.completedSection,
+button.ui.completedSection:hover {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  background-color: #b9eec0 !important;
+}
+
+span.completedMessage {
+  color: #333;
+  font-size: 14px;
+  font-family: Raleway;
+  letter-spacing: 1.8px;
+}
+
+div.row.completedGridRow {
+  padding: 0 !important;
+}
+
+div.column.completedGridColumn {
+  margin-left: 0 !important;
+}
+
+i.completedToggleIcon {
+  width: auto;
+  font-weight: lighter;
+  font-size: 3rem !important;
+}
