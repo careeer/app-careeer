@@ -1,9 +1,9 @@
 /* eslint-disable */
 import React, { PureComponent } from 'react';
 import { Message, Grid, Container, Transition } from 'semantic-ui-react';
-import { bannerStyle, mainMessageStyle, secondaryMessageStyle, undoStyle } from '../../Constants/CongratulateBannerStyles';
+import '../Styles/Banners.css';
 
-class CongratulateBanner extends PureComponent {
+export default class CongratulateBanner extends PureComponent {
   handleOnShow = () => {
     setTimeout(this.props.hideCongratsBanner, 3500);
   }
@@ -18,7 +18,7 @@ class CongratulateBanner extends PureComponent {
       >
         <Message
           attached
-          style={bannerStyle}
+          className="congratulateMessage"
         >
           <Grid container>
             <Grid.Column
@@ -33,7 +33,7 @@ class CongratulateBanner extends PureComponent {
               mobile={13}
               textAlign="center"
             >
-              <span style={mainMessageStyle}>
+              <span className="mainMessage">
                 nice work, {this.props.clientName.split(' ', 1)}!
               </span>
             </Grid.Column>
@@ -44,7 +44,7 @@ class CongratulateBanner extends PureComponent {
               only={'large screen', 'tablet', 'computer'}
               textAlign="right"
             >
-              <Container style={secondaryMessageStyle} >
+              <Container className="secondaryMessage">
                 moved to bottom of roadmap
               </Container>
             </Grid.Column>
@@ -52,11 +52,11 @@ class CongratulateBanner extends PureComponent {
               width={1}
               textAlign="left"
             >
-              <Container style={undoStyle}>
+              <Container className="undoLink">
                 <a
                   tabIndex={0}
                   role="button"
-                  style={undoStyle}
+                  className="undoLink"
                   onClick={this.props.handleUndo}
                 >
                   undo
@@ -69,5 +69,3 @@ class CongratulateBanner extends PureComponent {
     );
   }
 }
-
-export default CongratulateBanner;
