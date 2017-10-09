@@ -1,7 +1,6 @@
 body > div#root > div > div > div.onBoarding {
   height: 100%;
   background-color: #24c63a;
-  -webkit-font-smoothing: antialiased;
 }
 
 div.ui.grid.pageHeader {
@@ -79,7 +78,10 @@ div.nameError > div.ui.input > input {
   color: #fff;
 }
 
+div.ui.center.aligned.grid.introMessageGrid,
 div.column.introMessageGrid {
+  height: 97%;
+  margin: 0 !important;
   padding: 0 !important;
 }
 
