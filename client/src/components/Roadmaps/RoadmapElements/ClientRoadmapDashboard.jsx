@@ -45,16 +45,28 @@ function vStrength(box, point) {
 @DragDropContext(MultiBackend(HTML5toTouch))
 @inject('roadmapElements') @observer
 export default class ClientRoadmapDashboard extends React.Component {
+  state = {
+    firstTime: false,
+  }
+
   componentWillMount() {
+    if (this.props.match.params.clientName){
+      this.setState({
+        clientName: this.props.match.params.clientName,
+        firstTime: true,
+      });
+    }
     const client = this.props.match.params.clientId;
     if (client) {
       this.props.roadmapElements.resetClientParams();
       this.props.roadmapElements.getClients();
       this.props.roadmapElements.setClientSlug(client);
-      this.props.roadmapElements.toggleDissableClientNameInput();
+      // this.props.roadmapElements.toggleDissableClientNameInput();
       this.props.roadmapElements.fetchAll();
+      history.replaceState(null, document.title, `/${client}`);
     }
   }
+
   componentWillUnmount() {
     this.props.roadmapElements.resetClientParams();
   }
@@ -136,7 +148,9 @@ export default class ClientRoadmapDashboard extends React.Component {
     return (
       <div>
         <FullScreenLoader
+          firstTime={this.state.firstTime}
           isLoading={isLoading}
+          clientName={this.state.clientName || ""}
           loadingMessage="Fetching your Roadmap..."
         />
         <CongratulateBanner
@@ -148,8 +162,8 @@ export default class ClientRoadmapDashboard extends React.Component {
         <AccountFlag
           accountMessage={freeTrialMessage}
         />
-        <Grid style={roadmapGridStyle}>
-          <Grid.Column style={mainColumnStyle}>
+        <Grid className="clientDashGrid" style={roadmapGridStyle}>
+          <Grid.Column className="clientDashColumn" style={mainColumnStyle}>
             <ScrollZone
               verticalStrength={vStrength}
               horizontalStrength={hStrength}

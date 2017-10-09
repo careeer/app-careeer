@@ -37,7 +37,7 @@ export default class OnBoardingQuestion extends Component {
         />
         <Grid textAlign="center" className="questionGrid">
           <Grid.Row className="questionGrid">
-            <Grid.Column>
+            <Grid.Column className="onBoardingColumn">
               <TeamIcon />
               <div className="userNameLabel">
                 Where are you in your career path?
@@ -45,7 +45,7 @@ export default class OnBoardingQuestion extends Component {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row className="questionGrid">
-            <Grid.Column verticalAlign="bottom">
+            <Grid.Column className="onBoardingColumn" verticalAlign="bottom">
               <Menu secondary vertical items={Items} />
             </Grid.Column>
           </Grid.Row>

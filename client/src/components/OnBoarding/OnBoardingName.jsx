@@ -43,12 +43,10 @@ export default class OnBoardingName extends Component {
         const firstRoadmapElements = defaultElements.map(element => Object.assign({}, element, {
           dueDate: today,
         }));
-        this.props.roadmapElements.createClientWithDefaults(firstRoadmapElements);
         $crisp.push(["set", 'session:data', [[["ClientName", clientName]]]]);
-        const firstName = clientName.split(" ", 1);
-        this.props.history.push(`/OnBoarding/ThankYou/${firstName}`);
+        this.props.roadmapElements.createClientWithDefaults(firstRoadmapElements);
+
       } else {
-        console.log("error");
         this.setState({
           nameError: true,
         });
@@ -56,7 +54,16 @@ export default class OnBoardingName extends Component {
     }
   }
 
+  checkIfNameIsFilled = () => {
+    if (this.props.roadmapElements.hasClientName) {
+      const firstName = this.props.roadmapElements.currentClient.split(" ", 1)[0];
+      this.props.history.push(`/thankyou/${firstName}/${this.props.roadmapElements.currentClientSlug}`);
+    }
+  }
+
   render() {
+    this.checkIfNameIsFilled();
+
     const { handleClientInputChange,
             currentClient,
           } = this.props.roadmapElements;

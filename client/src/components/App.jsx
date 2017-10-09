@@ -34,6 +34,7 @@ const App = () => (
     <Route path="/roadmap" component={NewClientInput} />
     <Route path="/duplicate/:clientId" component={DuplicateClientInput} />
     <Route path="/clients" component={CoachDashboard} />
+    <Route path="/thankyou/:clientName/:clientId" component={ClientRoadmapDashboard} />
     <Route path="/:clientId" component={ClientRoadmapDashboard} />
   </Switch>
 );

@@ -15,12 +15,8 @@ export default class OnBoardingThankYou extends Component {
     $crisp.push(['do', 'chat:show']);
   }
 
-  checkIfNameIsFilled = () => {
-    if (this.props.roadmapElements.hasClientName) {
-      this.props.history.push(`/${this.props.roadmapElements.currentClientSlug}`);
-    }
-  }
-  
+
+
   render() {
     this.checkIfNameIsFilled();
     return (

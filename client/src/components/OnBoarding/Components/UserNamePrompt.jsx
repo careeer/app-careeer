@@ -6,7 +6,7 @@ import TeamIcon from '../Icons/TeamIcon';
 
 const UserNamePrompt = props => (
   <Grid textAlign="center">
-    <Grid.Column>
+    <Grid.Column className="onBoardingColumn">
       <TeamIcon />
       <div className="userNameLabel">
         What’s your name?
