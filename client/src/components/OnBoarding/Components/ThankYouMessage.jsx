@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CheckmarkIcon from '../Icons/CheckmarkIcon';
+import CheckmarkIcon from '../../Lib/Icons/CheckmarkIcon';
 
 const ThankYouMessage = props => (
   <div>

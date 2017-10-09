@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
-import WaveIcon from '../Icons/WaveIcon';
+import WaveIcon from '../../Lib/Icons/WaveIcon';
 
 const IntroMessage = props => (
   <Grid textAlign="center">

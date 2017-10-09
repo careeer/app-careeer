@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid } from 'semantic-ui-react';
 import NameInput from './NameInput';
-import TeamIcon from '../Icons/TeamIcon';
+import TeamIcon from '../../Lib/Icons/TeamIcon';
 
 const UserNamePrompt = props => (
   <Grid textAlign="center">

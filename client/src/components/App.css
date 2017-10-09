@@ -2,16 +2,6 @@
   margin: 0;
 }
 
-div.ui.fluid.transparent.input {
-  border-color: transparent !important;
-  background-color: transparent !important;
-  font-family: Raleway;
-  font-size: 28px;
-  letter-spacing: 3.5px;
-  color: #919191;
-  margin-bottom: 2rem;
-}
-
 .ui.segment:first-child {
   margin-top: 1.5rem;
 }
@@ -22,6 +12,7 @@ div.ui.fluid.transparent.input {
   margin-bottom: 2rem;
 }
 
+/* button inside roadmap form */
 .ui.left.button {
   font-family: Cabin;
   font-size: 18px;
@@ -31,38 +22,4 @@ div.ui.fluid.transparent.input {
   color: #fff;
   background-color: #24c63a;
   margin-top: 0.6rem;
-}
-
-i.icon.write::before {
-  background-color: #24c63a;
-}
-
-.ui.segments .segment .descritpion {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-  font-family: 'Cabin';
-  font-size: 14px;
-  letter-spacing: 1.8px;
-  color: #333;
-}
-
-.ui.basic.top.right.attached.label {
-  border: none;
-}
-
-i.big.checkmark.icon {
-  margin-right: 1em;
-}
-
-.ui.label > a {
-  opacity: 1;
-}
-
-.ui.top.attached.label + [class*="right floated"] + *,
-.ui.top.attached.label:first-child + :not(.attached) {
-  margin-top: 0 !important;
-}
-
-div.ui.massive.basic.bottom.right.attached.label {
-  border: none;
 }
