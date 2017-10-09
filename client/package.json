@@ -2,6 +2,7 @@
   "name": "careeer-ui",
   "version": "0.1.0",
   "private": true,
+  "license": "UNLICENSED",
   "proxy": "http://localhost:3001",
   "dependencies": {
     "mobx": "^3.2.2",
@@ -117,4 +118,5 @@
       "react-app"
     ]
   }
+
 }
