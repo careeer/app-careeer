@@ -29,7 +29,7 @@ export default class OnBoardingIntro extends Component {
         <PageHeader
           counterLabel="1/4"
           handleClick={this.handleClick}
-          headerLinkLabel="Nevermind, don’t build my roadmap…"
+          headerLinkLabel="Nevermind, don’t build my roadmap..."
         />
         <IntroMessage onStartClick={this.redirectToQuestion} />
       </div>
