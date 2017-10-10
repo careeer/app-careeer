@@ -34,9 +34,12 @@ export default class OnBoardingQuestion extends Component {
           handleClick={this.handleClick}
           headerLinkLabel="Skip question"
         />
-        <Grid textAlign="center" className="questionGrid">
+        <Grid
+          textAlign="center"
+          className="questionGrid"
+        >
           <Grid.Row className="questionGrid">
-            <Grid.Column>
+            <Grid.Column className="onBoardingColumn">
               <TeamIcon />
               <div className="userNameLabel">
                 Which personality type do you identify with most?
@@ -44,7 +47,7 @@ export default class OnBoardingQuestion extends Component {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row className="questionGrid">
-            <Grid.Column verticalAlign="bottom">
+            <Grid.Column verticalAlign="bottom" className="onBoardingColumn">
               <Menu secondary vertical items={Items} />
             </Grid.Column>
           </Grid.Row>
