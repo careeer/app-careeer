@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Dimmer, Loader } from 'semantic-ui-react';
 import ThankYouMessage from '../../OnBoarding/Components/ThankYouMessage';
-import '../Styles/FullScreenLoader.css';
 
 export default function FullScreenLoader(props) {
   if (props.isDefaultLoading) {

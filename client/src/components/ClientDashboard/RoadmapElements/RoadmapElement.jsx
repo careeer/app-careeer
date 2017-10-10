@@ -2,8 +2,7 @@
 import React from 'react';
 import { Segment, Grid, Label, Icon, Button } from 'semantic-ui-react';
 
-import { dueDateStyle, cardTypeStyle, titleStyle, descriptionStyle, iconStyle, gridRowStyle, buttonColumnStyle, rightColumnStyle, buttonStyle, mainGridRowStyle, rightIconsColumnStyle, categoryRowStyle, firstColumnStyle, secondColumnStyle } from '../../Constants/RoadmapElementStyles';
-import { segmentStyle, COLOR } from '../../Constants/CommonElementStyles';
+import { COLOR } from '../../Constants/CommonElementStyles';
 import Touch from '../../Lib/CheckTouch';
 
 export default class RoadmapElement extends React.Component {
@@ -28,7 +27,7 @@ export default class RoadmapElement extends React.Component {
   };
 
   handleButtonClick = () => {
-    window.open(`https://${this.props.callToActionURL}`, '_blank', 'height=600','width=400');
+    window.open(`https://${this.props.callToActionURL}`, '_blank', 'height=600', 'width=400');
   };
 
   mouseEnter = () => {
@@ -121,33 +120,33 @@ export default class RoadmapElement extends React.Component {
             </Grid.Column>
             <Grid.Column
               floated="right"
-              style={secondColumnStyle}
+              className="roadmapRightColumn"
             >
-              <Grid.Row style={rightIconsColumnStyle}>
-              {this.props.isCreateFormClose &&
-                <Grid.Column
-                  as={Label}
-                  style={iconStyle}
-                >
-                  <Icon
-                    link
-                    name="write"
-                    size="big"
-                    style={writeIconStyle}
-                    onClick={this.props.onEditClick}
-                  />
-                  <Icon
-                    link
-                    name="checkmark"
-                    size="big"
-                    style={checkmarkIconStyle}
-                    color={isCheckmarkGreen}
-                    onMouseEnter={this.mouseEnterCheckmark}
-                    onMouseLeave={this.mouseExitCheckmark}
-                    onClick={this.handleToggleStatusClick}
-                  />
-                </Grid.Column>
-              }
+              <Grid.Row className="roadmapIconsRow">
+                {this.props.isCreateFormClose &&
+                  <Grid.Column
+                    as={Label}
+                    className="roadmapIconsLabelColumn"
+                  >
+                    <Icon
+                      link
+                      name="write"
+                      size="big"
+                      style={writeIconStyle}
+                      onClick={this.props.onEditClick}
+                    />
+                    <Icon
+                      link
+                      name="checkmark"
+                      size="big"
+                      style={checkmarkIconStyle}
+                      color={isCheckmarkGreen}
+                      onMouseEnter={this.mouseEnterCheckmark}
+                      onMouseLeave={this.mouseExitCheckmark}
+                      onClick={this.handleToggleStatusClick}
+                    />
+                  </Grid.Column>
+                }
               </Grid.Row>
             </Grid.Column>
           </Grid.Row>
@@ -157,24 +156,21 @@ export default class RoadmapElement extends React.Component {
         >
           <Grid.Row
             stretched
-            style={mainGridRowStyle}
           >
             <Grid.Column
-              style={firstColumnStyle}
               floated="left"
+              className="roadmapLeftColumn"
             >
               <Grid.Row>
                 <Grid.Column
                   as={Label}
-                  style={descriptionStyle}
+                  className="roadmapDescription"
                   content={this.props.description}
                 />
               </Grid.Row>
               <Grid.Row>
                 { this.props.callToActionCaption &&
-                  <Grid.Column
-                  style={buttonColumnStyle}
-                  >
+                  <Grid.Column className="roadmapButtonColumn">
                     <Button
                       color="green"
                       basic={!isPrimaryButton}
@@ -188,23 +184,21 @@ export default class RoadmapElement extends React.Component {
               </Grid.Row>
             </Grid.Column>
             <Grid.Column
-              style={secondColumnStyle}
               floated="right"
+              className="roadmapRightColumn"
             >
-              <Grid.Row style={categoryRowStyle}>
-                <Grid.Column
-                  style={rightColumnStyle}
-                >
+              <Grid.Row className="roadmapBottomRightRow">
+                <Grid.Column className="roadmapBottomRightColumn">
                   <Label
                     basic
                     color={segmentColor}
-                    style={cardTypeStyle}
+                    className="roadmapCardType"
                     content={this.props.cardType}
                   />
                 </Grid.Column>
-                <Grid.Column style={rightColumnStyle}>
+                <Grid.Column className="roadmapBottomRightColumn">
                   <Label
-                    style={dueDateStyle}
+                    className="roadmapDueDate"
                     content={this.props.dueDate}
                   />
                 </Grid.Column>

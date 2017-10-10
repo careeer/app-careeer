@@ -1,9 +1,8 @@
-/* eslint-disable */
 import React from 'react';
-import { Button, Form, Input, Segment, Rail, Icon } from 'semantic-ui-react';
+import { Button, Form, Segment, Rail, Icon } from 'semantic-ui-react';
 import { CirclePicker } from 'react-color';
-import { dueDateStyle, cardTypeStyle, titleStyle, descriptionStyle, hyperlinkStyle, captionStyle, firstFieldStyle, lastFieldStyle, secondFieldStyle } from '../../Constants/RoadmapElementFormStyles';
-import { segmentStyle, COLOR } from '../../Constants/CommonElementStyles';
+import { cardTypeStyle } from '../../Constants/RoadmapElementFormStyles';
+import { COLOR } from '../../Constants/CommonElementStyles';
 
 export default class RoadmapElementForm extends React.Component {
   state = {
@@ -103,7 +102,7 @@ export default class RoadmapElementForm extends React.Component {
     });
     if (this.props.color || this.state.color) {
       segmentColor = COLOR[this.state.color];
-      if (this.state.color !== 'transparent'){
+      if (this.state.color !== 'transparent') {
         cardTypeColorStyle = Object.assign({}, cardTypeStyle, {
           color: this.state.color,
         });
@@ -136,15 +135,15 @@ export default class RoadmapElementForm extends React.Component {
             </a>
           }
           <Form>
-            <Form.Group style={firstFieldStyle}>
+            <Form.Group className="firstField">
               <Form.Field width={14}>
                 <input
                   autoFocus
                   onFocus={this.moveCaretAtEnd}
                   type="text"
-                  className="title"
+                  className="titleInput"
                   placeholder="action item"
-                  style={titleStyle}
+
                   value={this.state.title}
                   onChange={this.handleTitleChange}
                 />
@@ -157,14 +156,14 @@ export default class RoadmapElementForm extends React.Component {
                 colors={['transparent', '#6435c9', '#e03997', '#00b5ad', '#fbbd08']}
               />
             </Form.Group>
-            <Form.Group style={secondFieldStyle}>
+            <Form.Group className="secondField">
               <Form.Field width={14}>
                 <input
                   type="text"
                   maxLength="160"
-                  className="description"
+                  className="descriptionInput"
                   placeholder="description (160 character limit)"
-                  style={descriptionStyle}
+
                   value={this.state.description}
                   onChange={this.handleDescriptionChange}
                 />
@@ -172,7 +171,7 @@ export default class RoadmapElementForm extends React.Component {
               <Form.Field width={3}>
                 <input
                   type="text"
-                  className="card_type"
+                  className="cardTypeInput"
                   placeholder="category"
                   style={cardTypeColorStyle}
                   value={this.state.cardType}
@@ -180,12 +179,12 @@ export default class RoadmapElementForm extends React.Component {
                 />
               </Form.Field>
             </Form.Group>
-            <Form.Group style={lastFieldStyle}>
+            <Form.Group className="lastField">
               <Form.Field width={4}>
                 <input
-                  className="caption"
                   type="text"
-                  style={captionStyle}
+                  className="captionInput"
+
                   value={this.state.callToActionCaption}
                   placeholder="call to action"
                   onChange={this.handleCallToActionCaptionChange}
@@ -193,9 +192,9 @@ export default class RoadmapElementForm extends React.Component {
               </Form.Field>
               <Form.Field width={11}>
                 <input
-                  className="url"
+                  className="hyperlinkInput"
                   type="url"
-                  style={hyperlinkStyle}
+
                   value={this.state.callToActionURL}
                   placeholder="hyperlink (ex: http://careeer.me)"
                   onChange={this.handleCallToActionURLChange}
@@ -204,9 +203,9 @@ export default class RoadmapElementForm extends React.Component {
               <Form.Field width={3}>
                 <input
                   type="text"
-                  className="dueDate"
+                  className="dueDateInput"
                   placeholder="due date"
-                  style={dueDateStyle}
+
                   value={this.state.dueDate}
                   onChange={this.handleDueDateChange}
                 />
