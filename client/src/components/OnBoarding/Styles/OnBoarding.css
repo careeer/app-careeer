@@ -3,6 +3,11 @@ body > div#root > div > div > div.onBoarding {
   background-color: #24c63a;
 }
 
+div.introOnboarding {
+  min-height: 100%;
+  background-color: #24c63a;
+}
+
 div.ui.grid.pageHeader {
   padding-top: 18px;
   padding-left: 20px;

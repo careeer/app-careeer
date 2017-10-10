@@ -25,7 +25,7 @@ export default class OnBoardingIntro extends Component {
 
   render() {
     return (
-      <div className="onBoarding">
+      <div className="introOnboarding">
         <PageHeader
           icon={false}
           counterLabel="1/4"
