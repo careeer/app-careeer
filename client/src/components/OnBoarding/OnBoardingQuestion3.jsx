@@ -5,7 +5,7 @@ import TeamIcon from '../Icons/TeamIcon';
 import PageHeader from './Components/PageHeader';
 
 export default class OnBoardingQuestion extends Component {
-  state = { activeItem: '' }
+  state = { activeItem: localStorage.getItem("Answer3") }
 
   componentWillMount() {
     $crisp.push(['do', 'chat:hide']);
@@ -13,6 +13,7 @@ export default class OnBoardingQuestion extends Component {
 
   handleItemClick = (e, { name }) => {
     this.setState({ activeItem: name });
+    localStorage.setItem("Answer3", name);
     $crisp.push(["set", 'session:data', [[["Question3", "Which best describes you?"], ["Answer3", name]]]]);
     this.props.history.push('/OnBoarding/Name');
   }
@@ -38,7 +39,7 @@ export default class OnBoardingQuestion extends Component {
       />
       <Grid textAlign="center" className="questionGrid">
         <Grid.Row className="questionGrid">
-          <Grid.Column>
+          <Grid.Column className="onBoardingColumn">
             <TeamIcon />
             <div className="userNameLabel">
               Which best describes you?
@@ -46,7 +47,7 @@ export default class OnBoardingQuestion extends Component {
           </Grid.Column>
         </Grid.Row>
         <Grid.Row className="questionGrid">
-          <Grid.Column verticalAlign="bottom">
+          <Grid.Column verticalAlign="bottom" className="onBoardingColumn">
             <Menu secondary vertical items={Items} />
           </Grid.Column>
         </Grid.Row>

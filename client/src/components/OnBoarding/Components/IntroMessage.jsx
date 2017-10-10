@@ -4,7 +4,7 @@ import { Grid } from 'semantic-ui-react';
 import WaveIcon from '../../Icons/WaveIcon';
 
 const IntroMessage = props => (
-  <Grid textAlign="center">
+  <Grid textAlign="center" className="introMessageGrid">
     <Grid.Column className="introMessageGrid">
       <h2 className="introHeader">
         Hello!

@@ -34,7 +34,7 @@ export default class OnBoardingName extends Component {
     if (keyPressed === 'Enter' &&
         !this.state.submittedClient) {
       if (clientName.indexOf(' ') >= 0 &&
-          clientName.length >= 4) {
+          clientName.length > 4) {
         this.setState({
           nameError: false,
           submittedClient: true,

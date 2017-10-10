@@ -5,7 +5,7 @@ import TeamIcon from '../Icons/TeamIcon';
 import PageHeader from './Components/PageHeader';
 
 export default class OnBoardingQuestion extends Component {
-  state = { activeItem: '' }
+  state = { activeItem: localStorage.getItem("Answer1") }
 
   componentWillMount() {
     $crisp.push(['do', 'chat:hide']);
@@ -13,6 +13,7 @@ export default class OnBoardingQuestion extends Component {
 
   handleItemClick = (e, { name }) => {
     this.setState({ activeItem: name });
+    localStorage.setItem("Answer1", name);
     $crisp.push(["set", 'session:data', [[["Question1", "Where are you in your career path?"], ["Answer1", name]]]]);
     this.props.history.push('/OnBoarding/Question_2');
   }
@@ -35,7 +36,10 @@ export default class OnBoardingQuestion extends Component {
           handleClick={this.handleClick}
           headerLinkLabel="Skip question"
         />
-        <Grid textAlign="center" className="questionGrid">
+        <Grid
+          textAlign="center"
+          className="questionGrid"
+        >
           <Grid.Row className="questionGrid">
             <Grid.Column className="onBoardingColumn">
               <TeamIcon />
@@ -45,8 +49,15 @@ export default class OnBoardingQuestion extends Component {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row className="questionGrid">
-            <Grid.Column className="onBoardingColumn" verticalAlign="bottom">
-              <Menu secondary vertical items={Items} />
+            <Grid.Column
+              verticalAlign="bottom"
+              className="onBoardingColumn"
+            >
+              <Menu
+                vertical
+                secondary
+                items={Items}
+              />
             </Grid.Column>
           </Grid.Row>
         </Grid>

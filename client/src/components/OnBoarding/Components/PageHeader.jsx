@@ -26,16 +26,23 @@ const PageHeader = props => (
         onClick={props.handleClick}
       >
         {props.headerLinkLabel}&nbsp;
-        <Icon name="chevron right" />
+        {props.icon &&
+          <Icon name="chevron right" />
+        }
       </Label>
     </Grid.Column>
   </Grid>
 );
 
 PageHeader.propTypes = {
+  icon: PropTypes.bool,
   handleClick: PropTypes.func.isRequired,
   counterLabel: PropTypes.string.isRequired,
   headerLinkLabel: PropTypes.string.isRequired,
+};
+
+PageHeader.defaultProps = {
+  icon: true,
 };
 
 export default PageHeader;
