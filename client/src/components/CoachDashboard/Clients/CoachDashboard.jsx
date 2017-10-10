@@ -8,6 +8,8 @@ import NewClientInput from './NewClientInput';
 import PlusButton from '../../ClientDashboard/RoadmapElements/PlusButton';
 import ClientElement from './ClientElement';
 
+import '../Styles/CoachDashboard.css';
+
 @inject('roadmapElements')@observer
 export default class CoachDashboard extends Component {
   componentWillMount() {

@@ -9,6 +9,7 @@ class RoadmapElements {
   @observable pendingElements = [];
   @observable incompleteElements = [];
   @observable isLoading = false;
+  @observable isDefaultLoading = false;
   @observable isClientLoading = false;
   @observable hasClientName = false;
   @observable currentClient = '';
@@ -307,6 +308,7 @@ class RoadmapElements {
   }
 
   @action async createClientWithDefaults(arrayOfDefaults) {
+    this.isDefaultLoading = true;
     const response = await Api.post(this.path, { name: this.currentClient, account_type: "free trial" });
     const status = await response.status;
 
@@ -325,13 +327,13 @@ class RoadmapElements {
       if (this.currentClient) {
         this.setClientSlug(this.clients.filter(client =>
           client.name === this.currentClient)[0].slug);
-        this.hasClientName = true;
 
-        this.isLoading = true;
         for (const i in arrayOfDefaults){
           await this.create(arrayOfDefaults[i], false);
         }
-        this.fetchAll();
+        await this.fetchAll();
+        this.hasClientName = true;
+        this.isDefaultLoading = false;
       }
     }
   }

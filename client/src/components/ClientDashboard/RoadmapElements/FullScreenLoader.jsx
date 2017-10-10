@@ -4,15 +4,15 @@ import { Dimmer, Loader } from 'semantic-ui-react';
 import ThankYouMessage from '../../OnBoarding/Components/ThankYouMessage';
 import '../Styles/FullScreenLoader.css';
 
-function FullScreenLoader(props) {
-  if (props.firstTime) {
+export default function FullScreenLoader(props) {
+  if (props.isDefaultLoading) {
     return (
       <Dimmer
         page
         className="thankYouLoader"
-        active={true && props.isLoading}
+        active={true && props.isDefaultLoading}
       >
-        <ThankYouMessage clientName={props.clientName.split(' ', 1)[0]} />
+        <ThankYouMessage clientName={props.clientName} />
       </Dimmer>
     );
   }
@@ -31,10 +31,8 @@ function FullScreenLoader(props) {
 
 
 FullScreenLoader.propTypes = {
-  firstTime: PropTypes.bool.isRequired,
+  isDefaultLoading: PropTypes.bool.isRequired,
   isLoading: PropTypes.bool.isRequired,
   clientName: PropTypes.string.isRequired,
   loadingMessage: PropTypes.string.isRequired,
 };
-
-export default FullScreenLoader;

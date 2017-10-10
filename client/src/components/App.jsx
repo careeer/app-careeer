@@ -1,7 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import ClientRoadmapDashboard from './ClientDashboard/RoadmapElements/ClientRoadmapDashboard';
+// import ClientRoadmapDashboard from './ClientDashboard/RoadmapElements/ClientRoadmapDashboard';
+import ClientDashboard from './ClientDashboard/ClientDashboard';
 import CoachDashboard from './CoachDashboard/Clients/CoachDashboard';
 import NewClientInput from './CoachDashboard/Clients/NewClientInput';
 import FreeTrialWelcome from './LandingPage/FreeTrialWelcome';
@@ -12,6 +13,7 @@ import OnBoardingQuestion from './OnBoarding/OnBoardingQuestion';
 import OnBoardingQuestion2 from './OnBoarding/OnBoardingQuestion2';
 import OnBoardingQuestion3 from './OnBoarding/OnBoardingQuestion3';
 import OnBoardingName from './OnBoarding/OnBoardingName';
+import OnBoardingThankYou from './OnBoarding/OnBoardingThankYou';
 import DuplicateClientInput from './CoachDashboard/Clients/DuplicateClientInput';
 import RedirectToCareeer from './Lib/RedirectToCareeer';
 
@@ -31,8 +33,8 @@ const App = () => (
     <Route path="/roadmap" component={NewClientInput} />
     <Route path="/duplicate/:clientId" component={DuplicateClientInput} />
     <Route path="/clients" component={CoachDashboard} />
-    <Route path="/thankyou/:clientName/:clientId" component={ClientRoadmapDashboard} />
-    <Route path="/:clientId" component={ClientRoadmapDashboard} />
+    <Route path="/OnBoarding/thankyou/:clientName" component={OnBoardingThankYou} />
+    <Route path="/:clientId" component={ClientDashboard} />
   </Switch>
 );
 

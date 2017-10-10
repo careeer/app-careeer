@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React from 'react';
+import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { Grid, Dimmer, Loader, Sidebar, Label } from 'semantic-ui-react';
 
@@ -38,32 +38,7 @@ function vStrength(box, point) {
 
 @DragDropContext(MultiBackend(HTML5toTouch))
 @inject('roadmapElements') @observer
-export default class ClientRoadmapDashboard extends React.Component {
-  state = {
-    firstTime: false,
-  }
-
-  componentWillMount() {
-    if (this.props.match.params.clientName){
-      this.setState({
-        clientName: this.props.match.params.clientName,
-        firstTime: true,
-      });
-    }
-    const client = this.props.match.params.clientId;
-    if (client) {
-      this.props.roadmapElements.resetClientParams();
-      this.props.roadmapElements.getClients();
-      this.props.roadmapElements.setClientSlug(client);
-      this.props.roadmapElements.fetchAll();
-      history.replaceState(null, document.title, `/${client}`);
-    }
-  }
-
-  componentWillUnmount() {
-    this.props.roadmapElements.resetClientParams();
-  }
-
+export default class ClientRoadmapDashboard extends Component {
   handleCreateFormSubmit = (roadmapElement) => {
     this.createRoadmapElement(roadmapElement);
   }
@@ -125,6 +100,7 @@ export default class ClientRoadmapDashboard extends React.Component {
 
   render() {
     const { isLoading,
+            isDefaultLoading,
             isBannerVisible,
             isCreateFormClose,
             isToggleableFormVisible,
@@ -142,8 +118,8 @@ export default class ClientRoadmapDashboard extends React.Component {
       <div>
         <FullScreenLoader
           isLoading={isLoading}
-          firstTime={this.state.firstTime}
-          clientName={this.state.clientName || ""}
+          isDefaultLoading={isDefaultLoading}
+          clientName={this.props.clientName || ""}
           loadingMessage="Fetching your Roadmap..."
         />
         <CongratulateBanner

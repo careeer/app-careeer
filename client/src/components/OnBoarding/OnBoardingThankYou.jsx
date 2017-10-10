@@ -1,24 +1,45 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import ThankYouMessage from './Components/ThankYouMessage';
+import DateHelper from '../Lib/DateHelper';
+import defaultElements from '../Constants/DefaultRoadmapElements';
+import ClientRoadmapDashboard from '../ClientDashboard/RoadmapElements/ClientRoadmapDashboard';
 
 @inject('roadmapElements') @observer
-export default class OnBoardingThankYou extends Component {
+export default class ClientDashboard extends Component {
+  state = {
+    clientName: '',
+  }
+
   componentWillMount() {
-    $crisp.push(['do', 'chat:hide']);
+    if (this.props.match.params.clientName){
+      this.setState({
+        clientName: this.props.match.params.clientName,
+      });
+      if (this.props.roadmapElements.currentClient) {
+        const today = DateHelper.formatedDate();
+        const firstRoadmapElements = defaultElements.map(element => Object.assign({}, element, {
+          dueDate: today,
+        }));
+        this.props.roadmapElements.createClientWithDefaults(firstRoadmapElements);
+      }
+    }
   }
 
   componentWillUnmount() {
-    $crisp.push(['do', 'chat:show']);
+    this.props.roadmapElements.resetClientParams();
+  }
+
+  checkIfNameIsFilled = () => {
+    if (this.props.roadmapElements.hasClientName) {
+      history.replaceState(null, document.title, `/${this.props.roadmapElements.currentClientSlug}`);
+    }
   }
 
   render() {
     this.checkIfNameIsFilled();
     return (
-      <div className="onBoarding">
-        <ThankYouMessage clientName={this.props.match.params.clientName} />
-      </div>
+      <ClientRoadmapDashboard clientName={this.state.clientName} />
     );
   }
 }

@@ -4,9 +4,6 @@ import { inject, observer } from 'mobx-react';
 import PropTypes from 'prop-types';
 import PageHeader from './Components/PageHeader';
 import UserNamePrompt from './Components/UserNamePrompt';
-import DateHelper from '../Lib/DateHelper';
-import defaultElements from '../Constants/DefaultRoadmapElements';
-
 
 @inject('roadmapElements') @observer
 export default class OnBoardingName extends Component {
@@ -30,7 +27,6 @@ export default class OnBoardingName extends Component {
 
   handleCreateClient = (keyPressed) => {
     const clientName = this.props.roadmapElements.currentClient;
-
     if (keyPressed === 'Enter' &&
         !this.state.submittedClient) {
       if (clientName.indexOf(' ') >= 0 &&
@@ -39,13 +35,10 @@ export default class OnBoardingName extends Component {
           nameError: false,
           submittedClient: true,
         });
-        const today = DateHelper.formatedDate();
-        const firstRoadmapElements = defaultElements.map(element => Object.assign({}, element, {
-          dueDate: today,
-        }));
         $crisp.push(["set", 'session:data', [[["ClientName", clientName]]]]);
-        this.props.roadmapElements.createClientWithDefaults(firstRoadmapElements);
 
+        const firstName = clientName.split(" ", 1)[0];
+        this.props.history.push(`/OnBoarding/thankyou/${firstName}`);
       } else {
         this.setState({
           nameError: true,
@@ -54,16 +47,7 @@ export default class OnBoardingName extends Component {
     }
   }
 
-  checkIfNameIsFilled = () => {
-    if (this.props.roadmapElements.hasClientName) {
-      const firstName = this.props.roadmapElements.currentClient.split(" ", 1)[0];
-      this.props.history.push(`/thankyou/${firstName}/${this.props.roadmapElements.currentClientSlug}`);
-    }
-  }
-
   render() {
-    this.checkIfNameIsFilled();
-
     const { handleClientInputChange,
             currentClient,
           } = this.props.roadmapElements;
