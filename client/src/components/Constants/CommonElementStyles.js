@@ -5,3 +5,5 @@ export const COLOR = {
   '#fbbd08': 'yellow',
   transparent: null,
 };
+
+export default COLOR;
