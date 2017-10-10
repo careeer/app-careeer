@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import IntroMessage from './Components/IntroMessage';
 import PageHeader from './Components/PageHeader';
 
-import './Styles/SimpleOnBoarding.css';
+import './Styles/OnBoarding.css';
 
 export default class OnBoardingIntro extends Component {
 

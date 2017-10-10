@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import ThankYouMessage from './Components/ThankYouMessage';
 
-import './Styles/SimpleOnBoarding.css';
-
 @inject('roadmapElements') @observer
 export default class OnBoardingThankYou extends Component {
   componentWillMount() {

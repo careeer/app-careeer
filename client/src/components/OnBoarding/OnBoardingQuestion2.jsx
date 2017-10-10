@@ -47,8 +47,15 @@ export default class OnBoardingQuestion extends Component {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row className="questionGrid">
-            <Grid.Column verticalAlign="bottom" className="onBoardingColumn">
-              <Menu secondary vertical items={Items} />
+            <Grid.Column
+              verticalAlign="bottom"
+              className="onBoardingColumn"
+            >
+              <Menu
+                vertical
+                secondary
+                items={Items}
+              />
             </Grid.Column>
           </Grid.Row>
         </Grid>
