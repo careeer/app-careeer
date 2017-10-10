@@ -5,7 +5,7 @@ import TeamIcon from './Icons/TeamIcon';
 import PageHeader from './Components/PageHeader';
 
 export default class OnBoardingQuestion extends Component {
-  state = { activeItem: '' }
+  state = { activeItem: localStorage.getItem("Answer2") }
 
   componentWillMount() {
     $crisp.push(['do', 'chat:hide']);
@@ -13,6 +13,7 @@ export default class OnBoardingQuestion extends Component {
 
   handleItemClick = (e, { name }) => {
     this.setState({ activeItem: name });
+    localStorage.setItem("Answer2", name);
     $crisp.push(["set", 'session:data', [[["Question2", "Which personality type do you identify with most?"], ["Answer2", name]]]]);
     this.props.history.push('/OnBoarding/Question_3');
   }
