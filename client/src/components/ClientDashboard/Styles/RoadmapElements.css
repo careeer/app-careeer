@@ -92,10 +92,25 @@ button.ui.button.roadmapButton {
   text-align: right;
 }
 
-.firstColumnStyle {
+div.stretched.middle.aligned.row.roadmapFirstRow {
+  padding-top: 0;
+}
+
+div.left.floated.column.roadmapLeftColumn {
   width: 75%;
   padding: 0;
   text-align: left;
+}
+
+div.ui.label.column.roadmapTitleColumn {
+  background-color: transparent;
+  padding: 0;
+  font-family: Cabin;
+  font-size: 26px;
+  letter-spacing: 3.5px;
+  color: #333;
+  width: auto;
+  line-height: 30px;
 }
 
 .secondColumnStyle {
@@ -132,17 +147,6 @@ button.ui.button.roadmapButton {
   line-height: 25px;
 }
 
-.titleStyle {
-  background-color: transparent;
-  padding: 0;
-  font-family: Cabin;
-  font-size: 26px;
-  letter-spacing: 3.5px;
-  color: #333;
-  width: auto;
-  line-height: 30px;
-}
-
 .descriptionStyle {
   background-color: transparent;
   padding: 0;
@@ -158,11 +162,6 @@ button.ui.button.roadmapButton {
   padding: 0;
   width: auto;
   background-color: transparent;
-}
-
-.mainGridRowStyle {
-  padding-top: 0;
-  padding-bottom: 0;
 }
 
 .gridRowStyle {

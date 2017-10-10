@@ -4,7 +4,9 @@ body > div#root > div > div > div.onBoarding {
 }
 
 div.ui.grid.pageHeader {
-  height: 3%;
+  padding-top: 18px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 div.onBoardingHeader {
@@ -80,7 +82,7 @@ div.nameError > div.ui.input > input {
 }
 
 div.ui.center.aligned.grid.introMessageGrid {
-  height: 97%;
+  height: 95%;
   margin: 0 !important;
   padding: 0 !important;
 }
@@ -98,7 +100,7 @@ h2.introHeader {
   letter-spacing: 3.8px;
   text-align: center;
   color: #fff;
-  padding-top: 10rem;
+  padding-top: 8rem;
   margin-bottom: 0;
 }
 
@@ -114,7 +116,9 @@ p.introMessage {
 }
 
 img.introWave {
-  margin-top: 5rem;
+  width: 140px;
+  height: 164.5px;
+  margin-top: 3rem;
 }
 
 a.introGetStarted {
@@ -170,7 +174,7 @@ p.thankYouLoading {
 }
 
 div.ui.center.aligned.grid.questionGrid {
-  height: 97%;
+  height: 95%;
   margin: 0 !important;
 }
 
@@ -179,8 +183,7 @@ div.ui.center.aligned.grid.questionGrid {
   background-color: #24c63a;
 }
 
-div.ui.secondary.vertical.menu > a.item,
-div.ui.secondary.vertical.menu > a.item:hover {
+div.ui.secondary.vertical.menu > a.item {
   margin: 0 !important;
   border-radius: 0 !important;
   font-family: Cabin;
@@ -194,7 +197,7 @@ div.ui.secondary.vertical.menu > a.item:hover {
 }
 
 div.ui.secondary.vertical.menu > a.active.item,
-div.ui.secondary.vertical.menu > a.active.item:hover {
+div.ui.secondary.vertical.menu > a.item:hover {
   margin: 0 !important;
   border-radius: 0 !important;
   background-color: #fff;

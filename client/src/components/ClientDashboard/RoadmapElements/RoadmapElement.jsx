@@ -105,16 +105,16 @@ export default class RoadmapElement extends React.Component {
           <Grid.Row
             stretched
             verticalAlign="middle"
-            style={mainGridRowStyle}
+            className="roadmapFirstRow"
           >
             <Grid.Column
-              style={firstColumnStyle}
               floated="left"
+              className="roadmapLeftColumn"
             >
               <Grid.Row>
                 <Grid.Column
                   as={Label}
-                  style={titleStyle}
+                  className="roadmapTitleColumn"
                   content={this.props.title}
                 />
               </Grid.Row>
