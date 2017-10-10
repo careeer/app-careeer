@@ -79,9 +79,14 @@ div.nameError > div.ui.input > input {
   color: #fff;
 }
 
-div.ui.center.aligned.grid.introMessageGrid,
-div.column.introMessageGrid {
+div.ui.center.aligned.grid.introMessageGrid {
   height: 97%;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+div.column.introMessageGrid {
+  height: 100%;
   margin: 0 !important;
   padding: 0 !important;
 }
@@ -93,7 +98,7 @@ h2.introHeader {
   letter-spacing: 3.8px;
   text-align: center;
   color: #fff;
-  padding-top: 12rem;
+  padding-top: 10rem;
   margin-bottom: 0;
 }
 
