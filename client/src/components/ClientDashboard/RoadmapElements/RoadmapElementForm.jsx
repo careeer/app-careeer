@@ -1,7 +1,7 @@
+/* eslint-disable */
 import React from 'react';
 import { Button, Form, Segment, Rail, Icon } from 'semantic-ui-react';
 import { CirclePicker } from 'react-color';
-import { cardTypeStyle } from '../../Constants/RoadmapElementFormStyles';
 import { COLOR } from '../../Constants/CommonElementStyles';
 
 export default class RoadmapElementForm extends React.Component {
@@ -80,9 +80,9 @@ export default class RoadmapElementForm extends React.Component {
   };
 
   moveCaretAtEnd(e) {
-    var temp_value = e.target.value
+    const tempValue = e.target.value
     e.target.value = ''
-    e.target.value = temp_value
+    e.target.value = tempValue
   }
 
   render() {
@@ -97,19 +97,19 @@ export default class RoadmapElementForm extends React.Component {
     ) ? '' : -1;
 
     let segmentColor = null;
-    let cardTypeColorStyle = Object.assign({}, cardTypeStyle, {
+    let cardTypeColorStyle = {
       color: '#919191',
-    });
+    };
     if (this.props.color || this.state.color) {
       segmentColor = COLOR[this.state.color];
       if (this.state.color !== 'transparent') {
-        cardTypeColorStyle = Object.assign({}, cardTypeStyle, {
+        cardTypeColorStyle = {
           color: this.state.color,
-        });
+        };
       } else {
-        cardTypeColorStyle = Object.assign({}, cardTypeStyle, {
+        cardTypeColorStyle = {
           color: '#919191',
-        });
+        };
       }
     }
 
