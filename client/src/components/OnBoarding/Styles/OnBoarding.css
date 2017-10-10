@@ -1,5 +1,5 @@
 body > div#root > div > div > div.onBoarding {
-  height: 100%;
+  min-height: 100%;
   background-color: #24c63a;
 }
 
@@ -12,6 +12,7 @@ div.ui.grid.pageHeader {
 div.onBoardingHeader {
   padding-bottom: 0 !important;
   padding-top: 0 !important;
+  padding-right: 0 !important;
 }
 
 p.pageCounter {
@@ -28,6 +29,7 @@ a.ui.label.headerLink {
   letter-spacing: 1.4px;
   text-align: right;
   color: #fff;
+  padding-right: 0 !important;
 }
 
 img.teamIcon {
@@ -89,8 +91,7 @@ div.ui.center.aligned.grid.introMessageGrid {
 
 div.column.introMessageGrid {
   height: 100%;
-  margin: 0 !important;
-  padding: 0 !important;
+  margin-bottom: 1rem !important;
 }
 
 h2.introHeader {
