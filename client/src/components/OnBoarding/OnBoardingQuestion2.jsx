@@ -3,9 +3,12 @@ import React, { Component } from 'react';
 import { Grid, Menu } from 'semantic-ui-react';
 import TeamIcon from '../Icons/TeamIcon';
 import PageHeader from './Components/PageHeader';
+import Touch from '../Lib/CheckTouch';
 
 export default class OnBoardingQuestion extends Component {
-  state = { activeItem: localStorage.getItem("Answer2") }
+  state = {
+    activeItem: localStorage.getItem("Answer2"),
+  }
 
   componentWillMount() {
     $crisp.push(['do', 'chat:hide']);
@@ -17,6 +20,7 @@ export default class OnBoardingQuestion extends Component {
     $crisp.push(["set", 'session:data', [[["Question2", "Which personality type do you identify with most?"], ["Answer2", name]]]]);
     this.props.history.push('/OnBoarding/Question_3');
   }
+
   handleClick = () => {
     this.props.history.push('/OnBoarding/Question_3');
   }
@@ -27,6 +31,7 @@ export default class OnBoardingQuestion extends Component {
       { key: 'Introvert', name: 'Introvert', onClick: this.handleItemClick, active: activeItem === 'Introvert' },
       { key: 'Extrovert', name: 'Extrovert', onClick: this.handleItemClick, active: activeItem === 'Extrovert' },
     ]
+
     return (
       <div className="onBoarding">
         <PageHeader

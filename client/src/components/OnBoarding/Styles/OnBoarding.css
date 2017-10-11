@@ -3,7 +3,8 @@ body > div#root > div > div > div.onBoarding {
   background-color: #24c63a;
 }
 
-div.introOnboarding {
+div.introOnboarding,
+div.outroOnboarding {
   min-height: 100%;
   background-color: #24c63a;
 }
@@ -189,7 +190,8 @@ div.ui.center.aligned.grid.questionGrid {
   background-color: #24c63a;
 }
 
-div.ui.secondary.vertical.menu > a.item {
+div.ui.secondary.vertical.menu > a.item,
+div.ui.secondary.vertical.menu > a.item:hover {
   margin: 0 !important;
   border-radius: 0 !important;
   font-family: Cabin;
@@ -202,8 +204,7 @@ div.ui.secondary.vertical.menu > a.item {
   color: #fff;
 }
 
-div.ui.secondary.vertical.menu > a.active.item,
-div.ui.secondary.vertical.menu > a.item:hover {
+div.ui.secondary.vertical.menu > a.active.item {
   margin: 0 !important;
   border-radius: 0 !important;
   background-color: #fff;
@@ -221,4 +222,20 @@ div.column.onBoardingColumn,
 div.ui.secondary.vertical.menu {
   margin: 0 !important;
   padding: 0 !important;
+}
+
+@media all and (min-width: 1024px) {
+  div.ui.secondary.vertical.menu > a.item:hover {
+    margin: 0 !important;
+    border-radius: 0 !important;
+    background-color: #fff;
+    font-family: Cabin;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 3.8px;
+    text-align: center;
+    color: #24c63a;
+    border-top: solid 1px #fff;
+    border-bottom: solid 1px #fff;
+  }
 }

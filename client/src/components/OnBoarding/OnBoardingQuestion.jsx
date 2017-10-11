@@ -3,9 +3,12 @@ import React, { Component } from 'react';
 import { Grid, Menu } from 'semantic-ui-react';
 import TeamIcon from '../Icons/TeamIcon';
 import PageHeader from './Components/PageHeader';
+import Touch from '../Lib/CheckTouch';
 
 export default class OnBoardingQuestion extends Component {
-  state = { activeItem: localStorage.getItem("Answer1") }
+  state = {
+    activeItem: localStorage.getItem("Answer1"),
+  }
 
   componentWillMount() {
     $crisp.push(['do', 'chat:hide']);
@@ -24,11 +27,28 @@ export default class OnBoardingQuestion extends Component {
 
   render() {
     const { activeItem } = this.state;
+
     const Items = [
-      { key: 'Exploring', name: 'Exploring', onClick: this.handleItemClick, active: activeItem === 'Exploring' },
-      { key: 'Interviewing', name: 'Interviewing', onClick: this.handleItemClick, active: activeItem === 'Interviewing' },
-      { key: 'Gaining new skills', name: 'Gaining new skills', onClick: this.handleItemClick, active: activeItem === 'Gaining new skills' },
+      {
+        key: 'Exploring',
+        name: 'Exploring',
+        onClick: this.handleItemClick,
+        active: activeItem === 'Exploring'
+      },
+      {
+        key: 'Interviewing',
+        name: 'Interviewing',
+        onClick: this.handleItemClick,
+        active: activeItem === 'Interviewing',
+      },
+      {
+        key: 'Gaining new skills',
+        name: 'Gaining new skills',
+        onClick: this.handleItemClick,
+        active: activeItem === 'Gaining new skills'
+      },
     ]
+
     return (
       <div className="onBoarding">
         <PageHeader

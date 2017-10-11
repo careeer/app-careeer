@@ -3,9 +3,12 @@ import React, { Component } from 'react';
 import { Grid, Menu } from 'semantic-ui-react';
 import TeamIcon from '../Icons/TeamIcon';
 import PageHeader from './Components/PageHeader';
+import Touch from '../Lib/CheckTouch';
 
 export default class OnBoardingQuestion extends Component {
-  state = { activeItem: localStorage.getItem("Answer3") }
+  state = {
+    activeItem: localStorage.getItem("Answer3"),
+  }
 
   componentWillMount() {
     $crisp.push(['do', 'chat:hide']);
@@ -30,6 +33,7 @@ export default class OnBoardingQuestion extends Component {
       { key: 'Product manager', name: 'Product manager', onClick: this.handleItemClick, active: activeItem === 'Product manager' },
       { key: 'Gaining new skills', name: 'Gaining new skills', onClick: this.handleItemClick, active: activeItem === 'Gaining new skills' },
     ]
+
     return (
       <div className="onBoarding">
       <PageHeader

@@ -53,7 +53,7 @@ export default class OnBoardingName extends Component {
           } = this.props.roadmapElements;
 
     return (
-      <div className="onBoarding">
+      <div className="outroOnboarding">
         <PageHeader
           counterLabel=""
           handleClick={this.handleClick}
