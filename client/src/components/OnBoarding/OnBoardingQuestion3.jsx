@@ -27,11 +27,17 @@ export default class OnBoardingQuestion extends Component {
 
   render() {
     const { activeItem } = this.state;
+
+    let itemClass="noHoverItem";
+    if (!Touch.isTouchDevice()) {
+      itemClass="hoverItem";
+    }
+    
     const Items = [
-      { key: 'Engineer', name: 'Engineer', onClick: this.handleItemClick, active: activeItem === 'Engineer' },
-      { key: 'Designer', name: 'Designer', onClick: this.handleItemClick, active: activeItem === 'Designer' },
-      { key: 'Product manager', name: 'Product manager', onClick: this.handleItemClick, active: activeItem === 'Product manager' },
-      { key: 'Gaining new skills', name: 'Gaining new skills', onClick: this.handleItemClick, active: activeItem === 'Gaining new skills' },
+      { key: 'Engineer', name: 'Engineer', onClick: this.handleItemClick, active: activeItem === 'Engineer', className: itemClass },
+      { key: 'Designer', name: 'Designer', onClick: this.handleItemClick, active: activeItem === 'Designer', className: itemClass },
+      { key: 'Product manager', name: 'Product manager', onClick: this.handleItemClick, active: activeItem === 'Product manager', className: itemClass },
+      { key: 'Gaining new skills', name: 'Gaining new skills', onClick: this.handleItemClick, active: activeItem === 'Gaining new skills', className: itemClass },
     ]
 
     return (

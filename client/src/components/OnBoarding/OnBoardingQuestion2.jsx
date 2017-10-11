@@ -27,9 +27,15 @@ export default class OnBoardingQuestion extends Component {
 
   render() {
     const { activeItem } = this.state;
+
+    let itemClass="noHoverItem";
+    if (!Touch.isTouchDevice()) {
+      itemClass="hoverItem";
+    }
+    
     const Items = [
-      { key: 'Introvert', name: 'Introvert', onClick: this.handleItemClick, active: activeItem === 'Introvert' },
-      { key: 'Extrovert', name: 'Extrovert', onClick: this.handleItemClick, active: activeItem === 'Extrovert' },
+      { key: 'Introvert', name: 'Introvert', onClick: this.handleItemClick, active: activeItem === 'Introvert', className: itemClass },
+      { key: 'Extrovert', name: 'Extrovert', onClick: this.handleItemClick, active: activeItem === 'Extrovert', className: itemClass },
     ]
 
     return (

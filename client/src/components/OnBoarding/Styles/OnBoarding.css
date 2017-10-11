@@ -190,8 +190,9 @@ div.ui.center.aligned.grid.questionGrid {
   background-color: #24c63a;
 }
 
-div.ui.secondary.vertical.menu > a.item,
-div.ui.secondary.vertical.menu > a.item:hover {
+div.ui.secondary.vertical.menu > a.item.noHoverItem,
+div.ui.secondary.vertical.menu > a.item.hoverItem,
+div.ui.secondary.vertical.menu > a.item.noHoverItem:hover {
   margin: 0 !important;
   border-radius: 0 !important;
   font-family: Cabin;
@@ -204,7 +205,9 @@ div.ui.secondary.vertical.menu > a.item:hover {
   color: #fff;
 }
 
-div.ui.secondary.vertical.menu > a.active.item {
+div.ui.secondary.vertical.menu > a.active.item.noHoverItem,
+div.ui.secondary.vertical.menu > a.active.item.hoverItem,
+div.ui.secondary.vertical.menu > a.item.hoverItem:hover {
   margin: 0 !important;
   border-radius: 0 !important;
   background-color: #fff;
@@ -224,18 +227,123 @@ div.ui.secondary.vertical.menu {
   padding: 0 !important;
 }
 
-@media all and (min-width: 1024px) {
-  div.ui.secondary.vertical.menu > a.item:hover {
-    margin: 0 !important;
-    border-radius: 0 !important;
-    background-color: #fff;
-    font-family: Cabin;
-    font-size: 30px;
-    font-weight: 500;
-    letter-spacing: 3.8px;
-    text-align: center;
-    color: #24c63a;
-    border-top: solid 1px #fff;
-    border-bottom: solid 1px #fff;
+@media all and (max-width: 668px) {
+  img.teamIcon {
+    margin-top: 4rem;
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+  }
+
+  /*
+    Intro Page
+  */
+  img.introWave {
+    width: 65px;
+    height: 77px;
+    margin-top: 3rem;
+  }
+
+  h2.introHeader {
+    font-size: 18px;
+    letter-spacing: 2.3px;
+  }
+
+  p.introMessage {
+    width: 220px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+  }
+
+  a.introGetStarted {
+    font-size: 24px;
+    letter-spacing: 3px;
+    margin-top: 1.8rem;
+  }
+
+  /*
+    Question Prompt
+  */
+  div.userNameLabel {
+    width: 216px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+
+  /*
+    Question Options
+  */
+  div.ui.center.aligned.grid.questionGrid {
+    height: 96%;
+  }
+
+  div.ui.secondary.vertical.menu > a.item.noHoverItem,
+  div.ui.secondary.vertical.menu > a.active.item.noHoverItem {
+    font-size: 18px;
+    padding: 2rem;
+    letter-spacing: 2.3px;
+  }
+
+  /*
+    Client Name Input
+  */
+  div.userNameInput,
+  div.nameError {
+    margin-top: 9em;
+  }
+
+  div.userNameInput > div.ui.input > input,
+  div.nameError > div.ui.input > input {
+    font-size: 18px;
+    letter-spacing: 1.3px;
+  }
+
+  /*
+    Page Header
+  */
+  div.ui.grid.pageHeader {
+    padding-top: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  p.pageCounter {
+    font-size: 10px;
+    letter-spacing: 1.3px;
+  }
+
+  a.ui.label.headerLink {
+    font-size: 7px;
+    letter-spacing: 0.9px;
+  }
+
+  /*
+    Thank You Page
+  */
+  h2.thankYouHeader {
+    font-size: 18px;
+    letter-spacing: 2.3px;
+    padding-top: 0.5rem;
+  }
+
+  p.thankYouMessage {
+    width: 216px;
+    margin: 2rem auto 0;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+  }
+
+  img.checkmarkIcon {
+    width: 65px;
+    height: 77px;
+    margin-top: 1.5rem;
+  }
+
+  p.thankYouLoading {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    margin-top: 1.8rem;
   }
 }
