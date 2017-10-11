@@ -143,7 +143,7 @@ div.ui.statistic.statisticSecondComponent {
   div.right.floated.column.statisticColumn {
     padding: 0;
     margin-left: 35px;
-    margin-top: -10px;
+    margin-top: -8px;
   }
 
   /*
@@ -204,15 +204,15 @@ div.ui.statistic.statisticSecondComponent {
   }
 
   .ui.statistic > .value.statisticValue {
-    font-size: 40px !important;
+    font-size: 35px !important;
     letter-spacing: 0.8px;
-    padding-left: 6px;
+    padding-left: 0;
   }
 
   .ui.statistic > .label.statisticLabel {
     font-size: 5px !important;
     letter-spacing: 0.1px;
     margin-top: -5px !important;
-    padding-left: 6px;
+    padding-left: 2px;
   }
 }

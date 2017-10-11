@@ -80,7 +80,7 @@ div.stretched.row {
 
 div.left.floated.column.roadmapLeftColumn {
   width: 75%;
-  padding: 0;
+  padding: 0 !important;
   text-align: left;
 }
 
@@ -311,11 +311,88 @@ i.completedToggleIcon {
     border-width: 7.4px 10px;
   }
 
+  /*
+    Common Roadmap Elements Styles
+  */
   div.ui.grid.roadmapMainGrid {
     margin: 10px 15px;
   }
 
   div.column.roadmapMainColumn {
     padding: 10px 0 !important;
+  }
+
+  button.ui.button.roadmapButton {
+    font-size: 10px;
+    letter-spacing: 1.3px;
+    margin: 0;
+  }
+
+  /*
+    Roadmap Element Styles
+  */
+  div.ui.label.column.roadmapTitleColumn {
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 1.9px;
+  }
+
+  div.ui.label.roadmapDescription {
+    font-size: 10px;
+    line-height: 20px;
+    letter-spacing: 1.3px;
+    padding-top: 10px;
+  }
+
+  div.ui.label.roadmapDueDate {
+    font-size: 7px;
+    letter-spacing: 0.9px;
+  }
+
+  div.ui.label.roadmapCardType {
+    font-size: 7px;
+    letter-spacing: 0.9px;
+  }
+
+  div.stretched.middle.aligned.row.roadmapFirstRow,
+  div.stretched.row {
+    padding: 0 !important;
+  }
+
+  .ui.stackable.grid > .row > .column {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  div.row.roadmapIconsRow {
+    margin-bottom: 1em;
+  }
+
+  /*
+    Completed Element Section Styles
+  */
+  span.completedMessage {
+    font-size: 9px;
+    letter-spacing: 1.1px;
+  }
+
+  button.ui.completedSection,
+  button.ui.completedSection:hover {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  div.row.completedGridRow {
+    padding: 0 !important;
+    height: 30px;
+  }
+
+  div.column.completedGridColumn {
+    margin-left: 0 !important;
+    height: 30px;
+  }
+
+  i.completedToggleIcon {
+    font-size: 2.2rem !important;
   }
 }
