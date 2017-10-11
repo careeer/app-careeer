@@ -227,6 +227,11 @@ div.ui.secondary.vertical.menu {
   padding: 0 !important;
 }
 
+/***
+*
+* Mobile Styles
+*
+***/
 @media all and (max-width: 668px) {
   img.teamIcon {
     margin-top: 4rem;

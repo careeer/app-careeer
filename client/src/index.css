@@ -35,3 +35,20 @@ body > div#root > div > div {
 .ui.fluid.button.addNewButton {
   border-radius: 18px;
 }
+
+/***
+*
+* Mobile Styles
+*
+***/
+@media all and (max-width: 668px) {
+  .ui.segment:first-child {
+    margin-top: 0.5rem;
+  }
+
+  .ui.segment:last-child,
+  .ui.segment {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}

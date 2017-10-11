@@ -36,3 +36,49 @@ a.undoLink {
   font-family: Raleway;
   letter-spacing: 1.3px;
 }
+
+/***
+*
+* Mobile Styles
+*
+***/
+@media all and (max-width: 668px) {
+  /*
+    Congratulate Banner Styles
+  */
+  div.ui.congratulateMessage {
+    top: 0;
+    padding: 0;
+    width: 100%;
+    z-index: 102;
+    position: fixed;
+    background-color: #03ac13;
+  }
+
+  span.mainMessage {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    font-family: Raleway;
+    letter-spacing: 2.3px;
+  }
+
+  div.ui.secondaryMessage {
+    color: #fff;
+    font-size: 10px;
+    text-align: right;
+    font-family: Raleway;
+    letter-spacing: 1.3px;
+  }
+
+  div.ui.undoLink,
+  a.undoLink {
+    color: #000;
+    font-size: 10px;
+    cursor: pointer;
+    text-align: right;
+    font-family: Raleway;
+    letter-spacing: 1.3px;
+  }
+}

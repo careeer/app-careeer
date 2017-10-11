@@ -88,20 +88,21 @@ input.careerVision {
 div.ui.statistic.statisticFirstComponent {
   margin-bottom: 0;
   margin-left: 0;
-  margin-right: 1em;
+  margin-right: 0;
   padding-left: 14px;
 }
 
 .ui.statistic > .value.statisticValue {
   font-family: Roboto !important;
+  font-size: 60px !important;
   letter-spacing: 1.3px;
   color: #949494;
   padding-left: 14px;
 }
 
 .ui.statistic > .label.statisticLabel {
-  font-size: 10px !important;
   font-family: Roboto !important;
+  font-size: 10px !important;
   letter-spacing: 0.3px;
   color: #949494;
   padding-left: 14px;
@@ -141,8 +142,8 @@ div.ui.statistic.statisticSecondComponent {
 
   div.right.floated.column.statisticColumn {
     padding: 0;
-    margin-left: 0;
-    margin-top: -28px;
+    margin-left: 35px;
+    margin-top: -10px;
   }
 
   /*
@@ -203,7 +204,7 @@ div.ui.statistic.statisticSecondComponent {
   }
 
   .ui.statistic > .value.statisticValue {
-    font-size: 36px;
+    font-size: 40px !important;
     letter-spacing: 0.8px;
     padding-left: 6px;
   }

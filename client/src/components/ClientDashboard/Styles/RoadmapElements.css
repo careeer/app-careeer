@@ -284,12 +284,17 @@ i.completedToggleIcon {
   font-size: 3rem !important;
 }
 
+/***
+*
+* Mobile Styles
+*
+***/
 @media all and (max-width: 668px) {
   /*
     Account Type Flag Styles
   */
   div.accountType {
-    margin-top: 0.5em;
+    margin-top: 0.2em;
     margin-left: 0.5em;
   }
 
@@ -304,5 +309,13 @@ i.completedToggleIcon {
     height: 4px;
     right: -13px;
     border-width: 7.4px 10px;
+  }
+
+  div.ui.grid.roadmapMainGrid {
+    margin: 0 15px;
+  }
+
+  div.column.roadmapMainColumn {
+    padding: 10px 0 !important;
   }
 }
