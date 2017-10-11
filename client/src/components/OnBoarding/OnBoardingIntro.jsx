@@ -28,7 +28,7 @@ export default class OnBoardingIntro extends Component {
       <div className="introOnboarding">
         <PageHeader
           icon={false}
-          counterLabel="1/4"
+          counterLabel="1/5"
           handleClick={this.handleClick}
           headerLinkLabel="Nevermind, don’t build my roadmap"
         />

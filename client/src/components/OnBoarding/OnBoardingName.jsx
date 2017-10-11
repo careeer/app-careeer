@@ -55,7 +55,7 @@ export default class OnBoardingName extends Component {
     return (
       <div className="outroOnboarding">
         <PageHeader
-          counterLabel=""
+          counterLabel="5/5"
           handleClick={this.handleClick}
           headerLinkLabel="Build your roadmap"
         />

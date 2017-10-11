@@ -60,7 +60,7 @@ export default class OnBoardingQuestion extends Component {
     return (
       <div className="onBoarding">
         <PageHeader
-          counterLabel="2/4"
+          counterLabel="2/5"
           handleClick={this.handleClick}
           headerLinkLabel="Skip question"
         />

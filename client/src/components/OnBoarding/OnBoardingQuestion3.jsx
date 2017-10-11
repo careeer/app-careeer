@@ -32,7 +32,7 @@ export default class OnBoardingQuestion extends Component {
     if (!Touch.isTouchDevice()) {
       itemClass="hoverItem";
     }
-    
+
     const Items = [
       { key: 'Engineer', name: 'Engineer', onClick: this.handleItemClick, active: activeItem === 'Engineer', className: itemClass },
       { key: 'Designer', name: 'Designer', onClick: this.handleItemClick, active: activeItem === 'Designer', className: itemClass },
@@ -43,7 +43,7 @@ export default class OnBoardingQuestion extends Component {
     return (
       <div className="onBoarding">
       <PageHeader
-        counterLabel="4/4"
+        counterLabel="4/5"
         handleClick={this.handleClick}
         headerLinkLabel="Skip question"
       />
