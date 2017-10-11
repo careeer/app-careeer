@@ -8,6 +8,14 @@ import SuccessVideo from './SuccessVideo';
 import './Styles/FreeTrialWelcome.css';
 
 export default class FreeTrialWelcome extends Component {
+  componentWillMount() {
+    $crisp.push(['do', 'chat:hide']);
+  }
+
+  componentWillUnmount() {
+    $crisp.push(['do', 'chat:show']);
+  }
+  
   handleClick = () => {
     this.props.history.push('/OnBoarding/Intro');
   };

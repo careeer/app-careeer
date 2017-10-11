@@ -6,7 +6,6 @@ import PageHeader from './Components/PageHeader';
 import './Styles/OnBoarding.css';
 
 export default class OnBoardingIntro extends Component {
-
   componentWillMount() {
     $crisp.push(['do', 'chat:hide']);
   }

@@ -2,6 +2,9 @@ div.ui.center.aligned.middle.grid {
   height: 100%;
 }
 
+/*
+  Careeer Logo
+*/
 div.ui.left.aligned.grid div.column.careeerLogo {
   padding-bottom: 0;
   padding-left: 2em;
@@ -10,12 +13,15 @@ div.ui.left.aligned.grid div.column.careeerLogo {
 h2.ui.header.careeer {
   font-family: 'Lobster', cursive;
   font-size: 65.8px;
+  font-weight: 200;
   letter-spacing: 5.4px;
   text-align: center;
   color: #24c63a;
-  -webkit-font-smoothing: antialiased;
 }
 
+/*
+  Welcome Message
+*/
 div.ui.text.container.welcomeContainer {
   width: auto;
   margin-bottom: 1em;
@@ -28,7 +34,6 @@ h2.ui.header.welcomeHeader {
   text-align: center;
   color: #333;
   margin-bottom: 1.5em;
-  -webkit-font-smoothing: antialiased;
 }
 
 p.welcomeContent {
@@ -38,9 +43,11 @@ p.welcomeContent {
   text-align: center;
   color: #919191;
   margin-bottom: 1em;
-  -webkit-font-smoothing: antialiased;
 }
 
+/*
+  Button Section
+*/
 button.ui.green.button.buildYourRoadmap {
   font-family: Cabin;
   font-size: 18px;
@@ -50,7 +57,6 @@ button.ui.green.button.buildYourRoadmap {
   color: #fff;
   margin: 1.5em 0 1em;
   width: auto;
-  -webkit-font-smoothing: antialiased;
 }
 
 a.learnMoreLink {
@@ -60,9 +66,11 @@ a.learnMoreLink {
   letter-spacing: 1.2px;
   text-align: center;
   color: #24c63a;
-  -webkit-font-smoothing: antialiased;
 }
 
+/*
+  Video
+*/
 div.videoContainer {
   position: relative;
   padding-bottom: 56.25%;
@@ -76,4 +84,60 @@ div.videoContainer {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+@media all and (max-width: 668px) {
+  /*
+    Careeer Logo
+  */
+  div.ui.left.aligned.grid div.column.careeerLogo {
+    padding: 0;
+  }
+
+  h2.ui.header.careeer {
+    object-fit: contain;
+    margin-top: -10px;
+    width: 53px;
+    height: 45px;
+    font-size: 36px;
+    padding: 1rem;
+    letter-spacing: 3px;
+  }
+
+  /*
+    Welcome Message
+  */
+  div.ui.text.container.welcomeContainer {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+  }
+
+  h2.ui.header.welcomeHeader {
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.5em;
+  }
+
+  p.welcomeContent {
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 1.5em;
+    width: 282px;
+  }
+
+  /*
+    Button Section
+  */
+  button.ui.green.button.buildYourRoadmap {
+    width: 260px;
+    font-size: 14px;
+    letter-spacing: 1.8px;
+    margin: 1.5em 0 0.5em;
+  }
+
+  a.learnMoreLink {
+    font-size: 10px;
+    letter-spacing: 0.8px;
+    color: #919191;
+  }
 }
