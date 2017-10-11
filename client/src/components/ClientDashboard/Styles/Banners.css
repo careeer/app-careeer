@@ -46,39 +46,27 @@ a.undoLink {
   /*
     Congratulate Banner Styles
   */
+  div.center.aligned.column.bannerMessageColumn {
+    padding: 2px 0 0 40px !important;
+  }
+
+  div.column.bannerUndoColumn {
+    padding: 3px 0 0 20px !important;
+  }
+
   div.ui.congratulateMessage {
-    top: 0;
-    padding: 0;
-    width: 100%;
-    z-index: 102;
-    position: fixed;
-    background-color: #03ac13;
+    height: 24px;
   }
 
   span.mainMessage {
-    color: #fff;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    font-family: Raleway;
-    letter-spacing: 2.3px;
-  }
-
-  div.ui.secondaryMessage {
-    color: #fff;
     font-size: 10px;
-    text-align: right;
-    font-family: Raleway;
+    font-weight: normal;
     letter-spacing: 1.3px;
   }
 
   div.ui.undoLink,
   a.undoLink {
-    color: #000;
-    font-size: 10px;
-    cursor: pointer;
-    text-align: right;
-    font-family: Raleway;
-    letter-spacing: 1.3px;
+    font-size: 8px;
+    letter-spacing: 1px;
   }
 }

@@ -32,6 +32,7 @@ export default class CongratulateBanner extends PureComponent {
               tablet={10}
               mobile={13}
               textAlign="center"
+              className="bannerMessageColumn"
             >
               <span className="mainMessage">
                 nice work, {this.props.clientName.split(' ', 1)}!
@@ -51,6 +52,7 @@ export default class CongratulateBanner extends PureComponent {
             <Grid.Column
               width={1}
               textAlign="left"
+              className="bannerUndoColumn"
             >
               <Container className="undoLink">
                 <a
