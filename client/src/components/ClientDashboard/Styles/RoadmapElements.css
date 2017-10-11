@@ -1,4 +1,12 @@
 /*
+  Thank You Loading Styles
+*/
+div.ui.active.transition.visible.page.dimmer.thankYouLoader {
+  background-color: #24c63a;
+  opacity: 0.85;
+}
+
+/*
   Account Type Flag Styles
 */
 div.accountType {
@@ -65,35 +73,9 @@ button.ui.button.roadmapButton {
 /*
   Roadmap Element Styles
 */
-.rightColumnStyle {
-  width: auto;
-  padding: 0;
-  border: none;
-  margin-top: 0;
-  margin-right: 0;
-  text-align: right;
-}
-
-.rightIconsColumnStyle {
-  width: auto;
-  padding: 0;
-  border: none;
-  margin-bottom: 2em;
-  margin-right: 0;
-  text-align: right;
-}
-
-.rightDateTypeColumnStyle {
-  width: auto;
-  padding: 0;
-  border: none;
-  margin-top: 0;
-  margin-right: 0;
-  text-align: right;
-}
-
-div.stretched.middle.aligned.row.roadmapFirstRow {
-  padding-top: 0;
+div.stretched.middle.aligned.row.roadmapFirstRow,
+div.stretched.row {
+  padding-top: 0 !important;
 }
 
 div.left.floated.column.roadmapLeftColumn {
@@ -113,74 +95,156 @@ div.ui.label.column.roadmapTitleColumn {
   line-height: 30px;
 }
 
-.secondColumnStyle {
+div.right.floated.column.roadmapRightColumn {
   width: 25%;
   padding: 0;
   text-align: right;
 }
 
-.dueDateStyle {
+div.row.roadmapIconsRow {
+  width: auto;
+  padding: 0;
+  border: none;
+  margin-bottom: 2em;
+  margin-right: 0;
+  text-align: right;
+}
+
+div.ui.label.roadmapIconsLabelColumn {
+  padding: 0;
+  width: auto;
   background-color: transparent;
+}
+
+div.row.roadmapBottomRightRow {
+  vertical-align: bottom;
+}
+
+div.column.roadmapBottomRightColumn {
+  width: auto;
   padding: 0;
   border: none;
   margin-top: 0;
   margin-right: 0;
-  font-family: Raleway;
-  font-size: 14px;
-  letter-spacing: 1.5px;
   text-align: right;
-  color: #333;
-  width: auto;
-  line-height: 25px;
 }
 
-.cardTypeStyle {
+div.ui.label.roadmapDueDate {
   width: auto;
   padding: 0;
+  color: #333;
+  border: none;
+  margin-top: 0;
+  margin-right: 0;
+  font-size: 14px;
+  text-align: right;
+  line-height: 25px;
   font-family: Raleway;
-  font-size: 12px;
   letter-spacing: 1.5px;
+  background-color: transparent;
+}
+
+div.ui.label.roadmapCardType {
+  width: auto;
+  padding: 0;
   border: none;
   margin-right: 0;
+  font-size: 12px;
   margin-top: auto;
   text-align: right;
   line-height: 25px;
+  font-family: Raleway;
+  letter-spacing: 1.5px;
 }
 
-.descriptionStyle {
-  background-color: transparent;
+div.ui.label.roadmapDescription {
+  width: auto;
   padding: 0;
-  font-family: Cabin;
-  font-size: 14px;
-  letter-spacing: 2px;
   color: #919191;
-  width: auto;
+  font-size: 14px;
   line-height: 25px;
-}
-
-.iconStyle {
-  padding: 0;
-  width: auto;
+  font-family: Cabin;
+  letter-spacing: 2px;
   background-color: transparent;
 }
 
-.gridRowStyle {
-  width: auto;
-  padding: 2px 0;
-}
-
-.categoryRowStyle {
-  vertical-align: bottom;
-}
-
-div.column.buttonColumnStyle {
-  width: auto;
+div.column.roadmapButtonColumn {
   padding: 10px 0 5px;
 }
 
 /*
   Roadmap Element Form Styles
 */
+div.fields.firstField {
+  margin-bottom: 0;
+  padding-bottom: 1rem;
+}
+
+div.fields.lastField {
+  margin-bottom: 0;
+}
+
+div.fields.secondField {
+  padding-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.ui.form input.cardTypeInput {
+  font-family: Raleway;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-align: right;
+  border: none;
+  padding: 0;
+}
+
+.ui.form input.dueDateInput {
+  font-family: Raleway;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-align: right;
+  color: #919191;
+  padding: 0;
+  border: none;
+}
+
+.ui.form input.titleInput {
+  font-family: Cabin;
+  font-size: 28px;
+  letter-spacing: 3.5px;
+  color: #919191;
+  padding: 0;
+  border: none;
+}
+
+.ui.form input.descriptionInput {
+  font-family: Cabin;
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: #919191;
+  padding: 0;
+  border: none;
+}
+
+.ui.form input.hyperlinkInput {
+  font-family: Cabin;
+  font-size: 14px;
+  letter-spacing: 1.8px;
+  color: #919191;
+  padding: 0;
+  border: none;
+}
+
+.ui.form input.captionInput {
+  font-family: Cabin;
+  font-size: 18px;
+  letter-spacing: 2.3px;
+  text-align: left;
+  color: #919191;
+  padding: 0;
+  border: none;
+}
+
 button.ui.button.copyRoadmapElementButton {
   height: 100%;
   padding-right: 0;

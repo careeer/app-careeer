@@ -1,4 +1,5 @@
 body > div#root > div > div > div.onBoarding {
+<<<<<<< HEAD
   height: 100%;
   background-color: #24c63a;
 }
@@ -6,6 +7,11 @@ body > div#root > div > div > div.onBoarding {
 div.introOnboarding,
 div.outroOnboarding {
   min-height: 100%;
+||||||| merged common ancestors
+  min-height: 100%;
+=======
+  height: 100%;
+>>>>>>> mobile-styles
   background-color: #24c63a;
 }
 
@@ -16,16 +22,16 @@ div.ui.grid.pageHeader {
 }
 
 div.onBoardingHeader {
-  padding-bottom: 0 !important;
   padding-top: 0 !important;
   padding-right: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 p.pageCounter {
-  font-family: Raleway;
-  font-size: 14px;
-  letter-spacing: 1.8px;
   color: #fff;
+  font-size: 14px;
+  font-family: Raleway;
+  letter-spacing: 1.8px;
 }
 
 a.ui.label.headerLink {
