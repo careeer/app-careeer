@@ -1,0 +1,105 @@
+/*
+  Avatar
+*/
+img.ui.avatar.image {
+  margin-right: 15px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 32px;
+}
+
+button.ui.button.uploadButton {
+  width: 60px;
+  height: 60px;
+  padding: 5px 0 0 13px;
+  line-height: 32px;
+}
+
+div.dropZone {
+  margin-right: 15px;
+  width: 58px;
+  height: 58px;
+  border-width: 1px;
+  border-color: #919191;
+  border-style: none;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 32px;
+}
+
+/*
+  Client Name
+*/
+div.clientNameLabel {
+  font-family: Raleway;
+  font-size: 28px;
+  letter-spacing: 3.5px;
+  color: #333;
+  padding-top: 8px;
+  width: auto;
+}
+
+/*
+  Career Vision
+*/
+div.ui.label.careerVision,
+div.ui.focus.transparent.input.careerVision,
+input.careerVision {
+  font-family: Cabin;
+  font-size: 18px;
+  letter-spacing: 2.3px;
+  color: #919191;
+  background-color: transparent;
+  padding-left: 0;
+  margin-bottom: 0;
+  padding-top: 8px;
+}
+
+@media all and (max-width: 668px) {
+  /*
+    Avatar
+  */
+  img.ui.avatar.image {
+    width: 30px;
+    height: 30px;
+  }
+
+  button.ui.button.uploadButton {
+    width: 30px;
+    height: 30px;
+    padding: 2.5px 0 0 8px;
+    line-height: 30px;
+  }
+
+  div.dropZone {
+    width: 28px;
+    height: 28px;
+    border-width: 1px;
+  }
+
+  /*
+    Client Name
+  */
+  div.clientNameLabel {
+    font-size: 16px;
+    letter-spacing: 2px;
+    padding-top: 0;
+    width: 181px;
+  }
+
+  /*
+    Career Vision
+  */
+  div.ui.label.careerVision,
+  div.ui.focus.transparent.input.careerVision,
+  input.careerVision {
+    font-size: 11px;
+    letter-spacing: 1.4px;
+    padding-left: 0;
+    margin-bottom: 0;
+    padding-top: 8px;
+    width: 181px;
+  }
+}

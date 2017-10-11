@@ -5,18 +5,6 @@ import sha1 from 'sha1';
 import superagent from 'superagent';
 import Dropzone from 'react-dropzone';
 
-const dropStyle = {
-  marginRight: '15px',
-  width: '58px',
-  height: '58px',
-  borderWidth: '1px',
-  borderColor: '#919191',
-  borderStyle: 'none',
-  borderRadius: '50%',
-  textAlign: 'center',
-  lineHeight: '32px',
-};
-
 @inject('headerStore') @observer
 class ImageUpload extends Component {
   handleAvatarUpload = (files) => {
@@ -58,11 +46,11 @@ class ImageUpload extends Component {
   render() {
     return (
       <Dropzone
-        ref={(node) => { this.props.headerStore.dropzoneRef = node; }}
-        style={dropStyle}
-        multiple={false}
         accept="image/*"
+        multiple={false}
+        className="dropZone"
         onDrop={this.handleAvatarUpload}
+        ref={(node) => { this.props.headerStore.dropzoneRef = node; }}
       />
     );
   }

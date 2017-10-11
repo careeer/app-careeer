@@ -3,26 +3,6 @@ import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { Image, Button, Icon } from 'semantic-ui-react';
 
-const avatarStyle = {
-  marginRight: '15px',
-  width: '60px',
-  height: '60px',
-  borderRadius: '50%',
-  textAlign: 'center',
-  lineHeight: '32px',
-  lineWidth: '32px',
-};
-const buttonStyle = {
-  width: '60px',
-  height: '60px',
-  paddingLeft: '13px',
-  paddingRight: '0',
-  paddingBottom: '0',
-  paddingTop: '5px',
-  lineHeight: '32px',
-  lineWidth: '32px',
-};
-
 @inject('headerStore') @observer
 class ImageAvatar extends Component {
   render() {
@@ -34,7 +14,7 @@ class ImageAvatar extends Component {
       return (
         <Button
           circular
-          style={buttonStyle}
+          className="uploadButton"
           onClick={() => { this.props.headerStore.dropzoneRef.open(); }}
         >
           <Icon
@@ -47,9 +27,9 @@ class ImageAvatar extends Component {
     }
     return (
       <Image
-        avatar
         alt=""
-        style={avatarStyle}
+        avatar
+        className="avatar"
         src={avatarUrl}
         onClick={() => { this.props.headerStore.dropzoneRef.open(); }}
       />

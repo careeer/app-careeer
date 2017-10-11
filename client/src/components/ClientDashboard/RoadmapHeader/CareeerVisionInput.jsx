@@ -4,17 +4,6 @@ import PropTypes from 'prop-types';
 import { Label } from 'semantic-ui-react';
 import VisionInput from './VisionInput';
 
-const visionStyle = {
-  fontFamily: 'Cabin',
-  fontSize: '18px',
-  letterSpacing: '2.3px',
-  color: '#919191',
-  backgroundColor: 'transparent',
-  paddingLeft: '0',
-  marginBottom: '0',
-  paddingTop: '8px',
-};
-
 export default class CareeerVisionInput extends React.Component {
   static propTypes = {
     handleKeyPress: PropTypes.func.isRequired,
@@ -38,7 +27,7 @@ export default class CareeerVisionInput extends React.Component {
         </div>
       );
     }
-    let visionLabelStyle = Object.assign({}, visionStyle);
+    let visionLabelStyle = {};
     if (!this.props.vision) {
       visionLabelStyle.color = '#cecbcb';
       visionLabelStyle.paddingTop = '8px';
@@ -51,6 +40,7 @@ export default class CareeerVisionInput extends React.Component {
     return (
       <div>
         <Label
+          className="careerVision"
           style={visionLabelStyle}
           content={this.props.vision || "what career goal are you focused on achieving? ex: interaction designer at airbnb"}
           onClick={this.handleClick}

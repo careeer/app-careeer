@@ -3,18 +3,6 @@ import React from 'react';
 import { Input } from 'semantic-ui-react';
 import onClickOutside from 'react-onclickoutside';
 
-const visionStyle = {
-  fontFamily: 'Cabin',
-  fontSize: '18px',
-  letterSpacing: '2.3px',
-  color: '#919191',
-  backgroundColor: 'transparent',
-  paddingLeft: '0',
-  marginBottom: '0',
-  paddingTop: '8px',
-  width: '100%',
-};
-
 class VisionInput extends React.Component {
   handlePress = (event) => {
     this.props.handleKeyPress(event);
@@ -34,11 +22,10 @@ class VisionInput extends React.Component {
   render() {
     return (
       <Input
-        style={visionStyle}
+        focus
         transparent
         tabIndex={-1}
-        focus
-
+        className="careerVision"
         onKeyDown={this.handlePress}
         value={this.props.vision || ''}
         onChange={this.props.changeVision}
@@ -46,7 +33,7 @@ class VisionInput extends React.Component {
         <input
           autoFocus
           onFocus={this.moveCaretAtEnd}
-          style={visionStyle}
+          className="careerVision"
         />
       </Input>
     );

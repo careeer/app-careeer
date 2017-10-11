@@ -283,3 +283,26 @@ i.completedToggleIcon {
   font-weight: lighter;
   font-size: 3rem !important;
 }
+
+@media all and (max-width: 668px) {
+  /*
+    Account Type Flag Styles
+  */
+  div.accountType {
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+  }
+
+  div.accountType a {
+    font-size: 6px;
+    letter-spacing: 0.5px;
+    padding-bottom: 4px;
+  }
+
+  div.accountType a::before {
+    width: 8px;
+    height: 4px;
+    right: -13px;
+    border-width: 7.4px 10px;
+  }
+}

@@ -8,6 +8,8 @@ import ImageUpload from './ImageUpload';
 import StatisticsLabel from './StatisticsLabel';
 import { overlayStyle, columnStyle, nameVisionColumnStyle, statisticColumnStyle } from '../../Constants/RoadmapHeaderStyles';
 
+import '../Styles/RoadmapHeader.css';
+
 @inject('roadmapElements', 'headerStore')@observer
 class RoadmapHeader extends Component {
   state = {
