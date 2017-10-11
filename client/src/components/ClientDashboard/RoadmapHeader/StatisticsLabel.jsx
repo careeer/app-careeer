@@ -1,7 +1,6 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import { Transition, Statistic } from 'semantic-ui-react';
-import { statisticColumnStyle, statisticFirstStyle, statisticStyle, statisticValueStyle, statisticLabelStyle, statisticMainValueStyle, statisticMainLabelStyle } from '../../Constants/RoadmapHeaderStyles';
 
 class RoadmapHeader extends Component {
 
@@ -10,39 +9,39 @@ class RoadmapHeader extends Component {
     let updatedStatisticsMainLabelStyle;
 
     if (this.props.bannerVisible){
-      updatedStatisticsMainValueStyle= Object.assign({}, statisticMainValueStyle, {
+      updatedStatisticsMainValueStyle= {
         color: '#03ac13',
-      });
-      updatedStatisticsMainLabelStyle= Object.assign({}, statisticMainLabelStyle, {
+      };
+      updatedStatisticsMainLabelStyle= {
         color: '#03ac13',
-      });
+      };
     } else {
-      updatedStatisticsMainValueStyle= Object.assign({}, statisticMainValueStyle, {
+      updatedStatisticsMainValueStyle= {
         color: '#949494',
-      });
-      updatedStatisticsMainLabelStyle= Object.assign({}, statisticMainLabelStyle, {
+      };
+      updatedStatisticsMainLabelStyle= {
         color: '#949494',
-      });
+      };
     }
 
     return (
       <Statistic.Group>
-      <Statistic style={statisticFirstStyle}>
-        <Statistic.Value style={updatedStatisticsMainValueStyle}>
-          {this.props.numberCompleted}
-        </Statistic.Value>
-        <Statistic.Label style={updatedStatisticsMainLabelStyle}>
-          completed actions
-        </Statistic.Label>
-      </Statistic>
-        <Statistic style={statisticStyle} >
-          <Statistic.Value style={statisticValueStyle}>
-            {this.props.currentActions}
+        <Statistic className="statisticFirstComponent">
+          <Statistic.Value className="statisticValue" style={updatedStatisticsMainValueStyle}>
+            {this.props.numberCompleted}
           </Statistic.Value>
-          <Statistic.Label style={statisticLabelStyle}>
-            current actions
+          <Statistic.Label className="statisticLabel" style={updatedStatisticsMainLabelStyle}>
+            completed actions
           </Statistic.Label>
         </Statistic>
+          <Statistic className="statisticSecondComponent">
+            <Statistic.Value className="statisticValue">
+              {this.props.currentActions}
+            </Statistic.Value>
+            <Statistic.Label className="statisticLabel">
+              current actions
+            </Statistic.Label>
+          </Statistic>
       </Statistic.Group>
     );
   }

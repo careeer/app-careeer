@@ -6,7 +6,6 @@ import ImageAvatar from './ImageAvatar';
 import ClientName from './ClientName';
 import ImageUpload from './ImageUpload';
 import StatisticsLabel from './StatisticsLabel';
-import { overlayStyle, columnStyle, nameVisionColumnStyle, statisticColumnStyle } from '../../Constants/RoadmapHeaderStyles';
 
 import '../Styles/RoadmapHeader.css';
 
@@ -45,21 +44,16 @@ class RoadmapHeader extends Component {
 
   render() {
     return (
-      <Grid
-        stackable
-        doubling
-      >
-        <Grid.Column style={columnStyle}>
-          <div style={overlayStyle}>
+      <Grid>
+        <Grid.Column className="roadmapHeaderMainColumn">
+          <div className="overlayImage">
             <ImageAvatar
               avatar={this.props.roadmapElements.currentClientAvatar}
             />
           </div>
           <ImageUpload saveAvatarUrl={this.handleAvatarSave} />
         </Grid.Column>
-        <Grid.Column
-          style={nameVisionColumnStyle}
-        >
+        <Grid.Column className="nameVisionColumn">
           <ClientName
             vision={this.props.roadmapElements.currentClientVision}
             changeVision={this.props.roadmapElements.handleClientVisionChange}
@@ -69,10 +63,9 @@ class RoadmapHeader extends Component {
             openInputForm={this.state.openInputForm}
           />
         </Grid.Column>
-
         <Grid.Column
           floated="right"
-          style={statisticColumnStyle}
+          className="statisticColumn"
         >
           <StatisticsLabel
             numberCompleted={this.props.roadmapElements.completedElements.length}
@@ -81,7 +74,6 @@ class RoadmapHeader extends Component {
             bannerVisible={this.props.roadmapElements.isBannerVisible}
           />
         </Grid.Column>
-
       </Grid>
     );
   }

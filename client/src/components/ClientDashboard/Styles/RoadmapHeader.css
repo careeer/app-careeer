@@ -57,6 +57,66 @@ input.careerVision {
   padding-top: 8px;
 }
 
+/*
+  Header Layout
+*/
+div.column.roadmapHeaderMainColumn {
+  width: 70px !important;
+  padding-left: 2px !important;
+}
+
+div.overlayImage {
+  position: absolute;
+  margin-right: 15px;
+  width: 60px;
+  height: 60px;
+}
+
+div.column.nameVisionColumn {
+  padding-top: 14px !important;
+  padding-left: 0 !important;
+  width: 63% !important;
+}
+
+div.right.floated.column.statisticColumn {
+  width: auto;
+}
+
+/*
+  Statistics
+*/
+div.ui.statistic.statisticFirstComponent {
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 1em;
+  padding-left: 14px;
+}
+
+.ui.statistic > .value.statisticValue {
+  font-family: Roboto !important;
+  letter-spacing: 1.3px;
+  color: #949494;
+  padding-left: 14px;
+}
+
+.ui.statistic > .label.statisticLabel {
+  font-size: 10px !important;
+  font-family: Roboto !important;
+  letter-spacing: 0.3px;
+  color: #949494;
+  padding-left: 14px;
+}
+
+div.ui.statistic.statisticSecondComponent {
+  margin: 0 !important;
+  padding-left: 14px;
+}
+
+/***
+*
+* Mobile Styles
+*
+***/
 @media all and (max-width: 668px) {
   /*
     Avatar
