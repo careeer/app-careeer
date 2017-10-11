@@ -185,7 +185,7 @@ export default class RoadmapElement extends React.Component {
             </Grid.Column>
             <Grid.Column
               floated="right"
-              className="roadmapRightColumn"
+              className="roadmapRightColumnNotMobile"
             >
               <Grid.Row className="roadmapBottomRightRow">
                 <Grid.Column className="roadmapBottomRightColumn">
@@ -196,7 +196,7 @@ export default class RoadmapElement extends React.Component {
                     content={this.props.cardType}
                   />
                 </Grid.Column>
-                <Grid.Column className="roadmapBottomRightColumn">
+                <Grid.Column className="roadmapRightColumn">
                   <Label
                     className="roadmapDueDate"
                     content={this.props.dueDate}
@@ -205,6 +205,46 @@ export default class RoadmapElement extends React.Component {
               </Grid.Row>
             </Grid.Column>
           </Grid.Row>
+        </Grid>
+        <Grid className="mobileOnlyGrid">
+        <Grid.Row
+          stretched
+          verticalAlign="middle"
+          className="roadmapFirstRow"
+        >
+          <Grid.Column
+            floated="left"
+            className="roadmapLeftColumn"
+          >
+            <Grid.Row>
+              <Grid.Column
+                className="roadmapTitleColumn"
+              >
+              <Label
+                basic
+                color={segmentColor}
+                className="roadmapCardType"
+                content={this.props.cardType}
+              />
+              </Grid.Column>
+            </Grid.Row>
+          </Grid.Column>
+          <Grid.Column
+            floated="right"
+            className="roadmapRightColumn"
+          >
+            <Grid.Row>
+                <Grid.Column
+                  className="roadmapIconsLabelColumn"
+                >
+                <Label
+                  className="roadmapDueDate"
+                  content={this.props.dueDate}
+                />
+                </Grid.Column>
+            </Grid.Row>
+          </Grid.Column>
+        </Grid.Row>
         </Grid>
       </Segment>
     );

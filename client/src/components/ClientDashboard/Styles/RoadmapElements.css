@@ -101,6 +101,13 @@ div.right.floated.column.roadmapRightColumn {
   text-align: right;
 }
 
+div.right.floated.column.roadmapRightColumnNotMobile {
+  width: 25%;
+  padding: 0;
+  text-align: right;
+  visibility: visible;
+}
+
 div.row.roadmapIconsRow {
   width: auto;
   padding: 0;
@@ -284,6 +291,13 @@ i.completedToggleIcon {
   font-size: 3rem !important;
 }
 
+div.ui.grid.mobileOnlyGrid {
+  visibility: hidden;
+  height: 0;
+  margin: 0;
+  width: 0;
+}
+
 /***
 *
 * Mobile Styles
@@ -332,7 +346,7 @@ i.completedToggleIcon {
     Roadmap Element Styles
   */
   div.ui.label.column.roadmapTitleColumn {
-    font-size: 15px;
+    font-size: 18px;
     line-height: 20px;
     letter-spacing: 1.9px;
   }
@@ -368,6 +382,21 @@ i.completedToggleIcon {
     margin-bottom: 1em;
   }
 
+  div.ui.grid.mobileOnlyGrid {
+    visibility: visible;
+    height: auto;
+    margin: 0;
+    width: auto;
+  }
+
+  div.right.floated.column.roadmapRightColumnNotMobile {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0 !important;
+    visibility: hidden;
+  }
+
   /*
     Completed Element Section Styles
   */
@@ -394,5 +423,9 @@ i.completedToggleIcon {
 
   i.completedToggleIcon {
     font-size: 2.2rem !important;
+  }
+
+  i.write.big.link.icon {
+    visibility: hidden;
   }
 }

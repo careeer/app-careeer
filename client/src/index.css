@@ -51,4 +51,8 @@ body > div#root > div > div {
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
+
+  .ui.fluid.button.addNewButton {
+    visibility: hidden;
+  }
 }
