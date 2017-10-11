@@ -407,8 +407,8 @@ div.ui.grid.mobileOnlyGrid {
 
   button.ui.completedSection,
   button.ui.completedSection:hover {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
   div.row.completedGridRow {
