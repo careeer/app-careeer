@@ -17,9 +17,7 @@ div.ui.grid.pageHeader {
 
 .ui.grid > div.floated.column.onBoardingHeader {
   width: auto;
-  padding-top: 0;
-  padding-right: 0;
-  padding-bottom: 0;
+  padding: 0;
 }
 
 p.pageCounter {
@@ -318,11 +316,14 @@ div.ui.secondary.vertical.menu {
   p.pageCounter {
     font-size: 10px;
     letter-spacing: 1.3px;
+    padding-left: 2px;
+    vertical-align: text-top;
   }
 
   a.ui.label.headerLink {
     font-size: 7px;
     letter-spacing: 0.9px;
+    vertical-align: text-top;
   }
 
   /*
