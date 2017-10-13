@@ -330,6 +330,10 @@ div.ui.secondary.vertical.menu {
     vertical-align: text-top;
   }
 
+  a.ui.label.headerLink > i.chevron.right.icon {
+    margin: 0;
+  }
+
   /*
     Thank You Page
   */
