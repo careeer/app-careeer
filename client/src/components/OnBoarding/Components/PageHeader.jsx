@@ -5,7 +5,6 @@ import { Grid, Label, Icon } from 'semantic-ui-react';
 const PageHeader = props => (
   <Grid className="pageHeader">
     <Grid.Column
-      width={8}
       floated="left"
       textAlign="left"
       className="onBoardingHeader"
@@ -15,7 +14,6 @@ const PageHeader = props => (
       </p>
     </Grid.Column>
     <Grid.Column
-      width={8}
       floated="right"
       textAlign="right"
       className="onBoardingHeader"

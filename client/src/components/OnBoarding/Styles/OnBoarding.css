@@ -15,10 +15,11 @@ div.ui.grid.pageHeader {
   padding-right: 20px;
 }
 
-div.onBoardingHeader {
-  padding-top: 0 !important;
-  padding-right: 0 !important;
-  padding-bottom: 0 !important;
+.ui.grid > div.floated.column.onBoardingHeader {
+  width: auto;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
 }
 
 p.pageCounter {
