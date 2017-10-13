@@ -16,9 +16,9 @@ const SuccessVideo = () => (
       <div className="videoContainer">
         <iframe
           title="Success Story"
-          src="https://www.youtube.com/embed/JoLk-LWtYMI?rel=0&showinfo=0"
+          src="https://www.youtube.com/embed/JoLk-LWtYMI?rel=0&showinfo=0&playsinline=1"
           frameBorder="0"
-          allowFullScreen={false}
+          allowFullScreen
         />
       </div>
     </Grid.Column>
