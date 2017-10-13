@@ -284,6 +284,7 @@ div.ui.secondary.vertical.menu {
   }
 
   div.ui.secondary.vertical.menu > a.item.noHoverItem,
+  div.ui.secondary.vertical.menu > a.item.noHoverItem:hover,
   div.ui.secondary.vertical.menu > a.active.item.noHoverItem,
   div.ui.secondary.vertical.menu > a.item.hoverItem,
   div.ui.secondary.vertical.menu > a.item.hoverItem:hover,
