@@ -16,11 +16,12 @@ div.overlayImage {
 div.column.nameVisionColumn {
   padding-top: 14px !important;
   padding-left: 0 !important;
-  width: 63% !important;
+  width: 60% !important;
 }
 
 div.right.floated.column.statisticColumn {
   width: auto;
+  padding-left: 0;
 }
 
 /*
@@ -95,7 +96,7 @@ div.ui.statistic.statisticFirstComponent {
   margin-bottom: 0;
   margin-left: 0;
   margin-right: 0;
-  padding-left: 14px;
+  padding-left: 0;
 }
 
 .ui.statistic > .value.statisticValue {
@@ -103,15 +104,16 @@ div.ui.statistic.statisticFirstComponent {
   font-size: 60px !important;
   letter-spacing: 1.3px;
   color: #949494;
-  padding-left: 14px;
+  padding-left: 0;
 }
 
 .ui.statistic > .label.statisticLabel {
   font-family: Roboto !important;
+  text-transform: lowercase;
   font-size: 10px !important;
   letter-spacing: 0.3px;
   color: #949494;
-  padding-left: 14px;
+  padding-left: 0;
 }
 
 div.ui.statistic.statisticSecondComponent {
@@ -222,7 +224,6 @@ div.ui.statistic.statisticSecondComponent {
 
   .ui.statistic > .label.statisticLabel {
     font-size: 5px !important;
-    text-transform: lowercase;
     font-weight: normal;
     letter-spacing: 0.1px;
     margin-top: -5px !important;
