@@ -47,7 +47,6 @@ export default class CareeerVisionInput extends React.Component {
         />
         <Label
           className="careerVisionMobile"
-          style={visionLabelStyle}
           content={this.props.vision || "career goal"}
           onClick={this.handleClick}
         />
