@@ -70,6 +70,7 @@ div.clientNameLabel {
   Career Vision
 */
 div.ui.label.careerVision,
+div.ui.label.careerVisionMobile,
 div.ui.focus.transparent.input.careerVision,
 input.careerVision {
   font-family: Cabin;
@@ -80,6 +81,11 @@ input.careerVision {
   padding-left: 0;
   margin-bottom: 0;
   padding-top: 8px;
+}
+
+div.ui.label.careerVisionMobile {
+  visibility: hidden;
+  display: none;
 }
 
 /*
@@ -141,8 +147,7 @@ div.ui.statistic.statisticSecondComponent {
   }
 
   div.right.floated.column.statisticColumn {
-    padding: 0;
-    margin-left: 35px;
+    padding: 0 20px 0 0;
     margin-top: -8px;
   }
 
@@ -182,13 +187,18 @@ div.ui.statistic.statisticSecondComponent {
   /*
     Career Vision
   */
-  div.ui.label.careerVision,
+  div.ui.label.careerVision {
+    visibility: hidden;
+    display: none;
+  }
+
+  div.ui.label.careerVisionMobile,
   div.ui.focus.transparent.input.careerVision,
-  input.careerVision {
+  div.ui.focus.transparent.input.careerVision > input.careerVision {
+    visibility: visible;
+    display: inline-block;
     font-size: 11px;
     letter-spacing: 1.4px;
-    margin-bottom: 0;
-    padding: 0 !important;
     width: 181px;
   }
 
@@ -205,13 +215,15 @@ div.ui.statistic.statisticSecondComponent {
   }
 
   .ui.statistic > .value.statisticValue {
-    font-size: 35px !important;
+    font-size: 30px !important;
     letter-spacing: 0.8px;
     padding-left: 0;
   }
 
   .ui.statistic > .label.statisticLabel {
     font-size: 5px !important;
+    text-transform: lowercase;
+    font-weight: normal;
     letter-spacing: 0.1px;
     margin-top: -5px !important;
     padding-left: 2px;

@@ -45,6 +45,12 @@ export default class CareeerVisionInput extends React.Component {
           content={this.props.vision || "what career goal are you focused on achieving? ex: interaction designer at airbnb"}
           onClick={this.handleClick}
         />
+        <Label
+          className="careerVisionMobile"
+          style={visionLabelStyle}
+          content={this.props.vision || "career goal"}
+          onClick={this.handleClick}
+        />
       </div>
     );
   }

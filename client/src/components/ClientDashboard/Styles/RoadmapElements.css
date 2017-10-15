@@ -355,7 +355,7 @@ div.ui.grid.mobileOnlyGrid {
     font-size: 10px;
     line-height: 20px;
     letter-spacing: 1.3px;
-    padding-top: 10px;
+    padding-top: 4px;
   }
 
   div.ui.label.roadmapDueDate {
@@ -379,7 +379,7 @@ div.ui.grid.mobileOnlyGrid {
   }
 
   div.row.roadmapIconsRow {
-    margin-bottom: 1em;
+    margin-bottom: 0;
   }
 
   div.ui.grid.mobileOnlyGrid {
@@ -387,6 +387,18 @@ div.ui.grid.mobileOnlyGrid {
     height: auto;
     margin: 0;
     width: auto;
+  }
+
+  .ui.grid > .row > div.left.floated.column.mobileOnlyLeftColumn {
+    width: auto;
+    padding: 0 !important;
+    text-align: left;
+  }
+
+  .ui.grid > .row > div.right.floated.column.mobileOnlyRightColumn {
+    width: auto;
+    padding: 0 !important;
+    text-align: right;
   }
 
   div.right.floated.column.roadmapRightColumnNotMobile {

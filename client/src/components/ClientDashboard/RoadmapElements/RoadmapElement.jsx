@@ -214,7 +214,7 @@ export default class RoadmapElement extends React.Component {
         >
           <Grid.Column
             floated="left"
-            className="roadmapLeftColumn"
+            className="mobileOnlyLeftColumn"
           >
             <Grid.Row>
               <Grid.Column
@@ -231,7 +231,7 @@ export default class RoadmapElement extends React.Component {
           </Grid.Column>
           <Grid.Column
             floated="right"
-            className="roadmapRightColumn"
+            className="mobileOnlyRightColumn"
           >
             <Grid.Row>
                 <Grid.Column
