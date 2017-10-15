@@ -315,14 +315,15 @@ div.ui.grid.mobileOnlyGrid {
   div.accountType a {
     font-size: 6px;
     letter-spacing: 0.5px;
-    padding-bottom: 4px;
+    padding-top: 4px;
+    padding-bottom: 4.70px;
   }
 
   div.accountType a::before {
     width: 8px;
     height: 4px;
     right: -13px;
-    border-width: 7.4px 10px;
+    border-width: 7.9px 11px;
   }
 
   /*
