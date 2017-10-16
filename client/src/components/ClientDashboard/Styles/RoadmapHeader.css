@@ -208,11 +208,16 @@ div.ui.statistic.statisticSecondComponent {
     font-size: 11px;
     letter-spacing: 1.4px;
     width: 181px;
+    margin-top: -5px;
+    padding: 0 !important;
   }
 
   div.ui.label.careerVisionMobile {
     margin-top: -2px;
-    padding: 0;
+  }
+
+  div.careerVisionMobile {
+    margin-top: -5px;
   }
 
   /*

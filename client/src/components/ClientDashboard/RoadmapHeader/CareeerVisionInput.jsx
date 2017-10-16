@@ -18,7 +18,7 @@ export default class CareeerVisionInput extends React.Component {
   render() {
     if (this.props.openInputForm) {
       return (
-        <div>
+        <div className="careerVisionMobile">
         <VisionInput
           vision={this.props.vision || ''}
           changeVision={this.props.changeVision}
@@ -38,7 +38,7 @@ export default class CareeerVisionInput extends React.Component {
       visionLabelStyle.paddingBottom = '5px';
     }
     return (
-      <div>
+      <div className="careerVisionMobile">
         <Label
           className="careerVision"
           style={visionLabelStyle}

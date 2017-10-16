@@ -414,7 +414,7 @@ div.ui.grid.mobileOnlyGrid {
     Completed Element Section Styles
   */
   span.completedMessage {
-    padding-left: 22px;
+    padding-left: 30px;
     font-size: 9px;
     letter-spacing: 1.1px;
   }
