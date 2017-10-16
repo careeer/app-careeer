@@ -325,9 +325,11 @@ class RoadmapElements {
       const clientArray = await json;
       this.clients = clientArray.filter(client => client.client_status !== 'archived');
       if (this.currentClient) {
-        this.setClientSlug(this.clients.filter(client =>
-          client.name === this.currentClient)[0].slug);
-
+        const clientObject = this.clients.filter(client =>
+          client.name === this.currentClient)[0];
+        this.setClientSlug(clientObject.slug);
+        this.calculateAccountStatus(clientObject);
+        
         for (const i in arrayOfDefaults){
           await this.create(arrayOfDefaults[i], false);
         }
