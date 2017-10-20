@@ -12,7 +12,7 @@ class Client < ApplicationRecord
   end
 
   def name_url
-    "#{name.downcase.gsub(/\s/,'')}"
+    "#{name.to_s.downcase.gsub(/\s/,'')}"
   end
 
   private

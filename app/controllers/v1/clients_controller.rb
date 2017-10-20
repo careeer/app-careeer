@@ -30,7 +30,7 @@ class V1::ClientsController < ApplicationController
       render json: @new_client.errors, status: :unprocessable_entity
     end
   end
-  
+
   # PATCH/PUT /clients/1
   # PATCH/PUT /clients/1.json
   def update
