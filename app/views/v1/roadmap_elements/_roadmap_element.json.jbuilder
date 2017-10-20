@@ -1,0 +1,13 @@
+json.call(
+  roadmap_element,
+  :id,
+  :card_type,
+  :title,
+  :description,
+  :call_to_action,
+  :call_to_action_url,
+  :status,
+  :due_date,
+  :dnd_index,
+  :color
+)

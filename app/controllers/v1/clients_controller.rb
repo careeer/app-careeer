@@ -5,13 +5,7 @@ class V1::ClientsController < ApplicationController
   # GET /clients.json
   def index
     @clients = Client.all.order('created_at')
-    render json: @clients, status: :ok
-  end
-
-  # GET /clients/1
-  # GET /clients/1.json
-  def show
-    render json: @client, status: :ok
+    render :index, status: :ok
   end
 
   # POST /clients
@@ -20,17 +14,7 @@ class V1::ClientsController < ApplicationController
     @client = Client.new(client_params)
 
     if @client.save
-      render json: @client, status: :created
-    else
-      render json: @client.errors, status: :unprocessable_entity
-    end
-  end
-
-  # PATCH/PUT /clients/1
-  # PATCH/PUT /clients/1.json
-  def update
-    if @client.update(client_params)
-      head(:ok)
+      render :create, status: :created
     else
       render json: @client.errors, status: :unprocessable_entity
     end
@@ -41,9 +25,19 @@ class V1::ClientsController < ApplicationController
     @new_client.update(name: params[:new_name])
     @new_client.roadmap_elements.update_all(status: nil)
     if  @new_client.save!
-      head(:ok)
+      render :duplicate, status: :ok
     else
       render json: @new_client.errors, status: :unprocessable_entity
+    end
+  end
+  
+  # PATCH/PUT /clients/1
+  # PATCH/PUT /clients/1.json
+  def update
+    if @client.update(client_params)
+      head(:ok)
+    else
+      render json: @client.errors, status: :unprocessable_entity
     end
   end
 
@@ -65,7 +59,7 @@ class V1::ClientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_params
-      params.require(:client).permit(:name, :email, :avatar, :vision, :slug, :client_status, :new_name, :created_at, :updated_at, :account_type)
+      params.require(:client).permit(:name, :email, :avatar, :vision, :slug, :client_status, :new_name, :account_type)
     end
 
 end

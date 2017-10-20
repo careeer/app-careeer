@@ -1,2 +1,11 @@
-json.extract! client, :id, :name, :email, :created_at, :updated_at
-json.url client_url(client, format: :json)
+json.call(
+  client,
+  :id,
+  :name,
+  :created_at,
+  :slug,
+  :avatar,
+  :vision,
+  :client_status,
+  :account_type
+)
