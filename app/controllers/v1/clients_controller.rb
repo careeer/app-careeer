@@ -8,6 +8,12 @@ class V1::ClientsController < ApplicationController
     render :index, status: :ok
   end
 
+  # GET /clients/1
+  # GET /clients/1.json
+  def show
+    render :create, status: :ok
+  end
+
   # POST /clients
   # POST /clients.json
   def create
@@ -15,6 +21,16 @@ class V1::ClientsController < ApplicationController
 
     if @client.save
       render :create, status: :created
+    else
+      render json: @client.errors, status: :unprocessable_entity
+    end
+  end
+
+  # PATCH/PUT /clients/1
+  # PATCH/PUT /clients/1.json
+  def update
+    if @client.update(client_params)
+      render :create, status: :ok
     else
       render json: @client.errors, status: :unprocessable_entity
     end
@@ -28,16 +44,6 @@ class V1::ClientsController < ApplicationController
       render :duplicate, status: :ok
     else
       render json: @new_client.errors, status: :unprocessable_entity
-    end
-  end
-
-  # PATCH/PUT /clients/1
-  # PATCH/PUT /clients/1.json
-  def update
-    if @client.update(client_params)
-      head(:ok)
-    else
-      render json: @client.errors, status: :unprocessable_entity
     end
   end
 
