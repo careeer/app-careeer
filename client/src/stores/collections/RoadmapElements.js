@@ -42,7 +42,7 @@ class RoadmapElements {
 
     if (status === 200) {
       const json = await response.json();
-      this.pendingElements = await json;
+      this.pendingElements = await json.data;
       this.sortElements();
       this.buildCompletedAccordionMessage();
       const fetchAgain = await this.checkIndex();
@@ -278,7 +278,7 @@ class RoadmapElements {
     const status = await response.status;
     if (status === 200) {
       const json = await response.json();
-      const clientArray = await json;
+      const clientArray = await json.data;
       this.clients = clientArray.filter(client => client.client_status !== 'archived');
       this.isClientLoading = false;
       if (this.currentClient) {
@@ -322,14 +322,14 @@ class RoadmapElements {
     const status = await response.status;
     if (status === 200) {
       const json = await response.json();
-      const clientArray = await json;
+      const clientArray = await json.data;
       this.clients = clientArray.filter(client => client.client_status !== 'archived');
       if (this.currentClient) {
         const clientObject = this.clients.filter(client =>
           client.name === this.currentClient)[0];
         this.setClientSlug(clientObject.slug);
         this.calculateAccountStatus(clientObject);
-        
+
         for (const i in arrayOfDefaults){
           await this.create(arrayOfDefaults[i], false);
         }
@@ -357,8 +357,8 @@ class RoadmapElements {
 
     if (status === 200) {
       const json = await response.json();
-      this.currentClientAvatar = json.avatar;
-      this.currentClientVision = json.vision;
+      this.currentClientAvatar = json.data.user.avatar;
+      this.currentClientVision = json.data.user.vision;
     }
   }
 
