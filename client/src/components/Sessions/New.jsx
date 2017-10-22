@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 export default class New extends Component {
   render() {
     return (
-      <form>
+      <form className="signInForm">
         <label>Email</label>
         <input type="email" placeholder="email" />
         <label>Password</label>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-// import ClientRoadmapDashboard from './ClientDashboard/RoadmapElements/ClientRoadmapDashboard';
 import ClientDashboard from './ClientDashboard/ClientDashboard';
 import CoachDashboard from './CoachDashboard/Clients/CoachDashboard';
 import NewClientInput from './CoachDashboard/Clients/NewClientInput';
