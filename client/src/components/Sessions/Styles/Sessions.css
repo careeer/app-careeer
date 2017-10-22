@@ -1,5 +1,36 @@
+div.signInPage {
+  height: 70%
+}
+
 form.signInForm {
   width: 30em;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
+  text-align: center;
+}
+
+form.signInForm > input {
+  width: 100%;
+  display: block;
+  background-color: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-family: Cabin;
+  margin-bottom: 2em;
+  border-bottom: solid 1px #b1b1b1;
+  color: #b1b1b1;
+  font-size: 18px;
+  text-align: left;
+  letter-spacing: 1.5px;
+}
+
+button.ui.button.createAccountButton {
+  width: 100%;
+  border-radius: 24px;
+  background-color: #b1b1b1;
+  font-family: Cabin;
+  font-size: 18px;
+  letter-spacing: 2.3px;
+  text-align: center;
+  color: #fff;
 }
