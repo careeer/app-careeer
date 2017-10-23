@@ -6,13 +6,13 @@ import CareeerLogo from '../LandingPage/CareeerLogo';
 export default class New extends Component {
   render() {
     return (
-      <div className="signInPage">
+      <div className="createAccountPage">
         <CareeerLogo />
         <Grid
           textAlign="center"
           verticalAlign="middle"
         >
-          <form className="signInForm">
+          <form className="createAccountForm">
             <input type="email" placeholder="email" />
             <input type="password" placeholder="password (6 character min)"/>
             <Button
