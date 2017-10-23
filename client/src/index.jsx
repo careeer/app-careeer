@@ -10,10 +10,7 @@ import ScrollToTop from './components/Lib/ScrollToTop';
 import HttpsRedirect from './components/Lib/HttpsRedirect';
 
 render(
-  <Provider
-    roadmapElements={stores.roadmapElements}
-    headerStore={stores.headerStore}
-  >
+  <Provider {...stores}>
     <HttpsRedirect>
       <BrowserRouter>
         <ScrollToTop>

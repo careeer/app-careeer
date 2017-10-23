@@ -1,4 +1,4 @@
 import New from './New';
-import './Styles/Sessions.css';
+import './Styles/Sessions.scss';
 
 export default { New };
