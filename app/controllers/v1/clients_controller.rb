@@ -1,11 +1,13 @@
 class V1::ClientsController < ApplicationController
-  before_action :set_client, only: [:show, :update, :duplicate, :destroy, :roadmap, :build_roadmap_element]
+  before_action :set_client, only: [:show, :update, :duplicate, :destroy]
 
   # GET /clients
   # GET /clients.json
   def index
-    @clients = Client.all.order('created_at')
-    render :index, status: :ok
+    if current_user.admin?
+      @clients = Client.all.order('created_at')
+      render :index, status: :ok
+    end
   end
 
   # GET /clients/1
@@ -13,11 +15,11 @@ class V1::ClientsController < ApplicationController
   def show
     render :create, status: :ok
   end
-  
+
   # POST /clients
   # POST /clients.json
   def create
-    @client = Client.new(client_params)
+    @client = current_user.clients.build(client_params)
 
     if @client.save
       render :create, status: :created
@@ -60,7 +62,10 @@ class V1::ClientsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_client
-      @client = Client.friendly.find(params[:id])
+      if current_user.admin?
+        @client = Client.friendly.find(params[:id])
+      else
+        @client = current_user.clients.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -36,7 +36,10 @@ before_action :set_client
 
   private
     def set_client
-      @client = Client.friendly.find(params[:client_id])
+      if current_user.admin?
+        @client = Client.friendly.find(params[:client_id])
+      else
+        @client = current_user.clients.friendly.find(params[:client_id])
     end
 
     def roadmap_element_params
