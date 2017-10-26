@@ -8,6 +8,7 @@ import MultiBackend from 'react-dnd-multi-backend';
 import withScrolling, { createHorizontalStrength, createVerticalStrength } from 'react-dnd-scrollzone';
 
 import AccountFlag from './AccountFlag';
+import SettingsIcon from './SettingsIcon';
 import HTML5toTouch from '../../Lib/HTML5toTouch';
 import FullScreenLoader from './FullScreenLoader';
 import RoadmapHeader from '../RoadmapHeader/RoadmapHeader';
@@ -16,7 +17,7 @@ import EditableRoadmapElementsList from './EditableRoadmapElementsList';
 import CompletedRoadmapElementsList from './CompletedRoadmapElementsList';
 import ToggleableRoadmapElementForm from './ToggleableRoadmapElementForm';
 
-import '../Styles/RoadmapElements.css';
+import '../Styles/RoadmapElements.scss';
 
 const ScrollZone = withScrolling('div');
 const linearHorizontalStrength = createHorizontalStrength(250);
@@ -174,6 +175,7 @@ export default class ClientRoadmapDashboard extends Component {
                 isToggleableFormVisible={isToggleableFormVisible}
               />
             </ScrollZone>
+            <SettingsIcon />
           </Grid.Column>
         </Grid>
       </div>

@@ -4,6 +4,7 @@ class V1::ClientsController < ApplicationController
   # GET /clients
   # GET /clients.json
   def index
+    byebug
     if current_user.admin?
       @clients = Client.all.order('created_at')
       render :index, status: :ok
@@ -66,6 +67,7 @@ class V1::ClientsController < ApplicationController
         @client = Client.friendly.find(params[:id])
       else
         @client = current_user.clients.friendly.find(params[:id])
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

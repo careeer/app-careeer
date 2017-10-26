@@ -5,8 +5,6 @@ import DateHelper from '../Lib/DateHelper';
 import defaultElements from '../Constants/DefaultRoadmapElements';
 import ClientRoadmapDashboard from './RoadmapElements/ClientRoadmapDashboard';
 
-import './Styles/RoadmapElements.css';
-
 @inject('roadmapElements') @observer
 export default class ClientDashboard extends Component {
   componentWillMount() {

@@ -298,6 +298,24 @@ div.ui.grid.mobileOnlyGrid {
   width: 0;
 }
 
+div.ui.circular.label.settingsIcon {
+  color: white;
+  width: 40px;
+  height: 40px;
+  z-index: 2!important;
+  right: 34px!important;
+  bottom: 105px!important;
+  background-color: #45114b;
+  cursor: pointer!important;
+  position: fixed!important;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  i {
+    width: 30px;
+    font-size: 2.2em;
+    padding-top: 8px;
+  }
+}
+
 /***
 *
 * Mobile Styles
@@ -441,5 +459,17 @@ div.ui.grid.mobileOnlyGrid {
 
   i.write.big.link.icon {
     visibility: hidden;
+  }
+
+  div.ui.circular.label.settingsIcon {
+    width: 33px;
+    height: 33px;
+    right: 22px!important;
+    bottom: 80px!important;
+    i {
+      width: 20px;
+      font-size: 2em;
+      padding-top: 4px;
+    }
   }
 }

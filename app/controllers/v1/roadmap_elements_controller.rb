@@ -40,6 +40,7 @@ before_action :set_client
         @client = Client.friendly.find(params[:client_id])
       else
         @client = current_user.clients.friendly.find(params[:client_id])
+      end
     end
 
     def roadmap_element_params
