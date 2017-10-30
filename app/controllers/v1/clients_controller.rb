@@ -63,7 +63,7 @@ class V1::ClientsController < ApplicationController
       if current_user.admin?
         @client = Client.friendly.find(params[:id])
       else
-        @client = current_user.client
+        @client = current_user.clients.last
       end
     end
 
