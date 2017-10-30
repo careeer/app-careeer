@@ -4,11 +4,8 @@ class V1::ClientsController < ApplicationController
   # GET /clients
   # GET /clients.json
   def index
-    byebug
-    if current_user.admin?
-      @clients = Client.all.order('created_at')
-      render :index, status: :ok
-    end
+    @clients = Client.all.order('created_at')
+    render :index, status: :ok
   end
 
   # GET /clients/1
@@ -66,7 +63,7 @@ class V1::ClientsController < ApplicationController
       if current_user.admin?
         @client = Client.friendly.find(params[:id])
       else
-        @client = current_user.clients.friendly.find(params[:id])
+        @client = current_user.client
       end
     end
 

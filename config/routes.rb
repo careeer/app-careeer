@@ -2,10 +2,11 @@ Rails.application.routes.draw do
 
   devise_for :users
   namespace :v1, defaults: { format: :json } do
-    resources :clients do
+    resource :client do
       resources :roadmap_elements, except: :show
     end
-    resource :sessions, only: [:create, :destroy]
+    resource :sessions, only: [:create, :destroy, :show]
+    resources :users, only: [:create]
   end
 
   get '*path', to: "application#fallback_index_html", constraints: ->(request) do

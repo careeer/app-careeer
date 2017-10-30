@@ -506,6 +506,12 @@ class RoadmapElements {
     return Math.floor(difference_ms/ONE_DAY);
 
   }
+
+  @observable showSettings = false;
+
+  @action toggleSettings = () => {
+    this.showSettings = !this.showSettings;
+  }
 }
 
 export default new RoadmapElements();

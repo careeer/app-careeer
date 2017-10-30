@@ -1,0 +1,43 @@
+div.ui.active.transition.visible.inverted.page.dimmer.settingsDimmer {
+  opacity: 0.95;
+  background-color: #fafafa;
+
+  & > div.content > div.center {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: block;
+      position: absolute;
+  }
+
+  div.ui.right.aligned.grid > div.column.closeButton {
+    top: 10px;
+    position: fixed;
+
+    div.ui.label {
+      background-color: transparent;
+      
+      i.close.icon {
+        opacity: 1;
+        color: black;
+        font-size: 4em;
+      }
+    }
+  }
+
+  button.ui.button {
+    width: 374px;
+    font-size: 18px;
+    margin-top: 15em;
+    font-family: Cabin;
+    border-radius: 18px;
+    letter-spacing: 2.3px;
+    border: solid 1px #24c63a;
+    color: #24c63a !important;
+
+    &:focus, &:hover {
+      background-color: transparent !important;
+    }
+  }
+}

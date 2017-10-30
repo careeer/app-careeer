@@ -9,6 +9,7 @@ import withScrolling, { createHorizontalStrength, createVerticalStrength } from 
 
 import AccountFlag from './AccountFlag';
 import SettingsIcon from './SettingsIcon';
+import Settings from '../SettingsView/Settings';
 import HTML5toTouch from '../../Lib/HTML5toTouch';
 import FullScreenLoader from './FullScreenLoader';
 import RoadmapHeader from '../RoadmapHeader/RoadmapHeader';
@@ -106,7 +107,9 @@ export default class ClientRoadmapDashboard extends Component {
             isCreateFormClose,
             isToggleableFormVisible,
             isCompletedAccordionOpen,
+            showSettings,
             currentClient,
+            toggleSettings,
             freeTrialMessage,
             completedElements,
             incompleteElements,
@@ -122,6 +125,13 @@ export default class ClientRoadmapDashboard extends Component {
           isDefaultLoading={isDefaultLoading}
           clientName={this.props.clientName || ""}
           loadingMessage="Fetching your Roadmap..."
+        />
+        <SettingsIcon
+          toggleSettings={toggleSettings}
+        />
+        <Settings
+          showSettings={showSettings}
+          onCloseClick={toggleSettings}
         />
         <CongratulateBanner
           visible={isBannerVisible}
@@ -175,7 +185,6 @@ export default class ClientRoadmapDashboard extends Component {
                 isToggleableFormVisible={isToggleableFormVisible}
               />
             </ScrollZone>
-            <SettingsIcon />
           </Grid.Column>
         </Grid>
       </div>

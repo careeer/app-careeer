@@ -16,16 +16,11 @@ class V1::SessionsController < ApplicationController
 
   # Sign out
   def destroy
-    if nillify_token && current_user.save
+    current_user&.authentication_token = nil
+    if current_user&.save
       head(:ok)
     else
       head(:unauthorized)
     end
-  end
-
-  private
-
-  def nillify_token
-    current_user&.authentication_token = nil
   end
 end

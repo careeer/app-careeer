@@ -1,7 +1,7 @@
 class Client < ApplicationRecord
+  belongs_to :user
   extend FriendlyId
   friendly_id :name_url, use: :slugged
-  belongs_to :user
   has_many :roadmap_elements, dependent: :destroy
   accepts_nested_attributes_for :roadmap_elements
 

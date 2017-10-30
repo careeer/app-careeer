@@ -1,8 +1,8 @@
-div.signInPage {
+div.createAccountPage {
   height: 70%;
 }
 
-form.signInForm {
+form.createAccountForm {
   width: 30em;
   margin: auto;
 
@@ -73,31 +73,12 @@ form.signInForm {
       }
     }
   }
-
-  label.createAccountLabel {
-    font-family: Cabin;
-    font-size: 12px;
-    letter-spacing: 1.5px;
-    text-align: center;
-    color: #a8a8a8;
-    opacity: 1;
-    margin: 1em 0 0;
-  }
-
-  a {
-    display: block;
-    color: #24c63a;
-    font-size: 18px;
-    text-align: center;
-    font-family: Cabin;
-    letter-spacing: 2.3px;
-  }
 }
 
 
 
 @media all and (max-width: 668px) {
-  form.signInForm {
+  form.createAccountForm {
     width: 22em;
 
     input {

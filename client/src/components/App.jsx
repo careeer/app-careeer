@@ -14,12 +14,12 @@ import OnBoardingQuestion3 from './OnBoarding/OnBoardingQuestion3';
 import OnBoardingName from './OnBoarding/OnBoardingName';
 import OnBoardingThankYou from './OnBoarding/OnBoardingThankYou';
 import DuplicateClientInput from './CoachDashboard/Clients/DuplicateClientInput';
-// import RedirectToCareeer from './Lib/RedirectToCareeer';
+import Users from './Users';
 import Sessions from './Sessions';
 
 const App = () => (
   <Switch>
-    <Route exact path="/" component={Sessions.New} />
+    <Route exact path="/" component={Users.New} />
     <Route exact path="/LongWelcome" component={LongWelcome} />
     <Route exact path="/freetrial" component={FreeTrialWelcome} />
     <Route exact path="/OnBoarding/Intro" component={OnBoardingIntro} />
@@ -27,7 +27,7 @@ const App = () => (
     <Route exact path="/OnBoarding/Question_2" component={OnBoardingQuestion2} />
     <Route exact path="/OnBoarding/Question_3" component={OnBoardingQuestion3} />
     <Route exact path="/OnBoarding/Name" component={OnBoardingName} />
-    <Route exact path="/OnBoarding" component={FreeTrialWelcome} />
+    <Route exact path="/sign_in" component={Sessions.New} />
     <Route path="/roadmap" component={NewClientInput} />
     <Route path="/duplicate/:clientId" component={DuplicateClientInput} />
     <Route path="/clients" component={CoachDashboard} />

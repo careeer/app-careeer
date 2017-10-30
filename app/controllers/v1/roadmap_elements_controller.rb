@@ -39,7 +39,7 @@ before_action :set_client
       if current_user.admin?
         @client = Client.friendly.find(params[:client_id])
       else
-        @client = current_user.clients.friendly.find(params[:client_id])
+        @client = current_user.client
       end
     end
 
