@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { observable } from 'mobx';
 
 class HeaderStore {

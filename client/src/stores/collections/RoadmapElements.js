@@ -3,7 +3,7 @@ import { observable, action } from 'mobx';
 import Api from '../helpers/api';
 
 class RoadmapElements {
-  path = '/v1/clients';
+  path = '/v1/client';
   updatePath = '/update';
   roadmapPath = 'roadmap_elements';
   @observable pendingElements = [];
