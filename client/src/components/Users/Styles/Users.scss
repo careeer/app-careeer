@@ -68,7 +68,7 @@ form.createAccountForm {
         opacity: 0;
       }
 
-      & + label + button.ui.button {
+      & + label + input:valid + label + button.ui.button {
         background-color: #24c63a;
       }
     }
