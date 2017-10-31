@@ -33,11 +33,14 @@ form.createAccountForm {
     display: block;
     font-size: 18px;
     text-align: left;
+    border-radius: 0;
     border-top: none;
     border-left: none;
     border-right: none;
     font-family: Cabin;
     letter-spacing: 1.5px;
+    -webkit-border-radius: 0;
+    -webkit-appearance: none;
     background-color: transparent;
     border-bottom: solid 1px #b1b1b1;
 
