@@ -36,6 +36,7 @@ export default class OnBoardingName extends Component {
           submittedClient: true,
         });
         $crisp.push(["set", 'session:data', [[["ClientName", clientName]]]]);
+        $crisp.push(["set", 'session:data', [[["status", "roadmap started"]]]]);
 
         const firstName = clientName.split(" ", 1)[0];
         this.props.history.push(`/OnBoarding/thankyou/${firstName}`);
