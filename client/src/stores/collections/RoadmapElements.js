@@ -486,7 +486,7 @@ class RoadmapElements {
     const createdDate = new Date(railsDateArray[0],
                                  railsDateArray[1] - 1,
                                  railsDateArray[2]);
-    return (14 - this.days_between(createdDate, today));
+    return (7 - this.days_between(createdDate, today));
   }
 
   days_between(date1, date2) {
