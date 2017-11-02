@@ -20,20 +20,20 @@ import AuthRoute from './Lib/AuthRoute';
 
 const App = () => (
   <Switch>
-    <Route exact path="/login" component={Sessions.New} />
-    <Route exact path="/sign_up" component={Users.New} />
     <Route exact path="/" component={Users.New} />
+    <Route path="/login" component={Sessions.New} />
+    <Route path="/sign_up" component={Users.New} />
 
-    <AuthRoute exact path="/freetrial" component={FreeTrialWelcome} />
-    <AuthRoute exact path="/OnBoarding/Intro" component={OnBoardingIntro} />
-    <AuthRoute exact path="/OnBoarding/Question_1" component={OnBoardingQuestion} />
-    <AuthRoute exact path="/OnBoarding/Question_2" component={OnBoardingQuestion2} />
-    <AuthRoute exact path="/OnBoarding/Question_3" component={OnBoardingQuestion3} />
-    <AuthRoute exact path="/OnBoarding/Name" component={OnBoardingName} />
+    <AuthRoute path="/freetrial" component={FreeTrialWelcome} />
+    <AuthRoute path="/OnBoarding/Intro" component={OnBoardingIntro} />
+    <AuthRoute path="/OnBoarding/Question_1" component={OnBoardingQuestion} />
+    <AuthRoute path="/OnBoarding/Question_2" component={OnBoardingQuestion2} />
+    <AuthRoute path="/OnBoarding/Question_3" component={OnBoardingQuestion3} />
+    <AuthRoute path="/OnBoarding/Name" component={OnBoardingName} />
     <AuthRoute path="/OnBoarding/thankyou/:clientName" component={OnBoardingThankYou} />
+    <AuthRoute path="/clients" component={CoachDashboard} />
     <AuthRoute path="/Client/New" component={NewClientInput} />
     <AuthRoute path="/duplicate/:clientId" component={DuplicateClientInput} />
-    <AuthRoute path="/clients" component={CoachDashboard} />
     <AuthRoute path="/:clientId" component={ClientDashboard} />
   </Switch>
 );
