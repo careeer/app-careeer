@@ -11,5 +11,9 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
   end
 
+  get '*path', to: "application#fallback_index_html", constraints: ->(request) do
+    !request.xhr? && request.format.html?
+  end
+
   post 'update/:id' => 'v1/clients#duplicate', defaults: { format: :json }
 end
