@@ -31,7 +31,7 @@ const App = () => (
     <AuthRoute exact path="/OnBoarding/Question_3" component={OnBoardingQuestion3} />
     <AuthRoute exact path="/OnBoarding/Name" component={OnBoardingName} />
     <AuthRoute path="/OnBoarding/thankyou/:clientName" component={OnBoardingThankYou} />
-    <AuthRoute path="/roadmap" component={NewClientInput} />
+    <AuthRoute path="/Client/New" component={NewClientInput} />
     <AuthRoute path="/duplicate/:clientId" component={DuplicateClientInput} />
     <AuthRoute path="/clients" component={CoachDashboard} />
     <AuthRoute path="/:clientId" component={ClientDashboard} />

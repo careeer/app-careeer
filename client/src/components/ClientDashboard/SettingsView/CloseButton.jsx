@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Label } from 'semantic-ui-react';
+import DoneIcon from '../../Icons/DoneIcon';
 
 const CloseButton = props => (
   <Grid textAlign="right">
     <Grid.Column className="closeButton">
-      <Label
-        icon="close"
-        onClick={props.onCloseClick}
-      />
+      <a role="link" tabIndex={0} onClick={props.onCloseClick}>
+        <DoneIcon />
+      </a>
     </Grid.Column>
   </Grid>
 );

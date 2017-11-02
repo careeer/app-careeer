@@ -6,7 +6,8 @@ module V1
     def show
       if current_user
         @user = current_user
-        render :create, status: :ok
+        @clients = current_user.clients.exists?
+        render :show, status: :ok
       else
         head(:unauthorized)
       end
@@ -17,7 +18,8 @@ module V1
       @user = User.where(email: params[:email]).first
 
       if @user&.valid_password?(params[:password])
-        render :create, status: :created
+        @clients = @user.clients.exists?
+        render :show, status: :created
       else
         head(:unauthorized)
       end

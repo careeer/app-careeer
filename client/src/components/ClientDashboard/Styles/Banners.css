@@ -1,11 +1,12 @@
 /*
   Congratulate Banner Styles
 */
-div.ui.congratulateMessage {
+div.ui.attached.message.slide.down.congratulateMessage {
   top: 0;
   padding: 0;
   width: 100%;
   z-index: 102;
+  margin: 0;
   position: fixed;
   background-color: #03ac13;
 }

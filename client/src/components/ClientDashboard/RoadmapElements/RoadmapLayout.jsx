@@ -25,12 +25,14 @@ const ScrollZone = withScrolling('div');
 @DragDropContext(MultiBackend(HTML5toTouch))
 @inject('roadmapElements') @observer
 export default class RoadmapLayout extends Component {
+
   handleCreateFormSubmit = (roadmapElement) => {
     this.createRoadmapElement(roadmapElement);
-  }
+  };
+
   handleCopyForm = (roadmapElement) => {
     this.copyRoadmapElement(roadmapElement);
-  }
+  };
 
   handleEditFormSubmit = (attrs) => {
     this.updateRoadmapElement(attrs);

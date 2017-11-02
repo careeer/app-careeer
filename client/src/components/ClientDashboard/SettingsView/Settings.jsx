@@ -13,9 +13,12 @@ class Settings extends Component {
   handleClick = (e) => {
     e.preventDefault();
     const { user, history } = this.props;
-
+    const email = user.email;
     user.destroySession();
-    history.push('/login');
+    history.push({
+      pathname: '/login',
+      state: { logoutEmail: email }
+    });
   }
 
   render() {

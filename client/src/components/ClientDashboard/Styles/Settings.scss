@@ -15,14 +15,10 @@ div.ui.active.transition.visible.inverted.page.dimmer.settingsDimmer {
     top: 10px;
     position: fixed;
 
-    div.ui.label {
-      background-color: transparent;
-
-      i.close.icon {
-        opacity: 1;
-        color: black;
-        font-size: 4em;
-      }
+    img.doneIcon{
+      width: 49px;
+      height: 50px;
+      cursor: pointer;
     }
   }
 
@@ -48,8 +44,10 @@ div.ui.active.transition.visible.inverted.page.dimmer.settingsDimmer {
       top: 0;
       padding-top: 0;
 
-      div.ui.label > i.close.icon {
-        font-size: 3em;
+      img.doneIcon{
+        margin-top: 1em;
+        width: 25px;
+        height: 27px;
       }
     }
 

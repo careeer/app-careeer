@@ -9,6 +9,7 @@ class User {
   @observable signedIn = false;
   @observable email = null;
   @observable isAdmin = false;
+  @observable hasClients = false;
 
   @action setIsLoading(status) {
     this.isLoading = status;
@@ -71,13 +72,11 @@ class User {
     if (status === 200) {
       const body = await response.json();
       const { user } = body.data;
-
       this.setSignedIn(true, user.email);
       this.setIsLoading(false);
 
-      if (user.admin) {
-        this.isAdmin = true;
-      }
+      this.hasClients = user.hasClients;
+      this.isAdmin = user.admin;
 
       if (callBack) {
         callBack();
@@ -99,16 +98,14 @@ class User {
     if (status === 201) {
       const body = await response.json();
       const { user } = body.data;
-
       localStorage.setItem('token', user.authentication_token);
       localStorage.setItem('email', user.email);
 
       this.setIsLoading(false);
       this.setSignedIn(true, user.email);
 
-      if (user.admin) {
-        this.isAdmin = true;
-      }
+      this.hasClients = user.hasClients;
+      this.isAdmin = user.admin;
 
       if (callBack) {
         callBack();

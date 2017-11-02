@@ -26,11 +26,20 @@ export default class New extends Component {
     if (user.isAdmin) {
       history.push('/clients');
     } else {
-      history.push('/redirect');
+      if (user.hasClients){
+        history.push('/Roadmap');
+      } else {
+        history.push('/freetrial');
+      }
     }
   }
 
   render() {
+    let email;
+    if (this.props.location.state){
+      email = this.props.location.state.logoutEmail;
+    }
+
     return (
       <div className="signInPage">
         <CareeerLogo />
@@ -42,8 +51,9 @@ export default class New extends Component {
           <input
             required
             type="text"
-            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
             placeholder="email"
+            defaultValue={email}
+            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
             ref={(node) => { this.email = node; }}
           />
             <label>invalid email address</label>
