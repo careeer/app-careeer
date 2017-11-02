@@ -325,7 +325,7 @@ class RoadmapElements {
       this.currentClient = clientObject.name;
       this.currentClientAvatar = clientObject.avatar;
       this.currentClientVision = clientObject.vision;
-      
+
       this.calculateAccountStatus(clientObject.account_type, clientObject.created_at);
 
       // create default roadmap elements
@@ -522,7 +522,7 @@ class RoadmapElements {
     const createdDate = new Date(railsDateArray[0],
                                  railsDateArray[1] - 1,
                                  railsDateArray[2]);
-    return (14 - this.days_between(createdDate, today));
+    return (7 - this.days_between(createdDate, today));
   }
 
   days_between(date1, date2) {
