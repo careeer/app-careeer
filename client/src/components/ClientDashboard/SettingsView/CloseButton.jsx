@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Grid, Label } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
 import DoneIcon from '../../Icons/DoneIcon';
 
 const CloseButton = props => (
