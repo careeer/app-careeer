@@ -15,8 +15,9 @@ export default class New extends Component {
         this.email.value,
         this.password.value,
         this.password.value,
-        history,
+        () => {history.push('/freetrial');}
       );
+
     }
   }
 

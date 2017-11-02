@@ -8,6 +8,7 @@ class User {
   @observable isLoading = false;
   @observable signedIn = false;
   @observable email = null;
+  @observable isAdmin = false;
 
   @action setIsLoading(status) {
     this.isLoading = status;
@@ -20,7 +21,7 @@ class User {
     }
   }
 
-  async create(email, password, password_confirmation, history) {
+  async create(email, password, password_confirmation, callBack) {
     this.setIsLoading(true);
 
     const response = await Api.post(
@@ -39,49 +40,60 @@ class User {
 
       this.setIsLoading(false);
       this.setSignedIn(true, user.email);
-
-      history.push('/freetrial');
+      if (callBack) {
+        callBack();
+      }
     } else {
-      // console.log("unauthorized");
+
     }
   }
 
-  signIn(email = null, password = null, history) {
+  signIn(email = null, password = null, callBack) {
+    this.setIsLoading(true);
     const store = {
       authentication_token: localStorage.getItem('token'),
       email: localStorage.getItem('email'),
     };
 
     if (store.email && store.authentication_token) {
-      this.signInFromStorage(store.email, history);
+      this.signInFromStorage(store.email, callBack);
     } else if (email && password) {
-      this.createSession(email, password, history);
+      this.createSession(email, password, callBack);
     } else {
-      this.signOut(history);
+      this.signOut(callBack);
     }
   }
 
-  @action async signInFromStorage(email, history) {
+  @action async signInFromStorage(email, callBack) {
     const response = await Api.get(this.sessions);
     const status = await response.status;
 
     if (status === 200) {
-      this.email = email;
-      this.signedIn = true;
-      this.isLoading = false;
+      const body = await response.json();
+      const { user } = body.data;
+
+      this.setSignedIn(true, user.email);
+      this.setIsLoading(false);
+
+      if (user.admin) {
+        this.isAdmin = true;
+      }
+
+      if (callBack) {
+        callBack();
+      }
     } else {
-      this.signOut(history);
+      this.signOut(callBack);
     }
   }
 
-  async createSession(email, password, history) {
+  async createSession(email, password, callBack) {
     this.setIsLoading(true);
 
     const response = await Api.post(
       this.sessions,
       { email, password },
     );
-
     const status = await response.status;
 
     if (status === 201) {
@@ -94,12 +106,18 @@ class User {
       this.setIsLoading(false);
       this.setSignedIn(true, user.email);
 
-      history.push('/freetrial');
+      if (user.admin) {
+        this.isAdmin = true;
+      }
+
+      if (callBack) {
+        callBack();
+      }
     } else {
-      // console.log("unauthorized");
+      this.signOut(callBack);
     }
   }
-  async destroySession(history) {
+  async destroySession(callBack) {
     this.setIsLoading(true);
 
     const response = await Api.delete(this.sessions);
@@ -107,18 +125,20 @@ class User {
 
     if (status === 200) {
       this.setIsLoading(false);
-      this.signOut(history);
+      this.signOut(callBack);
     }
   }
 
-  @action signOut(history) {
+  @action signOut(callBack) {
     localStorage.removeItem('email');
     localStorage.removeItem('token');
-
+    if (callBack) {
+      callBack();
+    }
     this.email = null;
     this.signedIn = false;
     this.isLoading = false;
-    history.push('/sign_in');
+
   }
 }
 

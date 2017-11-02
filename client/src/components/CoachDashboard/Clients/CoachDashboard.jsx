@@ -21,7 +21,7 @@ export default class CoachDashboard extends Component {
   };
 
   handleExistingClientClick = (event, data) => {
-    this.props.roadmapElements.setUpClientObject({ name: data.name, slug: data.value });
+    // this.props.roadmapElements.setUpClientObject({ name: data.name, slug: data.value });
     this.props.history.push(`/${data.value}`);
   };
 

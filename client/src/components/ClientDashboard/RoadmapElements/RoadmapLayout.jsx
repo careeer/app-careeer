@@ -1,5 +1,6 @@
 /* eslint-disable */
 import React, { Component } from 'react';
+import { inject, observer } from 'mobx-react';
 import { Grid, Dimmer, Loader, Sidebar, Label } from 'semantic-ui-react';
 
 import { DragDropContext } from 'react-dnd';
@@ -22,6 +23,7 @@ import '../Styles/RoadmapElements.scss';
 const ScrollZone = withScrolling('div');
 
 @DragDropContext(MultiBackend(HTML5toTouch))
+@inject('roadmapElements') @observer
 export default class RoadmapLayout extends Component {
   handleCreateFormSubmit = (roadmapElement) => {
     this.createRoadmapElement(roadmapElement);

@@ -27,12 +27,14 @@ class RoadmapElements {
     this.currentClientSlug = '';
     this.currentClientAvatar = '';
     this.currentClientVision = '';
+
     this.freeTrialMessage = '';
     this.isNameInputDisabled = false;
     this.isCreateFormClose = true;
     this.isToggleableFormVisible = true;
     this.isBannerVisible = false;
     this.isCompletedAccordionOpen = false;
+    this.showSettings = false;
   }
 
   @action async fetchAll() {
@@ -285,14 +287,14 @@ class RoadmapElements {
         const clientObject = this.clients.filter(client =>
           client.name === this.currentClient)[0];
         this.setClientSlug(clientObject.slug);
-        this.calculateAccountStatus(clientObject);
+        this.calculateAccountStatus(clientObject.account_type, clientObject.created_at);
         this.hasClientName = true;
       }
       if (this.currentClientSlug) {
         const clientObject = this.clients.filter(client =>
           client.slug === this.currentClientSlug)[0];
         this.setClientName(clientObject.name);
-        this.calculateAccountStatus(clientObject);
+        this.calculateAccountStatus(clientObject.account_type, clientObject.created_at);
         this.hasClientName = true;
       }
     }
@@ -313,32 +315,48 @@ class RoadmapElements {
     const status = await response.status;
 
     if (status === 201) {
-      this.getClientsWithDefaults(arrayOfDefaults);
-    }
-  }
-
-  @action async getClientsWithDefaults(arrayOfDefaults) {
-    const response = await Api.get(this.path);
-    const status = await response.status;
-    if (status === 200) {
+      // get the client object
       const json = await response.json();
-      const clientArray = await json.data;
-      this.clients = clientArray.filter(client => client.client_status !== 'archived');
-      if (this.currentClient) {
-        const clientObject = this.clients.filter(client =>
-          client.name === this.currentClient)[0];
-        this.setClientSlug(clientObject.slug);
-        this.calculateAccountStatus(clientObject);
+      const clientObject = await json.data.user;
 
-        for (const i in arrayOfDefaults){
-          await this.create(arrayOfDefaults[i], false);
-        }
-        await this.fetchAll();
-        this.hasClientName = true;
-        this.isDefaultLoading = false;
+      // set up slug and calculate free trial days left
+      this.setClientSlug(clientObject.slug);
+      // Set up client info
+      this.currentClient = clientObject.name;
+      this.currentClientAvatar = clientObject.avatar;
+      this.currentClientVision = clientObject.vision;
+      
+      this.calculateAccountStatus(clientObject.account_type, clientObject.created_at);
+
+      // create default roadmap elements
+      for (const i in arrayOfDefaults){
+        await this.create(arrayOfDefaults[i], false);
       }
+      await this.fetchAll();
+
+      // finish up
+      this.hasClientName = true;
+      this.isDefaultLoading = false;
     }
   }
+
+  // @action async getClientsWithDefaults(arrayOfDefaults) {
+  //   const response = await Api.get(this.path);
+  //   const status = await response.status;
+  //   if (status === 200) {
+  //     const json = await response.json();
+  //     const clientArray = await json.data;
+  //     this.clients = clientArray.filter(client => client.client_status !== 'archived');
+  //     if (this.currentClient) {
+  //       const clientObject = this.clients.filter(client =>
+  //         client.name === this.currentClient)[0];
+  //       this.setClientSlug(clientObject.slug);
+  //       this.calculateAccountStatus(clientObject.account_type, clientObject.created_at);
+  //
+  //
+  //     }
+  //   }
+  // }
 
   @action async copyClient(copiedFrom, newName) {
     const clientObject = this.getClientObjectFromId(copiedFrom);
@@ -351,14 +369,32 @@ class RoadmapElements {
     }
   }
 
-  @action async getClient() {
-    const response = await Api.get(`${this.path}/${this.currentClientSlug}`);
+  @action async getClient(slug = null, callBack) {
+    let slugValue;
+
+    if (slug) {
+      slugValue = slug;
+    } else {
+      slugValue = this.currentClientSlug;
+    }
+
+    const response = await Api.get(`${this.path}/${slugValue}`);
     const status = await response.status;
 
     if (status === 200) {
       const json = await response.json();
-      this.currentClientAvatar = json.data.user.avatar;
-      this.currentClientVision = json.data.user.vision;
+      const client = json.data.user;
+      // Set up client info
+      this.currentClient = client.name;
+      this.currentClientSlug = client.slug;
+      this.currentClientAvatar = client.avatar;
+      this.currentClientVision = client.vision;
+      // Free trial status
+      this.calculateAccountStatus(client.account_type, client.created_at);
+      if (callBack) {
+        callBack();
+      }
+      this.hasClientName = true;
     }
   }
 
@@ -466,9 +502,9 @@ class RoadmapElements {
   // Account status
   @observable freeTrialMessage = "";
 
-  @action calculateAccountStatus = (clientObject) => {
-    if (clientObject.account_type === "free trial") {
-      const trialDaysLeft = this.getTrialsDaysLeft(clientObject);
+  @action calculateAccountStatus = (account_type, created_at) => {
+    if (account_type === "free trial") {
+      const trialDaysLeft = this.getTrialsDaysLeft(created_at);
       if (trialDaysLeft >= 0) {
         if (trialDaysLeft < 2) {
           this.freeTrialMessage = `${trialDaysLeft} trial day remaining`;
@@ -479,9 +515,9 @@ class RoadmapElements {
     }
   }
 
-  getTrialsDaysLeft(clientObject) {
+  getTrialsDaysLeft(created_at) {
     const today = new Date();
-    const railsCreatedDate = clientObject.created_at.split("T", 1)[0];
+    const railsCreatedDate = created_at.split("T", 1)[0];
     const railsDateArray = railsCreatedDate.split("-");
     const createdDate = new Date(railsDateArray[0],
                                  railsDateArray[1] - 1,

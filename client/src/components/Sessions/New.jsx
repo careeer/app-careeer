@@ -15,8 +15,18 @@ export default class New extends Component {
       user.signIn(
         this.email.value,
         this.password.value,
-        history,
+        () => {this.redirectPerRole();}
       );
+    }
+  }
+
+  redirectPerRole = () => {
+    const { user, history } = this.props;
+
+    if (user.isAdmin) {
+      history.push('/clients');
+    } else {
+      history.push('/redirect');
     }
   }
 
@@ -50,7 +60,7 @@ export default class New extends Component {
               onClick={this.handleClick}
             />
             <label className="createAccountLabel">New to Careeer.me?</label>
-            <Link to='/'>Create account</Link>
+            <Link to='/sign_up'>Create account</Link>
           </form>
         </Grid>
       </div>

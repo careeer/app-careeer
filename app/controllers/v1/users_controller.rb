@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module V1
+  # User endpoints
   class UsersController < ApplicationController
     def create
       @user = User.new(user_params)

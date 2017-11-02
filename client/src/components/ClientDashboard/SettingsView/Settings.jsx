@@ -1,6 +1,7 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
+import { withRouter } from 'react-router-dom';
 import { Grid, Button, Dimmer } from 'semantic-ui-react';
 import CareeerLogo from '../../LandingPage/CareeerLogo';
 import CloseButton from './CloseButton';
@@ -8,13 +9,13 @@ import CloseButton from './CloseButton';
 import '../Styles/Settings.scss';
 
 @inject('user') @observer
-export default class Settings extends Component {
+class Settings extends Component {
   handleClick = (e) => {
     e.preventDefault();
-
     const { user, history } = this.props;
 
-    user.destroySession(history);
+    user.destroySession();
+    history.push('/login');
   }
 
   render() {
@@ -42,3 +43,5 @@ export default class Settings extends Component {
     );
   }
 }
+
+export default withRouter(Settings);

@@ -17,7 +17,7 @@ div.ui.active.transition.visible.inverted.page.dimmer.settingsDimmer {
 
     div.ui.label {
       background-color: transparent;
-      
+
       i.close.icon {
         opacity: 1;
         color: black;
@@ -38,6 +38,26 @@ div.ui.active.transition.visible.inverted.page.dimmer.settingsDimmer {
 
     &:focus, &:hover {
       background-color: transparent !important;
+    }
+  }
+}
+
+@media all and (max-width: 668px) {
+  div.ui.active.transition.visible.inverted.page.dimmer.settingsDimmer {
+    div.ui.right.aligned.grid > div.column.closeButton {
+      top: 0;
+      padding-top: 0;
+
+      div.ui.label > i.close.icon {
+        font-size: 3em;
+      }
+    }
+
+    button.ui.basic.button {
+      width: 240px;
+      font-size: 14px;
+      margin-top: 20em;
+      letter-spacing: 1.8px;
     }
   }
 }
