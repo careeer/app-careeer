@@ -298,22 +298,17 @@ div.ui.grid.mobileOnlyGrid {
   width: 0;
 }
 
-div.ui.circular.label.settingsIcon {
-  color: white;
-  width: 40px;
-  height: 40px;
+ // Settings Icon
+img.settingsIcon {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
   z-index: 2!important;
-  right: 31px!important;
+  right: 26px!important;
   bottom: 105px!important;
-  background-color: #45114b;
   cursor: pointer!important;
   position: fixed!important;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-  i {
-    width: 30px;
-    font-size: 2.2em;
-    padding-top: 8px;
-  }
 }
 
 /***
@@ -461,15 +456,11 @@ div.ui.circular.label.settingsIcon {
     visibility: hidden;
   }
 
-  div.ui.circular.label.settingsIcon {
-    width: 35px;
-    height: 35px;
-    right: 18px!important;
-    bottom: 80px!important;
-    i {
-      width: 25px;
-      font-size: 1.8em;
-      padding-top: 6px;
-    }
+  // Settings Icon
+  img.settingsIcon {
+    width: 33px;
+    height: 33px;
+    right: 20px!important;
+    bottom: 76px!important;
   }
 }

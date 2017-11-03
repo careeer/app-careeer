@@ -8,7 +8,7 @@ import MultiBackend from 'react-dnd-multi-backend';
 import withScrolling from 'react-dnd-scrollzone';
 
 import AccountFlag from './AccountFlag';
-import SettingsIcon from './SettingsIcon';
+import SettingsButton from './SettingsButton';
 import Settings from '../SettingsView/Settings';
 import HTML5toTouch from '../../Lib/HTML5toTouch';
 import FullScreenLoader from './FullScreenLoader';
@@ -112,7 +112,7 @@ export default class RoadmapLayout extends Component {
           clientName={this.props.clientName || ""}
           loadingMessage="Fetching your Roadmap..."
         />
-        <SettingsIcon
+        <SettingsButton
           toggleSettings={toggleSettings}
         />
         <Settings
