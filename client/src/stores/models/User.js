@@ -10,6 +10,8 @@ class User {
   @observable email = null;
   @observable isAdmin = false;
   @observable hasClients = false;
+  @observable incorrectPassword = false;
+  @observable incorrectEmail = false;
 
   @action setIsLoading(status) {
     this.isLoading = status;
@@ -56,10 +58,10 @@ class User {
       email: localStorage.getItem('email'),
     };
 
-    if (store.email && store.authentication_token) {
-      this.signInFromStorage(store.email, callBack);
-    } else if (email && password) {
+    if (email && password) {
       this.createSession(email, password, callBack);
+    } else if (store.email && store.authentication_token) {
+      this.signInFromStorage(store.email, callBack);
     } else {
       this.signOut(callBack);
     }
@@ -96,6 +98,9 @@ class User {
     const status = await response.status;
 
     if (status === 201) {
+      this.incorrectEmail = false;
+      this.incorrectPassword = false;
+
       const body = await response.json();
       const { user } = body.data;
       localStorage.setItem('token', user.authentication_token);
@@ -111,9 +116,17 @@ class User {
         callBack();
       }
     } else {
+      // check credential errors
+      if (status === 400) {
+        this.incorrectEmail = true;
+      } else if (status === 401) {
+        this.incorrectPassword = true;
+      }
+      // clear session
       this.signOut(callBack);
     }
   }
+
   async destroySession(callBack) {
     this.setIsLoading(true);
 

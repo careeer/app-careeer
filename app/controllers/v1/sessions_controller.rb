@@ -17,11 +17,15 @@ module V1
     def create
       @user = User.where(email: params[:email]).first
 
-      if @user&.valid_password?(params[:password])
-        @clients = @user.clients.exists?
-        render :show, status: :created
+      if @user
+        if @user.valid_password?(params[:password])
+          @clients = @user.clients.exists?
+          render :show, status: :created
+        else
+          head(:unauthorized)
+        end
       else
-        head(:unauthorized)
+        head(:bad_request)
       end
     end
 

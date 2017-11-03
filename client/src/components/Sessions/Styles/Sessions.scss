@@ -59,6 +59,10 @@ form.signInForm {
         opacity: 1;
       }
 
+      & + label.apiMessage {
+        opacity: 1;
+      }
+
       & + label + button.ui.button {
         background-color: #b1b1b1;
       }
@@ -69,6 +73,10 @@ form.signInForm {
 
       & + label {
         opacity: 0;
+      }
+
+      & + label.apiMessage {
+        opacity: 1;
       }
 
       & + label + button.ui.button {

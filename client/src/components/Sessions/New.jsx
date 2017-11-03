@@ -40,6 +40,8 @@ export default class New extends Component {
       email = this.props.location.state.logoutEmail;
     }
 
+    const { user } = this.props;
+
     return (
       <div className="signInPage">
         <CareeerLogo />
@@ -48,15 +50,20 @@ export default class New extends Component {
           verticalAlign="middle"
         >
           <form className="signInForm">
-          <input
-            required
-            type="text"
-            placeholder="email"
-            defaultValue={email}
-            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
-            ref={(node) => { this.email = node; }}
-          />
-            <label>invalid email address</label>
+            <input
+              required
+              type="text"
+              placeholder="email"
+              defaultValue={email}
+              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+              ref={(node) => { this.email = node; }}
+            />
+            {!user.incorrectEmail &&
+              <label>invalid email address</label>
+            }
+            {user.incorrectEmail &&
+              <label className="apiMessage">invalid email address</label>
+            }
             <input
               required
               type="password"
@@ -64,7 +71,13 @@ export default class New extends Component {
               placeholder="password (6 character min)"
               ref={(node) => { this.password = node; }}
             />
-            <label>too few characters [min 6]</label>
+            {!user.incorrectPassword &&
+              <label>too few characters [min 6]</label>
+            }
+            {user.incorrectPassword &&
+              <label className="apiMessage">invalid password</label>
+            }
+
             <Button
               content="Sign In"
               onClick={this.handleClick}
