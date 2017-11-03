@@ -85,13 +85,13 @@ form.createAccountForm {
         opacity: 0;
       }
 
-      & + label.apiMessage {
-        opacity: 1;
-      }
-
       & + label + input:valid + label + button.ui.button {
         background-color: #24c63a;
       }
+    }
+
+    & + label.apiMessage {
+      opacity: 1 !important;
     }
   }
 }

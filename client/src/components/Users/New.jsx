@@ -22,6 +22,10 @@ export default class New extends Component {
     }
   }
 
+  clearErrorMessages = () => {
+    this.props.user.clearAccountErrorMessages();
+  }
+
   render() {
     const { user } = this.props;
 
@@ -37,9 +41,10 @@ export default class New extends Component {
             <input
               required
               type="text"
-              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
               placeholder="email"
+              onChange={this.clearErrorMessages}
               ref={(node) => { this.email = node; }}
+              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
             />
             {!user.existingEmail &&
               <label>invalid email address</label>
@@ -51,6 +56,7 @@ export default class New extends Component {
               required
               type="password"
               pattern=".{6,}"
+              onChange={this.clearErrorMessages}
               placeholder="password (6 character min)"
               ref={(node) => { this.password = node; }}
             />

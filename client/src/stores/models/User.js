@@ -25,6 +25,15 @@ class User {
     }
   }
 
+  @action clearSessionMessages () {
+    this.incorrectEmail = false;
+    this.incorrectPassword = false;
+  }
+
+  @action clearAccountErrorMessages () {
+    this.existingEmail = false;
+  }
+
   async create(email, password, password_confirmation, callBack) {
     this.existingEmail = false;
     this.setIsLoading(true);
@@ -127,7 +136,7 @@ class User {
         this.incorrectPassword = true;
       }
       // clear session
-      this.signOut(callBack);
+      this.signOut();
     }
   }
 
@@ -152,7 +161,6 @@ class User {
     this.email = null;
     this.signedIn = false;
     this.isLoading = false;
-
   }
 }
 

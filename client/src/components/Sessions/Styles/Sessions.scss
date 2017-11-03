@@ -52,14 +52,14 @@ form.signInForm {
       outline: none;
     }
 
+    & + label.apiMessage {
+      opacity: 1 !important;
+    }
+
     &:invalid:not(:placeholder-shown) {
       border-bottom: solid 1px #ff856e;
 
       & + label {
-        opacity: 1;
-      }
-
-      & + label.apiMessage {
         opacity: 1;
       }
 
@@ -73,10 +73,6 @@ form.signInForm {
 
       & + label {
         opacity: 0;
-      }
-
-      & + label.apiMessage {
-        opacity: 1;
       }
 
       & + label + button.ui.button {

@@ -34,6 +34,10 @@ export default class New extends Component {
     }
   }
 
+  clearErrorMessages = () => {
+    this.props.user.clearSessionMessages();
+  }
+
   render() {
     let email;
     if (this.props.location.state){
@@ -55,6 +59,7 @@ export default class New extends Component {
               type="text"
               placeholder="email"
               defaultValue={email}
+              onChange={this.clearErrorMessages}
               pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
               ref={(node) => { this.email = node; }}
             />
@@ -68,6 +73,7 @@ export default class New extends Component {
               required
               type="password"
               pattern=".{6,}"
+              onChange={this.clearErrorMessages}
               placeholder="password (6 character min)"
               ref={(node) => { this.password = node; }}
             />
