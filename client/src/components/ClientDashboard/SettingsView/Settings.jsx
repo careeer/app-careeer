@@ -16,7 +16,7 @@ class Settings extends Component {
     const email = user.email;
     user.destroySession();
     history.push({
-      pathname: '/login',
+      pathname: '/signIn',
       state: { logoutEmail: email }
     });
   }
