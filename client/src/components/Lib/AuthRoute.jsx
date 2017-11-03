@@ -32,7 +32,7 @@ export default class AuthRoute extends React.Component {
           this.props.user.signedIn ? (
             <Component {...props} />
           ) : (
-            <Redirect to={{ pathname: '/login' }} />
+            <Redirect to={{ pathname: '/signIn' }} />
           )
         )}
       />

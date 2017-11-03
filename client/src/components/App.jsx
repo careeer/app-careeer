@@ -21,8 +21,8 @@ import AuthRoute from './Lib/AuthRoute';
 const App = () => (
   <Switch>
     <Route exact path="/" component={Users.New} />
-    <Route path="/login" component={Sessions.New} />
-    <Route path="/sign_up" component={Users.New} />
+    <Route path="/signIn" component={Sessions.New} />
+    <Route path="/createAccount" component={Users.New} />
 
     <AuthRoute path="/freetrial" component={FreeTrialWelcome} />
     <AuthRoute path="/OnBoarding/Intro" component={OnBoardingIntro} />

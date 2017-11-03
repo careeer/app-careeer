@@ -10,8 +10,9 @@ class User {
   @observable email = null;
   @observable isAdmin = false;
   @observable hasClients = false;
-  @observable incorrectPassword = false;
   @observable incorrectEmail = false;
+  @observable incorrectPassword = false;
+  @observable existingEmail = false;
 
   @action setIsLoading(status) {
     this.isLoading = status;
@@ -25,6 +26,7 @@ class User {
   }
 
   async create(email, password, password_confirmation, callBack) {
+    this.existingEmail = false;
     this.setIsLoading(true);
 
     const response = await Api.post(
@@ -47,7 +49,7 @@ class User {
         callBack();
       }
     } else {
-
+      this.existingEmail = true;
     }
   }
 

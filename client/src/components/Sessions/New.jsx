@@ -83,7 +83,7 @@ export default class New extends Component {
               onClick={this.handleClick}
             />
             <label className="createAccountLabel">New to Careeer.me?</label>
-            <Link to='/sign_up'>Create account</Link>
+            <Link to='/createAccount'>Create account</Link>
           </form>
         </Grid>
       </div>

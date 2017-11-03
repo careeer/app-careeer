@@ -2,6 +2,16 @@ div.createAccountPage {
   height: 70%;
 }
 
+a.signInLink {
+  top: 40px;
+  right: 24px;
+  color: #333333;
+  font-size: 18px;
+  position: fixed;
+  font-family: Cabin;
+  letter-spacing: 2.3px;
+}
+
 form.createAccountForm {
   width: 30em;
   margin: 12em auto auto;
@@ -59,6 +69,10 @@ form.createAccountForm {
         opacity: 1;
       }
 
+      & + label.apiMessage {
+        opacity: 1;
+      }
+
       & + label + button.ui.button {
         background-color: #b1b1b1;
       }
@@ -71,6 +85,10 @@ form.createAccountForm {
         opacity: 0;
       }
 
+      & + label.apiMessage {
+        opacity: 1;
+      }
+
       & + label + input:valid + label + button.ui.button {
         background-color: #24c63a;
       }
@@ -81,6 +99,13 @@ form.createAccountForm {
 
 
 @media all and (max-width: 668px) {
+  a.signInLink {
+    top: 20px;
+    right: 14px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+  }
+
   form.createAccountForm {
     width: 22em;
 

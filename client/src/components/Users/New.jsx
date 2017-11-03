@@ -1,5 +1,6 @@
 /* eslint-disable */
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { inject, observer } from 'mobx-react';
 import { Grid, Button } from 'semantic-ui-react';
 import CareeerLogo from '../LandingPage/CareeerLogo';
@@ -22,9 +23,12 @@ export default class New extends Component {
   }
 
   render() {
+    const { user } = this.props;
+
     return (
       <div className="createAccountPage">
         <CareeerLogo />
+        <Link to='/signIn' className="signInLink">Sign In</Link>
         <Grid
           textAlign="center"
           verticalAlign="middle"
@@ -37,7 +41,12 @@ export default class New extends Component {
               placeholder="email"
               ref={(node) => { this.email = node; }}
             />
-            <label>invalid email address</label>
+            {!user.existingEmail &&
+              <label>invalid email address</label>
+            }
+            {user.existingEmail &&
+              <label className="apiMessage">email already registered, please sign in</label>
+            }
             <input
               required
               type="password"
