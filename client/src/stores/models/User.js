@@ -119,7 +119,9 @@ class User {
       // check credential errors
       if (status === 400) {
         this.incorrectEmail = true;
+        this.incorrectPassword = false;
       } else if (status === 401) {
+        this.incorrectEmail = false;
         this.incorrectPassword = true;
       }
       // clear session
