@@ -6,12 +6,6 @@ const SettingsButton = props => (
   <a role="link" tabIndex="0" onClick={props.toggleSettings}>
     <SettingsIcon />
   </a>
-  // <Label
-  //   circular
-  //   icon="setting"
-  //   className="settingsIcon"
-  //   onClick={props.toggleSettings}
-  // />
 );
 
 SettingsButton.propTypes = {
