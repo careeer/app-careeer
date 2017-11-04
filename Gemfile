@@ -23,7 +23,7 @@ gem 'devise', '4.3.0'
 # Use token authentication
 gem 'simple_token_authentication', '~> 1.0'
 # Extends devise capabilities
-gem 'devise_security_extension'
+gem 'devise_security_extension', git: 'https://github.com/phatworx/devise_security_extension.git'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
