@@ -15,7 +15,7 @@ module V1
 
     # Sign In
     def create
-      @user = User.where(email: params[:email]).first
+      @user = User.find_for_authentication(:email => params[:email])
 
       if @user
         if @user.valid_password?(params[:password])
