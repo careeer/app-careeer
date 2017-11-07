@@ -46,6 +46,15 @@ export default class New extends Component {
 
     const { user } = this.props;
 
+    let errorModeEmail = "";
+    let errorModePassword = "";
+    if (user.incorrectEmail) {
+      errorModeEmail = "errorMode";
+    }
+    if (user.incorrectPassword) {
+      errorModePassword = "errorMode";
+    }
+
     return (
       <div className="signInPage">
         <CareeerLogo />
@@ -59,6 +68,7 @@ export default class New extends Component {
               type="text"
               placeholder="email"
               defaultValue={email}
+              className={errorModeEmail}
               onChange={this.clearErrorMessages}
               pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
               ref={(node) => { this.email = node; }}
@@ -73,6 +83,7 @@ export default class New extends Component {
               required
               type="password"
               pattern=".{6,}"
+              className={errorModePassword}
               onChange={this.clearErrorMessages}
               placeholder="password (6 character min)"
               ref={(node) => { this.password = node; }}

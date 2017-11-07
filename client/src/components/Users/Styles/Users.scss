@@ -89,6 +89,12 @@ form.createAccountForm {
         background-color: #24c63a;
       }
     }
+  }
+
+  input.errorMode {
+    &:valid:not(:placeholder-shown) {
+      border-bottom: solid 1px #ff856e;
+    }
 
     & + label.apiMessage {
       opacity: 1 !important;

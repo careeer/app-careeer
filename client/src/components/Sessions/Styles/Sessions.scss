@@ -4,7 +4,7 @@ div.signInPage {
 
 form.signInForm {
   width: 30em;
-  margin: 12em auto auto;
+  margin: 11em auto auto;
 
   label {
     color: #ffa2a2;
@@ -52,10 +52,6 @@ form.signInForm {
       outline: none;
     }
 
-    & + label.apiMessage {
-      opacity: 1 !important;
-    }
-
     &:invalid:not(:placeholder-shown) {
       border-bottom: solid 1px #ff856e;
 
@@ -78,6 +74,16 @@ form.signInForm {
       & + label + button.ui.button {
         background-color: #24c63a;
       }
+    }
+  }
+
+  input.errorMode {
+    &:valid:not(:placeholder-shown) {
+      border-bottom: solid 1px #ff856e;
+    }
+
+    & + label.apiMessage {
+      opacity: 1 !important;
     }
   }
 

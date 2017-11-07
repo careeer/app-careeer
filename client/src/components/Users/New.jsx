@@ -29,6 +29,11 @@ export default class New extends Component {
   render() {
     const { user } = this.props;
 
+    let errorModeEmail = "";
+    if (user.existingEmail) {
+      errorModeEmail = "errorMode";
+    }
+
     return (
       <div className="createAccountPage">
         <CareeerLogo />
@@ -42,6 +47,7 @@ export default class New extends Component {
               required
               type="text"
               placeholder="email"
+              className={errorModeEmail}
               onChange={this.clearErrorMessages}
               ref={(node) => { this.email = node; }}
               pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
