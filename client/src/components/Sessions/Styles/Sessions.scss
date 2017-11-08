@@ -1,19 +1,19 @@
-div.signInPage {
+div.sessions {
   height: 70%;
 }
 
-form.signInForm {
+form.sessionsForm {
   width: 30em;
   margin: 11em auto auto;
 
   label {
+    opacity: 0;
     color: #ffa2a2;
     display: block;
     font-size: 12px;
     margin-bottom: 1em;
     font-family: Cabin;
     letter-spacing: 1px;
-    opacity: 0;
   }
 
   button.ui.button {
@@ -52,6 +52,18 @@ form.signInForm {
       outline: none;
     }
 
+    &:valid:not(:placeholder-shown) {
+      border-bottom: solid 1px #24c63a;
+
+      & + label {
+        opacity: 0;
+      }
+
+      & + label + button.ui.button {
+        background-color: #24c63a;
+      }
+    }
+
     &:invalid:not(:placeholder-shown) {
       border-bottom: solid 1px #ff856e;
 
@@ -64,16 +76,8 @@ form.signInForm {
       }
     }
 
-    &:valid:not(:placeholder-shown) {
-      border-bottom: solid 1px #24c63a;
-
-      & + label {
-        opacity: 0;
-      }
-
-      & + label + button.ui.button {
-        background-color: #24c63a;
-      }
+    &:invalid:not(:placeholder-shown) + label + input:valid:not(:placeholder-shown) + label + button.ui.button {
+        background-color: #b1b1b1;
     }
   }
 
@@ -84,6 +88,10 @@ form.signInForm {
 
     & + label.apiMessage {
       opacity: 1 !important;
+    }
+
+    & + label + button.ui.button {
+      background-color: #b1b1b1 !important;
     }
   }
 
@@ -103,14 +111,42 @@ form.signInForm {
     font-size: 18px;
     text-align: center;
     font-family: Cabin;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
     letter-spacing: 2.3px;
+  }
+
+  a.forgotPasswordLink {
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 1em;
+    letter-spacing: 1.5px;
   }
 }
 
+div.ui.attached.message.slide.up.footerMessage {
+  bottom: 0;
+  padding: 0;
+  width: 100%;
+  z-index: 102;
+  margin: 0;
+  position: fixed;
+  background-color: #03ac13;
+  border-radius: 0;
 
+  span.mainMessage {
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    font-family: Cabin;
+    letter-spacing: 2.3px;
+    margin: 0.5em auto;
+  }
+}
 
 @media all and (max-width: 668px) {
-  form.signInForm {
+  form.sessionsForm {
     width: 22em;
 
     input {
@@ -121,6 +157,12 @@ form.signInForm {
     button.ui.button {
       font-size: 14px;
       letter-spacing: 1.8px;
+    }
+  }
+  div.ui.attached.message.slide.up.footerMessage {
+    span.mainMessage {
+      font-size: 10px;
+      letter-spacing: 1.3px;
     }
   }
 }

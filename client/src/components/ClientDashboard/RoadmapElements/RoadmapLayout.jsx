@@ -13,7 +13,7 @@ import Settings from '../SettingsView/Settings';
 import HTML5toTouch from '../../Lib/HTML5toTouch';
 import FullScreenLoader from './FullScreenLoader';
 import RoadmapHeader from '../RoadmapHeader/RoadmapHeader';
-import CongratulateBanner from '../Banners/CongratulateBanner';
+import CongratulateBanner from '../../Lib/Banners/CongratulateBanner';
 import EditableRoadmapElementsList from './EditableRoadmapElementsList';
 import CompletedRoadmapElementsList from './CompletedRoadmapElementsList';
 import ToggleableRoadmapElementForm from './ToggleableRoadmapElementForm';

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { inject, observer } from 'mobx-react';
 import { Grid, Button } from 'semantic-ui-react';
 import CareeerLogo from '../LandingPage/CareeerLogo';
+import FooterBanner from '../Lib/Banners/FooterBanner';
 
 @inject('user') @observer
 export default class New extends Component {
@@ -38,6 +39,18 @@ export default class New extends Component {
     this.props.user.clearSessionMessages();
   }
 
+  handleForgottenPassword = () => {
+    const { user } = this.props;
+    user.checkEmail(
+      this.email.value,
+      () => {user.forgotPassword(this.email.value);}
+    );
+  }
+
+  handleBannerClose = () => {
+    this.props.user.closeFooterBanner();
+  }
+
   render() {
     let email;
     if (this.props.location.state){
@@ -56,13 +69,13 @@ export default class New extends Component {
     }
 
     return (
-      <div className="signInPage">
+      <div className="sessions">
         <CareeerLogo />
         <Grid
           textAlign="center"
           verticalAlign="middle"
         >
-          <form className="signInForm">
+          <form className="sessionsForm">
             <input
               required
               type="text"
@@ -101,8 +114,21 @@ export default class New extends Component {
             />
             <label className="createAccountLabel">New to Careeer.me?</label>
             <Link to='/createAccount'>Create account</Link>
+            <a
+              role="link"
+              tabIndex="0"
+              className="forgotPasswordLink"
+              onClick={this.handleForgottenPassword}
+            >
+              Forgot password?
+            </a>
           </form>
         </Grid>
+        <FooterBanner
+          visible={user.showFooter}
+          hideBanner={this.handleBannerClose}
+          footerMessage={user.footerMessage}
+        />
       </div>
     );
   }

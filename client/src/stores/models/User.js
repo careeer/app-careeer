@@ -5,6 +5,10 @@ import Api from '../helpers/api';
 class User {
   sessions = '/v1/sessions';
   users = '/v1/users';
+  forgotPath = '/v1/forgot';
+  resetPath = '/v1/reset';
+  checkPath = '/v1/check';
+
   @observable isLoading = false;
   @observable signedIn = false;
   @observable email = null;
@@ -13,6 +17,12 @@ class User {
   @observable incorrectEmail = false;
   @observable incorrectPassword = false;
   @observable existingEmail = false;
+  @observable passwordsMissmatch = false;
+  @observable reusedPassword = false;
+  @observable newPassword = true;
+  @observable emailExists = false;
+  @observable showFooter = false;
+  @observable footerMessage = '';
 
   @action setIsLoading(status) {
     this.isLoading = status;
@@ -25,13 +35,31 @@ class User {
     }
   }
 
-  @action clearSessionMessages () {
+  @action clearSessionMessages() {
+    this.emailExists = true;
     this.incorrectEmail = false;
     this.incorrectPassword = false;
   }
 
-  @action clearAccountErrorMessages () {
+  @action clearResetMessages() {
+    this.reusedPassword = false;
+  }
+
+  @action clearAccountErrorMessages() {
     this.existingEmail = false;
+  }
+
+  @action closeFooterBanner() {
+    this.showFooter = false;
+    this.footerMessage = '';
+  }
+
+  @action handlePasswordMissmatch() {
+    this.passwordsMissmatch = true;
+  }
+
+  @action handlePasswordMatch() {
+    this.passwordsMissmatch = false;
   }
 
   async create(email, password, password_confirmation, callBack) {
@@ -161,6 +189,71 @@ class User {
     this.email = null;
     this.signedIn = false;
     this.isLoading = false;
+  }
+
+  @action async forgotPassword(inputEmail) {
+    this.setIsLoading(true);
+
+    const response = await Api.post(
+      this.forgotPath,
+      { email: inputEmail },
+    );
+    const status = await response.status;
+
+    if (status === 200) {
+      this.footerMessage = `reset password link sent to ${inputEmail}`;
+      this.showFooter = true;
+    }
+  }
+
+  @action async resetPassword(password, passwordConfirmation, token, callBack) {
+    this.setIsLoading(true);
+
+    const response = await Api.post(
+      this.resetPath,
+      { reset_password_token: token, password: password, password_confirmation: passwordConfirmation },
+    );
+
+    const status = await response.status;
+
+    if (status === 200) {
+      if (callBack) {
+        callBack();
+      }
+      this.footerMessage = `password successfully reset`;
+      this.showFooter = true;
+
+    } else if (status === 422) {
+      this.reusedPassword = true;
+    } else if (status === 404) {
+      if (callBack) {
+        callBack();
+      }
+      this.footerMessage = `password reset request expired, please request a new one`;
+      this.showFooter = true;
+    }
+  }
+
+  @action async checkEmail(inputEmail, callBack) {
+    this.setIsLoading(true);
+
+    const response = await Api.post(
+      this.checkPath,
+      { email: inputEmail },
+    );
+    const status = await response.status;
+
+    if (status === 200) {
+      this.incorrectEmail = false;
+      this.emailExists = true;
+      if (callBack) {
+        callBack();
+      }
+
+    } else {
+      this.incorrectEmail = true;
+      this.emailExists = false;
+    }
   }
 }
 
