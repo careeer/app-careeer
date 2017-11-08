@@ -36,9 +36,9 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {
-    user_name: ENV['GMAIL_USERNAME'],
-    password: ENV['GMAIL_PASSWORD'],
-    domain: ENV['GMAIL_DOMAIN'],
+    user_name: ENV['MAIL_USERNAME'],
+    password: ENV['MAIL_PASSWORD'],
+    domain: ENV['MAIL_DOMAIN'],
     address: 'smtp-relay.sendinblue.com',
     port: 587,
     authentication: 'plain',
