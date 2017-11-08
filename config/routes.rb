@@ -2,7 +2,7 @@
 
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, except: :edit
   namespace :v1, defaults: { format: :json } do
     resources :clients do
       resources :roadmap_elements, except: :show
