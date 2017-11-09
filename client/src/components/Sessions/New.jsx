@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { inject, observer } from 'mobx-react';
 import { Grid, Button } from 'semantic-ui-react';
-import CareeerLogo from '../LandingPage/CareeerLogo';
+import CareeerLogo from '../Lib/CareeerLogo';
 import FooterBanner from '../Lib/Banners/FooterBanner';
 
 @inject('user') @observer

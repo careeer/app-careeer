@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
 import { Grid, Button, Dimmer } from 'semantic-ui-react';
-import CareeerLogo from '../../LandingPage/CareeerLogo';
+import CareeerLogo from '../../Lib/CareeerLogo';
 import CloseButton from './CloseButton';
 
 import '../Styles/Settings.scss';
