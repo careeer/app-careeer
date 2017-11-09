@@ -14,7 +14,7 @@ export default class ResetPassword extends Component {
   componentWillMount() {
     const params = new URLSearchParams(this.props.location.search);
     this.setState({ token: params.get('reset_password_token')});
-    history.replaceState(null, document.title, `/users/password/reset`);
+    history.replaceState(null, document.title, `/ResetPassword/reset`);
   }
 
   handleClick = (e) => {
