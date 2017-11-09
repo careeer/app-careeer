@@ -23,7 +23,7 @@ const App = () => (
     <Route exact path="/" component={Users.New} />
     <Route path="/signIn" component={Sessions.New} />
     <Route path="/createAccount" component={Users.New} />
-    <Route path="/users/password/edit" component={Sessions.ResetPassword} />
+    <Route path="/ResetPassword/:tk" component={Sessions.ResetPassword} />
     <Route path="/users/password/:tk" component={Sessions.ResetPassword} />
     <AuthRoute path="/freetrial" component={FreeTrialWelcome} />
     <AuthRoute path="/OnBoarding/Intro" component={OnBoardingIntro} />
