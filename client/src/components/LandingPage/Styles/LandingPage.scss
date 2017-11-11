@@ -491,6 +491,10 @@ div#landingPage.ui.grid {
     .row.footer {
       font-size: 14px;
 
+      i {
+        font-size: 20px;
+      }
+
       .column.left {
         padding-left: 3em;
       }
@@ -638,8 +642,11 @@ div#landingPage.ui.grid {
     }
 
     .row.footer {
-
       font-size: 8px;
+
+      i {
+        font-size: 14px;
+      }
 
       .column.left {
         padding-left: 2em;
@@ -870,8 +877,12 @@ div#landingPage.ui.grid {
     }
 
     .row.footer {
-      font-size: 6px;
+      font-size: 8px;
       margin-bottom: 15em;
+
+      i {
+        font-size: 14px;
+      }
 
       a {
         padding-right: 1em;
@@ -879,12 +890,14 @@ div#landingPage.ui.grid {
 
       .column.left {
         a {
-          font-size: 8px
+          font-size: 10px
         }
         padding-left: 2em;
+        width: 70%;
       }
 
       .column.right {
+        width: 30%;
         padding-right: 1em;
       }
     }

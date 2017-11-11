@@ -10,7 +10,7 @@ const ReviewSlider = () => (
     arrows={false}
     slidesToShow={1}
     adaptiveHeight
-    centerPadding="200px"
+    centerPadding="100px"
     infinite
     centerMode
     autoplaySpeed={5000}
