@@ -18,11 +18,11 @@ export default class OnBoardingQuestion extends Component {
     this.setState({ activeItem: name });
     localStorage.setItem("Answer2", name);
     $crisp.push(["set", 'session:data', [[["Question2", "Which personality type do you identify with most?"], ["Answer2", name]]]]);
-    this.props.history.push('/OnBoarding/Question_3');
+    this.props.history.push('/OnBoarding/Name');
   }
 
   handleClick = () => {
-    this.props.history.push('/OnBoarding/Question_3');
+    this.props.history.push('/OnBoarding/Name');
   }
 
   render() {
@@ -41,7 +41,7 @@ export default class OnBoardingQuestion extends Component {
     return (
       <div className="onBoarding">
         <PageHeader
-          counterLabel="3/5"
+          counterLabel="3/4"
           handleClick={this.handleClick}
           headerLinkLabel="Skip question"
         />

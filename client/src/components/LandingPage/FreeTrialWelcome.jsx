@@ -32,14 +32,6 @@ export default class FreeTrialWelcome extends Component {
               onClick={this.handleClick}
               content="Build your roadmap"
             />
-            <div>
-              <a
-                className="learnMoreLink"
-                href="https://www.careeer.me"
-              >
-                learn more
-              </a>
-            </div>
           </Grid.Column>
         </Grid>
         <SuccessVideo />

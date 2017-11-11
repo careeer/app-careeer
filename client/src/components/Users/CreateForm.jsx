@@ -1,10 +1,11 @@
 /* eslint-disable */
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import { inject, observer } from 'mobx-react';
 import { Button } from 'semantic-ui-react';
 
 @inject('user') @observer
-export default class New extends Component {
+class CreateForm extends Component {
   handleClick = (e) => {
     e.preventDefault();
     if (this.email.checkValidity() && this.password.checkValidity()) {
@@ -65,3 +66,5 @@ export default class New extends Component {
     );
   }
 }
+
+export default withRouter(CreateForm);
