@@ -4,7 +4,7 @@ import { Message, Grid, Container, Transition } from 'semantic-ui-react';
 
 export default class CongratulateBanner extends PureComponent {
   handleOnShow = () => {
-    setTimeout(this.props.hideCongratsBanner, 3500);
+    setTimeout(this.props.hideCongratsBanner, 4500);
   }
 
   render() {

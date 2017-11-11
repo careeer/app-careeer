@@ -1,7 +1,8 @@
 import React from 'react';
-import { Grid } from 'semantic-ui-react';
+import { Grid, Responsive } from 'semantic-ui-react';
 import ScreensIcon from '../Icons/ScreensIcon';
 import CreateForm from '../Users/CreateForm';
+import CreateAccountButton from './CreateAccountButton';
 
 const MainHeadline = () => (
   <Grid.Row className="mainHeadline">
@@ -20,6 +21,11 @@ const MainHeadline = () => (
       </p>
       <CreateForm buttonLabel="START 7-DAY FREE TRIAL" />
     </Grid.Column>
+    <Responsive maxWidth={669}>
+      <Grid.Column>
+        <CreateAccountButton buttonLabel="START 7-DAY FREE TRIAL" />
+      </Grid.Column>
+    </Responsive>
   </Grid.Row>
 );
 

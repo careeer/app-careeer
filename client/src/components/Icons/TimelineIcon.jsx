@@ -5,7 +5,7 @@ const TimelineIcon = () => (
   <img
     alt="close"
     src={TimelinePicture}
-    className="screensIcon"
+    className="timelineIcon"
   />
 );
 
