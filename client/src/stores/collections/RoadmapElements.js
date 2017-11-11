@@ -340,24 +340,6 @@ class RoadmapElements {
     }
   }
 
-  // @action async getClientsWithDefaults(arrayOfDefaults) {
-  //   const response = await Api.get(this.path);
-  //   const status = await response.status;
-  //   if (status === 200) {
-  //     const json = await response.json();
-  //     const clientArray = await json.data;
-  //     this.clients = clientArray.filter(client => client.client_status !== 'archived');
-  //     if (this.currentClient) {
-  //       const clientObject = this.clients.filter(client =>
-  //         client.name === this.currentClient)[0];
-  //       this.setClientSlug(clientObject.slug);
-  //       this.calculateAccountStatus(clientObject.account_type, clientObject.created_at);
-  //
-  //
-  //     }
-  //   }
-  // }
-
   @action async copyClient(copiedFrom, newName) {
     const clientObject = this.getClientObjectFromId(copiedFrom);
     clientObject.new_name = newName;
@@ -505,12 +487,14 @@ class RoadmapElements {
   @action calculateAccountStatus = (account_type, created_at) => {
     if (account_type === "free trial") {
       const trialDaysLeft = this.getTrialsDaysLeft(created_at);
-      if (trialDaysLeft >= 0) {
+      if (trialDaysLeft > 0) {
         if (trialDaysLeft < 2) {
           this.freeTrialMessage = `${trialDaysLeft} trial day remaining`;
         } else {
           this.freeTrialMessage = `${trialDaysLeft} trial days remaining`;
         }
+      } else if (trialDaysLeft <= 0) {
+        this.freeTrialMessage = "";
       }
     }
   }
