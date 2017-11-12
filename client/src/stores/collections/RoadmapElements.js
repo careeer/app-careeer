@@ -336,9 +336,11 @@ class RoadmapElements {
 
       // finish up
       this.hasClientName = true;
-      this.isDefaultLoading = false;
+      setTimeout(() => {this.isDefaultLoading = false;}, 2500);
     }
   }
+
+
 
   @action async copyClient(copiedFrom, newName) {
     const clientObject = this.getClientObjectFromId(copiedFrom);
