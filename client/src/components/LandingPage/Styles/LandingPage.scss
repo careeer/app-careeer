@@ -150,7 +150,7 @@ div#landingPage.ui.grid {
   }
 
   .row > .column {
-    padding-left: 7em;
+    padding-left: 5em;
     width: 50%;
   }
 
@@ -185,8 +185,8 @@ div#landingPage.ui.grid {
 
     img.screensIcon {
       width: 420px;
-      height: 217px;
-      margin-top: 3em;
+      height: 210px;
+      margin-top: 5em;
       object-fit: contain;
     }
 
@@ -253,7 +253,7 @@ div#landingPage.ui.grid {
 
     .column {
       width: 50%;
-      padding: 0 0 4em 7em;
+      padding: 0 0 4em 5em;
     }
 
     .timelineIconMobile {
@@ -355,7 +355,7 @@ div#landingPage.ui.grid {
     }
 
     .column.left {
-      padding-left: 7em;
+      padding-left: 5em;
       width: 50%;
     }
 
@@ -860,7 +860,7 @@ div#landingPage.ui.grid {
         div.reviewContent {
           min-width: 220px;
           max-width: 280px;
-          
+
           p {
             font-size: 10px;
             letter-spacing: 1.3px;
