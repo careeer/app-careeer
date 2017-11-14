@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { Grid, Button } from 'semantic-ui-react';
 import CareeerLogo from '../Lib/CareeerLogo';
 import WelcomeToRoadmapMessage from './WelcomeToRoadmapMessage';
-import SuccessVideo from './SuccessVideo';
 
 export default class FreeTrialWelcome extends Component {
   handleClick = () => {
@@ -34,7 +33,6 @@ export default class FreeTrialWelcome extends Component {
             />
           </Grid.Column>
         </Grid>
-        <SuccessVideo />
       </div>
     );
   }

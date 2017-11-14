@@ -215,14 +215,17 @@ div#landingPage.ui.grid {
       div.reviewAvatar{
         display: inline-block;
         float: left;
-        margin-right: 10px;
-        width: 80px;
+        margin-right: 0;
+        width: 70px;
+        img {
+          margin-right: 0;
+        }
       }
 
       div.reviewContent {
         display: inline-block;
         float: left;
-        width: 80%;
+        width: 90%;
         p {
           display: block;
           font-family: Raleway;
@@ -346,10 +349,6 @@ div#landingPage.ui.grid {
       padding-right: 3em;
     }
 
-    i {
-      margin-bottom: 1em;
-    }
-
     .column {
       width: auto;
     }
@@ -417,7 +416,7 @@ div#landingPage.ui.grid {
 
     .row.mainHeadline  > .column {
       h1 {
-        margin: 1.3em 0 0 0;
+        margin: 1.3em 0 0 1em;
         width: 370px;
         height: 292px;
         font-size: 62px;
@@ -599,14 +598,17 @@ div#landingPage.ui.grid {
 
     div.slick-initialized.slick-slider {
       div.slick-list {
-        p {
-          font-size: 14px;
-          letter-spacing: 1.8px;
-        }
+        div.reviewContent {
+          width: 86%;
+          p {
+            font-size: 14px;
+            letter-spacing: 1.8px;
+          }
 
-        strong {
-          font-size: 16px;
-          letter-spacing: 2px;
+          strong {
+            font-size: 16px;
+            letter-spacing: 2px;
+          }
         }
       }
     }

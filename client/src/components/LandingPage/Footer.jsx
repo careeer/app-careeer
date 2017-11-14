@@ -27,6 +27,20 @@ const Footer = () => (
       >
         <Icon link circular inverted size="large" name="linkedin" />
       </a>
+      <a
+        href="https://www.pinterest.com/careeerme/"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        <Icon link circular inverted size="large" name="pinterest" />
+      </a>
+      <a
+        href="https://medium.com/@careeer.me"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        <Icon link circular inverted size="large" name="medium" />
+      </a>
     </Grid.Column>
     <Grid.Column
       width={16}
