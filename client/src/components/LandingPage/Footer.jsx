@@ -3,7 +3,7 @@ import { Grid, Icon, Divider } from 'semantic-ui-react';
 
 const Footer = () => (
   <Grid.Row className="footer">
-    <Grid.Column verticalAlign="middle" className="left">
+    <Grid.Column verticalAlign="middle" className="left coachLink">
       <a
         target="_blank"
         rel="noreferrer noopener"
@@ -12,7 +12,7 @@ const Footer = () => (
         Become a coach
       </a>
     </Grid.Column>
-    <Grid.Column className="right">
+    <Grid.Column className="right mediaIcons">
       <a
         href="https://www.facebook.com/careeer.me"
         target="_blank"

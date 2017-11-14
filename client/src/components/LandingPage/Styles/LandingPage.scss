@@ -952,13 +952,22 @@ div#landingPage.ui.grid {
         a {
           font-size: 10px
         }
+
         padding-left: 2em;
         width: 70%;
+
+        &.coachLink {
+          width: 40%;
+        }
       }
 
       .column.right {
         width: 30%;
         padding-right: 1em;
+
+        &.mediaIcons {
+          width: 60%;
+        }
       }
     }
   }
