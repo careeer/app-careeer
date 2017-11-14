@@ -880,6 +880,11 @@ div#landingPage.ui.grid {
       padding-bottom: 5em;
       margin-bottom: 0;
 
+      h2 {
+        max-width: 400px;
+        width: unset;
+      }
+
       .timelineIcon {
         display: none;
       }
@@ -889,6 +894,7 @@ div#landingPage.ui.grid {
       }
 
       .column {
+        width: 100%;
         padding: 0 0 1em 1em;
       }
     }
