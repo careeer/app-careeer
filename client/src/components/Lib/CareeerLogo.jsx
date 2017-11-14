@@ -5,8 +5,8 @@ const CareeerLogo = () => (
   <Grid textAlign="left">
     <Grid.Column className="careeerLogo">
       <a
-        href="https://app.careeer.me"
-        target="_blank"
+        href="/"
+        target="_self"
         rel="noreferrer noopener"
       >
         <Header
