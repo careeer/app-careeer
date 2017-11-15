@@ -11,7 +11,7 @@ const Pricing = () => (
         Simple and flexible pricing
       </h2>
       <h3>
-        Upgrade, downgrade, pause, cancel at any time
+        Upgrade, downgrade, cancel at any time
       </h3>
       <h5>
         All plans include

@@ -11,7 +11,7 @@ const Plans = () => (
     <Segment padded color="green">
       <header>Standard track</header>
       <p>$150/<span>month</span></p>
-      <div className="planDescription">+1 hours of voice and video with your coach</div>
+      <div className="planDescription">+1 hour of voice and video with your coach</div>
     </Segment>
     <Segment padded color="yellow">
       <header>Self starter</header>

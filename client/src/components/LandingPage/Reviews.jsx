@@ -14,7 +14,7 @@ const Reviews = props => (
     centerPadding={props.padding}
     infinite
     centerMode
-    autoplaySpeed={5000}
+    autoplaySpeed={3500}
   >
     <div>
       <div className="reviewAvatar">
@@ -22,7 +22,7 @@ const Reviews = props => (
           alt=""
           avatar
           className="avatar"
-          src="http://res.cloudinary.com/careeer/image/upload/v1510605289/fadi_cfgizx.jpg"
+          src="https://res.cloudinary.com/careeer/image/upload/v1510605289/fadi_cfgizx.jpg"
         />
       </div>
       <div className="reviewContent">
@@ -58,7 +58,7 @@ const Reviews = props => (
           alt=""
           avatar
           className="avatar"
-          src="http://res.cloudinary.com/careeer/image/upload/v1510605285/dimple_micayr.jpg"
+          src="https://res.cloudinary.com/careeer/image/upload/v1510605285/dimple_micayr.jpg"
         />
       </div>
       <div className="reviewContent">
@@ -76,12 +76,12 @@ const Reviews = props => (
           alt=""
           avatar
           className="avatar"
-          src="http://res.cloudinary.com/careeer/image/upload/v1510605274/aaron_npbmfu.jpg"
+          src="https://res.cloudinary.com/careeer/image/upload/v1510605274/aaron_npbmfu.jpg"
         />
       </div>
       <div className="reviewContent">
         <p>
-          &quot;Lots of good information. Learning your own value proposition and changing your midset &quot;lense&quot; about the hiring process.&quot;
+          &quot;Lots of good information. Learning your own value proposition and changing your mindset &quot;lens&quot; about the hiring process.&quot;
         </p>
         <strong>
           Aaron
@@ -94,7 +94,7 @@ const Reviews = props => (
           alt=""
           avatar
           className="avatar"
-          src="http://res.cloudinary.com/careeer/image/upload/v1510605305/tiffany_riubhg.jpg"
+          src="https://res.cloudinary.com/careeer/image/upload/v1510605305/tiffany_riubhg.jpg"
         />
       </div>
       <div className="reviewContent">
@@ -112,7 +112,7 @@ const Reviews = props => (
           alt=""
           avatar
           className="avatar"
-          src="http://res.cloudinary.com/careeer/image/upload/v1510605295/hai_y4canp.jpg"
+          src="https://res.cloudinary.com/careeer/image/upload/v1510605295/hai_y4canp.jpg"
         />
       </div>
       <div className="reviewContent">
@@ -130,7 +130,7 @@ const Reviews = props => (
           alt=""
           avatar
           className="avatar"
-          src="http://res.cloudinary.com/careeer/image/upload/v1510605300/mark_zibndg.jpg"
+          src="https://res.cloudinary.com/careeer/image/upload/v1510605300/mark_zibndg.jpg"
         />
       </div>
       <div className="reviewContent">
