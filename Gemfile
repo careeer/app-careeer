@@ -28,7 +28,7 @@ gem 'devise_security_extension', git: 'https://github.com/phatworx/devise_securi
 # gem 'capistrano-rails', group: :development
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors', :require => 'rack/cors'
+gem 'rack-cors', :require => 'rack/cors'
 
 
 group :development, :test do
