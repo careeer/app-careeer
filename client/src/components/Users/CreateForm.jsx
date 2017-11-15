@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { inject, observer } from 'mobx-react';
 import { Button } from 'semantic-ui-react';
+import LoadingScreen from '../Lib/LoadingScreen';
 
 @inject('user') @observer
 class CreateForm extends Component {
@@ -34,6 +35,7 @@ class CreateForm extends Component {
 
     return (
       <form className="createAccountForm">
+        <LoadingScreen isLoading={user.isLoading} />
         <input
           required
           type="text"

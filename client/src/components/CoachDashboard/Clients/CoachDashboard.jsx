@@ -5,6 +5,7 @@ import { List, Button, Icon, Grid, Dimmer, Loader } from 'semantic-ui-react';
 import ClientList from './ClientList';
 import DuplicateClientInput from './DuplicateClientInput';
 import NewClientInput from './NewClientInput';
+import FullScreenLoader from '../../ClientDashboard/RoadmapElements/FullScreenLoader';
 import PlusButton from '../../ClientDashboard/RoadmapElements/PlusButton';
 import ClientElement from './ClientElement';
 
@@ -36,17 +37,11 @@ export default class CoachDashboard extends Component {
     return (
       <Grid className="defaultGrid">
         <div>
-        { this.props.roadmapElements.isClientLoading &&
-          <Dimmer
-            active
-            page
-            inverted
-          >
-            <Loader size="medium">
-              loading client list
-            </Loader>
-          </Dimmer>
-        }
+          <FullScreenLoader
+            clientName=""
+            isDefaultLoading={false}
+            isLoading={this.props.roadmapElements.isClientLoading}
+          />
           <Grid.Row>
             <Grid.Column floated="left">
               <ClientList

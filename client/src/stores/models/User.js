@@ -87,6 +87,7 @@ class User {
       }
     } else {
       this.existingEmail = true;
+      this.setIsLoading(false);
     }
   }
 
@@ -201,6 +202,7 @@ class User {
     const status = await response.status;
 
     if (status === 200) {
+      this.setIsLoading(false);
       this.footerMessage = `reset password link sent to ${inputEmail}`;
       this.showFooter = true;
     }
@@ -217,6 +219,7 @@ class User {
     const status = await response.status;
 
     if (status === 200) {
+      this.setIsLoading(false);
       if (callBack) {
         callBack();
       }
@@ -224,8 +227,10 @@ class User {
       this.showFooter = true;
 
     } else if (status === 422) {
+      this.setIsLoading(false);
       this.reusedPassword = true;
     } else if (status === 404) {
+      this.setIsLoading(false);
       if (callBack) {
         callBack();
       }
@@ -235,8 +240,6 @@ class User {
   }
 
   @action async checkEmail(inputEmail, callBack) {
-    this.setIsLoading(true);
-
     const response = await Api.post(
       this.checkPath,
       { email: inputEmail },

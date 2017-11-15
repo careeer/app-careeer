@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { inject, observer } from 'mobx-react';
 import { Grid, Button } from 'semantic-ui-react';
 import CareeerLogo from '../Lib/CareeerLogo';
+import LoadingScreen from '../Lib/LoadingScreen';
 
 @inject('user') @observer
 export default class ResetPassword extends Component {
@@ -65,6 +66,7 @@ export default class ResetPassword extends Component {
           textAlign="center"
           verticalAlign="middle"
         >
+          <LoadingScreen isLoading={user.isLoading} />
           <form className="sessionsForm">
             <input
               required

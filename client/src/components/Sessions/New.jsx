@@ -5,6 +5,7 @@ import { inject, observer } from 'mobx-react';
 import { Grid, Button } from 'semantic-ui-react';
 import CareeerLogo from '../Lib/CareeerLogo';
 import FooterBanner from '../Lib/Banners/FooterBanner';
+import LoadingScreen from '../Lib/LoadingScreen';
 
 @inject('user') @observer
 export default class New extends Component {
@@ -75,6 +76,7 @@ export default class New extends Component {
           textAlign="center"
           verticalAlign="middle"
         >
+          <LoadingScreen isLoading={user.isLoading} />
           <form className="sessionsForm">
             <input
               required
