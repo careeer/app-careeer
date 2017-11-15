@@ -3,6 +3,7 @@ module V1
   # Roadmap Elements endpoints
   class RoadmapElementsController < ApplicationController
   before_action :set_client
+  before_action :set_paper_trail_whodunnit
 
     def index
       @roadmap_elements = @client.roadmap_elements.order('dnd_index')

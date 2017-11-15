@@ -4,7 +4,8 @@ module V1
   # Client endpoints
   class ClientsController < ApplicationController
     before_action :set_client, only: [:show, :update, :duplicate, :destroy]
-
+    before_action :set_paper_trail_whodunnit
+    
     # GET /clients
     # GET /clients.json
     def index
