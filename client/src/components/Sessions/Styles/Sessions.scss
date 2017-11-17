@@ -1,0 +1,168 @@
+div.sessions {
+  height: 70%;
+}
+
+form.sessionsForm {
+  width: 30em;
+  margin: 11em auto auto;
+
+  label {
+    opacity: 0;
+    color: #ffa2a2;
+    display: block;
+    font-size: 12px;
+    margin-bottom: 1em;
+    font-family: Cabin;
+    letter-spacing: 1px;
+  }
+
+  button.ui.button {
+    width: 100%;
+    color: #fff;
+    font-size: 18px;
+    font-family: Cabin;
+    text-align: center;
+    border-radius: 24px;
+    letter-spacing: 2.3px;
+    background-color: #b1b1b1;
+  }
+
+  input {
+    width: 100%;
+    color: #333;
+    display: block;
+    font-size: 18px;
+    text-align: left;
+    border-radius: 0;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-family: Cabin;
+    letter-spacing: 1.5px;
+    -webkit-border-radius: 0;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border-bottom: solid 1px #b1b1b1;
+
+    &::placeholder {
+      color: #b1b1b1;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:valid:not(:placeholder-shown) {
+      border-bottom: solid 1px #24c63a;
+
+      & + label {
+        opacity: 0;
+      }
+
+      & + label + button.ui.button {
+        background-color: #24c63a;
+      }
+    }
+
+    &:invalid:not(:placeholder-shown) {
+      border-bottom: solid 1px #ff856e;
+
+      & + label {
+        opacity: 1;
+      }
+
+      & + label + button.ui.button {
+        background-color: #b1b1b1;
+      }
+    }
+
+    &:invalid:not(:placeholder-shown) + label + input:valid:not(:placeholder-shown) + label + button.ui.button {
+        background-color: #b1b1b1;
+    }
+  }
+
+  input.errorMode {
+    &:valid:not(:placeholder-shown) {
+      border-bottom: solid 1px #ff856e;
+    }
+
+    & + label.apiMessage {
+      opacity: 1 !important;
+    }
+
+    & + label + button.ui.button {
+      background-color: #b1b1b1 !important;
+    }
+  }
+
+  label.createAccountLabel {
+    font-family: Cabin;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-align: center;
+    color: #a8a8a8;
+    opacity: 1;
+    margin: 1em 0 0;
+  }
+
+  a {
+    display: block;
+    color: #24c63a;
+    font-size: 18px;
+    text-align: center;
+    font-family: Cabin;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    letter-spacing: 2.3px;
+  }
+
+  a.forgotPasswordLink {
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 1em;
+    letter-spacing: 1.5px;
+  }
+}
+
+div.ui.attached.message.slide.up.footerMessage {
+  bottom: 0;
+  padding: 0;
+  width: 100%;
+  z-index: 102;
+  margin: 0;
+  position: fixed;
+  background-color: #03ac13;
+  border-radius: 0;
+
+  span.mainMessage {
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    font-family: Cabin;
+    letter-spacing: 2.3px;
+    margin: 0.5em auto;
+  }
+}
+
+@media all and (max-width: 668px) {
+  form.sessionsForm {
+    width: 22em;
+
+    input {
+      font-size: 14px;
+      letter-spacing: 1.2px;
+    }
+
+    button.ui.button {
+      font-size: 14px;
+      letter-spacing: 1.8px;
+    }
+  }
+  div.ui.attached.message.slide.up.footerMessage {
+    span.mainMessage {
+      font-size: 10px;
+      letter-spacing: 1.3px;
+    }
+  }
+}

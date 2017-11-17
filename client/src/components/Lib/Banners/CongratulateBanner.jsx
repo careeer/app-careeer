@@ -1,18 +1,17 @@
 /* eslint-disable */
 import React, { PureComponent } from 'react';
 import { Message, Grid, Container, Transition } from 'semantic-ui-react';
-import '../Styles/Banners.css';
 
 export default class CongratulateBanner extends PureComponent {
   handleOnShow = () => {
-    setTimeout(this.props.hideCongratsBanner, 3500);
+    setTimeout(this.props.hideCongratsBanner, 5500);
   }
 
   render() {
     return (
       <Transition
         animation="slide down"
-        duration={{ hide: 2000, show: 300 }}
+        duration={{ hide: 2500, show: 300 }}
         visible={this.props.visible}
         onComplete={this.handleOnShow}
       >

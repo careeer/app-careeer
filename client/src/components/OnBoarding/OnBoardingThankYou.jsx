@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import DateHelper from '../Lib/DateHelper';
 import defaultElements from '../Constants/DefaultRoadmapElements';
-import ClientRoadmapDashboard from '../ClientDashboard/RoadmapElements/ClientRoadmapDashboard';
+import RoadmapLayout from '../ClientDashboard/RoadmapElements/RoadmapLayout';
 
 @inject('roadmapElements') @observer
 export default class ClientDashboard extends Component {
@@ -39,7 +39,7 @@ export default class ClientDashboard extends Component {
   render() {
     this.checkIfNameIsFilled();
     return (
-      <ClientRoadmapDashboard clientName={this.state.clientName} />
+      <RoadmapLayout clientName={this.state.clientName} />
     );
   }
 }

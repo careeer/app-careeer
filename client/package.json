@@ -1,13 +1,15 @@
 {
   "name": "careeer-ui",
-  "version": "0.1.0",
+  "version": "0.27.5",
   "private": true,
   "proxy": "http://localhost:3001",
   "dependencies": {
+    "lodash": "^4.17.4",
     "mobx": "^3.2.2",
     "mobx-react": "^4.2.2",
     "prop-types": "^15.5.10",
     "react": "^16.0.0",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-color": "^2.13.5",
     "react-dnd": "^2.4.0",
     "react-dnd-html5-backend": "^2.4.1",
@@ -18,10 +20,12 @@
     "react-dropzone": "^4.1.0",
     "react-onclickoutside": "^6.5.0",
     "react-router-dom": "^4.1.2",
+    "react-slick": "^0.15.4",
     "semantic-ui-css": "^2.2.11",
     "semantic-ui-react": "^0.75.1",
     "sha1": "^1.1.1",
-    "superagent": "^3.6.0"
+    "superagent": "^3.6.0",
+    "yarn": "^1.2.1"
   },
   "scripts": {
     "start": "node scripts/start.js",
@@ -29,7 +33,7 @@
     "test": "node scripts/test.js --env=jsdom"
   },
   "devDependencies": {
-    "ajv": "4.10.0",
+    "ajv": "^5.2.4",
     "autoprefixer": "7.1.1",
     "babel-core": "6.25.0",
     "babel-eslint": "^7.1.1",
@@ -65,6 +69,7 @@
     "react-dnd-html5-touch-backend": "^1.5.0",
     "react-error-overlay": "^1.0.9",
     "react-router": "^4.2.0",
+    "sass-loader": "^6.0.6",
     "style-loader": "0.18.2",
     "stylelint": "^8.0.0",
     "stylelint-config-standard": "^17.0.0",

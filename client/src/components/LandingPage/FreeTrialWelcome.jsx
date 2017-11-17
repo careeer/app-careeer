@@ -1,11 +1,8 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import { Grid, Button } from 'semantic-ui-react';
-import CareeerLogo from './CareeerLogo';
+import CareeerLogo from '../Lib/CareeerLogo';
 import WelcomeToRoadmapMessage from './WelcomeToRoadmapMessage';
-import SuccessVideo from './SuccessVideo';
-
-import './Styles/FreeTrialWelcome.css';
 
 export default class FreeTrialWelcome extends Component {
   handleClick = () => {
@@ -34,17 +31,8 @@ export default class FreeTrialWelcome extends Component {
               onClick={this.handleClick}
               content="Build your roadmap"
             />
-            <div>
-              <a
-                className="learnMoreLink"
-                href="https://www.careeer.me"
-              >
-                learn more
-              </a>
-            </div>
           </Grid.Column>
         </Grid>
-        <SuccessVideo />
       </div>
     );
   }

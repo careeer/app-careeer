@@ -1,0 +1,61 @@
+div.ui.active.transition.visible.inverted.page.dimmer.settingsDimmer {
+  opacity: 0.95;
+  background-color: #fafafa;
+
+  & > div.content > div.center {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: block;
+      position: absolute;
+  }
+
+  div.ui.right.aligned.grid > div.column.closeButton {
+    top: 10px;
+    position: fixed;
+
+    img.doneIcon{
+      width: 49px;
+      height: 50px;
+      cursor: pointer;
+    }
+  }
+
+  button.ui.button {
+    width: 374px;
+    font-size: 18px;
+    margin-top: 15em;
+    font-family: Cabin;
+    border-radius: 18px;
+    letter-spacing: 2.3px;
+    border: solid 1px #24c63a;
+    color: #24c63a !important;
+
+    &:focus, &:hover {
+      background-color: transparent !important;
+    }
+  }
+}
+
+@media all and (max-width: 668px) {
+  div.ui.active.transition.visible.inverted.page.dimmer.settingsDimmer {
+    div.ui.right.aligned.grid > div.column.closeButton {
+      top: 0;
+      padding-top: 0;
+
+      img.doneIcon{
+        margin-top: 1em;
+        width: 25px;
+        height: 27px;
+      }
+    }
+
+    button.ui.basic.button {
+      width: 240px;
+      font-size: 14px;
+      margin-top: 12em;
+      letter-spacing: 1.8px;
+    }
+  }
+}

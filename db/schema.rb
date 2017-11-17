@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170927080519) do
+ActiveRecord::Schema.define(version: 20171108074300) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,9 @@ ActiveRecord::Schema.define(version: 20170927080519) do
     t.string "vision"
     t.string "client_status"
     t.string "account_type"
+    t.bigint "user_id"
     t.index ["slug"], name: "index_clients_on_slug", unique: true
+    t.index ["user_id"], name: "index_clients_on_user_id"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -38,6 +40,15 @@ ActiveRecord::Schema.define(version: 20170927080519) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  end
+
+  create_table "old_passwords", force: :cascade do |t|
+    t.string "encrypted_password", null: false
+    t.string "password_salt"
+    t.string "password_archivable_type", null: false
+    t.integer "password_archivable_id", null: false
+    t.datetime "created_at"
+    t.index ["password_archivable_type", "password_archivable_id"], name: "index_password_archivable"
   end
 
   create_table "roadmap_elements", force: :cascade do |t|
@@ -70,8 +81,11 @@ ActiveRecord::Schema.define(version: 20170927080519) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "authentication_token", limit: 30
+    t.boolean "admin", default: false
+    t.datetime "password_changed_at"
     t.index ["authentication_token"], name: "index_users_on_authentication_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["password_changed_at"], name: "index_users_on_password_changed_at"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
@@ -85,5 +99,6 @@ ActiveRecord::Schema.define(version: 20170927080519) do
     t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
   end
 
+  add_foreign_key "clients", "users"
   add_foreign_key "roadmap_elements", "clients"
 end

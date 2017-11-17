@@ -15,7 +15,7 @@ export default class OnBoardingIntro extends Component {
   }
 
   handleClick = () => {
-    this.props.history.push('/LongWelcome');
+    this.props.history.push('/freetrial');
   }
 
   redirectToQuestion = () => {
@@ -27,9 +27,9 @@ export default class OnBoardingIntro extends Component {
       <div className="introOnboarding">
         <PageHeader
           icon={false}
-          counterLabel="1/5"
+          counterLabel="1/4"
           handleClick={this.handleClick}
-          headerLinkLabel="Nevermind, don’t build my roadmap"
+          headerLinkLabel="Never mind, don’t build my roadmap"
         />
         <IntroMessage onStartClick={this.redirectToQuestion} />
       </div>

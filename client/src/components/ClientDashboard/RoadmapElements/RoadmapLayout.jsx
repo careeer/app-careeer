@@ -5,46 +5,34 @@ import { Grid, Dimmer, Loader, Sidebar, Label } from 'semantic-ui-react';
 
 import { DragDropContext } from 'react-dnd';
 import MultiBackend from 'react-dnd-multi-backend';
-import withScrolling, { createHorizontalStrength, createVerticalStrength } from 'react-dnd-scrollzone';
+import withScrolling from 'react-dnd-scrollzone';
 
 import AccountFlag from './AccountFlag';
+import SettingsButton from './SettingsButton';
+import Settings from '../SettingsView/Settings';
 import HTML5toTouch from '../../Lib/HTML5toTouch';
 import FullScreenLoader from './FullScreenLoader';
 import RoadmapHeader from '../RoadmapHeader/RoadmapHeader';
-import CongratulateBanner from '../Banners/CongratulateBanner';
+import CongratulateBanner from '../../Lib/Banners/CongratulateBanner';
 import EditableRoadmapElementsList from './EditableRoadmapElementsList';
 import CompletedRoadmapElementsList from './CompletedRoadmapElementsList';
 import ToggleableRoadmapElementForm from './ToggleableRoadmapElementForm';
 
-import '../Styles/RoadmapElements.css';
+import '../Styles/RoadmapElements.scss';
 
 const ScrollZone = withScrolling('div');
-const linearHorizontalStrength = createHorizontalStrength(250);
-const linearVerticalStrength = createVerticalStrength(250);
-
-function ease(val) {
-  const t = (val / 2) + 1;
-  const easedT = t < 0.5 ? 2 * t * t : -1 + ((4 - (2 * t)) * t);
-  return (easedT * 2) - 1;
-}
-
-function hStrength(box, point) {
-  return ease(linearHorizontalStrength(box, point));
-}
-
-function vStrength(box, point) {
-  return ease(linearVerticalStrength(box, point));
-}
 
 @DragDropContext(MultiBackend(HTML5toTouch))
 @inject('roadmapElements') @observer
-export default class ClientRoadmapDashboard extends Component {
+export default class RoadmapLayout extends Component {
+
   handleCreateFormSubmit = (roadmapElement) => {
     this.createRoadmapElement(roadmapElement);
-  }
+  };
+
   handleCopyForm = (roadmapElement) => {
     this.copyRoadmapElement(roadmapElement);
-  }
+  };
 
   handleEditFormSubmit = (attrs) => {
     this.updateRoadmapElement(attrs);
@@ -105,7 +93,9 @@ export default class ClientRoadmapDashboard extends Component {
             isCreateFormClose,
             isToggleableFormVisible,
             isCompletedAccordionOpen,
+            showSettings,
             currentClient,
+            toggleSettings,
             freeTrialMessage,
             completedElements,
             incompleteElements,
@@ -122,6 +112,13 @@ export default class ClientRoadmapDashboard extends Component {
           clientName={this.props.clientName || ""}
           loadingMessage="Fetching your Roadmap..."
         />
+        <SettingsButton
+          toggleSettings={toggleSettings}
+        />
+        <Settings
+          showSettings={showSettings}
+          onCloseClick={toggleSettings}
+        />
         <CongratulateBanner
           visible={isBannerVisible}
           clientName={currentClient}
@@ -133,10 +130,7 @@ export default class ClientRoadmapDashboard extends Component {
         />
         <Grid className="roadmapMainGrid">
           <Grid.Column className="roadmapMainColumn">
-            <ScrollZone
-              verticalStrength={vStrength}
-              horizontalStrength={hStrength}
-            >
+            <ScrollZone>
               <RoadmapHeader
                 clientName={currentClient}
               />

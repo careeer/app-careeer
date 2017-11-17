@@ -1,0 +1,128 @@
+div.createAccountPage {
+  height: 70%;
+}
+
+a.signInLink {
+  top: 40px;
+  right: 24px;
+  color: #333333;
+  font-size: 18px;
+  position: absolute;
+  font-family: Cabin;
+  letter-spacing: 2.3px;
+}
+
+form.createAccountForm {
+  width: 30em;
+  margin: 12em auto auto;
+
+  label {
+    color: #ffa2a2;
+    display: block;
+    font-size: 12px;
+    margin-bottom: 1em;
+    font-family: Cabin;
+    letter-spacing: 1px;
+    opacity: 0;
+  }
+
+  button.ui.button {
+    width: 100%;
+    color: #fff;
+    font-size: 18px;
+    font-family: Cabin;
+    text-align: center;
+    border-radius: 24px;
+    letter-spacing: 2.3px;
+    background-color: #b1b1b1;
+  }
+
+  input {
+    width: 100%;
+    color: #333;
+    display: block;
+    font-size: 18px;
+    text-align: left;
+    border-radius: 0;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-family: Cabin;
+    letter-spacing: 1.5px;
+    -webkit-border-radius: 0;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border-bottom: solid 1px #b1b1b1;
+
+    &::placeholder {
+      color: #b1b1b1;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:invalid:not(:placeholder-shown) {
+      border-bottom: solid 1px #ff856e;
+
+      & + label {
+        opacity: 1;
+      }
+
+      & + label.apiMessage {
+        opacity: 1;
+      }
+
+      & + label + button.ui.button {
+        background-color: #b1b1b1;
+      }
+    }
+
+    &:valid:not(:placeholder-shown) {
+      border-bottom: solid 1px #24c63a;
+
+      & + label {
+        opacity: 0;
+      }
+
+      & + label + input:valid + label + button.ui.button {
+        background-color: #24c63a;
+      }
+    }
+  }
+
+  input.errorMode {
+    &:valid:not(:placeholder-shown) {
+      border-bottom: solid 1px #ff856e;
+    }
+
+    & + label.apiMessage {
+      opacity: 1 !important;
+    }
+  }
+}
+
+
+
+@media all and (max-width: 668px) {
+  a.signInLink {
+    top: 20px;
+    right: 14px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+  }
+
+  form.createAccountForm {
+    width: 22em;
+
+    input {
+      font-size: 14px;
+      letter-spacing: 1.2px;
+    }
+
+    button.ui.button {
+      font-size: 14px;
+      letter-spacing: 1.8px;
+    }
+  }
+}

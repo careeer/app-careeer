@@ -22,12 +22,14 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise', '4.3.0'
 # Use token authentication
 gem 'simple_token_authentication', '~> 1.0'
-
+# Extends devise capabilities
+gem 'devise_security_extension', git: 'https://github.com/phatworx/devise_security_extension.git'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors', :require => 'rack/cors'
+gem 'rack-cors', :require => 'rack/cors'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

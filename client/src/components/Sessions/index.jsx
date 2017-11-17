@@ -1,3 +1,6 @@
 import New from './New';
+import ResetPassword from './ResetPassword';
 
-export default { New };
+import './Styles/Sessions.scss';
+
+export default { New, ResetPassword };

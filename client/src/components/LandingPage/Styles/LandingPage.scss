@@ -1,0 +1,981 @@
+div.ui.center.aligned.middle.grid {
+  height: 100%;
+}
+
+/*
+  Careeer Logo
+*/
+div.ui.left.aligned.grid div.column.careeerLogo {
+  padding-bottom: 0;
+  padding-left: 2em;
+}
+
+h2.ui.header.careeer {
+  font-family: 'Lobster', cursive;
+  font-size: 65.8px;
+  font-weight: 200;
+  letter-spacing: 5.4px;
+  text-align: center;
+  color: #24c63a;
+}
+
+/*
+  Welcome Message
+*/
+div.ui.text.container.welcomeContainer {
+  width: auto;
+  margin-bottom: 1em;
+}
+
+h2.ui.header.welcomeHeader {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 1.7px;
+  text-align: center;
+  color: #333;
+  margin-bottom: 1.5em;
+}
+
+p.welcomeContent {
+  font-family: Cabin;
+  font-size: 16px;
+  letter-spacing: 1.3px;
+  text-align: center;
+  color: #919191;
+  margin-bottom: 1em;
+}
+
+/*
+  Button Section
+*/
+button.ui.green.button.buildYourRoadmap {
+  font-family: Cabin;
+  font-size: 18px;
+  letter-spacing: 2.3px;
+  text-align: center;
+  border-radius: 22px;
+  color: #fff;
+  margin: 1.5em 0 1em;
+  width: auto;
+}
+
+a.learnMoreLink {
+  font-family: Cabin;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-align: center;
+  color: #24c63a;
+}
+
+/*
+  Video
+*/
+div.videoContainer {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.videoContainer iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*
+  Landing Page
+*/
+div#landingPage.ui.grid {
+  h2, h3 {
+    margin: 0;
+    width: 594px;
+    font-family: Raleway;
+    text-align: left;
+    color: #000000;
+  }
+
+  h2 {
+    font-size: 58px;
+    font-weight: bolder;
+    letter-spacing: 7.3px;
+  }
+
+  h3 {
+    font-size: 36px;
+    font-weight: 200;
+    letter-spacing: 4.5px;
+  }
+
+  h4 {
+    width: 546px;
+    font-family: Cabin;
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-align: left;
+    color: #333333;
+  }
+
+  h5 {
+    width: 594px;
+    font-family: Cabin;
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: 3.5px;
+    text-align: left;
+    color: #000000;
+  }
+
+  p {
+    color: #333333;
+  }
+
+  ul {
+    list-style-type: none;
+    font-family: Cabin;
+    font-size: 20px;
+    letter-spacing: 2.5px;
+    text-align: left;
+    color: #000000;
+  }
+
+  ul li:before {
+    content: '\2013';
+    position: absolute;
+    margin-left: -20px;
+  }
+
+  .row > .column {
+    padding-left: 5em;
+    width: 50%;
+  }
+
+  form.createAccountForm {
+    margin: 2em auto 0 auto;
+    width: 34em;
+
+    button.ui.button {
+      color: #ffffff;
+      background-color: #24c63a;
+    }
+  }
+
+  .row.mainHeadline  > .column {
+    h1 {
+      margin: 2em 0 0 1em;
+      width: 420px;
+      height: 340px;
+      font-family: Raleway;
+      font-size: 72px;
+      font-weight: bolder;
+      letter-spacing: 9px;
+      text-align: left;
+      color: #000000;
+    }
+
+    h4 {
+      padding-left: 1em;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    img.screensIcon {
+      width: 420px;
+      height: 210px;
+      margin-top: 5em;
+      object-fit: contain;
+    }
+
+    p {
+      width: 520px;
+      padding-left: 1em;
+      margin-left: auto;
+      margin-right: auto;
+      font-family: Cabin;
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: 2.5px;
+      text-align: left;
+    }
+  }
+
+  div.slick-initialized.slick-slider {
+    width: 100%;
+    margin: 8em 0;
+    padding: 2em 0;
+    background-color: #fef99f;
+
+    div.slick-list {
+      padding: 2em 9em;
+
+      div.reviewAvatar{
+        display: inline-block;
+        float: left;
+        margin-right: 0;
+        width: 70px;
+        img {
+          margin-right: 0;
+        }
+      }
+
+      div.reviewContent {
+        display: inline-block;
+        float: left;
+        width: 90%;
+        p {
+          display: block;
+          font-family: Raleway;
+          font-size: 16px;
+          letter-spacing: 2px;
+          text-align: left;
+          margin-bottom: 0;
+        }
+
+        strong {
+          font-family: Cabin;
+          font-size: 18px;
+          font-weight: 500;
+          letter-spacing: 2.3px;
+          text-align: left;
+          color: #333333;
+        }
+      }
+    }
+  }
+
+  div.slick-initialized.slick-slider.mobileOnly {
+    display: none;
+  }
+
+  .row.timeline {
+    margin-bottom: 8em;
+
+    .column {
+      width: 50%;
+      padding: 0 0 4em 5em;
+    }
+
+    .timelineIconMobile {
+      display: none;
+    }
+  }
+
+  .row.pricing {
+    padding: 8em 0;
+    background-color: #fef99f;
+
+    h5 {
+      margin-top: 2em;
+    }
+
+    ul {
+      padding-left: 25px;
+      li {
+        padding: 0.2em 0;
+      }
+    }
+
+    div.plans {
+      width: 476px;
+      margin: -2em auto 4em;
+
+      .segment {
+        border: none;
+        border-radius: 0;
+        box-shadow: 1px 2px 4px 0 rgba(34,36,38,.45);
+      }
+
+      .ui.padded.segment {
+        padding: 21px 0 21px 24px;
+      }
+
+      .green.segment {
+        border: 2px solid #21ba45;
+      }
+
+      header {
+        font-family: Cabin;
+        font-size: 14px;
+        letter-spacing: 1.8px;
+        text-align: left;
+      }
+
+      .violet.segment > header {
+        color: #6435c9;
+      }
+
+      .green.segment > header {
+        color: #24c63a;
+      }
+
+      .yellow.segment > header {
+        color: #fbbd08;
+      }
+
+      p {
+        font-size: 22px;
+        font-family: Raleway;
+        letter-spacing: 1.5px;
+        text-align: left;
+        color: #333333;
+        margin-bottom: 0;
+
+        span {
+          font-size: 12px;
+        }
+      }
+
+      div.planDescription {
+        width: 359px;
+        font-family: Cabin;
+        font-size: 16px;
+        letter-spacing: 2px;
+        text-align: left;
+        color: #000;
+      }
+    }
+  }
+
+  .row.footer {
+    padding: 2em 0;
+    font-family: Raleway;
+
+    a {
+      color: #333333;
+      padding-right: 3em;
+    }
+
+    .column {
+      width: auto;
+    }
+
+    .column.left {
+      padding-left: 5em;
+      width: 50%;
+    }
+
+    .column.right {
+      padding-right: 4em;
+      text-align: right;
+      width: 50%;
+    }
+
+    .column.divider {
+      padding: 0 0 1em;
+    }
+  }
+}
+
+@media all
+  and (min-width: 1024px)
+  and (max-width: 1339px) {
+  div#landingPage.ui.grid {
+    h2 {
+      font-size: 48px;
+      letter-spacing: 6px;
+    }
+
+    h3 {
+      width: 520px;
+      font-size: 28px;
+      letter-spacing: 3.5px;
+    }
+
+    h4 {
+      width: 440px;
+      font-size: 24px;
+      letter-spacing: 3px;
+    }
+
+    h5 {
+      font-size: 22px;
+      letter-spacing: 2.8px;
+    }
+
+    ul {
+      font-size: 16px;
+      letter-spacing: 2px;
+    }
+
+    ul li:before {
+      margin-left: -15px;
+    }
+
+    .row > .column {
+      padding-left: 3em;
+    }
+
+    form.createAccountForm {
+      margin: 2em auto 0;
+      width: 26em;
+    }
+
+    .row.mainHeadline  > .column {
+      h1 {
+        margin: 1.3em 0 0 1em;
+        width: 370px;
+        height: 292px;
+        font-size: 62px;
+        letter-spacing: 7.8px;
+      }
+
+      h4 {
+        padding-left: 2em;
+      }
+
+      img.screensIcon {
+        width: 345px;
+        height: 182px;
+        margin-top: 3em;
+      }
+
+      p {
+        width: 374px;
+        font-size: 14px;
+        letter-spacing: 1.8px;
+      }
+    }
+
+    div.slick-initialized.slick-slider {
+      div.slick-list {
+        p {
+          font-size: 14px;
+          letter-spacing: 1.8px;
+        }
+
+        strong {
+          font-size: 16px;
+          letter-spacing: 2px;
+        }
+      }
+    }
+
+    .row.timeline {
+      padding-bottom: 0;
+      margin-bottom: 8em;
+      .column {
+        padding: 0 0 5em 3em;
+      }
+    }
+
+    .row.pricing {
+      h2, h3 {
+        width: 430px;
+      }
+
+      h5 {
+        margin-top: 1.5em;
+      }
+
+      ul {
+        padding-left: 18px;
+      }
+
+      div.plans {
+        width: 375px;
+        margin: -2em auto 4em;
+
+        .ui.padded.segment {
+          padding: 14px 0 14px 20px;
+        }
+
+        header {
+          font-size: 14px;
+          letter-spacing: 1.8px;
+          text-align: left;
+        }
+
+        p {
+          font-size: 20px;
+          span {
+            font-size: 11px;
+          }
+        }
+
+        div.planDescription {
+          width: 269px;
+          font-size: 14px;
+          letter-spacing: 1.8px;
+        }
+      }
+    }
+
+    .row.footer {
+      font-size: 14px;
+
+      i {
+        font-size: 20px;
+      }
+
+      .column.left {
+        padding-left: 3em;
+      }
+    }
+  }
+}
+
+@media all
+  and (min-width: 670px)
+  and (max-width: 1024px) {
+  div#landingPage.ui.grid {
+    h2, h3 {
+      width: 346px;
+    }
+
+    h2 {
+      font-size: 30px;
+      letter-spacing: 3.8px;
+    }
+
+    h3 {
+      font-size: 18px;
+      letter-spacing: 2.3px;
+    }
+
+    h4 {
+      width: 300px;
+      font-size: 16px;
+      letter-spacing: 2px;
+    }
+
+    h5 {
+      font-size: 16px;
+      letter-spacing: 2px;
+    }
+
+    ul {
+      font-size: 12px;
+      letter-spacing: 1.5px;
+    }
+
+    ul li:before {
+      margin-left: -15px;
+    }
+
+    .row > .column {
+      padding-left: 2em;
+    }
+
+    form.createAccountForm {
+      margin: 2em auto 0;
+      width: 20em;
+
+      button {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+      }
+    }
+
+    .row.mainHeadline  > .column {
+      h1 {
+        margin: 2em 0 0 0;
+        width: 263px;
+        height: 216px;
+        font-size: 46px;
+        letter-spacing: 5.4px;
+      }
+
+      h4 {
+        padding-left: 0.5em;
+      }
+
+      img.screensIcon {
+        width: 241px;
+        height: 139px;
+        margin-top: 3em;
+      }
+
+      p {
+        width: 300px;
+        font-size: 10px;
+        letter-spacing: 1.3px;
+      }
+    }
+
+    div.slick-initialized.slick-slider {
+      div.slick-list {
+        div.reviewContent {
+          width: 86%;
+          p {
+            font-size: 14px;
+            letter-spacing: 1.8px;
+          }
+
+          strong {
+            font-size: 16px;
+            letter-spacing: 2px;
+          }
+        }
+      }
+    }
+
+    .row.timeline {
+      .column {
+        padding: 0 0 4em 3em;
+      }
+    }
+
+    .row.pricing {
+
+      h2, h3 {
+        width: 300px;
+      }
+
+      h5 {
+        margin-top: 2em;
+        margin-bottom: 0;
+      }
+
+      ul {
+        margin-top: 0;
+        padding-left: 18px;
+      }
+
+      div.plans {
+        width: 290px;
+        margin: -2em auto 4em;
+
+        .ui.padded.segment {
+          padding: 10px 0 10px 15px;
+        }
+
+        header {
+          font-size: 11px;
+          letter-spacing: 1.4px;
+        }
+
+        p {
+          font-size: 18px;
+          span {
+            font-size: 10px;
+          }
+        }
+
+        div.planDescription {
+          width: 235px;
+          font-size: 12px;
+          letter-spacing: 1.5px;
+        }
+      }
+    }
+
+    .row.footer {
+      font-size: 8px;
+
+      i {
+        font-size: 14px;
+      }
+
+      .column.left {
+        padding-left: 2em;
+        a {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 669px) {
+  /*
+    Careeer Logo
+  */
+  div.ui.left.aligned.grid div.column.careeerLogo {
+    padding: 0;
+  }
+
+  h2.ui.header.careeer {
+    object-fit: contain;
+    margin-top: -10px;
+    width: 53px;
+    height: 45px;
+    font-size: 36px;
+    padding: 1rem;
+    letter-spacing: 3px;
+  }
+
+  /*
+    Welcome Message
+  */
+  div.ui.text.container.welcomeContainer {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+  }
+
+  h2.ui.header.welcomeHeader {
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.5em;
+  }
+
+  p.welcomeContent {
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 1.5em;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 282px;
+  }
+
+  /*
+    Button Section
+  */
+  button.ui.green.button.buildYourRoadmap {
+    width: 260px;
+    font-size: 14px;
+    letter-spacing: 1.8px;
+    margin: 1.5em 0 0.5em;
+  }
+
+  a.learnMoreLink {
+    font-size: 10px;
+    letter-spacing: 0.8px;
+    color: #919191;
+  }
+
+  /*
+    Landing Page
+  */
+  div#landingPage.ui.grid {
+    button.ui.button {
+      margin-left: 1em;
+      font-family: Cabin;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      width: 240px;
+      color: #ffffff;
+      border-radius: 18px;
+      background-color: #24c63a;
+    }
+
+    h2, h3 {
+      width: 280px;
+    }
+
+    h2 {
+      font-size: 26px;
+      letter-spacing: 3.3px;
+    }
+
+    h3 {
+      font-size: 14px;
+      letter-spacing: 1.8px;
+    }
+
+    h4 {
+      width: 290px;
+      font-size: 18px;
+      letter-spacing: 2.3px;
+    }
+
+    h5 {
+      width: 263px;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+    }
+
+    ul {
+      font-size: 10px;
+      letter-spacing: 1.3px;
+    }
+
+    ul li:before {
+      content: '\2013';
+      position: absolute;
+      margin-left: -10px;
+    }
+
+    .row > .column {
+      padding-left: 1em;
+      width: 100%;
+    }
+
+    form.createAccountForm {
+      display: none;
+    }
+
+    .row.mainHeadline  > .column {
+      h1 {
+        margin: 2em 0 0 0;
+        width: 290px;
+        height: 111px;
+        font-size: 32px;
+        letter-spacing: 4px;
+      }
+
+      h4 {
+        padding-left: 0;
+        margin-left: 0;
+      }
+
+      img.screensIcon {
+        display: none;
+      }
+
+      p {
+        width: 290px;
+        padding-left: 0;
+        margin-left: 0;
+        font-size: 12px;
+        letter-spacing: 1.5px;
+      }
+    }
+
+    div.slick-initialized.slick-slider {
+      div.slick-list {
+        p {
+          font-size: 10px;
+          letter-spacing: 1.3px;
+        }
+
+        strong {
+          font-size: 12px;
+          letter-spacing: 1.5px;
+        }
+      }
+    }
+
+    div.slick-initialized.slick-slider.nonMobile {
+      display: none;
+    }
+
+    div.slick-initialized.slick-slider.mobileOnly {
+      display: inherit;
+      margin-bottom: 5em;
+      margin-top: 5em;
+
+      div.slick-list {
+        div.reviewAvatar {
+        width: 55px;
+        margin-right: 0 !important;
+
+          img.ui.avatar.image {
+            width: 50px;
+            height: 50px;
+            margin-right: 0 !important;
+          }
+        }
+        div.reviewContent {
+          min-width: 220px;
+          max-width: 280px;
+
+          p {
+            font-size: 10px;
+            letter-spacing: 1.3px;
+          }
+
+          strong {
+            font-size: 12px;
+            letter-spacing: 1.5px;
+          }
+        }
+      }
+    }
+
+    .row.timeline {
+      padding-bottom: 5em;
+      margin-bottom: 0;
+
+      h2 {
+        max-width: 400px;
+        width: unset;
+      }
+
+      .timelineIcon {
+        display: none;
+      }
+
+      .timelineIconMobile {
+        display: inherit;
+        transform: scale(1.4);
+      }
+
+      .column {
+        width: 100%;
+        padding: 0 0 2em 1em;
+      }
+    }
+
+    .row.pricing {
+      padding: 5em 0;
+
+      h5 {
+        margin-bottom: 0;
+      }
+
+      ul {
+        padding-left: 1em;
+        li {
+          padding: 0 0;
+        }
+      }
+
+      div.plans {
+        width: auto;
+        margin: 3em 0 3em;
+
+        .ui.padded.segment {
+          padding: 8px 0 8px 12px;
+        }
+
+        header {
+          font-size: 10px;
+          letter-spacing: 1.3px;
+        }
+
+        p {
+          font-size: 16px;
+
+          span {
+            font-size: 9px;
+          }
+        }
+
+        div.planDescription {
+          width: 240px;
+          font-size: 11px;
+          letter-spacing: 1.5px;
+        }
+      }
+    }
+
+    .row.footer {
+      font-size: 8px;
+      margin-bottom: 15em;
+
+      i {
+        font-size: 14px;
+      }
+
+      a {
+        padding-right: 1em;
+      }
+
+      .column.left {
+        a {
+          font-size: 10px
+        }
+
+        padding-left: 2em;
+        width: 70%;
+
+        &.coachLink {
+          width: 40%;
+        }
+      }
+
+      .column.right {
+        width: 30%;
+        padding-right: 1em;
+
+        &.mediaIcons {
+          width: 60%;
+        }
+      }
+    }
+  }
+}

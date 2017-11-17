@@ -17,7 +17,7 @@ export default class OnBoardingQuestion extends Component {
   handleItemClick = (e, { name }) => {
     this.setState({ activeItem: name });
     localStorage.setItem("Answer1", name);
-    $crisp.push(["set", 'session:data', [[["Question1", "Where are you in your career path?"], ["Answer1", name]]]]);
+    $crisp.push(["set", 'session:data', [[["Question1", "Which area would you like to improve most?"], ["Answer1", name]]]]);
     this.props.history.push('/OnBoarding/Question_2');
   }
 
@@ -35,24 +35,31 @@ export default class OnBoardingQuestion extends Component {
 
     const Items = [
       {
-        key: 'Exploring',
-        name: 'Exploring',
+        key: 'Skill development',
+        name: 'Skill development',
         onClick: this.handleItemClick,
-        active: activeItem === 'Exploring',
+        active: activeItem === 'Skill development',
         className: itemClass
       },
       {
-        key: 'Interviewing',
-        name: 'Interviewing',
+        key: 'Professional branding',
+        name: 'Professional branding',
         onClick: this.handleItemClick,
-        active: activeItem === 'Interviewing',
+        active: activeItem === 'Professional branding',
         className: itemClass
       },
       {
-        key: 'Gaining new skills',
-        name: 'Gaining new skills',
+        key: 'Job search strategy',
+        name: 'Job search strategy',
         onClick: this.handleItemClick,
-        active: activeItem === 'Gaining new skills',
+        active: activeItem === 'Job search strategy',
+        className: itemClass
+      },
+      {
+        key: 'Interview prep',
+        name: 'Interview prep',
+        onClick: this.handleItemClick,
+        active: activeItem === 'Interview prep',
         className: itemClass
       },
     ]
@@ -60,7 +67,7 @@ export default class OnBoardingQuestion extends Component {
     return (
       <div className="onBoarding">
         <PageHeader
-          counterLabel="2/5"
+          counterLabel="2/4"
           handleClick={this.handleClick}
           headerLinkLabel="Skip question"
         />
@@ -72,7 +79,7 @@ export default class OnBoardingQuestion extends Component {
             <Grid.Column className="onBoardingColumn">
               <TeamIcon />
               <div className="userNameLabel">
-                Where are you in your career path?
+                Which area would you like to improve most?
               </div>
             </Grid.Column>
           </Grid.Row>

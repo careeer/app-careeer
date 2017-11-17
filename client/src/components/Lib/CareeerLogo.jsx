@@ -4,12 +4,18 @@ import { Grid, Header } from 'semantic-ui-react';
 const CareeerLogo = () => (
   <Grid textAlign="left">
     <Grid.Column className="careeerLogo">
-      <Header
-        as="h2"
-        content="C!"
-        textAlign="left"
-        className="careeer"
-      />
+      <a
+        href="/"
+        target="_self"
+        rel="noreferrer noopener"
+      >
+        <Header
+          as="h2"
+          content="C!"
+          textAlign="left"
+          className="careeer"
+        />
+      </a>
     </Grid.Column>
   </Grid>
 );
