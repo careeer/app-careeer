@@ -1,8 +1,9 @@
 /* eslint-disable */
 import React from 'react';
 import { inject, observer } from 'mobx-react';
-import { Dimmer, Loader } from 'semantic-ui-react';
+import { Dimmer } from 'semantic-ui-react';
 import { Route, Redirect } from 'react-router-dom';
+import LoadingScreen from './LoadingScreen';
 
 @inject('user') @observer
 export default class AuthRoute extends React.Component {
@@ -15,13 +16,7 @@ export default class AuthRoute extends React.Component {
 
     if (this.props.user.isLoading) {
       return (
-        <Dimmer
-          page
-          active
-          inverted
-        >
-          <Loader size="medium" />
-        </Dimmer>
+        <LoadingScreen isLoading={this.props.user.isLoading} />
       );
     }
 

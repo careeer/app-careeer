@@ -8,6 +8,7 @@ const ClientList = (props) => {
     currentClient => (
       <ClientElement
         key={currentClient.id}
+        clientIndex={currentClient.id}
         onClientNameClick={props.handleExistingClientClick}
         onArchiveClick={props.handleArchiveClick}
         onDuplicateClick={props.handleDuplicateClick}

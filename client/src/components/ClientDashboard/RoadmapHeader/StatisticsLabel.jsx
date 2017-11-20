@@ -1,25 +1,29 @@
 /* eslint-disable */
-import React, { Component } from 'react';
-import { Transition, Statistic } from 'semantic-ui-react';
+import React, { PureComponent } from 'react';
+import { inject, observer } from 'mobx-react';
+import { Statistic } from 'semantic-ui-react';
 
-class RoadmapHeader extends Component {
+@inject('roadmapElements')@observer
+class RoadmapHeader extends PureComponent {
 
-  render () {
+  render() {
+    const { isBannerVisible, completedElements, incompleteElements } = this.props.roadmapElements;
+
     let updatedStatisticsMainValueStyle;
     let updatedStatisticsMainLabelStyle;
 
-    if (this.props.bannerVisible){
-      updatedStatisticsMainValueStyle= {
+    if (isBannerVisible) {
+      updatedStatisticsMainValueStyle = {
         color: '#03ac13',
       };
-      updatedStatisticsMainLabelStyle= {
+      updatedStatisticsMainLabelStyle = {
         color: '#03ac13',
       };
     } else {
-      updatedStatisticsMainValueStyle= {
+      updatedStatisticsMainValueStyle = {
         color: '#949494',
       };
-      updatedStatisticsMainLabelStyle= {
+      updatedStatisticsMainLabelStyle = {
         color: '#949494',
       };
     }
@@ -28,20 +32,21 @@ class RoadmapHeader extends Component {
       <Statistic.Group>
         <Statistic className="statisticFirstComponent">
           <Statistic.Value className="statisticValue" style={updatedStatisticsMainValueStyle}>
-            {this.props.numberCompleted}
+            {completedElements.length}
           </Statistic.Value>
           <Statistic.Label className="statisticLabel" style={updatedStatisticsMainLabelStyle}>
             completed actions
           </Statistic.Label>
         </Statistic>
-          <Statistic className="statisticSecondComponent">
-            <Statistic.Value className="statisticValue">
-              {this.props.currentActions}
-            </Statistic.Value>
-            <Statistic.Label className="statisticLabel">
-              current actions
-            </Statistic.Label>
-          </Statistic>
+
+        <Statistic className="statisticSecondComponent">
+          <Statistic.Value className="statisticValue">
+            {incompleteElements.length}
+          </Statistic.Value>
+          <Statistic.Label className="statisticLabel">
+            current actions
+          </Statistic.Label>
+        </Statistic>
       </Statistic.Group>
     );
   }

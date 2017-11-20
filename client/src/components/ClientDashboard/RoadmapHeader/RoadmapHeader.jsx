@@ -67,11 +67,7 @@ class RoadmapHeader extends Component {
           floated="right"
           className="statisticColumn"
         >
-          <StatisticsLabel
-            numberCompleted={this.props.roadmapElements.completedElements.length}
-            currentActions={this.props.roadmapElements.incompleteElements.length}
-            bannerVisible={this.props.roadmapElements.isBannerVisible}
-          />
+          <StatisticsLabel />
         </Grid.Column>
       </Grid>
     );
