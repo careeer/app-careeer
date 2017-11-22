@@ -1,0 +1,112 @@
+div.ui.fluid.transparent.input {
+  border-color: transparent !important;
+  background-color: transparent !important;
+  font-family: Raleway;
+  font-size: 28px;
+  letter-spacing: 3.5px;
+  color: #919191;
+  margin-bottom: 2rem;
+}
+
+.ui.segment.coachDashboardSegment {
+  border: none;
+  padding: 1.2em;
+  margin: 2.8em 0;
+  box-shadow: none;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+
+  .accordion.ui {
+    div.left.floated.column {
+      width: auto;
+      padding: 0;
+    }
+
+    div.right.floated.column {
+      padding: 0;
+      width: auto;
+      padding-right: 1.5em;
+    }
+
+    .title {
+      padding: 0 !important;
+      div.left.floated.column.clientName {
+        padding-top: 0.5em;
+
+        i.completedToggleIcon {
+          padding-left: 1em;
+          font-size: 2rem !important;
+        }
+
+        .label.clientName {
+          padding: 0;
+          color: #333;
+          margin-top: 0;
+          font-size: 28px;
+          margin-left: 1em;
+          margin-bottom: 0;
+          font-family: Raleway;
+          font-weight: lighter;
+          letter-spacing: 3.5px;
+          background-color: transparent;
+          transition: all .2s ease-in-out;
+          
+          &:focus {
+            outline: none;
+          }
+
+          &:hover {
+            color: inherit;
+            transform: scale(1.05);
+            border-color: transparent !important;
+            background-color: transparent !important;
+
+          }
+        }
+      }
+
+      div.right.floated.column.clientActions {
+        padding: 0;
+        width: auto;
+        line-height: 2.5;
+        font-weight: lighter;
+        padding-right: 1.5em;
+        background-color: transparent;
+
+        i.icon {
+          color: #919191;
+          margin-top: auto;
+          padding-left: 1.1em;
+          padding-right: 1.1em;
+        }
+      }
+    }
+
+    .content {
+      .clientContent {
+        margin-left: 6.5em;
+
+        .ui.statistics {
+          margin: auto;
+          padding-top: 1em;
+
+          div.ui.statistic.statisticSecondComponent {
+            padding-left: 3em;
+          }
+        }
+      }
+
+      .toolboxUrl {
+        input {
+          width: 500px;
+          text-align: right;
+          border: none;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+}

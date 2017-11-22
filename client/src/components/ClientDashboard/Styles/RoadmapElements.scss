@@ -342,13 +342,14 @@ div.ui.grid.mobileOnlyGrid {
 img.settingsIcon {
   width: 50px;
   height: 50px;
-  background-color: transparent;
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.75);
   z-index: 2!important;
   right: 30px!important;
   bottom: 105px!important;
   cursor: pointer!important;
   position: fixed!important;
+  background-color: transparent;
+  transition: all .2s ease-in-out;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.75);
 
   &:hover {
     transform: scale(1.05);

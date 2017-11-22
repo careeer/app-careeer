@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="12px" viewBox="0 0 24 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>dropdown</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="enterPaymentInfo" transform="translate(-1262.000000, -578.000000)" fill="#333333">
+            <g id="completedAccordion" transform="translate(108.000000, 566.000000)">
+                <g id="dropdown" transform="translate(1166.000000, 18.000000) scale(1, -1) translate(-1166.000000, -18.000000) translate(1154.000000, 12.000000)">
+                    <path d="M11.9997187,12 C11.7328638,12 11.4769875,11.9015039 11.2886387,11.7291303 L0.294325626,1.58250047 C-0.098108542,1.22037669 -0.098108542,0.633731435 0.294325626,0.27159283 C0.686759794,-0.0905309432 1.32250829,-0.0905309432 1.71495853,0.27159283 L12,9.76373293 L22.2850415,0.273076092 C22.6774756,-0.0890476804 23.3132241,-0.0890476804 23.7056744,0.273076092 C24.0981085,0.635199865 24.0981085,1.22184512 23.7056744,1.58398373 L12.7097539,11.727647 C12.521385,11.9014669 12.2655047,11.9999666 12.0002411,11.9999666 L11.9997187,12 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

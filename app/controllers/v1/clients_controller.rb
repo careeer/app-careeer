@@ -5,7 +5,7 @@ module V1
   class ClientsController < ApplicationController
     before_action :set_client, only: [:show, :update, :duplicate, :destroy]
     before_action :set_paper_trail_whodunnit
-    
+
     # GET /clients
     # GET /clients.json
     def index
@@ -52,7 +52,7 @@ module V1
       if @client.update(client_params)
         head(:ok)
       else
-        render json: @client.errors, status: :unprocessable_entity
+        render json: @client.errors.full_messages, status: :unprocessable_entity
       end
     end
 
@@ -78,7 +78,7 @@ module V1
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def client_params
-        params.require(:client).permit(:name, :email, :avatar, :vision, :slug, :client_status, :new_name, :account_type)
+        params.require(:client).permit(:name, :email, :avatar, :vision, :slug, :client_status, :new_name, :account_type, :toolbox)
       end
   end
 end

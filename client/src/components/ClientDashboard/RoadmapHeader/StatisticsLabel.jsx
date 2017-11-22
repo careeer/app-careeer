@@ -1,10 +1,10 @@
 /* eslint-disable */
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { Statistic } from 'semantic-ui-react';
 
 @inject('roadmapElements')@observer
-class RoadmapHeader extends PureComponent {
+class RoadmapHeader extends Component {
 
   render() {
     const { isBannerVisible, completedElements, incompleteElements } = this.props.roadmapElements;
@@ -35,7 +35,7 @@ class RoadmapHeader extends PureComponent {
             {completedElements.length}
           </Statistic.Value>
           <Statistic.Label className="statisticLabel" style={updatedStatisticsMainLabelStyle}>
-            completed actions
+            completed
           </Statistic.Label>
         </Statistic>
 
@@ -44,7 +44,7 @@ class RoadmapHeader extends PureComponent {
             {incompleteElements.length}
           </Statistic.Value>
           <Statistic.Label className="statisticLabel">
-            current actions
+            current
           </Statistic.Label>
         </Statistic>
       </Statistic.Group>

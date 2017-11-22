@@ -1,6 +1,5 @@
 /* eslint-disable */
 export default [
-  "Reticulating splines...",
   "Generating witty dialog...",
   "Swapping time and space...",
   "Spinning violently around the y-axis...",
@@ -130,7 +129,6 @@ export default [
   "What is the airspeed velocity of an unladen swallow?",
   "Hello, IT... Have you tried forcing an unexpected reboot?",
   "They just toss us away like yesterday's jam.",
-  "They're fairly regular, the beatings, yes. I'd say we're on a bi-weekly beating.",
   "The Elders of the Internet would never stand for it.",
   "Space is invisible mind dust, and stars are but wishes.",
   "Didn't know paint dried so quickly.",
@@ -190,7 +188,6 @@ export default [
   "Help, I'm trapped in a loader!",
   "What is the difference btwn a hippo and a zippo? One is really heavy, the other is a little lighter",
   "Please wait, while we purge the Decepticons for you. Yes, You can thanks us later!",
-  "Chuck Norris once urinated in a semi truck's gas tank as a joke....that truck is now known as Optimus Prime.",
   "Chuck Norris doesn’t wear a watch. HE decides what time it is.",
   "Mining some bitcoins...",
   "Downloading more RAM..",
@@ -221,7 +218,6 @@ export default [
   "Digested cookies being baked again.",
   "Live long and prosper.",
   "There is no cow level, but there's a goat one!",
-  "Deleting all your hidden porn...",
   "Running with scissors...",
   "Definitely not a virus...",
   "You may call me Steve.",

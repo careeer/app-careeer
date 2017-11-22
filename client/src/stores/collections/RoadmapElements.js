@@ -394,11 +394,12 @@ class RoadmapElements {
   @action async archiveClient(clientId) {
     const clientObject = this.getClientObjectFromId(clientId);
     clientObject.client_status = "archived";
+
     const response = await Api.put(`${this.path}/${clientObject.slug}`, clientObject);
     const status = await response.status;
     if (status === 200) {
       this.getClients();
-    }
+    } 
   }
 
   @action async updateClientVision() {

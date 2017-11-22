@@ -7,5 +7,6 @@ json.call(
   :avatar,
   :vision,
   :client_status,
-  :account_type
+  :account_type,
+  :toolbox
 )

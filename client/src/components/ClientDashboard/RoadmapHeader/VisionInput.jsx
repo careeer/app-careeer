@@ -32,8 +32,8 @@ class VisionInput extends React.Component {
       >
         <input
           autoFocus
-          onFocus={this.moveCaretAtEnd}
           className="careerVision"
+          onFocus={this.moveCaretAtEnd}
         />
       </Input>
     );

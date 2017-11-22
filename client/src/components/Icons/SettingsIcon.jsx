@@ -3,7 +3,7 @@ import SettingsPicture from '../Lib/Images/settings.svg';
 
 const SettingsIcon = () => (
   <img
-    alt="close"
+    alt="settings"
     src={SettingsPicture}
     className="settingsIcon"
   />
