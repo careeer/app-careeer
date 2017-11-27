@@ -1,15 +1,11 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import { List, Button, Icon, Grid, Dimmer, Loader } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
 import ClientList from './ClientList';
-import DuplicateClientInput from './DuplicateClientInput';
-import NewClientInput from './NewClientInput';
 import LoadingScreen from '../../Lib/LoadingScreen';
-import PlusButton from '../../ClientDashboard/RoadmapElements/PlusButton';
-import ClientElement from './ClientElement';
 
-import '../Styles/CoachDashboard.css';
+import '../Styles/CoachDashboard.scss';
 
 @inject('roadmapElements')@observer
 export default class CoachDashboard extends Component {
@@ -29,6 +25,10 @@ export default class CoachDashboard extends Component {
     this.props.roadmapElements.archiveClient(slug);
   };
 
+  handleToolboxUpload = (slug, url) => {
+    this.props.roadmapElements.updateClientToolbox(slug, url);
+  }
+
   handleDuplicateClick = (copiedFrom) => {
     this.props.history.push(`/duplicate/${copiedFrom}`);
   };
@@ -36,19 +36,18 @@ export default class CoachDashboard extends Component {
   render() {
     return (
       <Grid className="defaultGrid">
-        <div>
-          <LoadingScreen isLoading={this.props.roadmapElements.isClientLoading} />
-          <Grid.Row>
-            <Grid.Column>
-              <ClientList
-                currentClients={this.props.roadmapElements.clients.slice()}
-                handleExistingClientClick={this.handleExistingClientClick}
-                handleArchiveClick={this.handleArchiveClick}
-                handleDuplicateClick={this.handleDuplicateClick}
-              />
-            </Grid.Column>
-          </Grid.Row>
-        </div>
+        <LoadingScreen isLoading={this.props.roadmapElements.isClientLoading} />
+        <Grid.Row>
+          <Grid.Column>
+            <ClientList
+              currentClients={this.props.roadmapElements.clients.slice()}
+              handleExistingClientClick={this.handleExistingClientClick}
+              handleArchiveClick={this.handleArchiveClick}
+              handleToolboxUpload={this.handleToolboxUpload}
+              handleDuplicateClick={this.handleDuplicateClick}
+            />
+          </Grid.Column>
+        </Grid.Row>
       </Grid>
     );
   }

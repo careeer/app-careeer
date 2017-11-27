@@ -1,11 +1,14 @@
 /* eslint-disable */
-import React, { Component } from 'react';
-import { Label, Icon, Grid, Segment, Modal, Button, Accordion } from 'semantic-ui-react';
-import { segmentStyle, rowStyle, columnStyle, clientNameStyle, iconStyle, modalStyle, modalHeaderStyle, modalAcceptStyle } from '../../Constants/ClientElementStyles';
+import React, { PureComponent } from 'react';
+import { Grid, Label, Icon, Segment, Accordion, Modal, Button } from 'semantic-ui-react';
+import ToolboxInput from './ToolboxInput';
+import { modalStyle, modalHeaderStyle, modalAcceptStyle } from '../../Constants/ClientElementStyles';
 import Touch from '../../Lib/CheckTouch';
 import StatisticsLabel from '../../ClientDashboard/RoadmapHeader/StatisticsLabel';
+import ChevronDownIcon from '../../Icons/ChevronDownIcon';
+import ChevronUpIcon from '../../Icons/ChevronUpIcon';
 
-export default class ClientList extends Component {
+class ClientElement extends PureComponent {
   state = {
     isMouseInside: false,
     activeIndex: 0,
@@ -18,11 +21,11 @@ export default class ClientList extends Component {
   handleCancel = () => this.setState({ open: false })
 
   handleAccordionClick = (e, titleProps) => {
-    const { index } = titleProps
-    const { activeIndex } = this.state
-    const newIndex = activeIndex === index ? -1 : index
+    const { index } = titleProps;
+    const { activeIndex } = this.state;
+    const newIndex = activeIndex === index ? -1 : index;
 
-    this.setState({ activeIndex: newIndex })
+    this.setState({ activeIndex: newIndex });
   }
 
   handleOnClientNameClick = (event, data) => {
@@ -38,10 +41,6 @@ export default class ClientList extends Component {
     this.props.onArchiveClick(this.props.clientSlug);
   }
 
-  handleDuplicateClick = () => {
-    this.props.onDuplicateClick(this.props.clientSlug);
-  }
-
   mouseEnter = () => {
     this.setState({
       isMouseInside: true,
@@ -55,47 +54,59 @@ export default class ClientList extends Component {
   };
 
   render() {
-    const { activeIndex } = this.state
+    const { activeIndex } = this.state;
+    const chevronIcon = activeIndex === this.props.clientIndex ? 'up' : 'down';
 
     let finalIconStyles = {};
-
     if (!this.state.isMouseInside && !Touch.isTouchDevice()) {
-      finalIconStyles= Object.assign({}, iconStyle, {
+      finalIconStyles = {
         opacity: 0,
-      });
+      };
     } else {
-      finalIconStyles= Object.assign({}, iconStyle, {
+      finalIconStyles = {
         opacity: 1,
-      });
+      };
     }
 
     return (
       <Segment
-        style={segmentStyle}
+        clearing
+        className="coachDashboardSegment"
         onMouseEnter={this.mouseEnter}
         onMouseLeave={this.mouseExit}
       >
         <Accordion>
-
-        <Accordion.Title active={activeIndex === this.props.clientIndex} index={this.props.clientIndex} onClick={this.handleAccordionClick}>
-          <Icon name='chevron up' />
-
-
-
-          <Grid>
-            <Grid.Row style={rowStyle}>
+          <Accordion.Title
+            index={this.props.clientIndex}
+            onClick={this.handleAccordionClick}
+            active={activeIndex === this.props.clientIndex}
+          >
+            <Grid>
               <Grid.Column
-                as={Label}
-                style={clientNameStyle}
-                content={this.props.clientName}
-                onClick={this.handleOnClientNameClick}
-                name={this.props.clientName}
-                value={this.props.clientSlug}
-              />
+                floated="left"
+                className="clientName"
+              >
+                {(activeIndex === this.props.clientIndex) &&
+                  <ChevronUpIcon
+                  />
+                }
+                {(activeIndex !== this.props.clientIndex) &&
+                  <ChevronDownIcon
+                  />
+                }
+                <Label
+                  as="a"
+                  id="clientName"
+                  className="clientName"
+                  name={this.props.clientName}
+                  value={this.props.clientSlug}
+                  content={this.props.clientName}
+                  onClick={this.handleOnClientNameClick}
+                />
+              </Grid.Column>
               <Grid.Column
-                as={Label}
                 floated="right"
-                style={columnStyle}
+                className="clientActions"
               >
                 <Icon
                   link
@@ -107,24 +118,44 @@ export default class ClientList extends Component {
                 <Icon
                   link
                   size="large"
-                  name="copy"
-                  style={finalIconStyles}
-                  onClick={this.handleDuplicateClick}
-                />
-                <Icon
-                  link
-                  size="large"
                   name="briefcase"
-                  style={finalIconStyles}
+                  className={this.props.toolboxUrl && 'activeToolbox'}
                 />
               </Grid.Column>
-            </Grid.Row>
-          </Grid>
-
+            </Grid>
           </Accordion.Title>
 
           <Accordion.Content active={activeIndex === this.props.clientIndex}>
-            <StatisticsLabel />
+            <Grid>
+              <Grid.Column
+                floated="left"
+                className="clientContent"
+              >
+                <label
+                  htmlFor="clientName"
+                  className="visionLabel"
+                >
+                  {this.props.clientVision}
+                </label>
+                <StatisticsLabel
+                  CompletedStats={this.props.CompletedStats}
+                  incompleteStats={this.props.incompleteStats}
+                />
+              </Grid.Column>
+              <Grid.Column
+                floated="right"
+                className="toolboxUrl"
+              >
+                <ToolboxInput
+                  updateClientToolbox={this.props.onToolboxUpload}
+                  currentClient={this.props.clientSlug}
+                  disableOnClickOutside={activeIndex !== this.props.clientIndex}
+                  inputValue={this.props.toolboxUrl}
+                  placeholder="enter google drive toolbox link"
+                />
+              </Grid.Column>
+            </Grid>
+
           </Accordion.Content>
 
         </Accordion>
@@ -133,24 +164,27 @@ export default class ClientList extends Component {
           size="mini"
           dimmer="blurring"
           style={modalStyle}
-          open={this.state.open}
           onClose={this.close}
+          open={this.state.open}
         >
           <Modal.Header style={modalHeaderStyle}>
             Archive Roadmap
           </Modal.Header>
           <Modal.Content>
-            <p>Are you sure you want to archive {this.props.clientName}'s roadmap?</p>
+            <p>Are you sure you want to archive {this.props.clientName}&apos;s roadmap?</p>
           </Modal.Content>
           <Modal.Actions>
-            <Button negative onClick={this.close}>
+            <Button
+              negative
+              onClick={this.close}
+            >
               No
             </Button>
             <Button
               positive
-              icon='checkmark'
-              labelPosition='right'
-              content='Yes'
+              content="Yes"
+              icon="checkmark"
+              labelPosition="right"
               style={modalAcceptStyle}
               onClick={this.archiveClient}
             />
@@ -162,3 +196,5 @@ export default class ClientList extends Component {
     );
   }
 }
+
+export default ClientElement;

@@ -32,7 +32,7 @@ class RoadmapHeader extends Component {
       <Statistic.Group>
         <Statistic className="statisticFirstComponent">
           <Statistic.Value className="statisticValue" style={updatedStatisticsMainValueStyle}>
-            {completedElements.length}
+            {this.props.completedStats ? this.props.completedStats : completedElements.length}
           </Statistic.Value>
           <Statistic.Label className="statisticLabel" style={updatedStatisticsMainLabelStyle}>
             completed
@@ -41,7 +41,7 @@ class RoadmapHeader extends Component {
 
         <Statistic className="statisticSecondComponent">
           <Statistic.Value className="statisticValue">
-            {incompleteElements.length}
+            {this.props.incompleteStats ? this.props.incompleteStats : incompleteElements.length}
           </Statistic.Value>
           <Statistic.Label className="statisticLabel">
             current

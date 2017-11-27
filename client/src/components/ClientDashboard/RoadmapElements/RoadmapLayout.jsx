@@ -9,6 +9,7 @@ import withScrolling from 'react-dnd-scrollzone';
 
 import AccountFlag from './AccountFlag';
 import SettingsButton from './SettingsButton';
+import ToolboxButton from './ToolboxButton';
 import Settings from '../SettingsView/Settings';
 import HTML5toTouch from '../../Lib/HTML5toTouch';
 import FullScreenLoader from './FullScreenLoader';
@@ -99,6 +100,7 @@ export default class RoadmapLayout extends Component {
             freeTrialMessage,
             completedElements,
             incompleteElements,
+            currentClientToolbox,
             completedAccordionIcon,
             toggleCompletedElements,
             completedAccordionMessage
@@ -114,6 +116,9 @@ export default class RoadmapLayout extends Component {
         />
         <SettingsButton
           toggleSettings={toggleSettings}
+        />
+        <ToolboxButton
+          toolboxUrl={currentClientToolbox}
         />
         <Settings
           showSettings={showSettings}

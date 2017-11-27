@@ -5,7 +5,7 @@ const ToolboxIcon = () => (
   <img
     alt="toolbox"
     src={ToolboxPicture}
-    className="toolboxIcon"
+    className="settingsIcon toolboxIcon"
   />
 );
 

@@ -16,6 +16,7 @@ class RoadmapElements {
   @observable currentClientSlug ='';
   @observable currentClientAvatar = '';
   @observable currentClientVision = '';
+  @observable currentClientToolbox = '';
   @observable clients = [];
   @observable isNameInputDisabled = false;
   @observable isCreateFormClose = true;
@@ -27,7 +28,7 @@ class RoadmapElements {
     this.currentClientSlug = '';
     this.currentClientAvatar = '';
     this.currentClientVision = '';
-
+    this.currentClientToolbox = '';
     this.freeTrialMessage = '';
     this.isNameInputDisabled = false;
     this.isCreateFormClose = true;
@@ -355,7 +356,6 @@ class RoadmapElements {
 
   @action async getClient(slug = null, callBack) {
     let slugValue;
-
     if (slug) {
       slugValue = slug;
     } else {
@@ -373,6 +373,7 @@ class RoadmapElements {
       this.currentClientSlug = client.slug;
       this.currentClientAvatar = client.avatar;
       this.currentClientVision = client.vision;
+      this.currentClientToolbox = client.toolbox;
       // Free trial status
       this.calculateAccountStatus(client.account_type, client.created_at);
       if (callBack) {
@@ -399,7 +400,19 @@ class RoadmapElements {
     const status = await response.status;
     if (status === 200) {
       this.getClients();
-    } 
+    }
+  }
+
+  @action async updateClientToolbox(clientId, toolboxURL) {
+    this.isClientLoading = true;
+    const clientObject = this.getClientObjectFromId(clientId);
+    clientObject.toolbox = toolboxURL;
+
+    const response = await Api.put(`${this.path}/${clientObject.slug}`, clientObject);
+    const status = await response.status;
+    if (status === 200) {
+      this.isClientLoading = false;
+    }
   }
 
   @action async updateClientVision() {

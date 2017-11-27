@@ -9,11 +9,16 @@ const ClientList = (props) => {
       <ClientElement
         key={currentClient.id}
         clientIndex={currentClient.id}
-        onClientNameClick={props.handleExistingClientClick}
-        onArchiveClick={props.handleArchiveClick}
-        onDuplicateClick={props.handleDuplicateClick}
         clientSlug={currentClient.slug}
         clientName={currentClient.name}
+        clientVision={currentClient.vision}
+        completedStats={currentClient.complete}
+        incompleteStats={currentClient.incomplete}
+        toolboxUrl={currentClient.toolbox}
+        onClientNameClick={props.handleExistingClientClick}
+        onArchiveClick={props.handleArchiveClick}
+        onToolboxUpload={props.handleToolboxUpload}
+        onDuplicateClick={props.handleDuplicateClick}
       />
     ),
   );

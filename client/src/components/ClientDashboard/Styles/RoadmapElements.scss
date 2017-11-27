@@ -354,6 +354,10 @@ img.settingsIcon {
   &:hover {
     transform: scale(1.05);
   }
+
+  &.toolboxIcon {
+    bottom: 175px!important;
+  }
 }
 
 /***
@@ -534,5 +538,9 @@ img.settingsIcon {
     height: 33px;
     right: 22px!important;
     bottom: 76px!important;
+
+    &.toolboxIcon {
+      bottom: 125px!important;
+    }
   }
 }

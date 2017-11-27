@@ -20,6 +20,11 @@ div.ui.fluid.transparent.input {
     div.left.floated.column {
       width: auto;
       padding: 0;
+
+      .chevronIcon {
+        padding-left: 1em;
+        padding-bottom: 0.2em;
+      }
     }
 
     div.right.floated.column {
@@ -50,7 +55,7 @@ div.ui.fluid.transparent.input {
           letter-spacing: 3.5px;
           background-color: transparent;
           transition: all .2s ease-in-out;
-          
+
           &:focus {
             outline: none;
           }
@@ -78,6 +83,10 @@ div.ui.fluid.transparent.input {
           margin-top: auto;
           padding-left: 1.1em;
           padding-right: 1.1em;
+
+          &.activeToolbox {
+            color: #24c63a;
+          }
         }
       }
     }
