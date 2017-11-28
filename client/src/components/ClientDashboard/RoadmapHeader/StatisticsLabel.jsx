@@ -49,8 +49,8 @@ const RoadmapHeader = function RoadmapHeader(props) {
 
 RoadmapHeader.propTypes = {
   isBannerVisible: PropTypes.bool.isRequired,
-  completedStats: PropTypes.string.isRequired,
-  incompleteStats: PropTypes.string.isRequired,
+  completedStats: PropTypes.number.isRequired,
+  incompleteStats: PropTypes.number.isRequired,
 };
 
 export default RoadmapHeader;
