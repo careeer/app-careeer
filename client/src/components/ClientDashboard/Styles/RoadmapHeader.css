@@ -16,7 +16,7 @@ div.overlayImage {
 div.column.nameVisionColumn {
   padding-top: 14px !important;
   padding-left: 0 !important;
-  width: 60% !important;
+  width: 78% !important;
 }
 
 div.right.floated.column.statisticColumn {
@@ -144,11 +144,14 @@ div.ui.statistic.statisticSecondComponent {
 
   div.column.nameVisionColumn {
     padding: 0 !important;
-    width: 181px !important;
+    width: 205px !important;
     height: fit-content;
   }
 
   div.right.floated.column.statisticColumn {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
     padding: 0 20px 0 0;
     margin-top: -8px;
   }
