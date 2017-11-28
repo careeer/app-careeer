@@ -55,4 +55,8 @@ body > div#root > div > div {
   .ui.fluid.button.addNewButton {
     visibility: hidden;
   }
+
+  .ui.grid.defaultGrid {
+    margin: 0 0.5rem;
+  }
 }
