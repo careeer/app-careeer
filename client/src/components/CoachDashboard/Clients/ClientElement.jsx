@@ -138,6 +138,7 @@ class ClientElement extends PureComponent {
                   {this.props.clientVision}
                 </label>
                 <StatisticsLabel
+                  isBannerVisible={false}
                   completedStats={this.props.completedStats}
                   incompleteStats={this.props.incompleteStats}
                 />

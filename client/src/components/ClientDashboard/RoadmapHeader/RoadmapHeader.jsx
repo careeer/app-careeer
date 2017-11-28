@@ -55,19 +55,23 @@ class RoadmapHeader extends Component {
         </Grid.Column>
         <Grid.Column className="nameVisionColumn">
           <ClientName
-            vision={this.props.roadmapElements.currentClientVision}
-            changeVision={this.props.roadmapElements.handleClientVisionChange}
-            handleKeyPress={this.handleKeyPress}
             name={this.props.clientName}
+            handleKeyPress={this.handleKeyPress}
             handleLabelClick={this.handleLabelClick}
             openInputForm={this.state.openInputForm}
+            vision={this.props.roadmapElements.currentClientVision}
+            changeVision={this.props.roadmapElements.handleClientVisionChange}
           />
         </Grid.Column>
         <Grid.Column
           floated="right"
           className="statisticColumn"
         >
-          <StatisticsLabel />
+          <StatisticsLabel
+            isBannerVisible={this.props.roadmapElements.isBannerVisible}
+            completedStats={this.props.roadmapElements.completedElements.length}
+            incompleteStats={this.props.roadmapElements.incompleteElements.length}
+          />
         </Grid.Column>
       </Grid>
     );
