@@ -118,6 +118,8 @@
     .accordion.ui {
       div.left.floated.column {
         .chevronIcon {
+          width: 20px;
+          height: 10px;
           padding-left: 0.5em;
           padding-bottom: 0.2em;
           margin-top: 0.8em;
@@ -134,7 +136,7 @@
 
           .label.clientName {
             font-size: 15px;
-            margin-left: 2em;
+            margin-left: 1.5em;
             letter-spacing: 2.2px;
           }
         }
@@ -151,8 +153,9 @@
 
       .content {
         .clientContent {
-          margin-left: 4em;
-
+          margin-left: 3em;
+          margin-right: auto;
+          margin-bottom: 0.5em;
           .ui.statistics {
             margin: auto;
             padding-top: 1em;
@@ -163,11 +166,14 @@
           }
         }
 
-        .toolboxUrl {
-          input {
-            width: auto;
+        .right.floated.column.toolboxUrl {
+          width: 100%;
+
+          input, .ui.input {
+            width: 100%;
           }
         }
+
       }
     }
   }
