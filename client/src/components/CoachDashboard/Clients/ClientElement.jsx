@@ -138,7 +138,7 @@ class ClientElement extends PureComponent {
                   {this.props.clientVision}
                 </label>
                 <StatisticsLabel
-                  CompletedStats={this.props.CompletedStats}
+                  completedStats={this.props.completedStats}
                   incompleteStats={this.props.incompleteStats}
                 />
               </Grid.Column>
