@@ -7,10 +7,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+html,
+body,
 body > div#root,
 body > div#root > div,
 body > div#root > div > div {
-  height: 100%;
+  min-height: 100%;
 }
 
 .ui.grid,
@@ -34,6 +36,16 @@ body > div#root > div > div {
 
 .ui.fluid.button.addNewButton {
   border-radius: 18px;
+}
+
+.ui.button.defaultButton {
+  color: #fff;
+  font-size: 18px;
+  font-family: Cabin;
+  text-align: center;
+  border-radius: 24px;
+  letter-spacing: 2.3px;
+  background-color: #24c63a;
 }
 
 /***

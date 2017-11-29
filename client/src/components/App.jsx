@@ -1,16 +1,18 @@
+/* eslint-disable */
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import ClientDashboard from './ClientDashboard/ClientDashboard';
-import CoachDashboard from './CoachDashboard/Clients/CoachDashboard';
-import NewClientInput from './CoachDashboard/Clients/NewClientInput';
-import LandingPage from './LandingPage';
+import ClientDashboard from 'components/ClientDashboard/ClientDashboard';
+import CoachDashboard from 'components/CoachDashboard/Clients/CoachDashboard';
+import NewClientInput from 'components/CoachDashboard/Clients/NewClientInput';
+import LandingPage from 'components/LandingPage';
+import Payment from 'components/Payment';
 
-import OnBoardingIntro from './OnBoarding/OnBoardingIntro';
-import OnBoardingQuestion from './OnBoarding/OnBoardingQuestion';
-import OnBoardingQuestion2 from './OnBoarding/OnBoardingQuestion2';
-import OnBoardingQuestion3 from './OnBoarding/OnBoardingQuestion3';
-import OnBoardingName from './OnBoarding/OnBoardingName';
+import OnBoardingIntro from 'components/OnBoarding/OnBoardingIntro';
+import OnBoardingQuestion from 'components/OnBoarding/OnBoardingQuestion';
+import OnBoardingQuestion2 from 'components/OnBoarding/OnBoardingQuestion2';
+import OnBoardingQuestion3 from 'components/OnBoarding/OnBoardingQuestion3';
+import OnBoardingName from 'components/OnBoarding/OnBoardingName';
 import OnBoardingThankYou from './OnBoarding/OnBoardingThankYou';
 import DuplicateClientInput from './CoachDashboard/Clients/DuplicateClientInput';
 import Users from './Users';
@@ -26,6 +28,7 @@ const App = () => (
     <Route path="/createAccount" component={Users.New} />
     <Route path="/ResetPassword" component={Sessions.ResetPassword} />
     <Route path="/users/password/:tk" component={Sessions.ResetPassword} />
+    <AuthRoute path="/freetrial/end" component={Payment.FreeTrialComplete} />
     <AuthRoute path="/freetrial" component={LandingPage.FreeTrialWelcome} />
     <AuthRoute path="/OnBoarding/Intro" component={OnBoardingIntro} />
     <AuthRoute path="/OnBoarding/Question_1" component={OnBoardingQuestion} />

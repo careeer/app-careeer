@@ -1,9 +1,12 @@
 /* eslint-disable */
 import React, { Component } from 'react';
+import { inject, observer } from 'mobx-react';
+import PageHeader from './Components/PageHeader';
 import TrialCompleteMessage from './Components/TrialCompleteMessage';
 import TrialCompleteActions from './Components/TrialCompleteActions';
-import PageHeader from './Components/PageHeader';
+import PaymentLayout from 'components/Payment/Components/PaymentLayout';
 
+@inject('roadmapElements') @observer
 export default class FreeTrialComplete extends Component {
   componentWillMount() {
     $crisp.push(['do', 'chat:hide']);
@@ -13,30 +16,34 @@ export default class FreeTrialComplete extends Component {
     $crisp.push(['do', 'chat:show']);
   }
 
-  handleClick = () => {
+  handleContinueClick = () => {
     this.props.history.push('/freetrial');
   }
 
-  redirectToQuestion = () => {
-    this.props.history.push('/OnBoarding/Question_1');
+  handleDeleteAccount = () => {
+    this.props.history.push('/freetrial');
   }
 
   render() {
-    return (
-      <div className="introOnboarding">
-        <PageHeader
+    const { currentClient,
+            completedElements,
+            currentClientAvatar } = this.props.roadmapElements;
 
+    return (
+      <PaymentLayout>
+        <PageHeader
+          step="1"
         />
         <TrialCompleteMessage
-          clientName
-          avatarUrl
-          completeActions
+          clientName={currentClient}
+          avatarUrl={currentClientAvatar}
+          completeActions={completedElements.length}
         />
         <TrialCompleteActions
-          handleContinueClick
-          handleDeleteAccount
+          handleContinueClick={this.handleContinueClick}
+          handleDeleteAccount={this.handleDeleteAccount}
         />
-      </div>
+      </PaymentLayout>
     );
   }
 }

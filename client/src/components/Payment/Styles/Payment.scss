@@ -1,0 +1,132 @@
+.paymentLayout {
+  min-height: 100%;
+  height: auto;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: #fef99f;
+
+  .header {
+    a {
+      padding: 0.8em;
+      color: #ffffff;
+      font-size: 0.9em;
+      font-weight: bold;
+      font-family: Raleway;
+      letter-spacing: 1.8px;
+      background-color: #24c63a;
+      vertical-align: -webkit-baseline-middle;
+    }
+  }
+
+  .messageBody {
+    margin-top: 6em;
+    text-align: center;
+
+    h1 {
+      color: #24c63a;
+      font-size: 3.5em;
+      letter-spacing: 6px;
+      font-family: Lobster;
+      font-weight: lighter;
+    }
+
+    .ui.avatar.image {
+      width: 7.5em;
+      height: 7.5em;
+      margin: 1em 0 2em;
+    }
+
+    h2 {
+      width: 546px;
+      color: #333333;
+      font-size: 2em;
+      margin: 1em 0;
+      font-weight: 500;
+      margin-left: auto;
+      margin-right: auto;
+      font-family: Cabin;
+      letter-spacing: 3.5px;
+    }
+
+    p {
+      color: #333333;
+      font-size: 1.4em;
+      font-family: Cabin;
+      letter-spacing: 2.5px;
+    }
+  }
+
+  .callToAction {
+    margin-top: 7em;
+    text-align: center;
+
+    .ui.button {
+      width: 387px;
+      background-color: #24c63a;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    p {
+      color: #000000;
+      margin: 3.5em 0 0 1em;
+      font-size: 12px;
+      font-family: Cabin;
+      letter-spacing: 1.5px;
+    }
+
+    a {
+      color: #24c63a;
+      font-size: 14px;
+      font-family: Cabin;
+      letter-spacing: 1.8px;
+    }
+  }
+}
+
+@media all and (max-width: 669px) {
+  .paymentLayout {
+    .header {
+      a {
+        padding: 1.3em;
+        font-size: 0.5em;
+        letter-spacing: 1.3px;
+      }
+    }
+
+    .messageBody {
+      margin-top: 4em;
+
+      h1 {
+        font-size: 1.7em;
+        letter-spacing: 2.8px;
+      }
+
+      .ui.avatar.image {
+        width: 6em;
+        height: 6em;
+      }
+
+      h2 {
+        width: 303px;
+        font-size: 1.2em;
+        letter-spacing: 1.8px;
+      }
+
+      p {
+        font-size: 0.9em;
+        letter-spacing: 1.3px;
+      }
+    }
+
+    .callToAction {
+      margin-top: 6em;
+
+      .ui.button {
+        width: 303px;
+      }
+    }
+  }
+}
