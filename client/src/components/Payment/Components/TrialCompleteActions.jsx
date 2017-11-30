@@ -4,11 +4,19 @@ import { Button } from 'semantic-ui-react';
 
 const TrialCompleteActions = props => (
   <div className="callToAction">
-    <Button className="defaultButton"> Continue </Button>
+    <Button
+      content="Continue"
+      className="defaultButton"
+      onClick={props.handleContinueClick}
+    />
     <p>
-      Don't want to continue?
+      Don&apos;t want to continue?
     </p>
-    <a>
+    <a
+      role="link"
+      tabIndex={0}
+      onClick={props.handleDeleteAccount}
+    >
       Delete account
     </a>
   </div>

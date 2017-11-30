@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       resources :roadmap_elements, except: :show
     end
     resource :sessions, only: %i[create destroy show]
-    resources :users, only: [:create] do
+    resources :users, only: [:create, :destroy] do
     end
     post :check, to: 'users#check'
     post :forgot, to: 'users#forgot'

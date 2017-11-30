@@ -46,8 +46,20 @@ module V1
       end
     end
 
-    private
+    def destroy
+      if current_user.try(:admin?)
+        head(:unprocessable_entity)
+      else
+        current_user.clients.delete_all
+        if current_user.destroy
+          head(:ok)
+        else
+          head(:unprocessable_entity)
+        end
+      end
+    end
 
+    private
     def user_params
       params.require(:user).permit(:email, :password, :password_confirmation, :reset_password_token)
     end

@@ -78,7 +78,7 @@ module V1
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def client_params
-        params.require(:client).permit(:name, :email, :avatar, :vision, :slug, :client_status, :new_name, :account_type, :toolbox)
+        params.require(:client).permit(:name, :slug, :avatar, :vision, :client_status, :new_name, :account_type, :toolbox)
       end
   end
 end

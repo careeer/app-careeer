@@ -89,8 +89,8 @@ export default class RoadmapLayout extends Component {
 
   render() {
     const { isLoading,
-            isDefaultLoading,
             isBannerVisible,
+            isDefaultLoading,
             isCreateFormClose,
             isToggleableFormVisible,
             isCompletedAccordionOpen,
@@ -103,8 +103,7 @@ export default class RoadmapLayout extends Component {
             currentClientToolbox,
             completedAccordionIcon,
             toggleCompletedElements,
-            completedAccordionMessage
-          } = this.props.roadmapElements;
+            completedAccordionMessage } = this.props.roadmapElements;
 
     return (
       <div>

@@ -17,6 +17,8 @@ class RoadmapElements {
   @observable currentClientAvatar = '';
   @observable currentClientVision = '';
   @observable currentClientToolbox = '';
+  @observable currentClientStatus = '';
+  @observable currentClientAccountType = '';
   @observable clients = [];
   @observable isNameInputDisabled = false;
   @observable isCreateFormClose = true;
@@ -29,6 +31,8 @@ class RoadmapElements {
     this.currentClientAvatar = '';
     this.currentClientVision = '';
     this.currentClientToolbox = '';
+    this.currentClientStatus = '';
+    this.currentClientAccountType = '';
     this.freeTrialMessage = '';
     this.isNameInputDisabled = false;
     this.isCreateFormClose = true;
@@ -36,6 +40,10 @@ class RoadmapElements {
     this.isBannerVisible = false;
     this.isCompletedAccordionOpen = false;
     this.showSettings = false;
+    this.accountActive = true;
+    this.pendingElements = [];
+    this.completedElements = [];
+    this.incompleteElements = [];
   }
 
   @action async fetchAll() {
@@ -341,8 +349,6 @@ class RoadmapElements {
     }
   }
 
-
-
   @action async copyClient(copiedFrom, newName) {
     const clientObject = this.getClientObjectFromId(copiedFrom);
     clientObject.new_name = newName;
@@ -368,28 +374,44 @@ class RoadmapElements {
     if (status === 200) {
       const json = await response.json();
       const client = json.data.user;
+
       // Set up client info
       this.currentClient = client.name;
       this.currentClientSlug = client.slug;
       this.currentClientAvatar = client.avatar;
       this.currentClientVision = client.vision;
       this.currentClientToolbox = client.toolbox;
+      this.currentClientStatus = client.client_status;
+      this.currentClientAccountType = client.account_type;
+
       // Free trial status
-      this.calculateAccountStatus(client.account_type, client.created_at);
+      this.calculateAccountStatus(this.currentClientAccountType, client.created_at);
+
       if (callBack) {
         callBack();
       }
+
       this.hasClientName = true;
     }
   }
 
   @action async updateClient() {
+    this.isClientLoading = true;
     const response = await Api.put(`${this.path}/${this.currentClientSlug}`, this.createClientObject());
     const status = await response.status;
 
     if (status === 200) {
-      // empty
+      this.isClientLoading = false;
     }
+  }
+
+  @action async updateClientAccount(newStatus) {
+    this.currentClientAccountType = newStatus;
+    this.accountActive = true;
+  }
+
+  @action async updateClientStatus(newStatus) {
+    this.currentClientStatus = newStatus;
   }
 
   @action async archiveClient(clientId) {
@@ -427,9 +449,12 @@ class RoadmapElements {
   createClientObject = () => {
     const client = {
       name: this.currentClient,
+      slug: this.currentClientSlug,
       avatar: this.currentClientAvatar,
       vision: this.currentClientVision,
-      slug: this.currentClientSlug,
+      toolbox: this.currentClientToolbox,
+      client_status: this.currentClientStatus,
+      account_type: this.currentClientAccountType,
     };
     return client;
   }
@@ -499,17 +524,20 @@ class RoadmapElements {
 
   // Account status
   @observable freeTrialMessage = "";
+  @observable accountActive = true;
 
   @action calculateAccountStatus = (account_type, created_at) => {
     if (account_type === "free trial") {
       const trialDaysLeft = this.getTrialsDaysLeft(created_at);
       if (trialDaysLeft > 0) {
+        this.accountActive = true;
         if (trialDaysLeft < 2) {
           this.freeTrialMessage = `${trialDaysLeft} trial day remaining`;
         } else {
           this.freeTrialMessage = `${trialDaysLeft} trial days remaining`;
         }
       } else if (trialDaysLeft <= 0) {
+        this.accountActive = false;
         this.freeTrialMessage = "";
       }
     }

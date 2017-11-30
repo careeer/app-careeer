@@ -7,6 +7,7 @@ import Touch from '../../Lib/CheckTouch';
 import StatisticsLabel from '../../ClientDashboard/RoadmapHeader/StatisticsLabel';
 import ChevronDownIcon from '../../Icons/ChevronDownIcon';
 import ChevronUpIcon from '../../Icons/ChevronUpIcon';
+import ModalComponent from './ModalComponent';
 
 class ClientElement extends PureComponent {
   state = {
@@ -17,8 +18,6 @@ class ClientElement extends PureComponent {
 
   show = () => this.setState({ open: true })
   close = () => this.setState({ open: false })
-  handleConfirm = () => this.setState({ open: false })
-  handleCancel = () => this.setState({ open: false })
 
   handleAccordionClick = (e, titleProps) => {
     const { index } = titleProps;
@@ -161,37 +160,15 @@ class ClientElement extends PureComponent {
 
         </Accordion>
 
-        <Modal
-          size="mini"
-          dimmer="blurring"
-          style={modalStyle}
-          onClose={this.close}
-          open={this.state.open}
-        >
-          <Modal.Header style={modalHeaderStyle}>
-            Archive Roadmap
-          </Modal.Header>
-          <Modal.Content>
-            <p>Are you sure you want to archive {this.props.clientName}&apos;s roadmap?</p>
-          </Modal.Content>
-          <Modal.Actions>
-            <Button
-              negative
-              onClick={this.close}
-            >
-              No
-            </Button>
-            <Button
-              positive
-              content="Yes"
-              icon="checkmark"
-              labelPosition="right"
-              style={modalAcceptStyle}
-              onClick={this.archiveClient}
-            />
-          </Modal.Actions>
-        </Modal>
-
+        <ModalComponent
+          negativeLabel="No"
+          positiveLabel="Yes"
+          handleClose={this.close}
+          isVisible={this.state.open}
+          modalHeader="Archive Roadmap"
+          modalContent={`Are you sure you want to archive ${this.props.clientName}\'s roadmap?`}
+          handlePositiveClick={this.archiveClient}
+        />
 
       </Segment>
     );

@@ -5,7 +5,6 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1;
   background-color: #fef99f;
 
   .header {
@@ -78,6 +77,7 @@
     }
 
     a {
+      cursor: pointer;
       color: #24c63a;
       font-size: 14px;
       font-family: Cabin;
