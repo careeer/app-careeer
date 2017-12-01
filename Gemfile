@@ -55,4 +55,4 @@ gem 'amoeba', '~> 3.0'
 
 gem 'paper_trail', '7.1.3'
 
-gem 'mailgunner', '~> 2.4'
+# gem 'mailgunner', '~> 2.4'
