@@ -59,7 +59,14 @@ module V1
     # DELETE /clients/1
     # DELETE /clients/1.json
     def destroy
-      if @client.destroy
+      if current_user.try(:admin?)
+        @user = User.find(@client.user_id)
+      else
+        @user = current_user
+      end
+
+      @user.clients.delete_all
+      if @user.destroy
         head(:ok)
       else
         head(:unprocessable_entity)

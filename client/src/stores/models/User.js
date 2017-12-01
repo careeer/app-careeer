@@ -91,22 +91,6 @@ class User {
     }
   }
 
-  @action async deleteAccount(userId) {
-    this.setIsLoading(true);
-
-    const response = await Api.delete(
-      `${this.users}/${userId}`
-    );
-
-    const status = await response.status;
-    if (status === 200) {
-      console.log("account deleted!");
-      this.signOut();
-    } else {
-      this.setIsLoading(false);
-    }
-  }
-
   signIn(email = null, password = null, callBack) {
     this.setIsLoading(true);
     const store = {

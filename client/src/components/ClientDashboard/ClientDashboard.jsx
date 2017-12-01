@@ -5,7 +5,7 @@ import RoadmapLayout from './RoadmapElements/RoadmapLayout';
 import FreeTrialComplete from 'components/Payment/FreeTrialComplete';
 import ModalComponent from 'components/CoachDashboard/Clients/ModalComponent';
 
-@inject('roadmapElements', 'user') @observer
+@inject('roadmapElements') @observer
 class ClientDashboard extends Component {
   state = {
     open: false,
@@ -36,7 +36,7 @@ class ClientDashboard extends Component {
   archiveClient = () => {
     const { currentClientSlug } = this.props.roadmapElements;
     this.close();
-    this.props.user.deleteAccount(currentClientSlug);
+    this.props.roadmapElements.deleteClient();
     this.props.history.push('/');
   }
 

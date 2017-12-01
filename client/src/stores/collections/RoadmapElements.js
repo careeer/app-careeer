@@ -405,6 +405,16 @@ class RoadmapElements {
     }
   }
 
+  @action async deleteClient() {
+    this.isClientLoading = true;
+    const response = await Api.delete(`${this.path}/${this.currentClientSlug}`);
+    const status = await response.status;
+
+    if (status === 200) {
+      this.isClientLoading = false;
+    }
+  }
+
   @action async updateClientAccount(newStatus) {
     this.currentClientAccountType = newStatus;
     this.accountActive = true;
