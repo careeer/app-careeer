@@ -11,11 +11,13 @@ Rails.application.configure do
     user_name: ENV['MAIL_USERNAME'],
     password: ENV['MAIL_PASSWORD'],
     domain: ENV['MAIL_DOMAIN'],
-    address: 'smtp-relay.sendinblue.com',
+    address: 'smtp.mailgun.org',
     port: 587,
     authentication: 'plain',
     enable_starttls_auto: true
   }
+
+  # config.action_mailer.delivery_method = :mailgun
 
   # Code is not reloaded between requests.
   config.cache_classes = true
