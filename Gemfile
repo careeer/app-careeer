@@ -55,4 +55,5 @@ gem 'amoeba', '~> 3.0'
 
 gem 'paper_trail', '7.1.3'
 
+gem 'sparkpost_rails', '1.5.0'
 # gem 'mailgunner', '~> 2.4'
