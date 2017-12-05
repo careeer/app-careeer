@@ -7,12 +7,6 @@ const PageHeader = props => (
     <a>
       Free trial completed
     </a>
-    <a>
-      Continue subscription
-    </a>
-    <a>
-      Enter payment info
-    </a>
   </div>
 );
 
