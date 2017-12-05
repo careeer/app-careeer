@@ -14,7 +14,7 @@ const TrialCompleteMessage = props => (
       src={props.avatarUrl || "https://res.cloudinary.com/careeer/image/upload/v1504959238/Careeer_logo_a3gu5x.png"}
     />
     <h2 className="introMessage">
-      You completed {props.completeActions} {props.completeActions > 1 ? 'actions' : 'action'} with your coach during your free trial.
+      You <span>completed {props.completeActions} {props.completeActions > 1 ? 'actions' : 'action'}</span> with your coach during your free trial.
     </h2>
     <p>
       Continue pursuing your goal with Careeer.me
