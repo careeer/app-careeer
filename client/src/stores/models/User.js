@@ -1,6 +1,5 @@
 /* eslint-disable */
 import { observable, action } from 'mobx';
-import SparkPost from 'sparkpost';
 import Api from '../helpers/api';
 
 class User {
@@ -241,48 +240,24 @@ class User {
   }
 
   @action async checkEmail(inputEmail, callBack) {
-    const sparky = new SparkPost();
+    const response = await Api.post(
+      this.checkPath,
+      { email: inputEmail },
+    );
+    const status = await response.status;
 
-    sparky.transmissions.send({
-        options: {
-          sandbox: false
-        },
-        content: {
-          from: 'support@careeer.me',
-          subject: 'Oh hey!',
-          html:'<html><body><p>Testing SparkPost - the world\'s most awesomest email service!</p></body></html>'
-        },
-        recipients: [
-          {address: inputEmail}
-        ]
-      })
-      .then(data => {
-        console.log('Woohoo! You just sent your first mailing!');
-        console.log(data);
-      })
-      .catch(err => {
-        console.log('Whoops! Something went wrong');
-        console.log(err);
-      });
+    if (status === 200) {
+      this.incorrectEmail = false;
+      this.emailExists = true;
+      if (callBack) {
+        callBack();
+      }
+
+    } else {
+      this.incorrectEmail = true;
+      this.emailExists = false;
     }
-  //   const response = await Api.post(
-  //     this.checkPath,
-  //     { email: inputEmail },
-  //   );
-  //   const status = await response.status;
-  //
-  //   if (status === 200) {
-  //     this.incorrectEmail = false;
-  //     this.emailExists = true;
-  //     if (callBack) {
-  //       callBack();
-  //     }
-  //
-  //   } else {
-  //     this.incorrectEmail = true;
-  //     this.emailExists = false;
-  //   }
-  // }
+  }
 }
 
 export default new User();

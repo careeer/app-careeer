@@ -24,7 +24,6 @@
     "semantic-ui-css": "^2.2.11",
     "semantic-ui-react": "^0.75.1",
     "sha1": "^1.1.1",
-    "sparkpost": "^2.1.2",
     "superagent": "^3.6.0",
     "yarn": "^1.2.1"
   },
