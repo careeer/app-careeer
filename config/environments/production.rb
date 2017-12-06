@@ -5,19 +5,17 @@ Rails.application.configure do
 
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_caching = false
-  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :sparkpost
 
-  config.action_mailer.smtp_settings = {
-    user_name: ENV['MAIL_USERNAME'],
-    password: ENV['MAIL_PASSWORD'],
-    domain: ENV['MAIL_DOMAIN'],
-    address: 'smtp.mailgun.org',
-    port: 587,
-    authentication: 'plain',
-    enable_starttls_auto: true
-  }
-
-  # config.action_mailer.delivery_method = :mailgun
+  # config.action_mailer.smtp_settings = {
+  #   user_name: ENV['MAIL_USERNAME'],
+  #   password: ENV['MAIL_PASSWORD'],
+  #   domain: ENV['MAIL_DOMAIN'],
+  #   address: 'smtp.mailgun.org',
+  #   port: 587,
+  #   authentication: 'plain',
+  #   enable_starttls_auto: true
+  # }
 
   # Code is not reloaded between requests.
   config.cache_classes = true
