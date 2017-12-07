@@ -212,7 +212,7 @@ div#landingPage.ui.grid {
     div.slick-list {
       padding: 2em 9em;
 
-      div.reviewAvatar{
+      div.reviewAvatar {
         display: inline-block;
         float: left;
         margin-right: 0;
@@ -257,6 +257,10 @@ div#landingPage.ui.grid {
     .column {
       width: 50%;
       padding: 0 0 4em 5em;
+    }
+
+    .timelineIcon {
+      transform: scale(1.1);
     }
 
     .timelineIconMobile {
@@ -460,6 +464,10 @@ div#landingPage.ui.grid {
       .column {
         padding: 0 0 5em 3em;
       }
+
+      .timelineIcon {
+        transform: scale(1.3);
+      }
     }
 
     .row.pricing {
@@ -616,6 +624,10 @@ div#landingPage.ui.grid {
     .row.timeline {
       .column {
         padding: 0 0 4em 3em;
+      }
+
+      .timelineIcon {
+        transform: scale(1.5);
       }
     }
 
