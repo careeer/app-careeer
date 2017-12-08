@@ -13,6 +13,6 @@ class CareeerMailer < ApplicationMailer
     @name = client.name.split.first
     @url = "https://medium.com/@careeer.me"
 
-    mail(to: email, subject: 'Free trial started! (Ask me anything)')
+    mail(to: email, from: 'Anya <anya@careeer.me>', subject: 'Free trial started! (Ask me anything)')
   end
 end
