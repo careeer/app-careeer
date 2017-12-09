@@ -30,8 +30,8 @@ module V1
 
       if @client.save
         render :create, status: :created
-        CareeerMailer.trial_end(current_user.email, @client).deliver
-        CareeerMailer.welcome(current_user.email, @client).deliver
+        # CareeerMailer.trial_end(current_user.email, @client).deliver
+        # CareeerMailer.welcome(current_user.email, @client).deliver
       else
         render json: @client.errors, status: :unprocessable_entity
       end
