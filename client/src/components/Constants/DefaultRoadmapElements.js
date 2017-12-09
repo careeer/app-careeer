@@ -3,7 +3,7 @@ const defaultElements = [
     index: '0',
     color: '#6435c9',
     cardType: 'Roadmap prep',
-    title: 'Write your career goal above',
+    title: 'Write your career goal below your name',
     description: 'What are you working to accomplish? Be specific, and don’t worry, you can always edit your goals. Select the check mark when you’re done.',
   },
   {
