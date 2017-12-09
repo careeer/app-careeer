@@ -11,8 +11,8 @@ class CareeerMailer < ApplicationMailer
 
   def welcome(email, client)
     @name = client.name.split.first
-    @url = "https://medium.com/@careeer.me"
+    @url = "https://medium.com/@careeer.me/why-i-built-careeer-me-ff5869503d1e"
 
-    mail(to: email, from: 'Anya <anya@careeer.me>', subject: 'Free trial started! (Ask me anything)')
+    mail(to: email, from: 'Anya Iverova <anya@careeer.me>', subject: 'Free trial started! (Ask me anything)')
   end
 end
