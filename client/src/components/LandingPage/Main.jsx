@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+/* eslint-disable */
+import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import { Grid } from 'semantic-ui-react';
 import CareeerLogo from '../Lib/CareeerLogo';
@@ -9,7 +10,7 @@ import Timeline from './Timeline';
 import Pricing from './Pricing';
 import Footer from './Footer';
 
-class Main extends Component {
+class Main extends PureComponent {
   handleSegmentClick = () => {
     // placeholder
   }
