@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Grid, Responsive } from 'semantic-ui-react';
 import CreateForm from '../Users/CreateForm';
 import Plans from './Plans';
 import CreateAccountButton from './CreateAccountButton';
 
-const Pricing = () => (
+const Pricing = props => (
   <Grid.Row className="pricing">
     <Grid.Column>
       <h2>
@@ -23,7 +24,10 @@ const Pricing = () => (
       </ul>
     </Grid.Column>
     <Grid.Column>
-      <Plans />
+      <Plans
+        selectedAccount={props.selectedAccount}
+        handleSegmentClick={props.handleSegmentClick}
+      />
       <CreateForm buttonLabel="START 7-DAY FREE TRIAL" />
     </Grid.Column>
     <Grid.Column textAlign="center">
@@ -33,5 +37,10 @@ const Pricing = () => (
     </Grid.Column>
   </Grid.Row>
 );
+
+Pricing.propTypes = {
+  selectedAccount: PropTypes.string.isRequired,
+  handleSegmentClick: PropTypes.func.isRequired,
+};
 
 export default Pricing;

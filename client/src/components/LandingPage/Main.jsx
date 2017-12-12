@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Grid } from 'semantic-ui-react';
 import CareeerLogo from '../Lib/CareeerLogo';
@@ -9,19 +9,30 @@ import Timeline from './Timeline';
 import Pricing from './Pricing';
 import Footer from './Footer';
 
-const Main = () => (
-  <div>
-    <CareeerLogo />
-    <Link to="/signIn" className="signInLink">Sign In</Link>
-    <Grid id="landingPage">
-      <MainHeadline />
-      <ReviewSlider />
-      <ReviewSliderMobile />
-      <Timeline />
-      <Pricing />
-      <Footer />
-    </Grid>
-  </div>
-);
+class Main extends Component {
+  handleSegmentClick = () => {
+    // placeholder
+  }
+
+  render() {
+    return (
+      <div>
+        <CareeerLogo />
+        <Link to="/signIn" className="signInLink">Sign In</Link>
+        <Grid id="landingPage">
+          <MainHeadline />
+          <ReviewSlider />
+          <ReviewSliderMobile />
+          <Timeline />
+          <Pricing
+            selectedAccount={'Standard'}
+            handleSegmentClick={this.handleSegmentClick}
+          />
+          <Footer />
+        </Grid>
+      </div>
+    );
+  }
+}
 
 export default Main;

@@ -86,12 +86,10 @@ class ClientElement extends PureComponent {
                 className="clientName"
               >
                 {(activeIndex === this.props.clientIndex) &&
-                  <ChevronUpIcon
-                  />
+                  <ChevronUpIcon />
                 }
                 {(activeIndex !== this.props.clientIndex) &&
-                  <ChevronDownIcon
-                  />
+                  <ChevronDownIcon />
                 }
                 <Label
                   as="a"
