@@ -74,6 +74,7 @@ export default class RoadmapElement extends React.Component {
     if (this.state.isMouseInsideCheckmark && !Touch.isTouchDevice()) {
       checkmarkIconStyle = {
         boxShadow: '1px 3px 2px 0 rgba(0, 0, 0, 0.5)',
+        backgroundColor: '#24c63a',
       };
     } else {
       checkmarkIconStyle = {
