@@ -73,18 +73,13 @@ export default class RoadmapElement extends React.Component {
     let checkmarkIconStyle = {};
     if (this.state.isMouseInsideCheckmark && !Touch.isTouchDevice()) {
       checkmarkIconStyle = {
-        color: '#24c63a',
-        marginRight: '0',
+        boxShadow: '1px 3px 2px 0 rgba(0, 0, 0, 0.5)',
       };
     } else {
       checkmarkIconStyle = {
-        color: '#b1b1b1',
-        marginRight: '0',
+        boxShadow: '0 1px 1px 0 rgba(0, 0, 0, 0.5)',
       };
     }
-
-    const isCheckmarkGreen =
-      this.props.isStatusComplete ? 'green' : null;
 
     const isPrimaryButton = (this.props.index === 0 && !this.props.isStatusComplete);
 
@@ -135,16 +130,20 @@ export default class RoadmapElement extends React.Component {
                       style={writeIconStyle}
                       onClick={this.props.onEditClick}
                     />
-                    <Icon
-                      link
-                      name="checkmark"
-                      size="big"
+                    <Button
+                      icon
+                      labelPosition='left'
                       style={checkmarkIconStyle}
-                      color={isCheckmarkGreen}
+                      active={this.props.isStatusComplete}
+                      onClick={this.handleToggleStatusClick}
                       onMouseEnter={this.mouseEnterCheckmark}
                       onMouseLeave={this.mouseExitCheckmark}
-                      onClick={this.handleToggleStatusClick}
-                    />
+                    >
+                      <Icon
+                        name="checkmark"
+                      />
+                      done
+                    </Button>
                   </Grid.Column>
                 }
               </Grid.Row>

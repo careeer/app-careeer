@@ -161,6 +161,26 @@ div.ui.label.roadmapIconsLabelColumn {
   padding: 0;
   width: auto;
   background-color: transparent;
+
+  .ui.button {
+    background-color: #b8b8b8;
+    border-radius: 28em;
+    width: 70px;
+    color: white;
+    font-size: 12px;
+    padding-left: 2.7em !important;
+    transition: box-shadow 0.5s;
+
+    &.active {
+      background-color: #24c63a;
+    }
+
+    i.checkmark.icon {
+      left: 0.6px;
+      font-size: 16px;
+      background-color: transparent;
+    }
+  }
 }
 
 div.row.roadmapBottomRightRow {
@@ -472,6 +492,19 @@ img.settingsIcon {
     margin-bottom: 0;
   }
 
+  div.ui.label.roadmapIconsLabelColumn {
+    .ui.button {
+      margin-right: 0;
+      width: 67px;
+      font-size: 12px;
+      padding-left: 2.3em !important;
+
+      i.checkmark.icon {
+        font-size: 12px;
+      }
+    }
+  }
+
   div.ui.grid.mobileOnlyGrid {
     visibility: visible;
     height: auto;
@@ -529,7 +562,7 @@ img.settingsIcon {
   }
 
   i.write.big.link.icon {
-    visibility: hidden;
+    display: none;
   }
 
   // Settings Icon
