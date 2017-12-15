@@ -19,7 +19,7 @@ div#root > div > div > div {
       background-color: #fef99f;
       vertical-align: -webkit-baseline-middle;
       transition: background-color 0.5s, color 0.5s;
-      
+
       &.selected {
         color: #fff;
         background-color: #24c63a;
@@ -105,7 +105,11 @@ div#root > div > div > div {
         border: none;
         border-radius: 0;
         box-shadow: none;
-        transition: box-shadow 1s ease 0.75s, color 0.25s;
+        transition: box-shadow 0.5s, color 0.25s;
+
+        &:hover {
+          box-shadow: 2px 2px 1px 0 rgba(34,36,38,.45);
+        }
 
         .ribbon.label {
           top: 1.2em;
@@ -134,7 +138,11 @@ div#root > div > div > div {
         }
 
         &.selected {
-          box-shadow: 4px 4px 4px 0 rgba(34,36,38,.45);
+          transition: box-shadow 1s ease 1s, color 0.25s;
+
+          &::after {
+            box-shadow: 4px 4px 4px 0 rgba(34,36,38,.45);
+          }
 
           &.yellow {
             &::before,
@@ -154,7 +162,7 @@ div#root > div > div > div {
               border-bottom-color: #fbbd08;
               border-left-color: #fbbd08;
               transition:
-                border-color 0s ease-out 0.35s,
+                border-color 0.5s ease-out 0.35s,
                 width 0.25s ease-out 0.35s,
                 height 0.25s ease-out 0.55s;
             }
