@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import RoadmapLayout from './RoadmapElements/RoadmapLayout';
-import FreeTrialComplete from 'components/Payment/FreeTrialComplete';
+import Subscription from 'components/Payment/Subscription';
 import ModalComponent from 'components/CoachDashboard/Clients/ModalComponent';
 
 @inject('roadmapElements') @observer
@@ -41,7 +41,6 @@ class ClientDashboard extends Component {
   }
 
   handleContinueClick = () => {
-    window.open('https://app.acuityscheduling.com/catalog.php?owner=13659144', '_blank');
     this.props.roadmapElements.updateClientAccount("paid");
     this.props.roadmapElements.updateClient();
   }
@@ -59,12 +58,12 @@ class ClientDashboard extends Component {
     if (!accountActive){
       return (
         <div>
-          <FreeTrialComplete
+          <Subscription
             currentClient={currentClient}
             completedElements={completedElements}
-            currentClientAvatar={currentClientAvatar}
             handleContinueClick={this.handleContinueClick}
             handleDeleteAccount={this.handleDeleteAccount}
+            currentClientAvatar={currentClientAvatar || 'https://res.cloudinary.com/careeer/image/upload/v1504959238/Careeer_logo_a3gu5x.png'}
             {...this.props}
           />
           <ModalComponent

@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Segment } from 'semantic-ui-react';
+import { Segment, Label } from 'semantic-ui-react';
 
 const Plans = props => (
   <div className="plans">
     <Segment
       padded
       color="violet"
-      className={(props.selectedAccount === 'Fast' ? 'fast' : 'selected')}
-      onClick={() => props.handleSegmentClick('Fast')}
+      className={(props.selectedAccount === 'Fast' ? 'selected' : 'fast')}
+      onClick={() => props.handleSegmentClick('Fast', 'Fast track')}
     >
       <header>
-        Fast Track
+        Fast track
       </header>
       <p>
         $350/<span>month</span>
@@ -23,9 +23,10 @@ const Plans = props => (
     <Segment
       padded
       color="green"
-      className={(props.selectedAccount === 'Standard' ? 'standard' : 'selected')}
-      onClick={() => props.handleSegmentClick('Standard')}
+      className={(props.selectedAccount === 'Standard' ? 'selected' : 'standard')}
+      onClick={() => props.handleSegmentClick('Standard', 'Standard track')}
     >
+      <Label floating color="green" ribbon="right">most popular</Label>
       <header>
         Standard track
       </header>
@@ -39,8 +40,8 @@ const Plans = props => (
     <Segment
       padded
       color="yellow"
-      className={(props.selectedAccount === 'Self' ? 'self' : 'selected')}
-      onClick={() => props.handleSegmentClick('Self')}
+      className={(props.selectedAccount === 'Self' ? 'selected' : 'self')}
+      onClick={() => props.handleSegmentClick('Self', 'Self starter')}
     >
       <header>
         Self starter

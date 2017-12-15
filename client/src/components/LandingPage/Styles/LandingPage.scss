@@ -290,7 +290,108 @@ div#landingPage.ui.grid {
       .segment {
         border: none;
         border-radius: 0;
-        box-shadow: 1px 2px 4px 0 rgba(34,36,38,.45);
+
+        .ribbon.label {
+          top: 1.2em;
+          left: 109%;
+          font-family: Cabin;
+        }
+
+        &::before,
+        &::after {
+          box-sizing: inherit;
+          content: '';
+          position: absolute;
+          border: 1px solid transparent;
+          width: 0;
+          height: 0;
+        }
+
+        &::before {
+          top: 0;
+          left: 0;
+        }
+
+        &::after {
+          bottom: 0;
+          right: 0;
+        }
+
+        &.selected {
+          box-shadow: 4px 4px 4px 0 rgba(34,36,38,.45);
+
+          &.yellow {
+            &::before,
+            &::after {
+              width: 100%;
+              height: 100%;
+            }
+
+            &::before {
+              border-right-color: #fbbd08;
+              transition:
+                width 0.1s ease-out,
+                height 0.25s ease-out 0.1s;
+            }
+
+            &::after {
+              border-bottom-color: #fbbd08;
+              border-left-color: #fbbd08;
+              transition:
+                border-color 0s ease-out 0.35s,
+                width 0.25s ease-out 0.35s,
+                height 0.25s ease-out 0.55s;
+            }
+          }
+
+          &.green {
+            &::before,
+            &::after {
+              width: 100%;
+              height: 100%;
+            }
+
+            &::before {
+              border-right-color: #24c63a;
+              transition:
+                width 0.1s ease-out,
+                height 0.25s ease-out 0.1s;
+            }
+
+            &::after {
+              border-bottom-color: #24c63a;
+              border-left-color: #24c63a;
+              transition:
+                border-color 0s ease-out 0.35s,
+                width 0.25s ease-out 0.35s,
+                height 0.25s ease-out 0.55s;
+            }
+          }
+
+          &.violet {
+            &::before,
+            &::after {
+              width: 100%;
+              height: 100%;
+            }
+
+            &::before {
+              border-right-color: #6435c9;
+              transition:
+                width 0.1s ease-out,
+                height 0.25s ease-out 0.1s;
+            }
+
+            &::after {
+              border-bottom-color: #6435c9;
+              border-left-color: #6435c9;
+              transition:
+                border-color 0s ease-out 0.35s,
+                width 0.25s ease-out 0.35s,
+                height 0.25s ease-out 0.55s;
+            }
+          }
+        }
       }
 
       .ui.padded.segment {

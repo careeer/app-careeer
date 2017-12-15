@@ -1,5 +1,4 @@
-import FreeTrialComplete from './FreeTrialComplete';
-
+import Subscription from './Subscription';
 import './Styles/Payment.scss';
 
-export default { FreeTrialComplete };
+export default { Subscription };

@@ -538,6 +538,7 @@ class RoadmapElements {
 
   @action calculateAccountStatus = (account_type, created_at) => {
     if (account_type === "free trial") {
+
       const trialDaysLeft = this.getTrialsDaysLeft(created_at);
       if (trialDaysLeft > 0) {
         this.accountActive = true;

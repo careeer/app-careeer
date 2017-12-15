@@ -1,6 +1,6 @@
-/* eslint-disable */
 import React from 'react';
-import { Grid, Image } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
+import { Image } from 'semantic-ui-react';
 
 const TrialCompleteMessage = props => (
   <div className="messageBody">
@@ -8,10 +8,10 @@ const TrialCompleteMessage = props => (
       Congratulations {props.clientName}!
     </h1>
     <Image
-      alt="avatar"
       avatar
+      alt="avatar"
       className="avatar"
-      src={props.avatarUrl || "https://res.cloudinary.com/careeer/image/upload/v1504959238/Careeer_logo_a3gu5x.png"}
+      src={props.avatarUrl}
     />
     <h2 className="introMessage">
       You <span>completed {props.completeActions} {props.completeActions > 1 ? 'actions' : 'action'}</span> with your coach during your free trial.
@@ -21,5 +21,11 @@ const TrialCompleteMessage = props => (
     </p>
   </div>
 );
+
+TrialCompleteMessage.propTypes = {
+  clientName: PropTypes.string.isRequired,
+  avatarUrl: PropTypes.string.isRequired,
+  completeActions: PropTypes.number.isRequired,
+};
 
 export default TrialCompleteMessage;
