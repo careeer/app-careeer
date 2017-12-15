@@ -293,7 +293,7 @@ div#landingPage.ui.grid {
 
         .ribbon.label {
           top: 1.2em;
-          left: 109%;
+          left: 107%;
           font-family: Cabin;
         }
 
@@ -588,6 +588,11 @@ div#landingPage.ui.grid {
         width: 375px;
         margin: -2em auto 4em;
 
+        .segment {
+          .ribbon.label {
+            left: 109%;
+          }
+        }
         .ui.padded.segment {
           padding: 14px 0 14px 20px;
         }
@@ -751,6 +756,13 @@ div#landingPage.ui.grid {
       div.plans {
         width: 290px;
         margin: -2em auto 4em;
+
+        .segment {
+          .ribbon.label {
+            font-size: 10px;
+            left: 110%;
+          }
+        }
 
         .ui.padded.segment {
           padding: 10px 0 10px 15px;
@@ -1029,7 +1041,14 @@ div#landingPage.ui.grid {
 
       div.plans {
         width: auto;
-        margin: 3em 0 3em;
+        margin: 3em 1em 3em;
+
+        .segment {
+          .ribbon.label {
+            font-size: 9px;
+            left: 107%;
+          }
+        }
 
         .ui.padded.segment {
           padding: 8px 0 8px 12px;

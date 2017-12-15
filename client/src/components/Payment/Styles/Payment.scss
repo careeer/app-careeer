@@ -11,13 +11,19 @@ div#root > div > div > div {
   .header {
     a {
       padding: 0.8em;
-      color: #ffffff;
+      color: #333;
       font-size: 0.9em;
       font-weight: bold;
       font-family: Raleway;
       letter-spacing: 1.8px;
-      background-color: #24c63a;
+      background-color: #fef99f;
       vertical-align: -webkit-baseline-middle;
+      transition: background-color 0.5s, color 0.5s;
+      
+      &.selected {
+        color: #fff;
+        background-color: #24c63a;
+      }
     }
   }
 

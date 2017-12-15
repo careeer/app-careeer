@@ -3,16 +3,13 @@ import PropTypes from 'prop-types';
 
 const PageHeader = props => (
   <div className="header">
-    { props.freeTrial &&
-      <a>
-        Free trial completed
-      </a>
-    }
-    { props.continueSubscription &&
-      <a>
-        Continue subscription
-      </a>
-    }
+    <a className={props.freeTrial ? 'selected' : ''}>
+      Free trial completed
+    </a>
+
+    <a className={props.continueSubscription ? 'selected' : ''}>
+      Continue subscription
+    </a>
     { props.paymentInfo &&
       <a>
         Enter payment info
