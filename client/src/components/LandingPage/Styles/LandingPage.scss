@@ -210,7 +210,14 @@ div#landingPage.ui.grid {
     background-color: #fef99f;
 
     .slick-prev, .slick-next {
-      font-size: 26px;
+      font-size: 0;
+      top: 45%;
+
+      &::before {
+        line-height: 0;
+        margin-top: -1em;
+        opacity: 1;
+      }
     }
 
     .slick-prev {
@@ -218,7 +225,8 @@ div#landingPage.ui.grid {
       z-index: 100;
 
       &::before {
-        font-size: 26px;
+        content: "\2039";
+        font-size: 36px;
         color: #000;
       }
     }
@@ -228,7 +236,8 @@ div#landingPage.ui.grid {
       z-index: 100;
 
       &::before {
-        font-size: 26px;
+        content: "\203A";
+        font-size: 36px;
         color: #000;
       }
     }
@@ -1000,9 +1009,13 @@ div#landingPage.ui.grid {
 
       .slick-prev, .slick-next {
         font-size: 20px;
+        top: 45%;
 
         &::before {
-          font-size: 20px;
+          line-height: 0;
+          margin-top: -1em;
+          opacity: 1;
+          font-size: 30px;
         }
       }
 
