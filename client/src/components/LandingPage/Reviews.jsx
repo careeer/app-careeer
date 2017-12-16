@@ -8,7 +8,7 @@ const Reviews = props => (
     className={props.styleName}
     fade
     autoplay
-    arrows={false}
+    arrows={true}
     slidesToShow={1}
     adaptiveHeight
     centerPadding={props.padding}

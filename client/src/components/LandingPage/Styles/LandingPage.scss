@@ -209,6 +209,30 @@ div#landingPage.ui.grid {
     padding: 2em 0;
     background-color: #fef99f;
 
+    .slick-prev, .slick-next {
+      font-size: 26px;
+    }
+
+    .slick-prev {
+      left: 15px;
+      z-index: 100;
+
+      &::before {
+        font-size: 26px;
+        color: #000;
+      }
+    }
+
+    .slick-next {
+      right: 15px;
+      z-index: 100;
+
+      &::before {
+        font-size: 26px;
+        color: #000;
+      }
+    }
+
     div.slick-list {
       padding: 2em 9em;
 
@@ -226,6 +250,7 @@ div#landingPage.ui.grid {
         display: inline-block;
         float: left;
         width: 90%;
+
         p {
           display: block;
           font-family: Raleway;
@@ -973,10 +998,26 @@ div#landingPage.ui.grid {
       margin-bottom: 5em;
       margin-top: 5em;
 
+      .slick-prev, .slick-next {
+        font-size: 20px;
+
+        &::before {
+          font-size: 20px;
+        }
+      }
+
+      .slick-prev {
+        left: 1px;
+      }
+
+      .slick-next {
+        right: 1px;
+      }
+
       div.slick-list {
         div.reviewAvatar {
-        width: 55px;
-        margin-right: 0 !important;
+          width: 55px;
+          margin-right: 0 !important;
 
           img.ui.avatar.image {
             width: 50px;
@@ -984,6 +1025,7 @@ div#landingPage.ui.grid {
             margin-right: 0 !important;
           }
         }
+
         div.reviewContent {
           min-width: 220px;
           max-width: 280px;
