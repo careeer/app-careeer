@@ -28,7 +28,7 @@ div#root > div > div > div {
   }
 
   .messageBody {
-    margin-top: 6em;
+    margin-top: 3em;
     text-align: center;
 
     h1 {
@@ -49,10 +49,8 @@ div#root > div > div > div {
       width: 546px;
       color: #333333;
       font-size: 2em;
-      margin: 1em 0;
+      margin: 1em auto;
       font-weight: 500;
-      margin-left: auto;
-      margin-right: auto;
       font-family: Cabin;
       letter-spacing: 3.5px;
 
@@ -61,6 +59,7 @@ div#root > div > div > div {
       }
 
       &.plans {
+        margin: 0.3em auto;
         font-size: 2.2em;
       }
     }
@@ -70,12 +69,14 @@ div#root > div > div > div {
       font-size: 1.4em;
       font-weight: 500;
       font-family: Cabin;
+      margin-top: 0;
       letter-spacing: 2.5px;
     }
 
     h4 {
       color: #000;
       margin-bottom: 0;
+      margin-top: 1em;
       font-size: 1.1em;
       font-weight: 500;
       font-family: Cabin;
@@ -90,7 +91,7 @@ div#root > div > div > div {
       letter-spacing: 2.5px;
 
       &.plans {
-        margin-bottom: 5.5em;
+        margin-bottom: 2.5em;
         font-size: 0.9em;
         letter-spacing: 1.5px;
       }
@@ -98,7 +99,7 @@ div#root > div > div > div {
 
     div.plans {
       width: 387px;
-      margin: 1em auto 4em;
+      margin: 1em auto;
 
       .segment {
         position: relative;
@@ -219,7 +220,8 @@ div#root > div > div > div {
       }
 
       .ui.padded.segment {
-        padding: 21px 0 21px 24px;
+        padding: 15px 0 15px 20px;
+        margin: 1em auto;
       }
 
       header {
@@ -265,7 +267,7 @@ div#root > div > div > div {
     }
 
     div.callToAction {
-      margin-top: 5em;
+      margin-top: 3em;
     }
   }
 
@@ -314,7 +316,7 @@ div#root > div > div > div {
     }
 
     .messageBody {
-      margin-top: 4em;
+      margin-top: 2.5em;
 
       h1 {
         font-size: 1.7em;
