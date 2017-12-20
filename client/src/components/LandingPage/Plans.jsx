@@ -40,8 +40,8 @@ const Plans = props => (
     <Segment
       padded
       color="yellow"
-      className={(props.selectedAccount === 'Self' ? 'selected' : 'self')}
-      onClick={() => props.handleSegmentClick('Self', 'Self starter')}
+      className={(props.selectedAccount === 'Starter' ? 'selected' : 'starter')}
+      onClick={() => props.handleSegmentClick('Starter', 'Self starter')}
     >
       <header>
         Self starter

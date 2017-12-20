@@ -23,7 +23,7 @@ function PlanSelected(props) {
       price = '$150';
       description = '+1 hour of voice and video with your coach';
       break;
-    case 'Self':
+    case 'Starter':
       color = 'yellow';
       header = 'Self starter';
       price = '$50';

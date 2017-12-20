@@ -36,7 +36,7 @@ export default class Subscription extends Component {
       case 'Standard':
         planUrl = 'https://app.acuityscheduling.com/catalog.php?owner=13659144&action=addCart&clear=1&id=340348';
         break;
-      case 'Self':
+      case 'Starter':
         planUrl = 'https://app.acuityscheduling.com/catalog.php?owner=13659144&action=addCart&clear=1&id=339937';
         break;
       default:
