@@ -8,4 +8,5 @@ class User < ApplicationRecord
          :password_archivable, :password_expirable
 
   has_many :clients
+  belongs_to :plan
 end
