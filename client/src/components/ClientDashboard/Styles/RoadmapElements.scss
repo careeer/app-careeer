@@ -162,6 +162,10 @@ div.ui.label.roadmapIconsLabelColumn {
   width: auto;
   background-color: transparent;
 
+  i.write {
+    transition: opacity 0.75s;
+  }
+  
   .ui.button {
     background-color: #b8b8b8;
     border-radius: 28em;
