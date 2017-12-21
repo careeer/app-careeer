@@ -48,7 +48,7 @@ module V1
 
     private
     def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation, :reset_password_token)
+      params.require(:user).permit(:email, :password, :password_confirmation, :reset_password_token, :stripe_card_token)
     end
   end
 end
