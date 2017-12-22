@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import RoadmapLayout from './RoadmapElements/RoadmapLayout';
-import Subscription from 'components/Payment/Subscription';
+import Subscription from 'components/Subscription/Subscription';
 import ModalComponent from 'components/CoachDashboard/Clients/ModalComponent';
 
 @inject('roadmapElements') @observer

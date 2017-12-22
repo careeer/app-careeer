@@ -7,9 +7,10 @@ class Subscription {
 
   @observable isLoading = false;
   @observable showSelected = true;
+  @observable cardErrors = "";
   @observable selectedPlan = "Standard";
-  @observable planName = "Standard track";
   @observable subscriptionStep = "intro";
+  @observable planName = "Standard track";
 
   @action setIsLoading(status) {
     this.isLoading = status;
@@ -29,6 +30,13 @@ class Subscription {
     this.planName = planName;
   }
 
+  @action handleCardErrors(event) {
+    if (event.error) {
+      this.cardErrors = event.error.message;
+    } else {
+      this.cardErrors = '';
+    }
+  }
 }
 
 export default new Subscription();

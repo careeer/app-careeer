@@ -1,9 +1,11 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import PaymentLayout from 'components/Payment/Components/PaymentLayout';
+
+import PaymentLayout from './Components/PaymentLayout';
 import TrialComplete from './Components/TrialComplete';
 import SelectPlan from './Components/SelectPlan';
+import Checkout from './Components/Checkout';
 
 @inject('subscription') @observer
 export default class Subscription extends Component {
@@ -19,12 +21,20 @@ export default class Subscription extends Component {
     this.props.subscription.updateStep("selectPlan");
   }
 
+  handleSelectPlanClick = () => {
+    this.props.subscription.updateStep("checkout");
+  }
+
   handleToggleShowSelected = () => {
     this.props.subscription.toggleShowSelected();
   }
 
   handleSegmentClick = (plan, planName) => {
     this.props.subscription.onPlanClick(plan, planName);
+  }
+
+  handleCardErrors = (event) => {
+    this.props.subscription.handleCardErrors(event);
   }
 
   handleContinueClick = () => {
@@ -53,9 +63,10 @@ export default class Subscription extends Component {
             completedElements,
             currentClientAvatar } = this.props;
 
-    const { showSelected,
+    const { planName,
+            cardErrors,
+            showSelected,
             selectedPlan,
-            planName,
             subscriptionStep } = this.props.subscription;
 
     let currentStep = null;
@@ -69,7 +80,7 @@ export default class Subscription extends Component {
           completeActions={completedElements.length}
           handleDeleteAccount={this.props.handleDeleteAccount}
         />);
-    } else {
+    } else if (subscriptionStep === 'selectPlan') {
       currentStep = (
         <SelectPlan
           planName={planName}
@@ -77,8 +88,17 @@ export default class Subscription extends Component {
           selectedPlan={selectedPlan}
           currentClientAvatar={currentClientAvatar}
           handleSegmentClick={this.handleSegmentClick}
-          handleContinueClick={this.handleContinueClick}
+          handleContinueClick={this.handleSelectPlanClick}
           handleToggleShowSelected={this.handleToggleShowSelected}
+        />);
+    } else {
+      currentStep = (
+        <Checkout
+          planName={planName}
+          cardErrors={cardErrors}
+          selectedPlan={selectedPlan}
+          currentClientAvatar={currentClientAvatar}
+          handleCardErrors={this.handleCardErrors}
         />);
     }
 

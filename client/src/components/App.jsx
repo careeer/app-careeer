@@ -6,7 +6,7 @@ import ClientDashboard from 'components/ClientDashboard/ClientDashboard';
 import CoachDashboard from 'components/CoachDashboard/Clients/CoachDashboard';
 import NewClientInput from 'components/CoachDashboard/Clients/NewClientInput';
 import LandingPage from 'components/LandingPage';
-import Payment from 'components/Payment';
+import Payment from 'components/Subscription';
 
 import OnBoardingIntro from 'components/OnBoarding/OnBoardingIntro';
 import OnBoardingQuestion from 'components/OnBoarding/OnBoardingQuestion';

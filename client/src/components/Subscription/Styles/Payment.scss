@@ -3,10 +3,39 @@ div#root > div > div > div {
 }
 
 .paymentLayout {
-  min-height: -webkit-fill-available;
   width: 100%;
-
   background-color: #fef99f;
+  min-height: -webkit-fill-available;
+
+  .checkout {
+      .cardErrors {
+        margin-top: 1em;
+        max-width: 374px;
+        font-family: Cabin;
+        font-size: 12px;
+        letter-spacing: 1px;
+        color: #fe5d5d;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .StripeElement {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        max-width: 412px;
+        padding: 10px 14px;
+        border-radius: 5px;
+        background: white;
+        box-shadow: rgba(50, 50, 93, 0.109804) 0px 2px 2px, rgba(0, 0, 0, 0.0784314) 0px 1px 3px;
+      }
+
+      .StripeElement--focus {
+        box-shadow: rgba(50, 50, 93, 0.109804) 0px 4px 6px, rgba(0, 0, 0, 0.0784314) 0px 1px 3px;
+        -webkit-transition: all 150ms ease;
+        transition: all 150ms ease;
+      }
+  }
 
   .header {
     a {

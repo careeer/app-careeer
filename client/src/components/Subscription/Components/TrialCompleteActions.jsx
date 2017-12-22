@@ -1,5 +1,5 @@
-/* eslint-disable */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Button } from 'semantic-ui-react';
 
 const TrialCompleteActions = props => (
@@ -21,5 +21,10 @@ const TrialCompleteActions = props => (
     </a>
   </div>
 );
+
+TrialCompleteActions.propTypes = {
+  handleContinueClick: PropTypes.func.isRequired,
+  handleDeleteAccount: PropTypes.func.isRequired,
+};
 
 export default TrialCompleteActions;
