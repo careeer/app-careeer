@@ -11,7 +11,6 @@ class CheckoutCardForm extends React.Component {
 
   handleChange = (change) => {
     this.props.handleCardErrors(change);
-    console.log('[change]', change);
   };
 
   render() {
