@@ -11,7 +11,7 @@ import ScrollToTop from './components/Lib/ScrollToTop';
 import HttpsRedirect from './components/Lib/HttpsRedirect';
 
 render(
-  <StripeProvider apiKey="pk_test_12345">
+  <StripeProvider apiKey={process.env.STRIPE_KEY}>
     <Provider {...stores}>
       <HttpsRedirect>
         <BrowserRouter>

@@ -5,9 +5,9 @@ import Api from '../helpers/api';
 class Subscription {
   // account = '/v1/accounts';
 
+  @observable cardErrors = "";
   @observable isLoading = false;
   @observable showSelected = true;
-  @observable cardErrors = "";
   @observable selectedPlan = "Standard";
   @observable subscriptionStep = "intro";
   @observable planName = "Standard track";
