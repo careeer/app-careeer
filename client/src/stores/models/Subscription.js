@@ -48,6 +48,8 @@ class Subscription {
       this.subscription,{
         stripeToken: payload.token.id,
         plan: this.selectedPlan,
+        plan_name: this.planName,
+        plan_cost: this.planCost,
         last4: payload.token.card.last4,
         exp_month: payload.token.card.exp_month,
         exp_year: payload.token.card.exp_year,

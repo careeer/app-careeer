@@ -1,6 +1,16 @@
-<p>Hi <%= @name %>,</p>
+<p><%= @name %>,</p>
 
-<p>Welcome to Careeer.me. We’re happy you’re here. You’ll find that Careeer.me is the most effective, efficient, and pain free way to transition to a new job in tech.</p>
+<p>
+  We’re writing to confirm your purchase of a <%= @plan_name %> membership. Today at [purchaseTime] you charged your card ending in <%= @last4 %> $<%= @plan_cost %>. Your membership will auto renew on <%= @next_transaction %>. Upgrade, downgrade, or cancel your membership anytime at <%= link_to 'settings', @url %>.
+</p>
 
-<p>Anya<br>
-CEO, Founder @ Careeer.me</p>
+<p>
+  If you did not authorize this transaction please respond to this message immediately.
+</p>
+<p>
+  We appreciate your business and are honored to support you in accomplishing your big goals.
+</p>
+
+<p>
+  - Careeer.me team
+</p>

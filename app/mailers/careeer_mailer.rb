@@ -16,8 +16,13 @@ class CareeerMailer < ApplicationMailer
     mail(to: email, from: 'Anya Iverova <anya@careeer.me>', subject: 'Free trial started! (Ask me anything)')
   end
 
-  def payment_confirmation(email, client)
+  def payment_confirmation(email, client, plan_name, plan_cost, last4, next_transaction)
     @name = client.name.split.first
+    @plan_name = plan_name
+    @last4 = last4
+    @plan_cost = plan_cost
+    @next_transaction = next_transaction
+    @url = "https://www.careeer.me/" + client.slug
     mail(to: email, subject: 'Payment confirmation')
   end
 end

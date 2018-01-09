@@ -20,6 +20,16 @@ module V1
           plan: params[:plan]
         )
 
+        next_transaction = Time.zone.at(subscription.current_period_end.strftime("%d/%m/%Y"))
+        CareeerMailer.payment_confirmation(
+          current_user.email,
+          current_user.clients.first,
+          params[:plan_name],
+          params[:plan_cost],
+          params[:last4],
+          next_transaction
+        ).deliver
+
         current_user.assign_attributes(
           stripe_subscription_id: subscription.id,
           card_last4: params[:last4],
@@ -46,7 +56,7 @@ module V1
 
     private
     def subscription_params
-      params.require(:subscription).permit(:stripeToken, :plan, :last4, :exp_month, :exp_year, :card_type)
+      params.require(:subscription).permit(:stripeToken, :plan, :plan_name, :plan_cost, :last4, :exp_month, :exp_year, :card_type)
     end
   end
 end
