@@ -1,7 +1,7 @@
 <p><%= @name %>,</p>
 
 <p>
-  We’re writing to confirm your purchase of a <%= @plan_name %> membership. Today at [purchaseTime] you charged your card ending in <%= @last4 %> $<%= @plan_cost %>. Your membership will auto renew on <%= @next_transaction %>. Upgrade, downgrade, or cancel your membership anytime at <%= link_to 'settings', @url %>.
+  We’re writing to confirm your purchase of a <%= @plan_name %> membership. Today, your card ending in <%= @last4 %> was charged $<%= @plan_cost %>. Your membership will auto renew on <%= @next_transaction %>. Upgrade, downgrade, or cancel your membership anytime <%= link_to 'here', @url %>.
 </p>
 
 <p>

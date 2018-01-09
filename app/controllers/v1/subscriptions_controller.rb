@@ -20,7 +20,7 @@ module V1
           plan: params[:plan]
         )
 
-        next_transaction = Time.zone.at(subscription.current_period_end.strftime("%d/%m/%Y"))
+        next_transaction = Time.zone.at(subscription.current_period_end).strftime("%m/%d/%Y")
         CareeerMailer.payment_confirmation(
           current_user.email,
           current_user.clients.first,
