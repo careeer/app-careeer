@@ -3,7 +3,7 @@ import { observable, action } from 'mobx';
 import Api from '../helpers/api';
 
 class Subscription {
-  // account = '/v1/accounts';
+  subscription = '/v1/subscription';
 
   @observable cardErrors = "";
   @observable isLoading = false;
@@ -11,6 +11,7 @@ class Subscription {
   @observable selectedPlan = "Standard";
   @observable subscriptionStep = "intro";
   @observable planName = "Standard track";
+  @observable planCost = "150";
 
   @action setIsLoading(status) {
     this.isLoading = status;
@@ -25,9 +26,10 @@ class Subscription {
     this.showSelected = !isSelectedPlanShowing;
   }
 
-  @action onPlanClick(plan, planName) {
+  @action onPlanClick(plan, planName, planCost) {
     this.selectedPlan = plan;
     this.planName = planName;
+    this.planCost = planCost;
   }
 
   @action handleCardErrors(event) {
@@ -35,6 +37,29 @@ class Subscription {
       this.cardErrors = event.error.message;
     } else {
       this.cardErrors = '';
+    }
+  }
+
+  @action async handleCardToken(payload) {
+    console.log(this.selectedPlan);
+    console.log(payload);
+
+    const response = await Api.post(
+      this.subscription,{
+        stripeToken: payload.token.id,
+        plan: this.selectedPlan,
+        last4: payload.token.card.last4,
+        exp_month: payload.token.card.exp_month,
+        exp_year: payload.token.card.exp_year,
+        card_type: payload.token.card.brand
+      }
+    );
+
+    const status = await response.status;
+
+    if (status === 201) {
+      const body = await response.json();
+      const { user } = body.data;
     }
   }
 }

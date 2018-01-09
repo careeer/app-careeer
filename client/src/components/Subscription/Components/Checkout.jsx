@@ -15,12 +15,14 @@ const Checkout = props => (
     />
     <CheckoutMessage
       planName={props.planName}
+      planCost={props.planCost}
       avatarUrl={props.currentClientAvatar}
     />
     <Elements>
       <CheckoutCardForm
-        selectedPlan={props.selectedPlan}
         cardErrors={props.cardErrors}
+        selectedPlan={props.selectedPlan}
+        handleCardToken={props.handleCardToken}
         handleCardErrors={props.handleCardErrors}
       />
     </Elements>
@@ -29,8 +31,10 @@ const Checkout = props => (
 
 Checkout.propTypes = {
   planName: PropTypes.string.isRequired,
+  planCost: PropTypes.string.isRequired,
   cardErrors: PropTypes.string.isRequired,
   selectedPlan: PropTypes.string.isRequired,
+  handleCardToken: PropTypes.func.isRequired,
   handleCardErrors: PropTypes.func.isRequired,
   currentClientAvatar: PropTypes.string.isRequired,
 };

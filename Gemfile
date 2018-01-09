@@ -48,13 +48,9 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'hirb', '~> 0.7.3'
-
 gem 'friendly_id', '~> 5.1.0'
-
 gem 'amoeba', '~> 3.0'
-
 gem 'paper_trail', '7.1.3'
-
 gem 'sparkpost_rails', '1.5.0'
-
-gem 'stripe', '~> 1.57'
+gem 'stripe', '~> 3.9', '>= 3.9.1'
+gem 'stripe_event', '~> 2.0'

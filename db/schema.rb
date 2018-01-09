@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171220091042) do
+ActiveRecord::Schema.define(version: 20180109080724) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "charges", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "stripe_id"
+    t.integer "amount"
+    t.string "card_brand"
+    t.string "card_last4"
+    t.string "card_exp_month"
+    t.string "card_exp_year"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_charges_on_user_id"
+  end
 
   create_table "clients", force: :cascade do |t|
     t.string "name"
@@ -94,8 +107,14 @@ ActiveRecord::Schema.define(version: 20171220091042) do
     t.integer "failed_attempts", default: 0, null: false
     t.string "unlock_token"
     t.datetime "locked_at"
-    t.integer "plan_id"
     t.string "stripe_customer_token"
+    t.string "stripe_id"
+    t.string "stripe_subscription_id"
+    t.string "card_last4"
+    t.integer "card_exp_month"
+    t.integer "card_exp_year"
+    t.string "card_type"
+    t.datetime "expires_at"
     t.index ["authentication_token"], name: "index_users_on_authentication_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["password_changed_at"], name: "index_users_on_password_changed_at"
@@ -113,6 +132,7 @@ ActiveRecord::Schema.define(version: 20171220091042) do
     t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
   end
 
+  add_foreign_key "charges", "users"
   add_foreign_key "clients", "users"
   add_foreign_key "roadmap_elements", "clients"
 end

@@ -8,7 +8,7 @@ const Plans = props => (
       padded
       color="violet"
       className={(props.selectedAccount === 'Fast' ? 'selected' : 'fast')}
-      onClick={() => props.handleSegmentClick('Fast', 'Fast track')}
+      onClick={() => props.handleSegmentClick('Fast', 'Fast track', '350')}
     >
       <header>
         Fast track
@@ -24,7 +24,7 @@ const Plans = props => (
       padded
       color="green"
       className={(props.selectedAccount === 'Standard' ? 'selected' : 'standard')}
-      onClick={() => props.handleSegmentClick('Standard', 'Standard track')}
+      onClick={() => props.handleSegmentClick('Standard', 'Standard track', '150')}
     >
       <Label floating color="green" ribbon="right">most popular</Label>
       <header>
@@ -41,7 +41,7 @@ const Plans = props => (
       padded
       color="yellow"
       className={(props.selectedAccount === 'Starter' ? 'selected' : 'starter')}
-      onClick={() => props.handleSegmentClick('Starter', 'Self starter')}
+      onClick={() => props.handleSegmentClick('Starter', 'Self starter', '50')}
     >
       <header>
         Self starter

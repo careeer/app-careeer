@@ -15,4 +15,9 @@ class CareeerMailer < ApplicationMailer
 
     mail(to: email, from: 'Anya Iverova <anya@careeer.me>', subject: 'Free trial started! (Ask me anything)')
   end
+
+  def payment_confirmation(email, client)
+    @name = client.name.split.first
+    mail(to: email, subject: 'Payment confirmation')
+  end
 end

@@ -29,12 +29,16 @@ export default class Subscription extends Component {
     this.props.subscription.toggleShowSelected();
   }
 
-  handleSegmentClick = (plan, planName) => {
-    this.props.subscription.onPlanClick(plan, planName);
+  handleSegmentClick = (plan, planName, planCost) => {
+    this.props.subscription.onPlanClick(plan, planName, planCost);
   }
 
   handleCardErrors = (event) => {
     this.props.subscription.handleCardErrors(event);
+  }
+
+  handleCardToken = (payload) => {
+    this.props.subscription.handleCardToken(payload);
   }
 
   handleContinueClick = () => {
@@ -64,6 +68,7 @@ export default class Subscription extends Component {
             currentClientAvatar } = this.props;
 
     const { planName,
+            planCost,
             cardErrors,
             showSelected,
             selectedPlan,
@@ -95,10 +100,12 @@ export default class Subscription extends Component {
       currentStep = (
         <Checkout
           planName={planName}
+          planCost={planCost}
           cardErrors={cardErrors}
           selectedPlan={selectedPlan}
-          currentClientAvatar={currentClientAvatar}
+          handleCardToken={this.handleCardToken}
           handleCardErrors={this.handleCardErrors}
+          currentClientAvatar={currentClientAvatar}
         />);
     }
 

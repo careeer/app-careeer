@@ -8,13 +8,13 @@ const CheckoutMessage = props => (
       {props.planName}
     </h1>
     <Image
-      alt="avatar"
       avatar
+      alt="avatar"
       className="avatar"
       src={props.avatarUrl || 'https://res.cloudinary.com/careeer/image/upload/v1504959238/Careeer_logo_a3gu5x.png'}
     />
     <h2 className="introMessage">
-      Your account will be charged $150 on the 5th of every month.
+      Your account will be charged ${props.planCost} on the 5th of every month.
     </h2>
     <h3>
       Upgrade, downgrade, or cancel any time
@@ -24,6 +24,7 @@ const CheckoutMessage = props => (
 
 CheckoutMessage.propTypes = {
   planName: PropTypes.string.isRequired,
+  planCost: PropTypes.string.isRequired,
   avatarUrl: PropTypes.string.isRequired,
 };
 

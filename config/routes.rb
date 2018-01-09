@@ -1,15 +1,17 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  mount StripeEvent::Engine, at: '/webhooks/stripe'
 
   devise_for :users
+
   namespace :v1, defaults: { format: :json } do
+    resources :users, only: %i[create]
     resources :clients do
       resources :roadmap_elements, except: :show
     end
     resource :sessions, only: %i[create destroy show]
-    resources :users, only: [:create] do
-    end
+    resource :subscription
     post :check, to: 'users#check'
     post :forgot, to: 'users#forgot'
     post :reset, to: 'users#reset'
@@ -18,6 +20,4 @@ Rails.application.routes.draw do
   get '*path', to: "application#fallback_index_html", constraints: ->(request) do
     !request.xhr? && request.format.html?
   end
-
-  post 'update/:id' => 'v1/clients#duplicate', defaults: { format: :json }
 end
