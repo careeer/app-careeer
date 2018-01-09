@@ -25,7 +25,7 @@ module V1
           card_last4: params[:last4],
           card_exp_month: params[:exp_month],
           card_exp_year: params[:exp_year],
-          card_type: params[:card_type]
+          card_brand: params[:card_type]
         )
 
         if current_user.save
