@@ -46,7 +46,7 @@ module V1
 
       rescue Stripe::CardError => e
         @error_message = e.message
-        render :card_error, status: :bad_request
+        render :card_error, status: :ok
       end
     end
 

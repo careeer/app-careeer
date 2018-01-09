@@ -12,9 +12,12 @@ import ScrollToTop from './components/Lib/ScrollToTop';
 import HttpsRedirect from './components/Lib/HttpsRedirect';
 
 const Main = () => (
-  <StripeProvider apiKey={process.env.NODE_ENV === 'production'
-                          ? 'pk_test_VrMGLNXqyTQdQc8pHnm6RSyC'
-                          : 'pk_test_VrMGLNXqyTQdQc8pHnm6RSyC'}
+  <StripeProvider
+    apiKey={
+      process.env.NODE_ENV === 'production'
+      ? process.env.STRIPE_KEY
+      : 'pk_test_VrMGLNXqyTQdQc8pHnm6RSyC'
+    }
   >
     <Provider {...stores}>
       <HttpsRedirect>

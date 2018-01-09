@@ -59,9 +59,10 @@ class Subscription {
 
     const status = await response.status;
 
-    if (status === 201) {
+    if (status === 200) {
       const body = await response.json();
-      const { user } = body.data;
+      // const { user } = body.data;
+      console.log(body);
     }
   }
 }
