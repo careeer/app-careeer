@@ -23,6 +23,7 @@ class CareeerMailer < ApplicationMailer
     @plan_cost = plan_cost
     @next_transaction = next_transaction
     @url = "https://www.careeer.me/" + client.slug
-    mail(to: email, subject: 'Payment confirmation')
+    subjectMessage = 'Payment confirmation - %s' % [@plan_name]
+    mail(to: email, subject: subjectMessage)
   end
 end
