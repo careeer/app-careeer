@@ -43,6 +43,7 @@ class ClientDashboard extends Component {
   handleContinueClick = () => {
     this.props.roadmapElements.updateClientAccount("paid");
     this.props.roadmapElements.updateClient();
+    this.props.roadmapElements.showBanner();
   }
 
   handleDeleteAccount = () => {

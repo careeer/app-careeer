@@ -37,12 +37,15 @@ class Subscription {
   @action handleCardErrors(event) {
     if (event.error) {
       this.cardErrors = event.error.message;
+      this.cardSuccess = '';
     } else {
       this.cardErrors = '';
+      this.cardSuccess = '';
     }
   }
 
-  @action async handleCardToken(payload) {
+  @action async handleCardToken(payload, callBack) {
+    this.setIsLoading(true);
     const response = await Api.post(
       this.subscription,{
         stripeToken: payload.token.id,
@@ -58,9 +61,15 @@ class Subscription {
 
     if (status === 200) {
       this.cardSuccess = "Transaction successful"
+
+      if (callBack) {
+        callBack();
+      }
+
     } else if (status === 402) {
       const body = await response.json();
       this.cardErrors = body.error;
+      this.setIsLoading(false);
     }
   }
 }

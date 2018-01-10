@@ -53,6 +53,7 @@ export default class Subscription extends Component {
 
     const { planName,
             planCost,
+            isLoading,
             cardErrors,
             cardSuccess,
             showSelected,
@@ -86,9 +87,11 @@ export default class Subscription extends Component {
         <Checkout
           planName={planName}
           planCost={planCost}
+          isLoading={isLoading}
           cardErrors={cardErrors}
           cardSuccess={cardSuccess}
           selectedPlan={selectedPlan}
+          afterPaying={this.handleContinueClick}
           handleCardToken={this.handleCardToken}
           handleCardErrors={this.handleCardErrors}
           currentClientAvatar={currentClientAvatar}

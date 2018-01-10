@@ -20,8 +20,10 @@ const Checkout = props => (
     />
     <Elements>
       <CheckoutCardForm
+        isLoading={props.isLoading}
         cardErrors={props.cardErrors}
         cardSuccess={props.cardSuccess}
+        afterPaying={props.afterPaying}
         selectedPlan={props.selectedPlan}
         handleCardToken={props.handleCardToken}
         handleCardErrors={props.handleCardErrors}
@@ -31,8 +33,10 @@ const Checkout = props => (
 );
 
 Checkout.propTypes = {
+  isLoading: PropTypes.bool.isRequired,
   planName: PropTypes.string.isRequired,
   planCost: PropTypes.string.isRequired,
+  afterPaying: PropTypes.func.isRequired,
   cardErrors: PropTypes.string.isRequired,
   cardSuccess: PropTypes.string.isRequired,
   selectedPlan: PropTypes.string.isRequired,

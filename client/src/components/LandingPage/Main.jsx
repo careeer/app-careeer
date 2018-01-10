@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Grid } from 'semantic-ui-react';
 import { inject, observer } from 'mobx-react';
@@ -13,7 +13,7 @@ import CareeerLogo from '../Lib/CareeerLogo';
 import ReviewSliderMobile from './ReviewSliderMobile';
 
 @inject('subscription') @observer
-class Main extends PureComponent {
+class Main extends Component {
   handleSegmentClick = (plan, planName, planCost) => {
     this.props.subscription.onPlanClick(plan, planName, planCost);
   }
