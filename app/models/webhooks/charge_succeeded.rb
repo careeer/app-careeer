@@ -16,7 +16,7 @@ module Webhooks
 
       subscription = Stripe::Subscription.retrieve(user.stripe_subscription_id)
 
-      readable_amount = Float(charge.amount)/100
+      readable_amount = (charge.amount.to_i) / 100
 
       next_transaction = Time.zone.at(subscription.current_period_end).strftime("%m/%d/%Y")
 
