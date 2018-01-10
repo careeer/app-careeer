@@ -14,6 +14,21 @@ module Webhooks
         card_exp_year: charge.source.exp_year
       )
 
+      subscription = Stripe::Subscription.retrieve(user.stripe_subscription_id)
+
+      readable_amount = Float(charge.amount)/100
+
+      next_transaction = Time.zone.at(subscription.current_period_end).strftime("%m/%d/%Y")
+
+      CareeerMailer.payment_confirmation(
+        user.email,
+        user.clients.first,
+        charge.statement_descriptor,
+        readable_amount,
+        charge.source.last4,
+        next_transaction
+      ).deliver
+
     end
   end
 end

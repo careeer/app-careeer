@@ -66,6 +66,7 @@ div#root > div > div > div {
       &.selected {
         color: #fff;
         background-color: #24c63a;
+        transition: background-color 0.5s, color 0.5s;
       }
     }
   }

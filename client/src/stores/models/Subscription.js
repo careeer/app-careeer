@@ -7,12 +7,13 @@ class Subscription {
 
   @observable cardErrors = "";
   @observable cardSuccess = "";
+  @observable planCost = "150";
   @observable isLoading = false;
   @observable showSelected = true;
   @observable selectedPlan = "Standard";
   @observable subscriptionStep = "intro";
   @observable planName = "Standard track";
-  @observable planCost = "150";
+
 
   @action setIsLoading(status) {
     this.isLoading = status;
@@ -42,14 +43,10 @@ class Subscription {
   }
 
   @action async handleCardToken(payload) {
-    console.log(payload);
-
     const response = await Api.post(
       this.subscription,{
         stripeToken: payload.token.id,
         plan: this.selectedPlan,
-        plan_name: this.planName,
-        plan_cost: this.planCost,
         last4: payload.token.card.last4,
         exp_month: payload.token.card.exp_month,
         exp_year: payload.token.card.exp_year,
