@@ -4,7 +4,7 @@ module V1
   # Subscription endpoints
   class SubscriptionsController < ApplicationController
     def show
-
+      render json: { plan: current_user.plan }, status: :ok
     end
 
     def new

@@ -11,6 +11,7 @@ import Checkout from './Components/Checkout';
 export default class Subscription extends Component {
   componentWillMount() {
     $crisp.push(['do', 'chat:hide']);
+    this.props.subscription.getPlan();
   }
 
   componentWillUnmount() {

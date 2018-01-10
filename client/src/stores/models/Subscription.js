@@ -44,6 +44,23 @@ class Subscription {
     }
   }
 
+  @action async getPlan() {
+    const response = await Api.get(`${this.subscription}`);
+    const status = await response.status;
+
+    if (status === 200) {
+      const body = await response.json();
+      this.selectedPlan = body.plan;
+      if (this.selectedPlan === "Fast") {
+        this.planName = "Fast track";
+      } else if (this.selectedPlan === "Starter") {
+        this.planName = "Self starter";
+      } else {
+        this.planName = "Standard track";
+      }
+    }
+  }
+
   @action async handleCardToken(payload, callBack) {
     this.setIsLoading(true);
     const response = await Api.post(
