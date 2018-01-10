@@ -66,6 +66,8 @@ class Subscription {
         callBack();
       }
 
+      this.setIsLoading(false);
+
     } else if (status === 402) {
       const body = await response.json();
       this.cardErrors = body.error;
