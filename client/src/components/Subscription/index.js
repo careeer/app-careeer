@@ -1,4 +1,4 @@
 import Subscription from './Subscription';
-import './Styles/Payment.scss';
+import './Styles/Subscription.scss';
 
 export default { Subscription };

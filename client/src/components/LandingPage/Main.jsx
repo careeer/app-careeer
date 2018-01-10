@@ -2,17 +2,20 @@
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import { Grid } from 'semantic-ui-react';
-import CareeerLogo from '../Lib/CareeerLogo';
+import { inject, observer } from 'mobx-react';
+
+import Footer from './Footer';
+import Pricing from './Pricing';
+import Timeline from './Timeline';
 import MainHeadline from './MainHeadline';
 import ReviewSlider from './ReviewSlider';
+import CareeerLogo from '../Lib/CareeerLogo';
 import ReviewSliderMobile from './ReviewSliderMobile';
-import Timeline from './Timeline';
-import Pricing from './Pricing';
-import Footer from './Footer';
 
+@inject('subscription') @observer
 class Main extends PureComponent {
-  handleSegmentClick = () => {
-    // placeholder
+  handleSegmentClick = (plan, planName, planCost) => {
+    this.props.subscription.onPlanClick(plan, planName, planCost);
   }
 
   render() {
@@ -26,7 +29,7 @@ class Main extends PureComponent {
           <ReviewSliderMobile />
           <Timeline />
           <Pricing
-            selectedAccount={'Standard'}
+            selectedAccount={this.props.subscription.selectedPlan}
             handleSegmentClick={this.handleSegmentClick}
           />
           <Footer />

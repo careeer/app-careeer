@@ -324,6 +324,13 @@ div#landingPage.ui.grid {
       .segment {
         border: none;
         border-radius: 0;
+        box-shadow: none;
+        position: relative;
+        transition: box-shadow 0.5s, color 0.25s;
+
+        &:hover {
+          box-shadow: 2px 2px 1px 0 rgba(34,36,38,.45);
+        }
 
         .ribbon.label {
           top: 1.2em;
@@ -333,12 +340,12 @@ div#landingPage.ui.grid {
 
         &::before,
         &::after {
-          box-sizing: inherit;
-          content: '';
-          position: absolute;
-          border: 1px solid transparent;
           width: 0;
           height: 0;
+          content: '';
+          position: absolute;
+          box-sizing: inherit;
+          border: 2px solid transparent;
         }
 
         &::before {
@@ -352,7 +359,11 @@ div#landingPage.ui.grid {
         }
 
         &.selected {
-          box-shadow: 4px 4px 4px 0 rgba(34,36,38,.45);
+          transition: box-shadow 1s ease 1s, color 0.25s;
+
+          &::after {
+            box-shadow: 4px 4px 4px 0 rgba(34,36,38,.45);
+          }
 
           &.yellow {
             &::before,
@@ -369,12 +380,12 @@ div#landingPage.ui.grid {
             }
 
             &::after {
-              border-bottom-color: #fbbd08;
               border-left-color: #fbbd08;
+              border-bottom-color: #fbbd08;
               transition:
-                border-color 0s ease-out 0.35s,
                 width 0.25s ease-out 0.35s,
-                height 0.25s ease-out 0.55s;
+                height 0.25s ease-out 0.55s,
+                border-color 0s ease-out 0.35s;
             }
           }
 
@@ -393,12 +404,12 @@ div#landingPage.ui.grid {
             }
 
             &::after {
-              border-bottom-color: #24c63a;
               border-left-color: #24c63a;
+              border-bottom-color: #24c63a;
               transition:
-                border-color 0s ease-out 0.35s,
                 width 0.25s ease-out 0.35s,
-                height 0.25s ease-out 0.55s;
+                height 0.25s ease-out 0.55s,
+                border-color 0s ease-out 0.35s;
             }
           }
 
@@ -417,12 +428,12 @@ div#landingPage.ui.grid {
             }
 
             &::after {
-              border-bottom-color: #6435c9;
               border-left-color: #6435c9;
+              border-bottom-color: #6435c9;
               transition:
-                border-color 0s ease-out 0.35s,
                 width 0.25s ease-out 0.35s,
-                height 0.25s ease-out 0.55s;
+                height 0.25s ease-out 0.55s,
+                border-color 0s ease-out 0.35s;
             }
           }
         }
@@ -430,10 +441,6 @@ div#landingPage.ui.grid {
 
       .ui.padded.segment {
         padding: 21px 0 21px 24px;
-      }
-
-      .green.segment {
-        border: 2px solid #21ba45;
       }
 
       header {
