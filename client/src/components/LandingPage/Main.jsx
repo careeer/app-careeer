@@ -24,7 +24,7 @@ class Main extends Component {
         <CareeerLogo />
         <Link to="/signIn" className="signInLink">Sign In</Link>
         <Grid id="landingPage">
-          <MainHeadline />
+          <MainHeadline selectedAccount={this.props.subscription.selectedPlan} />
           <ReviewSlider />
           <ReviewSliderMobile />
           <Timeline />

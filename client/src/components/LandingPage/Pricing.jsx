@@ -28,11 +28,17 @@ const Pricing = props => (
         selectedAccount={props.selectedAccount}
         handleSegmentClick={props.handleSegmentClick}
       />
-      <CreateForm buttonLabel="START 7-DAY FREE TRIAL" />
+      <CreateForm
+        buttonLabel="START 7-DAY FREE TRIAL"
+        selectedAccount={props.selectedAccount}
+      />
     </Grid.Column>
     <Grid.Column textAlign="center">
       <Responsive maxWidth={669}>
-        <CreateAccountButton buttonLabel="START 7-DAY FREE TRIAL" />
+        <CreateAccountButton
+          buttonLabel="START 7-DAY FREE TRIAL"
+          selectedAccount={props.selectedAccount}
+        />
       </Responsive>
     </Grid.Column>
   </Grid.Row>

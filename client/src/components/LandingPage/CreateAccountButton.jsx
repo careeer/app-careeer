@@ -6,7 +6,11 @@ import { Button } from 'semantic-ui-react';
 class CreateAccountButton extends PureComponent {
   handleClick = (e) => {
     e.preventDefault();
-    this.props.history.push('/createAccount');
+    const account = this.props.selectedAccount;
+    this.props.history.push({
+      pathname: '/createAccount',
+      state: { selectedAccount: account },
+    });
   }
 
   render() {

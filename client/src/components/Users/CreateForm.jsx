@@ -10,12 +10,13 @@ class CreateForm extends Component {
   handleClick = (e) => {
     e.preventDefault();
     if (this.email.checkValidity() && this.password.checkValidity()) {
-      const { user, history } = this.props;
+      const { user, history, selectedAccount } = this.props;
 
       user.create(
         this.email.value,
         this.password.value,
         this.password.value,
+        selectedAccount,
         () => {history.push('/freetrial');}
       );
     }

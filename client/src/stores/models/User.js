@@ -62,13 +62,13 @@ class User {
     this.passwordsMissmatch = false;
   }
 
-  async create(email, password, password_confirmation, callBack) {
+  async create(email, password, password_confirmation, plan ,callBack) {
     this.existingEmail = false;
     this.setIsLoading(true);
-
+    
     const response = await Api.post(
       this.users,
-      { user: {email, password, password_confirmation} },
+      { user: {email, password, password_confirmation, plan} },
     );
 
     const status = await response.status;
