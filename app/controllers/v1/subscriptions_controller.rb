@@ -21,6 +21,7 @@ module V1
         )
 
         next_transaction = Time.zone.at(subscription.current_period_end).strftime("%m/%d/%Y")
+
         CareeerMailer.payment_confirmation(
           current_user.email,
           current_user.clients.first,
@@ -45,8 +46,7 @@ module V1
         end
 
       rescue Stripe::CardError => e
-        @error_message = e.message
-        render :card_error, status: :ok
+        render json: { error: e.message}, status: :payment_required
       end
     end
 

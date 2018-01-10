@@ -25,6 +25,9 @@ class CheckoutCardForm extends React.Component {
         <div className="cardErrors">
           {this.props.cardErrors}
         </div>
+        <div className="cardSuccess">
+          {this.props.cardSuccess}
+        </div>
         <div className="callToAction" >
           <Button
             content="Checkout"

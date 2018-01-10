@@ -42,22 +42,6 @@ export default class Subscription extends Component {
   }
 
   handleContinueClick = () => {
-    let planUrl = null;
-    switch (this.props.subscription.selectedPlan) {
-      case 'Fast':
-        planUrl = 'https://app.acuityscheduling.com/catalog.php?owner=13659144&action=addCart&clear=1&id=340351';
-        break;
-      case 'Standard':
-        planUrl = 'https://app.acuityscheduling.com/catalog.php?owner=13659144&action=addCart&clear=1&id=340348';
-        break;
-      case 'Starter':
-        planUrl = 'https://app.acuityscheduling.com/catalog.php?owner=13659144&action=addCart&clear=1&id=339937';
-        break;
-      default:
-        break;
-    }
-    window.open(planUrl, '_blank');
-
     this.props.handleContinueClick();
   }
 
@@ -70,6 +54,7 @@ export default class Subscription extends Component {
     const { planName,
             planCost,
             cardErrors,
+            cardSuccess,
             showSelected,
             selectedPlan,
             subscriptionStep } = this.props.subscription;
@@ -102,6 +87,7 @@ export default class Subscription extends Component {
           planName={planName}
           planCost={planCost}
           cardErrors={cardErrors}
+          cardSuccess={cardSuccess}
           selectedPlan={selectedPlan}
           handleCardToken={this.handleCardToken}
           handleCardErrors={this.handleCardErrors}

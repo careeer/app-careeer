@@ -6,6 +6,7 @@ class Subscription {
   subscription = '/v1/subscription';
 
   @observable cardErrors = "";
+  @observable cardSuccess = "";
   @observable isLoading = false;
   @observable showSelected = true;
   @observable selectedPlan = "Standard";
@@ -41,7 +42,6 @@ class Subscription {
   }
 
   @action async handleCardToken(payload) {
-    console.log(this.selectedPlan);
     console.log(payload);
 
     const response = await Api.post(
@@ -60,9 +60,10 @@ class Subscription {
     const status = await response.status;
 
     if (status === 200) {
+      this.cardSuccess = "Transaction successful"
+    } else if (status === 402) {
       const body = await response.json();
-      // const { user } = body.data;
-      console.log(body);
+      this.cardErrors = body.error;
     }
   }
 }
