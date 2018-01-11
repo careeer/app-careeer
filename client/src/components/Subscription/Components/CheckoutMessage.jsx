@@ -14,7 +14,7 @@ const CheckoutMessage = props => (
       src={props.avatarUrl || 'https://res.cloudinary.com/careeer/image/upload/v1504959238/Careeer_logo_a3gu5x.png'}
     />
     <h2 className="introMessage">
-      Your account will be charged ${props.planCost} on the 5th of every month.
+      Your account will be charged ${props.planCost} every month.
     </h2>
     <h3>
       Upgrade, downgrade, or cancel any time
