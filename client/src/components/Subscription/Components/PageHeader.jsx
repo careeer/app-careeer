@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 
 const PageHeader = props => (
   <div className="header">
-    <a className={props.freeTrial ? 'selected' : ''}>
+    <div className={props.freeTrial ? 'selected' : ''}>
       Free trial completed
-    </a>
+    </div>
 
-    <a className={props.continueSubscription ? 'selected' : ''}>
+    <div className={props.continueSubscription ? 'selected' : ''}>
       Continue subscription
-    </a>
-    <a className={props.checkout ? 'selected' : ''}>
+    </div>
+    <div className={props.checkout ? 'selected' : ''}>
       Enter payment info
-    </a>
+    </div>
   </div>
 );
 

@@ -10,6 +10,7 @@ class Subscription {
   @observable planCost = "150";
   @observable isLoading = false;
   @observable showSelected = true;
+  @observable disableSubmit = true;
   @observable selectedPlan = "Standard";
   @observable subscriptionStep = "intro";
   @observable planName = "Standard track";
@@ -41,6 +42,12 @@ class Subscription {
     } else {
       this.cardErrors = '';
       this.cardSuccess = '';
+    }
+
+    if (event.complete) {
+      this.disableSubmit = false;
+    } else {
+      this.disableSubmit = true;
     }
   }
 

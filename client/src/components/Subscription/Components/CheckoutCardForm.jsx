@@ -6,7 +6,11 @@ import { CardElement, injectStripe } from 'react-stripe-elements';
 class CheckoutCardForm extends React.Component {
   handleSubmit = (ev) => {
     ev.preventDefault();
-    this.props.stripe.createToken().then(payload => this.props.handleCardToken(payload, () => {this.props.afterPaying();} ));
+    this.props.stripe.createToken().then(payload => this.props.handleCardToken(payload, this.handleContinueAfter()));
+  };
+
+  handleContinueAfter = () => {
+    // this.props.afterPaying();
   };
 
   handleChange = (change) => {
@@ -33,7 +37,7 @@ class CheckoutCardForm extends React.Component {
             content="Checkout"
             className="defaultButton"
             loading={this.props.isLoading}
-            disabled={this.props.isLoading}
+            disabled={this.props.disableSubmit || this.props.isLoading}
           />
         </div>
       </form>

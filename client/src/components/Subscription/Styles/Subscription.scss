@@ -52,6 +52,25 @@ div#root > div > div > div {
   }
 
   .header {
+    width: 100%;
+    font-size: 0.9em;
+    font-weight: bold;
+    font-family: Raleway;
+    letter-spacing: 1.8px;
+
+    & > div {
+      color: #333;
+      background-color: #fef99f;
+      display: table-cell;
+      text-align: center;
+      padding: 0.8em;
+
+      &.selected {
+        color: #fff;
+        background-color: #24c63a;
+        transition: background-color 0.5s, color 0.5s;
+      }
+    }
     a {
       color: #333;
       padding: 0.8em;
@@ -63,11 +82,7 @@ div#root > div > div > div {
       vertical-align: -webkit-baseline-middle;
       transition: background-color 0.5s, color 0.5s;
 
-      &.selected {
-        color: #fff;
-        background-color: #24c63a;
-        transition: background-color 0.5s, color 0.5s;
-      }
+
     }
   }
 
@@ -320,11 +335,16 @@ div#root > div > div > div {
     text-align: center;
     padding-bottom: 2em;
 
-    .ui.button {
+    .ui.button, .ui.button:disabled {
       width: 387px;
       margin-bottom: 2.5em;
       background-color: #24c63a;
-      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5) !important;
+      transition: box-shadow 0.5s ease;
+
+      &:hover {
+        box-shadow: 2px 3px 4px 0 rgba(0, 0, 0, 0.5);
+      }
     }
 
     p {
@@ -352,9 +372,9 @@ div#root > div > div > div {
 @media all and (max-width: 669px) {
   .paymentLayout {
     .header {
-      a {
+      & > div {
         padding: 1.3em;
-        font-size: 0.5em;
+        font-size: 0.6em;
         letter-spacing: 1.3px;
       }
     }

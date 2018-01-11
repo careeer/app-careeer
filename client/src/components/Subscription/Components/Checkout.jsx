@@ -25,6 +25,7 @@ const Checkout = props => (
         cardSuccess={props.cardSuccess}
         afterPaying={props.afterPaying}
         selectedPlan={props.selectedPlan}
+        disableSubmit={props.disableSubmit}
         handleCardToken={props.handleCardToken}
         handleCardErrors={props.handleCardErrors}
       />
@@ -39,6 +40,7 @@ Checkout.propTypes = {
   afterPaying: PropTypes.func.isRequired,
   cardErrors: PropTypes.string.isRequired,
   cardSuccess: PropTypes.string.isRequired,
+  disableSubmit: PropTypes.bool.isRequired,
   selectedPlan: PropTypes.string.isRequired,
   handleCardToken: PropTypes.func.isRequired,
   handleCardErrors: PropTypes.func.isRequired,
