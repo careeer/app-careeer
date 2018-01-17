@@ -6,7 +6,7 @@ import defaultElements from '../Constants/DefaultRoadmapElements';
 import RoadmapLayout from '../ClientDashboard/RoadmapElements/RoadmapLayout';
 
 @inject('roadmapElements') @observer
-export default class ClientDashboard extends Component {
+export default class OnBoardingThankYou extends Component {
   state = {
     clientName: '',
   }

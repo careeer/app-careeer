@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import { Dimmer } from 'semantic-ui-react';
 import ThankYouMessage from '../../OnBoarding/Components/ThankYouMessage';
 import LoadingScreen from '../../Lib/LoadingScreen';
-
+// props.isDefaultLoading
 export default function FullScreenLoader(props) {
   if (props.isDefaultLoading) {
     return (
       <Dimmer
         page
         className="thankYouLoader"
-        active={true && props.isDefaultLoading}
+        active={props.isDefaultLoading}
       >
         <ThankYouMessage clientName={props.clientName} />
       </Dimmer>

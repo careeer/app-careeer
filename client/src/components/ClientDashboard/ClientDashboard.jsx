@@ -79,10 +79,13 @@ class ClientDashboard extends Component {
         </div>
       );
     }
+    if (currentClient) {
+      return (
+        <RoadmapLayout />
+      );
+    }
 
-    return (
-      <RoadmapLayout />
-    );
+    return null;
   }
 }
 

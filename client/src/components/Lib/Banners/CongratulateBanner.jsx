@@ -4,7 +4,7 @@ import { Message, Grid, Container, Transition } from 'semantic-ui-react';
 
 export default class CongratulateBanner extends PureComponent {
   handleOnShow = () => {
-    setTimeout(this.props.hideCongratsBanner, 5500);
+    // setTimeout(this.props.hideCongratsBanner, 5500);
   }
 
   render() {
@@ -34,7 +34,7 @@ export default class CongratulateBanner extends PureComponent {
               className="bannerMessageColumn"
             >
               <span className="mainMessage">
-                nice work, {this.props.clientName.split(' ', 1)}!
+                {this.props.mainMessage}
               </span>
             </Grid.Column>
             <Grid.Column
@@ -44,9 +44,11 @@ export default class CongratulateBanner extends PureComponent {
               only={'large screen', 'tablet', 'computer'}
               textAlign="right"
             >
-              <Container className="secondaryMessage">
-                moved to bottom of roadmap
-              </Container>
+              {this.props.secondaryMessage &&
+                <Container className="secondaryMessage">
+                  {this.props.secondaryMessage}
+                </Container>
+              }
             </Grid.Column>
             <Grid.Column
               width={1}
@@ -58,9 +60,9 @@ export default class CongratulateBanner extends PureComponent {
                   tabIndex={0}
                   role="button"
                   className="undoLink"
-                  onClick={this.props.handleUndo}
+                  onClick={this.props.handleButtonClick}
                 >
-                  undo
+                  {this.props.buttonCaption}
                 </a>
               </Container>
             </Grid.Column>

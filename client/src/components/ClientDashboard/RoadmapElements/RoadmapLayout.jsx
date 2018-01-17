@@ -124,56 +124,67 @@ export default class RoadmapLayout extends Component {
           onCloseClick={toggleSettings}
         />
         <CongratulateBanner
+          buttonCaption="undo"
           visible={isBannerVisible}
-          clientName={currentClient}
-          handleUndo={this.handleUndoComplete}
+          handleButtonClick={this.handleUndoComplete}
           hideCongratsBanner={this.handleBannerClose}
+          secondaryMessage="moved to bottom of roadmap"
+          mainMessage={`nice work, ${currentClient.split(' ', 1)}!`}
+        />
+        <CongratulateBanner
+          buttonCaption="change"
+          visible={isBannerVisible}
+          handleButtonClick={this.handleUndoComplete}
+          hideCongratsBanner={this.handleBannerClose}
+          mainMessage="Subscription started on Standard Track"
         />
         <AccountFlag
           accountMessage={freeTrialMessage}
         />
-        <Grid className="roadmapMainGrid">
-          <Grid.Column className="roadmapMainColumn">
-            <ScrollZone>
-              <RoadmapHeader
-                clientName={currentClient}
-              />
-              <EditableRoadmapElementsList
-                roadmapElements={incompleteElements.slice()}
-                enableDragAndDrop={true}
-                isCreateFormClose={isCreateFormClose}
-                onFormCopy={this.handleCopyForm}
-                onFormOpen={this.handleEditFormOpen}
-                onDeleteClick={this.handleDeleteForm}
-                onFormSubmit={this.handleEditFormSubmit}
-                handleElementMove={this.handleElementMove}
-                handleCreateFormToggle={this.handleCreateFormToggle}
-                toggleElementStatus={this.handleToggleRoadmapElementStatus}
-              />
-              <CompletedRoadmapElementsList
-                completedElements={completedElements.slice()}
-                enableDragAndDrop={false}
-                isCreateFormClose={isCreateFormClose}
-                completedAccordionIcon={completedAccordionIcon}
-                toggleCompletedElements={toggleCompletedElements}
-                isCompletedAccordionOpen={isCompletedAccordionOpen}
-                completedAccordionMessage={completedAccordionMessage}
-                onFormCopy={this.handleCopyForm}
-                onFormOpen={this.handleEditFormOpen}
-                onDeleteClick={this.handleDeleteForm}
-                onFormSubmit={this.handleEditFormSubmit}
-                handleElementMove={this.handleElementMove}
-                handleCreateFormToggle={this.handleCreateFormToggle}
-                toggleElementStatus={this.handleToggleRoadmapElementStatus}
-              />
-              <ToggleableRoadmapElementForm
-                onFormSubmit={this.handleCreateFormSubmit}
-                handleCreateFormToggle={this.handleCreateFormToggle}
-                isToggleableFormVisible={isToggleableFormVisible}
-              />
-            </ScrollZone>
-          </Grid.Column>
-        </Grid>
+        <Dimmer.Dimmable blurring dimmed={isDefaultLoading}>
+          <Grid className="roadmapMainGrid">
+            <Grid.Column className="roadmapMainColumn">
+              <ScrollZone>
+                <RoadmapHeader
+                  clientName={currentClient}
+                />
+                <EditableRoadmapElementsList
+                  roadmapElements={incompleteElements.slice()}
+                  enableDragAndDrop={true}
+                  isCreateFormClose={isCreateFormClose}
+                  onFormCopy={this.handleCopyForm}
+                  onFormOpen={this.handleEditFormOpen}
+                  onDeleteClick={this.handleDeleteForm}
+                  onFormSubmit={this.handleEditFormSubmit}
+                  handleElementMove={this.handleElementMove}
+                  handleCreateFormToggle={this.handleCreateFormToggle}
+                  toggleElementStatus={this.handleToggleRoadmapElementStatus}
+                />
+                <CompletedRoadmapElementsList
+                  completedElements={completedElements.slice()}
+                  enableDragAndDrop={false}
+                  isCreateFormClose={isCreateFormClose}
+                  completedAccordionIcon={completedAccordionIcon}
+                  toggleCompletedElements={toggleCompletedElements}
+                  isCompletedAccordionOpen={isCompletedAccordionOpen}
+                  completedAccordionMessage={completedAccordionMessage}
+                  onFormCopy={this.handleCopyForm}
+                  onFormOpen={this.handleEditFormOpen}
+                  onDeleteClick={this.handleDeleteForm}
+                  onFormSubmit={this.handleEditFormSubmit}
+                  handleElementMove={this.handleElementMove}
+                  handleCreateFormToggle={this.handleCreateFormToggle}
+                  toggleElementStatus={this.handleToggleRoadmapElementStatus}
+                />
+                <ToggleableRoadmapElementForm
+                  onFormSubmit={this.handleCreateFormSubmit}
+                  handleCreateFormToggle={this.handleCreateFormToggle}
+                  isToggleableFormVisible={isToggleableFormVisible}
+                />
+              </ScrollZone>
+            </Grid.Column>
+          </Grid>
+        </Dimmer.Dimmable>
       </div>
     );
   }

@@ -20,6 +20,7 @@
     "react-dropzone": "^4.1.0",
     "react-onclickoutside": "^6.5.0",
     "react-router-dom": "^4.1.2",
+    "react-router-page-transition": "^3.0.2",
     "react-slick": "^0.15.4",
     "react-stripe-elements": "^1.2.1",
     "semantic-ui-css": "^2.2.11",

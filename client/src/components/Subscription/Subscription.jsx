@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 
+import SubscriptionComplete from './SubscriptionComplete';
 import PaymentLayout from './Components/PaymentLayout';
 import TrialComplete from './Components/TrialComplete';
 import SelectPlan from './Components/SelectPlan';
@@ -46,6 +47,10 @@ export default class Subscription extends Component {
     this.props.handleContinueClick();
   }
 
+  // <PaymentLayout>
+  //   {currentStep}
+  // </PaymentLayout>
+
 
   render() {
     const { currentClient,
@@ -59,6 +64,7 @@ export default class Subscription extends Component {
             cardSuccess,
             showSelected,
             selectedPlan,
+            disableSubmit,
             subscriptionStep } = this.props.subscription;
 
     let currentStep = null;
@@ -92,6 +98,7 @@ export default class Subscription extends Component {
           cardErrors={cardErrors}
           cardSuccess={cardSuccess}
           selectedPlan={selectedPlan}
+          disableSubmit={disableSubmit}
           afterPaying={this.handleContinueClick}
           handleCardToken={this.handleCardToken}
           handleCardErrors={this.handleCardErrors}
@@ -100,9 +107,7 @@ export default class Subscription extends Component {
     }
 
     return (
-      <PaymentLayout>
-        {currentStep}
-      </PaymentLayout>
+      <SubscriptionComplete />
     );
   }
 }

@@ -1,9 +1,16 @@
 /*
   Thank You Loading Styles
 */
-div.ui.active.transition.visible.page.dimmer.thankYouLoader {
-  background-color: #24c63a;
-  opacity: 0.85;
+div.ui.active.transition.visible.page.dimmer {
+
+  &.paymentComplete, &.thankYouLoader {
+    background-color: #24c63a;
+    opacity: 1;
+  }
+
+  &.thankYouLoader {
+    opacity: 0.85;
+  }
 }
 
 /*
@@ -165,7 +172,7 @@ div.ui.label.roadmapIconsLabelColumn {
   i.write {
     transition: opacity 0.75s;
   }
-  
+
   .ui.button {
     background-color: #b8b8b8;
     border-radius: 28em;

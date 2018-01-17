@@ -15,9 +15,7 @@ export default class AuthRoute extends React.Component {
     const { component: Component, ...rest } = this.props;
 
     if (this.props.user.isLoading) {
-      return (
-        <LoadingScreen isLoading={this.props.user.isLoading} />
-      );
+      return (null);
     }
 
     return (
