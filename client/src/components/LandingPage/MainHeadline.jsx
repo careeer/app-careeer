@@ -8,16 +8,16 @@ const MainHeadline = () => (
   <Grid.Row className="mainHeadline">
     <Grid.Column>
       <h1>
-        YOU’RE IN CONTROL HERE
+        Ready to transition your career?
       </h1>
     </Grid.Column>
     <Grid.Column textAlign="center">
       <ScreensIcon />
       <h4>
-        Create intelligent plans that power your career moves
+        A personalized roadmap to get you from where you are, to the job you want in tech
       </h4>
       <p>
-        Connect to professional coaches for guidance and accountability along the way
+        Work with a coach for guidance and accountability
       </p>
       <CreateForm buttonLabel="START 7-DAY FREE TRIAL" />
     </Grid.Column>
