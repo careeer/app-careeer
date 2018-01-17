@@ -5,10 +5,17 @@ div.ui.center.aligned.middle.grid {
 /*
   Careeer Logo
 */
-div.ui.left.aligned.grid div.column.careeerLogo {
-  padding-bottom: 0;
-  padding-left: 2em;
+div.ui.left.aligned.grid {
+  & div.column.careeerLogo {
+    padding-bottom: 0;
+    padding-left: 4em;
+  }
 }
+
+a.signInLink {
+  padding-right: 4.5em;
+}
+
 
 h2.ui.header.careeer {
   font-family: 'Lobster', cursive;
@@ -844,6 +851,10 @@ div#landingPage.ui.grid {
   */
   div.ui.left.aligned.grid div.column.careeerLogo {
     padding: 0;
+  }
+
+  a.signInLink {
+    padding-right: 1em;
   }
 
   h2.ui.header.careeer {
