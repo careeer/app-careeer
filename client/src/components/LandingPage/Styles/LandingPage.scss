@@ -5,10 +5,17 @@ div.ui.center.aligned.middle.grid {
 /*
   Careeer Logo
 */
-div.ui.left.aligned.grid div.column.careeerLogo {
-  padding-bottom: 0;
-  padding-left: 2em;
+div.ui.left.aligned.grid {
+  & div.column.careeerLogo {
+    padding-bottom: 0;
+    padding-left: 4em;
+  }
 }
+
+a.signInLink {
+  padding-right: 4.5em;
+}
+
 
 h2.ui.header.careeer {
   font-family: 'Lobster', cursive;
@@ -324,13 +331,6 @@ div#landingPage.ui.grid {
       .segment {
         border: none;
         border-radius: 0;
-        box-shadow: none;
-        position: relative;
-        transition: box-shadow 0.5s, color 0.25s;
-
-        &:hover {
-          box-shadow: 2px 2px 1px 0 rgba(34,36,38,.45);
-        }
 
         .ribbon.label {
           top: 1.2em;
@@ -340,12 +340,12 @@ div#landingPage.ui.grid {
 
         &::before,
         &::after {
-          width: 0;
-          height: 0;
+          box-sizing: inherit;
           content: '';
           position: absolute;
-          box-sizing: inherit;
-          border: 2px solid transparent;
+          border: 1px solid transparent;
+          width: 0;
+          height: 0;
         }
 
         &::before {
@@ -359,11 +359,7 @@ div#landingPage.ui.grid {
         }
 
         &.selected {
-          transition: box-shadow 1s ease 1s, color 0.25s;
-
-          &::after {
-            box-shadow: 4px 4px 4px 0 rgba(34,36,38,.45);
-          }
+          box-shadow: 4px 4px 4px 0 rgba(34,36,38,.45);
 
           &.yellow {
             &::before,
@@ -380,12 +376,12 @@ div#landingPage.ui.grid {
             }
 
             &::after {
-              border-left-color: #fbbd08;
               border-bottom-color: #fbbd08;
+              border-left-color: #fbbd08;
               transition:
+                border-color 0s ease-out 0.35s,
                 width 0.25s ease-out 0.35s,
-                height 0.25s ease-out 0.55s,
-                border-color 0s ease-out 0.35s;
+                height 0.25s ease-out 0.55s;
             }
           }
 
@@ -404,12 +400,12 @@ div#landingPage.ui.grid {
             }
 
             &::after {
-              border-left-color: #24c63a;
               border-bottom-color: #24c63a;
+              border-left-color: #24c63a;
               transition:
+                border-color 0s ease-out 0.35s,
                 width 0.25s ease-out 0.35s,
-                height 0.25s ease-out 0.55s,
-                border-color 0s ease-out 0.35s;
+                height 0.25s ease-out 0.55s;
             }
           }
 
@@ -428,12 +424,12 @@ div#landingPage.ui.grid {
             }
 
             &::after {
-              border-left-color: #6435c9;
               border-bottom-color: #6435c9;
+              border-left-color: #6435c9;
               transition:
+                border-color 0s ease-out 0.35s,
                 width 0.25s ease-out 0.35s,
-                height 0.25s ease-out 0.55s,
-                border-color 0s ease-out 0.35s;
+                height 0.25s ease-out 0.55s;
             }
           }
         }
@@ -441,6 +437,10 @@ div#landingPage.ui.grid {
 
       .ui.padded.segment {
         padding: 21px 0 21px 24px;
+      }
+
+      .green.segment {
+        border: 2px solid #21ba45;
       }
 
       header {
@@ -853,6 +853,10 @@ div#landingPage.ui.grid {
     padding: 0;
   }
 
+  a.signInLink {
+    padding-right: 1em;
+  }
+
   h2.ui.header.careeer {
     object-fit: contain;
     margin-top: -10px;
@@ -965,6 +969,7 @@ div#landingPage.ui.grid {
 
     .row.mainHeadline  > .column {
       h1 {
+        margin: 1.25em 0 0 0;
         width: 290px;
         height: 111px;
         font-size: 32px;
