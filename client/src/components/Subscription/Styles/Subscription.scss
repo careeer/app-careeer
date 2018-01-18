@@ -66,12 +66,17 @@ div#root > div > div > div {
 
       & > a {
         color: #333;
+        cursor: pointer;
+
+        &:focus {
+          outline: none;
+        }
       }
 
       &.selected {
         background-color: #24c63a;
         transition: background-color 0.5s, color 0.5s;
-        
+
         & > a {
           color: #fff;
         }

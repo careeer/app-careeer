@@ -21,11 +21,18 @@ export default class Subscription extends Component {
     $crisp.push(['do', 'chat:show']);
   }
 
+  handleFreeTrialClick = () => {
+    this.props.subscription.updateStep('intro');
+    this.props.history.push(`${this.props.match.url}`);
+  }
+
   handleIntroClick = () => {
+    this.props.subscription.updateStep('plans');
     this.props.history.push(`${this.props.match.url}/plans`);
   }
 
   handleSelectPlanClick = () => {
+    this.props.subscription.updateStep('checkout');
     this.props.history.push(`${this.props.match.url}/plans/checkout`);
   }
 
@@ -71,60 +78,68 @@ export default class Subscription extends Component {
 
     return (
       <PaymentLayout>
-        <PageHeader
-          introPath={introPath}
-          plansPath={plansPath}
-          checkoutPath={checkoutPath}
-          checkout={this.props.match.url === checkoutPath}
-          freeTrial={this.props.match.url === introPath}
-          continueSubscription={this.props.match.url === plansPath}
-        />
-        <Route
-          exact
-          path={introPath}
-          render={() => (
-            <TrialComplete
-              currentClient={currentClient}
-              handleIntroClick={this.handleIntroClick}
-              currentClientAvatar={currentClientAvatar}
-              completeActions={completedElements.length}
-              handleDeleteAccount={this.props.handleDeleteAccount}
-            />
-          )}
-        />
-        <Route
-          exact
-          path={plansPath}
-          render={() => (
-            <SelectPlan
-              planName={planName}
-              showSelected={showSelected}
-              selectedPlan={selectedPlan}
-              currentClientAvatar={currentClientAvatar}
-              handleSegmentClick={this.handleSegmentClick}
-              handleContinueClick={this.handleSelectPlanClick}
-              handleToggleShowSelected={this.handleToggleShowSelected}
-            />
-          )}
-        />
-        <Route
-          path={checkoutPath}
-          render={() => (
-            <Checkout
-              planName={planName}
-              planCost={planCost}
-              isLoading={isLoading}
-              cardErrors={cardErrors}
-              cardSuccess={cardSuccess}
-              selectedPlan={selectedPlan}
-              disableSubmit={disableSubmit}
-              afterPaying={this.handleContinueClick}
-              handleCardToken={this.handleCardToken}
-              handleCardErrors={this.handleCardErrors}
-              currentClientAvatar={currentClientAvatar}
-            />
-          )}
-        />
+        <div>
+          <PageHeader
+            introPath={introPath}
+            plansPath={plansPath}
+            checkoutPath={checkoutPath}
+            handleTrialClick={this.handleFreeTrialClick}
+            handleSubscriptionClick={this.handleIntroClick}
+            handleSelectPaymentClick={this.handleSelectPlanClick}
+            freeTrial={subscriptionStep === 'intro' ||
+                      subscriptionStep === 'checkout' ||
+                      subscriptionStep === 'plans'}
+            checkout={subscriptionStep === 'checkout'}
+            continueSubscription={subscriptionStep === 'plans' ||
+                                  subscriptionStep === 'checkout'}
+          />
+          <Route
+            exact
+            path={introPath}
+            render={() => (
+              <TrialComplete
+                currentClient={currentClient}
+                handleIntroClick={this.handleIntroClick}
+                currentClientAvatar={currentClientAvatar}
+                completeActions={completedElements.length}
+                handleDeleteAccount={this.props.handleDeleteAccount}
+              />
+            )}
+          />
+          <Route
+            exact
+            path={plansPath}
+            render={() => (
+              <SelectPlan
+                planName={planName}
+                showSelected={showSelected}
+                selectedPlan={selectedPlan}
+                currentClientAvatar={currentClientAvatar}
+                handleSegmentClick={this.handleSegmentClick}
+                handleContinueClick={this.handleSelectPlanClick}
+                handleToggleShowSelected={this.handleToggleShowSelected}
+              />
+            )}
+          />
+          <Route
+            path={checkoutPath}
+            render={() => (
+              <Checkout
+                planName={planName}
+                planCost={planCost}
+                isLoading={isLoading}
+                cardErrors={cardErrors}
+                cardSuccess={cardSuccess}
+                selectedPlan={selectedPlan}
+                disableSubmit={disableSubmit}
+                afterPaying={this.handleContinueClick}
+                handleCardToken={this.handleCardToken}
+                handleCardErrors={this.handleCardErrors}
+                currentClientAvatar={currentClientAvatar}
+              />
+            )}
+          />
+        </div>
       </PaymentLayout>
     );
   }

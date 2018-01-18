@@ -60,10 +60,13 @@ class Subscription {
       this.selectedPlan = body.plan;
       if (this.selectedPlan === "Fast") {
         this.planName = "Fast track";
+        this.planCost = "350";
       } else if (this.selectedPlan === "Starter") {
         this.planName = "Self starter";
+        this.planCost = "50";
       } else {
         this.planName = "Standard track";
+        this.planCost = "150";
       }
     }
   }

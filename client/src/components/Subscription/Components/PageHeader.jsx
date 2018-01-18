@@ -5,14 +5,32 @@ import { Link } from 'react-router-dom';
 const PageHeader = props => (
   <div className="header">
     <div className={props.freeTrial ? 'selected' : ''}>
-      <Link to={props.introPath}>Free trial completed</Link>
+      <a
+        role="link"
+        tabIndex={0}
+        onClick={props.handleTrialClick}
+      >
+        Free trial completed
+      </a>
     </div>
 
     <div className={props.continueSubscription ? 'selected' : ''}>
-      <Link to={props.plansPath}>Continue subscription</Link>
+      <a
+        role="link"
+        tabIndex={0}
+        onClick={props.handleSubscriptionClick}
+      >
+        Continue subscription
+      </a>
     </div>
     <div className={props.checkout ? 'selected' : ''}>
-      <Link to={props.checkoutPath}>Enter payment info</Link>
+      <a
+        role="link"
+        tabIndex={0}
+        onClick={props.handleSelectPaymentClick}
+      >
+        Enter payment info
+      </a>
     </div>
   </div>
 );
@@ -21,9 +39,6 @@ PageHeader.propTypes = {
   checkout: PropTypes.bool,
   freeTrial: PropTypes.bool,
   continueSubscription: PropTypes.bool,
-  introPath: PropTypes.string.isRequired,
-  plansPath: PropTypes.string.isRequired,
-  checkoutPath: PropTypes.string.isRequired,
 };
 
 PageHeader.defaultProps = {
