@@ -9,7 +9,7 @@ import Footer from './Footer';
 import CareeerLogo from '../Lib/CareeerLogo';
 
 
-class Main extends PureComponent {
+class Main extends Component {
   handleSegmentClick = () => {
     // placeholder
   }
@@ -28,7 +28,7 @@ class Main extends PureComponent {
           render={() => (
             <Home
               handleSegmentClick={this.handleSegmentClick}
-              selectedAccount={this.props.subscription.selectedPlan}
+              selectedAccount="Standard"
             />
           )}
         />
