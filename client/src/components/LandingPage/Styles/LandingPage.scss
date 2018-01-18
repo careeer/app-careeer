@@ -16,6 +16,34 @@ a.signInLink {
   padding-right: 4.5em;
 }
 
+a.faqLink, a.aboutUsLink {
+  top: 40px;
+  color: #333333;
+  font-size: 18px;
+  position: absolute;
+  font-family: Cabin;
+  margin-right: 4.5em;
+  letter-spacing: 2.3px;
+}
+
+.faqLink {
+  right: 144px;
+}
+
+.questionList {
+  color: #333;
+  background-color: #fef99f;
+  padding: 0 2.6em !important;
+  margin-bottom: 1em !important;
+}
+
+.faqPage {
+  margin: 2em 0;
+}
+
+.aboutUsLink {
+  right: 224px;
+}
 
 h2.ui.header.careeer {
   font-family: 'Lobster', cursive;
@@ -485,34 +513,34 @@ div#landingPage.ui.grid {
       }
     }
   }
+}
 
-  .row.footer {
-    padding: 2em 0;
-    font-family: Raleway;
+.row.footer {
+  padding: 2em 0;
+  font-family: Raleway;
 
-    a {
-      color: #333333;
-      padding-right: 3em;
-    }
+  a {
+    color: #333333;
+    padding-right: 3em;
+  }
 
-    .column {
-      width: auto;
-    }
+  .column {
+    width: auto;
+  }
 
-    .column.left {
-      padding-left: 5em;
-      width: 50%;
-    }
+  .column.left {
+    padding-left: 5em;
+    width: 50%;
+  }
 
-    .column.right {
-      padding-right: 4em;
-      text-align: right;
-      width: 50%;
-    }
+  .column.right {
+    padding-right: 4em;
+    text-align: right;
+    width: 50%;
+  }
 
-    .column.divider {
-      padding: 0 0 1em;
-    }
+  .column.divider {
+    padding: 0 0 1em;
   }
 }
 
@@ -657,17 +685,17 @@ div#landingPage.ui.grid {
         }
       }
     }
+  }
 
-    .row.footer {
-      font-size: 14px;
+  .row.footer {
+    font-size: 14px;
 
-      i {
-        font-size: 20px;
-      }
+    i {
+      font-size: 20px;
+    }
 
-      .column.left {
-        padding-left: 3em;
-      }
+    .column.left {
+      padding-left: 3em;
     }
   }
 }
@@ -827,19 +855,19 @@ div#landingPage.ui.grid {
         }
       }
     }
+  }
 
-    .row.footer {
-      font-size: 8px;
+  .row.footer {
+    font-size: 8px;
 
-      i {
-        font-size: 14px;
-      }
+    i {
+      font-size: 14px;
+    }
 
-      .column.left {
-        padding-left: 2em;
-        a {
-          font-size: 10px;
-        }
+    .column.left {
+      padding-left: 2em;
+      a {
+        font-size: 10px;
       }
     }
   }
@@ -855,6 +883,13 @@ div#landingPage.ui.grid {
 
   a.signInLink {
     padding-right: 1em;
+  }
+
+  a.faqLink {
+    top: 20px;
+    right: 44px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
   }
 
   h2.ui.header.careeer {
@@ -1139,39 +1174,39 @@ div#landingPage.ui.grid {
         }
       }
     }
+  }
 
-    .row.footer {
-      font-size: 8px;
-      margin-bottom: 15em;
+  .row.footer {
+    font-size: 8px;
+    margin-bottom: 15em;
 
-      i {
-        font-size: 14px;
-      }
+    i {
+      font-size: 14px;
+    }
 
+    a {
+      padding-right: 1em;
+    }
+
+    .column.left {
       a {
-        padding-right: 1em;
+        font-size: 10px
       }
 
-      .column.left {
-        a {
-          font-size: 10px
-        }
+      padding-left: 2em;
+      width: 70%;
 
-        padding-left: 2em;
-        width: 70%;
-
-        &.coachLink {
-          width: 40%;
-        }
+      &.coachLink {
+        width: 40%;
       }
+    }
 
-      .column.right {
-        width: 30%;
-        padding-right: 1em;
+    .column.right {
+      width: 30%;
+      padding-right: 1em;
 
-        &.mediaIcons {
-          width: 60%;
-        }
+      &.mediaIcons {
+        width: 60%;
       }
     }
   }

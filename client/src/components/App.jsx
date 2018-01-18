@@ -23,6 +23,8 @@ import AuthRoute from './Lib/AuthRoute';
 const App = () => (
   <Switch>
     <Route exact path="/" component={LandingPage.Main} />
+    <Route exact path="/faq" component={LandingPage.Main} />
+    
     <Route path="/partners/:partnerId" component={LandingPage.Main} />
     <Route path="/signIn" component={Sessions.New} />
     <Route path="/createAccount" component={Users.New} />
