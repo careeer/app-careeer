@@ -14,7 +14,15 @@ class Subscription {
   @observable selectedPlan = "Standard";
   @observable subscriptionStep = "intro";
   @observable planName = "Standard track";
+  @observable animationVisible = false;
 
+  @action startAnimation() {
+    this.animationVisible = true;
+  }
+
+  @action stopAnimation() {
+    this.animationVisible = false;
+  }
 
   @action setIsLoading(status) {
     this.isLoading = status;
@@ -88,6 +96,7 @@ class Subscription {
 
     if (status === 200) {
       this.cardSuccess = "Transaction successful"
+      this.startAnimation();
 
       if (callBack) {
         callBack();

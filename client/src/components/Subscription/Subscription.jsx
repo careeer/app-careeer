@@ -5,6 +5,7 @@ import { Route } from 'react-router-dom';
 
 import SubscriptionComplete from './SubscriptionComplete';
 import PaymentLayout from './Components/PaymentLayout';
+import CurtainsDown from './Components/CurtainsDown';
 import PageHeader from './Components/PageHeader';
 import TrialComplete from './Components/TrialComplete';
 import SelectPlan from './Components/SelectPlan';
@@ -53,7 +54,11 @@ export default class Subscription extends Component {
   }
 
   handleContinueClick = () => {
-    this.props.handleContinueClick();
+    // this.props.handleContinueClick();
+  }
+
+  handleAnimationComplete = () => {
+    this.props.subscription.stopAnimation();
   }
 
 
@@ -70,7 +75,8 @@ export default class Subscription extends Component {
             showSelected,
             selectedPlan,
             disableSubmit,
-            subscriptionStep } = this.props.subscription;
+            subscriptionStep,
+            animationVisible } = this.props.subscription;
 
     const introPath = `${this.props.match.url}`;
     const plansPath = `${this.props.match.url}/plans`;
@@ -79,6 +85,10 @@ export default class Subscription extends Component {
     return (
       <PaymentLayout>
         <div>
+          <CurtainsDown
+            visible={animationVisible}
+            handleAnimationComplete={this.handleAnimationComplete}
+          />
           <PageHeader
             introPath={introPath}
             plansPath={plansPath}
