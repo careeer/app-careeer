@@ -257,11 +257,11 @@ const FAQ = () => (
     <Grid>
       <Grid.Row centered>
         <Grid.Column textAlign="center">
-          <h3>
+          <h4>
             Don’t see your question on our FAQ list?
             <br />
             Email us at support@careeer.me and we will add it to the list!
-          </h3>
+          </h4>
           <br />
         </Grid.Column>
       </Grid.Row>
