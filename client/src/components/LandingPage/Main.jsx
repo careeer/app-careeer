@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 import { inject, observer } from 'mobx-react';
+import { Header } from 'semantic-ui-react';
 
 import Home from './Home';
 import FAQ from './FAQ';
@@ -19,9 +20,11 @@ class Main extends Component {
   render() {
     return (
       <div>
-        <CareeerLogo />
-        <Link to="/faq" className="faqLink">FAQ</Link>
-        <Link to="/signIn" className="signInLink">Sign In</Link>
+        <Header className="mainHeader">
+          <Link to="/" className="careeer">C!</Link>
+          <Link to="/faq" className="faqLink">FAQ</Link>
+          <Link to="/signIn" className="signInLink">Sign In</Link>
+        </Header>
         <Route
           exact
           path="/"
