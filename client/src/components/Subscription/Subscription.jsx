@@ -107,7 +107,9 @@ export default class Subscription extends Component {
     }
 
     return (
-      <SubscriptionComplete />
+      <PaymentLayout>
+        {currentStep}
+      </PaymentLayout>
     );
   }
 }
