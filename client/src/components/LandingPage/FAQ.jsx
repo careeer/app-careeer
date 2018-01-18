@@ -62,14 +62,26 @@ const FAQ = () => (
           <p>
             An assessment based, step-by-step plan,
             that gets you from the role you’re in, to the job you want in tech.
+            Your roadmap is flexible, taking into account your timeline, budget, and overall goals.
           </p>
 
           <p>
-            If you’re constantly thinking about what you should do next in your career,
-            which course to take, or lacking focused direction in your transition,
-            then a career roadmap will clear your mind and get you back on track.
-            Your roadmap is flexible, taking into account your timeline, budget, and overall goals.
+            A career roadmap is helpful if:
           </p>
+          <ul>
+            <li>
+              You&apos;re stuck figuring out your next steps
+            </li>
+            <li>
+              You&apos;re lacking direction or focus.
+              Taking classes here and there, but sort of lagging behind
+              in making the change happen.
+            </li>
+            <li>
+              You&apos;re getting lost in the weeds of figuring out
+              which course(s) and skills you need.
+            </li>
+          </ul>
         </Grid.Column>
       </Grid.Row>
       <Grid.Row>
@@ -83,7 +95,7 @@ const FAQ = () => (
             You get your own coach to support you every step of the way.
             We have found that customers often have questions at random times,
             and not everyone has the network or a mentor to give them career
-            guidance when they need it. Some of those random,
+            guidance <i>when they need it</i>. Some of those random,
             questions that might boggle your mind are:
           </p>
           <ul>
@@ -107,7 +119,7 @@ const FAQ = () => (
         </Grid.Column>
         <Grid.Column>
           <p>
-            You’ll begin working with a coach Day 1. Just sign up to get started!
+            You’ll begin working with a coach Day 1.
           </p>
         </Grid.Column>
       </Grid.Row>
@@ -203,9 +215,9 @@ const FAQ = () => (
           <p>
             Each plan includes training around interview strategy - how to change
             your lens on the interview and hiring process, how to pitch your value-add,
-            how to communicate your process, and other topics that raise awareness
+            how to communicate your process, and other topics that raise self-awareness
             and help you develop an entirely different perspective and strategy for interviewing.
-            If you choose the standard or fast track, you will receive mock
+            If you choose the standard or fast track, you will also receive mock
             interview training via video/phone call.
           </p>
         </Grid.Column>
