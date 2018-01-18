@@ -1,18 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PageHeader from './PageHeader';
+
 import TrialCompleteMessage from './TrialCompleteMessage';
 import TrialCompleteActions from './TrialCompleteActions';
 
 const TrialComplete = props => (
   <div>
-    <PageHeader
-      freeTrial
-    />
     <TrialCompleteMessage
       clientName={props.currentClient}
-      completeActions={props.completeActions}
       avatarUrl={props.currentClientAvatar}
+      completeActions={props.completeActions}
     />
     <TrialCompleteActions
       handleContinueClick={props.handleIntroClick}

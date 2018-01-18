@@ -19,9 +19,8 @@ class ClientDashboard extends Component {
         clientId, () => {
           this.props.roadmapElements.fetchAll();
           history.replaceState(null, document.title, `/${this.props.roadmapElements.currentClientSlug}`);
-        }
+        },
       );
-
     }
   }
 
@@ -56,7 +55,7 @@ class ClientDashboard extends Component {
             completedElements,
             currentClientAvatar } = this.props.roadmapElements;
 
-    if (!accountActive){
+    if (!accountActive) {
       return (
         <div>
           <Subscription

@@ -1,17 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import PageHeader from './PageHeader';
 import SelectPlanMessage from './SelectPlanMessage';
 import SelectPlanActions from './SelectPlanActions';
 import SelectPlanOptions from './SelectPlanOptions';
 
 const SelectPlan = props => (
   <div>
-    <PageHeader
-      freeTrial
-      continueSubscription
-    />
     { props.showSelected ? (
       <div>
         <SelectPlanMessage

@@ -59,30 +59,23 @@ div#root > div > div > div {
     letter-spacing: 1.8px;
 
     & > div {
-      color: #333;
-      background-color: #fef99f;
-      display: table-cell;
-      text-align: center;
       padding: 0.8em;
+      text-align: center;
+      display: table-cell;
+      background-color: #fef99f;
+
+      & > a {
+        color: #333;
+      }
 
       &.selected {
-        color: #fff;
         background-color: #24c63a;
         transition: background-color 0.5s, color 0.5s;
+        
+        & > a {
+          color: #fff;
+        }
       }
-    }
-    a {
-      color: #333;
-      padding: 0.8em;
-      font-size: 0.9em;
-      font-weight: bold;
-      font-family: Raleway;
-      letter-spacing: 1.8px;
-      background-color: #fef99f;
-      vertical-align: -webkit-baseline-middle;
-      transition: background-color 0.5s, color 0.5s;
-
-
     }
   }
 

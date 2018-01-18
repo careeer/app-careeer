@@ -2,17 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Elements } from 'react-stripe-elements';
 
-import PageHeader from './PageHeader';
 import CheckoutMessage from './CheckoutMessage';
 import CheckoutCardForm from './CheckoutCardForm';
 
 const Checkout = props => (
   <div className="checkout">
-    <PageHeader
-      freeTrial
-      continueSubscription
-      checkout
-    />
     <CheckoutMessage
       planName={props.planName}
       planCost={props.planCost}
