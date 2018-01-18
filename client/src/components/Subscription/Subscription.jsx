@@ -1,7 +1,7 @@
-// /* eslint-disable */
+/* eslint-disable */
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import { Route, Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 import SubscriptionComplete from './SubscriptionComplete';
 import PaymentLayout from './Components/PaymentLayout';
