@@ -14,9 +14,9 @@ class Main extends Component {
     this.props.subscription.onPlanClick(plan, planName, planCost);
   }
 
-  // <Route exact path="/faq" component={LandingPage.Main} />
-
   render() {
+    const selectedPlan = this.props.subscription.selectedPlan;
+
     return (
       <div>
         <Header className="mainHeader">
@@ -30,7 +30,7 @@ class Main extends Component {
           render={() => (
             <Home
               handleSegmentClick={this.handleSegmentClick}
-              selectedAccount={this.props.subscription.selectedPlan}
+              selectedAccount={selectedPlan}
             />
           )}
         />
