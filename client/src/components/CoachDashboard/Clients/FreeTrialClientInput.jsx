@@ -4,9 +4,9 @@ import { inject, observer } from 'mobx-react';
 import { Grid } from 'semantic-ui-react';
 import ClientInput from './ClientInput';
 import DateHelper from '../../Lib/DateHelper';
-import defaultElements from '../../Constants/DefaultRoadmapElements';
+import defaultElements from '../../Lib/DefaultRoadmapElements';
 
-@inject('roadmapElements')@observer
+@inject('roadmapElements') @observer
 export default class FreeTrialClientInput extends Component {
   componentWillMount() {
     this.props.roadmapElements.resetClientParams();

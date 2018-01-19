@@ -2,8 +2,15 @@
 import React from 'react';
 import { Segment, Grid, Label, Icon, Button } from 'semantic-ui-react';
 
-import { COLOR } from '../../Constants/CommonElementStyles';
 import Touch from '../../Lib/CheckTouch';
+
+const COLOR = {
+  '#6435c9': 'violet',
+  '#e03997': 'pink',
+  '#00b5ad': 'teal',
+  '#fbbd08': 'yellow',
+  transparent: null,
+};
 
 export default class RoadmapElement extends React.Component {
   state = {

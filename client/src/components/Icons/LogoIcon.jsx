@@ -1,5 +1,5 @@
 import React from 'react';
-import LogoPicture from '../Lib/Images/careeerLogo.svg';
+import LogoPicture from './Images/careeerLogo.svg';
 
 const LogoIcon = () => (
   <img

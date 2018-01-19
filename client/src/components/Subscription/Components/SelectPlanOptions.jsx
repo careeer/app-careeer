@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'semantic-ui-react';
-import Plans from '../../LandingPage/Plans';
+import Plans from '../../LandingPage/Components/Plans';
 
 const SelectPlanOptions = props => (
   <div className="messageBody">

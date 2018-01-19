@@ -7,11 +7,11 @@ import LoadingScreen from '../../Lib/LoadingScreen';
 
 import '../Styles/CoachDashboard.scss';
 
-@inject('roadmapElements')@observer
+@inject('roadmapElements') @observer
 export default class CoachDashboard extends Component {
   componentWillMount() {
     this.props.roadmapElements.getClients();
-  };
+  }
 
   handleNewClientClick = () => {
     this.props.history.push('/Client/New');

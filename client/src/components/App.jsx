@@ -1,18 +1,17 @@
-/* eslint-disable */
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import ClientDashboard from 'components/ClientDashboard/ClientDashboard';
-import CoachDashboard from 'components/CoachDashboard/Clients/CoachDashboard';
-import NewClientInput from 'components/CoachDashboard/Clients/NewClientInput';
-import LandingPage from 'components/LandingPage';
-import Payment from 'components/Subscription';
+import ClientDashboard from './ClientDashboard/ClientDashboard';
+import CoachDashboard from './CoachDashboard/Clients/CoachDashboard';
+import NewClientInput from './CoachDashboard/Clients/NewClientInput';
+import LandingPage from './LandingPage';
+import Payment from './Subscription';
 
-import OnBoardingIntro from 'components/OnBoarding/OnBoardingIntro';
-import OnBoardingQuestion from 'components/OnBoarding/OnBoardingQuestion';
-import OnBoardingQuestion2 from 'components/OnBoarding/OnBoardingQuestion2';
-import OnBoardingQuestion3 from 'components/OnBoarding/OnBoardingQuestion3';
-import OnBoardingName from 'components/OnBoarding/OnBoardingName';
+import OnBoardingIntro from './OnBoarding/OnBoardingIntro';
+import OnBoardingQuestion from './OnBoarding/OnBoardingQuestion';
+import OnBoardingQuestion2 from './OnBoarding/OnBoardingQuestion2';
+import OnBoardingQuestion3 from './OnBoarding/OnBoardingQuestion3';
+import OnBoardingName from './OnBoarding/OnBoardingName';
 import OnBoardingThankYou from './OnBoarding/OnBoardingThankYou';
 import DuplicateClientInput from './CoachDashboard/Clients/DuplicateClientInput';
 import Users from './Users';
@@ -24,7 +23,7 @@ const App = () => (
   <Switch>
     <Route exact path="/" component={LandingPage.Main} />
     <Route exact path="/faq" component={LandingPage.Main} />
-    
+
     <Route path="/partners/:partnerId" component={LandingPage.Main} />
     <Route path="/signIn" component={Sessions.New} />
     <Route path="/createAccount" component={Users.New} />

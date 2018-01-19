@@ -1,4 +1,4 @@
-import FreeTrialWelcome from './FreeTrialWelcome';
+import FreeTrialWelcome from './Components/FreeTrialWelcome';
 import Main from './Main';
 import './Styles/LandingPage.scss';
 

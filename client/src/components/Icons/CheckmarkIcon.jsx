@@ -1,5 +1,5 @@
 import React from 'react';
-import CheckmarkPicture from '../Lib/Images/checkmarkIcon.svg';
+import CheckmarkPicture from './Images/checkmarkIcon.svg';
 
 const CheckmarkIcon = () => (
   <img

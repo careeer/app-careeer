@@ -1,5 +1,5 @@
 import React from 'react';
-import SettingsPicture from '../Lib/Images/settings.svg';
+import SettingsPicture from './Images/settings.svg';
 
 const SettingsIcon = () => (
   <img

@@ -1,8 +1,7 @@
 /* eslint-disable */
 import React, { PureComponent } from 'react';
-import { Grid, Label, Icon, Segment, Accordion, Modal, Button } from 'semantic-ui-react';
+import { Grid, Label, Icon, Segment, Accordion } from 'semantic-ui-react';
 import ToolboxInput from './ToolboxInput';
-import { modalStyle, modalHeaderStyle, modalAcceptStyle } from '../../Constants/ClientElementStyles';
 import Touch from '../../Lib/CheckTouch';
 import StatisticsLabel from '../../ClientDashboard/RoadmapHeader/StatisticsLabel';
 import ChevronDownIcon from '../../Icons/ChevronDownIcon';
@@ -54,7 +53,6 @@ class ClientElement extends PureComponent {
 
   render() {
     const { activeIndex } = this.state;
-    const chevronIcon = activeIndex === this.props.clientIndex ? 'up' : 'down';
 
     let finalIconStyles = {};
     if (!this.state.isMouseInside && !Touch.isTouchDevice()) {
@@ -121,7 +119,6 @@ class ClientElement extends PureComponent {
               </Grid.Column>
             </Grid>
           </Accordion.Title>
-
           <Accordion.Content active={activeIndex === this.props.clientIndex}>
             <Grid>
               <Grid.Column
@@ -153,9 +150,7 @@ class ClientElement extends PureComponent {
                 />
               </Grid.Column>
             </Grid>
-
           </Accordion.Content>
-
         </Accordion>
 
         <ModalComponent

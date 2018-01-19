@@ -10,7 +10,12 @@ const FAQ = () => (
         </Grid.Column>
       </Grid.Row>
     </Grid>
-    <Grid stackable columns="equal" className="questionList" divided="vertically">
+    <Grid
+      stackable
+      columns="equal"
+      divided="vertically"
+      className="questionList"
+    >
       <Grid.Row>
         <Grid.Column>
           <h2>General</h2>

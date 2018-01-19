@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Responsive } from 'semantic-ui-react';
-import ScreensIcon from '../Icons/ScreensIcon';
-import CreateForm from '../Users/CreateForm';
+import ScreensIcon from '../../Icons/ScreensIcon';
+import CreateForm from '../../Users/CreateForm';
 import CreateAccountButton from './CreateAccountButton';
 
 const MainHeadline = props => (

@@ -1,5 +1,5 @@
 import React from 'react';
-import DonePicture from '../Lib/Images/x.svg';
+import DonePicture from './Images/x.svg';
 
 const DoneIcon = () => (
   <img

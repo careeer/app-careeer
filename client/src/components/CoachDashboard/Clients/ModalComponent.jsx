@@ -1,7 +1,6 @@
 /* eslint-disable */
 import React, { PureComponent } from 'react';
 import { Modal, Button } from 'semantic-ui-react';
-import { modalStyle, modalHeaderStyle, modalAcceptStyle } from '../../Constants/ClientElementStyles';
 
 class ModalComponent extends PureComponent {
   render() {
@@ -9,11 +8,17 @@ class ModalComponent extends PureComponent {
       <Modal
         size="mini"
         dimmer="blurring"
-        style={modalStyle}
+        style={{
+          fontFamily: 'Raleway',
+        }}
         onClose={this.props.handleClose}
         open={this.props.isVisible}
       >
-        <Modal.Header style={modalHeaderStyle}>
+        <Modal.Header
+          style={{
+            borderBottom: 'none',
+          }}
+        >
           {this.props.modalHeader}
         </Modal.Header>
         <Modal.Content>
@@ -30,7 +35,9 @@ class ModalComponent extends PureComponent {
             content={this.props.positiveLabel}
             icon="checkmark"
             labelPosition="right"
-            style={modalAcceptStyle}
+            style={{
+              backgroundColor: '#24C63A',
+            }}
             onClick={this.props.handlePositiveClick}
           />
         </Modal.Actions>

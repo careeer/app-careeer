@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid } from 'semantic-ui-react';
 
-import Pricing from './Pricing';
-import Timeline from './Timeline';
-import MainHeadline from './MainHeadline';
-import ReviewSlider from './ReviewSlider';
-import ReviewSliderMobile from './ReviewSliderMobile';
+import Pricing from './Components/Pricing';
+import Timeline from './Components/Timeline';
+import MainHeadline from './Components/MainHeadline';
+import ReviewSlider from './Components/ReviewSlider';
+import ReviewSliderMobile from './Components/ReviewSliderMobile';
 
 const Home = props => (
   <Grid id="landingPage">

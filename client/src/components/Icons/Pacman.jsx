@@ -1,5 +1,5 @@
 import React from 'react';
-import './Loading.css';
+import './Loading.scss';
 
 const LoadingIcon = () => (
   <div className="lds-css ng-scope">

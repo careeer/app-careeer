@@ -1,5 +1,5 @@
 import React from 'react';
-import ChevronDownPicture from '../Lib/Images/chevronDown.svg';
+import ChevronDownPicture from './Images/chevronDown.svg';
 
 const ChevronDownIcon = () => (
   <img

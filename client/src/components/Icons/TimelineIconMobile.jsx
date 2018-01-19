@@ -1,5 +1,5 @@
 import React from 'react';
-import TimelinePicture from '../Lib/Images/timeline_670px.svg';
+import TimelinePicture from './Images/timeline_670px.svg';
 
 const TimelineIconMobile = () => (
   <img

@@ -1,5 +1,5 @@
 import React from 'react';
-import ScreensPicture from '../Lib/Images/screens.svg';
+import ScreensPicture from './Images/screens.svg';
 
 const ScreensIcon = () => (
   <img

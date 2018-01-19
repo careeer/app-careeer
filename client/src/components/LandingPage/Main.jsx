@@ -6,8 +6,7 @@ import { Header } from 'semantic-ui-react';
 
 import Home from './Home';
 import FAQ from './FAQ';
-import Footer from './Footer';
-import CareeerLogo from '../Lib/CareeerLogo';
+import Footer from './Components/Footer';
 
 @inject('subscription') @observer
 class Main extends Component {
@@ -31,7 +30,7 @@ class Main extends Component {
           render={() => (
             <Home
               handleSegmentClick={this.handleSegmentClick}
-              selectedAccount="Standard"
+              selectedAccount={this.props.subscription.selectedPlan}
             />
           )}
         />

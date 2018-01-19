@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import DateHelper from '../Lib/DateHelper';
-import defaultElements from '../Constants/DefaultRoadmapElements';
+import defaultElements from '../Lib/DefaultRoadmapElements';
 import RoadmapLayout from '../ClientDashboard/RoadmapElements/RoadmapLayout';
 
 @inject('roadmapElements') @observer

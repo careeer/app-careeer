@@ -2,7 +2,14 @@
 import React from 'react';
 import { Button, Form, Segment, Rail, Icon } from 'semantic-ui-react';
 import { CirclePicker } from 'react-color';
-import { COLOR } from '../../Constants/CommonElementStyles';
+
+const COLOR = {
+  '#6435c9': 'violet',
+  '#e03997': 'pink',
+  '#00b5ad': 'teal',
+  '#fbbd08': 'yellow',
+  transparent: null,
+};
 
 export default class RoadmapElementForm extends React.Component {
   state = {

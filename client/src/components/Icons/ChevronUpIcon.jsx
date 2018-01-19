@@ -1,5 +1,5 @@
 import React from 'react';
-import ChevronUpPicture from '../Lib/Images/chevronUp.svg';
+import ChevronUpPicture from './Images/chevronUp.svg';
 
 const ChevronUpIcon = () => (
   <img

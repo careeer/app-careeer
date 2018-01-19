@@ -1,5 +1,5 @@
 import React from 'react';
-import ToolboxPicture from '../Lib/Images/toolbox2.svg';
+import ToolboxPicture from './Images/toolbox2.svg';
 
 const ToolboxIcon = () => (
   <img

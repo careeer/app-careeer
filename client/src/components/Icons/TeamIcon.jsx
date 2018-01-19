@@ -1,5 +1,5 @@
 import React from 'react';
-import TeamPicture from '../Lib/Images/onBoardingTeam.svg';
+import TeamPicture from './Images/onBoardingTeam.svg';
 
 const TeamIcon = () => (
   <img

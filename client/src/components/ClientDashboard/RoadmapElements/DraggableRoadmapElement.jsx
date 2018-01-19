@@ -2,7 +2,6 @@
 import React from 'react';
 import { findDOMNode } from 'react-dom';
 import { DragSource, DropTarget } from 'react-dnd';
-import ItemTypes from '../../Constants/ItemTypes';
 import RoadmapElement from './RoadmapElement';
 
 const roadmapElementSource = {
@@ -61,10 +60,10 @@ const roadmapElementTarget = {
   },
 };
 
-@DropTarget(ItemTypes.ROADMAP_ELEMENT, roadmapElementTarget, connect => ({
+@DropTarget('roadmapElement', roadmapElementTarget, connect => ({
   connectDropTarget: connect.dropTarget(),
 }))
-@DragSource(ItemTypes.ROADMAP_ELEMENT, roadmapElementSource, (connect, monitor) => ({
+@DragSource('roadmapElement', roadmapElementSource, (connect, monitor) => ({
   connectDragSource: connect.dragSource(),
 }))
 export default class DraggableRoadmapElement extends React.Component {

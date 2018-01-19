@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Responsive } from 'semantic-ui-react';
-import CreateForm from '../Users/CreateForm';
+import CreateForm from '../../Users/CreateForm';
 import Plans from './Plans';
 import CreateAccountButton from './CreateAccountButton';
 

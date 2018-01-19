@@ -4,7 +4,7 @@ import { inject, observer } from 'mobx-react';
 import { Grid } from 'semantic-ui-react';
 import ClientInput from './ClientInput';
 
-@inject('roadmapElements')@observer
+@inject('roadmapElements') @observer
 export default class NewClientInput extends Component {
   componentWillMount() {
     this.props.roadmapElements.resetClientParams();

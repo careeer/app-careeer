@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import { Grid, Button } from 'semantic-ui-react';
-import CareeerLogo from '../Lib/CareeerLogo';
+import CareeerLogo from '../../Lib/CareeerLogo';
 import WelcomeToRoadmapMessage from './WelcomeToRoadmapMessage';
 
 export default class FreeTrialWelcome extends Component {

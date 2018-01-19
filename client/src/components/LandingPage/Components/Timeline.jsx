@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
-import TimelineIcon from '../Icons/TimelineIcon';
-import TimelineIconMobile from '../Icons/TimelineIconMobile';
+import TimelineIcon from '../../Icons/TimelineIcon';
+import TimelineIconMobile from '../../Icons/TimelineIconMobile';
 
 const Timeline = () => (
   <Grid.Row className="timeline">
