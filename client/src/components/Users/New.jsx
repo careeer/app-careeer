@@ -15,7 +15,7 @@ const New = props => (
     >
       <CreateForm
         buttonLabel="Create account"
-        selectedAccount={props.location.state.selectedAccount}
+        selectedAccount="Standard"
       />
     </Grid>
   </div>
