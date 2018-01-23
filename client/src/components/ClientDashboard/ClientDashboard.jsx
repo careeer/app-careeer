@@ -68,10 +68,10 @@ class ClientDashboard extends Component {
           />
           <ModalComponent
             negativeLabel="Cancel"
-            positiveLabel="Delete account"
             handleClose={this.close}
             isVisible={this.state.open}
             modalHeader="Delete account?"
+            positiveLabel="Delete account"
             modalContent="We understand that now is not the right time. Come back and start another free trial when you're ready."
             handlePositiveClick={this.archiveClient}
           />
@@ -80,7 +80,7 @@ class ClientDashboard extends Component {
     }
     if (currentClient) {
       return (
-        <RoadmapLayout />
+        <RoadmapLayout {...this.props} />
       );
     }
 

@@ -12,6 +12,14 @@ import '../Styles/Settings.scss';
 
 @inject('user') @observer
 class Settings extends Component {
+  componentWillMount() {
+    $crisp.push(['do', 'chat:hide']);
+  }
+
+  componentWillUnmount() {
+    $crisp.push(['do', 'chat:show']);
+  }
+
   handleClick = (e) => {
     e.preventDefault();
     const { user, history } = this.props;
@@ -24,34 +32,16 @@ class Settings extends Component {
   }
 
   render() {
-    if (this.props.showSettings) {
-      $crisp.push(['do', 'chat:hide']);
-    } else {
-      $crisp.push(['do', 'chat:show']);
-    }
-
+    console.log(this.props);
     return (
       <Dimmer
         page
+        active
         inverted
         className="settingsDimmer"
-        active={this.props.showSettings}
       >
         <CareeerLogo />
         <CloseButton onCloseClick={this.props.onCloseClick} />
-
-        <Route
-          path={`${this.props.match.url}`}
-          render={() => (
-            <TrialComplete
-              currentClient={currentClient}
-              handleIntroClick={this.handleIntroClick}
-              currentClientAvatar={currentClientAvatar}
-              completeActions={completedElements.length}
-              handleDeleteAccount={this.props.handleDeleteAccount}
-            />
-          )}
-        />
         <Button
           basic
           content="Sign Out"

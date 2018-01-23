@@ -1,5 +1,6 @@
 /* eslint-disable */
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import { inject, observer } from 'mobx-react';
 import { Grid, Dimmer, Loader, Sidebar, Label } from 'semantic-ui-react';
 
@@ -87,7 +88,16 @@ export default class RoadmapLayout extends Component {
     this.props.roadmapElements.undoComplete();
   }
 
+  handleShowSettings = () => {
+    this.props.history.push(`${this.props.match.url}/settings`);
+  }
+
+  handleHideSettings = () => {
+    this.props.history.push(`${this.props.match.url}`);
+  }
+
   render() {
+    const settingsPath = `${this.props.match.url}/settings`;
     const { isLoading,
             isBannerVisible,
             isDefaultLoading,
@@ -114,14 +124,10 @@ export default class RoadmapLayout extends Component {
           loadingMessage="Fetching your Roadmap..."
         />
         <SettingsButton
-          toggleSettings={toggleSettings}
+          toggleSettings={this.handleShowSettings}
         />
         <ToolboxButton
           toolboxUrl={currentClientToolbox}
-        />
-        <Settings
-          showSettings={showSettings}
-          onCloseClick={toggleSettings}
         />
         <CongratulateBanner
           buttonCaption="undo"
@@ -185,6 +191,17 @@ export default class RoadmapLayout extends Component {
             </Grid.Column>
           </Grid>
         </Dimmer.Dimmable>
+
+        <Route
+          exact path={settingsPath}
+          {...this.props}
+          render={() => (
+            <Settings
+              {...this.props}
+              onCloseClick={this.handleHideSettings}
+            />
+          )}
+        />
       </div>
     );
   }
