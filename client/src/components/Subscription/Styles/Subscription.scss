@@ -6,7 +6,9 @@ div#root > div > div > div {
   width: 100%;
   background-color: #fef99f;
   min-height: -webkit-fill-available;
+}
 
+.paymentLayout, .settingsLayout {
   .checkout {
     .checkoutForm {
       margin-top: 4em;
