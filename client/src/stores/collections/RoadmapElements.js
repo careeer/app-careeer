@@ -505,11 +505,8 @@ class RoadmapElements {
 
   // Completed Elements Accordion
   @observable completedElements = [];
-
   @observable completedAccordionMessage = "";
-
   @observable completedAccordionIcon = "angle down";
-
   @observable isCompletedAccordionOpen = false;
 
   @action toggleCompletedElements = () => {
@@ -565,27 +562,25 @@ class RoadmapElements {
   }
 
   days_between(date1, date2) {
-
     // The number of milliseconds in one day
     const ONE_DAY = 1000 * 60 * 60 * 24;
-
     // Convert both dates to milliseconds
     const date1_ms = date1.getTime();
     const date2_ms = date2.getTime();
-
     // Calculate the difference in milliseconds
     const difference_ms = Math.abs(date1_ms - date2_ms);
-
-
     // Convert back to days and return
     return Math.floor(difference_ms/ONE_DAY);
-
   }
 
-  @observable showSettings = false;
+  @observable isDimmerOn = false;
 
-  @action toggleSettings = () => {
-    this.showSettings = !this.showSettings;
+  @action turnDimmerOn() {
+    this.isDimmerOn = true;
+  }
+
+  @action turnDimmerOff() {
+    this.isDimmerOn = false;
   }
 }
 

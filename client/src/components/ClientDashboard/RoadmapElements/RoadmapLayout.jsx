@@ -90,9 +90,11 @@ export default class RoadmapLayout extends Component {
 
   handleShowSettings = () => {
     this.props.history.push(`${this.props.match.url}/settings`);
+    this.props.roadmapElements.turnDimmerOn();
   }
 
   handleHideSettings = () => {
+    this.props.roadmapElements.turnDimmerOff();
     this.props.history.push(`${this.props.match.url}`);
   }
 
@@ -104,7 +106,7 @@ export default class RoadmapLayout extends Component {
             isCreateFormClose,
             isToggleableFormVisible,
             isCompletedAccordionOpen,
-            showSettings,
+            isDimmerOn,
             currentClient,
             toggleSettings,
             freeTrialMessage,
@@ -144,10 +146,11 @@ export default class RoadmapLayout extends Component {
           hideCongratsBanner={this.handleBannerClose}
           mainMessage="Subscription started on Standard Track"
         />
-        <AccountFlag
-          accountMessage={freeTrialMessage}
-        />
-        <Dimmer.Dimmable blurring dimmed={isDefaultLoading}>
+
+        <Dimmer.Dimmable blurring dimmed={isDimmerOn}>
+          <AccountFlag
+            accountMessage={freeTrialMessage}
+          />
           <Grid className="roadmapMainGrid">
             <Grid.Column className="roadmapMainColumn">
               <ScrollZone>
