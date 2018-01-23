@@ -1,5 +1,6 @@
 div.ui.active.transition.visible.inverted.page.dimmer.settingsDimmer {
   opacity: 0.90;
+  overflow-y: auto;
   background-color: #fef99f;
 
   & > div.content > div.center {
@@ -59,6 +60,11 @@ div.ui.active.transition.visible.inverted.page.dimmer.settingsDimmer {
     &:hover {
       box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.5);
     }
+
+    &:disabled {
+      opacity: 1 !important;
+      margin-bottom: 0 !important;
+    }
   }
 
   .signOutLink {
@@ -71,6 +77,21 @@ div.ui.active.transition.visible.inverted.page.dimmer.settingsDimmer {
     }
   }
 
+  .cancelLinkContainer {
+    padding-top: 1.5em;
+    padding-bottom: 5em;
+
+    .cancelLink {
+      color: #c63224;
+      margin-top: 3em;
+      cursor: pointer;
+      letter-spacing: 1.8px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
 }
 
 @media all and (max-width: 668px) {
