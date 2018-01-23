@@ -37,8 +37,8 @@ function PlanSelected(props) {
     <div className="plans">
       <Segment
         padded
-        className="selected"
         color={color}
+        className="selected"
       >
         { color === 'green' &&
           <Label floating color="green" ribbon="right">most popular</Label>

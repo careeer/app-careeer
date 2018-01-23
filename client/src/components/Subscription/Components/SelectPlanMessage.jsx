@@ -9,8 +9,8 @@ const SelectPlanMessage = props => (
       {props.planName}
     </h1>
     <Image
-      alt="avatar"
       avatar
+      alt="avatar"
       className="avatar"
       src={props.avatarUrl || 'https://res.cloudinary.com/careeer/image/upload/v1504959238/Careeer_logo_a3gu5x.png'}
     />
