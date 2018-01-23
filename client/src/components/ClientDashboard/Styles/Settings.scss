@@ -9,6 +9,10 @@ div.ui.active.transition.visible.inverted.page.dimmer.settingsDimmer {
       bottom: 0;
       display: block;
       position: absolute;
+
+      div.ui.right.aligned.grid {
+        margin-top: 0;
+      }
   }
 
   div.ui.right.aligned.grid > div.column.closeButton {
@@ -27,19 +31,46 @@ div.ui.active.transition.visible.inverted.page.dimmer.settingsDimmer {
   }
 
   button.ui.button {
-    width: 374px;
-    font-size: 18px;
-    margin-top: 10em;
+    width: 387px;
+    display: block;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
     font-family: Cabin;
-    border-radius: 18px;
-    letter-spacing: 2.3px;
+    font-weight: normal;
+    border-radius: 28px;
+    letter-spacing: 2.5px;
     border: solid 1px #24c63a;
-    color: #24c63a !important;
+    transition: box-shadow 0.5s;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 
-    &:focus, &:hover {
+    &.changeSubscriptionButton {
+      color: #fff;
+      background-color: #24c63a;
+      margin: 3em auto 1.5em auto;
+    }
+
+    &.changePaymentButton {
+      margin-bottom: 1.5em;
+      color: #24c63a !important;
       background-color: transparent !important;
     }
+
+    &:hover {
+      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.5);
+    }
   }
+
+  .signOutLink {
+    color: #24c63a;
+    cursor: pointer;
+    letter-spacing: 1.8px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
 }
 
 @media all and (max-width: 668px) {
@@ -55,11 +86,19 @@ div.ui.active.transition.visible.inverted.page.dimmer.settingsDimmer {
       }
     }
 
-    button.ui.basic.button {
-      width: 240px;
+    button.ui.button {
+      width: 340px;
+      height: 45px;
       font-size: 14px;
-      margin-top: 12em;
       letter-spacing: 1.8px;
+
+      &.changeSubscriptionButton {
+        margin: 5em auto 2.5em auto;
+      }
+
+      &.changePaymentButton {
+        margin-bottom: 2.5em;
+      }
     }
   }
 }

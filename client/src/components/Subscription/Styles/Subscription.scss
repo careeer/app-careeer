@@ -416,7 +416,7 @@ div#root > div > div > div {
 }
 
 @media all and (max-width: 669px) {
-  .paymentLayout {
+  .paymentLayout, .settingsLayout {
     .header {
       & > div {
         padding: 1.3em;

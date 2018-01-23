@@ -1,0 +1,250 @@
+/*
+  Header Layout
+*/
+div.column.roadmapHeaderMainColumn {
+  width: 70px !important;
+  padding-left: 2px !important;
+}
+
+div.overlayImage {
+  position: absolute;
+  margin-right: 15px;
+  width: 60px;
+  height: 60px;
+}
+
+div.column.nameVisionColumn {
+  padding-top: 14px !important;
+  padding-left: 0 !important;
+  width: 78% !important;
+}
+
+div.right.floated.column.statisticColumn {
+  width: auto;
+  padding-left: 0;
+}
+
+/*
+  Avatar
+*/
+img.ui.avatar.image {
+  margin-right: 15px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 32px;
+}
+
+button.ui.button.uploadButton {
+  width: 60px;
+  height: 60px;
+  padding: 5px 0 0 13px;
+  line-height: 32px;
+}
+
+div.dropZone {
+  margin-right: 15px;
+  width: 58px;
+  height: 58px;
+  border-width: 1px;
+  border-color: #919191;
+  border-style: none;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 32px;
+}
+
+/*
+  Client Name
+*/
+div.clientNameLabel {
+  font-family: Raleway;
+  font-size: 28px;
+  letter-spacing: 3.5px;
+  color: #333;
+  padding-top: 8px;
+  width: auto;
+}
+
+/*
+  Career Vision
+*/
+div.ui.label.careerVision,
+div.ui.label.careerVisionMobile,
+div.ui.focus.transparent.input.careerVision,
+input.careerVision {
+  font-family: Cabin;
+  font-size: 18px;
+  letter-spacing: 2.3px;
+  color: #919191;
+  background-color: transparent;
+  padding-left: 0;
+  margin-bottom: 0;
+  padding-top: 8px;
+}
+
+div.ui.label.careerVisionMobile {
+  visibility: hidden;
+  display: none;
+}
+
+/*
+  Statistics
+*/
+div.ui.statistic.statisticFirstComponent {
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+}
+
+.ui.statistic > .value.statisticValue {
+  font-family: Roboto !important;
+  font-size: 60px !important;
+  letter-spacing: 1.3px;
+  color: #949494;
+  padding-left: 0;
+}
+
+.ui.statistic > .label.statisticLabel {
+  font-family: Roboto !important;
+  text-transform: lowercase;
+  font-size: 10px !important;
+  letter-spacing: 0.3px;
+  color: #949494;
+  padding-left: 0;
+}
+
+div.ui.statistic.statisticSecondComponent {
+  margin: 0 !important;
+  padding-left: 14px;
+}
+
+/***
+*
+* Mobile Styles
+*
+***/
+@media all and (max-width: 668px) {
+  /*
+    Header Layout
+  */
+  div.column.roadmapHeaderMainColumn {
+    width: 34px !important;
+    height: fit-content;
+    padding: 0 !important;
+  }
+
+  div.overlayImage {
+    margin-right: 15px;
+    width: 30px;
+    height: 30px;
+  }
+
+  div.column.nameVisionColumn {
+    padding: 0 !important;
+    width: 205px !important;
+    height: fit-content;
+  }
+
+  div.right.floated.column.statisticColumn {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    padding: 0 20px 0 0;
+    margin-top: -8px;
+  }
+
+  /*
+    Avatar
+  */
+  img.ui.avatar.image {
+    width: 30px;
+    height: 30px;
+  }
+
+  button.ui.button.uploadButton {
+    width: 30px;
+    height: 30px;
+    padding: 2.5px 0 0 8px;
+    line-height: 30px;
+  }
+
+  div.dropZone {
+    width: 28px;
+    height: 28px;
+    border-width: 1px;
+  }
+
+  i.photo.large.inverted.icon {
+    font-size: 15px;
+    text-align: center;
+    vertical-align: text-top;
+  }
+
+  /*
+    Client Name
+  */
+  div.clientNameLabel {
+    font-size: 16px;
+    letter-spacing: 2px;
+    padding-top: 0;
+    padding-left: 3px;
+    margin-top: -3px;
+    width: 181px;
+  }
+
+  /*
+    Career Vision
+  */
+  div.ui.label.careerVision {
+    visibility: hidden;
+    display: none;
+  }
+
+  div.ui.label.careerVisionMobile,
+  div.ui.focus.transparent.input.careerVision,
+  div.ui.focus.transparent.input.careerVision > input.careerVision {
+    visibility: visible;
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 1.4px;
+    width: 181px;
+    padding: 0 !important;
+  }
+
+  div.ui.label.careerVisionMobile {
+    margin-top: 2px;
+  }
+
+  div.careerVisionMobile {
+    margin-top: -5px;
+  }
+
+  /*
+    Statistics
+  */
+  div.ui.statistic.statisticFirstComponent {
+    margin-right: 0;
+    padding-left: 0;
+  }
+
+  div.ui.statistic.statisticSecondComponent {
+    padding-left: 6px;
+  }
+
+  .ui.statistic > .value.statisticValue {
+    font-size: 30px !important;
+    letter-spacing: 0.8px;
+    padding-left: 0;
+  }
+
+  .ui.statistic > .label.statisticLabel {
+    font-size: 5px !important;
+    font-weight: normal;
+    letter-spacing: 0.1px;
+    margin-top: -5px !important;
+    padding-left: 2px;
+  }
+}

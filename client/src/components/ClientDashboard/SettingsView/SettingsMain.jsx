@@ -7,14 +7,13 @@ const SettingsMain = props => (
   <div className="messageBody">
     <PlanSelected selectedPlan={props.selectedPlan} />
     <Button
-      basic
       content="Change subscription"
       className="changeSubscriptionButton"
       onClick={props.onChangeSubscriptionClick}
     />
     <Button
       basic
-      content="Change payment"
+      content="Change payment info"
       className="changePaymentButton"
       onClick={props.onChangePaymentClick}
     />
