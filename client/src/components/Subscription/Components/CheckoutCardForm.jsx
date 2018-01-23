@@ -30,7 +30,7 @@ class CheckoutCardForm extends React.Component {
         </div>
         <div className="callToAction" >
           <Button
-            content="Checkout"
+            content={this.props.checkoutButtonLabel}
             className="defaultButton"
             loading={this.props.isLoading}
             disabled={this.props.disableSubmit || this.props.isLoading}
