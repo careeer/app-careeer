@@ -7,7 +7,7 @@ import ClientName from './ClientName';
 import ImageUpload from './ImageUpload';
 import StatisticsLabel from './StatisticsLabel';
 
-import '../Styles/RoadmapHeader.css';
+import '../Styles/RoadmapHeader.scss';
 
 @inject('roadmapElements', 'headerStore')@observer
 class RoadmapHeader extends Component {
