@@ -24,9 +24,13 @@ class Settings extends Component {
 
   handleClick = (e) => {
     e.preventDefault();
-    const { user, history } = this.props;
+
+    const { user, history, roadmapElements } = this.props;
     const email = user.email;
+
     user.destroySession();
+    roadmapElements.turnDimmerOff();
+
     history.push({
       pathname: '/signIn',
       state: { logoutEmail: email }
@@ -45,8 +49,8 @@ class Settings extends Component {
 
   render() {
     const mainPath = `${this.props.match.url}`;
-    const plansPath = `${this.props.match.url}/plans`;
-    const checkoutPath = `${this.props.match.url}/plans/checkout`;
+    const paymentPath = `${this.props.match.url}/paymentInfo`;
+    const subscriptionPath = `${this.props.match.url}/subscription`;
 
     const avatarUrl = this.props.roadmapElements.currentClientAvatar || 'https://res.cloudinary.com/careeer/image/upload/v1504959238/Careeer_logo_a3gu5x.png';
     return (
@@ -75,8 +79,8 @@ class Settings extends Component {
             render={() => (
               <SettingsMain
                 onSignOutClick={this.handleClick}
-                selectedPlan={this.props.subscription.selectedPlan}
                 onSignOutClick={this.handleClick}
+                selectedPlan={this.props.subscription.selectedPlan}
                 onChangePaymentClick={this.handleChangePayment}
                 onChangeSubscriptionClick={this.handleChangeSubscription}
               />
