@@ -16,6 +16,7 @@ const Checkout = props => (
       <CheckoutCardForm
         isLoading={props.isLoading}
         cardErrors={props.cardErrors}
+        checkoutButtonLabel="Checkout"
         cardSuccess={props.cardSuccess}
         selectedPlan={props.selectedPlan}
         disableSubmit={props.disableSubmit}
