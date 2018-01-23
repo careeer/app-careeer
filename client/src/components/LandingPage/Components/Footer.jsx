@@ -51,7 +51,7 @@ const Footer = () => (
       </Grid.Column>
       <Grid.Column className="left">
         <p>
-          Copyright Careeer Inc 2017. All rights reserved.
+          Copyright Careeer Inc {(new Date().getFullYear())}. All rights reserved.
         </p>
       </Grid.Column>
       <Grid.Column className="right">
