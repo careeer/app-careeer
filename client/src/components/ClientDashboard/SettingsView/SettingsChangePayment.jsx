@@ -1,0 +1,41 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Button } from 'semantic-ui-react';
+import { Elements } from 'react-stripe-elements';
+import CheckoutCardForm from '../../Subscription/Components/CheckoutCardForm';
+
+const SettingsChangePayment = props => (
+  <div className="messageBody">
+    <div className="checkout">
+      <Elements>
+        <CheckoutCardForm
+          isLoading={props.isLoading}
+          cardErrors={props.cardErrors}
+          cardSuccess={props.cardSuccess}
+          checkoutButtonLabel="Save changes"
+          disableSubmit={props.disableSubmit}
+          handleCardToken={props.handleCardToken}
+          handleCardErrors={props.handleCardErrors}
+        />
+      </Elements>
+    </div>
+    <Button
+      basic
+      content="Go back"
+      className="changePaymentButton"
+      onClick={props.onGoBackClick}
+    />
+  </div>
+);
+
+SettingsChangePayment.propTypes = {
+  isLoading: PropTypes.bool.isRequired,
+  cardErrors: PropTypes.string.isRequired,
+  cardSuccess: PropTypes.string.isRequired,
+  disableSubmit: PropTypes.bool.isRequired,
+  onGoBackClick: PropTypes.func.isRequired,
+  handleCardToken: PropTypes.func.isRequired,
+  handleCardErrors: PropTypes.func.isRequired,
+};
+
+export default SettingsChangePayment;
