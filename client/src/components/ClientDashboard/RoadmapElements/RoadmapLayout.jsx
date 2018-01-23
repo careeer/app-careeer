@@ -196,7 +196,7 @@ export default class RoadmapLayout extends Component {
         </Dimmer.Dimmable>
 
         <Route
-          exact path={settingsPath}
+          path={settingsPath}
           {...this.props}
           render={() => (
             <Settings
