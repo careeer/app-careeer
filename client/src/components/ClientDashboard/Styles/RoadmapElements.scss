@@ -370,6 +370,10 @@ div.ui.grid.mobileOnlyGrid {
 }
 
  // Settings Icon
+a.settingsIcon {
+  position: fixed;
+  z-index: 2;
+}
 img.settingsIcon {
   width: 50px;
   height: 50px;

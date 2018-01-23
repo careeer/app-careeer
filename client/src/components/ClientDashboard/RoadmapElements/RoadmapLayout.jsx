@@ -125,12 +125,6 @@ export default class RoadmapLayout extends Component {
           clientName={this.props.clientName || ""}
           loadingMessage="Fetching your Roadmap..."
         />
-        <SettingsButton
-          toggleSettings={this.handleShowSettings}
-        />
-        <ToolboxButton
-          toolboxUrl={currentClientToolbox}
-        />
         <CongratulateBanner
           buttonCaption="undo"
           visible={isBannerVisible}
@@ -150,6 +144,12 @@ export default class RoadmapLayout extends Component {
         <Dimmer.Dimmable blurring dimmed={isDimmerOn}>
           <AccountFlag
             accountMessage={freeTrialMessage}
+          />
+          <SettingsButton
+            toggleSettings={this.handleShowSettings}
+          />
+          <ToolboxButton
+            toolboxUrl={currentClientToolbox}
           />
           <Grid className="roadmapMainGrid">
             <Grid.Column className="roadmapMainColumn">
