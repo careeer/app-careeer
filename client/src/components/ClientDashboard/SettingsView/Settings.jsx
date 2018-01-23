@@ -2,9 +2,10 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { Route, withRouter } from 'react-router-dom';
-import { Grid, Button, Dimmer, Image } from 'semantic-ui-react';
+import { Grid, Dimmer, Image } from 'semantic-ui-react';
 
 import CloseButton from './CloseButton';
+import SettingsMain from './SettingsMain';
 import CareeerLogo from '../../Lib/CareeerLogo';
 
 
@@ -32,8 +33,21 @@ class Settings extends Component {
     });
   }
 
+  handleChangePayment = (e) => {
+    e.preventDefault();
+    console.log("change payment");
+  }
+
+  handleChangeSubscription = (e) => {
+    e.preventDefault();
+    console.log("change subscription");
+  }
+
   render() {
-    console.log(this.props);
+    const mainPath = `${this.props.match.url}`;
+    const plansPath = `${this.props.match.url}/plans`;
+    const checkoutPath = `${this.props.match.url}/plans/checkout`;
+
     const avatarUrl = this.props.roadmapElements.currentClientAvatar || 'https://res.cloudinary.com/careeer/image/upload/v1504959238/Careeer_logo_a3gu5x.png';
     return (
       <Dimmer
@@ -56,12 +70,19 @@ class Settings extends Component {
               src={avatarUrl}
             />
           </div>
+          <Route
+            exact path={mainPath}
+            render={() => (
+              <SettingsMain
+                onSignOutClick={this.handleClick}
+                selectedPlan={this.props.subscription.selectedPlan}
+                onSignOutClick={this.handleClick}
+                onChangePaymentClick={this.handleChangePayment}
+                onChangeSubscriptionClick={this.handleChangeSubscription}
+              />
+            )}
+          />
         </div>
-        <Button
-          basic
-          content="Sign Out"
-          onClick={this.handleClick}
-        />
       </Dimmer>
     );
   }

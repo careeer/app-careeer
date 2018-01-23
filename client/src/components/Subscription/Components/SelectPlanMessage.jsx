@@ -22,9 +22,9 @@ const SelectPlanMessage = props => (
 );
 
 SelectPlanMessage.propTypes = {
-  selectedPlan: PropTypes.string.isRequired,
   planName: PropTypes.string.isRequired,
   avatarUrl: PropTypes.string.isRequired,
+  selectedPlan: PropTypes.string.isRequired,
 };
 
 export default SelectPlanMessage;
