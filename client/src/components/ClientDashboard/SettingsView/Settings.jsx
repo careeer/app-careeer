@@ -7,7 +7,8 @@ import { Grid, Dimmer, Image } from 'semantic-ui-react';
 import CloseButton from './CloseButton';
 import SettingsMain from './SettingsMain';
 import CareeerLogo from '../../Lib/CareeerLogo';
-
+import SettingsChangePayment from './SettingsChangePayment';
+import SettingsChangeSubscription from './SettingsChangeSubscription';
 
 import '../Styles/Settings.scss';
 
@@ -39,12 +40,31 @@ class Settings extends Component {
 
   handleChangePayment = (e) => {
     e.preventDefault();
+    this.props.history.push(`${this.props.match.url}/paymentInfo`);
     console.log("change payment");
+  }
+
+  showSubscriptionSelection = (e) => {
+    e.preventDefault();
+    this.props.history.push(`${this.props.match.url}/subscription`);
+    console.log("change subscription");
   }
 
   handleChangeSubscription = (e) => {
     e.preventDefault();
     console.log("change subscription");
+  }
+
+  handleCardToken = () => {
+
+  }
+
+  handleCardErrors = () => {
+
+  }
+
+  goBackToMain = () => {
+    this.props.history.push(`${this.props.match.url}`);
   }
 
   render() {
@@ -53,6 +73,7 @@ class Settings extends Component {
     const subscriptionPath = `${this.props.match.url}/subscription`;
 
     const avatarUrl = this.props.roadmapElements.currentClientAvatar || 'https://res.cloudinary.com/careeer/image/upload/v1504959238/Careeer_logo_a3gu5x.png';
+
     return (
       <Dimmer
         page
@@ -79,13 +100,39 @@ class Settings extends Component {
             render={() => (
               <SettingsMain
                 onSignOutClick={this.handleClick}
-                onSignOutClick={this.handleClick}
-                selectedPlan={this.props.subscription.selectedPlan}
                 onChangePaymentClick={this.handleChangePayment}
-                onChangeSubscriptionClick={this.handleChangeSubscription}
+                selectedPlan={this.props.subscription.selectedPlan}
+                onChangeSubscriptionClick={this.showSubscriptionSelection}
               />
             )}
           />
+          <Route
+            path={paymentPath}
+            render={() => (
+              <SettingsChangePayment
+                isLoading
+                cardErrors=""
+                cardSuccess=""
+                disableSubmit
+                onGoBackClick={this.goBackToMain}
+                handleCardToken={this.handleCardToken}
+                handleCardErrors={this.handleCardErrors}
+              />
+            )}
+          />
+          <Route
+            exact path={subscriptionPath}
+            render={() => (
+              <SettingsChangeSubscription
+                onGoBackClick={this.goBackToMain}
+                onSaveChanges={this.handleChangeSubscription}
+                selectedPlan={this.props.subscription.selectedPlan}
+                handleSegmentClick={this.handleChangeSubscription}
+                onCancelAccountClick={this.handleChangeSubscription}
+              />
+            )}
+          />
+
         </div>
       </Dimmer>
     );
