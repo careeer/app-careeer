@@ -15,6 +15,10 @@ div.ui.active.transition.visible.inverted.page.dimmer.settingsDimmer {
     top: 10px;
     position: fixed;
 
+    & > a:focus {
+      outline: none;
+    }
+
     img.doneIcon{
       width: 49px;
       height: 50px;
@@ -25,7 +29,7 @@ div.ui.active.transition.visible.inverted.page.dimmer.settingsDimmer {
   button.ui.button {
     width: 374px;
     font-size: 18px;
-    margin-top: 15em;
+    margin-top: 10em;
     font-family: Cabin;
     border-radius: 18px;
     letter-spacing: 2.3px;

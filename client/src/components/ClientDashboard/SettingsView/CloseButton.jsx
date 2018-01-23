@@ -6,7 +6,11 @@ import DoneIcon from '../../Icons/DoneIcon';
 const CloseButton = props => (
   <Grid textAlign="right">
     <Grid.Column className="closeButton">
-      <a role="link" tabIndex={0} onClick={props.onCloseClick}>
+      <a
+        role="link"
+        tabIndex={0}
+        onClick={props.onCloseClick}
+      >
         <DoneIcon />
       </a>
     </Grid.Column>
