@@ -11,6 +11,14 @@ module V1
 
     end
 
+    def upgrade
+      invoice = Stripe::Invoice.create(
+        :customer => "cus_9CQ7bS9zi2gBTP",
+      )
+      invoice.pay
+
+    end
+
     def create
       customer =  current_user.stripe_customer
 

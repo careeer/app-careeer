@@ -1,10 +1,12 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import { withRouter } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import { Grid, Button, Dimmer } from 'semantic-ui-react';
-import CareeerLogo from '../../Lib/CareeerLogo';
+
 import CloseButton from './CloseButton';
+import CareeerLogo from '../../Lib/CareeerLogo';
+
 
 import '../Styles/Settings.scss';
 
@@ -37,6 +39,19 @@ class Settings extends Component {
       >
         <CareeerLogo />
         <CloseButton onCloseClick={this.props.onCloseClick} />
+
+        <Route
+          path={`${this.props.match.url}`}
+          render={() => (
+            <TrialComplete
+              currentClient={currentClient}
+              handleIntroClick={this.handleIntroClick}
+              currentClientAvatar={currentClientAvatar}
+              completeActions={completedElements.length}
+              handleDeleteAccount={this.props.handleDeleteAccount}
+            />
+          )}
+        />
         <Button
           basic
           content="Sign Out"
