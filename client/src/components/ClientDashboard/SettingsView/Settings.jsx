@@ -55,12 +55,17 @@ class Settings extends Component {
     console.log("change subscription");
   }
 
-  handleCardToken = () => {
-
+  handleSegmentClick = (plan, planName, planCost) => {
+    this.props.subscription.onPlanClick(plan, planName, planCost);
   }
 
-  handleCardErrors = () => {
+  handleCardErrors = (event) => {
+    this.props.subscription.handleCardErrors(event);
+  }
 
+  handleCardToken = (payload) => {
+    console.log(payload);
+    // this.props.subscription.handleCardToken(payload);
   }
 
   goBackToMain = () => {
@@ -73,6 +78,12 @@ class Settings extends Component {
     const subscriptionPath = `${this.props.match.url}/subscription`;
 
     const avatarUrl = this.props.roadmapElements.currentClientAvatar || 'https://res.cloudinary.com/careeer/image/upload/v1504959238/Careeer_logo_a3gu5x.png';
+
+    const { isLoading,
+            cardErrors,
+            cardSuccess,
+            selectedPlan,
+            disableSubmit } = this.props.subscription;
 
     return (
       <Dimmer
@@ -91,17 +102,17 @@ class Settings extends Component {
             <Image
               avatar
               alt="avatar"
-              className="avatar"
               src={avatarUrl}
+              className="avatar"
             />
           </div>
           <Route
             exact path={mainPath}
             render={() => (
               <SettingsMain
+                selectedPlan={selectedPlan}
                 onSignOutClick={this.handleClick}
                 onChangePaymentClick={this.handleChangePayment}
-                selectedPlan={this.props.subscription.selectedPlan}
                 onChangeSubscriptionClick={this.showSubscriptionSelection}
               />
             )}
@@ -110,10 +121,10 @@ class Settings extends Component {
             path={paymentPath}
             render={() => (
               <SettingsChangePayment
-                isLoading
-                cardErrors=""
-                cardSuccess=""
-                disableSubmit
+                isLoading={isLoading}
+                cardErrors={cardErrors}
+                cardSuccess={cardSuccess}
+                disableSubmit={disableSubmit}
                 onGoBackClick={this.goBackToMain}
                 handleCardToken={this.handleCardToken}
                 handleCardErrors={this.handleCardErrors}
@@ -124,10 +135,10 @@ class Settings extends Component {
             exact path={subscriptionPath}
             render={() => (
               <SettingsChangeSubscription
+                selectedPlan={selectedPlan}
                 onGoBackClick={this.goBackToMain}
+                handleSegmentClick={this.handleSegmentClick}
                 onSaveChanges={this.handleChangeSubscription}
-                selectedPlan={this.props.subscription.selectedPlan}
-                handleSegmentClick={this.handleChangeSubscription}
                 onCancelAccountClick={this.handleChangeSubscription}
               />
             )}
