@@ -54,7 +54,7 @@ export default class Subscription extends Component {
   }
 
   handleAnimationComplete = () => {
-    this.props.handleContinueClick();
+    this.props.handleContinueClick(this.props.subscription.planName);
   }
 
 

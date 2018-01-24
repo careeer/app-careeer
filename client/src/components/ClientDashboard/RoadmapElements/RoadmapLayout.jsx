@@ -84,8 +84,17 @@ export default class RoadmapLayout extends Component {
     this.props.roadmapElements.hideBanner();
   }
 
+  handleCustomBannerClose = () => {
+    this.props.roadmapElements.hideCustomBanner();
+  }
+
   handleUndoComplete = () => {
     this.props.roadmapElements.undoComplete();
+  }
+
+  handleCustomBannerClick = () => {
+    this.handleCustomBannerClose();
+    this.handleShowSettings();
   }
 
   handleShowSettings = () => {
@@ -104,6 +113,9 @@ export default class RoadmapLayout extends Component {
             isBannerVisible,
             isDefaultLoading,
             isCreateFormClose,
+            mainBannerMessage,
+            showSettingsButton,
+            isCustomBannerVisible,
             isToggleableFormVisible,
             isCompletedAccordionOpen,
             isDimmerOn,
@@ -134,11 +146,11 @@ export default class RoadmapLayout extends Component {
           mainMessage={`nice work, ${currentClient.split(' ', 1)}!`}
         />
         <CongratulateBanner
-          buttonCaption="change"
-          visible={isBannerVisible}
-          handleButtonClick={this.handleUndoComplete}
-          hideCongratsBanner={this.handleBannerClose}
-          mainMessage="Subscription started on Standard Track"
+          visible={isCustomBannerVisible}
+          mainMessage={mainBannerMessage}
+          handleButtonClick={this.handleCustomBannerClick}
+          hideCongratsBanner={this.handleCustomBannerClose}
+          buttonCaption={showSettingsButton ? "change" : ""}
         />
 
         <Dimmer.Dimmable blurring dimmed={isDimmerOn}>

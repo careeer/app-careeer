@@ -492,13 +492,31 @@ class RoadmapElements {
   // Congratulate Banner
   @observable isBannerVisible = false;
   @observable completedElement = '';
+  @observable isCustomBannerVisible = false;
+  @observable mainBannerMessage = '';
+  @observable showSettingsButton = false;
 
   @action showBanner() {
     this.isBannerVisible = true;
   }
 
+  @action updateCustomBanner(mainBannerMessage, showSettingsButton) {
+    this.mainBannerMessage = mainBannerMessage;
+    this.showSettingsButton = showSettingsButton;
+  }
+
+  @action showCustomBanner() {
+    this.isCustomBannerVisible = true;
+  }
+
   @action hideBanner() {
     this.isBannerVisible = false;
+  }
+
+  @action hideCustomBanner() {
+    this.isCustomBannerVisible = false;
+    this.mainBannerMessage = "";
+    this.showSettingsButton = false;
   }
 
   @action undoComplete() {

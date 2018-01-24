@@ -9,6 +9,7 @@ const ToolboxButton = (props) => {
         tabIndex="0"
         target="_blank"
         href={props.toolboxUrl}
+        className="settingsIcon"
       >
         <ToolboxIcon />
       </a>

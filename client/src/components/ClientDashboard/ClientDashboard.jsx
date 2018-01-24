@@ -40,10 +40,10 @@ class ClientDashboard extends Component {
     this.props.history.push('/');
   }
 
-  handleContinueClick = () => {
+  handleContinueClick = (planName) => {
     this.props.roadmapElements.updateClientAccount("paid");
     this.props.roadmapElements.updateClient();
-    // this.props.roadmapElements.showBanner();
+    this.props.roadmapElements.updateCustomBanner(`Subscription started on ${planName}`, true);
   }
 
   handleDeleteAccount = () => {

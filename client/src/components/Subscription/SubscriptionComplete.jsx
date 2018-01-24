@@ -18,6 +18,7 @@ export default class SubscriptionComplete extends Component {
 
   handleClose = () => {
     this.setState({open: false});
+    this.props.roadmapElements.showCustomBanner();
   }
 
   render() {
@@ -35,7 +36,7 @@ export default class SubscriptionComplete extends Component {
             active
             className="paymentComplete"
           >
-            <div class="svg">
+            <div className="svg">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="160"
