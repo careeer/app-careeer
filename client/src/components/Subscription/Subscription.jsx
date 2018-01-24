@@ -99,10 +99,10 @@ export default class Subscription extends Component {
             handleTrialClick={this.handleFreeTrialClick}
             handleSubscriptionClick={this.handleIntroClick}
             handleSelectPaymentClick={this.handleSelectPlanClick}
+            checkout={subscriptionStep === 'checkout'}
             freeTrial={subscriptionStep === 'intro' ||
                       subscriptionStep === 'checkout' ||
                       subscriptionStep === 'plans'}
-            checkout={subscriptionStep === 'checkout'}
             continueSubscription={subscriptionStep === 'plans' ||
                                   subscriptionStep === 'checkout'}
           />
