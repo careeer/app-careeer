@@ -10,10 +10,11 @@ export default class CongratulateBanner extends PureComponent {
   render() {
     return (
       <Transition
+        unmountOnHide
         animation="slide down"
-        duration={{ hide: 2500, show: 300 }}
+        onShow={this.handleOnShow}
         visible={this.props.visible}
-        onComplete={this.handleOnShow}
+        duration={{ hide: 2500, show: 300 }}
       >
         <Message
           attached
@@ -23,13 +24,13 @@ export default class CongratulateBanner extends PureComponent {
             <Grid.Column
               computer={3}
               largeScreen={3}
-              only={"large screen", "computer"}
+              only={'large screen', 'computer'}
             />
             <Grid.Column
-              computer={8}
-              largeScreen={9}
               tablet={10}
               mobile={13}
+              computer={8}
+              largeScreen={9}
               textAlign="center"
               className="bannerMessageColumn"
             >
@@ -38,11 +39,11 @@ export default class CongratulateBanner extends PureComponent {
               </span>
             </Grid.Column>
             <Grid.Column
+              tablet={5}
               computer={4}
               largeScreen={3}
-              tablet={5}
-              only={'large screen', 'tablet', 'computer'}
               textAlign="right"
+              only={'large screen', 'tablet', 'computer'}
             >
               {this.props.secondaryMessage &&
                 <Container className="secondaryMessage">

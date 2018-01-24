@@ -82,7 +82,6 @@ class ClientDashboard extends Component {
     }
 
     if (successfulPayment) {
-      console.log("successfulPayment");
       return (
         <SubscriptionComplete {...this.props} />
       );

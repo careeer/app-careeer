@@ -8,6 +8,10 @@ export default class SubscriptionComplete extends Component {
     open: true,
   }
 
+  componentWillMount() {
+    history.replaceState(null, document.title, `/${this.props.roadmapElements.currentClientSlug}`);
+  }
+  
   componentDidMount() {
     this.handleOnShow();
   }
@@ -17,7 +21,11 @@ export default class SubscriptionComplete extends Component {
   }
 
   handleClose = () => {
-    this.setState({open: false});
+    this.setState({ open: false });
+    setTimeout(this.handleBanner, 2600);
+  }
+
+  handleBanner = () => {
     this.props.roadmapElements.showCustomBanner();
   }
 
@@ -26,9 +34,9 @@ export default class SubscriptionComplete extends Component {
       <div>
         <Transition
           unmountOnHide
-          animation='slide down'
+          animation="slide down"
           visible={this.state.open}
-          onComplete={this.handleOnShow}
+          onShow={this.handleOnShow}
           duration={{ hide: 1500, show: 4000 }}
         >
           <Dimmer
@@ -44,8 +52,8 @@ export default class SubscriptionComplete extends Component {
                 viewBox="-263.5 236.5 26 26"
               >
                 <g className="svg-success">
-                  <circle cx="-250.5" cy="249.5" r="12"/>
-                  <path d="M-256.46 249.65l3.9 3.74 8.02-7.8"/>
+                  <circle cx="-250.5" cy="249.5" r="12" />
+                  <path d="M-256.46 249.65l3.9 3.74 8.02-7.8" />
                 </g>
               </svg>
             </div>

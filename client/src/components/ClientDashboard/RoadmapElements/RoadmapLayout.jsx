@@ -1,16 +1,15 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import { inject, observer } from 'mobx-react';
-import { Grid, Dimmer, Loader, Sidebar, Label } from 'semantic-ui-react';
-
 import { DragDropContext } from 'react-dnd';
-import MultiBackend from 'react-dnd-multi-backend';
+import { inject, observer } from 'mobx-react';
 import withScrolling from 'react-dnd-scrollzone';
+import { Grid, Dimmer } from 'semantic-ui-react';
+import MultiBackend from 'react-dnd-multi-backend';
 
 import AccountFlag from './AccountFlag';
-import SettingsButton from './SettingsButton';
 import ToolboxButton from './ToolboxButton';
+import SettingsButton from './SettingsButton';
 import Settings from '../SettingsView/Settings';
 import HTML5toTouch from '../../Lib/HTML5toTouch';
 import FullScreenLoader from './FullScreenLoader';
@@ -134,7 +133,7 @@ export default class RoadmapLayout extends Component {
         <FullScreenLoader
           isLoading={isLoading}
           isDefaultLoading={isDefaultLoading}
-          clientName={this.props.clientName || ""}
+          clientName={this.props.clientName || ''}
           loadingMessage="Fetching your Roadmap..."
         />
         <CongratulateBanner
@@ -150,7 +149,7 @@ export default class RoadmapLayout extends Component {
           mainMessage={mainBannerMessage}
           handleButtonClick={this.handleCustomBannerClick}
           hideCongratsBanner={this.handleCustomBannerClose}
-          buttonCaption={showSettingsButton ? "change" : ""}
+          buttonCaption={showSettingsButton ? 'change' : ''}
         />
 
         <Dimmer.Dimmable blurring dimmed={isDimmerOn}>
@@ -171,7 +170,7 @@ export default class RoadmapLayout extends Component {
                 />
                 <EditableRoadmapElementsList
                   roadmapElements={incompleteElements.slice()}
-                  enableDragAndDrop={true}
+                  enableDragAndDrop
                   isCreateFormClose={isCreateFormClose}
                   onFormCopy={this.handleCopyForm}
                   onFormOpen={this.handleEditFormOpen}

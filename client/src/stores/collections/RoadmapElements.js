@@ -500,6 +500,10 @@ class RoadmapElements {
     this.isBannerVisible = true;
   }
 
+  @action hideBanner() {
+    this.isBannerVisible = false;
+  }
+
   @action updateCustomBanner(mainBannerMessage, showSettingsButton) {
     this.mainBannerMessage = mainBannerMessage;
     this.showSettingsButton = showSettingsButton;
@@ -509,14 +513,8 @@ class RoadmapElements {
     this.isCustomBannerVisible = true;
   }
 
-  @action hideBanner() {
-    this.isBannerVisible = false;
-  }
-
   @action hideCustomBanner() {
     this.isCustomBannerVisible = false;
-    this.mainBannerMessage = "";
-    this.showSettingsButton = false;
   }
 
   @action undoComplete() {
