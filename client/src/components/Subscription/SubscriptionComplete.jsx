@@ -7,6 +7,7 @@ export default class SubscriptionComplete extends Component {
   state = {
     open: true,
   }
+
   componentDidMount() {
     this.handleOnShow();
   }
@@ -18,6 +19,7 @@ export default class SubscriptionComplete extends Component {
   handleClose = () => {
     this.setState({open: false});
   }
+
   render() {
     return (
       <div>
@@ -40,7 +42,7 @@ export default class SubscriptionComplete extends Component {
                 height="160"
                 viewBox="-263.5 236.5 26 26"
               >
-                <g class="svg-success">
+                <g className="svg-success">
                   <circle cx="-250.5" cy="249.5" r="12"/>
                   <path d="M-256.46 249.65l3.9 3.74 8.02-7.8"/>
                 </g>
@@ -48,7 +50,7 @@ export default class SubscriptionComplete extends Component {
             </div>
           </Dimmer>
         </Transition>
-        <RoadmapLayout />
+        <RoadmapLayout {...this.props} />
       </div>
     );
   }

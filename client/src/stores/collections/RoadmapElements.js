@@ -23,6 +23,7 @@ class RoadmapElements {
   @observable isNameInputDisabled = false;
   @observable isCreateFormClose = true;
   @observable isToggleableFormVisible = true;
+  @observable successfulPayment = false;
 
   @action resetClientParams = () => {
     this.hasClientName = false;
@@ -418,6 +419,7 @@ class RoadmapElements {
   @action async updateClientAccount(newStatus) {
     this.currentClientAccountType = newStatus;
     this.accountActive = true;
+    this.successfulPayment = true;
   }
 
   @action async updateClientStatus(newStatus) {

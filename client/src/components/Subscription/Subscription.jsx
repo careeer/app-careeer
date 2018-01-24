@@ -53,12 +53,8 @@ export default class Subscription extends Component {
     this.props.subscription.handleCardToken(payload);
   }
 
-  handleContinueClick = () => {
-    // this.props.handleContinueClick();
-  }
-
   handleAnimationComplete = () => {
-    this.props.subscription.stopAnimation();
+    this.props.handleContinueClick();
   }
 
 
@@ -78,9 +74,6 @@ export default class Subscription extends Component {
             subscriptionStep,
             animationVisible } = this.props.subscription;
 
-    if (cardSuccess) {
-      this.handleContinueClick();
-    }
     const introPath = `${this.props.match.url}`;
     const plansPath = `${this.props.match.url}/plans`;
     const checkoutPath = `${this.props.match.url}/plans/checkout`;
