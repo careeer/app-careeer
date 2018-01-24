@@ -6,6 +6,7 @@ div.ui.active.transition.visible.page.dimmer {
   &.paymentComplete, &.thankYouLoader {
     background-color: #24c63a;
     opacity: 1;
+    z-index: 2000000;
   }
 
   &.thankYouLoader {

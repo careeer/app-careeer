@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import RoadmapLayout from './RoadmapElements/RoadmapLayout';
 import Subscription from 'components/Subscription/Subscription';
+import SubscriptionComplete from 'components/Subscription/SubscriptionComplete';
 import ModalComponent from 'components/CoachDashboard/Clients/ModalComponent';
 
 @inject('roadmapElements') @observer
@@ -42,7 +43,7 @@ class ClientDashboard extends Component {
   handleContinueClick = () => {
     this.props.roadmapElements.updateClientAccount("paid");
     this.props.roadmapElements.updateClient();
-    this.props.roadmapElements.showBanner();
+    // this.props.roadmapElements.showBanner();
   }
 
   handleDeleteAccount = () => {
@@ -52,6 +53,7 @@ class ClientDashboard extends Component {
   render() {
     const { accountActive,
             currentClient,
+            successfulPayment,
             completedElements,
             currentClientAvatar } = this.props.roadmapElements;
 
@@ -78,6 +80,14 @@ class ClientDashboard extends Component {
         </div>
       );
     }
+
+    if (successfulPayment) {
+      console.log("successfulPayment");
+      return (
+        <SubscriptionComplete {...this.props} />
+      );
+    }
+
     if (currentClient) {
       return (
         <RoadmapLayout {...this.props} />
