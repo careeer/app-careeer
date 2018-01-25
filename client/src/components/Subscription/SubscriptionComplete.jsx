@@ -11,7 +11,7 @@ export default class SubscriptionComplete extends Component {
   componentWillMount() {
     history.replaceState(null, document.title, `/${this.props.roadmapElements.currentClientSlug}`);
   }
-  
+
   componentDidMount() {
     this.handleOnShow();
   }
@@ -22,7 +22,7 @@ export default class SubscriptionComplete extends Component {
 
   handleClose = () => {
     this.setState({ open: false });
-    setTimeout(this.handleBanner, 2600);
+    setTimeout(this.handleBanner, 1600);
   }
 
   handleBanner = () => {
