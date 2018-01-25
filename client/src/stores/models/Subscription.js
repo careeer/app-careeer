@@ -15,6 +15,11 @@ class Subscription {
   @observable subscriptionStep = "intro";
   @observable planName = "Standard track";
   @observable animationVisible = false;
+  @observable cardInfo = { card_brand: "",
+                            card_last4: "",
+                            card_exp_year: "",
+                            card_exp_month: "",
+                          };
 
   @action startAnimation() {
     this.animationVisible = true;
@@ -65,6 +70,7 @@ class Subscription {
 
     if (status === 200) {
       const body = await response.json();
+
       this.selectedPlan = body.plan;
       if (this.selectedPlan === "Fast") {
         this.planName = "Fast track";
@@ -76,13 +82,20 @@ class Subscription {
         this.planName = "Standard track";
         this.planCost = "150";
       }
+
+      if (body.card_last4) {
+        this.cardInfo.card_brand = body.card_brand;
+        this.cardInfo.card_last4 = body.card_last4;
+        this.cardInfo.card_exp_year = body.card_exp_year;
+        this.cardInfo.card_exp_month = body.card_exp_month;
+      }
     }
   }
 
   @action async handleCardToken(payload, callBack) {
     this.setIsLoading(true);
     const response = await Api.post(
-      this.subscription,{
+      this.subscription, {
         stripeToken: payload.token.id,
         plan: this.selectedPlan,
         last4: payload.token.card.last4,
