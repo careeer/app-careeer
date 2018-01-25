@@ -15,12 +15,7 @@ import '../Styles/Settings.scss';
 @inject('user', 'subscription') @observer
 class Settings extends Component {
   componentWillMount() {
-    $crisp.push(['do', 'chat:hide']);
     this.props.subscription.getPlan();
-  }
-
-  componentWillUnmount() {
-    $crisp.push(['do', 'chat:show']);
   }
 
   handleClick = (e) => {

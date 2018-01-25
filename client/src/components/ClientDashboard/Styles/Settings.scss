@@ -1,6 +1,7 @@
 div.ui.active.transition.visible.inverted.page.dimmer.settingsDimmer {
   opacity: 0.90;
   overflow-y: auto;
+  z-index: 2000000;
   background-color: #fef99f;
 
   & > div.content > div.center {
