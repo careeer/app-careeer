@@ -9,6 +9,7 @@ import SettingsMain from './SettingsMain';
 import CareeerLogo from '../../Lib/CareeerLogo';
 import SettingsChangePayment from './SettingsChangePayment';
 import SettingsChangeSubscription from './SettingsChangeSubscription';
+import ModalComponent from '../../CoachDashboard/Clients/ModalComponent';
 
 import '../Styles/Settings.scss';
 
@@ -71,6 +72,14 @@ class Settings extends Component {
     this.props.handleShowCustomBanner();
   }
 
+  handleCancelAccountClick = () => {
+    this.props.subscription.showDeleteModal();
+  }
+
+  handleCloseModals = () => {
+    this.props.subscription.closeSettingsModals();
+  }
+
   render() {
     const mainPath = `${this.props.match.url}`;
     const paymentPath = `${this.props.match.url}/paymentInfo`;
@@ -82,7 +91,10 @@ class Settings extends Component {
             isLoading,
             cardErrors,
             selectedPlan,
-            disableSubmit } = this.props.subscription;
+            disableSubmit,
+            isDeleteModalOpen,
+            isUpgradeModalOpen,
+            isDowngradeModalOpen } = this.props.subscription;
 
     return (
       <Dimmer
@@ -139,9 +151,36 @@ class Settings extends Component {
                 onGoBackClick={this.goBackToMain}
                 handleSegmentClick={this.handleSegmentClick}
                 onSaveChanges={this.handleChangeSubscription}
-                onCancelAccountClick={this.handleChangeSubscription}
+                onCancelAccountClick={this.handleCancelAccountClick}
               />
             )}
+          />
+          <ModalComponent
+            negativeLabel="Go back"
+            handleClose={this.handleCloseModals}
+            isVisible={isDeleteModalOpen}
+            modalHeader="Cancel subscription and delete account?"
+            positiveLabel="Cancel &amp; delete"
+            modalContent="Are you sure? This action cannot be undone. You will lose access to your coach, toolbox, and roadmap. Start a new free trial any time."
+            handlePositiveClick={this.archiveClient}
+          />
+          <ModalComponent
+            negativeLabel="Cancel"
+            handleClose={this.handleCloseModals}
+            isVisible={isUpgradeModalOpen}
+            modalHeader="Authorize transaction"
+            positiveLabel="Authorize"
+            modalContent="You&apos;ve changed your plan to Fast Track! We&apos;ll apply this change to your plan immediately, with a prorated $100 charge to your card today. On February 30th your subscription will be renewed at $350."
+            handlePositiveClick={this.archiveClient}
+          />
+          <ModalComponent
+            negativeLabel="Cancel"
+            handleClose={this.handleCloseModals}
+            isVisible={isDowngradeModalOpen}
+            modalHeader="Authorize transaction"
+            positiveLabel="Authorize"
+            modalContent="You&apos;ve changed your plan to Self-Starter! We&apos;ll apply this change to your plan immediately, with no charge to your card. On February 30th your card ending in 1234 will be charged $50."
+            handlePositiveClick={this.archiveClient}
           />
         </div>
       </Dimmer>

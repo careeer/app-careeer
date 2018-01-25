@@ -15,6 +15,9 @@ class Subscription {
   @observable subscriptionStep = "intro";
   @observable planName = "Standard track";
   @observable animationVisible = false;
+  @observable isDeleteModalOpen = false;
+  @observable isUpgradeModalOpen = false;
+  @observable isDowngradeModalOpen = false;
   @observable cardInfo = { card_brand: "",
                             card_last4: "",
                             card_exp_year: "",
@@ -35,6 +38,24 @@ class Subscription {
 
   @action updateStep(step) {
     this.subscriptionStep = step;
+  }
+
+  @action showDeleteModal() {
+    this.isDeleteModalOpen = true;
+  }
+
+  @action showUpgradeModal() {
+    this.isUpgradeModalOpen = true;
+  }
+
+  @action showDowngradeModal() {
+    this.isDowngradeModalOpen = true;
+  }
+
+  @action closeSettingsModals() {
+    this.isDeleteModalOpen = false;
+    this.isUpgradeModalOpen = false;
+    this.isDowngradeModalOpen = false;
   }
 
   @action toggleShowSelected() {

@@ -5,28 +5,30 @@ import Plans from '../../LandingPage/Components/Plans';
 
 const SettingsChangeSubscription = props => (
   <div className="messageBody">
-    <h4>
-      All plans include
-    </h4>
-    <p className="plans">
-      one dedicated coach <br />
-      personalized career roadmap <br />
-      unlimited messaging <br />
-    </p>
+    <div>
+      <h4>
+        All plans include
+      </h4>
+      <p className="plans">
+        one dedicated coach <br />
+        personalized career roadmap <br />
+        unlimited messaging <br />
+      </p>
+    </div>
     <Plans
       selectedAccount={props.selectedPlan}
       handleSegmentClick={props.handleSegmentClick}
     />
     <Button
       content="Save changes"
-      className="changeSubscriptionButton"
       onClick={props.onSaveChanges}
+      className="changeSubscriptionButton"
     />
     <Button
       basic
       content="Go back"
-      className="changePaymentButton"
       onClick={props.onGoBackClick}
+      className="changePaymentButton"
     />
     <div className="cancelLinkContainer">
       <a
