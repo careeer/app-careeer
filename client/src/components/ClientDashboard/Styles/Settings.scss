@@ -32,6 +32,10 @@ div.ui.active.transition.visible.inverted.page.dimmer.settingsDimmer {
     }
   }
 
+  .messageBody.settings {
+    margin-top: 1em;
+  }
+
   button.ui.button {
     width: 387px;
     display: block;
@@ -91,6 +95,24 @@ div.ui.active.transition.visible.inverted.page.dimmer.settingsDimmer {
       &:focus {
         outline: none;
       }
+    }
+  }
+
+  .cardInfo {
+    font-size: 1em;
+  }
+
+  .ui.divider {
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .checkoutForm {
+    margin-top: 2.5em;
+
+    .StripeElement {
+      max-width: 387px;
     }
   }
 }

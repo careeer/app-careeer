@@ -74,7 +74,8 @@ class Settings extends Component {
 
     const avatarUrl = this.props.roadmapElements.currentClientAvatar || 'https://res.cloudinary.com/careeer/image/upload/v1504959238/Careeer_logo_a3gu5x.png';
 
-    const { isLoading,
+    const { cardInfo,
+            isLoading,
             cardErrors,
             cardSuccess,
             selectedPlan,
@@ -116,6 +117,7 @@ class Settings extends Component {
             path={paymentPath}
             render={() => (
               <SettingsChangePayment
+                cardInfo={cardInfo}
                 isLoading={isLoading}
                 cardErrors={cardErrors}
                 cardSuccess={cardSuccess}
