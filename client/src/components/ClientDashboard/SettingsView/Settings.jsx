@@ -42,12 +42,10 @@ class Settings extends Component {
   showSubscriptionSelection = (e) => {
     e.preventDefault();
     this.props.history.push(`${this.props.match.url}/subscription`);
-    console.log("change subscription");
   }
 
   handleChangeSubscription = (e) => {
     e.preventDefault();
-    console.log("change subscription");
   }
 
   handleSegmentClick = (plan, planName, planCost) => {
@@ -59,12 +57,19 @@ class Settings extends Component {
   }
 
   handleCardToken = (payload) => {
-    console.log(payload);
-    // this.props.subscription.handleCardToken(payload);
+    this.props.subscription.updateCreditCard(payload, () => {
+      this.handleCloseAndShowBanner("Credit card successfully changed", false);
+    });
   }
 
   goBackToMain = () => {
     this.props.history.push(`${this.props.match.url}`);
+  }
+
+  handleCloseAndShowBanner = (message, showButton) => {
+    this.props.handleUpdateCustomBanner(message, showButton);
+    this.props.onCloseClick();
+    this.props.handleShowCustomBanner();
   }
 
   render() {
@@ -77,7 +82,6 @@ class Settings extends Component {
     const { cardInfo,
             isLoading,
             cardErrors,
-            cardSuccess,
             selectedPlan,
             disableSubmit } = this.props.subscription;
 
@@ -120,11 +124,11 @@ class Settings extends Component {
                 cardInfo={cardInfo}
                 isLoading={isLoading}
                 cardErrors={cardErrors}
-                cardSuccess={cardSuccess}
                 disableSubmit={disableSubmit}
                 onGoBackClick={this.goBackToMain}
                 handleCardToken={this.handleCardToken}
                 handleCardErrors={this.handleCardErrors}
+                handleCloseAndShowBanner={this.handleCloseAndShowBanner}
               />
             )}
           />

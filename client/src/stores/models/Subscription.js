@@ -123,6 +123,32 @@ class Subscription {
       this.setIsLoading(false);
     }
   }
+
+  @action async updateCreditCard(payload, callBack) {
+    this.setIsLoading(true);
+    const response = await Api.put(
+      this.subscription, {
+        stripeToken: payload.token.id,
+        last4: payload.token.card.last4,
+        card_type: payload.token.card.brand,
+        exp_year: payload.token.card.exp_year,
+        exp_month: payload.token.card.exp_month
+      }
+    );
+    const status = await response.status;
+
+    if (status === 200) {
+      this.cardSuccess = "Credit card updated"
+      this.setIsLoading(false);
+      if (callBack) {
+        callBack();
+      }
+    } else if (status === 400) {
+      const body = await response.json();
+      this.cardErrors = body.error;
+      this.setIsLoading(false);
+    }
+  }
 }
 
 export default new Subscription();

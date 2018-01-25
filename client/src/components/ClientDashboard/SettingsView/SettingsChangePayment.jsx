@@ -18,7 +18,7 @@ const SettingsChangePayment = props => (
         <CheckoutCardForm
           isLoading={props.isLoading}
           cardErrors={props.cardErrors}
-          cardSuccess={props.cardSuccess}
+          cardSuccess=""
           checkoutButtonLabel="Save changes"
           disableSubmit={props.disableSubmit}
           handleCardToken={props.handleCardToken}
@@ -45,7 +45,6 @@ SettingsChangePayment.propTypes = {
     }).isRequired,
   isLoading: PropTypes.bool.isRequired,
   cardErrors: PropTypes.string.isRequired,
-  cardSuccess: PropTypes.string.isRequired,
   disableSubmit: PropTypes.bool.isRequired,
   onGoBackClick: PropTypes.func.isRequired,
   handleCardToken: PropTypes.func.isRequired,

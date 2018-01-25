@@ -96,6 +96,14 @@ export default class RoadmapLayout extends Component {
     this.handleShowSettings();
   }
 
+  handleShowCustomBanner = () => {
+    this.props.roadmapElements.showCustomBanner();
+  }
+
+  handleUpdateCustomBanner = (message, showButton) => {
+    this.props.roadmapElements.updateCustomBanner(message, showButton);
+  }
+
   handleShowSettings = () => {
     this.props.history.push(`${this.props.match.url}/settings`);
     this.props.roadmapElements.turnDimmerOn();
@@ -213,6 +221,8 @@ export default class RoadmapLayout extends Component {
             <Settings
               {...this.props}
               onCloseClick={this.handleHideSettings}
+              handleShowCustomBanner={this.handleShowCustomBanner}
+              handleUpdateCustomBanner={this.handleUpdateCustomBanner}
             />
           )}
         />
