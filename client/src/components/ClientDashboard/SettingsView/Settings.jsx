@@ -18,7 +18,7 @@ class Settings extends Component {
     this.props.subscription.getPlan();
   }
 
-  handleClick = (e) => {
+  handleSignOut = (e) => {
     e.preventDefault();
 
     const { user, history, roadmapElements } = this.props;
@@ -110,7 +110,7 @@ class Settings extends Component {
             render={() => (
               <SettingsMain
                 selectedPlan={selectedPlan}
-                onSignOutClick={this.handleClick}
+                onSignOutClick={this.handleSignOut}
                 onChangePaymentClick={this.handleChangePayment}
                 onChangeSubscriptionClick={this.showSubscriptionSelection}
               />
@@ -143,7 +143,6 @@ class Settings extends Component {
               />
             )}
           />
-
         </div>
       </Dimmer>
     );
