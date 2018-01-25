@@ -10,7 +10,7 @@ import MultiBackend from 'react-dnd-multi-backend';
 import AccountFlag from './AccountFlag';
 import ToolboxButton from './ToolboxButton';
 import SettingsButton from './SettingsButton';
-import Settings from '../SettingsView/Settings';
+import Settings from '../../SettingsView/Settings';
 import HTML5toTouch from '../../Lib/HTML5toTouch';
 import FullScreenLoader from './FullScreenLoader';
 import RoadmapHeader from '../RoadmapHeader/RoadmapHeader';

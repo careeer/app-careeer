@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Button } from 'semantic-ui-react';
 import Plans from '../../LandingPage/Components/Plans';
 
-const SettingsChangeSubscription = props => (
+const SubscriptionChange = props => (
   <div className="messageBody">
     <div>
       <h4>
@@ -43,7 +43,7 @@ const SettingsChangeSubscription = props => (
   </div>
 );
 
-SettingsChangeSubscription.propTypes = {
+SubscriptionChange.propTypes = {
   onGoBackClick: PropTypes.func.isRequired,
   onSaveChanges: PropTypes.func.isRequired,
   selectedPlan: PropTypes.string.isRequired,
@@ -51,4 +51,4 @@ SettingsChangeSubscription.propTypes = {
   onCancelAccountClick: PropTypes.func.isRequired,
 };
 
-export default SettingsChangeSubscription;
+export default SubscriptionChange;

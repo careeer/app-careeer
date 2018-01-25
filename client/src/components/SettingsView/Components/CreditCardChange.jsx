@@ -4,7 +4,7 @@ import { Button, Divider } from 'semantic-ui-react';
 import { Elements } from 'react-stripe-elements';
 import CheckoutCardForm from '../../Subscription/Components/CheckoutCardForm';
 
-const SettingsChangePayment = props => (
+const CreditCardChange = props => (
   <div className="messageBody settings">
     <div className="checkout">
       <h3>Current card</h3>
@@ -35,7 +35,7 @@ const SettingsChangePayment = props => (
   </div>
 );
 
-SettingsChangePayment.propTypes = {
+CreditCardChange.propTypes = {
   cardInfo: PropTypes.shape(
     {
       card_brand: PropTypes.string,
@@ -51,4 +51,4 @@ SettingsChangePayment.propTypes = {
   handleCardErrors: PropTypes.func.isRequired,
 };
 
-export default SettingsChangePayment;
+export default CreditCardChange;

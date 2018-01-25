@@ -2,16 +2,16 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { Route, withRouter } from 'react-router-dom';
-import { Grid, Dimmer, Image } from 'semantic-ui-react';
+import { Dimmer, Image } from 'semantic-ui-react';
 
-import CloseButton from './CloseButton';
-import SettingsMain from './SettingsMain';
-import CareeerLogo from '../../Lib/CareeerLogo';
-import SettingsChangePayment from './SettingsChangePayment';
-import SettingsChangeSubscription from './SettingsChangeSubscription';
-import ModalComponent from '../../CoachDashboard/Clients/ModalComponent';
+import CloseButton from './Components/CloseButton';
+import SettingsMain from './Components/SettingsMain';
+import CareeerLogo from '../Lib/CareeerLogo';
+import CreditCardChange from './Components/CreditCardChange';
+import SubscriptionChange from './Components/SubscriptionChange';
+import ModalComponent from '../CoachDashboard/Clients/ModalComponent';
 
-import '../Styles/Settings.scss';
+import './Styles/Settings.scss';
 
 @inject('user', 'subscription') @observer
 class Settings extends Component {
@@ -30,7 +30,7 @@ class Settings extends Component {
 
     history.push({
       pathname: '/signIn',
-      state: { logoutEmail: email }
+      state: { logoutEmail: email },
     });
   }
 
@@ -58,7 +58,7 @@ class Settings extends Component {
 
   handleCardToken = (payload) => {
     this.props.subscription.updateCreditCard(payload, () => {
-      this.handleCloseAndShowBanner("Credit card successfully changed", false);
+      this.handleCloseAndShowBanner('Credit card successfully changed', false);
     });
   }
 
@@ -119,7 +119,8 @@ class Settings extends Component {
             />
           </div>
           <Route
-            exact path={mainPath}
+            exact
+            path={mainPath}
             render={() => (
               <SettingsMain
                 selectedPlan={selectedPlan}
@@ -132,7 +133,7 @@ class Settings extends Component {
           <Route
             path={paymentPath}
             render={() => (
-              <SettingsChangePayment
+              <CreditCardChange
                 cardInfo={cardInfo}
                 isLoading={isLoading}
                 cardErrors={cardErrors}
@@ -145,9 +146,10 @@ class Settings extends Component {
             )}
           />
           <Route
-            exact path={subscriptionPath}
+            exact
+            path={subscriptionPath}
             render={() => (
-              <SettingsChangeSubscription
+              <SubscriptionChange
                 selectedPlan={selectedPlan}
                 onGoBackClick={this.goBackToMain}
                 handleSegmentClick={this.handleSegmentClick}
