@@ -94,6 +94,7 @@ class Settings extends Component {
             disableSubmit,
             isDeleteModalOpen,
             isUpgradeModalOpen,
+            subscriptionAction,
             isDowngradeModalOpen } = this.props.subscription;
 
     return (

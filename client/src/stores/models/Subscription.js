@@ -11,12 +11,14 @@ class Subscription {
   @observable isLoading = false;
   @observable showSelected = true;
   @observable disableSubmit = true;
-  @observable selectedPlan = "Standard";
-  @observable subscriptionStep = "intro";
-  @observable planName = "Standard track";
   @observable animationVisible = false;
   @observable isDeleteModalOpen = false;
+  @observable selectedPlan = "Standard";
   @observable isUpgradeModalOpen = false;
+  @observable subscriptionStep = "intro";
+  @observable subscriptionAction = "none";
+  @observable planName = "Standard track";
+  @observable currentSubscriptionCost = "0";
   @observable isDowngradeModalOpen = false;
   @observable cardInfo = { card_brand: "",
                             card_last4: "",
@@ -67,6 +69,19 @@ class Subscription {
     this.selectedPlan = plan;
     this.planName = planName;
     this.planCost = planCost;
+    this.calculateSubscriptionAction();
+  }
+
+  calculateSubscriptionAction = () => {
+    const newCost = parseInt(this.planCost);
+    const currentCost = parseInt(this.currentSubscriptionCost);
+    const difference = newCost - currentCost;
+
+    if (difference !== 0) {
+      this.subscriptionAction = (difference > 0) ? "upgrade" : "downgrade";
+    } else {
+      this.subscriptionAction = "none";
+    }
   }
 
   @action handleCardErrors(event) {
@@ -91,26 +106,35 @@ class Subscription {
 
     if (status === 200) {
       const body = await response.json();
-
-      this.selectedPlan = body.plan;
-      if (this.selectedPlan === "Fast") {
-        this.planName = "Fast track";
-        this.planCost = "350";
-      } else if (this.selectedPlan === "Starter") {
-        this.planName = "Self starter";
-        this.planCost = "50";
-      } else {
-        this.planName = "Standard track";
-        this.planCost = "150";
-      }
-
+      this.populateSelectedPlanInfo(body.plan);
       if (body.card_last4) {
-        this.cardInfo.card_brand = body.card_brand;
-        this.cardInfo.card_last4 = body.card_last4;
-        this.cardInfo.card_exp_year = body.card_exp_year;
-        this.cardInfo.card_exp_month = body.card_exp_month;
+        this.updateCardInfoObject(body);
       }
     }
+  }
+
+  populateSelectedPlanInfo = (plan) => {
+    this.selectedPlan = plan;
+    if (this.selectedPlan === "Fast") {
+      this.planCost = "350";
+      this.planName = "Fast track";
+      this.currentSubscriptionCost = "350";
+    } else if (this.selectedPlan === "Starter") {
+      this.planCost = "50";
+      this.planName = "Self starter";
+      this.currentSubscriptionCost = "50";
+    } else {
+      this.planCost = "150";
+      this.planName = "Standard track";
+      this.currentSubscriptionCost = "150";
+    }
+  }
+
+  updateCardInfoObject = (body) => {
+    this.cardInfo.card_brand = body.card_brand;
+    this.cardInfo.card_last4 = body.card_last4;
+    this.cardInfo.card_exp_year = body.card_exp_year;
+    this.cardInfo.card_exp_month = body.card_exp_month;
   }
 
   @action async handleCardToken(payload, callBack) {
