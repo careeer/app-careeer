@@ -36,7 +36,6 @@ class Settings extends Component {
   handleChangePayment = (e) => {
     e.preventDefault();
     this.props.history.push(`${this.props.match.url}/paymentInfo`);
-    console.log("change payment");
   }
 
   showSubscriptionSelection = (e) => {
