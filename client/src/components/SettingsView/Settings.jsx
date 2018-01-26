@@ -51,6 +51,12 @@ class Settings extends Component {
 
   handleChangeSubscription = (e) => {
     e.preventDefault();
+    if (this.props.subscription.subscriptionAction === "upgrade") {
+      this.props.subscription.showUpgradeModal();
+    } else if (this.props.subscription.subscriptionAction === "downgrade") {
+      this.props.subscription.showDowngradeModal();
+    }
+
   }
 
   handleSegmentClick = (plan, planName, planCost) => {
@@ -87,6 +93,20 @@ class Settings extends Component {
 
   handleCloseModals = () => {
     this.props.subscription.closeSettingsModals();
+  }
+
+  handleUpgrade = () => {
+    this.props.subscription.upgradeSubscription(() => {
+      this.handleCloseAndShowBanner(`Subscription changed to ${this.props.subscription.planName}`, true);
+    });
+    this.handleCloseModals();
+  }
+
+  handleDowngrade = () => {
+    this.props.subscription.downgradeSubscription(() => {
+      this.handleCloseAndShowBanner(`Subscription changed to ${this.props.subscription.planName}`, true);
+    });
+    this.handleCloseModals();
   }
 
   render() {
@@ -164,7 +184,7 @@ class Settings extends Component {
             path={subscriptionPath}
             render={() => (
               <SubscriptionChange
-                isLoading={isLoading} 
+                isLoading={isLoading}
                 previewCost={previewCost}
                 selectedPlan={selectedPlan}
                 onGoBackClick={this.goBackToMain}
@@ -193,8 +213,8 @@ class Settings extends Component {
             isVisible={isUpgradeModalOpen}
             modalHeader="Authorize transaction"
             positiveLabel="Authorize"
-            modalContent="You&apos;ve changed your plan to Fast Track! We&apos;ll apply this change to your plan immediately, with a prorated $100 charge to your card today. On February 30th your subscription will be renewed at $350."
-            handlePositiveClick={this.archiveClient}
+            modalContent={`You've changed your plan to ${planName}! We'll apply this change to your plan immediately, with a prorated $${previewCost} charge to your card today. On ${transactionDate} your subscription will be renewed at $${planCost}.`}
+            handlePositiveClick={this.handleUpgrade}
           />
           <ModalComponent
             negativeLabel="Cancel"
@@ -202,8 +222,8 @@ class Settings extends Component {
             isVisible={isDowngradeModalOpen}
             modalHeader="Authorize transaction"
             positiveLabel="Authorize"
-            modalContent="You&apos;ve changed your plan to Self-Starter! We&apos;ll apply this change to your plan immediately, with no charge to your card. On February 30th your card ending in 1234 will be charged $50."
-            handlePositiveClick={this.archiveClient}
+            modalContent={`You've changed your plan to ${planName}! We'll apply this change to your plan immediately, with no charge to your card. On ${transactionDate} your card ending in ${cardInfo.card_last4} will be charged $${planCost}.`}
+            handlePositiveClick={this.handleDowngrade}
           />
         </div>
       </Dimmer>

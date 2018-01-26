@@ -21,13 +21,15 @@ const SubscriptionChange = props => (
     />
     <Button
       content="Save changes"
+      loading={props.isLoading}
       onClick={props.onSaveChanges}
       className="changeSubscriptionButton"
-      disabled={props.subscriptionAction === 'none'}
+      disabled={props.subscriptionAction === 'none' || props.isLoading}
     />
     <Button
       basic
       content="Go back"
+      disabled={props.isLoading}
       onClick={props.onGoBackClick}
       className="changePaymentButton"
     />
