@@ -13,24 +13,101 @@ module V1
       }, status: :ok
     end
 
-    def new
+    def preview
+      # Set proration date to this moment:
+      proration_date = Time.now.to_i
 
+      customer =  current_user.stripe_customer
+      subscription = customer.subscriptions.retrieve(current_user.stripe_subscription_id)
+
+      # See what the next invoice would look like with a plan switch
+      # and proration set:
+      items = [{
+        id: subscription.items.data[0].id,
+        plan: params[:plan], # Switch to new plan
+      }]
+
+      invoice = Stripe::Invoice.upcoming({
+        customer: customer.id,
+        subscription: subscription.id,
+        subscription_items: items,
+        subscription_proration_date: proration_date,
+      })
+
+      next_transaction = Time.zone.at(subscription.current_period_end).strftime("%m/%d/%Y")
+
+      # Calculate the proration cost:
+      current_prorations = invoice.lines.data.select { |ii| ii.period.start == proration_date }
+      cost = 0
+      current_prorations.each do |p|
+          cost += p.amount
+      end
+      render json: {
+        cost: cost / 100.0,
+        proration_date: proration_date,
+        next_transaction: next_transaction,
+      }, status: :ok
     end
 
     def upgrade
-      invoice = Stripe::Invoice.create(
-        :customer => "cus_9CQ7bS9zi2gBTP",
-      )
-      invoice.pay
+      customer =  current_user.stripe_customer
 
+      begin
+        subscription = customer.subscriptions.retrieve(current_user.stripe_subscription_id)
+        subscription.items = [
+            {
+              id: subscription.items.data[0].id,
+              plan: params[:plan],
+            },
+        ]
+        subscription.proration_date = params[:proration_date]
+        subscription.save
+
+
+        invoice = Stripe::Invoice.create(
+          :customer => customer.id,
+        )
+        invoice.pay
+
+        current_user.assign_attributes(
+          plan: params[:plan]
+        )
+
+        if current_user.save
+          head(:ok)
+        else
+          head(:unprocessable_entity)
+        end
+      rescue Stripe::CardError => e
+        render json: { error: e.message}, status: :payment_required
+      end
     end
 
     def downgrade
-      invoice = Stripe::Invoice.create(
-        :customer => "cus_9CQ7bS9zi2gBTP",
-      )
-      invoice.pay
+      customer =  current_user.stripe_customer
 
+      begin
+        subscription = customer.subscriptions.retrieve(current_user.stripe_subscription_id)
+        subscription.items = [
+            {
+              id: subscription.items.data[0].id,
+              plan: params[:plan],
+            },
+        ]
+        subscription.prorate = false
+        subscription.save
+        current_user.assign_attributes(
+          plan: params[:plan]
+        )
+
+        if current_user.save
+          head(:ok)
+        else
+          head(:unprocessable_entity)
+        end
+      rescue Stripe::CardError => e
+        render json: { error: e.message}, status: :payment_required
+      end
     end
 
     def create
@@ -93,7 +170,7 @@ module V1
 
     def destroy
       customer =  current_user.stripe_customer
-      subscription = customer.subscription.retrieve(current_user.stripe_subscription_id).delete
+      subscription = customer.subscriptions.retrieve(current_user.stripe_subscription_id).delete
 
       expires_at = Time.zone.at(subscription.current_period_end)
       if current_user.update(expires_at: expires_at, stripe_subscription_id: nil)

@@ -11,7 +11,11 @@ Rails.application.routes.draw do
       resources :roadmap_elements, except: :show
     end
     resource :sessions, only: %i[create destroy show]
-    resource :subscription
+    resource :subscription do
+      post :preview, to: 'subscriptions#preview'
+      post :upgrade, to: 'subscriptions#upgrade'
+      post :downgrade, to: 'subscriptions#downgrade'
+    end
     post :check, to: 'users#check'
     post :forgot, to: 'users#forgot'
     post :reset, to: 'users#reset'
