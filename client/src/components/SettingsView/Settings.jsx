@@ -17,6 +17,11 @@ import './Styles/Settings.scss';
 class Settings extends Component {
   componentWillMount() {
     this.props.subscription.getPlan();
+    this.props.roadmapElements.turnDimmerOn();
+  }
+
+  componentWillUnmount() {
+    this.props.roadmapElements.turnDimmerOff();
   }
 
   handleSignOut = (e) => {

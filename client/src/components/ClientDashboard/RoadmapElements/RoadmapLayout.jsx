@@ -106,11 +106,9 @@ export default class RoadmapLayout extends Component {
 
   handleShowSettings = () => {
     this.props.history.push(`${this.props.match.url}/settings`);
-    this.props.roadmapElements.turnDimmerOn();
   }
 
   handleHideSettings = () => {
-    this.props.roadmapElements.turnDimmerOff();
     this.props.history.push(`${this.props.match.url}`);
   }
 
