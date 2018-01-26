@@ -5,11 +5,15 @@ import Api from '../helpers/api';
 class Subscription {
   subscription = '/v1/subscription';
   originalPlan = ""
+
+  @observable previewCost = 0;
   @observable cardErrors = "";
   @observable cardSuccess = "";
   @observable planCost = "150";
+  @observable prorationDate = 0;
   @observable isLoading = false;
   @observable showSelected = true;
+  @observable transactionDate = "";
   @observable disableSubmit = true;
   @observable animationVisible = false;
   @observable isDeleteModalOpen = false;
@@ -19,6 +23,7 @@ class Subscription {
   @observable subscriptionAction = "none";
   @observable planName = "Standard track";
   @observable currentSubscriptionCost = "0";
+  @observable currentSubscriptionName = "";
   @observable isDowngradeModalOpen = false;
   @observable cardInfo = { card_brand: "",
                             card_last4: "",
@@ -124,14 +129,17 @@ class Subscription {
       this.planCost = "350";
       this.planName = "Fast track";
       this.currentSubscriptionCost = "350";
+      this.currentSubscriptionName = "Fast track";
     } else if (this.selectedPlan === "Starter") {
       this.planCost = "50";
       this.planName = "Self starter";
       this.currentSubscriptionCost = "50";
+      this.currentSubscriptionName = "Self starter";
     } else {
       this.planCost = "150";
       this.planName = "Standard track";
       this.currentSubscriptionCost = "150";
+      this.currentSubscriptionName = "Standard track";
     }
   }
 
@@ -196,6 +204,70 @@ class Subscription {
     } else if (status === 400) {
       const body = await response.json();
       this.cardErrors = body.error;
+      this.setIsLoading(false);
+    }
+  }
+
+  @action async upgradeSubscription(callBack) {
+    this.setIsLoading(true);
+    const response = await Api.post(
+      `${this.subscription}/upgrade`, {
+        plan: this.selectedPlan,
+        proration_date: this.prorationDate,
+      }
+    );
+    const status = await response.status;
+
+    if (status === 200) {
+      this.setIsLoading(false);
+      if (callBack) {
+        callBack();
+      }
+    } else if (status === 400) {
+      this.setIsLoading(false);
+    }
+  }
+
+  @action async downgradeSubscription(callBack) {
+    this.setIsLoading(true);
+    const response = await Api.post(
+      `${this.subscription}/downgrade`, {
+        plan: this.selectedPlan,
+      }
+    );
+    const status = await response.status;
+
+    if (status === 200) {
+      this.setIsLoading(false);
+      if (callBack) {
+        callBack();
+      }
+    } else if (status === 400) {
+      this.setIsLoading(false);
+    }
+  }
+
+  @action async previewCharges(callBack) {
+    this.setIsLoading(true);
+    const response = await Api.post(
+      `${this.subscription}/preview`, {
+        plan: this.selectedPlan,
+      }
+    );
+    const status = await response.status;
+
+    if (status === 200) {
+      const body = await response.json();
+
+      this.previewCost = body.cost;
+      this.prorationDate = body.proration_date;
+      this.transactionDate = body.next_transaction;
+
+      this.setIsLoading(false);
+      if (callBack) {
+        callBack();
+      }
+    } else if (status === 400) {
       this.setIsLoading(false);
     }
   }

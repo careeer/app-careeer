@@ -8,7 +8,7 @@ const CurtainsDown = props => (
     animation="slide down"
     visible={props.visible}
     onComplete={props.handleAnimationComplete}
-    duration={{ hide: 4000, show: 4000 }}
+    duration={{ hide: 4000, show: 1000 }}
   >
     <Dimmer
       page

@@ -55,6 +55,9 @@ class Settings extends Component {
 
   handleSegmentClick = (plan, planName, planCost) => {
     this.props.subscription.onPlanClick(plan, planName, planCost);
+    if (this.props.subscription.subscriptionAction !== "none") {
+      this.props.subscription.previewCharges();
+    }
   }
 
   handleCardErrors = (event) => {
@@ -94,14 +97,19 @@ class Settings extends Component {
     const avatarUrl = this.props.roadmapElements.currentClientAvatar || 'https://res.cloudinary.com/careeer/image/upload/v1504959238/Careeer_logo_a3gu5x.png';
 
     const { cardInfo,
+            planName,
+            planCost,
             isLoading,
             cardErrors,
+            previewCost,
             selectedPlan,
             disableSubmit,
+            transactionDate,
             isDeleteModalOpen,
             isUpgradeModalOpen,
             subscriptionAction,
-            isDowngradeModalOpen } = this.props.subscription;
+            isDowngradeModalOpen,
+            currentSubscriptionName } = this.props.subscription;
 
     return (
       <Dimmer
@@ -156,11 +164,16 @@ class Settings extends Component {
             path={subscriptionPath}
             render={() => (
               <SubscriptionChange
+                isLoading={isLoading} 
+                previewCost={previewCost}
                 selectedPlan={selectedPlan}
                 onGoBackClick={this.goBackToMain}
+                transactionDate={transactionDate}
                 subscriptionAction={subscriptionAction}
+                newPlan={{ name: planName, cost: planCost}}
                 handleSegmentClick={this.handleSegmentClick}
                 onSaveChanges={this.handleChangeSubscription}
+                currentSubscriptionName={currentSubscriptionName}
                 onCancelAccountClick={this.handleCancelAccountClick}
               />
             )}

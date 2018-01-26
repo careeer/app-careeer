@@ -34,7 +34,7 @@ module V1
         subscription_proration_date: proration_date,
       })
 
-      next_transaction = Time.zone.at(subscription.current_period_end).strftime("%m/%d/%Y")
+      next_transaction = Time.zone.at(subscription.current_period_end).strftime("%B %d, %Y")
 
       # Calculate the proration cost:
       current_prorations = invoice.lines.data.select { |ii| ii.period.start == proration_date }

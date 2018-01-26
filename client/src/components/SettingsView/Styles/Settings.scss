@@ -34,6 +34,18 @@ div.ui.active.transition.visible.inverted.page.dimmer.settingsDimmer {
 
   .messageBody.settings {
     margin-top: 1em;
+
+    h4 {
+      font-size: 2em;
+    }
+
+    p.description {
+      font-size: 1.2em;
+    }
+
+    .plans {
+      margin-top: 2em;
+    }
   }
 
   button.ui.button {
@@ -55,6 +67,10 @@ div.ui.active.transition.visible.inverted.page.dimmer.settingsDimmer {
       color: #fff;
       background-color: #24c63a;
       margin: 3em auto 1.5em auto;
+
+      &:disabled {
+        margin: 3em auto 1.5em auto !important;
+      }
     }
 
     &.changePaymentButton {
@@ -80,6 +96,15 @@ div.ui.active.transition.visible.inverted.page.dimmer.settingsDimmer {
     &:focus {
       outline: none;
     }
+  }
+
+  .ui.basic.segment {
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .ui.loading.segment:before{
+    background: rgba(254, 249, 159, 1);
   }
 
   .cancelLinkContainer {

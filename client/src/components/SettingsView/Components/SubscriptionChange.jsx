@@ -6,9 +6,14 @@ import Plans from '../../LandingPage/Components/Plans';
 import SubscriptionChangeMessage from './SubscriptionChangeMessage';
 
 const SubscriptionChange = props => (
-  <div className="messageBody">
+  <div className="messageBody settings">
     <SubscriptionChangeMessage
+      newPlan={props.newPlan}
+      isLoading={props.isLoading}
+      previewCost={props.previewCost}
+      transactionDate={props.transactionDate}
       subscriptionAction={props.subscriptionAction}
+      currentSubscriptionName={props.currentSubscriptionName}
     />
     <Plans
       selectedAccount={props.selectedPlan}
@@ -18,6 +23,7 @@ const SubscriptionChange = props => (
       content="Save changes"
       onClick={props.onSaveChanges}
       className="changeSubscriptionButton"
+      disabled={props.subscriptionAction === 'none'}
     />
     <Button
       basic
@@ -39,12 +45,22 @@ const SubscriptionChange = props => (
 );
 
 SubscriptionChange.propTypes = {
+  newPlan: PropTypes.shape(
+    {
+      cost: PropTypes.string,
+      name: PropTypes.string,
+    }).isRequired,
+  isLoading: PropTypes.bool.isRequired,
   onGoBackClick: PropTypes.func.isRequired,
   onSaveChanges: PropTypes.func.isRequired,
   selectedPlan: PropTypes.string.isRequired,
   handleSegmentClick: PropTypes.func.isRequired,
   subscriptionAction: PropTypes.string.isRequired,
   onCancelAccountClick: PropTypes.func.isRequired,
+
+  previewCost: PropTypes.number.isRequired,
+  transactionDate: PropTypes.string.isRequired,
+  currentSubscriptionName: PropTypes.string.isRequired,
 };
 
 export default SubscriptionChange;

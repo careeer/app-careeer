@@ -10,7 +10,7 @@ module V1
     # GET /clients.json
     def index
       if current_user.try(:admin?)
-        @clients = Client.all.order('created_at')
+        @clients = Client.where(client_status: nil).order('created_at')
         render :index, status: :ok
       else
         head(:unprocessable_entity)

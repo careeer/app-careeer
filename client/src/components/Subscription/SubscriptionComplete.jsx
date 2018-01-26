@@ -17,7 +17,7 @@ export default class SubscriptionComplete extends Component {
   }
 
   handleOnShow = () => {
-    setTimeout(this.handleClose, 2500);
+    setTimeout(this.handleClose, 2000);
   }
 
   handleClose = () => {
@@ -37,7 +37,7 @@ export default class SubscriptionComplete extends Component {
           animation="slide down"
           visible={this.state.open}
           onShow={this.handleOnShow}
-          duration={{ hide: 1500, show: 4000 }}
+          duration={{ hide: 1000, show: 4000 }}
         >
           <Dimmer
             page
