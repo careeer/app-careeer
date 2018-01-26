@@ -4,7 +4,7 @@ import Api from '../helpers/api';
 
 class Subscription {
   subscription = '/v1/subscription';
-
+  originalPlan = ""
   @observable cardErrors = "";
   @observable cardSuccess = "";
   @observable planCost = "150";
@@ -100,12 +100,17 @@ class Subscription {
     }
   }
 
+  @action resetChangePlan() {
+    this.populateSelectedPlanInfo(this.originalPlan);
+  }
+
   @action async getPlan() {
     const response = await Api.get(`${this.subscription}`);
     const status = await response.status;
 
     if (status === 200) {
       const body = await response.json();
+      this.originalPlan = body.plan;
       this.populateSelectedPlanInfo(body.plan);
       if (body.card_last4) {
         this.updateCardInfoObject(body);

@@ -63,6 +63,7 @@ class Settings extends Component {
   }
 
   goBackToMain = () => {
+    this.props.subscription.resetChangePlan();
     this.props.history.push(`${this.props.match.url}`);
   }
 
