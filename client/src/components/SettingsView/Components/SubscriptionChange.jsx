@@ -1,20 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'semantic-ui-react';
+
 import Plans from '../../LandingPage/Components/Plans';
+import SubscriptionChangeMessage from './SubscriptionChangeMessage';
 
 const SubscriptionChange = props => (
   <div className="messageBody">
-    <div>
-      <h4>
-        All plans include
-      </h4>
-      <p className="plans">
-        one dedicated coach <br />
-        personalized career roadmap <br />
-        unlimited messaging <br />
-      </p>
-    </div>
+    <SubscriptionChangeMessage
+      subscriptionAction={props.subscriptionAction}
+    />
     <Plans
       selectedAccount={props.selectedPlan}
       handleSegmentClick={props.handleSegmentClick}
@@ -48,6 +43,7 @@ SubscriptionChange.propTypes = {
   onSaveChanges: PropTypes.func.isRequired,
   selectedPlan: PropTypes.string.isRequired,
   handleSegmentClick: PropTypes.func.isRequired,
+  subscriptionAction: PropTypes.string.isRequired,
   onCancelAccountClick: PropTypes.func.isRequired,
 };
 

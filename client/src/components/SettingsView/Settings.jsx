@@ -152,6 +152,7 @@ class Settings extends Component {
               <SubscriptionChange
                 selectedPlan={selectedPlan}
                 onGoBackClick={this.goBackToMain}
+                subscriptionAction={subscriptionAction}
                 handleSegmentClick={this.handleSegmentClick}
                 onSaveChanges={this.handleChangeSubscription}
                 onCancelAccountClick={this.handleCancelAccountClick}
