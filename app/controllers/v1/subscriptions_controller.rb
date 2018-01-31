@@ -79,7 +79,7 @@ module V1
           (updated_subscription.plan.amount / 100.00),
           current_user.card_last4,
           next_transaction
-        ).deliver
+        ).deliver_later
 
         current_user.assign_attributes(
           plan: params[:plan]
@@ -109,6 +109,8 @@ module V1
         subscription.prorate = false
         updated_subscription = subscription.save
 
+        next_transaction = Time.zone.at(updated_subscription.current_period_end).strftime("%B %d, %Y")
+
         CareeerMailer.downgrade_subscription(
           current_user.email,
           current_user.clients.first,
@@ -116,7 +118,7 @@ module V1
           (updated_subscription.plan.amount / 100.00),
           current_user.card_last4,
           next_transaction
-        ).deliver
+        ).deliver_later
 
         current_user.assign_attributes(
           plan: params[:plan]
@@ -170,11 +172,11 @@ module V1
         customer.default_source = source.id
         customer.save
 
-        CareeerMailer.downgrade_subscription(
+        CareeerMailer.change_payment(
           current_user.email,
           current_user.clients.first,
           current_user.card_last4,
-        ).deliver
+        ).deliver_later
 
         current_user.assign_attributes(
           card_last4: params[:last4],
