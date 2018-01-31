@@ -16,9 +16,9 @@ module Webhooks
 
       subscription = Stripe::Subscription.retrieve(user.stripe_subscription_id)
 
-      readable_amount = (charge.amount.to_i) / 100
+      readable_amount = (charge.amount.to_i) / 100.00
 
-      next_transaction = Time.zone.at(subscription.current_period_end).strftime("%m/%d/%Y")
+      next_transaction = Time.zone.at(subscription.current_period_end).strftime("%B %d, %Y")
 
       CareeerMailer.payment_confirmation(
         user.email,

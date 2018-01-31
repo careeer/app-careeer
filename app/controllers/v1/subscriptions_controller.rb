@@ -75,8 +75,8 @@ module V1
           current_user.email,
           current_user.clients.first,
           updated_subscription.plan.name,
-          (invoice.amount_due / 100.0),
-          (updated_subscription.plan.amount / 100.0),
+          (invoice.amount_due / 100.00),
+          (updated_subscription.plan.amount / 100.00),
           current_user.card_last4,
           next_transaction
         ).deliver
@@ -113,7 +113,7 @@ module V1
           current_user.email,
           current_user.clients.first,
           updated_subscription.plan.name,
-          (updated_subscription.plan.amount / 100.0),
+          (updated_subscription.plan.amount / 100.00),
           current_user.card_last4,
           next_transaction
         ).deliver
