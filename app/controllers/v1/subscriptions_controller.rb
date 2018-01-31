@@ -42,6 +42,7 @@ module V1
       current_prorations.each do |p|
           cost += p.amount
       end
+
       render json: {
         cost: cost / 100.0,
         proration_date: proration_date,
@@ -61,13 +62,24 @@ module V1
             },
         ]
         subscription.proration_date = params[:proration_date]
-        subscription.save
+        updated_subscription = subscription.save
 
+        next_transaction = Time.zone.at(updated_subscription.current_period_end).strftime("%B %d, %Y")
 
         invoice = Stripe::Invoice.create(
           :customer => customer.id,
         )
         invoice.pay
+
+        CareeerMailer.upgrade_subscription(
+          current_user.email,
+          current_user.clients.first,
+          updated_subscription.plan.name,
+          (invoice.amount_due / 100.0),
+          (updated_subscription.plan.amount / 100.0),
+          current_user.card_last4,
+          next_transaction
+        ).deliver
 
         current_user.assign_attributes(
           plan: params[:plan]
@@ -95,7 +107,17 @@ module V1
             },
         ]
         subscription.prorate = false
-        subscription.save
+        updated_subscription = subscription.save
+
+        CareeerMailer.downgrade_subscription(
+          current_user.email,
+          current_user.clients.first,
+          updated_subscription.plan.name,
+          (updated_subscription.plan.amount / 100.0),
+          current_user.card_last4,
+          next_transaction
+        ).deliver
+
         current_user.assign_attributes(
           plan: params[:plan]
         )
@@ -147,6 +169,12 @@ module V1
 
         customer.default_source = source.id
         customer.save
+
+        CareeerMailer.downgrade_subscription(
+          current_user.email,
+          current_user.clients.first,
+          current_user.card_last4,
+        ).deliver
 
         current_user.assign_attributes(
           card_last4: params[:last4],
