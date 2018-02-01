@@ -14,6 +14,7 @@ div.ui.left.aligned.grid {
 
 div.ui.header.mainHeader {
   height: 100px;
+  margin-bottom: 0;
 
   a.careeer {
     position: relative;
@@ -215,42 +216,46 @@ div#landingPage.ui.grid {
     }
   }
 
-  .row.mainHeadline  > .column {
-    h1 {
-      margin: 1.25em 0 0 1em;
-      width: 420px;
-      height: 340px;
-      font-family: Raleway;
-      font-size: 72px;
-      font-weight: bolder;
-      letter-spacing: 9px;
-      text-align: left;
-      color: #000000;
-    }
+  .row.mainHeadline  {
+    padding-top: 0;
 
-    h4 {
-      padding-left: 1em;
-      margin-left: auto;
-      margin-right: auto;
-    }
+    & > .column {
+      h1 {
+        margin: 1.25em 0 0 1.5em;
+        width: 420px;
+        height: 340px;
+        font-family: Raleway;
+        font-size: 72px;
+        font-weight: bolder;
+        letter-spacing: 9px;
+        text-align: left;
+        color: #000000;
+      }
 
-    img.screensIcon {
-      width: 420px;
-      height: 210px;
-      margin-top: 5em;
-      object-fit: contain;
-    }
+      h4 {
+        padding-left: 1em;
+        margin-left: auto;
+        margin-right: auto;
+      }
 
-    p {
-      width: 520px;
-      padding-left: 1em;
-      margin-left: auto;
-      margin-right: auto;
-      font-family: Cabin;
-      font-size: 20px;
-      font-weight: 500;
-      letter-spacing: 2.5px;
-      text-align: left;
+      img.screensIcon {
+        width: 420px;
+        height: 210px;
+        margin-top: 2em;
+        object-fit: contain;
+      }
+
+      p {
+        width: 520px;
+        padding-left: 1em;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: Cabin;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 2.5px;
+        text-align: left;
+      }
     }
   }
 
@@ -778,7 +783,7 @@ div#landingPage.ui.grid {
 
     .row.mainHeadline  > .column {
       h1 {
-        margin: 1.25em 0 0 0;
+        margin: 1.75em 0 0 1.25em;
         width: 263px;
         height: 216px;
         font-size: 46px;
