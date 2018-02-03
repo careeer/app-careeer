@@ -27,6 +27,17 @@ class CareeerMailer < ApplicationMailer
     mail(to: email, subject: subjectMessage)
   end
 
+  def subscription_renewal(email, client, plan_name, plan_cost, last4, next_transaction)
+      @name = client.name.split.first
+      @plan_name = plan_name
+      @last4 = last4
+      @plan_cost = plan_cost
+      @next_transaction = next_transaction
+      @url = "https://www.careeer.me/" + client.slug + "/settings"
+      subjectMessage = 'Subscription renewal - %s' % [@plan_name]
+      mail(to: email, subject: subjectMessage)
+  end
+
   def upgrade_subscription(email, client, plan_name, prorated_cost, plan_cost, last4, next_transaction)
     @name = client.name.split.first
     @plan_name = plan_name

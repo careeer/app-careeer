@@ -3,4 +3,5 @@ StripeEvent.signing_secret = Rails.application.secrets.stripe_signing_secret
 
 StripeEvent.configure do |events|
   events.subscribe "charge.succeeded", Webhooks::ChargeSucceeded.new
+  events.subscribe "invoice.upcoming", Webhooks::InvoiceUpcoming.new
 end
