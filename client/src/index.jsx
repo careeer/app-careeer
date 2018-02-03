@@ -13,9 +13,7 @@ import HttpsRedirect from './components/Lib/HttpsRedirect';
 
 const Main = () => (
   <StripeProvider
-    apiKey={
-      (process.env.NODE_ENV === 'production' ? 'pk_test_VrMGLNXqyTQdQc8pHnm6RSyC' : 'pk_test_VrMGLNXqyTQdQc8pHnm6RSyC')
-    }
+    apiKey={process.env.REACT_APP_STRIPE_KEY}
   >
     <Provider {...stores}>
       <HttpsRedirect>
