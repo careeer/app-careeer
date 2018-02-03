@@ -23,7 +23,7 @@ module Webhooks
       CareeerMailer.payment_confirmation(
         user.email,
         user.clients.first,
-        charge.statement_descriptor,
+        subscription.plan.name,
         readable_amount,
         charge.source.last4,
         next_transaction
