@@ -204,6 +204,10 @@ module V1
 
       expires_at = Time.zone.at(subscription.current_period_end)
       if current_user.update(expires_at: expires_at, stripe_subscription_id: nil)
+        CareeerMailer.cancel_subscription(
+          current_user.email,
+          current_user.clients.first,
+        ).deliver_later
         head(:ok)
       else
         head(:unprocessable_entity)

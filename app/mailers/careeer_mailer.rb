@@ -65,4 +65,10 @@ class CareeerMailer < ApplicationMailer
 
     mail(to: email, subject: 'Payment information changed')
   end
+
+  def cancel_subscription(email, client)
+    @name = client.name.split.first
+
+    mail(to: email, subject: 'Subscription canceled')
+  end
 end
