@@ -24,14 +24,14 @@ const Plans = props => (
       padded
       color="green"
       className={(props.selectedAccount === 'Standard' ? 'selected' : 'standard')}
-      onClick={() => props.handleSegmentClick('Standard', 'Standard track', '150')}
+      onClick={() => props.handleSegmentClick('Standard', 'Standard track', '200')}
     >
       <Label floating color="green" ribbon="right">most popular</Label>
       <header>
         Standard track
       </header>
       <p>
-        $150/<span>month</span>
+        $200/<span>month</span>
       </p>
       <div className="planDescription">
         +1 hour of voice and video with your coach
@@ -41,13 +41,13 @@ const Plans = props => (
       padded
       color="yellow"
       className={(props.selectedAccount === 'Starter' ? 'selected' : 'starter')}
-      onClick={() => props.handleSegmentClick('Starter', 'Self starter', '50')}
+      onClick={() => props.handleSegmentClick('Starter', 'Self starter', '100')}
     >
       <header>
         Self starter
       </header>
       <p>
-        $50/<span>month</span>
+        $100/<span>month</span>
       </p>
       <div className="planDescription">
         Dedicated coach, personalized roadmap, and unlimited messaging

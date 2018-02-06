@@ -5,6 +5,9 @@ import PlanSelected from '../../Subscription/Components/PlanSelected';
 
 const SettingsMain = props => (
   <div className="messageBody">
+    <h2 className="introMessage">
+      Your current plan:
+    </h2>
     <PlanSelected selectedPlan={props.selectedPlan} />
     <Button
       content="Change subscription"

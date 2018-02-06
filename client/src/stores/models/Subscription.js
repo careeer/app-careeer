@@ -9,7 +9,7 @@ class Subscription {
   @observable previewCost = 0;
   @observable cardErrors = "";
   @observable cardSuccess = "";
-  @observable planCost = "150";
+  @observable planCost = "200";
   @observable prorationDate = 0;
   @observable isLoading = false;
   @observable showSelected = true;
@@ -132,14 +132,14 @@ class Subscription {
       this.currentSubscriptionCost = "350";
       this.currentSubscriptionName = "Fast track";
     } else if (this.selectedPlan === "Starter") {
-      this.planCost = "50";
+      this.planCost = "100";
       this.planName = "Self starter";
-      this.currentSubscriptionCost = "50";
+      this.currentSubscriptionCost = "100";
       this.currentSubscriptionName = "Self starter";
     } else {
-      this.planCost = "150";
+      this.planCost = "200";
       this.planName = "Standard track";
-      this.currentSubscriptionCost = "150";
+      this.currentSubscriptionCost = "200";
       this.currentSubscriptionName = "Standard track";
     }
   }

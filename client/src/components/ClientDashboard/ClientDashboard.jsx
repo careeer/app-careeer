@@ -74,7 +74,7 @@ class ClientDashboard extends Component {
             isVisible={this.state.open}
             modalHeader="Delete account?"
             positiveLabel="Delete account"
-            modalContent="We understand that now is not the right time. Come back and start another free trial when you're ready."
+            modalContent="We understand that now is not the right time. Come back at anytime to continue working with your coach!"
             handlePositiveClick={this.archiveClient}
           />
         </div>

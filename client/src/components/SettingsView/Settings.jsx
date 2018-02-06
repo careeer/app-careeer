@@ -204,7 +204,7 @@ class Settings extends Component {
             isVisible={isDeleteModalOpen}
             modalHeader="Cancel subscription and delete account?"
             positiveLabel="Cancel &amp; delete"
-            modalContent="Are you sure? This action cannot be undone. You will lose access to your coach, toolbox, and roadmap. Start a new free trial any time."
+            modalContent="Are you sure? This action cannot be undone. You will lose access to your coach, toolbox, and roadmap. Come back at anytime!"
             handlePositiveClick={this.archiveClient}
           />
           <ModalComponent

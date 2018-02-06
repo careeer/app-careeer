@@ -15,7 +15,7 @@ const SelectPlanMessage = props => (
       src={props.avatarUrl || 'https://res.cloudinary.com/careeer/image/upload/v1504959238/Careeer_logo_a3gu5x.png'}
     />
     <h2 className="introMessage">
-      Selected plan
+      Here’s the plan you selected:
     </h2>
     <PlanSelected selectedPlan={props.selectedPlan} />
   </div>

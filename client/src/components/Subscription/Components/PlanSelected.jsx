@@ -20,13 +20,13 @@ function PlanSelected(props) {
     case 'Standard':
       color = 'green';
       header = 'Standard track';
-      price = '$150';
+      price = '$200';
       description = '+1 hour of voice and video with your coach';
       break;
     case 'Starter':
       color = 'yellow';
       header = 'Self starter';
-      price = '$50';
+      price = '$100';
       description = 'Dedicated coach, personalized roadmap, and unlimited messaging';
       break;
     default:
