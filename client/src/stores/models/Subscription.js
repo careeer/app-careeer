@@ -22,9 +22,11 @@ class Subscription {
   @observable subscriptionStep = "intro";
   @observable subscriptionAction = "none";
   @observable planName = "Standard track";
-  @observable currentSubscriptionCost = "0";
+  @observable subscribed = false;
+  @observable subscriptionEndDate = "";
   @observable currentSubscriptionName = "";
   @observable isDowngradeModalOpen = false;
+  @observable currentSubscriptionCost = "0";
   @observable cardInfo = { card_brand: "",
                             card_last4: "",
                             card_exp_year: "",
@@ -116,6 +118,10 @@ class Subscription {
 
     if (status === 200) {
       const body = await response.json();
+      this.subscriptionStatus = body.subscription_status;
+      this.subscribed = body.subscribed;
+      console.log(this.subscriptionStatus);
+      console.log(this.subscribed);
       this.originalPlan = body.plan;
       this.populateSelectedPlanInfo(body.plan);
       if (body.card_last4) {
