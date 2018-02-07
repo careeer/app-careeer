@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180110073431) do
+ActiveRecord::Schema.define(version: 20180204012447) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -108,6 +108,7 @@ ActiveRecord::Schema.define(version: 20180110073431) do
     t.string "card_brand"
     t.datetime "expires_at"
     t.string "plan", default: "Standard"
+    t.string "subscription_status", default: "trial"
     t.index ["authentication_token"], name: "index_users_on_authentication_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["password_changed_at"], name: "index_users_on_password_changed_at"

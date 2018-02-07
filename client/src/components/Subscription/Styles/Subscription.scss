@@ -368,6 +368,11 @@ div#root > div > div > div {
       width: fit-content;
       font-family: Cabin;
       letter-spacing: 1.8px;
+
+      &.deleteAccount {
+        margin-top: 1em;
+        color: #c63224;
+      }
     }
   }
 }

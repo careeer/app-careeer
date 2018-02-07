@@ -272,6 +272,21 @@ class Subscription {
       this.setIsLoading(false);
     }
   }
+
+  @action async cancelSubscription(callBack) {
+    this.setIsLoading(true);
+    const response = await Api.delete(this.subscription);
+    const status = await response.status;
+
+    if (status === 200) {
+      this.setIsLoading(false);
+      if (callBack) {
+        callBack();
+      }
+    } else if (status === 400) {
+      this.setIsLoading(false);
+    }
+  }
 }
 
 export default new Subscription();
