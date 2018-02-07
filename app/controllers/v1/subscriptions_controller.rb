@@ -46,7 +46,7 @@ module V1
       end
 
       render json: {
-        cost: cost / 100.0,
+        cost: cost / 100.00,
         proration_date: proration_date,
         next_transaction: next_transaction,
       }, status: :ok
