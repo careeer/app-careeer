@@ -71,7 +71,7 @@ module V1
         invoice = Stripe::Invoice.create(
           :customer => customer.id,
         )
-        invoice.pay
+        # invoice.pay
 
         CareeerMailer.upgrade_subscription(
           current_user.email,
