@@ -1,18 +1,8 @@
 <p>Hi <%= @name %>,</p>
 
 <p>
-  We’re writing to confirm your purchase of a <%= @plan_name %> membership. Today, your card ending in <%= @last4 %> was charged $<%= @plan_cost %>.
+  We were unable to charge $<%= @plan_cost %> to your card ending in <%= @last4 %> for your <%= @plan_name %> subscription. Please update your billing information <%= link_to 'here', @url %>.
 </p>
-
-<p>
-  Your membership will auto renew on <%= @next_transaction %>. You can upgrade, downgrade, or cancel your membership <%= link_to 'here', @url %> at anytime.
-</p>
-
-<p>
-  If you did not authorize this transaction please respond to this message immediately.
-</p>
-
-<br>
 <p>
   We appreciate your business and are honored to support you in accomplishing your big goals.
 </p>
