@@ -66,6 +66,17 @@ class CareeerMailer < ApplicationMailer
     mail(to: email, subject: 'Payment information changed')
   end
 
+  def payment_failed(email, client, plan_name, plan_cost, last4, next_transaction)
+    @name = client.name.split.first
+    @plan_name = plan_name
+    @last4 = last4
+    @plan_cost = plan_cost
+    @next_transaction = next_transaction
+    @url = "https://www.careeer.me/" + client.slug + "/settings"
+    subjectMessage = 'Payment confirmation - %s' % [@plan_name]
+    mail(to: email, subject: subjectMessage)
+  end
+
   def cancel_subscription(email, client)
     @name = client.name.split.first
 

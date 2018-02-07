@@ -39,7 +39,7 @@ export default class OnBoardingThankYou extends Component {
   render() {
     this.checkIfNameIsFilled();
     return (
-      <RoadmapLayout clientName={this.state.clientName} />
+      <RoadmapLayout clientName={this.state.clientName} {...this.props} />
     );
   }
 }

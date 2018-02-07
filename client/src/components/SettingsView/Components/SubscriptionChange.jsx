@@ -33,16 +33,6 @@ const SubscriptionChange = props => (
       onClick={props.onGoBackClick}
       className="changePaymentButton"
     />
-    <div className="cancelLinkContainer">
-      <a
-        role="link"
-        tabIndex={0}
-        className="cancelLink"
-        onClick={props.onCancelAccountClick}
-      >
-        Cancel subscription and delete account
-      </a>
-    </div>
   </div>
 );
 
@@ -55,13 +45,11 @@ SubscriptionChange.propTypes = {
   isLoading: PropTypes.bool.isRequired,
   onGoBackClick: PropTypes.func.isRequired,
   onSaveChanges: PropTypes.func.isRequired,
+  previewCost: PropTypes.number.isRequired,
   selectedPlan: PropTypes.string.isRequired,
+  transactionDate: PropTypes.string.isRequired,
   handleSegmentClick: PropTypes.func.isRequired,
   subscriptionAction: PropTypes.string.isRequired,
-  onCancelAccountClick: PropTypes.func.isRequired,
-
-  previewCost: PropTypes.number.isRequired,
-  transactionDate: PropTypes.string.isRequired,
   currentSubscriptionName: PropTypes.string.isRequired,
 };
 

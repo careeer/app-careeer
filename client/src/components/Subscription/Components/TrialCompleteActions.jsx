@@ -15,6 +15,7 @@ const TrialCompleteActions = props => (
     <a
       role="link"
       tabIndex={0}
+      className="deleteAccount"
       onClick={props.handleDeleteAccount}
     >
       Delete account

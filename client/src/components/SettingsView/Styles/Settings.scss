@@ -1,7 +1,8 @@
 div.ui.active.transition.visible.inverted.page.dimmer.settingsDimmer {
-  opacity: 0.90;
+  opacity: 0.93;
   overflow-y: auto;
   z-index: 2000000;
+  will-change: unset;
   background-color: #fef99f;
 
   & > div.content > div.center {
@@ -33,10 +34,15 @@ div.ui.active.transition.visible.inverted.page.dimmer.settingsDimmer {
   }
 
   .messageBody.settings {
-    margin-top: 1em;
+    margin-top: 0;
 
     h4 {
       font-size: 2em;
+      margin-top: 0;
+    }
+
+    .introMessage {
+      margin-top: 0;
     }
 
     p.description {
@@ -68,7 +74,7 @@ div.ui.active.transition.visible.inverted.page.dimmer.settingsDimmer {
     &.changeSubscriptionButton {
       color: #fff;
       background-color: #24c63a;
-      margin: 3em auto 1.5em auto;
+      margin: 2em auto 1.5em auto;
 
       &:disabled {
         margin: 3em auto 1.5em auto !important;

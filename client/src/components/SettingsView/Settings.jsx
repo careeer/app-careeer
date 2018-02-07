@@ -109,6 +109,13 @@ class Settings extends Component {
     this.handleCloseModals();
   }
 
+  deleteSubscription = () => {
+    this.props.subscription.cancelSubscription(() => {
+      this.handleCloseAndShowBanner(`Subscription cancelled`, true);
+    });
+    this.handleCloseModals();
+  }
+
   render() {
     const mainPath = `${this.props.match.url}`;
     const paymentPath = `${this.props.match.url}/paymentInfo`;
@@ -141,7 +148,7 @@ class Settings extends Component {
         <CareeerLogo />
         <CloseButton onCloseClick={this.props.onCloseClick} />
         <div className="settingsLayout">
-          <div className="messageBody">
+          <div className="messageBody settings">
             <h1 className="introHeader">
               {this.props.roadmapElements.currentClient}!
             </h1>
@@ -161,6 +168,7 @@ class Settings extends Component {
                 onSignOutClick={this.handleSignOut}
                 onChangePaymentClick={this.handleChangePayment}
                 onChangeSubscriptionClick={this.showSubscriptionSelection}
+                onCancelAccountClick={this.handleCancelAccountClick}
               />
             )}
           />
@@ -194,7 +202,7 @@ class Settings extends Component {
                 handleSegmentClick={this.handleSegmentClick}
                 onSaveChanges={this.handleChangeSubscription}
                 currentSubscriptionName={currentSubscriptionName}
-                onCancelAccountClick={this.handleCancelAccountClick}
+
               />
             )}
           />
@@ -202,10 +210,10 @@ class Settings extends Component {
             negativeLabel="Go back"
             handleClose={this.handleCloseModals}
             isVisible={isDeleteModalOpen}
-            modalHeader="Cancel subscription and delete account?"
-            positiveLabel="Cancel &amp; delete"
-            modalContent="Are you sure? This action cannot be undone. You will lose access to your coach, toolbox, and roadmap. Come back at anytime!"
-            handlePositiveClick={this.archiveClient}
+            modalHeader="Cancel subscription?"
+            positiveLabel="Cancel subscription"
+            modalContent="We understand that now is not the right time. We will save your roadmap, just login when you’re ready to keep going! "
+            handlePositiveClick={this.deleteSubscription}
           />
           <ModalComponent
             negativeLabel="Cancel"

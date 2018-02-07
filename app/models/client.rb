@@ -1,5 +1,5 @@
 class Client < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
   extend FriendlyId
   friendly_id :name_url, use: :slugged
   has_many :roadmap_elements, dependent: :destroy

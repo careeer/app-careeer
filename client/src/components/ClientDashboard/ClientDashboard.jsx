@@ -34,7 +34,6 @@ class ClientDashboard extends Component {
   close = () => this.setState({ open: false });
 
   archiveClient = () => {
-    const { currentClientSlug } = this.props.roadmapElements;
     this.close();
     this.props.roadmapElements.deleteClient();
     this.props.history.push('/');
@@ -74,7 +73,7 @@ class ClientDashboard extends Component {
             isVisible={this.state.open}
             modalHeader="Delete account?"
             positiveLabel="Delete account"
-            modalContent="We understand that now is not the right time. Come back at anytime to continue working with your coach!"
+            modalContent="Are you sure? We will delete your account and roadmap. Come back anytime! "
             handlePositiveClick={this.archiveClient}
           />
         </div>
