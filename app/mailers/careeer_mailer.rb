@@ -77,9 +77,9 @@ class CareeerMailer < ApplicationMailer
     mail(to: email, subject: subjectMessage)
   end
 
-  def cancel_subscription(email, client)
+  def cancel_subscription(email, client, expiration_date)
     @name = client.name.split.first
-
+    @expiration_date = expiration_date
     mail(to: email, subject: 'Subscription canceled')
   end
 end

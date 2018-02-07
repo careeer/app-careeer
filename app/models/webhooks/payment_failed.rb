@@ -16,7 +16,7 @@ module Webhooks
         user.card_last4,
         next_transaction
       ).deliver
-
+      user.update(subscription_status: "pending")
     end
   end
 end

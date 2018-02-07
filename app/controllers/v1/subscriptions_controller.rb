@@ -5,6 +5,8 @@ module V1
   class SubscriptionsController < ApplicationController
     def show
       render json: {
+        subscribed: current_user.subscribed?,
+        subscription_status: current_user.subscription_status,
         plan: current_user.plan,
         card_last4: current_user.card_last4,
         card_exp_month: current_user.card_exp_month,
@@ -145,12 +147,16 @@ module V1
 
         current_user.assign_attributes(
           stripe_subscription_id: subscription.id,
+          subscription_status: "active",
+          plan: params[:plan],
+          expires_at: nil
+        )
+        current_user.assign_attributes(
           card_last4: params[:last4],
           card_exp_month: params[:exp_month],
           card_exp_year: params[:exp_year],
-          card_brand: params[:card_type],
-          plan: params[:plan]
-        )
+          card_brand: params[:card_type]
+        ) if params[:card_last4]
 
         if current_user.save
           head(:ok)
@@ -203,10 +209,12 @@ module V1
       subscription = customer.subscriptions.retrieve(current_user.stripe_subscription_id).delete
 
       expires_at = Time.zone.at(subscription.current_period_end)
-      if current_user.update(expires_at: expires_at, stripe_subscription_id: nil)
+
+      if current_user.update(expires_at: expires_at, subscription_status: "cancelled", stripe_subscription_id: nil)
         CareeerMailer.cancel_subscription(
           current_user.email,
           current_user.clients.first,
+          expires_at.strftime("%B %d, %Y")
         ).deliver_later
         head(:ok)
       else
