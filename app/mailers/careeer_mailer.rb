@@ -72,7 +72,7 @@ class CareeerMailer < ApplicationMailer
     @last4 = last4
     @plan_cost = plan_cost
     @url = "https://www.careeer.me/" + client.slug
-    subjectMessage = '$%s payment to Careeer! was unsuccessful' % [@plan_cost]
+    subjectMessage = '$%s payment to Careeer.me was unsuccessful' % [@plan_cost]
     mail(to: email, subject: subjectMessage)
   end
 
