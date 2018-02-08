@@ -193,6 +193,7 @@ class Settings extends Component {
             render={() => (
               <SubscriptionChange
                 isLoading={isLoading}
+                cardErrors={cardErrors}
                 previewCost={previewCost}
                 selectedPlan={selectedPlan}
                 onGoBackClick={this.goBackToMain}

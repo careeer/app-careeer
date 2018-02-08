@@ -13,6 +13,7 @@ module Webhooks
         card_exp_month: charge.source.exp_month,
         card_exp_year: charge.source.exp_year
       )
+      user.update(subscription_status: "active")
 
       subscription = Stripe::Subscription.retrieve(user.stripe_subscription_id)
 

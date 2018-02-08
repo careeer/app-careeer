@@ -19,11 +19,19 @@ const SubscriptionChange = props => (
       selectedAccount={props.selectedPlan}
       handleSegmentClick={props.handleSegmentClick}
     />
+    <div className="paymentErrors">
+      {props.cardErrors &&
+        <p>
+          {props.cardErrors} <br />
+          Update your payment information and try again
+        </p>
+      }
+    </div>
     <Button
       content="Save changes"
       loading={props.isLoading}
       onClick={props.onSaveChanges}
-      className="changeSubscriptionButton"
+      className="changeSubscriptionButton saveChanges"
       disabled={props.subscriptionAction === 'none' || props.isLoading}
     />
     <Button
@@ -43,6 +51,7 @@ SubscriptionChange.propTypes = {
       name: PropTypes.string,
     }).isRequired,
   isLoading: PropTypes.bool.isRequired,
+  cardErrors: PropTypes.string.isRequired,
   onGoBackClick: PropTypes.func.isRequired,
   onSaveChanges: PropTypes.func.isRequired,
   previewCost: PropTypes.number.isRequired,

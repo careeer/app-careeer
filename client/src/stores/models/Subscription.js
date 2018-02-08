@@ -110,6 +110,8 @@ class Subscription {
   @action resetChangePlan() {
     this.populateSelectedPlanInfo(this.originalPlan);
     this.subscriptionAction = "none";
+    this.cardErrors = "";
+    this.cardSuccess = "";
   }
 
   @action async getPlan() {
