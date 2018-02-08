@@ -9,7 +9,8 @@ const PageHeader = props => (
         tabIndex={0}
         onClick={props.handleTrialClick}
       >
-        Free trial completed
+        {props.subscriptionStatus === 'trial' ?
+        'Free trial completed' : 'Congratulations'}
       </a>
     </div>
 
@@ -39,6 +40,7 @@ PageHeader.propTypes = {
   freeTrial: PropTypes.bool,
   continueSubscription: PropTypes.bool,
   handleTrialClick: PropTypes.func.isRequired,
+  subscriptionStatus: PropTypes.string.isRequired,
   handleSubscriptionClick: PropTypes.func.isRequired,
   handleSelectPaymentClick: PropTypes.func.isRequired,
 };

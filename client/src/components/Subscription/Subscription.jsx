@@ -72,7 +72,8 @@ export default class Subscription extends Component {
             selectedPlan,
             disableSubmit,
             subscriptionStep,
-            animationVisible } = this.props.subscription;
+            animationVisible,
+            subscriptionStatus } = this.props.subscription;
 
     const introPath = `${this.props.match.url}`;
     const plansPath = `${this.props.match.url}/plans`;
@@ -89,6 +90,7 @@ export default class Subscription extends Component {
             introPath={introPath}
             plansPath={plansPath}
             checkoutPath={checkoutPath}
+            subscriptionStatus={subscriptionStatus}
             handleTrialClick={this.handleFreeTrialClick}
             handleSubscriptionClick={this.handleIntroClick}
             handleSelectPaymentClick={this.handleSelectPlanClick}
@@ -104,7 +106,9 @@ export default class Subscription extends Component {
             path={introPath}
             render={() => (
               <TrialComplete
+                planName={planName}
                 currentClient={currentClient}
+                subscriptionStatus={subscriptionStatus}
                 handleIntroClick={this.handleIntroClick}
                 currentClientAvatar={currentClientAvatar}
                 completeActions={completedElements.length}

@@ -23,7 +23,7 @@ class Subscription {
   @observable subscriptionAction = "none";
   @observable planName = "Standard track";
   @observable subscribed = false;
-  @observable subscriptionEndDate = "";
+  @observable subscriptionStatus = "";
   @observable currentSubscriptionName = "";
   @observable isDowngradeModalOpen = false;
   @observable currentSubscriptionCost = "0";
@@ -235,7 +235,6 @@ class Subscription {
     } else if (status === 402) {
       const body = await response.json();
       this.cardErrors = body.error;
-      console.log(this.cardErrors);
       this.setIsLoading(false);
     }
   }
@@ -257,7 +256,6 @@ class Subscription {
     } else if (status === 402) {
       const body = await response.json();
       this.cardErrors = body.error;
-      console.log(this.cardErrors);
       this.setIsLoading(false);
     }
   }

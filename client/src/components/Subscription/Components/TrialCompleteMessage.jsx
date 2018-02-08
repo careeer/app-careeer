@@ -14,7 +14,8 @@ const TrialCompleteMessage = props => (
       src={props.avatarUrl}
     />
     <h2 className="introMessage">
-      You <span>completed {props.completeActions} {props.completeActions > 1 ? 'actions' : 'action'}</span> with your coach during your free trial.
+      You <span>completed {props.completeActions} {props.completeActions > 1 ? 'actions' : 'action'}</span> with your coach during your {props.subscriptionStatus === 'trial' ?
+      'free trial' : `${props.planName} plan`}.
     </h2>
     <p>
       Continue pursuing your goal with Careeer.me
@@ -23,9 +24,11 @@ const TrialCompleteMessage = props => (
 );
 
 TrialCompleteMessage.propTypes = {
-  clientName: PropTypes.string.isRequired,
+  planName: PropTypes.string.isRequired,
   avatarUrl: PropTypes.string.isRequired,
+  clientName: PropTypes.string.isRequired,
   completeActions: PropTypes.number.isRequired,
+  subscriptionStatus: PropTypes.string.isRequired,
 };
 
 export default TrialCompleteMessage;
