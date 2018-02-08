@@ -57,6 +57,7 @@ module V1
 
       begin
         subscription = customer.subscriptions.retrieve(current_user.stripe_subscription_id)
+
         subscription.items = [
             {
               id: subscription.items.data[0].id,
@@ -66,12 +67,12 @@ module V1
         subscription.proration_date = params[:proration_date]
         updated_subscription = subscription.save
 
-        next_transaction = Time.zone.at(updated_subscription.current_period_end).strftime("%B %d, %Y")
-
         invoice = Stripe::Invoice.create(
           :customer => customer.id,
         )
-        # invoice.pay
+        invoice.pay
+
+        next_transaction = Time.zone.at(updated_subscription.current_period_end).strftime("%B %d, %Y")
 
         CareeerMailer.upgrade_subscription(
           current_user.email,
@@ -93,6 +94,16 @@ module V1
           head(:unprocessable_entity)
         end
       rescue Stripe::CardError => e
+        subscription = customer.subscriptions.retrieve(current_user.stripe_subscription_id)
+
+        subscription.items = [
+            {
+              id: subscription.items.data[0].id,
+              plan: current_user.plan,
+            },
+        ]
+        subscription.save
+        
         render json: { error: e.message}, status: :payment_required
       end
     end
