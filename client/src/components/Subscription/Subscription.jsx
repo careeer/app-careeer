@@ -1,9 +1,8 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import { Route } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 
-import SubscriptionComplete from './SubscriptionComplete';
 import PaymentLayout from './Components/PaymentLayout';
 import CurtainsDown from './Components/CurtainsDown';
 import PageHeader from './Components/PageHeader';
@@ -12,7 +11,7 @@ import SelectPlan from './Components/SelectPlan';
 import Checkout from './Components/Checkout';
 
 @inject('subscription') @observer
-export default class Subscription extends Component {
+class Subscription extends Component {
   componentWillMount() {
     $crisp.push(['do', 'chat:hide']);
     this.props.subscription.getPlan();
@@ -153,3 +152,5 @@ export default class Subscription extends Component {
     );
   }
 }
+
+export default withRouter(Subscription);

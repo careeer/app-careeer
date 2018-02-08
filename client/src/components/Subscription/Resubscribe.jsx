@@ -1,13 +1,16 @@
 /* eslint-disable */
 import React, { Component } from 'react';
+import { inject, observer } from 'mobx-react';
 
 import PaymentLayout from './Components/PaymentLayout';
 import CurtainsDown from './Components/CurtainsDown';
 import Checkout from './Components/Checkout';
 
+@inject('subscription') @observer
 export default class Subscription extends Component {
   componentWillMount() {
     $crisp.push(['do', 'chat:hide']);
+    this.props.subscription.getPlan();
   }
 
   componentWillUnmount() {

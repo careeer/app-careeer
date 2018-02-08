@@ -1,6 +1,7 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
+
 import RoadmapLayout from './RoadmapElements/RoadmapLayout';
 import Subscription from 'components/Subscription/Subscription';
 import SubscriptionComplete from 'components/Subscription/SubscriptionComplete';
@@ -23,7 +24,6 @@ class ClientDashboard extends Component {
         },
       );
     }
-    this.props.subscription.getPlan();
   }
 
   componentWillUnmount() {
@@ -56,7 +56,6 @@ class ClientDashboard extends Component {
             successfulPayment,
             completedElements,
             currentClientAvatar } = this.props.roadmapElements;
-
     if (!accountActive) {
       return (
         <div>
@@ -66,7 +65,6 @@ class ClientDashboard extends Component {
             handleContinueClick={this.handleContinueClick}
             handleDeleteAccount={this.handleDeleteAccount}
             currentClientAvatar={currentClientAvatar || 'https://res.cloudinary.com/careeer/image/upload/v1504959238/Careeer_logo_a3gu5x.png'}
-            {...this.props}
           />
           <ModalComponent
             negativeLabel="Cancel"
