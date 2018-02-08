@@ -230,7 +230,10 @@ class Subscription {
       if (callBack) {
         callBack();
       }
-    } else if (status === 400) {
+    } else if (status === 402) {
+      const body = await response.json();
+      this.cardErrors = body.error;
+      console.log(this.cardErrors);
       this.setIsLoading(false);
     }
   }
@@ -249,7 +252,10 @@ class Subscription {
       if (callBack) {
         callBack();
       }
-    } else if (status === 400) {
+    } else if (status === 402) {
+      const body = await response.json();
+      this.cardErrors = body.error;
+      console.log(this.cardErrors);
       this.setIsLoading(false);
     }
   }
@@ -274,7 +280,7 @@ class Subscription {
       if (callBack) {
         callBack();
       }
-    } else if (status === 400) {
+    } else {
       this.setIsLoading(false);
     }
   }
