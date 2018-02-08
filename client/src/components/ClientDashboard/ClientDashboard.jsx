@@ -6,7 +6,7 @@ import Subscription from 'components/Subscription/Subscription';
 import SubscriptionComplete from 'components/Subscription/SubscriptionComplete';
 import ModalComponent from 'components/CoachDashboard/Clients/ModalComponent';
 
-@inject('roadmapElements') @observer
+@inject('roadmapElements', 'subscription') @observer
 class ClientDashboard extends Component {
   state = {
     open: false,
@@ -23,6 +23,7 @@ class ClientDashboard extends Component {
         },
       );
     }
+    this.props.subscription.getPlan();
   }
 
   componentWillUnmount() {

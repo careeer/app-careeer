@@ -552,7 +552,7 @@ class RoadmapElements {
   @observable accountActive = true;
 
   @action calculateAccountStatus = (account_type, created_at) => {
-    if (account_type === "free trial") {
+    if (account_type === "free trial" || account_type === "unpaid") {
 
       const trialDaysLeft = this.getTrialsDaysLeft(created_at);
       if (trialDaysLeft > 0) {
