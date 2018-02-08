@@ -12,7 +12,7 @@ const SubscriptionChangeMessage = props => (
         <Segment basic loading={props.isLoading} compact>
           <p className="description">
             ${props.previewCost} charged today <br />
-            ${props.newPlan.cost} will be charged on{props.transactionDate} <br />
+            ${props.newPlan.cost} will be charged on {props.transactionDate} <br />
           </p>
         </Segment>
       </div>
