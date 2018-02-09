@@ -52,20 +52,29 @@ class ClientDashboard extends Component {
   }
 
   render() {
-
     const { accountActive,
             currentClient,
             successfulPayment,
             completedElements,
             currentClientAvatar } = this.props.roadmapElements;
 
-    const { subscriptionStatus } = this.props.subscription;
-    const freeTrialComplete = !accountActive ||
-      (subscriptionStatus !== "trial");
+    const { subscribed,
+            subscriptionStatus } = this.props.subscription;
+
+    const freeTrialComplete = (
+      (subscriptionStatus !== "trial") || !accountActive
+    );
+
+    const cancelledAccess = (subscriptionStatus !== 'cancel') || !subscribed;
 
     if (!subscriptionStatus) {
       return null;
-    } else if (freeTrialComplete && subscriptionStatus !== "active" ) {
+    } else if (
+        cancelledAccess &&
+        freeTrialComplete &&
+        subscriptionStatus !== "active"
+      )
+    {
       return (
         <div>
           <Subscription
