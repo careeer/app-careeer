@@ -24,6 +24,7 @@ class ClientDashboard extends Component {
         },
       );
     }
+    this.props.subscription.getPlan();
   }
 
   componentWillUnmount() {
@@ -51,12 +52,20 @@ class ClientDashboard extends Component {
   }
 
   render() {
+
     const { accountActive,
             currentClient,
             successfulPayment,
             completedElements,
             currentClientAvatar } = this.props.roadmapElements;
-    if (!accountActive) {
+
+    const { subscriptionStatus } = this.props.subscription;
+    const freeTrialComplete = !accountActive ||
+      (subscriptionStatus !== "trial");
+
+    if (!subscriptionStatus) {
+      return null;
+    } else if (freeTrialComplete && subscriptionStatus !== "active" ) {
       return (
         <div>
           <Subscription

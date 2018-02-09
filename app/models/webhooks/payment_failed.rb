@@ -15,7 +15,6 @@ module Webhooks
           user.card_last4
         ).deliver
         user.update(subscription_status: "pending")
-        user.clients.first.update(account_type: "unpaid")
       end
     end
   end
