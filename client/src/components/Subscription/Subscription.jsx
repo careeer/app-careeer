@@ -85,34 +85,50 @@ class Subscription extends Component {
             visible={animationVisible}
             handleAnimationComplete={this.handleAnimationComplete}
           />
-          <PageHeader
-            introPath={introPath}
-            plansPath={plansPath}
-            checkoutPath={checkoutPath}
-            subscriptionStatus={subscriptionStatus}
-            handleTrialClick={this.handleFreeTrialClick}
-            handleSubscriptionClick={this.handleIntroClick}
-            handleSelectPaymentClick={this.handleSelectPlanClick}
-            checkout={subscriptionStep === 'checkout'}
-            freeTrial={subscriptionStep === 'intro' ||
-                      subscriptionStep === 'checkout' ||
-                      subscriptionStep === 'plans'}
-            continueSubscription={subscriptionStep === 'plans' ||
-                                  subscriptionStep === 'checkout'}
-          />
+          {subscriptionStatus !== 'pending' &&
+            <PageHeader
+              introPath={introPath}
+              plansPath={plansPath}
+              checkoutPath={checkoutPath}
+              subscriptionStatus={subscriptionStatus}
+              handleTrialClick={this.handleFreeTrialClick}
+              handleSubscriptionClick={this.handleIntroClick}
+              handleSelectPaymentClick={this.handleSelectPlanClick}
+              checkout={subscriptionStep === 'checkout'}
+              freeTrial={subscriptionStep === 'intro' ||
+                        subscriptionStep === 'checkout' ||
+                        subscriptionStep === 'plans'}
+              continueSubscription={subscriptionStep === 'plans' ||
+                                    subscriptionStep === 'checkout'}
+            />
+          }
           <Route
             exact
             path={introPath}
             render={() => (
-              <TrialComplete
-                planName={planName}
-                currentClient={currentClient}
-                subscriptionStatus={subscriptionStatus}
-                handleIntroClick={this.handleIntroClick}
-                currentClientAvatar={currentClientAvatar}
-                completeActions={completedElements.length}
-                handleDeleteAccount={this.props.handleDeleteAccount}
-              />
+              subscriptionStatus === 'pending' ?
+                <Checkout
+                  pendingPayment
+                  planName={planName}
+                  planCost={planCost}
+                  isLoading={isLoading}
+                  cardErrors={cardErrors}
+                  cardSuccess={cardSuccess}
+                  selectedPlan={selectedPlan}
+                  disableSubmit={disableSubmit}
+                  handleCardToken={this.handleCardToken}
+                  handleCardErrors={this.handleCardErrors}
+                  currentClientAvatar={currentClientAvatar}
+                /> :
+                <TrialComplete
+                  planName={planName}
+                  currentClient={currentClient}
+                  subscriptionStatus={subscriptionStatus}
+                  handleIntroClick={this.handleIntroClick}
+                  currentClientAvatar={currentClientAvatar}
+                  completeActions={completedElements.length}
+                  handleDeleteAccount={this.props.handleDeleteAccount}
+                />
             )}
           />
           <Route

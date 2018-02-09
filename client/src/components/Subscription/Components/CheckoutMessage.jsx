@@ -14,18 +14,29 @@ const CheckoutMessage = props => (
       src={props.avatarUrl || 'https://res.cloudinary.com/careeer/image/upload/v1504959238/Careeer_logo_a3gu5x.png'}
     />
     <h2 className="introMessage">
-      Your account will be charged ${props.planCost} every month.
+      {props.pendingPayment ?
+        `$${props.planCost} payment was unsuccessful.` :
+        `Your account will be charged $${props.planCost} every month.`
+      }
     </h2>
-    <h3>
-      Upgrade, downgrade, or cancel any time
+    <h3 className="secondaryMessage">
+      {props.pendingPayment ?
+        `We were unable to process your payment for your ${props.planName} subscription. Please update your billing information.` :
+        'Upgrade, downgrade, or cancel any time'
+      }
     </h3>
   </div>
 );
 
 CheckoutMessage.propTypes = {
+  pendingPayment: PropTypes.bool,
   planName: PropTypes.string.isRequired,
   planCost: PropTypes.string.isRequired,
   avatarUrl: PropTypes.string.isRequired,
+};
+
+CheckoutMessage.defaultProps = {
+  pendingPayment: false,
 };
 
 export default CheckoutMessage;

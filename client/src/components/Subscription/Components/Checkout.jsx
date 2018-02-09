@@ -11,6 +11,7 @@ const Checkout = props => (
       planName={props.planName}
       planCost={props.planCost}
       avatarUrl={props.currentClientAvatar}
+      pendingPayment={props.pendingPayment}
     />
     <Elements>
       <CheckoutCardForm
@@ -28,6 +29,7 @@ const Checkout = props => (
 );
 
 Checkout.propTypes = {
+  pendingPayment: PropTypes.bool,
   isLoading: PropTypes.bool.isRequired,
   planName: PropTypes.string.isRequired,
   planCost: PropTypes.string.isRequired,
@@ -38,6 +40,10 @@ Checkout.propTypes = {
   handleCardToken: PropTypes.func.isRequired,
   handleCardErrors: PropTypes.func.isRequired,
   currentClientAvatar: PropTypes.string.isRequired,
+};
+
+Checkout.defaultProps = {
+  pendingPayment: false,
 };
 
 export default Checkout;
