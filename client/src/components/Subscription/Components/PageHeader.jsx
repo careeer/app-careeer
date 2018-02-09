@@ -10,7 +10,7 @@ const PageHeader = props => (
         onClick={props.handleTrialClick}
       >
         {props.subscriptionStatus === 'trial' ?
-        'Free trial completed' : 'Congratulations'}
+          'Free trial completed' : 'Congratulations'}
       </a>
     </div>
 

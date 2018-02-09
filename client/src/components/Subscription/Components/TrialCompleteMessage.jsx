@@ -15,7 +15,7 @@ const TrialCompleteMessage = props => (
     />
     <h2 className="introMessage">
       You <span>completed {props.completeActions} {props.completeActions > 1 ? 'actions' : 'action'}</span> with your coach during your {props.subscriptionStatus === 'trial' ?
-      'free trial' : `${props.planName} plan`}.
+        'free trial' : `${props.planName} plan`}.
     </h2>
     <p>
       Continue pursuing your goal with Careeer.me
