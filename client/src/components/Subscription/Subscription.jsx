@@ -146,6 +146,7 @@ class Subscription extends Component {
             )}
           />
           <Route
+            exact
             path={checkoutPath}
             render={() => (
               <Checkout
