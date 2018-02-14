@@ -67,6 +67,12 @@ class ClientDashboard extends Component {
 
     const cancelledAccess = (subscriptionStatus !== 'cancelled') || !subscribed;
 
+    if (successfulPayment) {
+      return (
+        <SubscriptionComplete {...this.props} />
+      );
+    }
+    
     if (!subscriptionStatus) {
       return null;
     } else if (
@@ -94,12 +100,6 @@ class ClientDashboard extends Component {
             handlePositiveClick={this.archiveClient}
           />
         </div>
-      );
-    }
-
-    if (successfulPayment) {
-      return (
-        <SubscriptionComplete {...this.props} />
       );
     }
 
