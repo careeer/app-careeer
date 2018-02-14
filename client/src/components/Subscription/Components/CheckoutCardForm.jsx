@@ -5,7 +5,7 @@ import { CardElement, injectStripe } from 'react-stripe-elements';
 
 class CheckoutCardForm extends React.Component {
   handleSubmit = (ev) => {
-    if (!disableSubmit) {
+    if (!this.props.disableSubmit) {
       ev.preventDefault();
       this.props.stripe.createToken().then(payload => this.props.handleCardToken(payload));
     }
