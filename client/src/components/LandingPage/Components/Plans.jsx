@@ -2,19 +2,51 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Segment, Label } from 'semantic-ui-react';
 
+export const PLAN = {
+  Fast: {
+    cost: '350',
+    id: 'Fast',
+    name: 'Fast track',
+  },
+  Standard: {
+    cost: '200',
+    id: 'Standard',
+    name: 'Standard track',
+  },
+  Starter: {
+    cost: '100',
+    id: 'Starter',
+    name: 'Self starter',
+  },
+  Standard_Legacy: {
+    cost: '150',
+    id: 'Standard',
+    name: 'Standard track',
+  },
+  Starter_Legacy: {
+    cost: '50',
+    id: 'Starter',
+    name: 'Self starter',
+  },
+};
+
 const Plans = props => (
   <div className="plans">
     <Segment
       padded
       color="violet"
-      className={(props.selectedAccount === 'Fast' ? 'selected' : 'fast')}
-      onClick={() => props.handleSegmentClick('Fast', 'Fast track', '350')}
+      className={(PLAN[props.selectedAccount].id === PLAN.Fast.id ? 'selected' : 'fast')}
+      onClick={() => props.handleSegmentClick(
+        PLAN.Fast.id,
+        PLAN.Fast.name,
+        PLAN.Fast.cost,
+      )}
     >
       <header>
-        Fast track
+        {PLAN.Fast.name}
       </header>
       <p>
-        $350/<span>month</span>
+        ${PLAN.Fast.cost}/<span>month</span>
       </p>
       <div className="planDescription">
         +2 hours of voice and video with your coach
@@ -23,15 +55,19 @@ const Plans = props => (
     <Segment
       padded
       color="green"
-      className={(props.selectedAccount === 'Standard' ? 'selected' : 'standard')}
-      onClick={() => props.handleSegmentClick('Standard', 'Standard track', '200')}
+      className={(PLAN[props.selectedAccount].id === PLAN.Standard.id ? 'selected' : 'standard')}
+      onClick={() => props.handleSegmentClick(
+        PLAN.Standard.id,
+        PLAN.Standard.name,
+        PLAN.Standard.cost,
+      )}
     >
       <Label floating color="green" ribbon="right">most popular</Label>
       <header>
-        Standard track
+        {PLAN.Standard.name}
       </header>
       <p>
-        $200/<span>month</span>
+        ${PLAN.Standard.cost}/<span>month</span>
       </p>
       <div className="planDescription">
         +1 hour of voice and video with your coach
@@ -40,14 +76,18 @@ const Plans = props => (
     <Segment
       padded
       color="yellow"
-      className={(props.selectedAccount === 'Starter' ? 'selected' : 'starter')}
-      onClick={() => props.handleSegmentClick('Starter', 'Self starter', '100')}
+      className={(PLAN[props.selectedAccount].id === PLAN.Starter.id ? 'selected' : 'starter')}
+      onClick={() => props.handleSegmentClick(
+        PLAN.Starter.id,
+        PLAN.Starter.name,
+        PLAN.Starter.cost,
+      )}
     >
       <header>
-        Self starter
+        {PLAN.Starter.name}
       </header>
       <p>
-        $100/<span>month</span>
+        ${PLAN.Starter.cost}/<span>month</span>
       </p>
       <div className="planDescription">
         Dedicated coach, personalized roadmap, and unlimited messaging

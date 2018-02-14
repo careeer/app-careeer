@@ -1,37 +1,40 @@
-/* eslint-disable */
+// /* eslint-disable */
 import { observable, action } from 'mobx';
 import Api from '../helpers/api';
 
+import { PLAN } from '../../components/LandingPage/Components/Plans';
+
 class Subscription {
   subscription = '/v1/subscription';
-  originalPlan = ""
+  originalPlan = '';
 
   @observable previewCost = 0;
-  @observable cardErrors = "";
-  @observable cardSuccess = "";
-  @observable planCost = "200";
+  @observable cardErrors = '';
+  @observable cardSuccess = '';
+  @observable planCost = PLAN.Standard.cost;
   @observable prorationDate = 0;
   @observable isLoading = false;
   @observable showSelected = true;
-  @observable transactionDate = "";
+  @observable transactionDate = '';
   @observable disableSubmit = true;
   @observable animationVisible = false;
   @observable isDeleteModalOpen = false;
-  @observable selectedPlan = "Standard";
+  @observable selectedPlan = PLAN.Standard.id;
   @observable isUpgradeModalOpen = false;
-  @observable subscriptionStep = "intro";
-  @observable subscriptionAction = "none";
-  @observable planName = "Standard track";
+  @observable subscriptionStep = 'intro';
+  @observable subscriptionAction = 'none';
+  @observable planName = PLAN.Standard.name;
   @observable subscribed = false;
-  @observable subscriptionStatus = "";
-  @observable currentSubscriptionName = "";
+  @observable subscriptionStatus = '';
+  @observable currentSubscriptionName = '';
   @observable isDowngradeModalOpen = false;
-  @observable currentSubscriptionCost = "0";
-  @observable cardInfo = { card_brand: "",
-                            card_last4: "",
-                            card_exp_year: "",
-                            card_exp_month: "",
-                          };
+  @observable currentSubscriptionCost = '0';
+  @observable cardInfo = {
+    card_brand: '',
+    card_last4: '',
+    card_exp_year: '',
+    card_exp_month: '',
+  };
 
   @action startAnimation() {
     this.animationVisible = true;
@@ -80,14 +83,14 @@ class Subscription {
   }
 
   calculateSubscriptionAction = () => {
-    const newCost = parseInt(this.planCost);
-    const currentCost = parseInt(this.currentSubscriptionCost);
+    const newCost = parseInt(this.planCost, 10);
+    const currentCost = parseInt(this.currentSubscriptionCost, 10);
     const difference = newCost - currentCost;
 
     if (difference !== 0) {
-      this.subscriptionAction = (difference > 0) ? "upgrade" : "downgrade";
+      this.subscriptionAction = (difference > 0) ? 'upgrade' : 'downgrade';
     } else {
-      this.subscriptionAction = "none";
+      this.subscriptionAction = 'none';
     }
   }
 
@@ -109,9 +112,9 @@ class Subscription {
 
   @action resetChangePlan() {
     this.populateSelectedPlanInfo(this.originalPlan);
-    this.subscriptionAction = "none";
-    this.cardErrors = "";
-    this.cardSuccess = "";
+    this.subscriptionAction = 'none';
+    this.cardErrors = '';
+    this.cardSuccess = '';
   }
 
   @action async getPlan() {
@@ -133,23 +136,11 @@ class Subscription {
   }
 
   populateSelectedPlanInfo = (plan) => {
-    this.selectedPlan = plan;
-    if (this.selectedPlan === "Fast") {
-      this.planCost = "350";
-      this.planName = "Fast track";
-      this.currentSubscriptionCost = "350";
-      this.currentSubscriptionName = "Fast track";
-    } else if (this.selectedPlan === "Starter") {
-      this.planCost = "100";
-      this.planName = "Self starter";
-      this.currentSubscriptionCost = "100";
-      this.currentSubscriptionName = "Self starter";
-    } else {
-      this.planCost = "200";
-      this.planName = "Standard track";
-      this.currentSubscriptionCost = "200";
-      this.currentSubscriptionName = "Standard track";
-    }
+    this.selectedPlan = PLAN[plan].id;
+    this.planCost = PLAN[plan].cost;
+    this.planName = PLAN[plan].name;
+    this.currentSubscriptionCost = PLAN[plan].cost;
+    this.currentSubscriptionName = PLAN[plan].name;
   }
 
   updateCardInfoObject = (body) => {
@@ -168,22 +159,20 @@ class Subscription {
         last4: payload.token.card.last4,
         exp_month: payload.token.card.exp_month,
         exp_year: payload.token.card.exp_year,
-        card_type: payload.token.card.brand
-      }
+        card_type: payload.token.card.brand,
+      },
     );
 
     const status = await response.status;
 
     if (status === 200) {
-      this.cardSuccess = "Transaction successful"
+      this.cardSuccess = 'Transaction successful';
       this.startAnimation();
 
       if (callBack) {
         callBack();
       }
-
       this.setIsLoading(false);
-
     } else if (status === 402) {
       const body = await response.json();
       this.cardErrors = body.error;
@@ -199,13 +188,13 @@ class Subscription {
         last4: payload.token.card.last4,
         card_type: payload.token.card.brand,
         exp_year: payload.token.card.exp_year,
-        exp_month: payload.token.card.exp_month
-      }
+        exp_month: payload.token.card.exp_month,
+      },
     );
     const status = await response.status;
 
     if (status === 200) {
-      this.cardSuccess = "Credit card updated"
+      this.cardSuccess = 'Credit card updated';
       this.setIsLoading(false);
       if (callBack) {
         callBack();
@@ -223,7 +212,7 @@ class Subscription {
       `${this.subscription}/upgrade`, {
         plan: this.selectedPlan,
         proration_date: this.prorationDate,
-      }
+      },
     );
     const status = await response.status;
 
@@ -244,7 +233,7 @@ class Subscription {
     const response = await Api.post(
       `${this.subscription}/downgrade`, {
         plan: this.selectedPlan,
-      }
+      },
     );
     const status = await response.status;
 
@@ -265,7 +254,7 @@ class Subscription {
     const response = await Api.post(
       `${this.subscription}/preview`, {
         plan: this.selectedPlan,
-      }
+      },
     );
     const status = await response.status;
 

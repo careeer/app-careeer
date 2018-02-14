@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Segment, Label } from 'semantic-ui-react';
 
+import { PLAN } from '../../LandingPage/Components/Plans';
+
 function PlanSelected(props) {
-  const account = props.selectedPlan;
+  const account = PLAN[props.selectedPlan].id;
 
   let color;
   let header;
@@ -11,22 +13,22 @@ function PlanSelected(props) {
   let description;
 
   switch (account) {
-    case 'Fast':
+    case PLAN.Fast.id:
       color = 'violet';
-      header = 'Fast Track';
-      price = '$350';
+      header = PLAN.Fast.name;
+      price = `$${PLAN.Fast.cost}`;
       description = '+2 hours of voice and video with your coach';
       break;
-    case 'Standard':
+    case PLAN.Standard.id:
       color = 'green';
-      header = 'Standard track';
-      price = '$200';
+      header = PLAN.Standard.name;
+      price = `$${PLAN.Standard.cost}`;
       description = '+1 hour of voice and video with your coach';
       break;
-    case 'Starter':
+    case PLAN.Starter.id:
       color = 'yellow';
-      header = 'Self starter';
-      price = '$100';
+      header = PLAN.Starter.name;
+      price = `$${PLAN.Starter.cost}`;
       description = 'Dedicated coach, personalized roadmap, and unlimited messaging';
       break;
     default:

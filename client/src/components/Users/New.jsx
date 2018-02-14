@@ -1,11 +1,12 @@
-/* eslint-disable */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Grid } from 'semantic-ui-react';
-import CareeerLogo from '../Lib/CareeerLogo';
-import CreateForm from './CreateForm';
 
-const New = props => (
+import CreateForm from './CreateForm';
+import CareeerLogo from '../Lib/CareeerLogo';
+import { PLAN } from '../LandingPage/Components/Plans';
+
+const New = () => (
   <div className="createAccountPage">
     <CareeerLogo />
     <Link to="/signIn" className="signInLink">Sign In</Link>
@@ -15,7 +16,7 @@ const New = props => (
     >
       <CreateForm
         buttonLabel="Create account"
-        selectedAccount="Standard"
+        selectedAccount={PLAN.Standard.id}
       />
     </Grid>
   </div>
