@@ -1,4 +1,4 @@
-// /* eslint-disable */
+/* eslint-disable */
 import { observable, action } from 'mobx';
 import Api from '../helpers/api';
 

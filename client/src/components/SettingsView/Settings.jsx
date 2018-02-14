@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { Route, withRouter } from 'react-router-dom';
-import { Dimmer, Image } from 'semantic-ui-react';
+import { Dimmer, Image, Button } from 'semantic-ui-react';
 
 import CloseButton from './Components/CloseButton';
 import SettingsMain from './Components/SettingsMain';
@@ -111,7 +111,7 @@ class Settings extends Component {
 
   deleteSubscription = () => {
     this.props.subscription.cancelSubscription(() => {
-      this.handleCloseAndShowBanner(`Subscription cancelled`, true);
+      this.handleCloseAndShowBanner(`Subscription cancelled`, false);
     });
     this.handleCloseModals();
   }
@@ -135,8 +135,110 @@ class Settings extends Component {
             isDeleteModalOpen,
             isUpgradeModalOpen,
             subscriptionAction,
+            subscriptionStatus,
             isDowngradeModalOpen,
             currentSubscriptionName } = this.props.subscription;
+
+    const SettingsWithAccountOptions = () =>
+      <div className="settingsLayout">
+        <div className="messageBody settings">
+          <h1 className="introHeader">
+            {this.props.roadmapElements.currentClient}!
+          </h1>
+          <Image
+            avatar
+            alt="avatar"
+            src={avatarUrl}
+            className="avatar"
+          />
+        </div>
+        <Route
+          exact
+          path={mainPath}
+          render={() => (
+            <SettingsMain
+              selectedPlan={selectedPlan}
+              onSignOutClick={this.handleSignOut}
+              onChangePaymentClick={this.handleChangePayment}
+              onChangeSubscriptionClick={this.showSubscriptionSelection}
+              onCancelAccountClick={this.handleCancelAccountClick}
+            />
+          )}
+        />
+        <Route
+          path={paymentPath}
+          render={() => (
+            <CreditCardChange
+              cardInfo={cardInfo}
+              isLoading={isLoading}
+              cardErrors={cardErrors}
+              disableSubmit={disableSubmit}
+              onGoBackClick={this.goBackToMain}
+              handleCardToken={this.handleCardToken}
+              handleCardErrors={this.handleCardErrors}
+              handleCloseAndShowBanner={this.handleCloseAndShowBanner}
+            />
+          )}
+        />
+        <Route
+          exact
+          path={subscriptionPath}
+          render={() => (
+            <SubscriptionChange
+              isLoading={isLoading}
+              cardErrors={cardErrors}
+              previewCost={previewCost}
+              selectedPlan={selectedPlan}
+              onGoBackClick={this.goBackToMain}
+              transactionDate={transactionDate}
+              subscriptionAction={subscriptionAction}
+              newPlan={{ name: planName, cost: planCost}}
+              handleSegmentClick={this.handleSegmentClick}
+              onSaveChanges={this.handleChangeSubscription}
+              currentSubscriptionName={currentSubscriptionName}
+
+            />
+          )}
+        />
+        <ModalComponent
+          negativeLabel="Go back"
+          handleClose={this.handleCloseModals}
+          isVisible={isDeleteModalOpen}
+          modalHeader="Cancel subscription?"
+          positiveLabel="Cancel subscription"
+          modalContent="We understand that now is not the right time. We will save your roadmap, just login when you’re ready to keep going! "
+          handlePositiveClick={this.deleteSubscription}
+        />
+        <ModalComponent
+          negativeLabel="Cancel"
+          handleClose={this.handleCloseModals}
+          isVisible={isUpgradeModalOpen}
+          modalHeader="Authorize transaction"
+          positiveLabel="Authorize"
+          modalContent={`You've changed your plan to ${planName}! We'll apply this change to your plan immediately, with a prorated $${previewCost} charge to your card today. On ${transactionDate} your subscription will be renewed at $${planCost}.`}
+          handlePositiveClick={this.handleUpgrade}
+        />
+        <ModalComponent
+          negativeLabel="Cancel"
+          handleClose={this.handleCloseModals}
+          isVisible={isDowngradeModalOpen}
+          modalHeader="Authorize transaction"
+          positiveLabel="Authorize"
+          modalContent={`You've changed your plan to ${planName}! We'll apply this change to your plan immediately, with no charge to your card. On ${transactionDate} your card ending in ${cardInfo.card_last4} will be charged $${planCost}.`}
+          handlePositiveClick={this.handleDowngrade}
+        />
+      </div>
+
+      const SettingsNoAccountOptions = () =>
+      <div className="settingsLayout">
+        <div className="messageBody simpleSettings">
+          <Button
+            content="Log out"
+            className="changeSubscriptionButton"
+            onClick={this.handleSignOut}
+          />
+        </div>
+      </div>
 
     return (
       <Dimmer
@@ -147,94 +249,10 @@ class Settings extends Component {
       >
         <CareeerLogo />
         <CloseButton onCloseClick={this.props.onCloseClick} />
-        <div className="settingsLayout">
-          <div className="messageBody settings">
-            <h1 className="introHeader">
-              {this.props.roadmapElements.currentClient}!
-            </h1>
-            <Image
-              avatar
-              alt="avatar"
-              src={avatarUrl}
-              className="avatar"
-            />
-          </div>
-          <Route
-            exact
-            path={mainPath}
-            render={() => (
-              <SettingsMain
-                selectedPlan={selectedPlan}
-                onSignOutClick={this.handleSignOut}
-                onChangePaymentClick={this.handleChangePayment}
-                onChangeSubscriptionClick={this.showSubscriptionSelection}
-                onCancelAccountClick={this.handleCancelAccountClick}
-              />
-            )}
-          />
-          <Route
-            path={paymentPath}
-            render={() => (
-              <CreditCardChange
-                cardInfo={cardInfo}
-                isLoading={isLoading}
-                cardErrors={cardErrors}
-                disableSubmit={disableSubmit}
-                onGoBackClick={this.goBackToMain}
-                handleCardToken={this.handleCardToken}
-                handleCardErrors={this.handleCardErrors}
-                handleCloseAndShowBanner={this.handleCloseAndShowBanner}
-              />
-            )}
-          />
-          <Route
-            exact
-            path={subscriptionPath}
-            render={() => (
-              <SubscriptionChange
-                isLoading={isLoading}
-                cardErrors={cardErrors}
-                previewCost={previewCost}
-                selectedPlan={selectedPlan}
-                onGoBackClick={this.goBackToMain}
-                transactionDate={transactionDate}
-                subscriptionAction={subscriptionAction}
-                newPlan={{ name: planName, cost: planCost}}
-                handleSegmentClick={this.handleSegmentClick}
-                onSaveChanges={this.handleChangeSubscription}
-                currentSubscriptionName={currentSubscriptionName}
+        {(subscriptionStatus !== "trial" && subscriptionStatus !== "cancelled") ? <SettingsWithAccountOptions /> :
+        <SettingsNoAccountOptions />
 
-              />
-            )}
-          />
-          <ModalComponent
-            negativeLabel="Go back"
-            handleClose={this.handleCloseModals}
-            isVisible={isDeleteModalOpen}
-            modalHeader="Cancel subscription?"
-            positiveLabel="Cancel subscription"
-            modalContent="We understand that now is not the right time. We will save your roadmap, just login when you’re ready to keep going! "
-            handlePositiveClick={this.deleteSubscription}
-          />
-          <ModalComponent
-            negativeLabel="Cancel"
-            handleClose={this.handleCloseModals}
-            isVisible={isUpgradeModalOpen}
-            modalHeader="Authorize transaction"
-            positiveLabel="Authorize"
-            modalContent={`You've changed your plan to ${planName}! We'll apply this change to your plan immediately, with a prorated $${previewCost} charge to your card today. On ${transactionDate} your subscription will be renewed at $${planCost}.`}
-            handlePositiveClick={this.handleUpgrade}
-          />
-          <ModalComponent
-            negativeLabel="Cancel"
-            handleClose={this.handleCloseModals}
-            isVisible={isDowngradeModalOpen}
-            modalHeader="Authorize transaction"
-            positiveLabel="Authorize"
-            modalContent={`You've changed your plan to ${planName}! We'll apply this change to your plan immediately, with no charge to your card. On ${transactionDate} your card ending in ${cardInfo.card_last4} will be charged $${planCost}.`}
-            handlePositiveClick={this.handleDowngrade}
-          />
-        </div>
+        }
       </Dimmer>
     );
   }
