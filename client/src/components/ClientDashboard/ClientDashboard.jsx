@@ -65,7 +65,7 @@ class ClientDashboard extends Component {
       (subscriptionStatus !== "trial") || !accountActive
     );
 
-    const cancelledAccess = (subscriptionStatus !== 'cancel') || !subscribed;
+    const cancelledAccess = (subscriptionStatus !== 'cancelled') || !subscribed;
 
     if (!subscriptionStatus) {
       return null;
