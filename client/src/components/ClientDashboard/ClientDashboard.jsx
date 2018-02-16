@@ -72,13 +72,14 @@ class ClientDashboard extends Component {
         <SubscriptionComplete {...this.props} />
       );
     }
-    
+
     if (!subscriptionStatus) {
       return null;
     } else if (
         cancelledAccess &&
         freeTrialComplete &&
-        subscriptionStatus !== "active"
+        subscriptionStatus !== "active" &&
+        subscriptionStatus !== "free"
       )
     {
       return (
