@@ -249,7 +249,7 @@ class Settings extends Component {
       >
         <CareeerLogo />
         <CloseButton onCloseClick={this.props.onCloseClick} />
-        {(subscriptionStatus !== "trial" && subscriptionStatus !== "cancelled") ? <SettingsWithAccountOptions /> :
+        {(subscriptionStatus !== "trial" && subscriptionStatus !== "cancelled" && subscriptionStatus !== "free") ? <SettingsWithAccountOptions /> :
         <SettingsNoAccountOptions />
 
         }
