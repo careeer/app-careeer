@@ -12,19 +12,19 @@ import ScrollToTop from './components/Lib/ScrollToTop';
 import HttpsRedirect from './components/Lib/HttpsRedirect';
 
 const Main = () => (
-  <StripeProvider
-    apiKey={process.env.REACT_APP_STRIPE_KEY}
-  >
-    <Provider {...stores}>
-      <HttpsRedirect>
+  <HttpsRedirect>
+    <StripeProvider
+      apiKey={process.env.REACT_APP_STRIPE_KEY}
+    >
+      <Provider {...stores}>
         <BrowserRouter>
           <ScrollToTop>
             <App />
           </ScrollToTop>
         </BrowserRouter>
-      </HttpsRedirect>
-    </Provider>
-  </StripeProvider>
+      </Provider>
+    </StripeProvider>
+  </HttpsRedirect>
 );
 
 render(<Main />, document.getElementById('root'));
