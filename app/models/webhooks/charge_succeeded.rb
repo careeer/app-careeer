@@ -16,7 +16,7 @@ module Webhooks
 
       readable_amount = (charge.amount.to_i) / 100.00
 
-      if charge.invoice?
+      if !charge.invoice.blank?
         user.update(subscription_status: "active")
 
         subscription = Stripe::Subscription.retrieve(user.stripe_subscription_id)
