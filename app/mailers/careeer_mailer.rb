@@ -27,6 +27,14 @@ class CareeerMailer < ApplicationMailer
     mail(to: email, bcc: 'support@careeer.me', subject: subjectMessage)
   end
 
+  def one_time_payment(email, client, plan_cost, last4, description)
+    @name = client.name.split.first
+    @last4 = last4
+    @plan_cost = plan_cost
+    @description = description
+    mail(to: email, bcc: 'support@careeer.me', subject: 'Payment confirmation')
+  end
+
   def subscription_renewal(email, client, plan_name, plan_cost, last4, next_transaction)
       @name = client.name.split.first
       @plan_name = plan_name
