@@ -12,7 +12,7 @@ module Webhooks
         user.email,
         user.clients.first,
         subscription.plan.name,
-        (invoice.amount_due / 100.00),
+        (invoice.amount_due.to_i / 100.00),
         user.card_last4,
         next_transaction
       ).deliver
