@@ -19,6 +19,7 @@
     "react-dom": "^16.0.0",
     "react-dropzone": "^4.1.0",
     "react-onclickoutside": "^6.5.0",
+    "react-rotating-text": "^1.2.1",
     "react-router-dom": "^4.1.2",
     "react-router-page-transition": "^3.0.2",
     "react-slick": "^0.15.4",

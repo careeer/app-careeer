@@ -1,9 +1,6 @@
 body {
-  margin: 0;
   color: #919191;
-  letter-spacing: 0.0725em;
-  background-color: #f7f7f7;
-  font-family: 'Cabin', sans-serif;
+  background-color: #fff;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -12,12 +9,6 @@ body,
 body > div#root,
 body > div#root > div,
 body > div#root > div > div {
-  height: 100%;
-}
-
-.ui.grid,
-.ui.stackable.grid {
-  margin: 0;
 }
 
 .ui.grid.defaultGrid {
