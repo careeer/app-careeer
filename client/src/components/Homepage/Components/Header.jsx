@@ -31,7 +31,7 @@ const Header = () => (
     </Grid.Column>
     <Grid.Column
       width="6"
-      computer="4"
+      computer="5"
       textAlign="right"
       verticalAlign="middle"
     >
@@ -46,10 +46,6 @@ const Header = () => (
         </Link>
       </button>
     </Grid.Column>
-    <Grid.Column
-      width="2"
-      only="computer"
-    />
   </Grid>
 );
 

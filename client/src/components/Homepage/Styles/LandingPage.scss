@@ -20,7 +20,7 @@ a {
   }
 }
 
-h3 {
+.sectionTitle {
   font-family: 'Open Sans';
   font-size: 36px;
   font-weight: 600;
@@ -30,6 +30,8 @@ h3 {
   letter-spacing: normal;
   text-align: left;
   color: #4a4a4a;
+  padding-top: 70px;
+  border-bottom: 3px solid #56b51a;
 }
 
 p {
@@ -113,11 +115,6 @@ p {
 }
 
 .whoWeAre {
-  .title{
-    padding-top: 70px;
-    border-bottom: 3px solid #56b51a;
-  }
-
   .greenRectangle {
     width: 466px;
     height: 70px;
@@ -144,9 +141,101 @@ p {
 
   .improvementAreas {
     margin-left: 20px;
+    margin-bottom: 4rem;
 
     span {
       font-weight: 600;
     }
+  }
+}
+
+.whatWeDo {
+  .greenRectangle {
+    width: 766px;
+    height: 70px;
+    background-color: #8fde53;
+  }
+
+  .ourMission {
+    padding-top: 50px;
+  }
+
+  .ourMission, .greenRectangle {
+    font-family: 'Open Sans';
+    font-size: 48px;
+    font-weight: 600;
+    font-style: italic;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: 0.4px;
+    text-align: left;
+    color: #4a4a4a;
+  }
+
+  .description {
+    margin-top: 40px;
+  }
+}
+
+.personalizedRoadmap {
+  .greenRectangle {
+    width: 530px;
+    height: 70px;
+    margin-top: 152px;
+    background-color: #8fde53;
+  }
+
+  .ourMission {
+    padding-top: 30px;
+  }
+
+  .ourMission, .greenRectangle {
+    font-family: 'Open Sans';
+    font-size: 48px;
+    font-weight: 600;
+    font-style: italic;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: 0.4px;
+    text-align: left;
+    color: #4a4a4a;
+  }
+
+  .description {
+    margin-top: 40px;
+  }
+}
+
+.onDemandCoachSection {
+
+  img {
+    margin-top: 80px;
+  }
+
+  .greenRectangle {
+    width: 760px;
+    height: 70px;
+    margin-top: 42px;
+    background-color: #8fde53;
+  }
+
+  .ourMission {
+    margin-top: 0;
+  }
+
+  .ourMission, .greenRectangle {
+    font-family: 'Open Sans';
+    font-size: 48px;
+    font-weight: 600;
+    font-style: italic;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: 0.4px;
+    text-align: left;
+    color: #4a4a4a;
+  }
+
+  .description {
+    margin-top: 40px;
   }
 }

@@ -5,10 +5,8 @@ const WhoWeAreSection = () => (
   <Grid columns="equal" className="whoWeAre">
     <Grid.Row>
       <Grid.Column width="2" />
-      <Grid.Column width="14" className="title">
-        <h3>
-          Who We Are
-        </h3>
+      <Grid.Column width="14" className="sectionTitle">
+        Who We Are
       </Grid.Column>
     </Grid.Row>
     <Grid.Row>
