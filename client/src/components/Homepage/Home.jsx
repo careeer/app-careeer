@@ -5,6 +5,8 @@ import WhoWeAreSection from './Components/WhoWeAreSection';
 import WhatWeDoSection from './Components/WhatWeDoSection';
 import PersonalizedRoadmapSection from './Components/PersonalizedRoadmapSection';
 import OnDemandCoachSection from './Components/OnDemandCoachSection';
+import TestimonialsSection from './Components/TestimonialsSection';
+import MonthlySubscriptionsSection from './Components/MonthlySubscriptionsSection';
 
 const Home = () => (
   <div id="landingPage">
@@ -14,6 +16,8 @@ const Home = () => (
     <WhatWeDoSection />
     <PersonalizedRoadmapSection />
     <OnDemandCoachSection />
+    <TestimonialsSection />
+    <MonthlySubscriptionsSection />
   </div>
 );
 
