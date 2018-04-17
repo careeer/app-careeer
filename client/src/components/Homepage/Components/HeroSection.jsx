@@ -16,9 +16,9 @@ const HeroSection = () => (
             cursor={false}
             pause={2000}
             emptyPause={10}
-            typingInterval={10}
-            deletingInterval={5}
-            items={['Tech', 'Tech Sales', 'Coding', 'UI/Ux Design', 'Product']}
+            typingInterval={50}
+            deletingInterval={10}
+            items={['Tech', 'Tech Sales', 'Software Development', 'UI/Ux Design', 'Product Management']}
           />
         </span>
       </h1>
