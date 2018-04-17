@@ -46,6 +46,22 @@ p {
   color: #4a4a4a;
 }
 
+.description {
+  margin-top: 40px;
+}
+
+.ourMission, .greenRectangle {
+  font-family: 'Open Sans';
+  font-size: 48px;
+  font-weight: 600;
+  font-style: italic;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: 0.4px;
+  text-align: left;
+  color: #4a4a4a;
+}
+
 .mainHeader {
   top: 0;
   left: 0;
@@ -124,19 +140,6 @@ p {
 
   .ourMission {
     padding-top: 130px;
-    font-family: 'Open Sans';
-    font-size: 48px;
-    font-weight: 600;
-    font-style: italic;
-    font-stretch: normal;
-    line-height: 1.25;
-    letter-spacing: 0.4px;
-    text-align: left;
-    color: #4a4a4a;
-  }
-
-  .description {
-    margin-top: 40px;
   }
 
   .improvementAreas {
@@ -159,22 +162,6 @@ p {
   .ourMission {
     padding-top: 50px;
   }
-
-  .ourMission, .greenRectangle {
-    font-family: 'Open Sans';
-    font-size: 48px;
-    font-weight: 600;
-    font-style: italic;
-    font-stretch: normal;
-    line-height: 1.25;
-    letter-spacing: 0.4px;
-    text-align: left;
-    color: #4a4a4a;
-  }
-
-  .description {
-    margin-top: 40px;
-  }
 }
 
 .personalizedRoadmap {
@@ -188,26 +175,9 @@ p {
   .ourMission {
     padding-top: 30px;
   }
-
-  .ourMission, .greenRectangle {
-    font-family: 'Open Sans';
-    font-size: 48px;
-    font-weight: 600;
-    font-style: italic;
-    font-stretch: normal;
-    line-height: 1.25;
-    letter-spacing: 0.4px;
-    text-align: left;
-    color: #4a4a4a;
-  }
-
-  .description {
-    margin-top: 40px;
-  }
 }
 
 .onDemandCoachSection {
-
   img {
     margin-top: 80px;
   }
@@ -222,20 +192,64 @@ p {
   .ourMission {
     margin-top: 0;
   }
+}
 
-  .ourMission, .greenRectangle {
-    font-family: 'Open Sans';
-    font-size: 48px;
-    font-weight: 600;
-    font-style: italic;
-    font-stretch: normal;
-    line-height: 1.25;
-    letter-spacing: 0.4px;
-    text-align: left;
-    color: #4a4a4a;
+.testimonials {
+
+}
+
+.subscriptionSection {
+  .monthlyPlan {
+    margin-top: 4rem;
+    border: 3px solid #8fde53;
+    border-radius: 30px;
+
+    h4, h5, li {
+      padding-top: 1rem;
+      color: #4a4a4a;
+      font-family: 'Open Sans';
+      font-size: 22px;
+
+      span {
+        font-size: 16px;
+      }
+    }
+
+    h4 {
+      color: #8fde53;
+    }
+
+    ul, li {
+      font-size: 18px;
+      text-align: left;
+    }
+
+    ul {
+      padding-bottom: 1rem;
+    }
   }
 
-  .description {
-    margin-top: 40px;
+  .trialLink {
+    padding-top: 3.5rem;
+    padding-bottom: 8rem;
+
+    .signUpLink {
+      padding: 0.5rem 4rem;
+    }
+
+    p {
+      padding-left: 5rem;
+      font-family: 'Open Sans';
+      font-size: 14px;
+    }
+  }
+}
+
+.mainFooter {
+  padding-top: 1rem;
+  background-image: linear-gradient(250deg, #f3feec, #e4fcd4);
+
+  p {
+    font-size: 16px;
   }
 }

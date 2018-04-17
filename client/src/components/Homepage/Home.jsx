@@ -7,6 +7,7 @@ import PersonalizedRoadmapSection from './Components/PersonalizedRoadmapSection'
 import OnDemandCoachSection from './Components/OnDemandCoachSection';
 import TestimonialsSection from './Components/TestimonialsSection';
 import MonthlySubscriptionsSection from './Components/MonthlySubscriptionsSection';
+import Footer from './Components/Footer';
 
 const Home = () => (
   <div id="landingPage">
@@ -18,6 +19,7 @@ const Home = () => (
     <OnDemandCoachSection />
     <TestimonialsSection />
     <MonthlySubscriptionsSection />
+    <Footer />
   </div>
 );
 
