@@ -10,7 +10,6 @@ const Reviews = props => (
     autoplay
     arrows
     slidesToShow={1}
-    adaptiveHeight
     centerPadding={props.padding}
     infinite
     centerMode
@@ -29,8 +28,9 @@ const Reviews = props => (
         <p>
           &quot;Careeer has helped me understand which role is a perfect fit with my skills and passions&quot;
         </p>
+        <br />
         <strong>
-          Fadi
+          - Fadi
         </strong>
       </div>
     </div>
@@ -47,8 +47,9 @@ const Reviews = props => (
         <p>
           &quot;I immediately knew that you could really help me.&quot;
         </p>
+        <br />
         <strong>
-          Dan
+          - Dan
         </strong>
       </div>
     </div>
@@ -65,8 +66,9 @@ const Reviews = props => (
         <p>
           &quot;I have never gotten results like this in the past and feel more confident about my portfolio and resume&quot;
         </p>
+        <br />
         <strong>
-          Dimple
+          - Dimple
         </strong>
       </div>
     </div>
@@ -83,8 +85,9 @@ const Reviews = props => (
         <p>
           &quot;Lots of good information. Learning your own value proposition and changing your mindset &quot;lens&quot; about the hiring process.&quot;
         </p>
+        <br />
         <strong>
-          Aaron
+          - Aaron
         </strong>
       </div>
     </div>
@@ -101,8 +104,9 @@ const Reviews = props => (
         <p>
           &quot;It helps to have someone that is rooting for you to succeed&quot;
         </p>
+        <br />
         <strong>
-          Tiffany
+          - Tiffany
         </strong>
       </div>
     </div>
@@ -119,8 +123,9 @@ const Reviews = props => (
         <p>
           &quot;More tailored and personal, suiting my strengths and workflow&quot;
         </p>
+        <br />
         <strong>
-          Hai
+          - Hai
         </strong>
       </div>
     </div>
@@ -137,8 +142,9 @@ const Reviews = props => (
         <p>
           &quot;Keeping me on track and focused toward my goal.&quot;
         </p>
+        <br />
         <strong>
-          Mark
+          - Mark
         </strong>
       </div>
     </div>

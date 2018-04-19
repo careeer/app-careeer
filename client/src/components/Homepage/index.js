@@ -1,4 +1,4 @@
 import Home from './Home';
-import './Styles/LandingPage.scss';
+import './Styles/Homepage.scss';
 
 export default { Home };
