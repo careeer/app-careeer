@@ -6,12 +6,12 @@ import ReactRotatingText from 'react-rotating-text';
 const HeroSection = () => (
   <Grid stretched columns="equal" className="heroImage">
     <Grid.Column width="2" />
-    <Grid.Column width="5" verticalAlign="middle">
+    <Grid.Column width="4" verticalAlign="middle">
       <h1>
         Transition <br />
         your careeer<br />
         to&nbsp;
-        <span className="rotatingText">
+        <strong className="rotatingText">
           <ReactRotatingText
             cursor={false}
             pause={2000}
@@ -20,7 +20,7 @@ const HeroSection = () => (
             deletingInterval={10}
             items={['Tech', 'Product Management', 'Engineering', 'Tech Sales', 'Design']}
           />
-        </span>
+        </strong>
       </h1>
       <button className="signUpLink">
         <Link to="/signUp">
