@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid } from 'semantic-ui-react';
 
 const OnDemandCoachSection = () => (
-  <Grid columns="equal" className="onDemandCoachSection">
+  <Grid stackable className="onDemandCoachSection">
     <Grid.Row>
       <Grid.Column width="14" className="sectionTitle" textAlign="right">
         On-Demand Coach
@@ -21,19 +21,18 @@ const OnDemandCoachSection = () => (
           Message your coach<br />
         </div>
         <h2 className="ourMission">
-          anytime through the<br />
-          app
+          anytime through the app
         </h2>
         <p className="description">
-          No more doubting the right next step, how to<br />
-          follow-up after an interview, or how to rebrand your<br />
+          No more doubting the right next step, how to
+          follow-up after an interview, or how to rebrand your
           professional story.
         </p>
         <p>
-          Our career coaches have industry experience and<br />
-          provide you with direction, focus, and confidence to<br />
-          boot. You can expect a personalized, real-talk<br />
-          approach as we collaborate to get you into your<br />
+          Our career coaches have industry experience and
+          provide you with direction, focus, and confidence to
+          boot. You can expect a personalized, real-talk
+          approach as we collaborate to get you into your
           dream job in tech.
         </p>
       </Grid.Column>

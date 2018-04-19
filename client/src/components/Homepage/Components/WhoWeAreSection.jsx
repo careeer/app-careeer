@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid } from 'semantic-ui-react';
 
 const WhoWeAreSection = () => (
-  <Grid columns="equal" className="whoWeAre">
+  <Grid stackable className="whoWeAre">
     <Grid.Row>
       <Grid.Column width="2" />
       <Grid.Column width="14" className="sectionTitle">

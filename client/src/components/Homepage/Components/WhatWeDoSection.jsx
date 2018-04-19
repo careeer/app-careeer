@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid } from 'semantic-ui-react';
 
 const WhatWeDoSection = () => (
-  <Grid columns="equal" className="whatWeDo">
+  <Grid stackable className="whatWeDo">
     <Grid.Row>
       <Grid.Column width="14" className="sectionTitle" textAlign="right">
         What We Do
@@ -12,15 +12,15 @@ const WhatWeDoSection = () => (
       <Grid.Column width="2" />
       <Grid.Column width="6">
         <p className="description">
-          Get a step-by-step plan with a personalized career <br />
-          roadmap. And because we’ve been at this for 10+ years, <br />
-          we want to make sure you receive expert direction every <br />
-          step of the way.
+          Sign up to receive a free 20min call with a coach. During the sign-up
+          call, you and your coach will establish where you are on your career
+          path, narrow down your immediate goals, and learn how careeer.me can
+          help. After your call, you’ll receive a step-by-step plan (we call it
+          a roadmap),monitored and updated weekly by your coach.
         </p>
         <p>
-          That’s why all of our packages include an expert <br />
-          coach that holds you accountable to your goal, and <br />
-          trainings that reframe the psychology of the new you.
+          Each package includes a roadmap, on-demand support from your career
+          coach, and trainings that help you reframe your mindset to help you achieve your goals.
         </p>
       </Grid.Column>
       <Grid.Column width="6">

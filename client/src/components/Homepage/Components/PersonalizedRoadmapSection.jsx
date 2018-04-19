@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid } from 'semantic-ui-react';
 
 const PersonalizedRoadmapSection = () => (
-  <Grid columns="equal" className="personalizedRoadmap">
+  <Grid stackable className="personalizedRoadmap">
     <Grid.Row>
       <Grid.Column width="2" />
       <Grid.Column width="14" className="sectionTitle">
@@ -22,11 +22,11 @@ const PersonalizedRoadmapSection = () => (
       </Grid.Column>
       <Grid.Column width="6">
         <p className="description">
-          When you sign up, you choose where your roadmap<br />
-          begins, and where it ends. You might start with job<br />
-          search strategy all the way through to offer negotiation.<br />
-          Or, you may just sign-up for a custom education plan<br />
-          to round out your skill set. Each week, you’ll complete<br />
+          When you sign up, you choose where your roadmap
+          begins, and where it ends. You might start with job
+          search strategy all the way through to offer negotiation.
+          Or, you may just sign-up for a custom education plan
+          to round out your skill set. Each week, you’ll complete
           tasks that move your towards your goal.
         </p>
       </Grid.Column>
