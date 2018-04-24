@@ -26,6 +26,7 @@ const Footer = () => (
         </Link>
         <br />
         <br />
+        <br />
         <p>
           &copy; {(new Date().getFullYear())} Careeer Inc. All rights reserved.
         </p>
