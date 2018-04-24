@@ -20,7 +20,7 @@ const Pricing = props => (
       <ul>
         <li>one dedicated coach</li>
         <li>personalized career roadmap</li>
-        <li>unlimited messaging</li>
+        <li>in-app messaging</li>
       </ul>
     </Grid.Column>
     <Grid.Column>

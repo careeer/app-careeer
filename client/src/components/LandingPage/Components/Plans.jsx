@@ -4,19 +4,24 @@ import { Segment, Label } from 'semantic-ui-react';
 
 export const PLAN = {
   Fast: {
-    cost: '350',
+    cost: '500',
     id: 'Fast',
     name: 'Fast track',
   },
   Standard: {
-    cost: '200',
+    cost: '300',
     id: 'Standard',
     name: 'Standard track',
   },
   Starter: {
-    cost: '100',
+    cost: '150',
     id: 'Starter',
     name: 'Self starter',
+  },
+  Fast_Legacy: {
+    cost: '350',
+    id: 'Fast',
+    name: 'Fast track',
   },
   Standard_Legacy: {
     cost: '150',
@@ -49,7 +54,7 @@ const Plans = props => (
         ${PLAN.Fast.cost}/<span>month</span>
       </p>
       <div className="planDescription">
-        +2 hours of voice and video with your coach
+        +Four 30 minutes calls, weekly unlimited messaging, dedicated coach
       </div>
     </Segment>
     <Segment
@@ -70,7 +75,7 @@ const Plans = props => (
         ${PLAN.Standard.cost}/<span>month</span>
       </p>
       <div className="planDescription">
-        +1 hour of voice and video with your coach
+        +Two 30 minutes calls, weekly unlimited messaging, dedicated coach
       </div>
     </Segment>
     <Segment
@@ -90,7 +95,7 @@ const Plans = props => (
         ${PLAN.Starter.cost}/<span>month</span>
       </p>
       <div className="planDescription">
-        Dedicated coach, personalized roadmap, and unlimited messaging
+        Dedicated coach, personalized roadmap, and limited messaging
       </div>
     </Segment>
   </div>

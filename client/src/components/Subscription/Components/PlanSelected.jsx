@@ -17,19 +17,19 @@ function PlanSelected(props) {
       color = 'violet';
       header = PLAN.Fast.name;
       price = `$${PLAN.Fast.cost}`;
-      description = '+2 hours of voice and video with your coach';
+      description = '+Four 30 minutes calls, weekly unlimited messaging, dedicated coach';
       break;
     case PLAN.Standard.id:
       color = 'green';
       header = PLAN.Standard.name;
       price = `$${PLAN.Standard.cost}`;
-      description = '+1 hour of voice and video with your coach';
+      description = '+Two 30 minutes calls, weekly unlimited messaging, dedicated coach';
       break;
     case PLAN.Starter.id:
       color = 'yellow';
       header = PLAN.Starter.name;
       price = `$${PLAN.Starter.cost}`;
-      description = 'Dedicated coach, personalized roadmap, and unlimited messaging';
+      description = 'Dedicated coach, personalized roadmap, and limited messaging';
       break;
     default:
       break;
