@@ -55,6 +55,7 @@ class CreateForm extends Component {
         <input
           required
           type="password"
+          autocomplete="new-password"
           pattern=".{6,}"
           onChange={this.clearErrorMessages}
           placeholder="password (6 character min)"

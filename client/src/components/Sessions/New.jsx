@@ -98,6 +98,7 @@ export default class New extends Component {
             <input
               required
               type="password"
+              autocomplete="current-password"
               pattern=".{6,}"
               className={errorModePassword}
               onChange={this.clearErrorMessages}
