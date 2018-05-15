@@ -10,8 +10,7 @@ body {
 html,
 body,
 body > div#root,
-body > div#root > div,
-body > div#root > div > div {
+body > div#root > div {
   height: 100%;
 }
 
