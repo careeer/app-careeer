@@ -11,17 +11,17 @@ import App from './components/App';
 import ScrollToTop from './components/Lib/ScrollToTop';
 
 const Main = () => (
-    <StripeProvider
-      apiKey={process.env.REACT_APP_STRIPE_KEY}
-    >
-      <Provider {...stores}>
-        <BrowserRouter>
-          <ScrollToTop>
-            <App />
-          </ScrollToTop>
-        </BrowserRouter>
-      </Provider>
-    </StripeProvider>
+  <StripeProvider
+    apiKey={process.env.REACT_APP_STRIPE_KEY}
+  >
+    <Provider {...stores}>
+      <BrowserRouter>
+        <ScrollToTop>
+          <App />
+        </ScrollToTop>
+      </BrowserRouter>
+    </Provider>
+  </StripeProvider>
 );
 
 render(<Main />, document.getElementById('root'));
