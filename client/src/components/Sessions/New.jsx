@@ -83,7 +83,7 @@ export default class New extends Component {
               required
               type="text"
               placeholder="email"
-              autocomplete="email"
+              autoComplete="email"
               defaultValue={email}
               className={errorModeEmail}
               onChange={this.clearErrorMessages}

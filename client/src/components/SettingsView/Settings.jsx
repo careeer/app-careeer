@@ -71,6 +71,7 @@ class Settings extends Component {
   }
 
   handleCardToken = (payload) => {
+    console.log(payload);
     this.props.subscription.updateCreditCard(payload, () => {
       this.handleCloseAndShowBanner('Credit card successfully changed', false);
     });
@@ -128,6 +129,7 @@ class Settings extends Component {
             planCost,
             isLoading,
             cardErrors,
+            cardSuccess,
             previewCost,
             selectedPlan,
             disableSubmit,
@@ -172,6 +174,7 @@ class Settings extends Component {
               cardInfo={cardInfo}
               isLoading={isLoading}
               cardErrors={cardErrors}
+              cardSuccess={cardSuccess}
               disableSubmit={disableSubmit}
               onGoBackClick={this.goBackToMain}
               handleCardToken={this.handleCardToken}

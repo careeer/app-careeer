@@ -41,7 +41,7 @@ class CreateForm extends Component {
           required
           type="text"
           placeholder="email"
-          autocomplete="email"
+          autoComplete="email"
           className={errorModeEmail}
           onChange={this.clearErrorMessages}
           ref={(node) => { this.email = node; }}

@@ -19,7 +19,6 @@ const Checkout = props => (
         cardErrors={props.cardErrors}
         checkoutButtonLabel="Checkout"
         cardSuccess={props.cardSuccess}
-        selectedPlan={props.selectedPlan}
         disableSubmit={props.disableSubmit}
         handleCardToken={props.handleCardToken}
         handleCardErrors={props.handleCardErrors}
@@ -36,7 +35,6 @@ Checkout.propTypes = {
   cardErrors: PropTypes.string.isRequired,
   cardSuccess: PropTypes.string.isRequired,
   disableSubmit: PropTypes.bool.isRequired,
-  selectedPlan: PropTypes.string.isRequired,
   handleCardToken: PropTypes.func.isRequired,
   handleCardErrors: PropTypes.func.isRequired,
   currentClientAvatar: PropTypes.string.isRequired,

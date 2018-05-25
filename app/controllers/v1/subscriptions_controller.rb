@@ -103,7 +103,7 @@ module V1
             },
         ]
         subscription.save
-        
+
         render json: { error: e.message}, status: :payment_required
       end
     end
@@ -167,7 +167,7 @@ module V1
           card_exp_month: params[:exp_month],
           card_exp_year: params[:exp_year],
           card_brand: params[:card_type]
-        ) if params[:card_last4]
+        ) if params[:last4]
 
         if current_user.save
           head(:ok)

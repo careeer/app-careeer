@@ -95,6 +95,7 @@ class Subscription {
   }
 
   @action handleCardErrors(event) {
+    console.log(event);
     if (event.error) {
       this.cardErrors = event.error.message;
       this.cardSuccess = '';
@@ -125,8 +126,6 @@ class Subscription {
       const body = await response.json();
       this.subscriptionStatus = body.subscription_status;
       this.subscribed = body.subscribed;
-      console.log(this.subscriptionStatus);
-      console.log(this.subscribed);
       this.originalPlan = body.plan;
       this.populateSelectedPlanInfo(body.plan);
       if (body.card_last4) {
@@ -192,8 +191,8 @@ class Subscription {
       },
     );
     const status = await response.status;
-
     if (status === 200) {
+
       this.cardSuccess = 'Credit card updated';
       this.setIsLoading(false);
       if (callBack) {
