@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import { Grid } from 'semantic-ui-react';
 import ReactRotatingText from 'react-rotating-text';
 
+import HeroImage from '../../Icons/HeroImage';
+
 const HeroSection = () => (
-  <Grid stretched columns="equal" className="heroImage">
+  <Grid stretched className="heroImage">
     <Grid.Column width="2" />
     <Grid.Column width="4" verticalAlign="middle">
       <h1>
@@ -27,6 +29,9 @@ const HeroSection = () => (
           Sign up for 7 day free trial
         </Link>
       </button>
+    </Grid.Column>
+    <Grid.Column width="10">
+      <HeroImage />
     </Grid.Column>
   </Grid>
 );
