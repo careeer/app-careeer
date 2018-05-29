@@ -1,6 +1,10 @@
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
 
+import RoadmapIcon from '../../Icons/RoadmapIcon';
+import SupportIcon from '../../Icons/SupportIcon';
+import TrainingIcon from '../../Icons/TrainingIcon';
+
 const WhatWeDoSection = () => (
   <Grid stackable className="whatWeDo">
     <Grid.Row>
@@ -11,17 +15,14 @@ const WhatWeDoSection = () => (
     <Grid.Row>
       <Grid.Column width="2" />
       <Grid.Column width="6">
-        <p className="description">
-          Sign up to receive a free 20min call with a coach. During the sign-up
-          call, you and your coach will establish where you are on your career
-          path, narrow down your immediate goals, and learn how careeer.me can
-          help. After your call, you’ll receive a step-by-step plan (we call it
-          a roadmap),monitored and updated weekly by your coach.
-        </p>
-        <p>
-          Each package includes a roadmap, on-demand support from your career
-          coach, and trainings that help you reframe your mindset to help you achieve your goals.
-        </p>
+        <div className="descriptionContainer">
+          <p className="description">
+            Get a step-by-step plan with a personalized career roadmap. And because we’ve been at this for 10+ years, we want to make sure you receive expert direction every step of the way.
+          </p>
+          <p>
+            That’s why all of our packages include an expert coach that holds you accountable to your goal, and trainings that reframe the psychology of the new you.
+          </p>
+        </div>
       </Grid.Column>
       <Grid.Column width="6">
         <h2 className="ourMission">
@@ -35,6 +36,15 @@ const WhatWeDoSection = () => (
     </Grid.Row>
     <Grid.Row>
       <Grid.Column width="2" />
+      <Grid.Column textAlign="center" width="4">
+        <RoadmapIcon />
+      </Grid.Column>
+      <Grid.Column textAlign="center" width="4">
+        <SupportIcon />
+      </Grid.Column>
+      <Grid.Column textAlign="center" width="4">
+        <TrainingIcon />
+      </Grid.Column>
     </Grid.Row>
   </Grid>
 );

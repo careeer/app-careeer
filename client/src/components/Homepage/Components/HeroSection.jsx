@@ -8,7 +8,7 @@ import HeroImage from '../../Icons/HeroImage';
 const HeroSection = () => (
   <Grid stretched className="heroImage">
     <Grid.Column width="2" />
-    <Grid.Column width="4" verticalAlign="middle">
+    <Grid.Column width="3" verticalAlign="middle">
       <h1>
         Transition <br />
         your careeer<br />

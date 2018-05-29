@@ -3,7 +3,7 @@ import HeroPicture from './Images/HeroImage.svg';
 
 const HeroImage = () => (
   <img
-    alt="close"
+    alt="people learning"
     src={HeroPicture}
     className="heroImagePicture"
   />

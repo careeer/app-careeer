@@ -1,6 +1,8 @@
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
 
+import Milestones from '../../Icons/Milestones';
+
 const PersonalizedRoadmapSection = () => (
   <Grid stackable className="personalizedRoadmap">
     <Grid.Row>
@@ -21,7 +23,7 @@ const PersonalizedRoadmapSection = () => (
         </h2>
       </Grid.Column>
       <Grid.Column width="6">
-        <p className="description">
+        <p className="description descriptionContainer">
           When you sign up, you choose where your roadmap
           begins, and where it ends. You might start with job
           search strategy all the way through to offer negotiation.
@@ -29,6 +31,11 @@ const PersonalizedRoadmapSection = () => (
           to round out your skill set. Each week, you’ll complete
           tasks that move your towards your goal.
         </p>
+      </Grid.Column>
+    </Grid.Row>
+    <Grid.Row>
+      <Grid.Column textAlign="center">
+        <Milestones />
       </Grid.Column>
     </Grid.Row>
   </Grid>

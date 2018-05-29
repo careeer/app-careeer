@@ -66,7 +66,7 @@ p {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 200;
   position: fixed;
   background-color: #fff;
   margin-top: 0 !important;
@@ -129,7 +129,7 @@ p {
 
 .whoWeAre {
   .greenRectangle {
-    width: 466px;
+    width: 445px;
     height: 70px;
     margin-top: 126px;
     background-color: #92f3f1;
@@ -159,11 +159,15 @@ p {
   .ourMission {
     padding-top: 50px;
   }
+
+  .descriptionContainer {
+    width: 445px;
+  }
 }
 
 .personalizedRoadmap {
   .greenRectangle {
-    width: 530px;
+    width: 507px;
     height: 70px;
     margin-top: 152px;
     background-color: #92f3f1;
@@ -171,6 +175,14 @@ p {
 
   .ourMission {
     padding-top: 30px;
+  }
+
+  .descriptionContainer {
+    width: 464px;
+  }
+
+  .milestonesPicture {
+    padding-top: 50px;
   }
 }
 
@@ -180,7 +192,7 @@ p {
   }
 
   .greenRectangle {
-    width: 760px;
+    width: 780px;
     height: 70px;
     margin-top: 42px;
     background-color: #92f3f1;
@@ -265,7 +277,7 @@ p {
           font-size: 18px;
           letter-spacing: 0.3px;
           text-align: left;
-          color: #4a4a4a;
+          color: #3e2d6c;
         }
       }
     }
@@ -312,7 +324,7 @@ p {
     }
 
     p {
-      padding-left: 5rem;
+      text-align: center;
       font-family: 'Open Sans';
       font-size: 14px;
     }
