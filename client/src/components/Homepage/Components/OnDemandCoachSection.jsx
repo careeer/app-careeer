@@ -23,18 +23,20 @@ const OnDemandCoachSection = () => (
         <h2 className="ourMission">
           anytime through the app
         </h2>
-        <p className="description">
-          No more doubting the right next step, how to
-          follow-up after an interview, or how to rebrand your
-          professional story.
-        </p>
-        <p>
-          Our career coaches have industry experience and
-          provide you with direction, focus, and confidence to
-          boot. You can expect a personalized, real-talk
-          approach as we collaborate to get you into your
-          dream job in tech.
-        </p>
+        <div className="descriptionContainer">
+          <p className="description">
+            No more doubting the right next step, how to
+            follow-up after an interview, or how to rebrand your
+            professional story.
+          </p>
+          <p>
+            Our career coaches have industry experience and
+            provide you with direction, focus, and confidence to
+            boot. You can expect a personalized, real-talk
+            approach as we collaborate to get you into your
+            dream job in tech.
+          </p>
+        </div>
       </Grid.Column>
     </Grid.Row>
     <Grid.Row>

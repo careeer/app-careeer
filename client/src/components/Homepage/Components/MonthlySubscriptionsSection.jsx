@@ -17,12 +17,12 @@ const MonthlySubscriptionsSection = () => (
             Self Starter
           </h4>
           <h5>
-            $100 <span>per month</span>
+            $150 <span>per month</span>
           </h5>
           <ul>
-            <li>On-demand coach</li>
-            <li>Personalized roadmap</li>
-            <li>Limited in-app messaging</li>
+            <li>30 min/week in-app coaching</li>
+            <li>(1) 30 min call/month</li>
+            <li>Personalized Roadmap</li>
           </ul>
         </div>
       </Grid.Column>
@@ -32,13 +32,12 @@ const MonthlySubscriptionsSection = () => (
             Standard Track
           </h4>
           <h5>
-            $200 <span>per month</span>
+            $300 <span>per month</span>
           </h5>
           <ul>
-            <li>On-demand coach</li>
-            <li>Personalized roadmap</li>
-            <li>Unlimited in-app messaging</li>
-            <li>1hr coach call/month</li>
+            <li>1 hr/week in-app coaching</li>
+            <li>(3) 30 min calls/month</li>
+            <li>Personalized Roadmap</li>
           </ul>
         </div>
       </Grid.Column>
@@ -48,13 +47,12 @@ const MonthlySubscriptionsSection = () => (
             Fast Track
           </h4>
           <h5>
-            $300 <span>per month</span>
+            $500 <span>per month</span>
           </h5>
           <ul>
-            <li>On-demand coach</li>
-            <li>Personalized roadmap</li>
-            <li>Unlimited in-app messaging</li>
-            <li>2hrs coach call/month</li>
+            <li>Unlimited weekly in-app coaching</li>
+            <li>(4) 30 min calls/month</li>
+            <li>Personalized Roadmap</li>
           </ul>
         </div>
       </Grid.Column>

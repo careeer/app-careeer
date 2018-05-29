@@ -22,7 +22,7 @@ a {
 }
 
 .sectionTitle {
-  font-family: 'Open Sans';
+  font-family: 'OpenSans-SemiBold', 'Open Sans';
   font-size: 36px;
   font-weight: 600;
   font-style: normal;
@@ -52,7 +52,7 @@ p {
 }
 
 .ourMission, .greenRectangle {
-  font-family: 'Open Sans';
+  font-family: 'OpenSans-Bold', 'Open Sans';
   font-size: 44px;
   font-weight: bolder;
   font-stretch: normal;
@@ -129,7 +129,7 @@ p {
 
 .whoWeAre {
   .greenRectangle {
-    width: 445px;
+    width: 460px;
     height: 70px;
     margin-top: 126px;
     background-color: #92f3f1;
@@ -137,6 +137,7 @@ p {
 
   .ourMission {
     padding-top: 130px;
+    width: 460px;
   }
 
   .improvementAreas {
@@ -144,7 +145,7 @@ p {
     margin-bottom: 4rem;
 
     span {
-      font-weight: 600;
+      font-family: 'OpenSans-Bold', 'Open Sans';
     }
   }
 }
@@ -163,11 +164,29 @@ p {
   .descriptionContainer {
     width: 445px;
   }
+
+  .roadmapIcon, .supportIcon, .trainingIcon {
+    padding-top: 50px;
+  }
+
+  .iconHeader {
+    font-size: 18px;
+    font-style: 'OpenSans-Bold', 'Open Sans';
+    color: #3e2d6c;
+    margin: 10px;
+  }
+
+  .iconDescription {
+    font-size: 16px;
+    text-align: center;
+    width: 210px;
+    margin: 0 auto;
+  }
 }
 
 .personalizedRoadmap {
   .greenRectangle {
-    width: 507px;
+    width: 517px;
     height: 70px;
     margin-top: 152px;
     background-color: #92f3f1;
@@ -200,6 +219,10 @@ p {
 
   .ourMission {
     margin-top: 0;
+  }
+
+  .descriptionContainer {
+    width: 445px;
   }
 }
 

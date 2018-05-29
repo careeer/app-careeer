@@ -38,12 +38,30 @@ const WhatWeDoSection = () => (
       <Grid.Column width="2" />
       <Grid.Column textAlign="center" width="4">
         <RoadmapIcon />
+        <h6 className="iconHeader">
+          Roadmap
+        </h6>
+        <p className="iconDescription">
+          Weekly steps to get into your next job
+        </p>
       </Grid.Column>
       <Grid.Column textAlign="center" width="4">
         <SupportIcon />
+        <h6 className="iconHeader">
+          On-demand support
+        </h6>
+        <p className="iconDescription">
+          Your own dedicated career coach is available to chat via messenger anytime of the week
+        </p>
       </Grid.Column>
       <Grid.Column textAlign="center" width="4">
         <TrainingIcon />
+        <h6 className="iconHeader">
+          Training
+        </h6>
+        <p className="iconDescription">
+          Reframe your psychology and change your lens
+        </p>
       </Grid.Column>
     </Grid.Row>
   </Grid>

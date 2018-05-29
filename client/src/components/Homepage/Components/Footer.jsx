@@ -5,8 +5,8 @@ import { Grid, Icon } from 'semantic-ui-react';
 const Footer = () => (
   <Grid>
     <Grid.Row className="mainFooter">
-      <Grid.Column width={2} />
-      <Grid.Column width={6} className="leftLinks">
+      <Grid.Column width="2" />
+      <Grid.Column width="6" className="leftLinks">
         <a
           target="_blank"
           rel="noreferrer noopener"
@@ -31,7 +31,7 @@ const Footer = () => (
           &copy; {(new Date().getFullYear())} Careeer Inc. All rights reserved.
         </p>
       </Grid.Column>
-      <Grid.Column width={6} className="rightLinks">
+      <Grid.Column width="6" className="rightLinks">
         <a
           href="https://www.facebook.com/careeer.me"
           target="_blank"
