@@ -12,14 +12,14 @@ const MonthlySubscriptionsSection = () => (
     <Grid.Row>
       <Grid.Column width="2" />
       <Grid.Column width="4" textAlign="center">
+        <h4 className="planTitle">
+          Self Starter
+        </h4>
         <div className="monthlyPlan">
-          <h4>
-            Self Starter
-          </h4>
-          <h5>
+          <h5 className="planCost">
             $150 <span>per month</span>
           </h5>
-          <ul>
+          <ul className="planDescription">
             <li>30 min/week in-app coaching</li>
             <li>(1) 30 min call/month</li>
             <li>Personalized Roadmap</li>
@@ -27,14 +27,14 @@ const MonthlySubscriptionsSection = () => (
         </div>
       </Grid.Column>
       <Grid.Column width="4" textAlign="center">
+        <h4 className="planTitle">
+          Standard Track
+        </h4>
         <div className="monthlyPlan">
-          <h4>
-            Standard Track
-          </h4>
-          <h5>
+          <h5 className="planCost">
             $300 <span>per month</span>
           </h5>
-          <ul>
+          <ul className="planDescription">
             <li>1 hr/week in-app coaching</li>
             <li>(3) 30 min calls/month</li>
             <li>Personalized Roadmap</li>
@@ -42,14 +42,14 @@ const MonthlySubscriptionsSection = () => (
         </div>
       </Grid.Column>
       <Grid.Column width="4" textAlign="center">
+        <h4 className="planTitle">
+          Fast Track
+        </h4>
         <div className="monthlyPlan">
-          <h4>
-            Fast Track
-          </h4>
-          <h5>
+          <h5 className="planCost">
             $500 <span>per month</span>
           </h5>
-          <ul>
+          <ul className="planDescription">
             <li>Unlimited weekly in-app coaching</li>
             <li>(4) 30 min calls/month</li>
             <li>Personalized Roadmap</li>

@@ -41,7 +41,7 @@ p {
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
-  line-height: 1.5;
+  line-height: 1.6;
   letter-spacing: 0.2px;
   text-align: left;
   color: #3e2d6c;
@@ -56,7 +56,7 @@ p {
   font-size: 44px;
   font-weight: bolder;
   font-stretch: normal;
-  line-height: 1.43;
+  line-height: 1.53;
   letter-spacing: 0.4px;
   text-align: left;
   color: #4d3886;
@@ -188,7 +188,7 @@ p {
   .greenRectangle {
     width: 517px;
     height: 70px;
-    margin-top: 152px;
+    margin-top: 162px;
     background-color: #92f3f1;
   }
 
@@ -308,28 +308,46 @@ p {
 }
 
 .subscriptionSection {
-  .monthlyPlan {
-    margin-top: 4rem;
-    border: 3px solid #8fde53;
-    border-radius: 30px;
+  .planTitle {
+    padding-top: 4rem;
+    color: #4d3886;
+    font-family: 'Open Sans';
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    text-align: center;
+  }
 
-    h4, h5, li {
-      padding-top: 1rem;
-      color: #4a4a4a;
+  .monthlyPlan {
+    margin: 2rem auto 0;
+    border: 2px solid #898aca;
+    border-radius: 5px;
+    padding-bottom: 8rem;
+    width: 298px;
+
+    .planDescription {
+      width: 258px;
+    }
+
+    .planCost {
+      border-bottom: solid 4px #fcb0dc;
+      color: #4d3886;
       font-family: 'Open Sans';
-      font-size: 22px;
+      font-size: 28px;
+      margin: 0 auto;
+      padding-top: 1rem;
+      width: 258px;
 
       span {
-        font-size: 16px;
+        font-size: 18px;
       }
     }
 
-    h4 {
-      color: #8fde53;
-    }
-
-    ul, li {
+    li {
+      color: #4a4a4a;
+      font-family: 'OpenSans-SemiBold', 'Open Sans';
       font-size: 18px;
+      padding-top: 2rem;
       text-align: left;
     }
 
