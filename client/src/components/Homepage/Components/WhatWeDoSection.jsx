@@ -17,10 +17,14 @@ const WhatWeDoSection = () => (
       <Grid.Column width="6">
         <div className="descriptionContainer">
           <p className="description">
-            Get a step-by-step plan with a personalized career roadmap. And because we’ve been at this for 10+ years, we want to make sure you receive expert direction every step of the way.
+            Get a step-by-step plan with a personalized career roadmap. And
+            because we’ve been at this for 10+ years, we want to make sure
+            you receive expert direction every step of the way.
           </p>
           <p>
-            That’s why all of our packages include an expert coach that holds you accountable to your goal, and trainings that reframe the psychology of the new you.
+            That’s why all of our packages include an expert coach that holds
+            you accountable to your goal, and trainings that reframe the
+            psychology of the new you.
           </p>
         </div>
       </Grid.Column>
