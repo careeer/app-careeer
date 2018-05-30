@@ -120,7 +120,7 @@ p {
 
     .signUpLink {
       flex-grow: unset !important;
-      width: 223px;
+      max-width: 223px;
       height: 44px;
       margin-top: 120px;
     }
@@ -129,15 +129,20 @@ p {
 
 .whoWeAre {
   .greenRectangle {
-    width: 460px;
+    width: 465px;
     height: 70px;
     margin-top: 126px;
     background-color: #92f3f1;
   }
 
   .ourMission {
+
+    & > span {
+      background-color: #92f3f1;
+    }
+
     padding-top: 130px;
-    width: 460px;
+    max-width: 460px;
   }
 
   .improvementAreas {
@@ -162,7 +167,7 @@ p {
   }
 
   .descriptionContainer {
-    width: 445px;
+    max-width: 445px;
   }
 
   .roadmapIcon, .supportIcon, .trainingIcon {
@@ -179,7 +184,7 @@ p {
   .iconDescription {
     font-size: 16px;
     text-align: center;
-    width: 210px;
+    max-width: 210px;
     margin: 0 auto;
   }
 }
@@ -193,15 +198,17 @@ p {
   }
 
   .ourMission {
-    padding-top: 30px;
+    padding-top: 25px;
   }
 
   .descriptionContainer {
-    width: 464px;
+    max-width: 464px;
   }
 
   .milestonesPicture {
-    padding-top: 50px;
+    margin: auto;
+    max-width: 63% !important;
+    padding-top: 30px;
   }
 }
 
@@ -222,57 +229,44 @@ p {
   }
 
   .descriptionContainer {
-    width: 445px;
+    max-width: 445px;
   }
 }
 
 .testimonials {
   .slick-initialized.slick-slider {
     width: 100%;
-    height: 400px;
+    height: auto;
     margin: 0 0;
     padding: 3.5rem 0;
 
-    .slick-prev, .slick-next {
-      font-size: 0;
-      top: 45%;
+    .slick-dots {
+      bottom: -95px;
 
-      &::before {
-        line-height: 0;
-        margin-top: -1em;
-        opacity: 1;
+      li, button, button::before {
+        height: 40px;
+        width: 40px;
+        z-index: 100;
       }
     }
 
-    .slick-prev {
-      left: 15px;
-      z-index: 100;
-
-      &::before {
-        content: "\2039";
-        font-size: 150px;
-        color: #d8d8d8;
-      }
-    }
-
-    .slick-next {
-      right: 15px;
-      z-index: 100;
-
-      &::before {
-        content: "\203A";
-        font-size: 150px;
-        color: #d8d8d8;
-      }
+    .slick-dots li button:before {
+      font-size: 20px;
+      top: 20px;
+      color: #55dae0;
     }
 
     .slick-slide {
       padding-top: 2rem;
+      transition: transform 0.5s;
+
+      &.slick-center {
+        transform: translateY(10px) scale(1.2);
+      }
     }
 
     .slick-list {
-      height: 500px;
-      padding: 2em 9em;
+      overflow: inherit;
 
       .reviewContainer {
         border-radius: 2px;
@@ -282,6 +276,7 @@ p {
         margin-right: auto;
         padding-top: 1rem;
         width: 366px;
+        height: 400px;
       }
 
       .reviewAvatar {
@@ -325,54 +320,73 @@ p {
 
 .subscriptionSection {
   .sectionTitle {
-    padding-top: 130px;
+    padding-top: 230px;
   }
 
-  .planTitle {
-    padding-top: 4rem;
-    color: #4d3886;
-    font-family: 'Open Sans';
-    font-size: 28px;
-    font-weight: 600;
-    letter-spacing: 0.4px;
-    text-align: center;
-  }
+  .subscriptionPlan {
+    margin-top: 4rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 
-  .monthlyPlan {
-    margin: 2rem auto 0;
-    border: 2px solid #898aca;
-    border-radius: 5px;
-    padding-bottom: 8rem;
-    width: 298px;
-
-    .planDescription {
-      width: 258px;
+    &:focus {
+      outline: none;
     }
 
-    .planCost {
-      border-bottom: solid 4px #fcb0dc;
+    .planTitle {
       color: #4d3886;
       font-family: 'Open Sans';
       font-size: 28px;
-      margin: 0 auto;
-      padding-top: 1rem;
-      width: 258px;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      text-align: center;
 
-      span {
-        font-size: 18px;
+      &.active {
+        border-radius: 2px;
+        background-color: #92f3f1;
       }
     }
 
-    li {
-      color: #4a4a4a;
-      font-family: 'OpenSans-SemiBold', 'Open Sans';
-      font-size: 18px;
-      padding-top: 2rem;
-      text-align: left;
-    }
+    .monthlyPlan {
+      margin: 2rem auto 0;
+      border: 2px solid #898aca;
+      border-radius: 5px;
+      padding-bottom: 8rem;
+      max-width: 298px;
 
-    ul {
-      padding-bottom: 1rem;
+      &.active {
+        border: solid 4px #55dae0;
+      }
+
+      .planDescription {
+        max-width: 258px;
+      }
+
+      .planCost {
+        border-bottom: solid 4px #fcb0dc;
+        color: #4d3886;
+        font-family: 'Open Sans';
+        font-size: 28px;
+        margin: 0 auto;
+        padding-top: 1rem;
+        max-width: 258px;
+
+        span {
+          font-size: 18px;
+        }
+      }
+
+      li {
+        color: #4a4a4a;
+        font-family: 'OpenSans-SemiBold', 'Open Sans';
+        font-size: 18px;
+        padding-top: 2rem;
+        text-align: left;
+      }
+
+      ul {
+        padding-bottom: 1rem;
+      }
     }
   }
 

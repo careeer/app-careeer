@@ -6,11 +6,10 @@ import { Image } from 'semantic-ui-react';
 const Reviews = props => (
   <Slider
     className={props.styleName}
-    fade
     autoplay
-    arrows
-    slidesToShow={1}
-    centerPadding={props.padding}
+    dots
+    slidesToShow={3}
+    centerPadding="0"
     infinite
     centerMode
     autoplaySpeed={3500}

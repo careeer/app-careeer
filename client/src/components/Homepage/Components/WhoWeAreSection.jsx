@@ -10,12 +10,12 @@ const WhoWeAreSection = () => (
       </Grid.Column>
     </Grid.Row>
     <Grid.Row>
-      <Grid.Column width="2">
+      <Grid.Column only="computer" width="2">
         <div className="greenRectangle" />
       </Grid.Column>
       <Grid.Column width="6">
         <h2 className="ourMission">
-          Our mission is to make technology careers accessible
+          <span> Our mission </span> is to make technology careers accessible
           to everyone.
         </h2>
       </Grid.Column>

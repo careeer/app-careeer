@@ -33,6 +33,24 @@ const Footer = () => (
       </Grid.Column>
       <Grid.Column width="6" className="rightLinks">
         <a
+          href="https://docs.google.com/a/careeer.me/document/d/11pkP3ns0nQxIyaKf66CEhPAZzdmvaXYIGG9aaVUfFEY/edit?usp=sharing"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          Security
+        </a>
+        <br />
+        <br />
+        <a
+          href="https://docs.google.com/a/careeer.me/document/d/1tfcyC1eshiVvR0VVdtk79542Vp6nmggAmCI3mhQEU4w/edit?usp=sharing"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          Privacy Policy
+        </a>
+        <br />
+        <br />
+        <a
           href="https://www.facebook.com/careeer.me"
           target="_blank"
           rel="noreferrer noopener"
@@ -63,24 +81,6 @@ const Footer = () => (
         >
           <Icon link circular inverted name="medium" />
           &nbsp;
-        </a>
-        <br />
-        <br />
-        <a
-          href="https://docs.google.com/a/careeer.me/document/d/1tfcyC1eshiVvR0VVdtk79542Vp6nmggAmCI3mhQEU4w/edit?usp=sharing"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          Privacy Policy
-        </a>
-        <br />
-        <br />
-        <a
-          href="https://docs.google.com/a/careeer.me/document/d/11pkP3ns0nQxIyaKf66CEhPAZzdmvaXYIGG9aaVUfFEY/edit?usp=sharing"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          Security
         </a>
       </Grid.Column>
     </Grid.Row>

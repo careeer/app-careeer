@@ -4,7 +4,7 @@ import ReviewSlider from './ReviewSlider';
 
 
 const TestimonialsSection = () => (
-  <Grid columns="equal" className="testimonials">
+  <Grid className="testimonials">
     <Grid.Row>
       <Grid.Column width="2" />
       <Grid.Column width="14" className="sectionTitle">
@@ -12,8 +12,7 @@ const TestimonialsSection = () => (
       </Grid.Column>
     </Grid.Row>
     <Grid.Row>
-      <Grid.Column width="2" />
-      <Grid.Column width="12">
+      <Grid.Column>
         <ReviewSlider />
       </Grid.Column>
     </Grid.Row>
