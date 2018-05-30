@@ -110,6 +110,7 @@ p {
       .rotatingText {
         max-width: 250px;
         color: #33e4e1;
+        font-family: 'OpenSans-Bold', 'Open Sans';
         font-weight: bold;
         font-size: 40px;
         font-style: italic;
@@ -129,20 +130,25 @@ p {
 
 .whoWeAre {
   .greenRectangle {
-    width: 465px;
-    height: 70px;
-    margin-top: 126px;
+    width: 350px;
+    height: 65px;
+    margin-top: 123px;
+    background-color: #92f3f1;
+  }
+
+  .greenInlineRectangle {
+    width: 275px;
+    height: 65px;
+    margin-top: 123px;
+    position: absolute;
     background-color: #92f3f1;
   }
 
   .ourMission {
-
-    & > span {
-      background-color: #92f3f1;
-    }
-
-    padding-top: 130px;
+    position: relative;
+    padding-top: 100px;
     max-width: 460px;
+    z-index: 2;
   }
 
   .improvementAreas {
@@ -260,8 +266,24 @@ p {
       padding-top: 2rem;
       transition: transform 0.5s;
 
+      &.slick-active {
+        opacity: 0.5;
+        position: relative;
+        transform: translateX(250px);
+        z-index: -1;
+      }
+
       &.slick-center {
+        opacity: 1;
+        position: relative;
         transform: translateY(10px) scale(1.2);
+        z-index: 1;
+
+        & + div.slick-active {
+          position: relative;
+          transform: translateX(-250px);
+          z-index: -1;
+        }
       }
     }
 

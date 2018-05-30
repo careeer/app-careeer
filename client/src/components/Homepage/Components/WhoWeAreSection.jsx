@@ -14,8 +14,9 @@ const WhoWeAreSection = () => (
         <div className="greenRectangle" />
       </Grid.Column>
       <Grid.Column width="6">
+        <div className="greenInlineRectangle" />
         <h2 className="ourMission">
-          <span> Our mission </span> is to make technology careers accessible
+          Our mission is to make technology careers accessible
           to everyone.
         </h2>
       </Grid.Column>

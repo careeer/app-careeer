@@ -8,6 +8,8 @@ const Reviews = props => (
     className={props.styleName}
     autoplay
     dots
+    draggable={false}
+    pauseOnHover={false}
     slidesToShow={3}
     centerPadding="0"
     infinite
