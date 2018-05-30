@@ -22,25 +22,25 @@ const WhoWeAreSection = () => (
       </Grid.Column>
       <Grid.Column width="6">
         <p className="description">
-          At careeer.me, we know what it’s like to change your <br />
-          career from non-tech to tech. We have experienceed <br />
-          the process ourselves, and found that it was like <br />
+          At Careeer.me, we know what it’s like to change your
+          career from non-tech to tech. We have experienceed
+          the process ourselves, and found that it was like
           trudging through mud. Up a mountain. With rain.
         </p>
         <p>
-          Having worked with hundreds of working <br />
-          professionals as they transition their careers we’ve <br />
-          learned a few things:
+          Having coached hundreds of working professionals, we
+          have learned that the following 3 pieces are usually
+          missing:
         </p>
         <p className="improvementAreas">
-          <span>1. Direction is usually missing</span> <br />
+          <span>1. Direction</span> <br />
           &nbsp;“I know what I want, but how do I get there?” <br />
           <br />
-          <span>2. Mentorship</span> <br />
+          <span>2. Expertise</span> <br />
           &nbsp;“I want to talk to somebody who works in the field” <br />
           <br />
           <span>3. Accountability</span> <br />
-          &nbsp;“I get bored/sidetracked/stop caring/apathetic” <br />
+          &nbsp;“I get bored/sidetracked/apathetic” <br />
         </p>
       </Grid.Column>
     </Grid.Row>
