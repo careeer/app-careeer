@@ -20,7 +20,7 @@ const HeroSection = () => (
             emptyPause={10}
             typingInterval={50}
             deletingInterval={10}
-            items={['Tech', 'Product Management', 'Engineering', 'Tech Sales', 'Design']}
+            items={['Tech', 'Product Management', 'UX Design', 'Tech Sales', 'Freelance', 'Software Development', 'Business Development']}
           />
         </strong>
       </h1>
