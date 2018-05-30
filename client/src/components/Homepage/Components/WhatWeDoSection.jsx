@@ -13,7 +13,7 @@ const WhatWeDoSection = () => (
       </Grid.Column>
     </Grid.Row>
     <Grid.Row>
-      <Grid.Column width="2" />
+      <Grid.Column only="computer" width="2" />
       <Grid.Column width="6">
         <div className="descriptionContainer">
           <p className="description">

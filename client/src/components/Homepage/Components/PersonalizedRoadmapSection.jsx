@@ -12,7 +12,7 @@ const PersonalizedRoadmapSection = () => (
       </Grid.Column>
     </Grid.Row>
     <Grid.Row>
-      <Grid.Column width="2">
+      <Grid.Column only="computer" width="2" >
         <div className="greenRectangle" />
       </Grid.Column>
       <Grid.Column width="6">
