@@ -5,12 +5,12 @@ import { Grid } from 'semantic-ui-react';
 import SubscriptionPlan from './SubscriptionPlan';
 
 export default class MonthlySubscriptionsSection extends React.Component {
-  state = {}
+  state = { plan: 'Standard Track' }
 
-  handlePlanClick = (plan) => this.setState({ plan: plan });
+  handlePlanClick = plan => this.setState({ plan });
 
   render() {
-    const { plan } = this.state
+    const { plan } = this.state;
 
     return (
       <Grid stackable className="subscriptionSection">
@@ -24,7 +24,7 @@ export default class MonthlySubscriptionsSection extends React.Component {
           <SubscriptionPlan
             title="Self Starter"
             cost="150"
-            active={plan === "Self Starter"}
+            active={plan === 'Self Starter'}
             firstDescription="30 min/week in-app coaching"
             secondDescription="(1) 30 min call/month"
             onPlanClick={this.handlePlanClick}
@@ -32,7 +32,7 @@ export default class MonthlySubscriptionsSection extends React.Component {
           <SubscriptionPlan
             title="Standard Track"
             cost="300"
-            active={plan === "Standard Track"}
+            active={plan === 'Standard Track'}
             firstDescription="1 hr/week in-app coaching"
             secondDescription="(3) 30 min calls/month"
             onPlanClick={this.handlePlanClick}
@@ -40,7 +40,7 @@ export default class MonthlySubscriptionsSection extends React.Component {
           <SubscriptionPlan
             title="Fast Track"
             cost="500"
-            active={plan === "Fast Track"}
+            active={plan === 'Fast Track'}
             firstDescription="Unlimited weekly in-app coaching"
             secondDescription="(4) 30 min calls/month"
             onPlanClick={this.handlePlanClick}

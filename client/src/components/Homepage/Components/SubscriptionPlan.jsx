@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid } from 'semantic-ui-react';
 
-export default class SubscriptionPlan  extends React.Component {
+export default class SubscriptionPlan extends React.Component {
   handleClick = (e) => {
-    e.preventDefault;
+    e.preventDefault();
     this.props.onPlanClick(this.props.title);
   }
 
@@ -12,10 +12,10 @@ export default class SubscriptionPlan  extends React.Component {
     return (
       <Grid.Column width="4" textAlign="center">
         <button className="subscriptionPlan" onClick={this.handleClick}>
-          <h4 className={this.props.active ? "planTitle active" :"planTitle"}>
+          <h4 className={this.props.active ? 'planTitle active' : 'planTitle'}>
             {this.props.title}
           </h4>
-          <div className={this.props.active ? "monthlyPlan active" :"monthlyPlan"}>
+          <div className={this.props.active ? 'monthlyPlan active' : 'monthlyPlan'}>
             <h5 className="planCost">
               ${this.props.cost} <span>per month</span>
             </h5>
@@ -37,5 +37,5 @@ SubscriptionPlan.propTypes = {
   firstDescription: PropTypes.string.isRequired,
   secondDescription: PropTypes.string.isRequired,
   active: PropTypes.bool.isRequired,
-  onPlanClick: PropTypes.func.isRequired
-}
+  onPlanClick: PropTypes.func.isRequired,
+};
