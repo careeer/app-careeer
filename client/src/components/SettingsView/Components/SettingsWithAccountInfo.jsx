@@ -48,7 +48,6 @@ class SettingsWithAccountInfo extends Component {
   }
 
   handleCardToken = (payload) => {
-    console.log(payload);
     this.props.subscription.updateCreditCard(payload, () => {
       this.props.handleCloseAndShowBanner('Credit card successfully changed', false);
     });

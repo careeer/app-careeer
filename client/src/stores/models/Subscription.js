@@ -95,7 +95,6 @@ class Subscription {
   }
 
   @action handleCardErrors(event) {
-    console.log(event);
     if (event.error) {
       this.cardErrors = event.error.message;
       this.cardSuccess = '';
