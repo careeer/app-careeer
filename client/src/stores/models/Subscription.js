@@ -7,7 +7,6 @@ import { PLAN } from '../../components/LandingPage/Components/Plans';
 class Subscription {
   subscription = '/v1/subscription';
   originalPlan = '';
-
   @observable previewCost = 0;
   @observable cardErrors = '';
   @observable cardSuccess = '';
