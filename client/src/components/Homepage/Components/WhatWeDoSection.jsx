@@ -17,7 +17,7 @@ const WhatWeDoSection = () => (
       <Grid.Column width="6">
         <div className="descriptionContainer">
           <p className="description">
-            Gcareeer.me is a career development platform that
+            Careeer.me is a career development platform that
             provides personalized, focused mentorship for
             people transitioning their career into the technology industry.
           </p>
