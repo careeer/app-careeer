@@ -25,7 +25,7 @@ const OnDemandCoachSection = () => (
         </h2>
         <div className="descriptionContainer">
           <p className="description">
-            You get your own coach to support you every step of the way through in-app messaging.
+            Chat with your dedicated career coach via messenger anytime of the week.
           </p>
           <p>
             Our customers often have questions at random times, and not

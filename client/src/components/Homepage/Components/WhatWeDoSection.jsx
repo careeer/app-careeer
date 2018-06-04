@@ -17,9 +17,8 @@ const WhatWeDoSection = () => (
       <Grid.Column width="6">
         <div className="descriptionContainer">
           <p className="description">
-            Careeer.me is a career development platform that
-            provides personalized, focused mentorship for
-            people transitioning their career into the technology industry.
+            We’re a career development platform that provides expert mentorship
+            for people transitioning their career into the technology industry.
           </p>
           <p>
             Our software delivers on-demand coaching, career
@@ -54,7 +53,7 @@ const WhatWeDoSection = () => (
           On-demand support
         </h6>
         <p className="iconDescription">
-          Your own dedicated career coach is available to chat via messenger anytime of the week
+          Chat with your dedicated career coach via messenger anytime of the week
         </p>
       </Grid.Column>
       <Grid.Column textAlign="center" width="4">
@@ -63,7 +62,7 @@ const WhatWeDoSection = () => (
           Training
         </h6>
         <p className="iconDescription">
-          Reframe your psychology and change your lens
+          Learn how to pitch your transferable skills and communicate your story
         </p>
       </Grid.Column>
     </Grid.Row>

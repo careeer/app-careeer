@@ -29,6 +29,9 @@ const PersonalizedRoadmapSection = () => (
             weekly for progress towards your goal. Your roadmap is flexible,
             taking into account your timeline, budget, and overall goals.
           </p>
+          <p>
+            When you sign up, you’ll start your roadmap in one of the following areas:
+          </p>
         </div>
       </Grid.Column>
     </Grid.Row>

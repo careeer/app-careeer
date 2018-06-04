@@ -50,7 +50,7 @@ export default class MonthlySubscriptionsSection extends React.Component {
           <Grid.Column width="4" className="trialLink" textAlign="center">
             <button className="signUpLink">
               <Link to="/signUp">
-                Start 7-day Free Trial
+                Start 3 day Free Trial
               </Link>
             </button>
             <p>No credit card needed</p>
