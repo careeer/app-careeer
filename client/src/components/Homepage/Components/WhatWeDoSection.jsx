@@ -17,18 +17,13 @@ const WhatWeDoSection = () => (
       <Grid.Column width="6">
         <div className="descriptionContainer">
           <p className="description">
-            Get a step-by-step plan with a personalized career roadmap. Know
-            which steps to take each week to accomplish your career goal.
+            Gcareeer.me is a career development platform that
+            provides personalized, focused mentorship for
+            people transitioning their career into the technology industry.
           </p>
           <p>
-            Receive 1:1 mentorship as you work through your weekly tasks. Gain
-            foundational skills in areas such as interview strategy, pitching
-            your value-add, professional branding, and more.
-          </p>
-          <p>
-            All of our packages include a career roadmap, access to an expert
-            coach, and a content library with trainings that help you reframe
-            the psychology of the new you.
+            Our software delivers on-demand coaching, career
+            skill development, and weekly goal monitoring.
           </p>
         </div>
       </Grid.Column>

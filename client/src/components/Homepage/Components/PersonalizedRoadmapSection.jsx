@@ -25,14 +25,9 @@ const PersonalizedRoadmapSection = () => (
       <Grid.Column width="6">
         <div className="descriptionContainer">
           <p className="description">
-            Sign up and choose where your roadmap begins, and
-            when it ends. You might start with job search strategy,
-            and continue to offer negotiation. Or, you may just
-            sign up for a custom education plan to round out your
-            skill set.
-          </p>
-          <p>
-            Each week, you’ll complete tasks that move you towards your goal.
+            A step-by-step plan, co-created by you and your coach, monitored
+            weekly for progress towards your goal. Your roadmap is flexible,
+            taking into account your timeline, budget, and overall goals.
           </p>
         </div>
       </Grid.Column>

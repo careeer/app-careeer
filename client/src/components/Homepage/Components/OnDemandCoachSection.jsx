@@ -25,17 +25,19 @@ const OnDemandCoachSection = () => (
         </h2>
         <div className="descriptionContainer">
           <p className="description">
-            No more doubting the right next step, how to
-            follow-up after an interview, or how to rebrand your
-            professional story.
+            You get your own coach to support you every step of the way through in-app messaging.
           </p>
           <p>
-            Our career coaches have industry experience and
-            provide you with direction, focus, and confidence to
-            boot. You can expect a personalized, real-talk
-            approach as we collaborate to get you into your
-            dream job in tech.
+            Our customers often have questions at random times, and not
+            everyone has the network or a mentor to give them career guidance
+            <i> when they need it</i>.  Some of those random questions that
+            might boggle your mind are:
           </p>
+          <ul>
+            <li>How do I pitch my transferable skills?</li>
+            <li>Does this line in my resume make sense?</li>
+            <li>I have an interview with a recruiter in two hours. Help!</li>
+          </ul>
         </div>
       </Grid.Column>
     </Grid.Row>
