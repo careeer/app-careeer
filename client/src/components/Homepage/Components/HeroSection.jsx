@@ -26,7 +26,7 @@ const HeroSection = () => (
       </h1>
       <button className="signUpLink">
         <Link to="/signUp">
-          Sign up for 3 day Free Trial
+          Start 3 day Free Trial
         </Link>
       </button>
     </Grid.Column>

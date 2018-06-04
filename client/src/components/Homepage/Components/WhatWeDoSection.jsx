@@ -17,8 +17,8 @@ const WhatWeDoSection = () => (
       <Grid.Column width="6">
         <div className="descriptionContainer">
           <p className="description">
-            Get mentorship and know your next steps to transition your career
-            into the technology industry.
+            Get expert mentorship and a personalized plan as you transition
+            your carer into the technology industry.
           </p>
           <p>
             Our software delivers on-demand coaching, career
