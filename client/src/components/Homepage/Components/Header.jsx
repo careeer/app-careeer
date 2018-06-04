@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Grid } from 'semantic-ui-react';
 
 const Header = () => (
-  <Grid columns="equal" className="mainHeader">
+  <Grid className="mainHeader">
     <Grid.Column width="2" only="computer" />
     <Grid.Column
       width="3"
