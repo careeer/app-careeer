@@ -31,7 +31,7 @@ const Header = () => (
       verticalAlign="middle"
     >
       <Link to="/signIn" className="signIn">
-        Sign In
+        Log In
       </Link>
     </Grid.Column>
     <Grid.Column width="2" verticalAlign="middle">
