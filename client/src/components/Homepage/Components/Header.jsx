@@ -25,8 +25,8 @@ const Header = () => (
       </Link>
     </Grid.Column>
     <Grid.Column
-      width="6"
-      computer="5"
+      width="8"
+      computer="7"
       textAlign="right"
       verticalAlign="middle"
     >
