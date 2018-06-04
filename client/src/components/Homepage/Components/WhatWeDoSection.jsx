@@ -53,7 +53,7 @@ const WhatWeDoSection = () => (
           On-demand support
         </h6>
         <p className="iconDescription">
-          Chat with your dedicated career coach via messenger anytime of the week
+          Chat with your career coach via messenger anytime of the week
         </p>
       </Grid.Column>
       <Grid.Column textAlign="center" width="4">
@@ -62,7 +62,7 @@ const WhatWeDoSection = () => (
           Training
         </h6>
         <p className="iconDescription">
-          Learn how to pitch your transferable skills and communicate your story
+          Rebrand yourself. Learn to communicate your story and transferable skills.
         </p>
       </Grid.Column>
     </Grid.Row>
