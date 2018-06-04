@@ -14,6 +14,7 @@ const Reviews = props => (
     centerPadding="0"
     infinite
     centerMode
+    speed={1500}
     autoplaySpeed={3500}
   >
     <div>
@@ -28,11 +29,14 @@ const Reviews = props => (
         </div>
         <div className="reviewContent">
           <p>
-            &quot;Careeer has helped me understand which role is a perfect fit with my skills and passions&quot;
+            &quot;Careeer has helped me understand which role is perfect for my skills and passions&quot;
           </p>
           <br />
+          <p>
+            -Fadi
+          </p>
           <strong>
-            - Fadi
+            Solutions Architect
           </strong>
         </div>
       </div>
@@ -52,8 +56,11 @@ const Reviews = props => (
             &quot;I immediately knew that you could really help me.&quot;
           </p>
           <br />
+          <p>
+            -Dan
+          </p>
           <strong>
-            - Dan
+            Product Manager
           </strong>
         </div>
       </div>
@@ -70,11 +77,14 @@ const Reviews = props => (
         </div>
         <div className="reviewContent">
           <p>
-            &quot;I have never gotten results like this in the past and feel more confident about my portfolio and resume&quot;
+            &quot;I have never gotten results like this and feel more confident about my portfolio and resume. Thank you for helping me land my first job in UX!&quot;
           </p>
           <br />
+          <p>
+            -Dimple
+          </p>
           <strong>
-            - Dimple
+            UX Designer
           </strong>
         </div>
       </div>
@@ -91,32 +101,14 @@ const Reviews = props => (
         </div>
         <div className="reviewContent">
           <p>
-            &quot;Lots of good information. Learning your own value proposition and changing your mindset &quot;lens&quot; about the hiring process.&quot;
+            &quot;They provided me with valuable insights on how to market myself, but more importantly showed me a new way to think about the whole process.&quot;
           </p>
           <br />
-          <strong>
-            - Aaron
-          </strong>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div className="reviewContainer">
-        <div className="reviewAvatar">
-          <Image
-            alt=""
-            avatar
-            className="avatar"
-            src="https://res.cloudinary.com/careeer/image/upload/v1510605305/tiffany_riubhg.jpg"
-          />
-        </div>
-        <div className="reviewContent">
           <p>
-            &quot;It helps to have someone that is rooting for you to succeed&quot;
+            -Aaron
           </p>
-          <br />
           <strong>
-            - Tiffany
+            Product Manager
           </strong>
         </div>
       </div>
@@ -133,11 +125,14 @@ const Reviews = props => (
         </div>
         <div className="reviewContent">
           <p>
-            &quot;More tailored and personal, suiting my strengths and workflow&quot;
+            &quot;What I found most beneficial was the structure, game plan, and guiding voice to move forward.&quot;
           </p>
           <br />
+          <p>
+            -Hai
+          </p>
           <strong>
-            - Hai
+            UX Designer
           </strong>
         </div>
       </div>
@@ -157,8 +152,11 @@ const Reviews = props => (
             &quot;Keeping me on track and focused toward my goal.&quot;
           </p>
           <br />
+          <p>
+            -Mark
+          </p>
           <strong>
-            - Mark
+            Project Manager
           </strong>
         </div>
       </div>

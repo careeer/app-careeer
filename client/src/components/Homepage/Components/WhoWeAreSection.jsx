@@ -23,7 +23,7 @@ const WhoWeAreSection = () => (
       <Grid.Column width="6">
         <p className="description">
           At Careeer.me, we know what it’s like to change your
-          career from non-tech to tech. We have experienceed
+          career from non-tech to tech. We have experienced
           the process ourselves, and found that it was like
           trudging through mud. Up a mountain. With rain.
         </p>

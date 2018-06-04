@@ -17,20 +17,24 @@ const PersonalizedRoadmapSection = () => (
       </Grid.Column>
       <Grid.Column width="6">
         <h2 className="ourMission">
-          Choose where you<br />
-          start, progress at<br />
+          Choose where you
+          start, progress at
           your own pace
         </h2>
       </Grid.Column>
       <Grid.Column width="6">
-        <p className="description descriptionContainer">
-          When you sign up, you choose where your roadmap
-          begins, and where it ends. You might start with job
-          search strategy all the way through to offer negotiation.
-          Or, you may just sign-up for a custom education plan
-          to round out your skill set. Each week, you’ll complete
-          tasks that move your towards your goal.
-        </p>
+        <div className="descriptionContainer">
+          <p className="description">
+            Sign up and choose where your roadmap begins, and
+            when it ends. You might start with job search strategy,
+            and continue to offer negotiation. Or, you may just
+            sign up for a custom education plan to round out your
+            skill set.
+          </p>
+          <p>
+            Each week, you’ll complete tasks that move you towards your goal.
+          </p>
+        </div>
       </Grid.Column>
     </Grid.Row>
     <Grid.Row>
