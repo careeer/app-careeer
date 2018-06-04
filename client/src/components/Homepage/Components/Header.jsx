@@ -24,11 +24,6 @@ const Header = () => (
         Pricing
       </Link>
     </Grid.Column>
-    <Grid.Column width="3" computer="2" verticalAlign="middle">
-      <Link to="/FAQ" className="faqLink">
-        FAQ
-      </Link>
-    </Grid.Column>
     <Grid.Column
       width="6"
       computer="5"
