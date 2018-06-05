@@ -18,11 +18,11 @@ const WhatWeDoSection = () => (
         <div className="descriptionContainer">
           <p className="description">
             Get expert mentorship and a personalized plan as you transition
-            your carer into the technology industry.
+            your career into the technology industry.
           </p>
           <p>
-            Our software delivers on-demand coaching, career
-            skill development, and weekly goal monitoring.
+            Our software delivers a career roadmap and on-demand career coach,
+            along focused trainings to rebrand your professional story.
           </p>
         </div>
       </Grid.Column>

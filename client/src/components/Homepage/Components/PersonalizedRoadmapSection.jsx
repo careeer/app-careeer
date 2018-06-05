@@ -8,7 +8,7 @@ const PersonalizedRoadmapSection = () => (
     <Grid.Row>
       <Grid.Column width="2" />
       <Grid.Column width="14" className="sectionTitle">
-        Personalized Roadmap
+        Roadmap
       </Grid.Column>
     </Grid.Row>
     <Grid.Row>
