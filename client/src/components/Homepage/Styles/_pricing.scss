@@ -1,0 +1,87 @@
+.subscriptionSection {
+  .sectionTitle {
+    padding-top: 230px;
+  }
+
+  .subscriptionPlan {
+    margin-top: 4rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    .planTitle {
+      color: #4d3886;
+      font-family: 'Open Sans';
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      text-align: center;
+
+      &.active {
+        border-radius: 2px;
+        background-color: #92f3f1;
+      }
+    }
+
+    .monthlyPlan {
+      margin: 2rem auto 0;
+      border: 2px solid #898aca;
+      border-radius: 5px;
+      padding-bottom: 8rem;
+      max-width: 298px;
+
+      &.active {
+        border: solid 4px #55dae0;
+      }
+
+      .planDescription {
+        max-width: 258px;
+      }
+
+      .planCost {
+        border-bottom: solid 4px #fcb0dc;
+        color: #4d3886;
+        font-family: 'Open Sans';
+        font-size: 28px;
+        margin: 0 auto;
+        padding-top: 1rem;
+        max-width: 258px;
+
+        span {
+          font-size: 18px;
+        }
+      }
+
+      li {
+        color: #4a4a4a;
+        font-family: 'OpenSans-SemiBold', 'Open Sans';
+        font-size: 18px;
+        padding-top: 2rem;
+        text-align: left;
+      }
+
+      ul {
+        padding-bottom: 1rem;
+      }
+    }
+  }
+
+  .trialLink {
+    padding-top: 3.5rem;
+    padding-bottom: 8rem;
+
+    .signUpLink {
+      padding: 0.5rem 4rem;
+    }
+
+    p {
+      text-align: center;
+      font-family: 'Open Sans';
+      font-size: 14px;
+    }
+  }
+}

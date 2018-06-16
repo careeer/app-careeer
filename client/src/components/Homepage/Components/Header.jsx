@@ -20,9 +20,9 @@ const Header = () => (
       </Link>
     </Grid.Column>
     <Grid.Column width="1" verticalAlign="middle">
-      <Link to="/Pricing" className="pricingLink">
+      <a href="#pricing" className="pricingLink">
         Pricing
-      </Link>
+      </a>
     </Grid.Column>
     <Grid.Column
       width="8"

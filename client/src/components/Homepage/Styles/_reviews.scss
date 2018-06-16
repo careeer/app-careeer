@@ -1,0 +1,100 @@
+.testimonials {
+  .slick-initialized.slick-slider {
+    width: 100%;
+    height: auto;
+    margin: 0 0;
+    padding: 3.5rem 0;
+
+    .slick-dots {
+      bottom: -95px;
+
+      li, button, button::before {
+        height: 40px;
+        width: 40px;
+        z-index: 100;
+      }
+    }
+
+    .slick-dots li button:before {
+      font-size: 20px;
+      top: 20px;
+      color: #55dae0;
+    }
+
+    .slick-slide {
+      opacity: 0.5;
+      padding-top: 2rem;
+      transition: transform 1.25s;
+
+      &.slick-active {
+        position: relative;
+        transform: translateX(250px);
+        z-index: -1;
+      }
+
+      &.slick-center {
+        opacity: 1;
+        position: relative;
+        transform: translateY(10px) scale(1.2);
+        z-index: 1;
+
+        & + div.slick-active {
+          position: relative;
+          transform: translateX(-250px);
+          z-index: -1;
+        }
+      }
+    }
+
+    .slick-list {
+      overflow: inherit;
+
+      .reviewContainer {
+        border-radius: 2px;
+        background-color: #ffffff;
+        box-shadow: 0 5px 9px 0 rgba(199, 199, 199, 0.5);
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 1rem;
+        width: 366px;
+        height: 400px;
+      }
+
+      .reviewAvatar {
+        width: 165px;
+        margin: 0 auto 2rem;
+
+        img {
+          width: 165px;
+          height: 165px;
+          margin-right: 0;
+        }
+      }
+
+      .reviewContent {
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 1rem;
+        width: 300px;
+
+        p {
+          display: block;
+          font-family: "OpenSans-Italic","Open Sans";
+          font-size: 16px;
+          letter-spacing: 0.3px;
+          text-align: left;
+          margin-bottom: 0;
+        }
+
+        strong {
+          margin-top: 2rem;
+          font-family: "OpenSans-Italic", "Open Sans";
+          font-size: 16px;
+          letter-spacing: 0.3px;
+          text-align: left;
+          color: #3e2d6c;
+        }
+      }
+    }
+  }
+}

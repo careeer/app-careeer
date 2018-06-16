@@ -1,0 +1,39 @@
+.heroImage {
+  margin-top: 5rem !important;
+  background-color: #f1f1f9;
+  height: 650px;
+
+  .column {
+    height: 650px;
+
+    h1 {
+      color: #5f459c;
+      font-size: 40px;
+      text-align: left;
+      margin-top: 124px;
+      line-height: 55px;
+      font-style: normal;
+      font-weight: normal;
+      font-family: 'Open Sans';
+      flex-grow: unset !important;
+
+      .rotatingText {
+        max-width: 250px;
+        color: #33e4e1;
+        font-family: 'OpenSans-Bold', 'Open Sans';
+        font-weight: bold;
+        font-size: 40px;
+        font-style: italic;
+        position: absolute;
+        border-bottom: 3px solid #5f459c;
+      }
+    }
+
+    .signUpLink {
+      flex-grow: unset !important;
+      max-width: 223px;
+      height: 44px;
+      margin-top: 120px;
+    }
+  }
+}
