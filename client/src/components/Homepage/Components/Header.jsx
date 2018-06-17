@@ -1,12 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Responsive, Icon } from 'semantic-ui-react';
 
-const Header = () => (
+const Header = props => (
   <section className="mainHeader">
     <div className="contentContainer">
       <Responsive maxWidth={700}>
-        <Icon link size="big" name="bars" />
+        <Icon link size="big" name="bars" onClick={props.onMenuClick} />
       </Responsive>
       <div className="leftLinks">
         <Link to="/" className="careeer">
@@ -32,5 +33,9 @@ const Header = () => (
     </div>
   </section>
 );
+
+Header.propTypes = {
+  onMenuClick: PropTypes.func.isRequired,
+};
 
 export default Header;

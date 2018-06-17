@@ -12,22 +12,17 @@ const SideNav = props => (
     vertical
     className="side-nav"
   >
-    <Menu.Item name="home">
-      <Link to="/">
-        Home
-      </Link>
-    </Menu.Item>
-    <Menu.Item name="about">
+    <Menu.Item name="about" onClick={props.onMenuClick}>
       <Link to="/About" className="aboutLink">
         About
       </Link>
     </Menu.Item>
-    <Menu.Item name="pricing">
+    <Menu.Item name="pricing" onClick={props.onMenuClick}>
       <a href="#pricing" className="pricingLink">
         Pricing
       </a>
     </Menu.Item>
-    <Menu.Item name="login">
+    <Menu.Item name="login" onClick={props.onMenuClick}>
       <Link to="/login" className="login">
         Log In
       </Link>

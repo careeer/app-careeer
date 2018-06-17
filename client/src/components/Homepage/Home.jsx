@@ -1,5 +1,5 @@
-import React from 'react';
-import { Sidebar } from 'semantic-ui-react';
+import React, { Component } from 'react';
+import { Sidebar, Dimmer } from 'semantic-ui-react';
 
 import Header from './Components/Header';
 import HeroSection from './Components/HeroSection';
@@ -11,22 +11,39 @@ import MonthlySubscriptionsSection from './Components/MonthlySubscriptionsSectio
 import Footer from './Components/Footer';
 import SideNav from './Components/SideNav';
 
-const Home = () => (
-  <div id="landingPage">
-    <Header />
-    <Sidebar.Pushable>
-      <SideNav visible={false} />
-      <Sidebar.Pusher>
-        <HeroSection />
-        <WhatWeDoSection />
-        <PersonalizedRoadmapSection />
-        <OnDemandCoachSection />
-        <TestimonialsSection />
-        <MonthlySubscriptionsSection />
-        <Footer />
-      </Sidebar.Pusher>
-    </Sidebar.Pushable>
-  </div>
-);
+class Home extends Component {
+  state = {
+    showSideNav: false,
+  }
+
+  onMenuClick = () => {
+    this.setState({
+      showSideNav: !this.state.showSideNav,
+    });
+  }
+
+  render() {
+    return (
+      <div id="landingPage">
+        <Header onMenuClick={this.onMenuClick} />
+        <SideNav visible={this.state.showSideNav} onMenuClick={this.onMenuClick} />
+        <Sidebar.Pushable>
+          <Sidebar.Pusher>
+            <Dimmer.Dimmable blurring inverted="true" dimmed={this.state.showSideNav}>
+              <HeroSection />
+              <WhatWeDoSection />
+              <PersonalizedRoadmapSection />
+              <OnDemandCoachSection />
+              <TestimonialsSection />
+              <MonthlySubscriptionsSection />
+              <Footer />
+              <Dimmer active={this.state.showSideNav} />
+            </Dimmer.Dimmable>
+          </Sidebar.Pusher>
+        </Sidebar.Pushable>
+      </div>
+    );
+  }
+}
 
 export default Home;
