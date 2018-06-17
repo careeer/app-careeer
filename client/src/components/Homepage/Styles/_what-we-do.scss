@@ -5,6 +5,10 @@
     background-color: #92f3f1;
   }
 
+  .ourMissionColumn {
+    min-width: 465px;
+  }
+
   .ourMission {
     padding-top: 50px;
   }
@@ -34,5 +38,18 @@
 
   .trainingIcon {
     padding-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .whatWeDo {
+    .greenRectangle {
+      width: 766px;
+      height: 50px;
+    }
+    
+    .ourMissionColumn {
+      order: -1;
+    }
   }
 }

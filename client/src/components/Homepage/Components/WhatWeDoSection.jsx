@@ -26,7 +26,7 @@ const WhatWeDoSection = () => (
           </p>
         </div>
       </Grid.Column>
-      <Grid.Column width="6">
+      <Grid.Column width="6" className="ourMissionColumn">
         <h2 className="ourMission">
           Go from the job <br />
           you’re in, to the job <br />

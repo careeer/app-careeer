@@ -69,6 +69,26 @@ p {
   color: #4d3886;
 }
 
+@media only screen and (max-width: 768px) {
+  .sectionTitle {
+    font-size: 30px;
+    margin-top: 30px !important;
+    padding-top: 0 !important;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .description {
+    margin-top: 0 !important;
+  }
+
+  .ourMission, .greenRectangle  {
+    font-size: 32px;
+  }
+}
+
 @import './side-nav';
 @import './header';
 @import './hero';

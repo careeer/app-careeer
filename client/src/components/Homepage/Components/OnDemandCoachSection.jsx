@@ -9,14 +9,15 @@ const OnDemandCoachSection = () => (
       </Grid.Column>
     </Grid.Row>
     <Grid.Row>
-      <Grid.Column width="3" />
-      <Grid.Column width="5">
+      <Grid.Column only="computer" width="2" />
+      <Grid.Column width="6">
         <img
           alt="coach"
+          className="coachAvatar"
           src="http://res.cloudinary.com/careeer/image/upload/c_fill,g_face,r_max,h_350,w_350/v1523651321/profilepic_copy_lzzrgw.png"
         />
       </Grid.Column>
-      <Grid.Column width="6">
+      <Grid.Column width="6" className="ourMissionColumn">
         <div className="greenRectangle">
           Message your coach<br />
         </div>

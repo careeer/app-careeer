@@ -1,5 +1,5 @@
 .onDemandCoachSection {
-  img {
+  .coachAvatar {
     margin-top: 150px;
   }
 
@@ -8,6 +8,10 @@
     height: 70px;
     margin-top: 42px;
     background-color: #92f3f1;
+  }
+
+  .ourMissionColumn {
+    min-width: 460px;
   }
 
   .ourMission {
@@ -25,5 +29,17 @@
     letter-spacing: 0.2px;
     text-align: left;
     color: #3e2d6c;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .onDemandCoachSection {
+    .coachAvatar {
+      margin-top: 50px;
+    }
+
+    .greenRectangle {
+      height: 50px;
+    }  
   }
 }

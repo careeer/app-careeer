@@ -1,14 +1,28 @@
 .personalizedRoadmap {
   .greenRectangle {
-    width: 517px;
-    height: 70px;
-    margin-top: 162px;
     background-color: #92f3f1;
+    height: 70px;
+    margin-top: 190px;
+    width: 517px;
+  }
+
+  .greenInlineRectangle {
+    background-color: #92f3f1;
+    height: 65px;
+    left: 0;
+    margin-top: 190px;
+    position: absolute;
+    width: 345px;
+  }
+
+  .ourMissionColumn {
+    min-width: 460px;
   }
 
   .ourMission {
     max-width: 460px;
     padding-top: 25px;
+    position: relative;
   }
 
   .descriptionContainer {
@@ -20,5 +34,15 @@
     margin: auto;
     max-width: 63% !important;
     padding-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .personalizedRoadmap {
+    .greenInlineRectangle {
+      height: 50px;
+      margin-top: 98px;
+      width: 455px;
+    }
   }
 }

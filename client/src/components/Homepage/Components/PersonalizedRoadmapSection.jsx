@@ -15,7 +15,8 @@ const PersonalizedRoadmapSection = () => (
       <Grid.Column only="computer" width="2" >
         <div className="greenRectangle" />
       </Grid.Column>
-      <Grid.Column width="6">
+      <Grid.Column width="6" className="ourMissionColumn">
+        <div className="greenInlineRectangle" />
         <h2 className="ourMission">
           Choose where you
           start, progress at
