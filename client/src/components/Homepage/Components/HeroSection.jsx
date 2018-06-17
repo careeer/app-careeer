@@ -1,39 +1,37 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Grid } from 'semantic-ui-react';
 import ReactRotatingText from 'react-rotating-text';
 
 import HeroImage from '../../Icons/HeroImage';
 
 const HeroSection = () => (
-  <Grid stretched className="heroImage">
-    <Grid.Column width="2" />
-    <Grid.Column width="3" verticalAlign="middle">
-      <h1>
-        Transition <br />
-        your career<br />
-        to&nbsp;
-        <strong className="rotatingText">
-          <ReactRotatingText
-            cursor={false}
-            pause={2000}
-            emptyPause={10}
-            typingInterval={50}
-            deletingInterval={10}
-            items={['Tech', 'Product Management', 'UX Design', 'Tech Sales', 'Freelance', 'Software Development', 'Business Development']}
-          />
-        </strong>
-      </h1>
-      <button className="signUpLink">
-        <Link to="/signUp">
-          Start 3 day Free Trial
-        </Link>
-      </button>
-    </Grid.Column>
-    <Grid.Column width="10">
+  <section className="heroSection">
+    <div className="contentContainer">
       <HeroImage />
-    </Grid.Column>
-  </Grid>
+      <div className="heroContent">
+        <h1>
+          Transition <br />
+          your career <br />
+          &nbsp;
+          <strong className="rotatingText">
+            <ReactRotatingText
+              cursor={false}
+              pause={2000}
+              emptyPause={10}
+              typingInterval={50}
+              deletingInterval={10}
+              items={['Tech', 'Product Management', 'UX Design', 'Tech Sales', 'Freelance', 'Software Development', 'Business Development']}
+            />
+          </strong>
+        </h1>
+        <button className="signUpLink">
+          <Link to="/signUp">
+            Start 3 day Free Trial
+          </Link>
+        </button>
+      </div>
+    </div>
+  </section>
 );
 
 export default HeroSection;

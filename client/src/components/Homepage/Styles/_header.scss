@@ -1,57 +1,56 @@
 .mainHeader {
-  top: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 10px 0 rgba(119, 119, 119, 0.5);
+  height: 70px;
   left: 0;
+  padding: 10px;
+  position: fixed;
+  top: 0;
   width: 100%;
   z-index: 200;
-  position: fixed;
-  background-color: #fff;
-  margin-top: 0 !important;
-  margin-left: 0 !important;
-  box-shadow: 0 2px 10px 0 rgba(119, 119, 119, 0.5);
+
+  .contentContainer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .icon {
+    color: #00a2aa;
+    padding-top: 10px;
+    padding-left: 10px;
+  }
 
   .careeer {
-    width: 115px;
-    height: 45px;
     color: #00a2aa;
     font-size: 36px;
-    text-align: left;
-    font-style: normal;
     font-weight: normal;
-    line-height: normal;
-    font-stretch: normal;
-    letter-spacing: normal;
     font-family: 'Lobster', cursive;
+    padding-right: 10px;
+  }
+
+  .aboutLink, .pricingLink, .rightLinks {
+    display: none;
   }
 }
 
-@media only screen and (min-width: 600px) {
-
-}
-
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 700px) {
   .mainHeader {
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 200;
-    position: fixed;
-    background-color: #fff;
-    margin-top: 0 !important;
-    margin-left: 0 !important;
-    box-shadow: 0 2px 10px 0 rgba(119, 119, 119, 0.5);
-  
-    .careeer {
-      width: 115px;
-      height: 45px;
-      color: #00a2aa;
-      font-size: 36px;
-      text-align: left;
-      font-style: normal;
-      font-weight: normal;
-      line-height: normal;
-      font-stretch: normal;
-      letter-spacing: normal;
-      font-family: 'Lobster', cursive;
+    .aboutLink, .pricingLink {
+      display: initial;
+    }
+
+    .leftLinks, .rightLinks {
+      display: flex;
+      align-items: center;
+    }
+
+    .aboutLink, .pricingLink {
+      padding-left: 2rem;
+    }
+
+    .signUpLink {
+      padding: 0.5rem 1.2rem;
+      margin-left: 2rem;
     }
   }
 }

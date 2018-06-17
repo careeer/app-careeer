@@ -1,47 +1,36 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Grid } from 'semantic-ui-react';
+import { Responsive, Icon } from 'semantic-ui-react';
 
 const Header = () => (
-  <Grid className="mainHeader">
-    <Grid.Column width="2" only="computer" />
-    <Grid.Column
-      width="3"
-      computer="2"
-      verticalAlign="middle"
-    >
-      <Link to="/" className="careeer">
-        Careeer!
-      </Link>
-    </Grid.Column>
-    <Grid.Column width="1" verticalAlign="middle">
-      <Link to="/About" className="aboutLink">
-        About
-      </Link>
-    </Grid.Column>
-    <Grid.Column width="1" verticalAlign="middle">
-      <a href="#pricing" className="pricingLink">
-        Pricing
-      </a>
-    </Grid.Column>
-    <Grid.Column
-      width="8"
-      computer="7"
-      textAlign="right"
-      verticalAlign="middle"
-    >
-      <Link to="/signIn" className="signIn">
-        Log In
-      </Link>
-    </Grid.Column>
-    <Grid.Column width="2" verticalAlign="middle">
-      <button className="signUpLink">
-        <Link to="/signUp">
-          Free Trial
+  <section className="mainHeader">
+    <div className="contentContainer">
+      <Responsive maxWidth={700}>
+        <Icon link size="big" name='bars' />
+      </Responsive>
+      <div className="leftLinks">
+        <Link to="/" className="careeer">
+          Careeer!
         </Link>
-      </button>
-    </Grid.Column>
-  </Grid>
+        <Link to="/About" className="aboutLink">
+          About
+        </Link>
+        <a href="#pricing" className="pricingLink">
+          Pricing
+        </a>
+      </div>
+      <div className="rightLinks">
+        <Link to="/signIn" className="signIn">
+          Log In
+        </Link>
+        <button className="signUpLink">
+          <Link to="/signUp">
+            Free Trial
+          </Link>
+        </button>
+      </div>
+    </div>
+  </section>
 );
 
 export default Header;
