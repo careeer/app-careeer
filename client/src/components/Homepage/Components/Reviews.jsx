@@ -10,7 +10,7 @@ const Reviews = props => (
     dots
     draggable={false}
     pauseOnHover={false}
-    slidesToShow={3}
+    slidesToShow={props.slidesToShow}
     centerPadding="0"
     infinite
     centerMode

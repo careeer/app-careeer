@@ -20,7 +20,7 @@ export default class MonthlySubscriptionsSection extends React.Component {
           </Grid.Column>
         </Grid.Row>
         <Grid.Row id="pricing">
-          <Grid.Column width="2" />
+          <Grid.Column width="2" only="computer" />
           <SubscriptionPlan
             title="Self Starter"
             cost="150"

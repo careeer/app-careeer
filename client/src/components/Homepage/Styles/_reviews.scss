@@ -4,6 +4,10 @@
     height: auto;
     margin: 0 0;
     padding: 3.5rem 0;
+    
+    &.mobileOnly {
+      display: none;
+    }
 
     .slick-dots {
       bottom: -95px;
@@ -93,6 +97,82 @@
           letter-spacing: 0.3px;
           text-align: left;
           color: #3e2d6c;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .testimonials {
+    .slick-initialized.slick-slider {
+      &.mobileOnly {
+        display: block;
+      }
+
+      &.nonMobile {
+        display: none;
+      }
+
+      .slick-dots {
+        bottom: 20px;
+      }
+
+      .slick-slide {
+        opacity: 0.5;
+        padding-bottom: 4rem;
+        padding-top: 0;
+        transition: transform 1.25s;
+  
+        &.slick-active {
+          position: relative;
+          transform: translateX(10px);
+          z-index: -1;
+        }
+  
+        &.slick-center {
+          opacity: 1;
+          position: relative;
+          transform: none;
+          z-index: 1;
+  
+          & + div.slick-active {
+            position: relative;
+            transform: translateX(-10px);
+            z-index: -1;
+          }
+        }
+      }
+  
+      .slick-list {
+        .reviewContainer {
+          width: 250px;
+          height: 280px;
+        }
+  
+        .reviewAvatar {
+          margin: 0 auto 1rem;
+          text-align: center;
+
+          img {
+            width: 105px;
+            height: 105px;
+          }
+        }
+  
+        .reviewContent { 
+          width: 100%;
+          text-align: center;
+
+          p {
+            font-size: 12px;
+            text-align: center;
+          }
+  
+          strong {
+            font-size: 12px;
+            text-align: center;
+          }
         }
       }
     }

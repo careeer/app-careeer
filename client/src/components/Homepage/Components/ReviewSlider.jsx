@@ -5,6 +5,7 @@ const ReviewSlider = () => (
   <Reviews
     padding="80px"
     styleName="nonMobile"
+    slidesToShow={3}
   />
 );
 
