@@ -15,9 +15,8 @@ const Home = () => (
   <div id="landingPage">
     <Header />
     <Sidebar.Pushable>
-      <SideNav visible={false}/>               
+      <SideNav visible={false} />
       <Sidebar.Pusher>
-        
         <HeroSection />
         <WhatWeDoSection />
         <PersonalizedRoadmapSection />
@@ -26,7 +25,7 @@ const Home = () => (
         <MonthlySubscriptionsSection />
         <Footer />
       </Sidebar.Pusher>
-    </Sidebar.Pushable> 
+    </Sidebar.Pushable>
   </div>
 );
 

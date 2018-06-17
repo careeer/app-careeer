@@ -5,7 +5,7 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 45rem;
     justify-content: flex-start;
     padding-top: 5rem;
   }
@@ -65,7 +65,8 @@
 
 @media only screen and (min-width: 700px) {
   .heroSection {
-    .contentContainer{
+    .contentContainer {
+      height: 52rem;
       padding-top: 7rem;
     }
 
@@ -91,8 +92,8 @@
     .contentContainer {
       align-items: flex-start;
       flex-direction: row;
+      height: 43rem;
       justify-content: flex-start;
-      height: 100vh;
       padding-top: 9rem;
       
       .heroImagePicture {
@@ -120,7 +121,7 @@
 
         .signUpLink {
           position: absolute;
-          top: 20rem;
+          top: 18rem;
 
         }
       }
