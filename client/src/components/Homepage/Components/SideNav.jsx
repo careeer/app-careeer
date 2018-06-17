@@ -39,6 +39,7 @@ const SideNav = props => (
 
 SideNav.propTypes = {
   visible: PropTypes.bool.isRequired,
+  onMenuClick: PropTypes.func.isRequired,
 };
 
 export default SideNav;
