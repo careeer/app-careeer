@@ -45,11 +45,16 @@
 @media only screen and (min-width: 600px) {
   .heroSection {
     .contentContainer{
-      padding-top: 6rem;
+      padding-top: 4rem;
     }
 
     .heroContent {
+      padding-top: 3rem;
       width: 350px;
+    }
+
+    .heroImagePicture {
+      padding-top: 2.5rem;
     }
 
     h1 {
@@ -67,7 +72,6 @@
   .heroSection {
     .contentContainer {
       height: 52rem;
-      padding-top: 7rem;
     }
 
     .heroContent {
@@ -132,6 +136,8 @@
 @media only screen and (min-width: 1160px) {
   .heroSection {
     .contentContainer {
+      height: 46rem;
+
       .heroImagePicture {
         width: 820px;
       }
@@ -142,6 +148,8 @@
 @media only screen and (min-width: 1260px) {
   .heroSection {
     .contentContainer {
+      height: 49rem;
+
       .heroImagePicture {
         width: 880px;
       }
@@ -152,6 +160,8 @@
 @media only screen and (min-width: 1360px) {
   .heroSection {
     .contentContainer {
+      height: 50rem;
+
       .heroImagePicture {
         width: 920px;
       }
