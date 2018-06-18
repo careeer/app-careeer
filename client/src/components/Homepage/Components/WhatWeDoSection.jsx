@@ -9,7 +9,9 @@ const WhatWeDoSection = () => (
   <Grid stackable className="whatWeDo">
     <Grid.Row>
       <Grid.Column width="14" className="sectionTitle" textAlign="right">
-        What We Do
+        <div className="title">
+          What We Do
+        </div>
       </Grid.Column>
     </Grid.Row>
     <Grid.Row>

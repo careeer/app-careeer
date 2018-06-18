@@ -2,13 +2,16 @@ import React from 'react';
 import { Grid } from 'semantic-ui-react';
 
 import Milestones from '../../Icons/Milestones';
+import MilestonesVertical from '../../Icons/MilestonesVertical';
 
 const PersonalizedRoadmapSection = () => (
   <Grid stackable className="personalizedRoadmap">
     <Grid.Row>
       <Grid.Column width="2" />
       <Grid.Column width="14" className="sectionTitle">
-        Roadmap
+        <div className="title">
+          Roadmap
+        </div>
       </Grid.Column>
     </Grid.Row>
     <Grid.Row>
@@ -39,6 +42,7 @@ const PersonalizedRoadmapSection = () => (
     <Grid.Row>
       <Grid.Column textAlign="center">
         <Milestones />
+        <MilestonesVertical />
       </Grid.Column>
     </Grid.Row>
   </Grid>

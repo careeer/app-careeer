@@ -85,3 +85,13 @@
     }
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .subscriptionSection {
+    .subscriptionPlan {
+      .monthlyPlan {
+        padding-bottom: 3rem;
+      }
+    }
+  }
+}

@@ -105,6 +105,10 @@
 
 @media only screen and (max-width: 768px) {
   .testimonials {
+    .sectionTitle {
+      padding-top: 0;
+    }
+
     .slick-initialized.slick-slider {
       &.mobileOnly {
         display: block;

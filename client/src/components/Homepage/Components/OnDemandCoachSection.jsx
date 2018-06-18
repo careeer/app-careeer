@@ -5,7 +5,9 @@ const OnDemandCoachSection = () => (
   <Grid stackable className="onDemandCoachSection">
     <Grid.Row>
       <Grid.Column width="14" className="sectionTitle" textAlign="right">
-        On-Demand Coach
+        <div className="title">
+          On-Demand Coach
+        </div>
       </Grid.Column>
     </Grid.Row>
     <Grid.Row>
