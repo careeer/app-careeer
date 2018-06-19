@@ -3,7 +3,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import { Image } from 'semantic-ui-react';
 
-const Reviews = props => (
+const Testimonial = props => (
   <Slider
     className={props.styleName}
     autoplay
@@ -164,4 +164,4 @@ const Reviews = props => (
   </Slider>
 );
 
-export default Reviews;
+export default Testimonial;

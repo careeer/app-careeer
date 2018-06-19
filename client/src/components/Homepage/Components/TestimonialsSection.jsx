@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
-import ReviewSlider from './ReviewSlider';
-import ReviewSliderMobile from './ReviewSliderMobile';
+import TestimonialSlider from './TestimonialSlider';
+import TestimonialSliderMobile from './TestimonialSliderMobile';
 
 
 const TestimonialsSection = () => (
@@ -14,8 +14,8 @@ const TestimonialsSection = () => (
     </Grid.Row>
     <Grid.Row>
       <Grid.Column>
-        <ReviewSlider className="reviewsNonMobile" />
-        <ReviewSliderMobile className="reviewsMobile" />
+        <TestimonialSlider className="reviewsNonMobile" />
+        <TestimonialSliderMobile className="reviewsMobile" />
       </Grid.Column>
     </Grid.Row>
   </Grid>

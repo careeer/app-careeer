@@ -9,7 +9,7 @@ import WhatWeDoSection from './Components/WhatWeDoSection';
 import RoadmapSection from './Components/RoadmapSection';
 import OnDemandCoachSection from './Components/OnDemandCoachSection';
 import TestimonialsSection from './Components/TestimonialsSection';
-import MonthlySubscriptionsSection from './Components/MonthlySubscriptionsSection';
+import PricingSection from './Components/PricingSection';
 import Footer from './Components/Footer';
 import SideNav from './Components/SideNav';
 
@@ -69,7 +69,7 @@ class Home extends Component {
               <RoadmapSection />
               <OnDemandCoachSection />
               <TestimonialsSection />
-              <MonthlySubscriptionsSection />
+              <PricingSection />
               <Footer />
               <Dimmer active={this.props.showSideNav} />
             </Dimmer.Dimmable>

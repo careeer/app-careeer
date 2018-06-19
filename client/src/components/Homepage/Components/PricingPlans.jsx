@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid } from 'semantic-ui-react';
 
-export default class SubscriptionPlan extends React.Component {
+export default class PricingPlans extends React.Component {
   handleClick = (e) => {
     e.preventDefault();
     this.props.onPlanClick(this.props.title);
@@ -31,7 +31,7 @@ export default class SubscriptionPlan extends React.Component {
   }
 }
 
-SubscriptionPlan.propTypes = {
+PricingPlans.propTypes = {
   title: PropTypes.string.isRequired,
   cost: PropTypes.string.isRequired,
   firstDescription: PropTypes.string.isRequired,

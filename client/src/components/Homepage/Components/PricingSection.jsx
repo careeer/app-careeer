@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Grid } from 'semantic-ui-react';
 
-import SubscriptionPlan from './SubscriptionPlan';
+import PricingPlans from './PricingPlans';
 
-export default class MonthlySubscriptionsSection extends React.Component {
+export default class PricingSection extends React.Component {
   state = { plan: 'Standard Track' }
 
   handlePlanClick = plan => this.setState({ plan });
@@ -21,7 +21,7 @@ export default class MonthlySubscriptionsSection extends React.Component {
         </Grid.Row>
         <Grid.Row id="pricing">
           <Grid.Column width="2" only="computer" />
-          <SubscriptionPlan
+          <PricingPlans
             title="Self Starter"
             cost="150"
             active={plan === 'Self Starter'}
@@ -29,7 +29,7 @@ export default class MonthlySubscriptionsSection extends React.Component {
             secondDescription="(1) 30 min call/month"
             onPlanClick={this.handlePlanClick}
           />
-          <SubscriptionPlan
+          <PricingPlans
             title="Standard Track"
             cost="300"
             active={plan === 'Standard Track'}
@@ -37,7 +37,7 @@ export default class MonthlySubscriptionsSection extends React.Component {
             secondDescription="(3) 30 min calls/month"
             onPlanClick={this.handlePlanClick}
           />
-          <SubscriptionPlan
+          <PricingPlans
             title="Fast Track"
             cost="500"
             active={plan === 'Fast Track'}
