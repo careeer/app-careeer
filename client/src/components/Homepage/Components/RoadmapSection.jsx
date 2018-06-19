@@ -4,22 +4,22 @@ import { Grid } from 'semantic-ui-react';
 import Milestones from '../../Icons/Milestones';
 import MilestonesVertical from '../../Icons/MilestonesVertical';
 
-const PersonalizedRoadmapSection = () => (
+const RoadmapSection = () => (
   <Grid stackable className="personalizedRoadmap">
     <Grid.Row>
       <Grid.Column width="2" />
       <Grid.Column width="14" className="sectionTitle">
-        <div className="title">
+        <header className="title">
           Roadmap
-        </div>
+        </header>
       </Grid.Column>
     </Grid.Row>
     <Grid.Row>
-      <Grid.Column only="computer" width="2" >
-        <div className="greenRectangle" />
+      <Grid.Column only="computer" width="2" className="asideColumn" >
+        <aside className="greenRectangle" />
       </Grid.Column>
       <Grid.Column width="6" className="ourMissionColumn">
-        <div className="greenInlineRectangle" />
+        <aside className="greenInlineRectangle" />
         <h2 className="ourMission">
           Choose where you
           start, progress at
@@ -27,7 +27,7 @@ const PersonalizedRoadmapSection = () => (
         </h2>
       </Grid.Column>
       <Grid.Column width="6">
-        <div className="descriptionContainer">
+        <section className="descriptionContainer">
           <p className="description">
             A step-by-step plan, co-created by you and your coach, monitored
             weekly for progress towards your goal. Your roadmap is flexible,
@@ -36,7 +36,7 @@ const PersonalizedRoadmapSection = () => (
           <p>
             When you sign up, you’ll start your roadmap in one of the following areas:
           </p>
-        </div>
+        </section>
       </Grid.Column>
     </Grid.Row>
     <Grid.Row>
@@ -48,4 +48,4 @@ const PersonalizedRoadmapSection = () => (
   </Grid>
 );
 
-export default PersonalizedRoadmapSection;
+export default RoadmapSection;

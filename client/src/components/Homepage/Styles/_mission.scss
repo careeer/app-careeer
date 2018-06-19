@@ -1,0 +1,48 @@
+.mission {
+  h1 {
+    max-width: 795px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    font-weight: normal;
+    line-height: normal;
+    letter-spacing: 0.3px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    text-align: center;
+    color: #3e2d6c;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .mission {
+    h1 {
+      margin-top: 4rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .mission {
+    h1 {
+      font-size: 27px;
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .mission {
+    h1 {
+      font-size: 24px;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .mission {
+    h1 {
+      font-size: 22px;
+      margin-bottom: 4rem;
+    }
+  }
+}

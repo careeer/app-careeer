@@ -1,43 +1,47 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Sidebar, Dimmer } from 'semantic-ui-react';
 
-import Header from './Components/Header';
 import HeroSection from './Components/HeroSection';
+import MissionSection from './Components/MissionSection';
 import WhatWeDoSection from './Components/WhatWeDoSection';
-import PersonalizedRoadmapSection from './Components/PersonalizedRoadmapSection';
+import RoadmapSection from './Components/RoadmapSection';
 import OnDemandCoachSection from './Components/OnDemandCoachSection';
 import TestimonialsSection from './Components/TestimonialsSection';
 import MonthlySubscriptionsSection from './Components/MonthlySubscriptionsSection';
 import Footer from './Components/Footer';
 import SideNav from './Components/SideNav';
 
-class Home extends Component {
-  state = {
-    showSideNav: false,
-  }
+import './Styles/Homepage.scss';
 
+class Home extends Component {
   onMenuClick = () => {
-    this.setState({
-      showSideNav: !this.state.showSideNav,
-    });
+    this.props.handleSideNavClick();
   }
 
   render() {
     return (
-      <div id="landingPage">
-        <Header onMenuClick={this.onMenuClick} />
-        <SideNav visible={this.state.showSideNav} onMenuClick={this.onMenuClick} />
+      <div>
+        <SideNav
+          visible={this.props.showSideNav}
+          onMenuClick={this.onMenuClick}
+        />
         <Sidebar.Pushable>
           <Sidebar.Pusher>
-            <Dimmer.Dimmable blurring inverted="true" dimmed={this.state.showSideNav}>
+            <Dimmer.Dimmable
+              blurring
+              inverted
+              dimmed={this.props.showSideNav}
+            >
               <HeroSection />
+              <MissionSection />
               <WhatWeDoSection />
-              <PersonalizedRoadmapSection />
+              <RoadmapSection />
               <OnDemandCoachSection />
               <TestimonialsSection />
               <MonthlySubscriptionsSection />
               <Footer />
-              <Dimmer active={this.state.showSideNav} />
+              <Dimmer active={this.props.showSideNav} />
             </Dimmer.Dimmable>
           </Sidebar.Pusher>
         </Sidebar.Pushable>
@@ -45,5 +49,10 @@ class Home extends Component {
     );
   }
 }
+
+Home.propTypes = {
+  showSideNav: PropTypes.bool.isRequired,
+  handleSideNavClick: PropTypes.func.isRequired,
+};
 
 export default Home;

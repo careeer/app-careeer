@@ -32,7 +32,7 @@
       border: 2px solid #898aca;
       border-radius: 5px;
       padding-bottom: 8rem;
-      max-width: 298px;
+      width: 255px;
 
       &.active {
         border: solid 4px #55dae0;
@@ -76,12 +76,23 @@
 
     .signUpLink {
       padding: 0.5rem 4rem;
+      width: 275px;
     }
 
     p {
       text-align: center;
       font-family: 'Open Sans';
       font-size: 14px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1090px) {
+  .subscriptionSection {
+    .subscriptionPlan {
+      .monthlyPlan {
+        width: 225px;
+      }
     }
   }
 }

@@ -3,8 +3,6 @@ import { Switch, Route } from 'react-router-dom';
 
 import ClientDashboard from './ClientDashboard/ClientDashboard';
 import CoachDashboard from './CoachDashboard/Clients/CoachDashboard';
-import NewClientInput from './CoachDashboard/Clients/NewClientInput';
-import Homepage from './Homepage';
 import Payment from './Subscription';
 
 import OnBoardingIntro from './OnBoarding/OnBoardingIntro';
@@ -13,21 +11,22 @@ import OnBoardingQuestion2 from './OnBoarding/OnBoardingQuestion2';
 import OnBoardingQuestion3 from './OnBoarding/OnBoardingQuestion3';
 import OnBoardingName from './OnBoarding/OnBoardingName';
 import OnBoardingThankYou from './OnBoarding/OnBoardingThankYou';
-import DuplicateClientInput from './CoachDashboard/Clients/DuplicateClientInput';
 import Users from './Users';
 import Sessions from './Sessions';
 import AuthRoute from './Lib/AuthRoute';
+import Homepage from './Homepage/Homepage';
 
 
 const App = () => (
   <Switch>
-    <Route exact path="/" component={Homepage.Home} />
-    <Route path="/signIn" component={Sessions.New} />
+    <Route exact path="/" component={Homepage} />
+    <Route exact path="/faq" component={Homepage} />
+    <Route exact path="/about" component={Homepage} />
+    <Route path="/login" component={Sessions.New} />
     <Route path="/createAccount" component={Users.New} />
     <Route path="/ResetPassword" component={Sessions.ResetPassword} />
     <Route path="/users/password/:tk" component={Sessions.ResetPassword} />
     <AuthRoute path="/freetrial/end" component={Payment.FreeTrialComplete} />
-
     <AuthRoute path="/OnBoarding/Intro" component={OnBoardingIntro} />
     <AuthRoute path="/OnBoarding/Question_1" component={OnBoardingQuestion} />
     <AuthRoute path="/OnBoarding/Question_2" component={OnBoardingQuestion2} />
@@ -35,8 +34,6 @@ const App = () => (
     <AuthRoute path="/OnBoarding/Name" component={OnBoardingName} />
     <AuthRoute path="/OnBoarding/thankyou/:clientName" component={OnBoardingThankYou} />
     <AuthRoute path="/clients" component={CoachDashboard} />
-    <AuthRoute path="/Client/New" component={NewClientInput} />
-    <AuthRoute path="/duplicate/:clientId" component={DuplicateClientInput} />
     <AuthRoute path="/:clientId" component={ClientDashboard} />
   </Switch>
 );

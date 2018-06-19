@@ -16,7 +16,7 @@ const Footer = () => (
         </a>
         <br />
         <br />
-        <Link to="/FAQ" className="faqLink">
+        <Link to="/faq" className="faqLink">
           FAQ
         </Link>
         <br />

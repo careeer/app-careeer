@@ -13,7 +13,7 @@ const Header = props => (
         <Link to="/" className="careeer">
           Careeer!
         </Link>
-        <Link to="/About" className="aboutLink">
+        <Link to="/about" className="aboutLink">
           About
         </Link>
         <a href="#pricing" className="pricingLink">
@@ -21,11 +21,11 @@ const Header = props => (
         </a>
       </div>
       <div className="rightLinks">
-        <Link to="/signIn" className="signIn">
+        <Link to="/login" className="signIn">
           Log In
         </Link>
         <button className="signUpLink">
-          <Link to="/signUp">
+          <Link to="/createAccount">
             Free Trial
           </Link>
         </button>

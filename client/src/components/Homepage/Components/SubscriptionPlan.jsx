@@ -10,7 +10,7 @@ export default class SubscriptionPlan extends React.Component {
 
   render() {
     return (
-      <Grid.Column width="4" textAlign="center">
+      <Grid.Column tablet="5" computer="4" textAlign="center">
         <button className="subscriptionPlan" onClick={this.handleClick}>
           <h4 className={this.props.active ? 'planTitle active' : 'planTitle'}>
             {this.props.title}

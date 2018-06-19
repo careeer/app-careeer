@@ -25,7 +25,7 @@ const HeroSection = () => (
           </strong>
         </h1>
         <button className="signUpLink">
-          <Link to="/signUp">
+          <Link to="/createAccount">
             Start 3 day Free Trial
           </Link>
         </button>

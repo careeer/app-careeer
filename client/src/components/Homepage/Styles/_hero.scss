@@ -37,7 +37,7 @@
   .signUpLink {    
     height: 44px;
     margin-bottom: 2rem;
-    margin-top: 4rem;
+    margin-top: 2rem;
     width: 100%;
   }
 }
@@ -49,7 +49,7 @@
     }
 
     .heroContent {
-      padding-top: 3rem;
+      padding-top: 2rem;
       width: 350px;
     }
 
@@ -98,7 +98,7 @@
       flex-direction: row;
       height: 43rem;
       justify-content: flex-start;
-      padding-top: 9rem;
+      padding-top: 7rem;
       
       .heroImagePicture {
         position: absolute;
@@ -136,7 +136,7 @@
 @media only screen and (min-width: 1160px) {
   .heroSection {
     .contentContainer {
-      height: 46rem;
+      height: 45rem;
 
       .heroImagePicture {
         width: 820px;
@@ -148,8 +148,6 @@
 @media only screen and (min-width: 1260px) {
   .heroSection {
     .contentContainer {
-      height: 49rem;
-
       .heroImagePicture {
         width: 880px;
       }
@@ -160,8 +158,6 @@
 @media only screen and (min-width: 1360px) {
   .heroSection {
     .contentContainer {
-      height: 50rem;
-
       .heroImagePicture {
         width: 920px;
       }
