@@ -41,6 +41,7 @@ class CreateForm extends Component {
           required
           type="text"
           placeholder="email"
+          autoComplete="email"
           className={errorModeEmail}
           onChange={this.clearErrorMessages}
           ref={(node) => { this.email = node; }}
@@ -55,6 +56,7 @@ class CreateForm extends Component {
         <input
           required
           type="password"
+          autoComplete="new-password"
           pattern=".{6,}"
           onChange={this.clearErrorMessages}
           placeholder="password (6 character min)"

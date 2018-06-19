@@ -17,7 +17,7 @@ const SelectPlanOptions = props => (
     <p className="plans">
       one dedicated coach <br />
       personalized career roadmap <br />
-      unlimited messaging <br />
+      in-app messaging <br />
     </p>
     <Plans
       selectedAccount={props.selectedPlan}

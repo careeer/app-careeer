@@ -113,7 +113,6 @@ class Subscription extends Component {
                   isLoading={isLoading}
                   cardErrors={cardErrors}
                   cardSuccess={cardSuccess}
-                  selectedPlan={selectedPlan}
                   disableSubmit={disableSubmit}
                   handleCardToken={this.handleCardToken}
                   handleCardErrors={this.handleCardErrors}

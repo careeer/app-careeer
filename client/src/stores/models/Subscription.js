@@ -7,7 +7,6 @@ import { PLAN } from '../../components/LandingPage/Components/Plans';
 class Subscription {
   subscription = '/v1/subscription';
   originalPlan = '';
-
   @observable previewCost = 0;
   @observable cardErrors = '';
   @observable cardSuccess = '';
@@ -125,8 +124,6 @@ class Subscription {
       const body = await response.json();
       this.subscriptionStatus = body.subscription_status;
       this.subscribed = body.subscribed;
-      console.log(this.subscriptionStatus);
-      console.log(this.subscribed);
       this.originalPlan = body.plan;
       this.populateSelectedPlanInfo(body.plan);
       if (body.card_last4) {
@@ -192,8 +189,8 @@ class Subscription {
       },
     );
     const status = await response.status;
-
     if (status === 200) {
+
       this.cardSuccess = 'Credit card updated';
       this.setIsLoading(false);
       if (callBack) {

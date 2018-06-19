@@ -83,6 +83,7 @@ export default class New extends Component {
               required
               type="text"
               placeholder="email"
+              autoComplete="email"
               defaultValue={email}
               className={errorModeEmail}
               onChange={this.clearErrorMessages}
@@ -98,6 +99,7 @@ export default class New extends Component {
             <input
               required
               type="password"
+              autoComplete="current-password"
               pattern=".{6,}"
               className={errorModePassword}
               onChange={this.clearErrorMessages}

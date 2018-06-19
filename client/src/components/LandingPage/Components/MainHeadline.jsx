@@ -21,14 +21,14 @@ const MainHeadline = props => (
         Work with a coach for guidance and accountability
       </p>
       <CreateForm
-        buttonLabel="START 7-DAY FREE TRIAL"
+        buttonLabel="START 5-DAY FREE TRIAL"
         selectedAccount={props.selectedAccount}
       />
     </Grid.Column>
     <Responsive maxWidth={669}>
       <Grid.Column>
         <CreateAccountButton
-          buttonLabel="START 7-DAY FREE TRIAL"
+          buttonLabel="START 5-DAY FREE TRIAL"
           selectedAccount={props.selectedAccount}
         />
       </Grid.Column>
