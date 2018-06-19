@@ -170,6 +170,7 @@ const Faq = () => (
         option if you are in this stage.
       </p>
     </section>
+    <Faq />
   </div>
 );
 
