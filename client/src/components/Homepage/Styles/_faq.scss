@@ -1,16 +1,28 @@
 .faqPage {
   .faqHero {
     background-color: #f1f1f9;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
     padding-top: 140px;
     padding-bottom: 90px;
-    margin-bottom: 100px;
+
+    .questionsPicture {
+      padding-left: 7rem;
+    }
 
     h1 {
       color: #4d3886;
       font-family: 'Open Sans', sans-serif;
       font-size: 48px;  
       font-weight: normal;
+      margin-top: 4rem;
+      padding-left: 3rem;
       text-align: center;
+    }
+
+    .loudspeakerPicture {
+      padding-left: 5rem;
     }
   }
 
@@ -49,5 +61,91 @@
     color: #4d3886;
     padding-left: 20px;
     padding-right: 20px;
+  }
+}
+
+@media only screen and (max-width: 1163px) {
+  .faqPage {
+    .faqHero {
+      margin-bottom: 50px;
+      padding-top: 100px;
+      padding-bottom: 40px;
+  
+      .questionsPicture {
+        padding-left: 3rem;
+      }
+  
+      h1 {
+        margin-top: 4rem;
+        padding-left: 3rem;
+      }
+  
+      .loudspeakerPicture {
+        padding-left: 5rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1107px) {
+  .faqPage {
+    .faqHero { 
+      .questionsPicture {
+        padding-left: 0;
+      }
+
+      h1 {
+        padding-left: 0;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 450px;
+      }
+  
+      .loudspeakerPicture {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 776px) {
+  .faqPage {
+    .faqHero { 
+      .questionsPicture {
+        max-width: 150px;
+      }
+      
+      h1 {
+        font-size: 36px;
+        max-width: 300px;
+      }
+  
+      .loudspeakerPicture {
+        max-width: 70px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .faqPage {
+    .faqHero { 
+      .questionsPicture {
+        margin-left: 3rem;
+        max-width: 130px;
+        order: -1;
+      }
+      
+      h1 {
+        order: 2;
+        margin-top: 0;
+      }
+  
+      .loudspeakerPicture {
+        max-width: 50px;
+        order: 1;
+        margin-left: 8rem;
+      }
+    }
   }
 }

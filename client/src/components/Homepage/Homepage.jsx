@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import Route from 'react-router-dom/Route';
 
 import Header from './Components/Header';
-import Home from './Home';
-import FAQ from './FAQ';
-import About from './About';
+import Home from './Components/Home';
+import Faq from './Components/Faq';
+import About from './Components/About';
 
 import './Styles/Homepage.scss';
 
@@ -37,7 +37,7 @@ class Homepage extends Component {
           exact
           path="/faq"
           render={() => (
-            <FAQ />
+            <Faq />
           )}
         />
         <Route

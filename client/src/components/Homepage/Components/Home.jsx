@@ -3,17 +3,15 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { Sidebar, Dimmer } from 'semantic-ui-react';
 
-import HeroSection from './Components/HeroSection';
-import MissionSection from './Components/MissionSection';
-import WhatWeDoSection from './Components/WhatWeDoSection';
-import RoadmapSection from './Components/RoadmapSection';
-import OnDemandCoachSection from './Components/OnDemandCoachSection';
-import TestimonialsSection from './Components/TestimonialsSection';
-import PricingSection from './Components/PricingSection';
-import Footer from './Components/Footer';
-import SideNav from './Components/SideNav';
-
-import './Styles/Homepage.scss';
+import HeroSection from './HeroSection';
+import MissionSection from './MissionSection';
+import WhatWeDoSection from './WhatWeDoSection';
+import RoadmapSection from './RoadmapSection';
+import OnDemandCoachSection from './OnDemandCoachSection';
+import TestimonialsSection from './TestimonialsSection';
+import PricingSection from './PricingSection';
+import Footer from './Footer';
+import SideNav from './SideNav';
 
 class Home extends Component {
   handleAboutUsClick = () => {

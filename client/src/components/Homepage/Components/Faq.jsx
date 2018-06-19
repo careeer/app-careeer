@@ -1,11 +1,16 @@
 import React from 'react';
 
-const FAQ = () => (
+import QuestionsImage from '../../Icons/QuestionsImage';
+import LoudspeakerImage from '../../Icons/LoudspeakerImage';
+
+const Faq = () => (
   <div className="faqPage">
     <header className="faqHero">
+      <QuestionsImage />
       <h1>
         Frequently Asked Questions
       </h1>
+      <LoudspeakerImage />
     </header>
     <section>
       <h2>
@@ -168,4 +173,4 @@ const FAQ = () => (
   </div>
 );
 
-export default FAQ;
+export default Faq;
