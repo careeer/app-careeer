@@ -5,7 +5,6 @@ import HiBubbleImage from '../../Icons/HiBubbleImage';
 import Anya from '../../Icons/Images/Anya.png';
 import Tiffany from '../../Icons/Images/Tiffany.png';
 import Onex from '../../Icons/Images/Onex.png';
-import Footer from './Footer';
 
 const About = () => (
   <div className="aboutPage">
@@ -16,7 +15,7 @@ const About = () => (
       </h1>
       <HiBubbleImage />
     </header>
-    <container>
+    <div className="container">
       <div className="greenRectangle" />
       <article className="ourVision">
         <h1>
@@ -76,8 +75,7 @@ const About = () => (
           </figcaption>
         </figure>
       </section>
-      <Footer />
-    </container>
+    </div>
   </div>
 );
 

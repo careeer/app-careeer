@@ -16,7 +16,7 @@ const Header = props => (
         <Link to="/about" className="aboutLink">
           About
         </Link>
-        <a href="#pricing" className="pricingLink">
+        <a role="link" tabIndex="0" className="pricingLink" onClick={props.handlePricingClick}>
           Pricing
         </a>
       </div>
@@ -36,6 +36,7 @@ const Header = props => (
 
 Header.propTypes = {
   onMenuClick: PropTypes.func.isRequired,
+  handlePricingClick: PropTypes.func.isRequired,
 };
 
 export default Header;
