@@ -2,6 +2,7 @@ import React from 'react';
 
 import QuestionsImage from '../../Icons/QuestionsImage';
 import LoudspeakerImage from '../../Icons/LoudspeakerImage';
+import Footer from './Footer';
 
 const Faq = () => (
   <div className="faqPage">
@@ -170,7 +171,7 @@ const Faq = () => (
         option if you are in this stage.
       </p>
     </section>
-    <Faq />
+    <Footer />
   </div>
 );
 
