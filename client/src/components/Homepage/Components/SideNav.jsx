@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import { Sidebar, Menu } from 'semantic-ui-react';
 
 const SideNav = props => (
@@ -12,34 +11,27 @@ const SideNav = props => (
     vertical
     className="side-nav"
   >
-    <Menu.Item name="about" onClick={props.onMenuClick}>
-      <Link to="/About" className="aboutLink">
-        About
-      </Link>
+    <Menu.Item name="about" onClick={props.handleAboutUsClick}>
+      About
     </Menu.Item>
-    <Menu.Item name="pricing" onClick={props.onMenuClick}>
-      <a href="#pricing" className="pricingLink">
-        Pricing
-      </a>
+    <Menu.Item name="pricing" onClick={props.handlePricingClick}>
+      Pricing
     </Menu.Item>
-    <Menu.Item name="login" onClick={props.onMenuClick}>
-      <Link to="/login" className="login">
-        Log In
-      </Link>
+    <Menu.Item name="login" onClick={props.handleLoginClick}>
+      Log In
     </Menu.Item>
-    <Menu.Item className="signup">
-      <button className="signUpLink">
-        <Link to="/signUp">
-          Free Trial
-        </Link>
-      </button>
+    <Menu.Item name="signup" className="signup" onClick={props.handleSignUpClick}>
+      Start 3 day Free Trial
     </Menu.Item>
   </Sidebar>
 );
 
 SideNav.propTypes = {
   visible: PropTypes.bool.isRequired,
-  onMenuClick: PropTypes.func.isRequired,
+  handleAboutUsClick: PropTypes.func.isRequired,
+  handlePricingClick: PropTypes.func.isRequired,
+  handleLoginClick: PropTypes.func.isRequired,
+  handleSignUpClick: PropTypes.func.isRequired,
 };
 
 export default SideNav;

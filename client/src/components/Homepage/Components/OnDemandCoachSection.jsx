@@ -16,7 +16,7 @@ const OnDemandCoachSection = () => (
         <img
           alt="coach"
           className="coachAvatar"
-          src="http://res.cloudinary.com/careeer/image/upload/c_fill,g_face,r_max,h_350,w_350/v1523651321/profilepic_copy_lzzrgw.png"
+          src="https://res.cloudinary.com/careeer/image/upload/c_fill,g_face,r_max,h_350,w_350/v1523651321/profilepic_copy_lzzrgw.png"
         />
       </Grid.Column>
       <Grid.Column width="6" className="ourMissionColumn">

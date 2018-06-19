@@ -3,22 +3,16 @@
   padding-top: 70px;
 
   .item {
+    color: #5f459c;
+    font-size: 20px;
     height: 65px;
-    line-height: 40px;
+    line-height: 25px;
     text-align: center;
     vertical-align: middle;
 
     &.signup {
-      padding: 0;
-
-      .signUpLink {
-        height: 100%;
-        width: 100%;
-
-        a {
-          font-size: 20px;
-        }
-      }
+      background-color: #00a2aa;
+      color: white
     }
   }
 }

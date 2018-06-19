@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 import { Sidebar, Dimmer } from 'semantic-ui-react';
 
 import HeroSection from './Components/HeroSection';
@@ -15,8 +16,34 @@ import SideNav from './Components/SideNav';
 import './Styles/Homepage.scss';
 
 class Home extends Component {
-  onMenuClick = () => {
+  handleAboutUsClick = () => {
     this.props.handleSideNavClick();
+
+    // eslint-disable-next-line
+    this.props.history.push('/about');
+  }
+
+  handlePricingClick = () => {
+    this.props.handleSideNavClick();
+
+    setTimeout(() => {
+      const element = document.getElementById('pricing');
+      if (element) element.scrollIntoView();
+    }, 0);
+  }
+
+  handleLoginClick = () => {
+    this.props.handleSideNavClick();
+
+    // eslint-disable-next-line
+    this.props.history.push('/login');
+  }
+
+  handleSignUpClick = () => {
+    this.props.handleSideNavClick();
+
+    // eslint-disable-next-line
+    this.props.history.push('/createAccount');
   }
 
   render() {
@@ -24,7 +51,10 @@ class Home extends Component {
       <div>
         <SideNav
           visible={this.props.showSideNav}
-          onMenuClick={this.onMenuClick}
+          handleAboutUsClick={this.handleAboutUsClick}
+          handlePricingClick={this.handlePricingClick}
+          handleLoginClick={this.handleLoginClick}
+          handleSignUpClick={this.handleSignUpClick}
         />
         <Sidebar.Pushable>
           <Sidebar.Pusher>
@@ -55,4 +85,4 @@ Home.propTypes = {
   handleSideNavClick: PropTypes.func.isRequired,
 };
 
-export default Home;
+export default withRouter(Home);
