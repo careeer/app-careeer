@@ -19,10 +19,6 @@ const WhatWeDoSection = () => (
       <Grid.Column width="6">
         <div className="descriptionContainer">
           <p className="description">
-            Get expert mentorship and a personalized plan as you transition
-            your career into the technology industry.
-          </p>
-          <p>
             Our software delivers a career roadmap and on-demand career coach,
             along focused trainings to rebrand your professional story.
           </p>
@@ -64,7 +60,7 @@ const WhatWeDoSection = () => (
           Training
         </h6>
         <p className="iconDescription">
-          Rebrand yourself. Learn to communicate your story and transferable skills.
+          Rebrand yourself - Learn to communicate your story and transferable skills.
         </p>
       </Grid.Column>
     </Grid.Row>
