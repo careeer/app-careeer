@@ -26,8 +26,7 @@ const Faq = () => (
       </h2>
       <p>
         We are not affiliated with any of the schools we recommend. Therefore, we are able to
-        provide an objective, expert resource for you, without pushing any particular course or
-        favoring a particular budget.
+        provide an objective, expert resource for you, without pushing any particular school.
       </p>
       <h2>
         I’m not exactly sure about my next career step; I’m feeling a bit stuck. Do you
@@ -132,14 +131,14 @@ const Faq = () => (
         What does interview prep consist of?
       </h2>
       <p>
-        Trainings created by our CEO on how to topics such as interview strategy, humanizing
+        Trainings created by our CEO on topics such as interview strategy, humanizing
         the job search process, how to pitch your value-add, how to communicate your process,
         and other topics that raise self-awareness and help you develop an entirely different
         perspective and skill-set for interviewing. Oh yeah, and 1:1 mock interviews with your
         coach to help you apply your new skills and sharpen your pitch :)
       </p>
     </section>
-    <header className="faqTitle">
+    <header className="faqJobSearchTitle">
       <h1>Job Search Strategy</h1>
     </header>
     <section className="jobSearchStrategy">
@@ -148,12 +147,11 @@ const Faq = () => (
       </h2>
       <p>
         Strategic, personalized support from your coach, including trainings
-        from our CEO on how to search for jobs in the most efficient,
+        on how to search for jobs in the most efficient,
         effective, and authentic manner. Connecting with hiring managers,
         networking, following-up, and cold-pitching are some of the skills
         we teach.  We even help you create a list of jobs that fit your skill
-        set, and our on-demand coach will be there to help any questions
-        during the application process.
+        set and support you during the application process.
       </p>
     </section>
     <header className="faqTitle">
@@ -166,8 +164,7 @@ const Faq = () => (
       <p>
         If you’re at this milestone, Kudos! It’s a good place to be :)
         Your on-demand coach will be there to help you position yourself
-        to get the best offer possible. *We recommend the Fast Track
-        option if you are in this stage.
+        to get the best offer possible. *We recommend Fast Track if you are at this stage.
       </p>
     </section>
   </div>

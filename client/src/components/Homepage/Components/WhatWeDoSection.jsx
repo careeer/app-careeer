@@ -60,7 +60,7 @@ const WhatWeDoSection = () => (
           Training
         </h6>
         <p className="iconDescription">
-          Rebrand yourself - Learn to communicate your story and transferable skills.
+          Rebrand yourself - Learn to communicate your story and transferable skills
         </p>
       </Grid.Column>
     </Grid.Row>

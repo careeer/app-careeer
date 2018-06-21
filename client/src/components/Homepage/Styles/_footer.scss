@@ -1,13 +1,31 @@
 .mainFooter {
-  padding-top: 4rem !important;
-  padding-bottom: 3rem !important;
+  padding-top: 1rem !important;
+  padding-bottom: 0 !important;
   background-color: #f1f1f9;
 
   p {
     font-size: 16px;
   }
+  
+  ul {
+    li{
+      list-style-type: none;
+      padding-bottom: 0.5rem;
+    }
+  }
 
   .inverted.circular.icon {
     background-color: #4d3886 !important;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .mainFooter {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    
+    .six.wide.column.leftLinks, .six.wide.column.rightLinks {
+      padding: 0 !important;
+    }
   }
 }

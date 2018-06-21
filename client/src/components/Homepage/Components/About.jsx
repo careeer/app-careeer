@@ -25,12 +25,12 @@ const About = () => (
         </h1>
         <section>
           <p>
-            At careeer.me, we know what it’s like to change your career from
-            non-tech to tech. We have experienceed the process ourselves, and
+            At Careeer.me, we know what it’s like to change your career from
+            non-tech to tech. We have experienced the process ourselves, and
             found that it was like trudging through mud. Up a mountain. With rain.
           </p>
           <p>
-            Having worked with hundreds of working professionals as they transition
+            Having coached hundreds of working professionals as they transition
             their careers we’ve learned a few things:
           </p>
           <ul>
