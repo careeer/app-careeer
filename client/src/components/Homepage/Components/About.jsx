@@ -60,25 +60,31 @@ const About = () => (
       </header>
       <section className="ourTeam">
         <figure>
-          <img src={Anya} alt="Anya" />
-          <figcaption>
-            Anya Iverova<br />
-            CEO/Coach/Founder
-          </figcaption>
+          <a href="https://www.linkedin.com/in/anya-iverova-27046822/">
+            <img src={Anya} alt="Anya" />
+            <figcaption>
+              Anya Iverova<br />
+              CEO/Coach/Founder
+            </figcaption>
+          </a>
         </figure>
         <figure>
-          <img src={Tiffany} alt="Tiffany" />
-          <figcaption>
-            Tiffany Estrella<br />
-            UX/UI Designer
-          </figcaption>
+          <a href="https://www.linkedin.com/in/tiffanyestrella">
+            <img src={Tiffany} alt="Tiffany" />
+            <figcaption>
+              Tiffany Estrella<br />
+              UX/UI Designer
+            </figcaption>
+          </a>
         </figure>
         <figure>
-          <img src={Onex} alt="Onex" />
-          <figcaption>
-            Onex Gonzalez<br />
-            App Developer
-          </figcaption>
+          <a href="https://www.linkedin.com/in/onex-g/">
+            <img src={Onex} alt="Onex" />
+            <figcaption>
+              Onex Gonzalez<br />
+              App Developer
+            </figcaption>
+          </a>
         </figure>
       </section>
     </div>
