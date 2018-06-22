@@ -47,6 +47,12 @@ const About = () => (
               <p>“I get bored/sidetracked/stop caring/apathetic”</p>
             </li>
           </ul>
+          <p>
+            We’ve found that direction, accountability, and focused skill development
+            are critical to moving forward and staying focused on your career goal. We
+            built Careeer.me to provide a clear path to jobs in tech, while solving
+            the trending issues we’ve seen in career services solutions.
+          </p>
         </section>
       </article>
       <header className="aboutTitle">

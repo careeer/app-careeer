@@ -16,6 +16,7 @@
 
   .ourMission {
     margin-top: 0;
+    min-width: 475px;
   }
 
   .descriptionContainer {
@@ -34,5 +35,10 @@
     .greenRectangle {
       height: 50px;
     }  
+
+    .ourMission {
+      min-width: 375px;
+      max-width: 375px;
+    }
   }
 }

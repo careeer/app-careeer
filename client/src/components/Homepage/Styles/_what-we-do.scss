@@ -6,17 +6,17 @@
   }
 
   .ourMissionColumn {
-    min-width: 470px;
   }
 
   .ourMission {
     padding-left: 12px;
     padding-top: 50px;
+    width: 470px !important;
   }
 
   .descriptionContainer {
-    padding-top: 75px;
-    max-width: 445px;
+    padding-top: 45px;
+    width: 100%;
   }
 
   .roadmapIcon, .supportIcon, .trainingIcon {
