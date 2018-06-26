@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React from 'react';
 import { inject, observer } from 'mobx-react';
-import { Dimmer } from 'semantic-ui-react';
+
 import { Route, Redirect } from 'react-router-dom';
 import LoadingScreen from './LoadingScreen';
 
@@ -25,7 +25,7 @@ export default class AuthRoute extends React.Component {
           this.props.user.signedIn ? (
             <Component {...props} />
           ) : (
-            <Redirect to={{ pathname: '/signIn' }} />
+            <Redirect to={{ pathname: '/logIn' }} />
           )
         )}
       />

@@ -1,161 +1,50 @@
+@import '../../../styles/variables';
+
 div.ui.center.aligned.middle.grid {
-  height: 100%;
+  height: 100vh !important;
 }
 
-/*
-  Careeer Logo
-*/
-div.ui.left.aligned.grid {
-  & div.column.careeerLogo {
-    padding-bottom: 0;
-    padding-left: 4em;
-  }
-}
-
-div.ui.header.mainHeader {
-  height: 100px;
-  margin-bottom: 0;
-
-  a.careeer {
-    position: relative;
-    top: 40px;
-    left: 4rem;
-    font-family: 'Lobster', cursive;
-    font-size: 65.8px;
-    font-weight: 200;
-    letter-spacing: 5.4px;
-    text-align: center;
-    color: #24c63a;
-  }
-
-  a.signInLink {
-    padding-right: 4.5em;
-  }
-
-  a.faqLink, a.aboutUsLink {
-    top: 40px;
-    color: #333333;
-    font-size: 18px;
-    position: absolute;
-    font-family: Cabin;
-    margin-right: 4.5em;
-    letter-spacing: 2.3px;
-  }
-
-  .faqLink {
-    right: 144px;
-  }
-}
-
-
-h2.ui.header.careeer {
-  font-family: 'Lobster', cursive;
-  font-size: 65.8px;
-  font-weight: 200;
-  letter-spacing: 5.4px;
-  text-align: center;
-  color: #24c63a;
-}
-
-/*
-  Welcome Message
-*/
 div.ui.text.container.welcomeContainer {
   width: auto;
-  margin-bottom: 1em;
 }
 
 h2.ui.header.welcomeHeader {
+  border-bottom: 3px solid #55dae0;
+  color: $careeer-purple;
+  font-family: $careeer-font-stack;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: bold;
   letter-spacing: 1.7px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
   text-align: center;
-  color: #333;
-  margin-bottom: 1.5em;
 }
 
 p.welcomeContent {
-  font-family: Cabin;
+  font-family: $careeer-font-stack;
   font-size: 16px;
   letter-spacing: 1.3px;
   text-align: center;
-  color: #919191;
-  margin-bottom: 1em;
+  color: $careeer-purple;
+  margin-bottom: 2rem;
 }
 
-/*
-  Button Section
-*/
 button.ui.green.button.buildYourRoadmap {
-  font-family: Cabin;
+  background-color: $careeer-green;
+  font-family: $careeer-font-stack;
   font-size: 18px;
   letter-spacing: 2.3px;
   text-align: center;
-  border-radius: 22px;
   color: #fff;
   margin: 1.5em 0 1em;
-  width: auto;
+  width: 100%;
 }
-
-a.learnMoreLink {
-  font-family: Cabin;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 1.2px;
-  text-align: center;
-  color: #24c63a;
-}
-
-
 
 
 
 @media all and (max-width: 669px) {
-  /*
-    Careeer Logo
-  */
-  div.ui.left.aligned.grid div.column.careeerLogo {
-    padding: 0;
-  }
-
-  div.ui.header.mainHeader {
-    height: 60px;
-
-    a.careeer {
-      top: 20px;
-      left: 1rem;
-      padding: 0;
-      width: 53px;
-      height: 45px;
-      font-size: 36px;
-      letter-spacing: 3px;
-    }
-
-    a.signInLink {
-      padding-right: 1em;
-    }
-
-    a.faqLink {
-      top: 20px;
-      right: 44px;
-      font-size: 12px;
-      letter-spacing: 1.5px;
-    }
-  }
-
-  h2.ui.header.careeer {
-    object-fit: contain;
-    margin-top: -10px;
-    width: 53px;
-    height: 45px;
-    font-size: 36px;
-    padding: 1rem;
-    letter-spacing: 3px;
-  }
-
-  /*
-    Welcome Message
-  */
   div.ui.text.container.welcomeContainer {
     margin-top: 1.5em;
     margin-bottom: 1.5em;
@@ -184,11 +73,5 @@ a.learnMoreLink {
     font-size: 14px;
     letter-spacing: 1.8px;
     margin: 1.5em 0 0.5em;
-  }
-
-  a.learnMoreLink {
-    font-size: 10px;
-    letter-spacing: 0.8px;
-    color: #919191;
   }
 }
