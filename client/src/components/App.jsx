@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import ClientDashboard from './ClientDashboard/ClientDashboard';
 import CoachDashboard from './CoachDashboard/Clients/CoachDashboard';
 import Payment from './Subscription';
-
+import LandingPage from './LandingPage';
 import OnBoardingIntro from './OnBoarding/OnBoardingIntro';
 import OnBoardingQuestion from './OnBoarding/OnBoardingQuestion';
 import OnBoardingQuestion2 from './OnBoarding/OnBoardingQuestion2';
@@ -27,6 +27,7 @@ const App = () => (
     <Route path="/ResetPassword" component={Sessions.ResetPassword} />
     <Route path="/users/password/:tk" component={Sessions.ResetPassword} />
     <AuthRoute path="/freetrial/end" component={Payment.FreeTrialComplete} />
+    <AuthRoute path="/freetrial" component={LandingPage.FreeTrialWelcome} />
     <AuthRoute path="/OnBoarding/Intro" component={OnBoardingIntro} />
     <AuthRoute path="/OnBoarding/Question_1" component={OnBoardingQuestion} />
     <AuthRoute path="/OnBoarding/Question_2" component={OnBoardingQuestion2} />
