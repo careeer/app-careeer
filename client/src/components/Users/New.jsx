@@ -3,13 +3,11 @@ import { Link } from 'react-router-dom';
 import { Grid } from 'semantic-ui-react';
 
 import CreateForm from './CreateForm';
-import CareeerLogo from '../Lib/CareeerLogo';
 import { PLAN } from '../LandingPage/Components/Plans';
 
 const New = () => (
   <div className="createAccountPage">
-    <CareeerLogo />
-    <Link to="/signIn" className="signInLink">Sign In</Link>
+    <Link to="/logIn" className="signInLink">Log In</Link>
     <Grid
       textAlign="center"
       verticalAlign="middle"

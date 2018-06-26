@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Responsive } from 'semantic-ui-react';
-import ScreensIcon from '../../Icons/ScreensIcon';
 import CreateForm from '../../Users/CreateForm';
 import CreateAccountButton from './CreateAccountButton';
 
@@ -13,7 +12,6 @@ const MainHeadline = props => (
       </h1>
     </Grid.Column>
     <Grid.Column textAlign="center">
-      <ScreensIcon />
       <h4>
         A personalized roadmap to get you from where you are, to the job you want in tech
       </h4>

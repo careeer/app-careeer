@@ -73,6 +73,7 @@ class User {
 
     const status = await response.status;
 
+    console.log(response);
     if (status === 201) {
       const body = await response.json();
       const { user } = body.data;

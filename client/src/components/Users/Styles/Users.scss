@@ -1,40 +1,63 @@
-div.createAccountPage {
+@import '../../../styles/variables'; 
+
+.createAccountPage {
+  // background-image: linear-gradient(to top, #bdc2e8 0%, #bdc2e8 1%, #f1f1f9 100%); // marble wall
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #f1f1f9 50%, #c3cfe2 100%); //Saint Petersburg with careeer-purple
+  // background-image: linear-gradient(60deg, #96deda 0%, #50c9c3 100%);
+  // background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); //Saint Petersburg
+  // background-color: #f1f1f9;
   height: 70%;
 }
 
 a.signInLink {
   top: 40px;
   right: 24px;
-  color: #333333;
+  color: $careeer-purple;
   font-size: 18px;
+  font-family: $careeer-font-stack;
   position: absolute;
-  font-family: Cabin;
   letter-spacing: 2.3px;
 }
 
-form.createAccountForm {
-  width: 30em;
-  margin: 12em auto auto;
+.createAccountForm {
+  background-color: white;
+  border-radius: 7px;
+  box-shadow: 2px 2px 6px 0 rgba(34,36,38,.45);
+  margin: 11em auto auto;
+  padding-bottom: 2rem;
+  padding-left: 3rem !important;
+  padding-right: 3rem !important;
+  padding-top: 1.5rem;
+  width: 400px;
+
+  .careeer {
+    color: #00a2aa;
+    font-size: 36px;
+    font-weight: normal;
+    font-family: 'Lobster', cursive;
+    padding-bottom: 3rem;
+  }
 
   label {
     color: #ffa2a2;
     display: block;
     font-size: 12px;
     margin-bottom: 1em;
-    font-family: Cabin;
     letter-spacing: 1px;
     opacity: 0;
   }
 
   button.ui.button {
-    width: 100%;
+    background-color: $careeer-green;
     color: #fff;
+    font-family: $careeer-font-stack;
     font-size: 18px;
-    font-family: Cabin;
     text-align: center;
-    border-radius: 24px;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
     letter-spacing: 2.3px;
-    background-color: #b1b1b1;
+    width: 100%;
   }
 
   input {
@@ -42,12 +65,12 @@ form.createAccountForm {
     color: #333;
     display: block;
     font-size: 18px;
+    font-family: $careeer-font-stack;
     text-align: left;
     border-radius: 0;
     border-top: none;
     border-left: none;
     border-right: none;
-    font-family: Cabin;
     letter-spacing: 1.5px;
     -webkit-border-radius: 0;
     -webkit-appearance: none;
@@ -79,14 +102,14 @@ form.createAccountForm {
     }
 
     &:valid:not(:placeholder-shown) {
-      border-bottom: solid 1px #24c63a;
+      border-bottom: solid 1px $careeer-green;
 
       & + label {
         opacity: 0;
       }
 
       & + label + input:valid + label + button.ui.button {
-        background-color: #24c63a;
+        background-color: $careeer-green;
       }
     }
   }
@@ -99,6 +122,19 @@ form.createAccountForm {
     & + label.apiMessage {
       opacity: 1 !important;
     }
+  }
+
+  a {
+    display: block;
+    color: $careeer-purple;
+    font-family: $careeer-font-stack;    
+    font-size: 18px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    outline: none;
+    width: fit-content;
+    letter-spacing: 2.3px;
   }
 }
 

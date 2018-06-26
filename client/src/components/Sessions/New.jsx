@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { inject, observer } from 'mobx-react';
 import { Grid, Button } from 'semantic-ui-react';
 
-import CareeerLogo from '../Lib/CareeerLogo';
 import LoadingScreen from '../Lib/LoadingScreen';
 import FooterBanner from '../Lib/Banners/FooterBanner';
 
@@ -13,7 +12,7 @@ export default class New extends Component {
   handleClick = (e) => {
     e.preventDefault();
     if (this.email.checkValidity() && this.password.checkValidity()) {
-      const { user, history } = this.props;
+      const { user } = this.props;
 
       user.signIn(
         this.email.value,
@@ -72,13 +71,16 @@ export default class New extends Component {
 
     return (
       <div className="sessions">
-        <CareeerLogo />
         <Grid
           textAlign="center"
           verticalAlign="middle"
         >
           <LoadingScreen isLoading={user.isLoading} />
+          
           <form className="sessionsForm">
+            <Link to="/" className="careeer">
+              Careeer!
+            </Link>
             <input
               required
               type="text"
@@ -114,7 +116,7 @@ export default class New extends Component {
             }
 
             <Button
-              content="Sign In"
+              content="Log In"
               onClick={this.handleClick}
             />
             <label className="createAccountLabel">New to Careeer.me?</label>

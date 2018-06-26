@@ -14,7 +14,9 @@ const Footer = () => (
             </Link>
           </li>
           <li>
-            About Us
+            <Link to="/about" className="aboutLink">
+              About Us
+            </Link>
           </li>
           <li>
             Contact Us

@@ -3,10 +3,9 @@ import React from 'react';
 const MissionSection = () => (
   <section className="mission">
     <h1>
-      Transitioning your career into tech means knowing how to
-      pitch your transferable skills, rebranding your resume,
-      and having a job search strategy that converts into real
-      interviews
+      Work with a coach to pitch your transferable skills, rebrand
+      your resume, and create a job search strategy that lands you
+      the job you want
     </h1>
   </section>
 );

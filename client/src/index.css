@@ -1,6 +1,6 @@
 body {
-  color: #919191;
-  background-color: #fff;
+  background-color: white;
+  font-style: 'Open Sans', Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -42,6 +42,13 @@ body > div#root > div {
   border-radius: 24px;
   letter-spacing: 2.3px;
   background-color: #24c63a;
+}
+
+.careeer {
+  color: #00a2aa;
+  font-size: 36px;
+  font-weight: normal;
+  font-family: 'Lobster', cursive;
 }
 
 /***
