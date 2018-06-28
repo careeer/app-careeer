@@ -1,15 +1,10 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import { Route, withRouter } from 'react-router-dom';
-import { Dimmer, Image, Button } from 'semantic-ui-react';
+import { Dimmer } from 'semantic-ui-react';
 
 import CloseButton from './Components/CloseButton';
-import SettingsMain from './Components/SettingsMain';
 import CareeerLogo from '../Lib/CareeerLogo';
-import CreditCardChange from './Components/CreditCardChange';
-import SubscriptionChange from './Components/SubscriptionChange';
-import ModalComponent from '../CoachDashboard/Clients/ModalComponent';
 import SimpleSettings from './Components/SimpleSettings';
 import SettingsWithAccountInfo from './Components/SettingsWithAccountInfo';
 

@@ -12,7 +12,7 @@ const IntroMessage = props => (
         icon={false}
         counterLabel="1/4"
         handleClick={props.handleClick}
-        headerLinkLabel="Never mind"
+        headerLinkLabel=""
       />
     </div>
     <Grid.Column className="introMessageGrid">

@@ -24,7 +24,6 @@ const App = () => (
     <Route exact path="/about" component={Homepage} />
     <Route path="/login" component={Sessions.New} />
     <Route path="/createAccount" component={Users.New} />
-    <Route path="/ResetPassword" component={Sessions.ResetPassword} />
     <Route path="/users/password/:tk" component={Sessions.ResetPassword} />
     <AuthRoute path="/freetrial/end" component={Payment.FreeTrialComplete} />
     <AuthRoute path="/freetrial" component={LandingPage.FreeTrialWelcome} />

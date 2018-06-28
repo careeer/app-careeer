@@ -1,10 +1,12 @@
+@import '../../../styles/variables';
+
 /*
   Thank You Loading Styles
 */
 div.ui.active.transition.visible.page.dimmer {
 
   &.paymentComplete, &.thankYouLoader {
-    background-color: #24c63a;
+    background-color: $careeer-green;
     opacity: 1;
     z-index: 2000000;
   }
@@ -24,7 +26,7 @@ div.ui.attached.message.slide.down.congratulateMessage {
   z-index: 102;
   margin: 0;
   position: fixed;
-  background-color: #03ac13;
+  background-color: $careeer-green;
 }
 
 span.mainMessage {
@@ -73,7 +75,7 @@ div.accountType a {
   letter-spacing: 1px;
   text-align: center;
   color: #fff;
-  background-color: #24c63a;
+  background-color: $careeer-green;
 }
 
 div.accountType a::before {
@@ -85,7 +87,7 @@ div.accountType a::before {
   position: absolute;
   border-style: solid;
   border-width: 11px 23px;
-  border-color: #24c63a transparent #24c63a #24c63a;
+  border-color: $careeer-green transparent $careeer-green $careeer-green;
 }
 
 /*
@@ -100,11 +102,8 @@ div.column.roadmapMainColumn {
 }
 
 div.ui.segment.roadmapSegment {
-  border: none;
   padding: 14px;
-  box-shadow: none;
   border-radius: 0;
-  -webkit-box-shadow: none;
 }
 
 button.ui.button.roadmapButton {
@@ -113,9 +112,9 @@ button.ui.button.roadmapButton {
   font-family: Cabin;
   text-align: center;
   margin-top: 0.6rem;
-  border-radius: 18px;
+  border-radius: 5px;
   letter-spacing: 2.3px;
-  background-color: #24c63a;
+  background-color: $careeer-green;
 }
 
 /*
@@ -176,7 +175,7 @@ div.ui.label.roadmapIconsLabelColumn {
 
   .ui.button {
     background-color: #b8b8b8;
-    border-radius: 28em;
+    border-radius: 5px;
     width: 70px;
     color: white;
     font-size: 12px;
@@ -184,7 +183,7 @@ div.ui.label.roadmapIconsLabelColumn {
     transition: box-shadow 0.5s, background-color 0.5s;
 
     &.active {
-      background-color: #24c63a;
+      background-color: $careeer-green;
     }
 
     i.checkmark.icon {

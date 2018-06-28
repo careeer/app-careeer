@@ -1,21 +1,13 @@
 import React from 'react';
-import { Grid, Header } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import { Grid } from 'semantic-ui-react';
 
 const CareeerLogo = () => (
   <Grid textAlign="left">
     <Grid.Column className="careeerLogo">
-      <a
-        href="/"
-        target="_self"
-        rel="noreferrer noopener"
-      >
-        <Header
-          as="h2"
-          content="C!"
-          textAlign="left"
-          className="careeer"
-        />
-      </a>
+      <Link to="/" className="careeer">
+        Careeer!
+      </Link>
     </Grid.Column>
   </Grid>
 );

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { inject, observer } from 'mobx-react';
 import { Grid, Button } from 'semantic-ui-react';
-import CareeerLogo from '../Lib/CareeerLogo';
+
 import LoadingScreen from '../Lib/LoadingScreen';
 
 @inject('user') @observer
@@ -61,13 +61,15 @@ export default class ResetPassword extends Component {
 
     return (
       <div className="sessions">
-        <CareeerLogo />
         <Grid
           textAlign="center"
           verticalAlign="middle"
         >
           <LoadingScreen isLoading={user.isLoading} />
           <form className="sessionsForm">
+            <Link to="/" className="careeer">
+              Careeer!
+            </Link>
             <input
               required
               type="password"

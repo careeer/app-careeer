@@ -29,6 +29,8 @@ a {
 }
 
 .sectionTitle {
+  border-bottom: 3px solid #55dae0;
+  color: #4d3886;
   font-family: 'OpenSans-SemiBold', 'Open Sans';
   font-size: 36px;
   font-weight: 600;
@@ -36,13 +38,12 @@ a {
   font-stretch: normal;
   line-height: normal;
   letter-spacing: normal;
-  text-align: left;
-  color: #4d3886;
   padding-top: 100px;
-  border-bottom: 3px solid #55dae0;
+  text-align: left;
 }
 
 p, li {
+  color: #3e2d6c;
   font-family: 'Open Sans';
   font-size: 18px;
   font-weight: normal;
@@ -51,7 +52,6 @@ p, li {
   line-height: 1.6;
   letter-spacing: 0.2px;
   text-align: left;
-  color: #3e2d6c;
 }
 
 .description {
@@ -59,6 +59,7 @@ p, li {
 }
 
 .ourMission, .greenRectangle {
+  color: #4d3886;
   font-family: 'OpenSans-Bold', 'Open Sans';
   font-size: 44px;
   font-weight: bolder;
@@ -66,7 +67,6 @@ p, li {
   line-height: 1.53;
   letter-spacing: 0.4px;
   text-align: left;
-  color: #4d3886;
 }
 
 @media only screen and (max-width: 768px) {
