@@ -1,10 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid } from 'semantic-ui-react';
+
 import WaveIcon from '../../Icons/WaveIcon';
+import PageHeader from './PageHeader';
 
 const IntroMessage = props => (
-  <Grid textAlign="center">
+  <Grid textAlign="center" className="introMessageGrid">
+    <div className="row pageHeader">
+      <PageHeader
+        icon={false}
+        counterLabel="1/4"
+        handleClick={props.handleClick}
+        headerLinkLabel="Never mind"
+      />
+    </div>
     <Grid.Column className="introMessageGrid">
       <h2 className="introHeader">
         Hello!
@@ -12,7 +22,13 @@ const IntroMessage = props => (
       <p className="introMessage">
         In order to improve your experience we’d like to get to know you better
       </p>
-      <WaveIcon />
+      <a
+        tabIndex={0}
+        role="button"
+        onClick={props.onStartClick}
+      >
+        <WaveIcon />
+      </a>
       <a
         tabIndex={0}
         role="button"
@@ -27,6 +43,7 @@ const IntroMessage = props => (
 
 IntroMessage.propTypes = {
   onStartClick: PropTypes.func.isRequired,
+  handleClick: PropTypes.func.isRequired,
 };
 
 export default IntroMessage;

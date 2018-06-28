@@ -3,7 +3,6 @@ import React from 'react';
 import { inject, observer } from 'mobx-react';
 
 import { Route, Redirect } from 'react-router-dom';
-import LoadingScreen from './LoadingScreen';
 
 @inject('user') @observer
 export default class AuthRoute extends React.Component {

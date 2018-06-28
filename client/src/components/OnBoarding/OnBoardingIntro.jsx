@@ -1,9 +1,9 @@
 /* eslint-disable */
 import React, { Component } from 'react';
-import IntroMessage from './Components/IntroMessage';
-import PageHeader from './Components/PageHeader';
 
-import './Styles/OnBoarding.css';
+import IntroMessage from './Components/IntroMessage';
+
+import './Styles/OnBoarding.scss';
 
 export default class OnBoardingIntro extends Component {
   componentWillMount() {
@@ -25,13 +25,10 @@ export default class OnBoardingIntro extends Component {
   render() {
     return (
       <div className="introOnboarding">
-        <PageHeader
-          icon={false}
-          counterLabel="1/4"
+        <IntroMessage
           handleClick={this.handleClick}
-          headerLinkLabel="Never mind, don’t build my roadmap"
+          onStartClick={this.redirectToQuestion}
         />
-        <IntroMessage onStartClick={this.redirectToQuestion} />
       </div>
     );
   }

@@ -1,8 +1,6 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
-import PropTypes from 'prop-types';
-import PageHeader from './Components/PageHeader';
 import UserNamePrompt from './Components/UserNamePrompt';
 
 @inject('roadmapElements') @observer
@@ -35,10 +33,10 @@ export default class OnBoardingName extends Component {
           nameError: false,
           submittedClient: true,
         });
-        $crisp.push(["set", 'session:data', [[["ClientName", clientName]]]]);
-        $crisp.push(["set", 'session:data', [[["status", "roadmap started"]]]]);
+        $crisp.push(['set', 'session:data', [[['ClientName', clientName]]]]);
+        $crisp.push(['set', 'session:data', [[['status', 'roadmap started']]]]);
 
-        const firstName = clientName.split(" ", 1)[0];
+        const firstName = clientName.split(' ', 1)[0];
         this.props.history.push(`/OnBoarding/thankyou/${firstName}`);
       } else {
         this.setState({
@@ -49,18 +47,12 @@ export default class OnBoardingName extends Component {
   }
 
   render() {
-    const { handleClientInputChange,
-            currentClient,
-          } = this.props.roadmapElements;
+    const { handleClientInputChange, currentClient } = this.props.roadmapElements;
 
     return (
       <div className="outroOnboarding">
-        <PageHeader
-          counterLabel="4/4"
-          handleClick={this.handleClick}
-          headerLinkLabel="Build your roadmap"
-        />
         <UserNamePrompt
+          handleClick={this.handleClick}
           createClient={this.handleCreateClient}
           currentClient={currentClient || ''}
           handleClientInputChange={handleClientInputChange}

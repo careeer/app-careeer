@@ -2,10 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid } from 'semantic-ui-react';
 import NameInput from './NameInput';
+
 import TeamIcon from '../../Icons/TeamIcon';
+import PageHeader from './PageHeader';
 
 const UserNamePrompt = props => (
-  <Grid textAlign="center">
+  <Grid
+    textAlign="center"
+    className="questionGrid"
+  >
+    <div className="row pageHeader">
+      <PageHeader
+        counterLabel="4/4"
+        handleClick={props.handleClick}
+        headerLinkLabel="Build your roadmap"
+      />
+    </div>
     <Grid.Column className="onBoardingColumn">
       <TeamIcon />
       <div className="userNameLabel">
@@ -24,6 +36,7 @@ const UserNamePrompt = props => (
 
 UserNamePrompt.propTypes = {
   nameError: PropTypes.bool.isRequired,
+  handleClick: PropTypes.func.isRequired,
   createClient: PropTypes.func.isRequired,
   currentClient: PropTypes.string.isRequired,
   handleClientInputChange: PropTypes.func.isRequired,

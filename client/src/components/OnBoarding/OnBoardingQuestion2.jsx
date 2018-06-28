@@ -40,15 +40,17 @@ export default class OnBoardingQuestion extends Component {
 
     return (
       <div className="onBoarding">
-        <PageHeader
-          counterLabel="3/4"
-          handleClick={this.handleClick}
-          headerLinkLabel="Skip question"
-        />
         <Grid
           textAlign="center"
           className="questionGrid"
         >
+          <Grid.Row className="pageHeader">
+            <PageHeader
+              counterLabel="3/4"
+              handleClick={this.handleClick}
+              headerLinkLabel="Skip question"
+            />
+          </Grid.Row>
           <Grid.Row className="questionGrid">
             <Grid.Column className="onBoardingColumn">
               <TeamIcon />
@@ -57,9 +59,8 @@ export default class OnBoardingQuestion extends Component {
               </div>
             </Grid.Column>
           </Grid.Row>
-          <Grid.Row className="questionGrid">
+          <Grid.Row className="questionGridOptions">
             <Grid.Column
-              verticalAlign="bottom"
               className="onBoardingColumn"
             >
               <Menu
