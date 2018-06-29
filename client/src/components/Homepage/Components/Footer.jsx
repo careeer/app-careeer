@@ -19,7 +19,9 @@ const Footer = () => (
             </Link>
           </li>
           <li>
-            Contact Us
+            <a href="mailto:support@careeer.me?Subject=Hello" target="_top">
+              Contact Us
+            </a>
           </li>
         </ul>
       </Grid.Column>

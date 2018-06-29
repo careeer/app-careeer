@@ -167,6 +167,10 @@ const Faq = () => (
         to get the best offer possible. *We recommend Fast Track if you are at this stage.
       </p>
     </section>
+    <section className="newQuestion">
+      <h2>Don’t see your question on our FAQ list?</h2>
+      <h2>Email us at support@careeer.me and we will add it to the list!</h2>
+    </section>
   </div>
 );
 

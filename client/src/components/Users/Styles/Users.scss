@@ -31,11 +31,11 @@ a.signInLink {
   width: 400px;
 
   .careeer {
-    color: #00a2aa;
+    color: $careeer-fluorescent;
     font-size: 36px;
     font-weight: normal;
     font-family: 'Lobster', cursive;
-    padding-bottom: 3rem;
+    margin-bottom: 3rem;
   }
 
   label {
