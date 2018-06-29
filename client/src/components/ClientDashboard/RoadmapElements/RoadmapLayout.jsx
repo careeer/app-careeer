@@ -125,7 +125,6 @@ export default class RoadmapLayout extends Component {
             isCompletedAccordionOpen,
             isDimmerOn,
             currentClient,
-            toggleSettings,
             freeTrialMessage,
             completedElements,
             incompleteElements,

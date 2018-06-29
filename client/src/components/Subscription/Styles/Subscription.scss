@@ -1,10 +1,13 @@
+@import '../../../styles/variables'; 
+
 div#root > div > div {
   min-height: 100%;
 }
 
 .paymentLayout {
   width: 100%;
-  background-color: #fef99f;
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #f1f1f9 50%, #c3cfe2 100%);
+  // background-color: #fef99f;
   // background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   min-height: -webkit-fill-available;
 }
@@ -29,7 +32,7 @@ div#root > div > div {
     }
 
     .cardSuccess {
-      color: #24c63a;
+      color: $careeer-green;
     }
 
     .StripeElement {
@@ -52,7 +55,7 @@ div#root > div > div {
     }
 
     .StripeElement--complete {
-      border: solid 1px #24c63a;
+      border: solid 1px $careeer-green;
     }
   }
 
@@ -84,7 +87,7 @@ div#root > div > div {
       }
 
       &.selected {
-        background-color: #24c63a;
+        background-color: $careeer-green;
 
         & > a {
           margin-left: auto;
@@ -100,7 +103,7 @@ div#root > div > div {
     text-align: center;
 
     h1 {
-      color: #24c63a;
+      color: $careeer-green;
       font-size: 3.5em;
       letter-spacing: 6px;
       font-family: Lobster;
@@ -354,7 +357,7 @@ div#root > div > div {
     .ui.button, .ui.button:disabled {
       width: 387px;
       margin-bottom: 2.5em;
-      background-color: #24c63a;
+      background-color: $careeer-green;
       box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5) !important;
       transition: box-shadow 0.5s ease;
 
@@ -373,7 +376,7 @@ div#root > div > div {
 
     a {
       display: block;
-      color: #24c63a;
+      color: $careeer-purple;
       font-size: 14px;
       cursor: pointer;
       margin-left: auto;

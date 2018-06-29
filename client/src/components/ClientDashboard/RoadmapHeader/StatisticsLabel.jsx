@@ -10,10 +10,10 @@ const RoadmapHeader = function RoadmapHeader(props) {
 
   if (isBannerVisible) {
     updatedStatisticsMainValueStyle = {
-      color: '#03ac13',
+      color: '#55dae0',
     };
     updatedStatisticsMainLabelStyle = {
-      color: '#03ac13',
+      color: '#55dae0',
     };
   } else {
     updatedStatisticsMainValueStyle = {

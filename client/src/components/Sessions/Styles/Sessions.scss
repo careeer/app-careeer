@@ -21,7 +21,7 @@
   width: 400px;
 
   .careeer {
-    color: #00a2aa;
+    color: $careeer-fluorescent;
     font-size: 36px;
     font-weight: normal;
     font-family: 'Lobster', cursive;
@@ -157,7 +157,7 @@ div.ui.attached.message.slide.up.footerMessage {
   z-index: 102;
   margin: 0;
   position: fixed;
-  background-color: #03ac13;
+  background-color: $careeer-green;
   border-radius: 0;
 
   span.mainMessage {
