@@ -4,7 +4,7 @@ const MissionSection = () => (
   <section className="mission">
     <h1>
       Learn to pitch your transferable skills, rebrand
-      your resume, and land job you want
+      your resume, and land the job you want
     </h1>
   </section>
 );
