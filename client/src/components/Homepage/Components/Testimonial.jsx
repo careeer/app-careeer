@@ -144,6 +144,31 @@ const Testimonial = props => (
             alt=""
             avatar
             className="avatar"
+            src="https://res.cloudinary.com/careeer/image/upload/v1532667813/Shane_ardo9x.jpg"
+          />
+        </div>
+        <div className="reviewContent">
+          <p>
+            &quot;What I learned was incredibly valuable for my job search, and was instrumental 
+            for my success landing exactly the role I wanted.&quot;
+          </p>
+          <br />
+          <p>
+            -Shane
+          </p>
+          <strong>
+            Enterprise Sales
+          </strong>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div className="reviewContainer">
+        <div className="reviewAvatar">
+          <Image
+            alt=""
+            avatar
+            className="avatar"
             src="https://res.cloudinary.com/careeer/image/upload/v1510605300/mark_zibndg.jpg"
           />
         </div>
