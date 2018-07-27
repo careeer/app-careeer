@@ -144,7 +144,7 @@ const Testimonial = props => (
             alt=""
             avatar
             className="avatar"
-            src="https://res.cloudinary.com/careeer/image/upload/v1532701085/Shane_ardo9x.jpg"
+            src="https://res.cloudinary.com/careeer/image/upload/c_fill,g_face,h_400,w_400/v1532701085/Shane_ardo9x.jpg"
           />
         </div>
         <div className="reviewContent">
