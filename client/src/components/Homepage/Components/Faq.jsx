@@ -28,16 +28,6 @@ const Faq = () => (
         We are not affiliated with any of the schools we recommend. Therefore, we are able to
         provide an objective, expert resource for you, without pushing any particular school.
       </p>
-      <h2>
-        I’m not exactly sure about my next career step; I’m feeling a bit stuck. Do you
-        help with that?
-      </h2>
-      <p>
-        We will help you drill down to the questions you are trying to answer, and then create a
-        plan based on your values and career aspirations.  When you sign up, you will go
-        through a 20 minute call with a professional coach to help you clear your mind, narrow
-        down your focus, and take the next step forward.
-      </p>
     </section>
     <header className="faqTitle">
       <h1>Our Services</h1>

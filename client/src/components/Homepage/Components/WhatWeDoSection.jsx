@@ -19,12 +19,14 @@ const WhatWeDoSection = () => (
       <Grid.Column width="6">
         <div className="descriptionContainer">
           <p className="description">
-            Get expert mentorship and a personalized plan as you transition your
-            career into tech.
+            Learn how to rebrand your resume, pitch your transferable skills, and get
+            the job you want.
           </p>
           <p>
-            Our software delivers a career roadmap and on-demand career coach, along
-            with focused trainings to rebrand your professional story.
+            Our software delivers a career roadmap and your own on-demand coach to help
+            you move faster and more efficiently towards getting your next job in tech.
+            Focused trainings are provided to help you build your own skill set in pitching,
+            rebranding your professional story, and more.
           </p>
         </div>
       </Grid.Column>

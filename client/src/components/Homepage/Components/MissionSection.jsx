@@ -3,8 +3,7 @@ import React from 'react';
 const MissionSection = () => (
   <section className="mission">
     <h1>
-      Learn to pitch your transferable skills, rebrand
-      your resume, and land the job you want
+      Having a hard time getting the job you want in tech? We are here to help
     </h1>
   </section>
 );
