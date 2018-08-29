@@ -15,7 +15,7 @@ const Testimonial = props => (
     infinite
     centerMode
     speed={1500}
-    autoplaySpeed={3500}
+    autoplaySpeed={7500}
   >
     <div>
       <div className="reviewContainer">
