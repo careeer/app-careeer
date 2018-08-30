@@ -14,7 +14,7 @@ module Webhooks
         card_exp_year: charge.source.exp_year
       )
 
-      readable_amount = (charge.amount.to_i) / 100.00
+      readable_amount = number_to_currency((charge.amount.to_i) / 100.00)
 
       if !charge.invoice.blank?
         user.update(subscription_status: "active")

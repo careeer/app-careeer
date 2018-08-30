@@ -1,6 +1,6 @@
 Hi <%= @name %>,
 
-We’re writing to confirm your purchase of a <%= @plan_name %> membership. Today, your card ending in <%= @last4 %> was charged $<%= @plan_cost %>.
+We’re writing to confirm your purchase of a <%= @plan_name %> membership. Today, your card ending in <%= @last4 %> was charged <%= @plan_cost %>.
 
 Your membership will auto renew on <%= @next_transaction %>. You can upgrade, downgrade, or cancel your membership <%= link_to 'here', @url %> at anytime.
 
