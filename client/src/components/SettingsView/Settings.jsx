@@ -30,7 +30,7 @@ class Settings extends Component {
     roadmapElements.turnDimmerOff();
 
     history.push({
-      pathname: '/signIn',
+      pathname: '/login',
       state: { logoutEmail: email },
     });
   }
