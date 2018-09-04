@@ -54,7 +54,7 @@ const Plans = props => (
         ${PLAN.Fast.cost}/<span>month</span>
       </p>
       <div className="planDescription">
-        +Four 30 minutes calls, weekly unlimited messaging, dedicated coach
+        +Three 30 minutes calls, weekly unlimited messaging, dedicated coach
       </div>
     </Segment>
     <Segment
