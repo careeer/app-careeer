@@ -38,7 +38,7 @@ const SubscriptionChangeMessage = props => (
         <p className="description">
           one dedicated coach <br />
           personalized career roadmap <br />
-          unlimited messaging <br />
+          in-app messaging <br />
         </p>
       </div>
     }

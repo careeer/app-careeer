@@ -22,27 +22,27 @@ export default class PricingSection extends React.Component {
         <Grid.Row id="pricing">
           <Grid.Column width="2" only="computer" />
           <PricingPlans
-            title="Self Starter"
-            cost="150"
-            active={plan === 'Self Starter'}
-            firstDescription="30 min/week in-app coaching"
-            secondDescription="(1) 30 min call/month"
+            title="Fast Track"
+            cost="599"
+            active={plan === 'Fast Track'}
+            firstDescription="(3) check-in calls"
+            secondDescription="3 (30min) video or phone training"
             onPlanClick={this.handlePlanClick}
           />
           <PricingPlans
             title="Standard Track"
-            cost="300"
+            cost="399"
             active={plan === 'Standard Track'}
-            firstDescription="1 hr/week in-app coaching"
-            secondDescription="(2) 30 min calls/month"
+            firstDescription="(2) check-in calls"
+            secondDescription="2 (30min) video or phone training"
             onPlanClick={this.handlePlanClick}
           />
           <PricingPlans
-            title="Fast Track"
-            cost="500"
-            active={plan === 'Fast Track'}
-            firstDescription="Unlimited weekly in-app coaching"
-            secondDescription="(3) 30 min calls/month"
+            title="Self Starter"
+            cost="199"
+            active={plan === 'Self Starter'}
+            firstDescription="(2) check-in calls"
+            secondDescription="1 (30min) video or phone training"
             onPlanClick={this.handlePlanClick}
           />
         </Grid.Row>

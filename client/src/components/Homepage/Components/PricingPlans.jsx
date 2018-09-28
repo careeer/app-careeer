@@ -22,7 +22,8 @@ export default class PricingPlans extends React.Component {
             <ul className="planDescription">
               <li>{this.props.firstDescription}</li>
               <li>{this.props.secondDescription}</li>
-              <li>Personalized Roadmap</li>
+              <li>Personalized<br />Roadmap</li>
+              <li>Weekly in-app<br />coaching</li>
             </ul>
           </div>
         </button>
