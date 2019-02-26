@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { Grid } from 'semantic-ui-react';
 
 export default class PricingPlans extends React.Component {
-  handleClick = (e) => {
+  handleClick = e => {
     e.preventDefault();
     this.props.onPlanClick(this.props.title);
-  }
+  };
 
   render() {
     return (
@@ -15,15 +15,27 @@ export default class PricingPlans extends React.Component {
           <h4 className={this.props.active ? 'planTitle active' : 'planTitle'}>
             {this.props.title}
           </h4>
-          <div className={this.props.active ? 'monthlyPlan active' : 'monthlyPlan'}>
+          <div
+            className={this.props.active ? 'monthlyPlan active' : 'monthlyPlan'}
+          >
             <h5 className="planCost">
               ${this.props.cost} <span>per month</span>
             </h5>
             <ul className="planDescription">
               <li>{this.props.firstDescription}</li>
-              <li>{this.props.secondDescription}</li>
-              <li>Personalized<br />Roadmap</li>
-              <li>Weekly in-app<br />coaching</li>
+              {this.props.secondDescription && (
+                <li>{this.props.secondDescription}</li>
+              )}
+              <li>
+                Weekly coaching
+                <br />
+                via slack, email
+              </li>
+              <li>
+                Personalized
+                <br />
+                Roadmap
+              </li>
             </ul>
           </div>
         </button>
@@ -36,7 +48,11 @@ PricingPlans.propTypes = {
   title: PropTypes.string.isRequired,
   cost: PropTypes.string.isRequired,
   firstDescription: PropTypes.string.isRequired,
-  secondDescription: PropTypes.string.isRequired,
+  secondDescription: PropTypes.string,
   active: PropTypes.bool.isRequired,
   onPlanClick: PropTypes.func.isRequired,
+};
+
+PricingPlans.defaultProps = {
+  secondDescription: '',
 };
