@@ -23,10 +23,14 @@ const WhatWeDoSection = () => (
             the job you want.
           </p>
           <p>
-            Our software delivers a career roadmap and your own on-demand coach to help
-            you move faster and more efficiently towards getting your next job in tech.
-            Focused trainings are provided to help you build your own skill set in pitching,
-            rebranding your professional story, and more.
+            Work 1:1 with your own dedicated tech career coach and receive weekly support 
+            via phone, video, and slack. Our approach is humanistic and strategic: We take 
+            the time to understand you as a person, to assess your skill-set as a professional, 
+            and to provide custom training in areas such as interview skills, pitching, job 
+            search strategy, and professional branding.
+          </p>
+          <p>
+            We consistently work with freelancers, seasoned technologists, and career transitioners.
           </p>
         </div>
       </Grid.Column>
@@ -54,10 +58,10 @@ const WhatWeDoSection = () => (
       <Grid.Column textAlign="center" width="4">
         <SupportIcon />
         <h6 className="iconHeader">
-          On-demand support
+          Dedicated coach
         </h6>
         <p className="iconDescription">
-          Chat with your career coach via messenger anytime of the week
+          Chat with your coach weekly via slack, phone, and email
         </p>
       </Grid.Column>
       <Grid.Column textAlign="center" width="4">

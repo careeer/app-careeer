@@ -6,7 +6,7 @@ const OnDemandCoachSection = () => (
     <Grid.Row>
       <Grid.Column width="14" className="sectionTitle" textAlign="right">
         <div className="title">
-          On-Demand Coach
+          Dedicated Coach
         </div>
       </Grid.Column>
     </Grid.Row>
@@ -21,20 +21,16 @@ const OnDemandCoachSection = () => (
       </Grid.Column>
       <Grid.Column width="6" className="ourMissionColumn">
         <div className="greenRectangle">
-          Message your coach<br />
+          Chat with your career coach<br />
         </div>
         <h2 className="ourMission">
-          anytime through the app
+          via slack or email anytime Monday - Wednesday
         </h2>
         <div className="descriptionContainer">
           <p className="description">
-            Chat with your dedicated career coach via messenger anytime of the week.
-          </p>
-          <p>
             Our customers often have questions at random times, and not
-            everyone has the network or a mentor to give them career guidance
-            <i> when they need it</i>.  Some of those random questions that
-            might boggle your mind are:
+            everyone has the network or a mentor to give them career advice
+            <i> when they need it</i>.  Some of those random questions might be:
           </p>
           <ul>
             <li>How do I pitch my transferable skills?</li>

@@ -29,12 +29,12 @@ const RoadmapSection = () => (
       <Grid.Column width="6">
         <section className="descriptionContainer">
           <p className="description">
-            A step-by-step plan, co-created by you and your coach, monitored
-            weekly for progress towards your goal. Your roadmap is flexible,
-            taking into account your timeline, budget, and overall goals.
+            After your first coaching call, you’ll receive a step-by-step plan, monitored
+            weekly for progress towards your ultimate goal. Your career roadmap is flexible, 
+            taking into account your timeline, budget, and overall goals. 
           </p>
           <p>
-            When you sign up, you’ll start your roadmap in one of the following areas:
+            Your career roadmap will start in one of the following areas:
           </p>
         </section>
       </Grid.Column>
