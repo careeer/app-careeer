@@ -54,8 +54,11 @@ const About = () => (
             the trending issues in communication and interviewing skills.
           </p>
           <p>
-            You can read more about why we started Careeer.me
-            <a href="https://medium.com/@careeer.me/why-i-built-careeer-me-ff5869503d1e">
+            You can read more about why we started Careeer.me &nbsp;
+            <a
+              target="_blank"
+              href="https://medium.com/@careeer.me/why-i-built-careeer-me-ff5869503d1e"
+            >
               here
             </a>
           </p>
