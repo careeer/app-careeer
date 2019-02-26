@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Grid } from 'semantic-ui-react';
 
 export default class PricingPlans extends React.Component {
-  handleClick = e => {
+  handleClick = (e) => {
     e.preventDefault();
     this.props.onPlanClick(this.props.title);
   };
