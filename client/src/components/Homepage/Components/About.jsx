@@ -57,6 +57,7 @@ const About = () => (
             You can read more about why we started Careeer.me &nbsp;
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="https://medium.com/@careeer.me/why-i-built-careeer-me-ff5869503d1e"
             >
               here
