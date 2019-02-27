@@ -17,18 +17,18 @@ const WhatWeDoSection = () => (
       <Grid.Column width="6">
         <div className="descriptionContainer">
           <p className="description">
-            Learn how to rebrand your resume, pitch your transferable skills,
-            and get the job you want.
+            Work 1:1 with your own tech career coach and receive weekly support
+            via phone, video, and slack. Learn how to rebrand your resume, pitch
+            your transferable skills, and get the job you want.
           </p>
           <p>
-            Work 1:1 with your own dedicated tech career coach and receive
-            weekly support via phone, video, and slack. Our approach is
-            humanistic and strategic: We take the time to understand you as a
-            person, to assess your skill-set as a professional, and to provide
-            custom training in areas such as interview skills, pitching, job
-            search strategy, and professional branding.
+            Our approach is humanistic and strategic: We take the time to
+            understand you as a person, to assess your skill-set as a
+            professional, and to provide custom training in areas such as
+            interview skills, pitching, job search strategy, and professional
+            branding.
           </p>
-          <p>
+          <p style={{ fontWeight: bold }}>
             We consistently work with freelancers, seasoned technologists, and
             career transitioners.
           </p>
