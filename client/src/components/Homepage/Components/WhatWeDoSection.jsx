@@ -28,7 +28,7 @@ const WhatWeDoSection = () => (
             interview skills, pitching, job search strategy, and professional
             branding.
           </p>
-          <p style={{ fontWeight: bold }}>
+          <p style={{ fontWeight: 'bold' }}>
             We consistently work with freelancers, seasoned technologists, and
             career transitioners.
           </p>
