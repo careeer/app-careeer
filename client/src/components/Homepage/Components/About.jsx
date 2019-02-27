@@ -84,7 +84,7 @@ const About = () => (
           <br />
           <li>
             Launched Fresh Conceptual, product design studio and worked with clients such as
-            DMV.ORG, City of West Hollywood, and King Chavez Charter School. 
+            DMV.ORG, City of West Hollywood, and King Chavez Charter School.
           </li>
           <br />
           <li>

@@ -34,7 +34,7 @@ export default class PricingSection extends React.Component {
             cost="399"
             active={plan === 'Standard Track'}
             firstDescription="(2) check-in calls"
-            secondDescription="1 custom training (via video/phone, 30min)" 
+            secondDescription="1 custom training (via video/phone, 30min)"
             onPlanClick={this.handlePlanClick}
           />
           <PricingPlans
