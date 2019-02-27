@@ -29,15 +29,15 @@ const About = () => (
           </p>
           <ul>
             <li>
-              <h3>1. Direction is usually missing</h3>
+              <h3>Direction is usually missing</h3>
               <p>“I know what I want, but how do I get there?”</p>
             </li>
             <li>
-              <h3>2. Mentorship</h3>
+              <h3>Mentorship</h3>
               <p>“I need advice from somebody who works in the field”</p>
             </li>
             <li>
-              <h3>3. Accountability</h3>
+              <h3>Accountability</h3>
               <p>“I get bored/sidetracked/stop caring/apathetic about the job search process”</p>
             </li>
           </ul>
@@ -62,12 +62,12 @@ const About = () => (
       <header className="aboutTitle">
         <h1>Our Coaches</h1>
       </header>
-      <section className="ourTeam">
+      <section className="ourTeam ourCoaches">
         <p>
           You will work with coaches who are experts in their field and have direct professional
           experience as product managers, UX designers, software engineers, project managers, sales
           professionals, and more. We understand how to review portfolios, the difference between
-          agile and scrum, and why you used MEAN stack to build your product.
+          agile and scrum, and why you used MEAN stack to build your platform.
         </p>
         <p>
           Careeer.me’s primary coach is the CEO and Founder, Anya Iverova. Here are highlight’s from
@@ -84,16 +84,16 @@ const About = () => (
           <br />
           <li>
             Launched Fresh Conceptual, product design studio and worked with clients such as
-            DMV.ORG, City of West Hollywood, and more
+            DMV.ORG, City of West Hollywood, and King Chavez Charter School. 
           </li>
           <br />
           <li>
-            Launched Careeer.me to provide high quality career support for current tech
+            Launched Careeer.me to provide personalized career support for current tech
             professionals and newbies gaining traction in the field.
           </li>
         </ul>
       </section>
-      <header className="aboutTitle">
+      <header className="aboutTitle culture">
         <h1>What you can expect from our culture:</h1>
       </header>
       <section className="ourTeam">

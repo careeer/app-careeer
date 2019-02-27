@@ -18,8 +18,7 @@ const WhatWeDoSection = () => (
         <div className="descriptionContainer">
           <p className="description">
             Work 1:1 with your own tech career coach and receive weekly support
-            via phone, video, and slack. Learn how to rebrand your resume, pitch
-            your transferable skills, and get the job you want.
+            via phone, video, and slack.
           </p>
           <p>
             Our approach is humanistic and strategic: We take the time to

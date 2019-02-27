@@ -26,7 +26,7 @@ export default class PricingSection extends React.Component {
             cost="599"
             active={plan === 'Fast Track'}
             firstDescription="(2) check-in calls"
-            secondDescription="2 custom trainings"
+            secondDescription="2 custom trainings (via video/phone, 30min)"
             onPlanClick={this.handlePlanClick}
           />
           <PricingPlans
@@ -34,14 +34,14 @@ export default class PricingSection extends React.Component {
             cost="399"
             active={plan === 'Standard Track'}
             firstDescription="(2) check-in calls"
-            secondDescription="1 custom training"
+            secondDescription="1 custom training (via video/phone, 30min)" 
             onPlanClick={this.handlePlanClick}
           />
           <PricingPlans
             title="Self Starter"
             cost="199"
             active={plan === 'Self Starter'}
-            firstDescription="1 custom training (via video, ~30min)"
+            firstDescription="1 custom training (via video/phone, 30min)"
             onPlanClick={this.handlePlanClick}
           />
         </Grid.Row>

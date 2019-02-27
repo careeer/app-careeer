@@ -10,7 +10,7 @@
     h1 {
       color: #4d3886;
       font-family: 'Open Sans', sans-serif;
-      font-size: 48px;  
+      font-size: 48px;
       font-weight: normal;
       margin-top: 4rem;
       text-align: center;
@@ -21,6 +21,10 @@
     border-bottom: 3px solid #55dae0;
     margin: 4rem auto 2rem auto;
     max-width: 1240px;
+  }
+
+  .culture {
+    margin: 0 auto 2rem auto;
   }
 
   h1 {
@@ -54,7 +58,7 @@
     z-index: -1;
   }
 
-  .ourVision{
+  .ourVision {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -75,6 +79,10 @@
     section {
       max-width: 469px;
     }
+
+    h3 {
+      margin-bottom: 0;
+    }
   }
 
   .ourTeam {
@@ -85,10 +93,14 @@
     max-width: 1000px;
     padding-top: 1rem;
     padding-bottom: 12rem;
-    
+
     li {
       max-width: 600px;
     }
+  }
+
+  .ourCoaches {
+    padding-bottom: 6rem;
   }
 }
 
@@ -113,7 +125,7 @@
     .aboutHero {
       margin-bottom: 40px;
       padding: 80px 0 40px;
-      
+
       .lightbulbsPicture {
         padding-left: 0;
         width: 100px;
@@ -143,16 +155,16 @@
 //       margin-bottom: 50px;
 //       padding-top: 100px;
 //       padding-bottom: 40px;
-  
+
 //       .lightbulbsPicture {
 //         padding-left: 3rem;
 //       }
-  
+
 //       h1 {
 //         margin-top: 4rem;
 //         padding-left: 3rem;
 //       }
-  
+
 //       .loudspeakerPicture {
 //         padding-left: 5rem;
 //       }
@@ -162,7 +174,7 @@
 
 // @media only screen and (max-width: 1107px) {
 //   .aboutPage {
-//     .aboutHero { 
+//     .aboutHero {
 //       .lightbulbsPicture {
 //         padding-left: 0;
 //       }
@@ -173,7 +185,7 @@
 //         margin-right: auto;
 //         max-width: 450px;
 //       }
-  
+
 //       .loudspeakerPicture {
 //         padding-left: 0;
 //       }
@@ -183,16 +195,16 @@
 
 // @media only screen and (max-width: 776px) {
 //   .aboutPage {
-//     .aboutHero { 
+//     .aboutHero {
 //       .lightbulbsPicture {
 //         max-width: 100px;
 //       }
-      
+
 //       h1 {
 //         font-size: 36px;
 //         max-width: 300px;
 //       }
-  
+
 //       .loudspeakerPicture {
 //         max-width: 70px;
 //       }
@@ -202,17 +214,17 @@
 
 // @media only screen and (max-width: 530px) {
 //   .aboutPage {
-//     .aboutHero { 
+//     .aboutHero {
 //       .lightbulbsPicture {
 //         margin-left: 3rem;
 //         order: -1;
 //       }
-      
+
 //       h1 {
 //         order: 2;
 //         margin-top: 0;
 //       }
-  
+
 //       .loudspeakerPicture {
 //         max-width: 50px;
 //         order: 1;
@@ -228,7 +240,7 @@
 //       margin-left: auto;
 //       margin-right: auto;
 //       position: relative;
-  
+
 //       .greenInlineRectangle {
 //       }
 //     }

@@ -29,7 +29,10 @@ const OnDemandCoachSection = () => (
             has the network or a mentor to give them career advice
             <i> when they need it</i>. Get your questions answered any day of
             the work week. Oftentimes, you’ll receive an answer within 1-2
-            hours. Some of those random questions might be:
+            hours.
+          </p>
+          <p>
+            <strong>Some of those random questions might be:</strong>
           </p>
           <ul>
             <li>How do I pitch my transferable skills?</li>
