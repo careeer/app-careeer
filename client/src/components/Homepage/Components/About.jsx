@@ -60,7 +60,7 @@ const About = () => (
         </section>
       </article>
       <header className="aboutTitle">
-        <h1>Our Coaches</h1>
+        <h1>Our coaches</h1>
       </header>
       <section className="ourTeam ourCoaches">
         <p>
@@ -70,7 +70,7 @@ const About = () => (
           agile and scrum, and why you used MEAN stack to build your platform.
         </p>
         <p>
-          Careeer.me’s primary coach is the CEO and Founder, Anya Iverova. Here are highlight’s from
+          Careeer.me’s primary coach is the CEO and Founder, Anya Iverova. Here are highlights from
           Anya’s career path:
         </p>
         <ul>
@@ -94,20 +94,18 @@ const About = () => (
         </ul>
       </section>
       <header className="aboutTitle culture">
-        <h1>What you can expect from our culture:</h1>
+        <h1>What you can expect from our culture</h1>
       </header>
       <section className="ourTeam">
         <p>
           <strong>Efficiency</strong> - we work with a sense of urgency to get you into your next
           job, fast.
         </p>
-        <br />
         <p>
           <strong>Personability</strong> - No robots here, but rather, smart people who listen
           deeply, genuinely appreciate your business, and gameplan with you to get you where you
           want to be.
         </p>
-        <br />
         <p>
           <strong>Empathy</strong> - If you know exactly what you want, we’re right there with you.
           If you’re not sure, we’ll do everything we can to assess the situation and figure it out
