@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180204012447) do
+ActiveRecord::Schema.define(version: 20190625081155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,15 @@ ActiveRecord::Schema.define(version: 20180204012447) do
     t.integer "password_archivable_id", null: false
     t.datetime "created_at"
     t.index ["password_archivable_type", "password_archivable_id"], name: "index_password_archivable"
+  end
+
+  create_table "onboarding_questions", force: :cascade do |t|
+    t.string "question"
+    t.string "answer"
+    t.bigint "client_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_onboarding_questions_on_client_id"
   end
 
   create_table "roadmap_elements", force: :cascade do |t|
@@ -128,5 +137,6 @@ ActiveRecord::Schema.define(version: 20180204012447) do
 
   add_foreign_key "charges", "users"
   add_foreign_key "clients", "users"
+  add_foreign_key "onboarding_questions", "clients"
   add_foreign_key "roadmap_elements", "clients"
 end

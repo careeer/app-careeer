@@ -25,9 +25,7 @@ const Header = props => (
           Log In
         </Link>
         <button className="signUpLink">
-          <Link to="/createAccount">
-            Free Trial
-          </Link>
+          <Link to="/createAccount">Learn More</Link>
         </button>
       </div>
     </div>

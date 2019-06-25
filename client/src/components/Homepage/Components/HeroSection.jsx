@@ -20,14 +20,19 @@ const HeroSection = () => (
               emptyPause={10}
               typingInterval={50}
               deletingInterval={10}
-              items={['Product Management', 'UX Design', 'Tech Sales', 'Freelance', 'Software Development', 'Business Development']}
+              items={[
+                'Product Management',
+                'UX Design',
+                'Tech Sales',
+                'Freelance',
+                'Software Development',
+                'Business Development',
+              ]}
             />
           </strong>
         </h1>
         <button className="signUpLink">
-          <Link to="/createAccount">
-            Start 3 day Free Trial
-          </Link>
+          <Link to="/createAccount">Learn More</Link>
         </button>
       </div>
     </div>

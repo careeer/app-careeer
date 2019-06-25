@@ -7,22 +7,17 @@ import TeamIcon from '../../Icons/TeamIcon';
 import PageHeader from './PageHeader';
 
 const UserNamePrompt = props => (
-  <Grid
-    textAlign="center"
-    className="questionGrid"
-  >
+  <Grid textAlign="center" className="questionGrid">
     <div className="row pageHeader">
       <PageHeader
-        counterLabel="4/4"
+        counterLabel="5/5"
         handleClick={props.handleClick}
         headerLinkLabel="Build your roadmap"
       />
     </div>
     <Grid.Column className="onBoardingColumn">
       <TeamIcon />
-      <div className="userNameLabel">
-        What’s your name?
-      </div>
+      <div className="userNameLabel">What’s your name?</div>
       <NameInput
         placeholder=""
         nameError={props.nameError}

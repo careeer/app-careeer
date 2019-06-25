@@ -10,31 +10,23 @@ const IntroMessage = props => (
     <div className="row pageHeader">
       <PageHeader
         icon={false}
-        counterLabel="1/4"
+        counterLabel="1/5"
         handleClick={props.handleClick}
         headerLinkLabel=""
       />
     </div>
     <Grid.Column className="introMessageGrid">
-      <h2 className="introHeader">
-        Hello!
-      </h2>
+      <h2 className="introHeader">Hello!</h2>
       <p className="introMessage">
-        In order to improve your experience we’d like to get to know you better
+        In order to improve your experience we’d like to get to know you better.
       </p>
-      <a
-        tabIndex={0}
-        role="button"
-        onClick={props.onStartClick}
-      >
+      <p className="introMessage">
+        We have 4 questions that will help us narrow things down a bit!
+      </p>
+      <a tabIndex={0} role="button" onClick={props.onStartClick}>
         <WaveIcon />
       </a>
-      <a
-        tabIndex={0}
-        role="button"
-        className="introGetStarted"
-        onClick={props.onStartClick}
-      >
+      <a tabIndex={0} role="button" className="introGetStarted" onClick={props.onStartClick}>
         Get Started
       </a>
     </Grid.Column>

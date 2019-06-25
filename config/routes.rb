@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :users, only: %i[create]
     resources :clients do
       resources :roadmap_elements, except: :show
+      resources :onboarding_questions, except: :show
     end
     resource :sessions, only: %i[create destroy show]
     resource :subscription do

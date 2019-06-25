@@ -7,8 +7,8 @@ import Touch from '../Lib/CheckTouch';
 
 export default class OnBoardingQuestion extends Component {
   state = {
-    activeItem: localStorage.getItem("Answer1"),
-  }
+    activeItem: localStorage.getItem('Answer1'),
+  };
 
   componentWillMount() {
     $crisp.push(['do', 'chat:hide']);
@@ -16,63 +16,71 @@ export default class OnBoardingQuestion extends Component {
 
   handleItemClick = (e, { name }) => {
     this.setState({ activeItem: name });
-    localStorage.setItem("Answer1", name);
-    $crisp.push(["set", 'session:data', [[["Question1", "Which area would you like to improve most?"], ["Answer1", name]]]]);
+    localStorage.setItem('Answer1', name);
+    $crisp.push([
+      'set',
+      'session:data',
+      [[['Question1', 'Which area would you like to improve most?'], ['Answer1', name]]],
+    ]);
     this.props.history.push('/OnBoarding/Question_2');
-  }
+  };
 
   handleClick = () => {
     this.props.history.push('/OnBoarding/Question_2');
-  }
+  };
 
   render() {
     const { activeItem } = this.state;
 
-    let itemClass="noHoverItem";
+    let itemClass = 'noHoverItem';
     if (!Touch.isTouchDevice()) {
-      itemClass="hoverItem";
+      itemClass = 'hoverItem';
     }
 
     const Items = [
+      {
+        key: 'Career discovery',
+        name: 'Career discovery',
+        onClick: this.handleItemClick,
+        active: activeItem === 'Career discovery',
+        className: itemClass,
+      },
       {
         key: 'Skill development',
         name: 'Skill development',
         onClick: this.handleItemClick,
         active: activeItem === 'Skill development',
-        className: itemClass
+        className: itemClass,
       },
       {
         key: 'Professional branding',
         name: 'Professional branding',
         onClick: this.handleItemClick,
         active: activeItem === 'Professional branding',
-        className: itemClass
+        className: itemClass,
       },
       {
         key: 'Job search strategy',
         name: 'Job search strategy',
         onClick: this.handleItemClick,
         active: activeItem === 'Job search strategy',
-        className: itemClass
+        className: itemClass,
       },
       {
         key: 'Interview prep',
         name: 'Interview prep',
         onClick: this.handleItemClick,
         active: activeItem === 'Interview prep',
-        className: itemClass
+        className: itemClass,
       },
-    ]
+    ];
 
     return (
       <div className="onBoarding">
-        <Grid
-          textAlign="center"
-          className="questionGrid"
-        >
+        <Grid textAlign="center" className="questionGrid">
           <Grid.Row className="pageHeader">
             <PageHeader
-              counterLabel="2/4"
+              counterLabel="2/5"
               handleClick={this.handleClick}
               headerLinkLabel="Skip question"
             />
@@ -80,20 +88,12 @@ export default class OnBoardingQuestion extends Component {
           <Grid.Row className="questionGrid">
             <Grid.Column className="onBoardingColumn">
               <TeamIcon />
-              <div className="userNameLabel">
-                Which area would you like to improve most?
-              </div>
+              <div className="userNameLabel">Which area would you like to improve most?</div>
             </Grid.Column>
           </Grid.Row>
           <Grid.Row className="questionGridOptions">
-            <Grid.Column
-              className="onBoardingColumn"
-            >
-              <Menu
-                vertical
-                secondary
-                items={Items}
-              />
+            <Grid.Column className="onBoardingColumn">
+              <Menu vertical secondary items={Items} />
             </Grid.Column>
           </Grid.Row>
         </Grid>

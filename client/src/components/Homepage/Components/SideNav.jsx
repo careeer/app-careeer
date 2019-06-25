@@ -21,7 +21,7 @@ const SideNav = props => (
       Log In
     </Menu.Item>
     <Menu.Item name="signup" className="signup" onClick={props.handleSignUpClick}>
-      Start 3 day Free Trial
+      Learn More
     </Menu.Item>
   </Sidebar>
 );

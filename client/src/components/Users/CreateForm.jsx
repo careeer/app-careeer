@@ -6,9 +6,10 @@ import { inject, observer } from 'mobx-react';
 import { Button } from 'semantic-ui-react';
 import LoadingScreen from '../Lib/LoadingScreen';
 
-@inject('user') @observer
+@inject('user')
+@observer
 class CreateForm extends Component {
-  handleClick = (e) => {
+  handleClick = e => {
     e.preventDefault();
     if (this.email.checkValidity() && this.password.checkValidity()) {
       const { user, history, selectedAccount } = this.props;
@@ -18,21 +19,23 @@ class CreateForm extends Component {
         this.password.value,
         this.password.value,
         selectedAccount,
-        () => {history.push('/freetrial');}
+        () => {
+          history.push('/OnBoarding/Intro');
+        },
       );
     }
-  }
+  };
 
   clearErrorMessages = () => {
     this.props.user.clearAccountErrorMessages();
-  }
+  };
 
   render() {
     const { user } = this.props;
 
-    let errorModeEmail = "";
+    let errorModeEmail = '';
     if (user.existingEmail) {
-      errorModeEmail = "errorMode";
+      errorModeEmail = 'errorMode';
     }
 
     return (
@@ -48,15 +51,15 @@ class CreateForm extends Component {
           autoComplete="email"
           className={errorModeEmail}
           onChange={this.clearErrorMessages}
-          ref={(node) => { this.email = node; }}
+          ref={node => {
+            this.email = node;
+          }}
           pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
         />
-        {!user.existingEmail &&
-          <label>invalid email address</label>
-        }
-        {user.existingEmail &&
+        {!user.existingEmail && <label>invalid email address</label>}
+        {user.existingEmail && (
           <label className="apiMessage">email already registered, please sign in</label>
-        }
+        )}
         <input
           required
           type="password"
@@ -64,13 +67,12 @@ class CreateForm extends Component {
           pattern=".{6,}"
           onChange={this.clearErrorMessages}
           placeholder="password (6 character min)"
-          ref={(node) => { this.password = node; }}
+          ref={node => {
+            this.password = node;
+          }}
         />
         <label>too few characters [min 6]</label>
-        <Button
-          content={this.props.buttonLabel}
-          onClick={this.handleClick}
-        />
+        <Button content={this.props.buttonLabel} onClick={this.handleClick} />
       </form>
     );
   }

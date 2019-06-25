@@ -3,6 +3,7 @@ class Client < ApplicationRecord
   extend FriendlyId
   friendly_id :name_url, use: :slugged
   has_many :roadmap_elements, dependent: :destroy
+  has_many :onboarding_questions, dependent: :destroy
   accepts_nested_attributes_for :roadmap_elements
 
   amoeba do

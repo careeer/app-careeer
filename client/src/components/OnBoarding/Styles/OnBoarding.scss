@@ -56,11 +56,11 @@ div.userNameLabel {
   font-weight: 500;
   letter-spacing: 2.5px;
   line-height: 2;
-  margin-top: 2.5rem;
-  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   margin-left: auto;
   margin-right: auto;
-  text-align: center;  
+  text-align: center;
   width: 375px;
 }
 
@@ -106,10 +106,10 @@ div.ui.center.aligned.grid.introMessageGrid,
 div.ui.center.aligned.grid.questionGrid {
   background-image: linear-gradient(135deg, #f5f7fa 0%, #f1f1f9 50%, #c3cfe2 100%);
   border-radius: 8px;
-  box-shadow: 2px 2px 6px 0 rgba(34,36,38,.45);
+  box-shadow: 2px 2px 6px 0 rgba(34, 36, 38, 0.45);
   margin-left: auto;
   margin-right: auto;
-  margin-top: 3rem;
+  margin-top: 2.5rem;
   padding: 0 !important;
   width: 41% !important;
   margin-bottom: 1rem !important;
@@ -126,7 +126,7 @@ h2.introHeader {
   margin-right: auto;
   margin-left: auto;
   padding-bottom: 0.5rem;
-  padding-top: 3rem;
+  padding-top: 1rem;
   text-align: center;
   width: 131px;
 }
@@ -137,21 +137,21 @@ p.introMessage {
   font-size: 20px;
   font-weight: 500;
   letter-spacing: 2.5px;
-  margin: 3.5rem auto 0;
+  margin: 2.5rem auto 0;
   text-align: center;
   width: 375px;
 }
 
 img.introWave {
   cursor: pointer;
-  height: 164.5px;
-  margin-top: 5rem;
-  width: 140px;
+  height: 124.5px;
+  margin-top: 3rem;
+  width: 110px;
 }
 
 a.introGetStarted {
   background-color: $careeer-green;
-  color: white;  
+  color: white;
   border-radius: 9px;
   cursor: pointer;
   display: block;
@@ -162,13 +162,14 @@ a.introGetStarted {
   margin-left: auto;
   margin-right: auto;
   margin-top: 2rem;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
   padding-top: 0.5rem;
   text-align: center;
   width: 350px;
 
-  &:hover, &:active {
-    background-color: $careeer-fluorescent
+  &:hover,
+  &:active {
+    background-color: $careeer-fluorescent;
   }
 }
 
@@ -217,15 +218,14 @@ p.thankYouLoading {
   margin-top: 3.8rem;
 }
 
-
-.ui.vertical.menu, 
+.ui.vertical.menu,
 .ui.grid > .column.introMessageGrid,
 .ui.grid > .column.onBoardingColumn {
   width: 100%;
 }
 
 .ui.grid > .column.onBoardingColumn {
-  height: 50rem;
+  height: 45rem;
   padding-top: 0;
 }
 
@@ -238,11 +238,11 @@ div.ui.secondary.vertical.menu > a.item.noHoverItem:hover {
   font-family: $careeer-font-stack;
   font-size: 22px;
   font-weight: 500;
-  letter-spacing: 3.0px;
+  letter-spacing: 3px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 1.8rem;
-  padding: 1.5rem;
+  margin-bottom: 1.3rem;
+  padding: 1rem;
   text-align: center;
   width: 375px;
 }

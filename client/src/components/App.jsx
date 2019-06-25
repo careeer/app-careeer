@@ -8,7 +8,7 @@ import LandingPage from './LandingPage';
 import OnBoardingIntro from './OnBoarding/OnBoardingIntro';
 import OnBoardingQuestion from './OnBoarding/OnBoardingQuestion';
 import OnBoardingQuestion2 from './OnBoarding/OnBoardingQuestion2';
-import OnBoardingQuestion3 from './OnBoarding/OnBoardingQuestion3';
+import OnBoardingQuestion3 from './OnBoarding/OnBoardingQuestion4';
 import OnBoardingName from './OnBoarding/OnBoardingName';
 import OnBoardingThankYou from './OnBoarding/OnBoardingThankYou';
 import Users from './Users';
