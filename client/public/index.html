@@ -1,21 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="description" content="Thinking about changing your career? Personalized career coaching for product management, software development, UX design, and more. Monthly career coaching, flexible plans, 1:1 support. Find out more at Careeer.me.">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="Thinking about changing your career? Personalized career coaching for product management, software development, UX design, and more. Monthly career coaching, flexible plans, 1:1 support. Find out more at Careeer.me."
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+    />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
     <script>
       WebFont.load({
         google: {
-          families: ['Lobster', 'Open Sans:400,400i,600,600i,700,700i', 'Cabin', 'Raleway', 'Roboto']
+          families: [
+            'Lobster',
+            'Open Sans:400,400i,600,600i,700,700i',
+            'Cabin',
+            'Raleway',
+            'Roboto'
+          ]
         }
       });
     </script>
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>Careeer!</title>
   </head>
   <body>
@@ -23,36 +38,70 @@
       You need to enable JavaScript to run this app.
     </noscript>
     <div id="root"></div>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+    />
     <script src="https://js.stripe.com/v3/"></script>
-    <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="edf18920-ac6f-48bc-bb3c-6f09cd378fa4";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+    <script type="text/javascript">
+      window.$crisp = [];
+      window.CRISP_WEBSITE_ID = 'edf18920-ac6f-48bc-bb3c-6f09cd378fa4';
+      (function() {
+        d = document;
+        s = d.createElement('script');
+        s.src = 'https://client.crisp.chat/l.js';
+        s.async = 1;
+        d.getElementsByTagName('head')[0].appendChild(s);
+      })();
+    </script>
     <!-- Global Site Tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-103010077-1"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-103010077-1"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments)};
+      function gtag() {
+        dataLayer.push(arguments);
+      }
       gtag('js', new Date());
 
       gtag('config', 'UA-103010077-1');
     </script>
     <!-- Facebook Pixel Code -->
     <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window,document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-       fbq('init', '658185284367995');
+      !(function(f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function() {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '658185284367995');
       fbq('track', 'PageView');
     </script>
     <noscript>
-       <img height="1" width="1"
-      src="https://www.facebook.com/tr?id=658185284367995&ev=PageView
-      &noscript=1"/>
+      <img
+        height="1"
+        width="1"
+        src="https://www.facebook.com/tr?id=658185284367995&ev=PageView
+      &noscript=1"
+      />
     </noscript>
     <!-- End Facebook Pixel Code -->
   </body>
