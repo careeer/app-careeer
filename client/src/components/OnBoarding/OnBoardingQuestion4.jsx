@@ -42,36 +42,32 @@ export default class OnBoardingQuestion extends Component {
 
     return (
       <div className="onBoarding">
-      <PageHeader
-        counterLabel="4/5"
-        handleClick={this.handleClick}
-        headerLinkLabel="Skip question"
-      />
-      <Grid
-        textAlign="center"
-        className="questionGrid"
-      >
-        <Grid.Row className="questionGrid">
-          <Grid.Column className="onBoardingColumn">
-            <TeamIcon />
-            <div className="userNameLabel">
-              Which best describes you?
-            </div>
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row className="questionGrid">
-          <Grid.Column
-            verticalAlign="bottom"
-            className="onBoardingColumn"
-          >
-            <Menu
-              vertical
-              secondary
-              items={Items}
+        <Grid textAlign="center" className="questionGrid">
+          <Grid.Row className="pageHeader">
+            <PageHeader
+              counterLabel="4/5"
+              handleClick={this.handleClick}
+              headerLinkLabel="Skip question"
             />
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
+          </Grid.Row>
+          <Grid.Row className="questionGrid">
+            <Grid.Column className="onBoardingColumn">
+              <TeamIcon />
+              <div className="userNameLabel">
+                Which best describes you?
+              </div>
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row className="questionGridOptions">
+            <Grid.Column className="onBoardingColumn">
+              <Menu
+                vertical
+                secondary
+                items={Items}
+              />
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
       </div>
     );
   }

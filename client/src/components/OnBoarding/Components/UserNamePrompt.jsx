@@ -12,7 +12,7 @@ const UserNamePrompt = props => (
       <PageHeader
         counterLabel="5/5"
         handleClick={props.handleClick}
-        headerLinkLabel="Build your roadmap"
+        icon={false}
       />
     </div>
     <Grid.Column className="onBoardingColumn">
@@ -25,6 +25,9 @@ const UserNamePrompt = props => (
         currentClient={props.currentClient}
         handleClientInputChange={props.handleClientInputChange}
       />
+      <button className="scheduleCall">
+      <a href="https://app.acuityscheduling.com/schedule.php?owner=13659144&appointmentType=3401046">Schedule a call</a>
+      </button>
     </Grid.Column>
   </Grid>
 );

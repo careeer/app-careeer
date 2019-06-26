@@ -69,7 +69,7 @@ div.userNameInput {
   font-family: $careeer-font-stack;
   font-size: 14px;
   letter-spacing: 1.8px;
-  margin-top: 13em;
+  margin-top: 5em;
   text-align: center;
 }
 
@@ -258,6 +258,17 @@ div.ui.secondary.vertical.menu {
   padding: 0 !important;
 }
 
+.scheduleCall {
+  border-radius: 3px;
+  border-color: transparent;
+  background-color: #00a2aa;
+  margin-top: 3rem;
+  padding: 0.5rem 2rem;
+
+  a {
+    color: #fff;
+  }
+}
 /***
 *
 * Mobile Styles
