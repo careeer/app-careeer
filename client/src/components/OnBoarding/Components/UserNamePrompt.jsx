@@ -26,7 +26,9 @@ const UserNamePrompt = props => (
         handleClientInputChange={props.handleClientInputChange}
       />
       <button className="scheduleCall">
-      <a href="https://app.acuityscheduling.com/schedule.php?owner=13659144&appointmentType=3401046">Schedule a call</a>
+        <a href="https://app.acuityscheduling.com/schedule.php?owner=13659144&appointmentType=3401046">
+          Schedule a call
+        </a>
       </button>
     </Grid.Column>
   </Grid>
