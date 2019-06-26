@@ -19,7 +19,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 # Use devise for authentication
-gem 'devise', '4.3.0'
+gem 'devise', '4.6.2'
 # Use token authentication
 gem 'simple_token_authentication', '~> 1.0'
 # Extends devise capabilities
