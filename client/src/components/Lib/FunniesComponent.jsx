@@ -35,10 +35,9 @@ export default class FunniesComponent extends React.Component {
           transitionEnterTimeout={200}
           transitionLeaveTimeout={200}
         >
-          <span
-            className="funnies-text"
-            key={this.state.message}
-          >{this.state.message}</span>
+          <span className="funnies-text" key={this.state.message}>
+            Loading...
+          </span>
         </ReactCSSTransitionGroup>
       </div>
     );
