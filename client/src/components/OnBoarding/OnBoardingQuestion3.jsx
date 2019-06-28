@@ -39,24 +39,24 @@ export default class OnBoardingQuestion extends Component {
 
     const Items = [
       {
-        key: '1-2months',
-        name: '1-2months',
+        key: '1 to 2 months',
+        name: '1 to 2 months',
         onClick: this.handleItemClick,
-        active: activeItem === '1-2months',
+        active: activeItem === '1 to 2 months',
         className: itemClass,
       },
       {
-        key: '3-5months',
-        name: '3-5months',
+        key: '3 to 5 months',
+        name: '3 to 5 months',
         onClick: this.handleItemClick,
-        active: activeItem === '3-5months',
+        active: activeItem === '3 to 5 months',
         className: itemClass,
       },
       {
-        key: '6months+',
-        name: '6months+',
+        key: '6 months or more',
+        name: '6 months or more',
         onClick: this.handleItemClick,
-        active: activeItem === '6months+',
+        active: activeItem === '6 months or more',
         className: itemClass,
       },
     ];

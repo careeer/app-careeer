@@ -32,7 +32,7 @@ const HeroSection = () => (
           </strong>
         </h1>
         <button className="signUpLink">
-          <Link to="/createAccount">Learn More</Link>
+          <Link to="/createAccount">Get Started</Link>
         </button>
       </div>
     </div>

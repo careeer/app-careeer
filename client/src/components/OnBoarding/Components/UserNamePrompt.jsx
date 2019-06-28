@@ -9,11 +9,7 @@ import PageHeader from './PageHeader';
 const UserNamePrompt = props => (
   <Grid textAlign="center" className="questionGrid">
     <div className="row pageHeader">
-      <PageHeader
-        counterLabel="5/5"
-        handleClick={props.handleClick}
-        icon={false}
-      />
+      <PageHeader counterLabel="5/5" handleClick={props.handleClick} icon={false} />
     </div>
     <Grid.Column className="onBoardingColumn">
       <TeamIcon />
@@ -27,7 +23,7 @@ const UserNamePrompt = props => (
       />
       <button className="scheduleCall">
         <a href="https://app.acuityscheduling.com/schedule.php?owner=13659144&appointmentType=3401046">
-          Schedule a call
+          Complete {<br />}and chat with a coach
         </a>
       </button>
     </Grid.Column>

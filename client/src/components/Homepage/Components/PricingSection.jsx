@@ -48,7 +48,7 @@ export default class PricingSection extends React.Component {
         <Grid.Row centered>
           <Grid.Column width="4" className="trialLink" textAlign="center">
             <button className="signUpLink">
-              <Link to="/createAccount">Learn More</Link>
+              <Link to="/createAccount">Get Started</Link>
             </button>
           </Grid.Column>
         </Grid.Row>

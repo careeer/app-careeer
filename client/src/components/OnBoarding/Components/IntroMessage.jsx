@@ -20,9 +20,6 @@ const IntroMessage = props => (
       <p className="introMessage">
         In order to improve your experience we’d like to get to know you better.
       </p>
-      <p className="introMessage">
-        We have 4 questions that will help us narrow things down a bit!
-      </p>
       <a tabIndex={0} role="button" onClick={props.onStartClick}>
         <WaveIcon />
       </a>
