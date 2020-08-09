@@ -16,16 +16,21 @@ const Header = props => (
         <Link to="/about" className="aboutLink">
           About
         </Link>
-        <a role="link" tabIndex="0" className="pricingLink" onClick={props.handlePricingClick}>
+        <a
+          role="link"
+          tabIndex="0"
+          className="pricingLink"
+          onClick={props.handlePricingClick}
+        >
           Pricing
         </a>
       </div>
       <div className="rightLinks">
-        <Link to="/login" className="signIn">
-          Log In
-        </Link>
         <button className="signUpLink">
-          <Link to="/createAccount">Get Started</Link>
+          <a href="https://app.acuityscheduling.com/schedule.php?owner=13659144&appointmentType=3401046">
+            Get Started
+          </a>
+          {/* <Link to="/createAccount">Get Started</Link> */}
         </button>
       </div>
     </div>

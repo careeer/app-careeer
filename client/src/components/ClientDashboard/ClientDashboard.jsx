@@ -7,22 +7,25 @@ import Subscription from 'components/Subscription/Subscription';
 import SubscriptionComplete from 'components/Subscription/SubscriptionComplete';
 import ModalComponent from 'components/CoachDashboard/Clients/ModalComponent';
 
-@inject('roadmapElements', 'subscription') @observer
+@inject('roadmapElements', 'subscription')
+@observer
 class ClientDashboard extends Component {
   state = {
     open: false,
-  }
+  };
 
   componentWillMount() {
     const { clientId } = this.props.match.params;
     if (clientId) {
       this.props.roadmapElements.resetClientParams();
-      this.props.roadmapElements.getClient(
-        clientId, () => {
-          this.props.roadmapElements.fetchAll();
-          history.replaceState(null, document.title, `/${this.props.roadmapElements.currentClientSlug}`);
-        },
-      );
+      this.props.roadmapElements.getClient(clientId, () => {
+        this.props.roadmapElements.fetchAll();
+        history.replaceState(
+          null,
+          document.title,
+          `/${this.props.roadmapElements.currentClientSlug}`
+        );
+      });
     }
     this.props.subscription.getPlan();
   }
@@ -39,49 +42,48 @@ class ClientDashboard extends Component {
     this.close();
     this.props.roadmapElements.deleteClient();
     this.props.history.push('/');
-  }
+  };
 
-  handleContinueClick = (planName) => {
-    this.props.roadmapElements.updateClientAccount("paid");
+  handleContinueClick = planName => {
+    this.props.roadmapElements.updateClientAccount('paid');
     this.props.roadmapElements.updateClient();
-    this.props.roadmapElements.updateCustomBanner(`Subscription started on ${planName}`, true);
-  }
+    this.props.roadmapElements.updateCustomBanner(
+      `Subscription started on ${planName}`,
+      true
+    );
+  };
 
   handleDeleteAccount = () => {
     this.show();
-  }
+  };
 
   render() {
-    const { accountActive,
-            currentClient,
-            successfulPayment,
-            completedElements,
-            currentClientAvatar } = this.props.roadmapElements;
+    const {
+      accountActive,
+      currentClient,
+      successfulPayment,
+      completedElements,
+      currentClientAvatar,
+    } = this.props.roadmapElements;
 
-    const { subscribed,
-            subscriptionStatus } = this.props.subscription;
+    const { subscribed, subscriptionStatus } = this.props.subscription;
 
-    const freeTrialComplete = (
-      (subscriptionStatus !== "trial") || !accountActive
-    );
+    const freeTrialComplete = subscriptionStatus !== 'trial' || !accountActive;
 
-    const cancelledAccess = (subscriptionStatus !== 'cancelled') || !subscribed;
+    const cancelledAccess = subscriptionStatus !== 'cancelled' || !subscribed;
 
     if (successfulPayment) {
-      return (
-        <SubscriptionComplete {...this.props} />
-      );
+      return <SubscriptionComplete {...this.props} />;
     }
 
     if (!subscriptionStatus) {
       return null;
     } else if (
-        cancelledAccess &&
-        freeTrialComplete &&
-        subscriptionStatus !== "active" &&
-        subscriptionStatus !== "free"
-      )
-    {
+      cancelledAccess &&
+      freeTrialComplete &&
+      subscriptionStatus !== 'active' &&
+      subscriptionStatus !== 'free'
+    ) {
       return (
         <div>
           <Subscription
@@ -89,7 +91,10 @@ class ClientDashboard extends Component {
             completedElements={completedElements}
             handleContinueClick={this.handleContinueClick}
             handleDeleteAccount={this.handleDeleteAccount}
-            currentClientAvatar={currentClientAvatar || 'https://res.cloudinary.com/careeer/image/upload/v1504959238/Careeer_logo_a3gu5x.png'}
+            currentClientAvatar={
+              currentClientAvatar ||
+              'https://res.cloudinary.com/careeer/image/upload/v1504959238/Careeer_logo_a3gu5x.png'
+            }
           />
           <ModalComponent
             negativeLabel="Cancel"
@@ -97,7 +102,7 @@ class ClientDashboard extends Component {
             isVisible={this.state.open}
             modalHeader="Delete account?"
             positiveLabel="Delete account"
-            modalContent="Are you sure? We will delete your account and roadmap. Come back anytime! "
+            modalContent="Are you sure? We will delete your account and roadmap. Come back anytime!"
             handlePositiveClick={this.archiveClient}
           />
         </div>
@@ -105,9 +110,7 @@ class ClientDashboard extends Component {
     }
 
     if (currentClient) {
-      return (
-        <RoadmapLayout {...this.props} />
-      );
+      return <RoadmapLayout {...this.props} />;
     }
 
     return null;
